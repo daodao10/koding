@@ -1,0 +1,9 @@
+config.ini
+config.json
+bak/
+data/
+*.pyc
+*.sh
+node_modules/
+chart/SH*.js
+chart/SZ*.js

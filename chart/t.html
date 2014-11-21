@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Google Developers</title>
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+    <div style="text-align: right;">
+        <select onchange="changeCounter(this.value)">
+            <option value="">--SELECT--</option>
+        </select>
+    </div>
+    <div id="chart_div" style="width: 100%; height: 700px;"></div>
+
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+    <script type="text/javascript">
+    google.load("visualization", "1", {
+        packages: ["corechart"]
+    });
+
+    function getOptions() {
+        return {
+            title: 'google chart test',
+            pointSize: 3,
+            series: {
+                0: {
+                    pointShape: 'diamond'
+                }
+            },
+            hAxis: {
+                titleTextStyle: {
+                    color: 'red'
+                },
+                format: "yyyyMM"
+            },
+            legend: 'none',
+            trendlines: {
+                0: {
+                    pointSize: 0,
+                    type: 'linear',
+                    color: 'red',
+                    lineWidth: 2,
+                    lineDashStyle: [10, 2]
+                }
+            }
+        };
+    }
+
+    function prepareDataTable(data) {
+        var dt = new google.visualization.DataTable();
+        dt.addColumn('date', 'Month');
+        dt.addColumn('number', 'Price');
+        dt.addColumn({type: 'string', role: 'tooltip'});
+        dt.addRows(data);
+
+        var formatter2 = new google.visualization.PatternFormat('{0}\n Price: {1}');
+        formatter2.format( dt, [0,2], 2);
+
+        return dt;
+    }
+
+    function drawChart(data) {
+        var dt = prepareDataTable(data);
+        var options = getOptions();
+        var chart = new google.visualization.LineChart(document.getElementById('chart_div'));
+        chart.draw(dt, options);
+    }
+
+    function changeCounter(counter) {
+        $.cacheScript(counter + ".js")
+            .done(function(script, textStatus) {
+                console.log(textStatus);
+                drawChart(data);
+            })
+            .fail(function(jqxhr, settings, exception) {
+                console.log("failed to load stock data");
+            });
+    }
+
+    $.cacheScript = function(url, options) {
+        options = $.extend(options || {}, {
+            dataType: "script",
+            cache: true,
+            url: url
+        });
+        return $.ajax(options);
+    };
+
+    (function() {
+        $.cacheScript('s.js').done(function(script, textStatus) {
+            var s,
+                option,
+                symbolList = document.querySelector("select");
+            for (var i = 0; i < symbols.length; i++) {
+                s = symbols[i];
+                option = document.createElement("option");
+                option.text = s.t;
+                option.value = s.v;
+                symbolList.add(option);
+            };
+
+        }).fail(function(jqxhr, settings, exception) {
+            console.log("failed to load symbols");
+        });
+    })();
+    </script>
+</body>
+
+</html>
