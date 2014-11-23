@@ -7,4 +7,5 @@ data/
 node_modules/
 nd/*.txt
 chart2/*.csv
+chart2/*.log
 .DS_Store
