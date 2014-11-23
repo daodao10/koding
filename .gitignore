@@ -6,6 +6,6 @@ data/
 *.sh
 node_modules/
 nd/*.txt
-chart2/*.csv
-chart2/*.log
+chart/*.csv
+chart/*.log
 .DS_Store
