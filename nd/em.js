@@ -29,7 +29,7 @@ var span = [
     urlFormat = '/stockcomment/%s.html',
     myMongo = new MyMongo(util.format("%s%s", config.DbSettings.DbUri, 'quotes')),
     start = 1,
-    today = "20141120";
+    today = "20141121";
 
 function process(symbol) {
     if (symbol === "999999" || symbol === "399001")
@@ -44,11 +44,11 @@ function process(symbol) {
             o.s = symbol;
             o.d = today;
 
-            // myMongo.insert("test", o, function(result) {
-            //     // console.log(result);
-            // });
+            myMongo.insert("test", o, function(result) {
+                console.log('done');
+            });
 
-            console.log(o);
+            // console.log(o);
         }
     });
 }
@@ -124,31 +124,11 @@ function coreProcess(content, s) {
             logArr.push(5);
         }
 
-        // result[0] = parse(span[0], content)[0];
-        // result[1] = parse(span[1], content)[0];
-        // result[2] = result.concat(parse2(span[2], content)); //2,3
-        // result[4] = result.concat(parse2(span[3], content)); //4,5
-        // // debug
-        // for (var i = 0; i <= 5; i++) {
-        //     if (result[i]) {
-        //         continue;
-        //     }
-        //     logArr.push(i);
-        // };
-
         if (logArr.length > 1) {
             console.dir(logArr);
             return null;
         };
 
-        // return {
-        //     "cmm": result[0],
-        //     "mm": result[1],
-        //     "mi1": result[2],
-        //     "mi2": result[3],
-        //     "c1": result[4],
-        //     "c20": result[5]
-        // };
         return result;
 
     } else {
@@ -177,13 +157,14 @@ function save(s, data) {
 
 myMongo.getNextSequence("test", function(seq) {
     start = seq;
-    myUtil.readlines("symbols.txt", function(row) {
+    myUtil.readlines("../symbols.txt", function(row) {
         var symbol = row.split(',')[0];
         if (symbol) {
 
             // var symbol = '300246'
             process(symbol);
 
+            // get symbol from file
             // var content = fs.readFileSync(symbol + ".txt", "utf-8");
             // var o = coreProcess(content, symbol);
             // if (o) {
@@ -207,6 +188,7 @@ myMongo.getNextSequence("test", function(seq) {
 // myMongo.find("test", {q: {_id: 22}}, function(docs){
 //     console.log(docs);
 // });
+
 // sequence test
 // myMongo.getNextSequence("test", function(seq){
 //     console.log(seq);
