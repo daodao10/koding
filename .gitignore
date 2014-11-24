@@ -8,4 +8,5 @@ node_modules/
 nd/*.txt
 chart/*.csv
 chart/*.log
+!chart/*_etl.js
 .DS_Store
