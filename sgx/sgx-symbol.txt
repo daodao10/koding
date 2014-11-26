@@ -1,0 +1,822 @@
+502.SI,3Cnergy 500
+5TG.SI,800 Super
+E25.SI,8Telecom
+A53.SI,A-Sonic Aero
+5GZ.SI,AA
+TF7.SI,AAT
+533.SI,ABR
+A18.SI,AEI
+A10.SI,AEM
+A54.SI,AIM
+A0P.SI,AIMS Property
+O5RU.SI,AIMSAMP Cap Reit
+PU0D.SI,ALU ADR 10US$
+5AU.SI,AP Oil
+5RA.SI,APAC Strategic
+D1R.SI,ARA Asset Mgt
+538.SI,ASJ^
+A04.SI,ASL Marine
+575.SI,ASTI
+O2I.SI,AVIC
+A05.SI,AVJennings A$
+L5I.SI,Abterra
+ADQU.SI,Accordia Golf Tr
+A75.SI,Ace Achieve Info
+A02.SI,Achieva
+A01.SI,Acma
+A59.SI,Action Asia
+A31.SI,Addvalue Tech
+5FH.SI,Advance SCT
+5IA.SI,Advanced
+5TY.SI,Advanced Systems
+5EF.SI,Adventus
+5IB.SI,Albedo
+S91.SI,AliPictures2kHKD
+40F.SI,Alliance Mineral
+A13.SI,Allied Tech^
+A34.SI,Amara
+U5U.SI,Amplefield 100^
+C60.SI,Amplefield^
+M1P.SI,Amtek Engg
+MF5.SI,Anchun Intl
+A52.SI,AnnAik
+5AL.SI,Annica
+G5X.SI,Anwell Tech
+5EK.SI,Armarda
+5NK.SI,Artivision Tech
+A17U.SI,Ascendas Reit
+Q1P.SI,Ascendas-hTrust
+CY6U.SI,Ascendas-iTrust
+A68U.SI,Ascott Reit
+A55.SI,Asia Enterprises
+GH3.SI,Asia Fashion
+505.SI,AsiaMedic
+5WV.SI,AsiaPhos
+A03.SI,AsiaPower
+585.SI,Asian Micro
+S7OU.SI,Asian Pay Tv Tr
+5ET.SI,Asiasons Capital
+5CR.SI,Asiatic
+5AM.SI,Asiatravel.com
+A30.SI,Aspial
+5UL.SI,Atlantic Nav
+A23.SI,Auric Pacific
+5GJ.SI,AusGroup
+X04.SI,AusNet Services
+CT1.SI,Avi-Tech
+A69.SI,Azeus
+560.SI,Aztech
+B08.SI,B&M Trustees 100
+KJ5.SI,BBR
+B32.SI,BH Global
+B03.SI,BRC Asia
+568.SI,Baker Technology
+B26.SI,Ban Leong
+B58.SI,Banyan Tree
+5MC.SI,Beng Kuang
+B66.SI,Berlian LajuTank
+5ER.SI,Best World
+B20.SI,Biosensors
+B3C.SI,Blue Sky Power
+A33.SI,Blumont
+B10.SI,Boardroom
+B28.SI,Bonvests
+F9D.SI,Boustead
+5DA.SI,BreadTalk
+B69.SI,Broadway Ind
+5OY.SI,Brooke Asia
+B61.SI,Bukit Sembawang
+P8Z.SI,Bumitama Agri
+MQ4.SI,Bund Center
+D79.SI,C&G Env Protect
+5RF.SI,CCFH
+J85.SI,CDL HTrust
+D38.SI,CDW
+Y35.SI,CEFC Intl
+C11.SI,CEI Contract Mfg
+5EB.SI,CFM
+C13.SI,CH Offshore
+C22.SI,CMPacific
+C03.SI,CMProp 100 HKD
+5GC.SI,CNA
+5TP.SI,CNMC Goldmine
+539.SI,CPH
+C06.SI,CSC
+544.SI,CSE Global
+C14.SI,CWT
+K2LU.SI,Cache Log Trust
+D2U.SI,Cacola^
+J91U.SI,Cambridge Ind Tr
+C61U.SI,CapitaCom Trust
+C31.SI,CapitaLand
+C38U.SI,CapitaMall Trust
+JS8.SI,CapitaMalls Asia
+AU8U.SI,CapitaR China Tr
+U18.SI,Captii
+C04.SI,Casa
+530.SI,Cedar Strategic
+C56.SI,Celestial Nutri
+OU8.SI,Centurion
+573.SI,Challenger
+JA9.SI,Changjiang Fert
+D2V.SI,ChangtianPlastic
+5QT.SI,Charisma Energy
+5TW.SI,ChasWood Res
+5NV.SI,Chasen
+C05.SI,Chemical Ind
+C50.SI,Cheung Woh
+5SY.SI,Chew’s
+T42.SI,China Auto Elec
+G92.SI,China Aviation
+AD7.SI,China Bearing
+T16.SI,China Dairy
+A0G.SI,China Energy
+5OU.SI,China Env
+RS1.SI,China Env Res 4k
+G54.SI,China Essence^
+F6D.SI,China Fibretech
+B0Z.SI,China Fishery
+C59.SI,China Flexpack
+I4U.SI,China Gaoxian
+D50.SI,China Great Land
+C92.SI,China Haida
+C0Z.SI,China Hongcheng^
+BR9.SI,China Hongxing
+C37.SI,China Intl
+J18.SI,China Jishan
+G86.SI,China Milk
+Y34.SI,China Mining
+K2N.SI,China Minzhong
+D4N.SI,China New Town
+DT2.SI,China Oilfield^
+C71.SI,China Paper
+Z02.SI,China PowerPlus^
+E90.SI,China Sky Chem
+FQ8.SI,China Sports
+C86.SI,China Sun Bio
+CH8.SI,China Sunsine
+F2X.SI,China Taisan
+B9R.SI,China XLX Fert
+5KK.SI,China Yongsheng
+B2X.SI,China Yuanbang
+P74.SI,ChinaKangdaFood
+GU5.SI,ChinaKundaTech^
+O2R.SI,ChinaSing Inv^
+5CJ.SI,Chinese Global
+C29.SI,Chip Eng Seng
+ACW.SI,Chiwayland Intl
+C10.SI,Chosen
+C33.SI,Chuan Hup
+C09.SI,CityDev
+A7RU.SI,CitySpring Trust
+5HJ.SI,Cityneon
+P9D.SI,Civmec
+KJ9.SI,Cogent
+567.SI,Colex
+N0Z.SI,Combine Will 100
+C52.SI,ComfortDelGro
+5HT.SI,Comm Design
+T4E.SI,Compact Metal
+P8A.SI,Cordlife
+C41.SI,Cortina
+F83.SI,Cosco
+B9S.SI,CosmoSteel
+E91.SI,Courage Marine
+RE2.SI,Courts Asia
+541.SI,Craft Print
+C76.SI,Creative 50
+S6NU.SI,Croesus RTrust
+D05.SI,DBS
+PU5D.SI,DEO ADR 10US$
+5CH.SI,DMX Technologies
+B2W.SI,DTAC 200 USD
+D01.SI,DairyFarm 900USD
+FP1.SI,Dapai Intl^
+5CB.SI,Darco Water Tech
+D04.SI,Datapulse Tech
+5UZ.SI,DeClout
+K2M.SI,Debao Property
+D03.SI,Del Monte Pac
+B1N.SI,Delong
+D11.SI,Design Studio
+G77.SI,Digiland Intl^
+MT1.SI,Dragon
+GJ8.SI,Dukang
+CZ4.SI,Dutech
+5SO.SI,Duty Free Intl
+NO4.SI,Dyna-Mac
+D6U.SI,Dynamic Colours
+5OF.SI,E2-Capital
+E18.SI,ECS
+5DE.SI,EMS Energy
+5RC.SI,ES
+N0L.SI,EastGate Tech
+5KU.SI,Eastern
+5CT.SI,EcoWise
+5HG.SI,Edition
+E16.SI,Elec & Eltek USD
+5VU.SI,Elektromotive
+E13.SI,Ellipsiz
+S44.SI,EnGro
+5FR.SI,Envictus
+L23.SI,Enviro-Hub
+5MQ.SI,Epicentre
+532.SI,Equation
+FO8.SI,Eratat Lifestyle
+E02.SI,Eu Yan Sang
+5VT.SI,EuNetworks
+E27.SI,Eucon^
+5G1.SI,EuroSports Gbl
+E23.SI,Europtronic^
+E17.SI,Excelpoint
+5ME.SI,Ezion
+5DN.SI,Ezra
+F99.SI,F & N
+F10.SI,FJ Benjamin
+N6CD.SI,FMCN ADR 10US$+
+D8DU.SI,FSL Trust
+PU2D.SI,FTE ADR 10US$
+I54.SI,Fabchem China
+5FL.SI,Falcon Energy
+5TJ.SI,Far East
+Q5T.SI,Far East HTrust
+O10.SI,Far East Orchard
+F20.SI,Federal Int
+F12.SI,Fibrechem Tech
+5F4.SI,Figtree
+AW9U.SI,First Reit
+UB7.SI,First Reit A
+EB5.SI,First Resources
+ADN.SI,First Sponsor
+F22.SI,Fischer Tech
+F03.SI,Food Empire
+B0I.SI,Foreland FabriT
+LG2U.SI,Forterra Trust
+F25U.SI,Fortune Reit HKD
+F31.SI,Fragrance
+ND8U.SI,Frasers Com Tr
+U3U.SI,Frasers Comm A
+U3V.SI,Frasers Comm A 1
+KT8U.SI,Frasers CommCPPU 500
+TQ5.SI,Frasers Cpt
+J69U.SI,Frasers Cpt Tr
+ACV.SI,Frasers HTrust
+E28.SI,Frencken
+F13.SI,Fu Yu
+508.SI,Fuji Offset
+5KT.SI,Fujian Zhenyun
+F18.SI,Full Apex
+F11.SI,Fung Choi Media
+DC9.SI,Fuxing China
+QS9.SI,G Invacom
+G41.SI,G K Goh
+5VP.SI,GDS Global
+595.SI,GKE
+5IM.SI,GMG Global
+G08.SI,GP Batteries
+P9J.SI,GP Hotels
+U8V.SI,GP Hotels 10
+G20.SI,GP Industries
+G18.SI,GRP
+J16.SI,GSH
+5IG.SI,Gallant Venture
+RF7.SI,Gaylin
+AM3.SI,Gems Tv^
+S21.SI,Genting HK US$
+G13.SI,Genting Sing
+RE4.SI,Geo Energy Res
+542.SI,Giken Sakata
+B73.SI,Global Inv
+MC0.SI,Global Logistic
+K6J.SI,Global Palm Res
+G11.SI,Global Tech
+G31.SI,Global Testing
+CH9.SI,GlobalMaster US$ S
+Y07.SI,GlobalYellowPgs
+E5H.SI,Golden Agri-Res
+KU3.SI,Golden Ocean
+5PC.SI,Goodland
+G05.SI,Goodpack
+G50.SI,Grand Banks^
+G07.SI,Great Eastern
+I5H.SI,Great Group
+F17.SI,GuocoLand
+B16.SI,GuocoLeisure
+526.SI,HG Metal
+FV2.SI,HISAKA
+L18.SI,HL Global Ent^
+H27.SI,HLH
+588.SI,HMI
+P7VU.SI,HPH Trust SGD
+NS8U.SI,HPH Trust USD
+H15.SI,HPL
+H64.SI,HTL Intl
+5VS.SI,Hafary
+GG7.SI,Hai Leck
+5VJ.SI,Halcyon Agri
+B22.SI,HanKore Env
+U9E.SI,HanKoreEnv
+U9F.SI,HanKoreEnv 100
+DM0.SI,Hanwell
+H02.SI,Haw Par
+5NG.SI,Healthway Med
+5OR.SI,Heatec Jietong
+5DP.SI,Heeton
+I85.SI,Hengxin Tech
+5PD.SI,Hengyang Petro
+H17.SI,Hi-P
+5JK.SI,Hiap Hoe
+510.SI,Hiap Seng
+5PO.SI,Hiap Tong
+H13.SI,Ho Bee Land
+J2T.SI,Hock Lian Seng
+H20.SI,Hoe Leong
+H30.SI,Hong Fok
+H22.SI,Hong Leong Asia
+S41.SI,Hong Leong Fin
+H78.SI,HongkongLand USD
+H06.SI,Hor Kew
+5EV.SI,Hosen
+H18.SI,Hotel Grand
+H12.SI,Hotel Royal
+NT1.SI,Hotung Inv
+KI3.SI,Hu An Cable
+H16.SI,HuanHsin^
+H73.SI,HupSteel
+H19.SI,Hwa Hong
+600.SI,Hyflux
+536.SI,ICP
+5I4.SI,ICP Ltd
+5I5.SI,ICP Ltd 50
+5TN.SI,IEV
+I49.SI,IFS Capital
+5WA.SI,IHC
+Q0F.SI,IHH
+571.SI,IP Softcom
+I12.SI,IPC Corp
+I11.SI,IPCO Intl
+40A.SI,IPS Securex
+UD1U.SI,IREIT Global
+I07.SI,ISDN
+5WF.SI,ISOTeam
+5EC.SI,ISR Capital
+581.SI,ITE Electric
+I4R.SI,Inch Kenneth
+F3EU.SI,Indiabulls Trust
+5JS.SI,Indofood Agri
+5G4.SI,Infinio
+5H8.SI,Infinio Group 1
+I03.SI,Informatics
+I26.SI,InnoPac
+M14.SI,InnoTek
+591.SI,Innovalues
+5GI.SI,Interra Resource
+I06.SI,Intraco
+I15.SI,Isetan
+Q0W.SI,JB Foods
+5FA.SI,JEP
+EG0.SI,JES Intl
+5TS.SI,JK Tech
+J36.SI,JMH 400 USD
+J37.SI,JSH 500 USD
+J11.SI,Jacks Intl
+J17.SI,Jackspeed
+J03.SI,Jadason
+5OI.SI,Japan Foods
+UD2.SI,Japfa
+C07.SI,Jardine C&C
+5UU.SI,Jason Hldg
+5PF.SI,Jason Marine
+5I3.SI,JasonHldg
+FQ7.SI,Jasper Inv
+J10.SI,Jaya
+C8R.SI,Jiutian Chemical
+E9L.SI,Joyas Intl
+5OS.SI,Jubilee Ind
+5TF.SI,Junma Tyre Cord
+K01.SI,K1 Ventures
+504.SI,KLW
+5I1.SI,KOP
+5I6.SI,KOP 100
+578.SI,KS Energy
+ER0.SI,KSH
+EB7.SI,KTL Global
+K29.SI,Karin Tech
+F9M.SI,Kencana Agri
+5TT.SI,Keong Hong
+BN4.SI,Keppel Corp
+LH4U.SI,Keppel Infra Tr
+K17.SI,Keppel Land
+K71U.SI,Keppel Reit
+K11.SI,Keppel T&T
+K03.SI,Khong Guan Flour
+K22.SI,Kian Ho Bearings
+5G2.SI,KimHeng Offshore
+554.SI,King Wan
+K14.SI,Kingboard Copper
+5MZ.SI,KingsmenCreative
+5TI.SI,Kitchen Culture
+5BK.SI,Koda
+K75.SI,Koh Bros
+5HV.SI,Koh Eco
+5DL.SI,Koon
+5VC.SI,Kori
+5OC.SI,Koyo Intl
+SK3.SI,KrisEnergy
+L15.SI,L-Jacoberg
+L22.SI,LANKom Elec^
+L38.SI,LCD Global Inv
+C4P.SI,LH
+L10.SI,LHT
+L05.SI,Lafe
+Q7W.SI,LantroVision
+5EL.SI,Lasseters Intl
+LS9.SI,Leader Env
+L25.SI,Lee Kim Tah
+593.SI,Lee Metal
+587.SI,Lereno Bio-Chem
+Q0X.SI,Ley Choon
+E9A.SI,Li Heng Chem
+L03.SI,Lian Beng
+5TR.SI,Libra
+L20.SI,LifeBrandz
+5FW.SI,Linair Tech
+TI6.SI,Linc Energy
+L08.SI,Lion Asiapac
+L17.SI,Lion Teck Chiang
+A78.SI,LionGold
+D5IU.SI,Lippo Malls Tr
+E94.SI,Lizhong Wheel
+5VI.SI,Logistics
+L28.SI,Longcheer
+O6Z.SI,Lonza 10
+5IE.SI,Lorenzo Intl
+M22.SI,LottVision
+F1E.SI,Low Keng Huat
+594.SI,Loyz Energy
+L19.SI,Lum Chang
+L09.SI,Lung Kee Bermuda
+L34.SI,Luxking
+L46.SI,Luzhou Bio-Chem
+N14.SI,M Development
+B2F.SI,M1
+A27.SI,MDR
+M11.SI,MFG Integration
+5BM.SI,MFS Tech
+PT6D.SI,MKTAY ADR 10US$
+NC9.SI,MSC 100
+M05.SI,MTQ
+F86.SI,MYP
+M41.SI,Macquarie Intl
+576.SI,Magnus Energy
+TY3.SI,Maiwai Fund USD S
+5TH.SI,Malacca Trust
+M04.SI,Man Oriental USD
+L02.SI,Manhattan Res
+5QR.SI,Mann Seng Metal
+N2IU.SI,Mapletree Com Tr
+RW0U.SI,Mapletree GCC Tr
+ME8U.SI,Mapletree Ind Tr
+M44U.SI,Mapletree Log Tr
+5LY.SI,MarcoPolo Marine
+M12.SI,Maruwa 100 Yen1k
+5OX.SI,Mary Chia
+M15.SI,Matex Intl^
+5UF.SI,Maxi-Cash Fin
+546.SI,Medtecs Intl
+5DS.SI,MegaChem
+M30.SI,Meghmani SDS
+5MS.SI,Memstar Tech
+M26.SI,Memtech Intl
+5NF.SI,Mencast
+EE6.SI,Mercator Lines
+DU4.SI,Mermaid Maritime
+5DX.SI,Metal Component
+QG1.SI,Metech Intl
+M01.SI,Metro
+MV4.SI,Mewah Intl
+5DD.SI,Micro-Mechanics
+5EN.SI,Midas
+C68.SI,Mirach Energy
+M03.SI,Miyoshi^
+5WJ.SI,MoneyMax Fin
+5WE.SI,Moya Asia
+M06.SI,Multi-Chem
+MF6.SI,Mun Siong Engg
+M20.SI,Murata 100 Yen1k
+5AC.SI,NH Ceramics
+N03.SI,NOL
+N02.SI,NSL
+N4E.SI,Nam Cheong
+G0I.SI,Nam Lee Metal
+5IF.SI,Natural Cool
+5UJ.SI,Neo
+N01.SI,NeraTel
+5QY.SI,Net Pacific Fin
+N08.SI,New Toyo
+5FX.SI,New Wave
+B07.SI,Next-Gen Sat^
+5GF.SI,Nico Steel
+N32.SI,Nippecraft^
+547.SI,Nobel Design
+N21.SI,Noble
+543.SI,Noel Gifts Intl
+N33.SI,Nomura Yen1k
+MR7.SI,Nordic
+MR8.SI,Novo
+5HC.SI,Ntegrator Intl
+O39.SI,OCBC Bank
+584.SI,OEL
+O02.SI,OGL Resources A$
+S3N.SI,OKH Global
+5CF.SI,OKP
+E15.SI,OLS Enterprise^
+ADJ.SI,OLS^
+O23.SI,OSIM Intl
+LJ3.SI,OUE
+TS0U.SI,OUE Com Reit
+U2E.SI,OUE HT 1
+SK7.SI,OUE HTrust
+O05.SI,Ocean Sky Intl
+579.SI,Oceanus
+O32.SI,Olam Intl
+5ML.SI,Old Chang Kee
+5FI.SI,Oriental
+O08.SI,Ossia Intl
+G4F.SI,Otto Marine
+AJ2.SI,Ouhua Energy^
+RQ1.SI,Overseas Edu
+5UX.SI,Oxley
+5UV.SI,P99
+P19.SI,PCI
+IX2.SI,PEC
+P07.SI,PNE Industries
+5BS.SI,PNE Micron
+U6C.SI,POSH
+5WD.SI,PS Group
+L6T.SI,PSL
+PV0D.SI,PT ADR 10US$
+P11.SI,Pacific Andes
+P15.SI,Pacific Century
+P47.SI,Pacific Hc^
+T8V.SI,Pacific Radiance
+5EW.SI,Pan Asian
+P36.SI,Pan Hong Prop
+TO9.SI,Pan Ocean 100
+P52.SI,PanUnited
+O9E.SI,Parkson Retail
+C2PU.SI,ParkwayLife Reit
+596.SI,Pavillon
+P13.SI,Penguin Intl
+N9LU.SI,Perennial CRT
+P34.SI,Petra Foods
+P31.SI,Pharmesis Intl
+P82.SI,Plastoform
+5PI.SI,Plato Capital
+P01.SI,Poh Tiong Choon
+5BI.SI,Polaris
+5AE.SI,Pollux Prop
+P29.SI,Popular
+P12.SI,Powermatic Data
+583.SI,Progen
+K6S.SI,Prudential500USD
+J74.SI,Pteris Global
+UD3.SI,PterisGlobal
+UD4.SI,PterisGlobal 100
+QC7.SI,Q&M Dental
+Q01.SI,QAF
+5I0.SI,QT Vascular
+552.SI,Qian Hu
+KT9.SI,Qingmei
+CL7.SI,R H Energy
+T13.SI,RH PetroGas
+NR7.SI,Raffles Edu
+R01.SI,Raffles Medical
+R14.SI,Ramba Energy
+RF1U.SI,Religare HTrust
+5DW.SI,Renewable Energy
+5WH.SI,Rex Intl
+B1ZU.SI,RickmersMaritime
+AP4.SI,Riverstone
+R07.SI,Rotary Engg
+A50.SI,Rowsley
+E8Z.SI,Roxy-Pacific
+J8O.SI,Ryobi Kiso
+M09.SI,S i2i
+S58.SI,SATS
+5PL.SI,SBI Offshore
+S61.SI,SBS Transit 500
+S68.SI,SGX
+5UE.SI,SHC Capital Asia
+C6L.SI,SIA
+C6U.SI,SIA 200
+S59.SI,SIA Engineering
+5GB.SI,SIIC Environment
+40B.SI,SMJ Intl
+S53.SI,SMRT
+S13.SI,SP Corp
+T39.SI,SPH
+SK6U.SI,SPHREIT
+S63.SI,ST Engineering
+S24.SI,STATS ChipPAC
+PU8D.SI,STO ADR 10US$
+M1GU.SI,Sabana Reit
+T8JU.SI,Saizen Reit
+5DO.SI,Sakae
+E6R.SI,Samko Timber
+S56.SI,SamuderaShipping
+S46.SI,San Teh
+580.SI,Santak
+NF1.SI,Sapphire
+U77.SI,Sarine Tech
+T20.SI,Scintronix^
+5HW.SI,Scorpio East
+528.SI,Second Chance
+566.SI,See Hup Seng
+5FQ.SI,Select
+U96.SI,Sembcorp Ind
+S51.SI,Sembcorp Marine
+S69.SI,Serial System
+IW5.SI,Seroja Inv
+X27.SI,Shanghai Turbo
+S07.SI,Shangri-La 2kHKD
+OV8.SI,Sheng Siong
+5CP.SI,Silverlake Axis
+S05.SI,Sim Lian
+B7K.SI,Sin Ghee Huat
+KF4.SI,Sin Heng Mach
+A26.SI,Sinarmas Land
+5UN.SI,Sincap
+S35.SI,Sing Inv & Fin
+5H0.SI,SingHaiyi
+5IC.SI,SingHoldings
+S45U.SI,SingIndexFund
+5OT.SI,SingMedical
+S08.SI,SingPost
+S49.SI,SingReinsurance
+S19.SI,SingShipping
+Z74.SI,SingTel
+Z77.SI,SingTel 10
+Z78.SI,SingTel 100
+Y45.SI,SingWindsor
+S30.SI,Singapore Land
+5QZ.SI,Singapore eDev
+5WG.SI,SingaporeKitchen
+5HH.SI,Sinjia Land
+T4B.SI,Sino Grandness
+AD8.SI,Sino Techfibre
+F3V.SI,SinoConstruction
+X06.SI,Sinopipe
+C9Q.SI,Sinostar Pec
+D3W.SI,Sinotel Tech
+5CN.SI,Sinwa
+5LE.SI,Sitra
+5MM.SI,Sky One
+5RE.SI,Smartflex
+S7P.SI,Soilbuild Const
+SV3U.SI,SoilbuildBizReit
+5MD.SI,Soon Lian
+5KI.SI,Soup Restaurant
+T77.SI,Southern Pkg
+40E.SI,Spackman
+564.SI,Spindex Ind
+S23.SI,Spura Finance
+NC2.SI,Sri Trang Agro
+5NH.SI,St James
+H07.SI,Stamford Land
+S29.SI,Stamford Tyres
+X64.SI,Star Pharm
+CC3.SI,StarHub
+40D.SI,Starburst
+P40U.SI,StarhillGbl Reit
+5UA.SI,Starland
+S85.SI,Straco
+S20.SI,Straits Trading
+S73.SI,StratechSystems^
+F06.SI,SunMoon Food
+AAJ.SI,SunMoonFood
+A7S.SI,SunVic Chemical
+5AI.SI,Sunlight
+C2J.SI,Sunmart
+T35.SI,Sunningdale Tech
+5GD.SI,Sunpower
+S71.SI,Sunright
+CZ3.SI,Suntar Eco-City
+T82U.SI,Suntec Reit
+S10.SI,Super Group
+S48.SI,SuperBowl
+Q7Q.SI,Surface Mount^
+QF6.SI,Swee Hong
+AK3.SI,Swiber
+O2F.SI,Swing Media Tech
+5FD.SI,Swissco
+ADP.SI,Swissco Hldg
+5UO.SI,Sysma
+PA3.SI,TA
+T15.SI,TCIL 3k HK$
+T55.SI,TIH
+586.SI,TMC Education
+T18.SI,TPV Tech
+574.SI,TSH
+T09.SI,TT Intl
+K1Q.SI,TTJ
+500.SI,Tai Sin Electric
+5G3.SI,TalkMed
+T03.SI,Tat Hong
+T12.SI,Tat Seng Pkg
+5CQ.SI,Tech Oil & Gas
+T43.SI,Techcomp
+561.SI,Teckwah
+M1Z.SI,Tee Intl
+S9B.SI,Tee Land
+5OQ.SI,Teho Intl
+T41.SI,TeleChoice Intl
+T28.SI,Teledata^
+40I.SI,Terratech
+AI1.SI,Texchem-Pack^
+Y92.SI,ThaiBev
+T04.SI,Thakral
+E5P.SI,The Hour Glass
+T14.SI,Tianjin ZX USD
+J7X.SI,Tigerair
+K2P.SI,Tiong Seng
+T06.SI,Tiong Woon
+519.SI,Top Global
+S2D.SI,Tosei 100
+T19.SI,Transcorp
+570.SI,Transit Concrete
+5KH.SI,Travelite
+5AB.SI,Trek 2000 Intl
+5G9.SI,Tritech
+RC5.SI,Triyards
+T24.SI,Tuan Sing
+540.SI,Tung Lok Rest
+T08.SI,Tye Soon
+NI3.SI,UE E&C
+U06.SI,UIC
+558.SI,UMS
+UB8.SI,UMS 50
+EH5.SI,UOA
+U11.SI,UOB
+U10.SI,UOB Kay Hian
+U13.SI,UOI
+U14.SI,UOL
+U2D.SI,UOL A
+U09.SI,UPP
+C3T.SI,Uni-Asia
+P30.SI,UniFiber System
+V69.SI,Union Steel
+A6F.SI,Unionmet
+U04.SI,United Engineers
+U19.SI,United Envtech
+U5S.SI,United Envtech 1
+U01.SI,United Food
+W81.SI,Universal Res
+PH0.SI,VGO
+V01.SI,VICOM
+545.SI,Vallianz
+T6I.SI,ValueMax
+BN2.SI,Valuetronics
+MS7.SI,Vard
+5BA.SI,Vashion
+V03.SI,Venture
+F01.SI,Vibrant Group
+535.SI,VibroPower
+569.SI,Vicplas Intl
+557.SI,Viking Offshore
+T8B.SI,Viva Ind Tr
+OJ4.SI,W Corp^
+N6GD.SI,WACLY ADR 10US$
+AFC.SI,WCorp^
+5RJ.SI,WE
+E3B.SI,Wee Hur
+ON7.SI,Weiye
+M35.SI,Wheelock Prop
+W12.SI,Willas-Array
+F34.SI,Wilmar Intl
+5F7.SI,Wilton Resources
+W05.SI,Wing Tai
+B49.SI,World Precision
+M9F.SI,XMH
+MN5.SI,Xinren Aluminium
+I04.SI,Xpress
+5WR.SI,Xyec
+Y08.SI,YHI Intl
+SO7.SI,YZJ Shipbldg RMB
+BS6.SI,YZJ Shipbldg SGD
+MC7.SI,Yamada Green Res
+R8P.SI,Yangi EURO S
+Z25.SI,Yanlord Land
+Y03.SI,Yeo Hiap Seng
+5DM.SI,Ying Li Intl
+Z59.SI,Yoma Strategic
+CX5.SI,Yong Xin Intl^
+E6A.SI,Yongmao
+Y02.SI,Yongnam
+Y06.SI,Youyue Intl^
+G10.SI,Yuexiu Prop 2k
+D5N.SI,Z-Obee
+Z01.SI,Zagro Asia
+5SR.SI,Zhongmin Baihui
+5EG.SI,Zhongxin Fruit
+I9T.SI,Ziwo
