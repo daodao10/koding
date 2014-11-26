@@ -5,7 +5,7 @@ var util = require('util'),
     fs = require('fs'),
     MyMongo = require('./MyMongoUtil'),
     myUtil = require('./MyUtil'),
-    config = require('../config.json');
+    config = require('./config.json');
 
 var span = [
         /<span id="sp_ggdp">([.\S\W]+?)<\/span>/g,
@@ -29,7 +29,7 @@ var span = [
     urlFormat = '/stockcomment/%s.html',
     myMongo = new MyMongo(util.format("%s%s", config.DbSettings.DbUri, 'quotes')),
     start = 1,
-    today = "20141121";
+    today = "20141126";
 
 function process(symbol) {
     if (symbol === "999999" || symbol === "399001")
@@ -44,11 +44,7 @@ function process(symbol) {
             o.s = symbol;
             o.d = today;
 
-            myMongo.insert("test", o, function(result) {
-                console.log('done');
-            });
-
-            // console.log(o);
+            myMongo.insert("test", o);
         }
     });
 }
@@ -126,7 +122,9 @@ function coreProcess(content, s) {
 
         if (logArr.length > 1) {
             console.dir(logArr);
-            return null;
+            if (logArr[1] !== 5) {
+                return null;
+            }
         };
 
         return result;
@@ -155,13 +153,26 @@ function save(s, data) {
     });
 }
 
-myMongo.getNextSequence("test", function(seq) {
-    start = seq;
+myMongo.find("test", {
+    q: {},
+    s: {
+        _id: -1
+    },
+    o: {
+        limit: 1
+    }
+}, function(docs) {
+    if (docs && docs.length === 1) {
+        start = docs[0]._id + 1;
+    }
+
+    console.log("start from", start);
+
     myUtil.readlines("../symbols.txt", function(row) {
         var symbol = row.split(',')[0];
+        // var symbol = '300246'
         if (symbol) {
 
-            // var symbol = '300246'
             process(symbol);
 
             // get symbol from file
@@ -181,15 +192,3 @@ myMongo.getNextSequence("test", function(seq) {
         }
     });
 });
-
-
-// db test
-// console.log(util.format("%s%s", config.DbSettings.DbUri, 'quotes'));
-// myMongo.find("test", {q: {_id: 22}}, function(docs){
-//     console.log(docs);
-// });
-
-// sequence test
-// myMongo.getNextSequence("test", function(seq){
-//     console.log(seq);
-// });

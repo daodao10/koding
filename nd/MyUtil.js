@@ -1,22 +1,8 @@
 var http = require('http'),
     fs = require('fs');
-// var request = require('request');
 
 var MyUtil = function() {};
 
-// 1)
-// MyUtil.prototype.get = function(url, callback) {
-//     request(url, function(error, response, body) {
-//         if (error) {
-//             console.log(error);
-//         } else if (response.statusCode == 200) {
-//             callback(body, response.statusCode);
-//         }
-//     });
-// };
-
-
-// 2)
 MyUtil.prototype.get = function(options, callback) {
     var req = http.get(options, function(res) {
         if (options.debug) {
@@ -94,5 +80,31 @@ MyUtil.prototype.stripLineBreaks = function(str) {
     }
     return str;
 };
+
+Date.prototype.format = function(style) {
+    /// style:
+    /// yyyy-MM-dd
+    /// yyyy-MM-dd hh:mm:ss
+    var options = {
+        "M+": this.getMonth() + 1, //月份 
+        "d+": this.getDate(), //日 
+        "h+": this.getHours(), //小时 
+        "m+": this.getMinutes(), //分 
+        "s+": this.getSeconds(), //秒 
+        "q+": Math.floor((this.getMonth() + 3) / 3), //季度 
+        "S": this.getMilliseconds() //毫秒 
+    };
+    if (/(y+)/.test(style)) {
+        style = style.replace(RegExp.$1, this.getFullYear().toString().substr(4 - RegExp.$1.length));
+    }
+    for (var key in options) {
+        if (new RegExp("(" + key + ")").test(style)) {
+            style = style.replace(RegExp.$1, (RegExp.$1.length == 1) ?
+                options[key] :
+                ("00" + options[key]).substr(options[key].toString().length));
+        }
+    }
+    return style;
+}
 
 module.exports = new MyUtil();
