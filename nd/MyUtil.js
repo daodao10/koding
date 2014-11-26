@@ -107,4 +107,13 @@ Date.prototype.format = function(style) {
     return style;
 }
 
+if (!String.format) {
+    String.prototype.format = function() {
+        var args = arguments;
+        return this.replace(/\{(\d+)\}/g, function(m, i) {
+            return args[i];
+        });
+    };
+}
+
 module.exports = new MyUtil();
