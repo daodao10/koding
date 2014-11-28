@@ -3,8 +3,7 @@
 import contextlib
 import traceback
 
-import urllib2
-import httplib
+import urllib2, urllib, httplib
 
 import gzip
 from StringIO import StringIO
@@ -70,6 +69,30 @@ def get(url, data = None, headers = None):
 
     except Exception:
         print('generic exception: ' + traceback.format_exc())
+
+def getCredentials(loginUrl, data, callback, debug = False):
+    data = urllib.urlencode(data)
+    headers = buildHeader({
+        "Content-Length": len(data),
+        "Content-Type": "application/x-www-form-urlencoded"
+    })
+    request = urllib2.Request(loginUrl, data, headers)
+    with contextlib.closing(urllib2.urlopen(request)) as response:
+        if debug:
+            print loginUrl
+            print data
+            print headers
+            print response.info()
+            # print response.read()
+        cookie = getServerCookie(response.info())
+        if cookie:
+            content = response.read()
+            if callback(content):
+                print "done"
+                return cookie
+
+    print "failed"
+    return None
 
 def buildHeader(headers):
     default_headers = {
@@ -147,6 +170,7 @@ def guid():
     return str(uuid.uuid4())
 
 # ini config file
+#
 # def getConfig(file = 'config.ini'):
 #     config = ConfigParser()
 #     config.read(file)

@@ -81,6 +81,27 @@ MyUtil.prototype.stripLineBreaks = function(str) {
     return str;
 };
 
+MyUtil.prototype.parseArgs = function(requiredArguments) {
+    var args = {};
+
+    for (var index = 0; index < process.argv.length; index++) {
+        var re = new RegExp('--([A-Za-z0-9_]+)=([A/-Za-z0-9_]+)'),
+            matches = re.exec(process.argv[index]);
+
+        if (matches !== null) {
+            arguments[matches[1]] = matches[2];
+        }
+    }
+
+    for (var index = 0; index < requiredArguments.length; index++) {
+        if (arguments[requiredArguments[index]] === undefined) {
+            throw (requiredArguments[index] + ' not defined. Please add the argument with --' + requiredArguments[index]);
+        }
+    }
+
+    return args;
+};
+
 Date.prototype.format = function(style) {
     /// style:
     /// yyyy-MM-dd

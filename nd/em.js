@@ -9,10 +9,8 @@ var util = require('util'),
 
 var span = [
         /<span id="sp_ggdp">([.\S\W]+?)<\/span>/g,
-        ///<span id="sp_jgcyd">([.\S\W]+?)<\/span>/g,
         /机构参与度为([0-9.]+)/g,
         /<span class="red">([\.0-9]+?)<\/span>|<span class="green">([\-\.0-9]+?)<\/span>/g,
-        ///<span id="sp_zlcb">([.\S\W]+?)<\/span>/g,
         /主力成本([0-9.]+)元/g
     ],
     options = {
@@ -29,9 +27,10 @@ var span = [
     urlFormat = '/stockcomment/%s.html',
     myMongo = new MyMongo(util.format("%s%s", config.DbSettings.DbUri, 'quotes')),
     start = 1,
-    today = "20141126";
+    today = process.argv.length > 2 ? process.argv[2] : new Date().format('yyyyMMdd');
 
-function process(symbol) {
+
+function counterProcess(symbol) {
     if (symbol === "999999" || symbol === "399001")
         return;
 
@@ -48,7 +47,6 @@ function process(symbol) {
         }
     });
 }
-
 
 function parse(reg, input) {
     var result = [],
@@ -121,8 +119,8 @@ function coreProcess(content, s) {
         }
 
         if (logArr.length > 1) {
-            console.dir(logArr);
-            if (logArr[1] !== 5) {
+            if (logArr[1] !== 5) {// don't log new stock
+                console.dir(logArr);
                 return null;
             }
         };
@@ -153,42 +151,64 @@ function save(s, data) {
     });
 }
 
-myMongo.find("test", {
-    q: {},
-    s: {
-        _id: -1
-    },
-    o: {
-        limit: 1
-    }
-}, function(docs) {
-    if (docs && docs.length === 1) {
-        start = docs[0]._id + 1;
-    }
+function driven(func) {
+    if (func) {
+        myMongo.find("test", {
+            q: {},
+            s: {
+                _id: -1
+            },
+            o: {
+                limit: 1
+            }
+        }, function(docs) {
+            var seq = 1;
+            if (docs && docs.length === 1) {
+                seq = docs[0]._id + 1;
+            }
 
+            func(seq);
+        });
+    }
+}
+
+function mainFunc(seq) {
+    start = seq;
     console.log("start from", start);
 
     myUtil.readlines("../symbols.txt", function(row) {
         var symbol = row.split(',')[0];
-        // var symbol = '300246'
         if (symbol) {
-
-            process(symbol);
-
-            // get symbol from file
-            // var content = fs.readFileSync(symbol + ".txt", "utf-8");
-            // var o = coreProcess(content, symbol);
-            // if (o) {
-            //     o.s = symbol;
-            //     o.d = today;
-
-            //     // myMongo.insert("test", o, function(result) {
-            //     //     console.log(result);
-            //     // });    
-
-            //     console.log(o);
-            // }
-
+            counterProcess(symbol);
         }
     });
-});
+}
+
+function patchFunc(seq) {
+    start = seq;
+    console.log("start from", start);
+
+    var index = 1;
+    myUtil.readlines("./{0}.txt".format(today), function(row) {
+        if (index++ == 1) {
+            return;
+        }
+        var symbol,
+            arr = eval(row);
+        if (arr instanceof Array) {
+            symbol = arr[0];
+            // console.log(symbol);
+            counterProcess(symbol);
+        }
+    });
+}
+
+
+var action = process.argv.length > 3 ? process.argv[3] : 1;
+if (action == 1) {
+    driven(mainFunc);
+} else if (action == 2) {
+    driven(patchFunc);
+} else {
+    console.log("USAGE: node em.js [yyyyMMdd] [action]");
+}
