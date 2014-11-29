@@ -128,12 +128,23 @@ Date.prototype.format = function(style) {
     return style;
 }
 
-if (!String.format) {
+// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/startsWith
+if (!String.prototype.format) {
     String.prototype.format = function() {
         var args = arguments;
         return this.replace(/\{(\d+)\}/g, function(m, i) {
             return args[i];
         });
+    };
+}
+if (!String.prototype.startWith) {
+    String.prototype.startsWith = function(prefix) {
+        return this.indexOf(prefix) === 0;
+    };
+}
+if (!String.prototype.endsWith) {
+    String.prototype.endsWith = function(suffix) {
+        return str.match(suffix + "$") == suffix;
     };
 }
 
