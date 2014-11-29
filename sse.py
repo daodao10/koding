@@ -23,7 +23,7 @@ class SSE:
             if exchange == 'SZ':
                 postfix = ".sz"
             while page_index < 10:
-                content = web_tools.fetch(Market_Data_URL.format(exchange,page_index, page_size))
+                content = web_tools.get(Market_Data_URL.format(exchange,page_index, page_size))
                 json_data = json.loads(content)
 
                 if json_data and len(json_data['list']) > 0:

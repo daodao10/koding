@@ -57,27 +57,20 @@ class SymbolUtil:
 
         return result
 
-   
-
-# test insert
-# symbol = {"_id": "000001.ss", "name": "szzs", "market": "SSE"}
-# collection = getCollection("quotes", "symbol")
-# id = collection.insert(symbol)
-# print id
-
-
-# get & insert symbols
-# symbols1 = SymbolUtil.getSSE() 
-symbols2 = SymbolUtil.getSGX()
-print symbols2
-
-# 1)
-# for symbol in symbols:
-#     collection.insert(symbol)
-
-# 2) insert batch
-# collection.insert(symbols)
-
 
 if __name__ == '__main__':
+
+    # get & insert symbols
+    #
+    # symbols1 = SymbolUtil.getSSE() 
+    symbols2 = SymbolUtil.getSGX()
+    print symbols2
+
+    # 1)
+    # for symbol in symbols:
+    #     collection.insert(symbol)
+
+    # 2) insert batch
+    # collection.insert(symbols)
+
     print 'done'

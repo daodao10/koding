@@ -14,7 +14,7 @@ class GuruFocus:
         self.__dbContext = MyMongo("quotes", dbUri)
 
     def fetch(self, url):
-        content =  web_tools.fetch(url)
+        content =  web_tools.get(url)
 
         if content:
             return content

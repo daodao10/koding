@@ -15,7 +15,7 @@ class SGX:
         
     def getSummary(self):
         url = "http://sgx.com/wps/portal/sgxweb/home/marketinfo/market_summary"
-        content = web_tools.fetch(url)
+        content = web_tools.get(url)
         if content:
             m = self.__regSummary.search(content)
             if m:
@@ -31,7 +31,7 @@ class SGX:
 
     def getDayTick(self):
         url = "http://www.sgx.com/JsonRead/JsonData?qryId=RStock&timeout=30&%20noCache=1409062326197.193901.9152537007"
-        content = web_tools.fetch(url)
+        content = web_tools.get(url)
 
         # json format
         content = re.sub(r"([A-Za-z_]+[0-9]*[A-Za-z_]*):", r'"\1":', re.sub("[']", '"', content[5:]))

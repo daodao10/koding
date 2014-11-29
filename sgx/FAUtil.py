@@ -9,16 +9,24 @@ def append_dir(fpath):
 
 append_dir('../..')
 from koding import web_tools
+from SymbolUtil import SymbolUtil
 import re
 
 
 class FAUtil():
-    regSection = re.compile(r'\$\("#chart_financial_ratios"\)\.data\("stack_data", (.*?)(?=</script>)', re.S)
-    urls ={
+    RegSection = re.compile(r'\$\("#chart_financial_ratios"\)\.data\("stack_data", (.*?)(?=</script>)', re.S)
+    Urls ={
         "login": "https://www.shareinvestor.com/user/do_login.html",
         "fa-year":"http://www.shareinvestor.com/fundamental/financials.html?counter=%s&period=fy&cols=10",
         "fa-quarter": "http://www.shareinvestor.com/fundamental/financials.html?counter=%s&period=quarter&cols=10"
     }
+    CookieFile = "shareinvestor.cookie"
+
+    def __init__(self):
+        self.__cookies = None
+
+    def __redirectHandler(self, headers):
+        self.__cookies = FAUtil.getCookie(headers["Set-Cookie"])
 
     def login(self, username, password, token):
         print "login..."
@@ -27,18 +35,34 @@ class FAUtil():
             "password": "",
             "password_m":password,
             "authenticity_token": token,
-            # "redirect": "/sg",
-            # "utf-8": "✓",
+            "redirect": "/sg",
+            "utf-8": "✓",
             # "x_forwarded_for":"",
             # "remote_addr":"27.54.50.34"
         }
 
-        return web_tools.getCredentials(FAUtil.urls["login"], postData, lambda c: True, True)
+        headers = web_tools.getCredentials(FAUtil.Urls["login"], postData, lambda c: True, self.__redirectHandler, False)
+        if headers:
+            headers["Cookie"] = "country=sg;{0};{1};cookiecheck=1;".format(self.__cookies, FAUtil.getCookie(headers["Cookie"]))
+            return headers
+        else:
+            return None
 
     @staticmethod
-    def fetch(counter, headers):
+    def getCookie(cookieStr):
+        dic = []
+        if cookieStr:
+            import Cookie
+            cookies = Cookie.SimpleCookie(cookieStr) 
+            for key in cookies:
+                if key == 'si_user_profile' or key == 'si_user_pref' or key == 'forum_sso_token' or key == '_shareinvestor.com_session':
+                    dic.append("{0}={1}".format(key, cookies[key].value))
+        return ";".join(dic)
+
+    @staticmethod
+    def fetch(urlFormat, counter, headers):
         
-        url = FAUtil.urls["fa-year"] % counter
+        url = urlFormat % counter
 
         if not headers:
             headers = {
@@ -49,7 +73,7 @@ class FAUtil():
                     forum_sso_token=RMXFYUDGWQP8HONA45ZL793J; cookiecheck=1;'
             }
 
-        return web_tools.fetch(url, headers)
+        return web_tools.get(url, headers = headers)
 
     @staticmethod
     def saveSource(symbol, content):
@@ -60,40 +84,54 @@ class FAUtil():
 
     @staticmethod
     def saveFa(symbol, content):
-        m = FAUtil.regSection.search(content)
+        m = FAUtil.RegSection.search(content)
         if m:
             content = m.group(0).rstrip()
-            web_tools.save("fa/%s.txt" % symbol, content)
+            web_tools.save("fa/%s.js" % symbol, content)
             return True
         return False
 
 
-# signle counter testing
-#
-faUtil = FAUtil()
-cookies = faUtil.login('et9868','aac9cba0c633d49519e687eee504ecdc','4TMnb1xzVa8fNtEgw3TKIG48R95iZDYcjpsnEV6O4IM=')
-print cookies
-# counter = "S68.SI"
-# content = FAUtil.fetch(counter, None)
-# # print len(content)
-# print FAUtil.saveFa(counter, content)
+if __name__ == "__main__":
+
+    # import os
+    # config = web_tools.getConfig(os.path.join(os.path.dirname(__file__), '../config.json'))
+    # if config:
+    #     config = config["shareInvestor"]
+    #     if config:
+    #         faUtil = FAUtil()
+    #         cookies = faUtil.login(config["user"], config["pwd"], config["token"])
+    #         if cookies:
+    #             web_tools.save(FAUtil.CookieFile, cookies["Cookie"])
+
+    #         # print config
+
+    cookies = {"Cookie":web_tools.read(FAUtil.CookieFile)}
+    # print cookies
+
+    # # signle counter testing
+    # #
+    # counter = "S10.SI"
+    # content = FAUtil.fetch(FAUtil.Urls["fa-year"], counter, cookies)
+    # print FAUtil.saveFa(counter, content)
+    # # print FAUtil.saveSource(counter, content)
 
 
+    # get SGX fa data from share investor
+    #
+    symbols = SymbolUtil.getSGX()
+    for symbol in symbols:    
+        counter = symbol["_id"]
+        # print counter
+        content = FAUtil.fetch(counter)
 
-# get SGX fa data from share investor
-#
-# symbols = getSymbols_SGX()
-# for symbol in symbols:    
-#     counter = symbol["_id"]
-#     content = fetch(counter)
+        saved = True #FAUtil.saveSource(counter, content)
 
-#     saved = saveSource(counter, content)
-
-#     if saved:
-#         saved = saveFa(counter, content) and saved
-#         if saved:
-#             print '%s done' % counter
-#         else:
-#             print '%s failed to extract to txt' % counter
-#     else:
-#         print '%s nothing' % counter
+        if saved:
+            saved = FAUtil.saveFa(counter, content) and saved
+            if saved:
+                print '%s done' % counter
+            else:
+                print '%s failed to extract to txt' % counter
+        else:
+            print 'failed to get %s' % counter

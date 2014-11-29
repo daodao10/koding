@@ -12,6 +12,22 @@ from datetime import datetime, timedelta
 import json
 # from ConfigParser import ConfigParser
 
+class SmartRedirectHandler(urllib2.HTTPRedirectHandler):
+    def __init__(self, callback = None):
+        self.callback = callback
+
+    def http_error_301(self, req, fp, code, msg, headers):
+        result = urllib2.HTTPRedirectHandler.http_error_301(self, req, fp, code, msg, headers)
+        result.status = code
+        return result
+
+    def http_error_302(self, req, fp, code, msg, headers):
+        result = urllib2.HTTPRedirectHandler.http_error_302(self, req, fp, code, msg, headers)
+        result.status = code
+        if self.callback:
+            self.callback(headers)
+        return result
+
 def post(url, data = None, headers = None):
     try:
         newHeaders = buildHeader(headers)
@@ -70,14 +86,12 @@ def get(url, data = None, headers = None):
     except Exception:
         print('generic exception: ' + traceback.format_exc())
 
-def getCredentials(loginUrl, data, callback, debug = False):
-    data = urllib.urlencode(data)
-    headers = buildHeader({
-        "Content-Length": len(data),
-        "Content-Type": "application/x-www-form-urlencoded"
-    })
-    request = urllib2.Request(loginUrl, data, headers)
-    with contextlib.closing(urllib2.urlopen(request)) as response:
+def getCredentials(loginUrl, data, checkHandler, redirectHandler = None, debug = False):
+    request = urllib2.Request(loginUrl, data = urllib.urlencode(data))
+    # httplib.HTTPConnection.debuglevel = 1
+    opener = urllib2.build_opener(SmartRedirectHandler(redirectHandler))
+
+    with contextlib.closing(opener.open(request)) as response:
         if debug:
             print loginUrl
             print data
@@ -87,7 +101,7 @@ def getCredentials(loginUrl, data, callback, debug = False):
         cookie = getServerCookie(response.info())
         if cookie:
             content = response.read()
-            if callback(content):
+            if checkHandler(content):
                 print "done"
                 return cookie
 
@@ -106,13 +120,6 @@ def buildHeader(headers):
             default_headers[k] = v
 
     return default_headers
-
-def fetch(url, headers = None):
-    """
-    like web-get, supports cookie & gzip
-    cookie: {'Cookie':'cookie-name:cookie-value;'}
-    """
-    return get(url, data = None, headers = headers)
 
 def getServerCookie(info):
     if info:
@@ -180,18 +187,18 @@ def guid():
 #     config = getConfig(file)
 #     return config.get('DbSettings', 'DbUri')
 
-def getConfig(file = 'config.json'):
+def getConfig(configFile = 'config.json'):
     config = None
     try:
-        content = open("config.json").read()
+        content = open(configFile).read()
         config = json.loads(content)
     except Exception as e:
         raise e
     
     return config
 
-def getDbUri(file = 'config.json'):
-    config = getConfig(file)
+def getDbUri(configFile = 'config.json'):
+    config = getConfig(configFile)
     if config:
         return config["DbSettings"]["DbUri"]
     return None

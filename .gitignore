@@ -2,8 +2,10 @@ config.ini
 config.json
 bak/
 data/
+sgx/fa/
 *.pyc
 *.sh
+*.cookie
 node_modules/
 nd/*.txt
 chart/*.csv
