@@ -14,7 +14,7 @@ import re
 
 
 class FAUtil():
-    RegSection = re.compile(r'\$\("#chart_financial_ratios"\)\.data\("stack_data", (.*?)(?=</script>)', re.S)
+    RegSection = re.compile(r'\$\("#(chart_financial_ratios|chart_profit_loss|chart_cash_flow)"\)\.data\("stack_data", (.*?)(?=</script>)', re.S)
     Urls ={
         "login": "https://www.shareinvestor.com/user/do_login.html",
         "fa-year":"http://www.shareinvestor.com/fundamental/financials.html?counter=%s&period=fy&cols=10",
@@ -84,11 +84,15 @@ class FAUtil():
 
     @staticmethod
     def saveFa(symbol, content):
-        m = FAUtil.RegSection.search(content)
-        if m:
-            content = m.group(0).rstrip()
-            web_tools.save("fa/%s.js" % symbol, content)
+        result = []
+
+        for m in FAUtil.RegSection.finditer(content):
+            result.append(m.group())
+
+        if len(result):
+            web_tools.save("fa/%s.js" % symbol, ''.join(result))
             return True
+
         return False
 
 
@@ -111,27 +115,30 @@ if __name__ == "__main__":
 
     # # signle counter testing
     # #
-    # counter = "S10.SI"
-    # content = FAUtil.fetch(FAUtil.Urls["fa-year"], counter, cookies)
-    # print FAUtil.saveFa(counter, content)
-    # # print FAUtil.saveSource(counter, content)
+    counter = "P8A.SI"
+    content = FAUtil.fetch(FAUtil.Urls["fa-year"], counter, cookies)
+    saved = FAUtil.saveFa(counter, content)
+    if not saved:
+        print FAUtil.saveSource(counter, content)
+    else:
+        print 'FA saved'
 
 
-    # get SGX fa data from share investor
-    #
-    symbols = SymbolUtil.getSGX()
-    for symbol in symbols:    
-        counter = symbol["_id"]
-        # print counter
-        content = FAUtil.fetch(counter)
+    # # get SGX fa data from share investor
+    # #
+    # symbols = SymbolUtil.getSGX()
+    # for symbol in symbols:    
+    #     counter = symbol["_id"]
+    #     # print counter
+    #     content = FAUtil.fetch(counter)
 
-        saved = True #FAUtil.saveSource(counter, content)
+    #     saved = True #FAUtil.saveSource(counter, content)
 
-        if saved:
-            saved = FAUtil.saveFa(counter, content) and saved
-            if saved:
-                print '%s done' % counter
-            else:
-                print '%s failed to extract to txt' % counter
-        else:
-            print 'failed to get %s' % counter
+    #     if saved:
+    #         saved = FAUtil.saveFa(counter, content) and saved
+    #         if saved:
+    #             print '%s done' % counter
+    #         else:
+    #             print '%s failed to extract to txt' % counter
+    #     else:
+    #         print 'failed to get %s' % counter
