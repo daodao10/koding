@@ -1,4 +1,6 @@
 // get data from shanghai exchange
+// 1) market info
+// 2) symbols
 
 var myUtil = require('../nd/MyUtil'),
     fs = require('fs');
