@@ -9,8 +9,9 @@ import gzip
 from StringIO import StringIO
 
 from datetime import datetime, timedelta
-import json
+import json, re
 # from ConfigParser import ConfigParser
+
 
 class SmartRedirectHandler(urllib2.HTTPRedirectHandler):
     def __init__(self, callback = None):
@@ -66,7 +67,7 @@ def get(url, data = None, headers = None):
 
         request = urllib2.Request(url, headers = newHeaders)
         with contextlib.closing(urllib2.urlopen(request)) as response:
-            # getServerCookie(response.info())
+            print response.read()
             if response.info().get('Content-Encoding') == 'gzip':
                 buffer = StringIO( response.read())
                 deflatedContent = gzip.GzipFile(fileobj=buffer)
@@ -85,6 +86,52 @@ def get(url, data = None, headers = None):
 
     except Exception:
         print('generic exception: ' + traceback.format_exc())
+
+
+def download(url, data = None, headers = None):
+    try:
+        newHeaders = buildHeader(headers)
+        if data:
+            url = "%s?%s" % (url, urllib.urlencode(data))
+
+        request = urllib2.Request(url, headers = newHeaders)
+        with contextlib.closing(urllib2.urlopen(request)) as response:
+            meta = response.info()
+            disposition = meta.getheaders("Content-Disposition")[0]
+            m = re.compile('attachment; filename="(.*)"').search(disposition)
+            if m:
+                fileName = m.group(1)
+                f = open(fileName, 'wb')
+                downloaded = 0
+                blockSize = 8192
+                while True:
+                    buffer = response.read(blockSize)
+                    if not buffer:
+                        break
+                    downloaded += len(buffer)
+                    f.write(buffer)
+
+                f.close()
+                if downloaded > 0:
+                    print "finished, size: %d" % downloaded
+                    return fileName
+            else:
+                print "don't have Disposition"
+
+    except urllib2.HTTPError as e:
+        print('HTTPError = ' + str(e.code))
+
+    except urllib2.URLError as e:
+        print('URLError = ' + str(e.reason))
+
+    except httplib.HTTPException as e:
+        print('HTTPException')
+
+    except Exception:
+        print('generic exception: ' + traceback.format_exc())
+    
+    return None
+
 
 def getCredentials(loginUrl, data, checkHandler, redirectHandler = None, debug = False):
     request = urllib2.Request(loginUrl, data = urllib.urlencode(data))
