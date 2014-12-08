@@ -12,5 +12,6 @@ chart/*.csv
 chart/*.log
 chart/*.js
 !chart/*etl*.js
-!learning/capture/*.js|*.sh
+!learning/capture/*.js
+!learning/capture/*.sh
 .DS_Store
