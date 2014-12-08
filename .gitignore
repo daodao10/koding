@@ -6,12 +6,12 @@ sgx/fa/
 *.pyc
 *.sh
 *.cookie
+*.png
 node_modules/
 nd/*.txt
 chart/*.csv
 chart/*.log
 chart/*.js
 !chart/*etl*.js
-!learning/capture/*.js
 !learning/capture/*.sh
 .DS_Store
