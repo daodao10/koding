@@ -1,0 +1,7 @@
+symbol,code[stooq : world : monthly, daily]
+^DJI,^DJI
+^NKX,^N225
+cl.f,CL
+gc.f,GC
+sgdcny,SGDCNY
+sgdusd,SGDUSD
