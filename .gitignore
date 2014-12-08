@@ -11,5 +11,5 @@ nd/*.txt
 chart/*.csv
 chart/*.log
 chart/*.js
-!chart/*_etl.js
+!chart/*etl*.js
 .DS_Store
