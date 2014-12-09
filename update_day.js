@@ -1,37 +1,39 @@
 print("-------------------------");
 
-var action = 3;
+var action = 1;
 var db = db.getSiblingDB("quotes");
 
 if (action === 1) {
     print("update tmc2gpd_day...");
     db.tmc2gdp_day.update({
-        "_id": ObjectId("546e006d16178c01cbbaeb72")
+        "_id": ObjectId("5485162c43b912205827e380")
     }, {
         $set: {
-            date: "20141119"
+            date: "20141205",
+            table: "<b>12/06/2014</b>Ratio = <b>128%</b>, <font class='callr'>Significantly Overvalued</font>",
+            desc: "As of today, the Total Market Index is at <b>$ 21775.2 billion</b>, which is about <b>128%</b> of the last reported GDP. The US stock market is positioned for an average annualized return of <b>0.6%</b>,estimated from the historical valuations of the stock market. This includes the returns from the dividends, currently yielding at 2%."
+        }
+    });
+    db.tmc2gdp_day.update({
+        "date": "20141209"
+    }, {
+        $set: {
+            date: "20141208"
         }
     });
     print("update tmc2gpd_his...");
     db.tmc2gdp_his.update({
-        "_id": ObjectId("546c024e43b91204bcd4bc28")
+        "_id": ObjectId("5485162c43b912205827e381")
     }, {
         $set: {
-            date: "20141118"
+            date: "20141205"
         }
     });
     db.tmc2gdp_his.update({
-        "_id": ObjectId("546e006d16178c01cbbaeb73")
+        "_id": ObjectId("5486740243b912207ce0911b")
     }, {
         $set: {
-            date: "20141119"
-        }
-    });
-    db.tmc2gdp_his.update({
-        "_id": ObjectId("546ea23443b91228bc5f22bb")
-    }, {
-        $set: {
-            date: "20141120"
+            date: "20141208"
         }
     });
 } else if (action === 2) {

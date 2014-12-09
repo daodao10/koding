@@ -67,7 +67,7 @@ def get(url, data = None, headers = None):
 
         request = urllib2.Request(url, headers = newHeaders)
         with contextlib.closing(urllib2.urlopen(request)) as response:
-            print response.read()
+            # print response.info()
             if response.info().get('Content-Encoding') == 'gzip':
                 buffer = StringIO( response.read())
                 deflatedContent = gzip.GzipFile(fileobj=buffer)
@@ -250,6 +250,10 @@ def getDbUri(configFile = 'config.json'):
         return config["DbSettings"]["DbUri"]
     return None
 
+def debug(content):
+    print "====== debug ======"
+    print content
+    print "======"
 
 if __name__ == "__main__":
     # print strDate(datetime.utcnow(), format = "%Y%m%d %H:%M:%S %f")

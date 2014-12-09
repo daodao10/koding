@@ -6,8 +6,9 @@ from mymongo import MyMongo
 
 
 class GuruFocus:
-    __regData = re.compile(r"(?<=\{animation:false,name:'TMC/GDP',data:).+?\]\]")
-    __regTable = re.compile(r'<table class="at">(.*)</table>', re.S)
+    __regData = re.compile(r"\{\s*animation:false,\s*name\s*:\s*'TMC\/GDP',\s*data\s*:(.+?\]\])")
+    # __regTable = re.compile(r'<table class="at">(.*)</table>', re.S)
+    __regTable = re.compile(r'Where are we today \((.*)\).* <td>(.*)</td>')
     __regDesc = re.compile(r'As of today, the Total Market Index is at .+?(?=<p>)', re.S)
 
     def __init__(self, dbUri = None):
@@ -24,7 +25,7 @@ class GuruFocus:
     def parseData(self, content):
         m = self.__regData.search(content)
         if m:
-            content = m.group()
+            content = m.group(1)
             arr = eval(content)
             return arr
 
@@ -34,11 +35,13 @@ class GuruFocus:
         
         m = self.__regDesc.search(content)
         if m:
-            desc = m.group().replace('\n', '')
-        
+            desc = m.group()
+            desc = re.compile(r"([\r\n\t])").sub("", desc)# remove \t\r\n.
+            desc = desc.rstrip()# remove right whitespaces
+
         m = self.__regTable.search(content)
         if m:
-            table = m.group().replace('\n', '')
+            table = m.group(1) + m.group(2).rstrip()
 
         if desc and table:
             return {"date": web_tools.today(utcDiff = -4), "desc": desc, "table": table, "market": "US"}
@@ -50,6 +53,7 @@ class GuruFocus:
             r.append({"date": web_tools.strDate(web_tools.getDateFromTimestamp(x[0])), "value": x[1], "market": "US"})
 
         if len(r) > 0:
+            # web_tools.debug(r[-1] if refresh else r)
             collection = self.__dbContext.collection("tmc2gdp_his")
             if refresh:
                 collection.insert(r[-1])
@@ -59,6 +63,7 @@ class GuruFocus:
     def saveTmc2GdpDaily(self, content):
         data = self.parseTmc2Gdp(content)
         if data:
+            # web_tools.debug(data)
             collection = self.__dbContext.collection("tmc2gdp_day")
             collection.insert(data)
 
@@ -66,8 +71,8 @@ class GuruFocus:
         # get market valuations
         url = "http://www.gurufocus.com/stock-market-valuations.php"
         content = self.fetch(url)
-        
         if content:
+            # web_tools.save('content.txt', content) 
             self.saveTmc2GdpDaily(content)
 
             # first time set refresh = False
