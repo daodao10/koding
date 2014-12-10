@@ -2,8 +2,9 @@
 // 1) market info
 // 2) symbols
 
-var myUtil = require('../nd/MyUtil'),
-    fs = require('fs');
+var fs = require('fs'),
+    myUtil = require('../nd/MyUtil'),
+    anounymous = require('../nd/ProtoUtil');
 
 // 1)
 // var url ="http://query.sse.com.cn/marketdata/tradedata/queryMonthlyTrade.do?jsonCallBack=jsonpCallback72267082&prodType=9&inYear=2014&_=1414322768255";

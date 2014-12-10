@@ -2,7 +2,7 @@
 // please download csv file from yahoo historical price
 
 var myUtil = require('../nd/MyUtil'),
-    util = require('util');
+    anounymous = require('../nd/ProtoUtil');
 
 var rows = [],
     filename = '^spx_d.csv',
@@ -22,8 +22,8 @@ function func(data) {
         var arr = data.split(',');
         // var date = Date.parse(arr[0]);
         var date = arr[0];
-        period = isMonthly ? util.format("%s%s", date.substring(0, 4), date.substring(5, 7)) :
-            date.replace(/-/g,'');
+        period = isMonthly ? "{0}{1}".format(date.substring(0, 4), date.substring(5, 7)) :
+            date.replace(/-/g, '');
         rows.push(JSON.stringify({
             "m": period,
             "o": arr[1],

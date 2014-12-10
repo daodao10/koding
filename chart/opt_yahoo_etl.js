@@ -1,11 +1,11 @@
 var fs = require("fs"),
-    util = require('util'),
     myUtil = require('../nd/MyUtil'),
+    anounymous = require('../nd/ProtoUtil'),
     etlUtil = require('./EtlUtil');
 
 var settings = {
     DestFolder: "../../daodao10.github.io/chart/",
-    ItemFormat: "[new Date(%s, %s - 1, %s), %d, '%d']",
+    ItemFormat: "[new Date({0},{1},{2}),{3},{4}]",
     HasHeader: true,
     HasLastBlank: true,
 
@@ -114,6 +114,6 @@ function mapFunc(line) {
     if (isNaN(value)) return null; // || value < -0
     var xCell = part[settings[settings.source].xCell];
     return settings[settings.source].IsCompactDate ?
-        util.format(settings.ItemFormat, xCell.substring(0, 4), xCell.substring(4, 6), xCell.substring(6, 8), value, yCell) :
-        util.format(settings.ItemFormat, xCell.substring(0, 4), xCell.substring(5, 7), xCell.substring(8, 10), value, yCell);
+        settings.ItemFormat.format(xCell.substring(0, 4), parseInt(xCell.substring(4, 6), 10) - 1, xCell.substring(6, 8), value, yCell) :
+        settings.ItemFormat.format(xCell.substring(0, 4), parseInt(xCell.substring(5, 7), 10) - 1, xCell.substring(8, 10), value, yCell);
 }
