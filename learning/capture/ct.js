@@ -1,6 +1,6 @@
 var page = require('webpage').create(),
     system = require('system'),
-    anonymous = require('./util'),
+    anounymous = require('../../nd/ProtoUtil'),
     symbol,
     address,
     output;
@@ -15,7 +15,7 @@ symbol = system.args[1];
 if (symbol.length !== 6) {
     console.log('wrong symbol [%s]', symbol);
 };
-address = "http://data.eastmoney.com/stockcomment/" + symbol + ".html"
+address = "http://data.eastmoney.com/stockcomment/{0}.html".format(symbol);
 if (system.args.length === 3) {
     output = "{0}/{1}.png".format(system.args[2], symbol);
 } else {

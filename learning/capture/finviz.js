@@ -1,6 +1,6 @@
 var page = require('webpage').create(),
     system = require('system'),
-    anonymous = require('./util'),
+    anounymous = require('../../nd/ProtoUtil'),
     address,
     output;
 
