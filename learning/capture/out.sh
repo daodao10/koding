@@ -13,4 +13,4 @@ do
 done
 
 echo 'capture from finviz.com'
-phantomjs finviz.js $f $today
+phantomjs finviz.js $today
