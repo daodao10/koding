@@ -12,7 +12,7 @@ while read line;do
     ((i++))
 done < $FILE
 
-if [ 4 -lt "$i" ]
+if [ 3 -lt "$i" ]
 then
     echo "Failed: $i-1, have to do second patch"
     mv $today-patch.txt $today.txt

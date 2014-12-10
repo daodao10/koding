@@ -25,7 +25,7 @@ var span = [
         // , debug: true
     },
     urlFormat = '/stockcomment/{0}.html',
-    myMongo = new MyMongo("{0}{1}".format(config.DbSettings.DbUri, 'quotes')),
+    myMongo = new MyMongo("{0}{1}".format(config.DbSettings.DbUri, 'em')),
     start = 1,
     today = process.argv.length > 2 ? process.argv[2] : new Date().format('yyyyMMdd');
 
