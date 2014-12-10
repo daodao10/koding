@@ -1,10 +1,10 @@
 // get recommendation from eastmoney.com
 
-var util = require('util'),
-    iconv = require('iconv-lite'),
+var iconv = require('iconv-lite'),
     fs = require('fs'),
     MyMongo = require('./MyMongoUtil'),
     myUtil = require('./MyUtil'),
+    anounymous = require('./ProtoUtil'),
     config = require('./config.json');
 
 var span = [
@@ -24,8 +24,8 @@ var span = [
         }
         // , debug: true
     },
-    urlFormat = '/stockcomment/%s.html',
-    myMongo = new MyMongo(util.format("%s%s", config.DbSettings.DbUri, 'quotes')),
+    urlFormat = '/stockcomment/{0}.html',
+    myMongo = new MyMongo("{0}{1}".format(config.DbSettings.DbUri, 'quotes')),
     start = 1,
     today = process.argv.length > 2 ? process.argv[2] : new Date().format('yyyyMMdd');
 
@@ -34,7 +34,7 @@ function counterProcess(symbol) {
     if (symbol === "999999" || symbol === "399001")
         return;
 
-    options.path = util.format(urlFormat, symbol);
+    options.path = urlFormat.format(symbol);
     myUtil.get(options, function(data) {
         var content = iconv.decode(data, "GBK");
         var o = coreProcess(content, symbol);
@@ -80,7 +80,7 @@ function coreProcess(content, s) {
 
     var reg = /<table class="tab1" cellpadding="0" cellspacing="0">([.\S\W]*?)<\/table>/gm;
     if (reg.test(content)) {
-        content = myUtil.stripLineBreaks(content.match(reg)[0]);
+        content = content.match(reg)[0].stripLineBreaks();
 
         var result = {};
         var tmp = parse(span[0], content);
@@ -119,7 +119,7 @@ function coreProcess(content, s) {
         }
 
         if (logArr.length > 1) {
-            if (logArr[1] !== 5) {// don't log new stock
+            if (logArr[1] !== 5) { // don't log new stock
                 console.dir(logArr);
                 return null;
             }
@@ -176,7 +176,7 @@ function mainFunc(seq) {
     start = seq;
     console.log("start from", start);
 
-    myUtil.readlines("../symbols.txt", function(row) {
+    myUtil.readlines("./symbols.txt", function(row) {
         var symbol = row.split(',')[0];
         if (symbol) {
             counterProcess(symbol);
