@@ -9,6 +9,7 @@ sgx/fa/
 *.png
 node_modules/
 nd/*.txt
+!nd/*.sh
 chart/*.csv
 chart/*.log
 chart/*.js
