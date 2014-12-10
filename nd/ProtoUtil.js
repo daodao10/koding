@@ -27,11 +27,11 @@ module.exports = (function() {
 
 
     if (!String.prototype.stripLineBreaks) {
-        String.prototype.stripLineBreaks = function(str) {
-            if (str) {
-                return str.replace(/(\r\n|\n|\r)/gm, '');
+        String.prototype.stripLineBreaks = function() {
+            if (this) {
+                return this.replace(/(\r\n|\n|\r)/gm, '');
             }
-            return str;
+            return this;
         };
     }
     // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/startsWith
