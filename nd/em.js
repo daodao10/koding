@@ -85,7 +85,7 @@ function coreProcess(content, s) {
         var result = {};
         var tmp = parse(span[0], content);
         if (tmp.length === 1) {
-            result["cmm"] = tmp[0];
+            result["cmm"] = tmp[0].trim();
         } else {
             logArr.push(0);
         }
