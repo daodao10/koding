@@ -92,15 +92,15 @@ function coreProcess(content, s) {
 
         tmp = parse(span[1], content);
         if (tmp.length === 1) {
-            result["mm"] = parseFloat(tmp[0]);
+            result["mm"] = Number(tmp[0]);
         } else {
             logArr.push(1);
         }
 
         tmp = parse2(span[2], content);
         if (tmp.length === 2) {
-            result["mi1"] = parseFloat(tmp[0]);
-            result["mi2"] = parseFloat(tmp[1]);
+            result["mi1"] = Number(tmp[0]);
+            result["mi2"] = Number(tmp[1]);
         } else {
             logArr.push(2);
             logArr.push(3);
@@ -108,10 +108,10 @@ function coreProcess(content, s) {
 
         tmp = parse2(span[3], content);
         if (tmp.length === 2) {
-            result["c1"] = parseFloat(tmp[0]);
-            result["c20"] = parseFloat(tmp[1]);
+            result["c1"] = Number(tmp[0]);
+            result["c20"] = Number(tmp[1]);
         } else if (tmp.length === 1) {
-            result["c1"] = parseFloat(tmp[0]);
+            result["c1"] = Number(tmp[0]);
             logArr.push(5);
         } else {
             logArr.push(4);
@@ -176,7 +176,7 @@ function mainFunc(seq) {
     start = seq;
     console.log("start from", start);
 
-    myUtil.readlines("./symbols.txt", function(row) {
+    myUtil.readlines("../symbols.txt", function(row) {
         var symbol = row.split(',')[0];
         if (symbol) {
             counterProcess(symbol);
