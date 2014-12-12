@@ -8,13 +8,12 @@ main(action, {
 
 function main(action, options) {
     /*
-	options:{
-		m: $match
-		s: $sort,
-		gid: $group._id,
+    options: {
+        m: $match
+        s: $sort,
+        gid: $group._id,
 
-	}
-	*/
+    }*/
 
     if (options && options.gid) {
         var x = db.test.aggregate([{
@@ -39,22 +38,28 @@ function main(action, options) {
                     $gt: 1
                 }
             }
+        }, {
+            $sort: options.s || {
+                _id: 1
+            }
         }]);
 
-        if (x && x.result) {
-            if (x.result.length === 0) {
-                print("don't any have duplicated record!");
-                return;
-            }
-            print("found " + x.result.length + "record(s)");
-            x.result.forEach(function(doc) {
+        // print help
+        // x.help();
+        // x.shellPrint();
+
+        if (x) {
+            // print("found " + x.itcount() + " record(s)");
+            x.forEach(function(doc) {
                 if (action === 2) {
                     rm(doc.ids);
                 } else {
                     display(doc);
                 }
             });
-        };
+        } else {
+            print("don't any have duplicated record!");
+        }
     } else {
         print("please set the options");
     }
