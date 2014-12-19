@@ -6,11 +6,19 @@ if [ ! -d "$today" ]; then
     mkdir $today
 fi
 
-echo 'capture from eastmoney.com'
-for f in $(cat ./note.txt)
-do
-    phantomjs ct.js $f $today
-done
-
-echo 'capture from finviz.com'
-phantomjs finviz.js $today
+read -p "enter market(cn|us): " market
+case $market in
+us)
+	echo 'capture from finviz.com'
+	phantomjs finviz.js $today
+	;;
+cn)
+	echo 'capture from eastmoney.com'
+	for f in $(cat ./note.txt)
+	do
+	    phantomjs ct.js $f $today
+	done
+	;;
+*)
+	echo "don't support yet";;
+esac
