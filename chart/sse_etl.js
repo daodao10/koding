@@ -5,7 +5,7 @@
 var fs = require('fs'),
     myUtil = require('../nd/MyUtil'),
     anounymous = require('../nd/ProtoUtil'),
-    his = require('./sse_his');
+    his = require('./sse_etl_his');
 
 
 // 1)
@@ -61,7 +61,14 @@ function getMarketInfo() {
 
         if (processed == till - start) {
             his.push(rows.pop());
+
+            // store history
+            fs.writeFileSync('sse_etl_his.js', "module.exports = " + JSON.stringify(his) + ";", {
+                'encoding': 'utf-8'
+            });
+            // extract data
             extract2File();
+
             // console.log(rows);
         }
     };
@@ -75,36 +82,36 @@ function getMarketInfo() {
 
     var extract2File = function() {
 
-        var x = [],
-            y = [],
+        var xAxis = [],
+            yAxis = [],
             item;
 
-        y[0] = [];
-        y[1] = [];
-        y[2] = [];
-        y[3] = [];
-        y[4] = [];
+        yAxis[0] = [];
+        yAxis[1] = [];
+        yAxis[2] = [];
+        yAxis[3] = [];
+        yAxis[4] = [];
 
         for (var i = 0; i < his.length; i++) {
             item = his[i];
-            x.push(item.month);
-            y[0].push(item.t_volume);
-            y[1].push(item.t_trans);
-            y[2].push(item.t_amount);
-            y[3].push(item.PE);
-            y[4].push(item.m_value_current);
+            xAxis.push(item.month);
+            yAxis[0].push(item.t_volume);
+            yAxis[1].push(item.t_trans);
+            yAxis[2].push(item.t_amount);
+            yAxis[3].push(item.PE);
+            yAxis[4].push(item.m_value_current);
         }
 
         var d = {
-            "x": x,
-            "y0": y[0],
-            "y1": y[1],
-            "y2": y[2],
-            "y3": y[3],
-            "y4": y[4]
+            "x": xAxis,
+            "y0": yAxis[0],
+            "y1": yAxis[1],
+            "y2": yAxis[2],
+            "y3": yAxis[3],
+            "y4": yAxis[4]
         }
 
-        fs.writeFileSync('sse1.js', JSON.stringify(d), {
+        fs.writeFileSync('../../daodao10.github.io/chart/sse.js', "var d=" + JSON.stringify(d) + ";", {
             'encoding': 'utf-8'
         });
     };
