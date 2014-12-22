@@ -8,7 +8,7 @@ if __name__ == "__main__":
 from koding import web_tools
 
 
-class ShareInvestor():
+class ShareInvestor:
     __CookieFile = "shareinvestor.cookie"
     Urls ={
         "login": "https://www.shareinvestor.com/user/do_login.html",
@@ -43,20 +43,6 @@ class ShareInvestor():
         else:
             return None
 
-    def refreshCookie(self):
-        import os
-        config = web_tools.getConfig(os.path.join(os.path.dirname(__file__), '../config.json'))
-        if config:
-            config = config["ShareInvestor"]
-            if config:
-                headers = self.__login(config["user"], config["pwd"], config["token"])
-                if headers and headers.has_key("Cookie"):
-                    web_tools.save(ShareInvestor.__CookieFile, headers["Cookie"])
-
-    @staticmethod
-    def getPersistentCookie():
-        return {"Cookie":web_tools.read(ShareInvestor.__CookieFile)}
-
     @staticmethod
     def __getCookie(cookieStr):
         dic = []
@@ -69,8 +55,29 @@ class ShareInvestor():
         return ";".join(dic)
 
 
+    def refreshCookie(self):
+        import os
+        config = web_tools.getConfig(os.path.join(os.path.dirname(__file__), '../config.json'))
+        if config:
+            config = config["ShareInvestor"]
+            if config:
+                headers = self.__login(config["user"], config["pwd"], config["token"])
+                if headers and headers.has_key("Cookie"):
+                    web_tools.save(ShareInvestor.__CookieFile, headers["Cookie"])
+                    return ShareInvestor.getPersistentCookie()
+
+    @staticmethod
+    def getPersistentCookie():
+        return {"Cookie":web_tools.read(ShareInvestor.__CookieFile)}
+
+
 if __name__ == "__main__":
+    
+    # 1)
     # si = ShareInvestor()
     # cookies = si.refreshCookie()
+
+    # 2)
     cookies = ShareInvestor.getPersistentCookie()
+
     print cookies

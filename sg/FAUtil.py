@@ -11,7 +11,7 @@ from ShareInvestor import ShareInvestor
 import re
 
 
-class FAUtil():
+class FAUtil:
     RegSection = re.compile(r'\$\("#(chart_financial_ratios|chart_profit_loss|chart_cash_flow)"\)\.data\("stack_data", (.*?)(?=</script>)', re.S)
     
     @staticmethod
