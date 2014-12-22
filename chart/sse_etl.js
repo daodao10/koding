@@ -4,7 +4,9 @@
 
 var fs = require('fs'),
     myUtil = require('../nd/MyUtil'),
-    anounymous = require('../nd/ProtoUtil');
+    anounymous = require('../nd/ProtoUtil'),
+    his = require('./sse_his');
+
 
 // 1)
 // var url ="http://query.sse.com.cn/marketdata/tradedata/queryMonthlyTrade.do?jsonCallBack=jsonpCallback72267082&prodType=9&inYear=2014&_=1414322768255";
@@ -58,15 +60,54 @@ function getMarketInfo() {
         processed++;
 
         if (processed == till - start) {
-            console.log(rows);
+            his.push(rows.pop());
+            extract2File();
+            // console.log(rows);
         }
     };
 
     for (y = start; y < till; y++) {
-        console.log(urlFormat.format(y));
+        // console.log(urlFormat.format(y));
         options.path = urlFormat.format(y);
         myUtil.get(options, processYearlyMV);
     }
+
+
+    var extract2File = function() {
+
+        var x = [],
+            y = [],
+            item;
+
+        y[0] = [];
+        y[1] = [];
+        y[2] = [];
+        y[3] = [];
+        y[4] = [];
+
+        for (var i = 0; i < his.length; i++) {
+            item = his[i];
+            x.push(item.month);
+            y[0].push(item.t_volume);
+            y[1].push(item.t_trans);
+            y[2].push(item.t_amount);
+            y[3].push(item.PE);
+            y[4].push(item.m_value_current);
+        }
+
+        var d = {
+            "x": x,
+            "y0": y[0],
+            "y1": y[1],
+            "y2": y[2],
+            "y3": y[3],
+            "y4": y[4]
+        }
+
+        fs.writeFileSync('sse1.js', JSON.stringify(d), {
+            'encoding': 'utf-8'
+        });
+    };
 }
 
 function getAllSymbols() {
@@ -125,6 +166,6 @@ function getAllSymbols() {
 }
 
 
-getAllSymbols();
+// getAllSymbols();
 
-// getMarketInfo();
+getMarketInfo();
