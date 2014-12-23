@@ -62,10 +62,11 @@ function getMarketInfo() {
         if (processed == till - start) {
             his.push(rows.pop());
 
-            // store history
+            // store historical data
             fs.writeFileSync('sse_etl_his.js', "module.exports = " + JSON.stringify(his) + ";", {
                 'encoding': 'utf-8'
             });
+
             // extract data
             extract2File();
 
@@ -81,37 +82,44 @@ function getMarketInfo() {
 
 
     var extract2File = function() {
+        var vm = require('vm'),
+            content = fs.readFileSync('../../daodao10.github.io/chart/cn/SH000001.js');
+        vm.runInThisContext(content);
+
+        if (data.length !== his.length) {
+            console.log('something wrong with index data & historical data');
+            return;
+        }
 
         var xAxis = [],
             yAxis = [],
             item;
 
-        yAxis[0] = [];
-        yAxis[1] = [];
-        yAxis[2] = [];
-        yAxis[3] = [];
-        yAxis[4] = [];
-
+        // initialize
+        for (var i = 0; i < 6; i++) {
+            yAxis[i] = [];
+        }
+        // fill
         for (var i = 0; i < his.length; i++) {
             item = his[i];
             xAxis.push(item.month);
-            yAxis[0].push(item.t_volume);
-            yAxis[1].push(item.t_trans);
-            yAxis[2].push(item.t_amount);
-            yAxis[3].push(item.PE);
-            yAxis[4].push(item.m_value_current);
+            yAxis[0].push(Number(data[i][2]));
+            yAxis[1].push(item.t_volume);
+            yAxis[2].push(item.t_trans);
+            yAxis[3].push(item.t_amount);
+            yAxis[4].push(item.PE);
+            yAxis[5].push(item.m_value_current);
         }
 
-        var d = {
+        fs.writeFileSync('../../daodao10.github.io/chart/sse.js', "var d=" + JSON.stringify({
             "x": xAxis,
             "y0": yAxis[0],
             "y1": yAxis[1],
             "y2": yAxis[2],
             "y3": yAxis[3],
-            "y4": yAxis[4]
-        }
-
-        fs.writeFileSync('../../daodao10.github.io/chart/sse.js', "var d=" + JSON.stringify(d) + ";", {
+            "y4": yAxis[4],
+            "y5": yAxis[5]
+        }) + ";", {
             'encoding': 'utf-8'
         });
     };
