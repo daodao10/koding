@@ -14,14 +14,7 @@ var span = [
         /主力成本([0-9.]+)元/g
     ],
     options = {
-        host: 'data.eastmoney.com',
-        port: 80,
-        method: 'GET',
-        headers: {
-            'Accept-Language': 'zh-CN,zh;q=0.8,en-US;q=0.6,en;q=0.4,zh-TW;q=0.2',
-            'Content-Type': 'application/json',
-            'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_9_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/38.0.2125.104 Safari/537.36',
-        }
+        host: 'data.eastmoney.com'
         // , debug: true
     },
     urlFormat = '/stockcomment/{0}.html',
