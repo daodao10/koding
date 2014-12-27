@@ -96,22 +96,20 @@ function dailyRun() {
     };
 
 
-    if (process.argv.length == 2) {
+    if (process.argv.length == 3) {
         var dt = process.argv[2];
 
         myUtil.get({
             'host': 'unicorn.us.com',
             'path': '/advdec/2014/adU{0}.txt'.format(dt)
         }, function(data) {
-
             var rows = parseDailyData(data.toString(), dt);
 
             for (var i in rows) {
                 (function(row) {
                     myMongo.find("nhnl", {
                         q: {
-                            m: row.m,
-                            d: row.d
+                            m: row.m
                         },
                         s: {
                             _id: -1

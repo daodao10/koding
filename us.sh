@@ -11,3 +11,12 @@ echo 'get US ADV/DEC & NH-NL data'
 node nhnl_us_etl.js $today
 
 echo 'done'
+
+cd ../learning/capture
+
+if [ ! -d "$today" ]; then
+    mkdir $today
+fi
+
+echo 'capture from finviz.com'
+phantomjs finviz.js $today
