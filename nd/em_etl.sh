@@ -1,6 +1,9 @@
 #!/usr/bin 
 today=`date +%Y%m%d`
 #today='20141208'
+
+echo "get data from eastmoney.com ..."
+
 node em.js $today 1 > $today.txt
 node em.js $today 2 > $today-patch.txt
 
