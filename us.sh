@@ -1,6 +1,6 @@
 #!/usr/bin
 
-today=`date -d '-13 hour' +%Y%m%d`
+today=`date -v-13H +%Y%m%d`
 
 echo 'get data from gurufocus.com ...'
 python gurufocus.py
