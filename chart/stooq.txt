@@ -1,1 +1,2 @@
-symbol,code[stooq : us : weekly, daily]
+symbol,code[stooq : cn : daily]
+^shc,999999
