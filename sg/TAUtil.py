@@ -8,28 +8,23 @@ from koding import web_tools
 from SymbolUtil import SymbolUtil
 from ShareInvestor import ShareInvestor
 
+import zipfile
+
+
 class TAUtil:
-    @staticmethod
-    def download(counter, cookies):
+    def __init__(self, srcDir, destDir, cookies):
+        self.SourceDir = srcDir
+        self.OutputDir = destDir
+        self.Cookies = cookies
+
+    #@staticmethod
+    def download(self, counter):
         url = ShareInvestor.Urls["price-download"] % counter
-        filename = counter.replace('.SI','') + ".csv"
-        return web_tools.download(url, headers=cookies)
+        return web_tools.download(url, headers = self.Cookies, fileName = self.SourceDir + counter)
 
-
-if __name__ == "__main__":
-
-    # cookies = ShareInvestor().refreshCookie()
-    cookies = ShareInvestor.getPersistentCookie()
-    # print cookies
-
-    # signle counter testing
-    #
-    counter = "Q1P.SI"
-    zipFileName = TAUtil.download(counter, cookies)
-    
-    if zipFileName:
-        import zipfile
-        fileHandle = open(zipFileName, 'rb')
+    #@staticmethod
+    def extract(self, counter):
+        fileHandle = open(self.SourceDir + counter, 'rb')
 
         zf = zipfile.ZipFile(fileHandle)
         for name in zf.namelist():
@@ -38,7 +33,30 @@ if __name__ == "__main__":
             except KeyError:
                 print 'ERROR: did not find %s in zip file' % name
             else:
-                print name, ':'
-                print data
+                web_tools.save(self.OutputDir + counter + ".csv", data)
+                print counter, ' done'
 
-        fileHandle.close() 
+        fileHandle.close()
+
+    def process(self, counter):
+        if self.download(counter):
+            self.extract(counter)
+
+if __name__ == "__main__":
+
+    # cookies = ShareInvestor().refreshCookie()
+    cookies = ShareInvestor.getPersistentCookie()
+    # print cookies
+
+    taUtil = TAUtil('./src/', './dest/', cookies)
+
+    # # signle counter testing
+    # #
+    # counter = "Q1P.SI"
+    # taUtil.process(counter)
+    
+    # batch process
+    symbols = SymbolUtil.getSGX()
+    for symbol in symbols:
+        counter = symbol["_id"]
+        taUtil.process(counter)
