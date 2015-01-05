@@ -88,7 +88,7 @@ def get(url, data = None, headers = None):
         print('generic exception: ' + traceback.format_exc())
 
 
-def download(url, data = None, headers = None):
+def download(url, data = None, headers = None, fileName = None):
     try:
         newHeaders = buildHeader(headers)
         if data:
@@ -96,29 +96,33 @@ def download(url, data = None, headers = None):
 
         request = urllib2.Request(url, headers = newHeaders)
         with contextlib.closing(urllib2.urlopen(request)) as response:
-            meta = response.info()
-            dispositions = meta.getheaders("Content-Disposition")
-            if len(dispositions) == 1:
-                m = re.compile('attachment; filename="(.*)"').search(dispositions[0])
-            
-                if m:
-                    fileName = m.group(1)
-                    f = open(fileName, 'wb')
-                    downloaded = 0
-                    blockSize = 8192
-                    while True:
-                        buffer = response.read(blockSize)
-                        if not buffer:
-                            break
-                        downloaded += len(buffer)
-                        f.write(buffer)
 
-                    f.close()
-                    if downloaded > 0:
-                        print "finished, size: %d" % downloaded
-                        return fileName
-                else:
-                    print "don't have valid Disposition" 
+            if not fileName:
+                meta = response.info()
+                dispositions = meta.getheaders("Content-Disposition")
+                if len(dispositions) == 1:
+                    m = re.compile('attachment; filename="(.*)"').search(dispositions[0])
+                
+                    if m:
+                        fileName = m.group(1)
+                    else:
+                        print "don't have valid Disposition"
+
+            if fileName:
+                f = open(fileName, 'wb')
+                downloaded = 0
+                blockSize = 8192
+                while True:
+                    buffer = response.read(blockSize)
+                    if not buffer:
+                        break
+                    downloaded += len(buffer)
+                    f.write(buffer)
+
+                f.close()
+                if downloaded > 0:
+                    print "downloaded size: %d" % downloaded
+                    return fileName
             else:
                 print "don't have Disposition"
 
