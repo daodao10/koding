@@ -12,10 +12,10 @@ class SymbolUtil:
         result = []
         market = None
         try:
-            f=codecs.open('symbols.txt',mode='r')
-            lines=f.readlines()
+            f = codecs.open('symbols.txt', 'r', 'utf-8')
+            lines = f.readlines()
             for l in lines:
-                splits = str.split(l,',')
+                splits = l.split(',')
                 code = splits[0]
                 name = splits[1].rstrip('\r\n')
 
@@ -86,4 +86,9 @@ class SymbolUtil:
 
 
 if __name__ == '__main__':
+    symbols = SymbolUtil.getSSE()
+    with codecs.open('cn.txt', 'wb', 'utf-8') as f:
+        for symbol in symbols:
+            f.write("%s,%s,%s,--\n" % (symbol["_id"], symbol["_id"], symbol["name"]))
+
     print 'done'

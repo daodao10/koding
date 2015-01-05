@@ -5,7 +5,7 @@ import package
 package.append_dir('../..')
 
 from koding import web_tools
-from SymbolUtil import SymbolUtil
+from koding.symbol import SymbolUtil
 from ShareInvestor import ShareInvestor
 
 import zipfile
