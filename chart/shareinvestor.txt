@@ -1,4 +1,4 @@
-symbol,code[shareinvestor : sg : daily]
+symbol,code,name,sector[shareinvestor : sg : daily]
 502.SI,502,3Cnergy,--
 5TG.SI,5TG,800 Super,--
 E25.SI,E25,8Telecom,--
