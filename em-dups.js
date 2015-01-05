@@ -2,13 +2,16 @@
 //
 
 main(1, {
-    dn: "test",
+    dn: "day",
+    m: {
+        date: "20141216"
+    },
     s: {
         date: 1
     },
     gid: {
-        d: "$d",
-        s: "$s"
+        date: "$date",
+        code: "$code"
     }
 });
 
@@ -44,12 +47,12 @@ function main(action, options) {
 
     // db.text.ensureIndex({"d": 1, "s": 1}, {unique: true, dropDups: true})
     var rm = function(ids) {
-        for (var i in ids) {
-            if (i === "0") {
-                continue;
-            }
+        ids.shift();
+        if (ids.length > 0) {
             db[options.dn].remove({
-                _id: ids[i]
+                _id: {
+                    '$in': ids
+                }
             });
         }
     };
