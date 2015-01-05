@@ -1,790 +1,790 @@
-symbol,code[shareinvestor : sg : weekly, daily]
-502.SI,502
-5TG.SI,5TG
-E25.SI,E25
-A53.SI,A53
-5GZ.SI,5GZ
-TF7.SI,TF7
-533.SI,533
-A18.SI,A18
-A10.SI,A10
-A54.SI,A54
-A0P.SI,A0P
-O5RU.SI,O5RU
-5AU.SI,5AU
-5RA.SI,5RA
-D1R.SI,D1R
-A04.SI,A04
-575.SI,575
-O2I.SI,O2I
-A05.SI,A05
-L5I.SI,L5I
-ADQU.SI,ADQU
-A75.SI,A75
-A02.SI,A02
-A01.SI,A01
-A59.SI,A59
-A31.SI,A31
-5FH.SI,5FH
-5IA.SI,5IA
-5TY.SI,5TY
-5EF.SI,5EF
-5IB.SI,5IB
-S91.SI,S91
-40F.SI,40F
-A13.SI,A13
-A34.SI,A34
-C60.SI,C60
-M1P.SI,M1P
-MF5.SI,MF5
-A52.SI,A52
-5AL.SI,5AL
-G5X.SI,G5X
-5EK.SI,5EK
-5NK.SI,5NK
-A17U.SI,A17U
-Q1P.SI,Q1P
-CY6U.SI,CY6U
-A68U.SI,A68U
-A55.SI,A55
-GH3.SI,GH3
-505.SI,505
-5WV.SI,5WV
-585.SI,585
-S7OU.SI,S7OU
-5ET.SI,5ET
-5CR.SI,5CR
-5AM.SI,5AM
-A30.SI,A30
-5UL.SI,5UL
-A23.SI,A23
-5GJ.SI,5GJ
-X04.SI,X04
-CT1.SI,CT1
-A69.SI,A69
-560.SI,560
-B08.SI,B08
-KJ5.SI,KJ5
-B32.SI,B32
-B03.SI,B03
-568.SI,568
-B26.SI,B26
-B58.SI,B58
-5MC.SI,5MC
-B66.SI,B66
-5ER.SI,5ER
-B20.SI,B20
-UQ7.SI,UQ7
-A33.SI,A33
-B10.SI,B10
-B28.SI,B28
-F9D.SI,F9D
-5DA.SI,5DA
-B69.SI,B69
-5OY.SI,5OY
-B61.SI,B61
-P8Z.SI,P8Z
-MQ4.SI,MQ4
-D79.SI,D79
-5RF.SI,5RF
-J85.SI,J85
-D38.SI,D38
-Y35.SI,Y35
-C11.SI,C11
-5EB.SI,5EB
-C13.SI,C13
-C22.SI,C22
-C03.SI,C03
-5GC.SI,5GC
-5TP.SI,5TP
-539.SI,539
-C06.SI,C06
-544.SI,544
-C14.SI,C14
-K2LU.SI,K2LU
-D2U.SI,D2U
-J91U.SI,J91U
-C61U.SI,C61U
-C31.SI,C31
-C38U.SI,C38U
-AU8U.SI,AU8U
-U18.SI,U18
-C04.SI,C04
-530.SI,530
-C56.SI,C56
-OU8.SI,OU8
-573.SI,573
-JA9.SI,JA9
-D2V.SI,D2V
-5QT.SI,5QT
-5TW.SI,5TW
-5NV.SI,5NV
-C05.SI,C05
-C50.SI,C50
-5SY.SI,5SY
-T42.SI,T42
-G92.SI,G92
-AD7.SI,AD7
-T16.SI,T16
-5OU.SI,5OU
-RS1.SI,RS1
-G54.SI,G54
-F6D.SI,F6D
-B0Z.SI,B0Z
-C59.SI,C59
-I4U.SI,I4U
-D50.SI,D50
-C92.SI,C92
-C0Z.SI,C0Z
-BR9.SI,BR9
-C37.SI,C37
-J18.SI,J18
-G86.SI,G86
-Y34.SI,Y34
-K2N.SI,K2N
-D4N.SI,D4N
-DT2.SI,DT2
-C71.SI,C71
-E90.SI,E90
-FQ8.SI,FQ8
-C86.SI,C86
-CH8.SI,CH8
-F2X.SI,F2X
-5KK.SI,5KK
-B2X.SI,B2X
-P74.SI,P74
-GU5.SI,GU5
-O2R.SI,O2R
-5CJ.SI,5CJ
-C29.SI,C29
-ACW.SI,ACW
-C10.SI,C10
-C33.SI,C33
-C09.SI,C09
-A7RU.SI,A7RU
-5HJ.SI,5HJ
-P9D.SI,P9D
-KJ9.SI,KJ9
-567.SI,567
-N0Z.SI,N0Z
-C52.SI,C52
-5HT.SI,5HT
-T4E.SI,T4E
-P8A.SI,P8A
-C41.SI,C41
-F83.SI,F83
-B9S.SI,B9S
-E91.SI,E91
-RE2.SI,RE2
-541.SI,541
-C76.SI,C76
-S6NU.SI,S6NU
-D05.SI,D05
-5CH.SI,5CH
-D01.SI,D01
-FP1.SI,FP1
-5CB.SI,5CB
-D04.SI,D04
-5UZ.SI,5UZ
-K2M.SI,K2M
-D03.SI,D03
-B1N.SI,B1N
-D11.SI,D11
-G77.SI,G77
-MT1.SI,MT1
-GJ8.SI,GJ8
-CZ4.SI,CZ4
-5SO.SI,5SO
-NO4.SI,NO4
-D6U.SI,D6U
-5OF.SI,5OF
-E18.SI,E18
-UQ4.SI,UQ4
-5DE.SI,5DE
-5RC.SI,5RC
-N0L.SI,N0L
-5KU.SI,5KU
-5CT.SI,5CT
-5HG.SI,5HG
-E16.SI,E16
-5VU.SI,5VU
-E13.SI,E13
-S44.SI,S44
-5FR.SI,5FR
-L23.SI,L23
-5MQ.SI,5MQ
-532.SI,532
-FO8.SI,FO8
-E02.SI,E02
-5VT.SI,5VT
-E27.SI,E27
-5G1.SI,5G1
-E23.SI,E23
-E17.SI,E17
-5ME.SI,5ME
-5DN.SI,5DN
-F99.SI,F99
-F10.SI,F10
-D8DU.SI,D8DU
-I54.SI,I54
-5FL.SI,5FL
-5TJ.SI,5TJ
-Q5T.SI,Q5T
-O10.SI,O10
-F20.SI,F20
-F12.SI,F12
-5F4.SI,5F4
-AW9U.SI,AW9U
-EB5.SI,EB5
-ADN.SI,ADN
-F22.SI,F22
-F03.SI,F03
-B0I.SI,B0I
-LG2U.SI,LG2U
-F25U.SI,F25U
-F31.SI,F31
-ND8U.SI,ND8U
-TQ5.SI,TQ5
-J69U.SI,J69U
-ACV.SI,ACV
-E28.SI,E28
-F13.SI,F13
-508.SI,508
-5KT.SI,5KT
-F18.SI,F18
-F11.SI,F11
-DC9.SI,DC9
-QS9.SI,QS9
-G41.SI,G41
-5VP.SI,5VP
-595.SI,595
-5IM.SI,5IM
-G08.SI,G08
-P9J.SI,P9J
-G20.SI,G20
-G18.SI,G18
-J16.SI,J16
-5IG.SI,5IG
-RF7.SI,RF7
-S21.SI,S21
-G13.SI,G13
-RE4.SI,RE4
-542.SI,542
-B73.SI,B73
-MC0.SI,MC0
-K6J.SI,K6J
-G11.SI,G11
-G31.SI,G31
-CH9.SI,CH9
-Y07.SI,Y07
-E5H.SI,E5H
-KU3.SI,KU3
-5PC.SI,5PC
-G50.SI,G50
-G07.SI,G07
-I5H.SI,I5H
-Y06.SI,Y06
-F17.SI,F17
-B16.SI,B16
-526.SI,526
-L18.SI,L18
-H27.SI,H27
-588.SI,588
-P7VU.SI,P7VU
-NS8U.SI,NS8U
-H15.SI,H15
-H64.SI,H64
-5VS.SI,5VS
-GG7.SI,GG7
-5VJ.SI,5VJ
-U9E.SI,U9E
-DM0.SI,DM0
-H02.SI,H02
-5NG.SI,5NG
-5OR.SI,5OR
-5DP.SI,5DP
-I85.SI,I85
-5PD.SI,5PD
-H17.SI,H17
-5JK.SI,5JK
-510.SI,510
-5PO.SI,5PO
-H13.SI,H13
-J2T.SI,J2T
-H20.SI,H20
-H30.SI,H30
-H22.SI,H22
-S41.SI,S41
-H78.SI,H78
-H06.SI,H06
-5EV.SI,5EV
-H18.SI,H18
-H12.SI,H12
-NT1.SI,NT1
-KI3.SI,KI3
-H16.SI,H16
-41B.SI,41B
-H73.SI,H73
-H19.SI,H19
-600.SI,600
-5I4.SI,5I4
-5TN.SI,5TN
-I49.SI,I49
-5WA.SI,5WA
-Q0F.SI,Q0F
-571.SI,571
-I12.SI,I12
-I11.SI,I11
-40A.SI,40A
-UD1U.SI,UD1U
-I07.SI,I07
-40T.SI,40T
-5WF.SI,5WF
-5EC.SI,5EC
-581.SI,581
-I4R.SI,I4R
-F3EU.SI,F3EU
-5JS.SI,5JS
-5G4.SI,5G4
-I03.SI,I03
-I26.SI,I26
-M14.SI,M14
-591.SI,591
-5GI.SI,5GI
-I06.SI,I06
-I15.SI,I15
-Q0W.SI,Q0W
-UQ3.SI,UQ3
-5FA.SI,5FA
-EG0.SI,EG0
-5TS.SI,5TS
-J36.SI,J36
-J37.SI,J37
-J11.SI,J11
-J17.SI,J17
-J03.SI,J03
-5OI.SI,5OI
-UD2.SI,UD2
-C07.SI,C07
-5PF.SI,5PF
-5I3.SI,5I3
-FQ7.SI,FQ7
-J10.SI,J10
-C8R.SI,C8R
-E9L.SI,E9L
-5OS.SI,5OS
-5TF.SI,5TF
-K01.SI,K01
-504.SI,504
-5I1.SI,5I1
-578.SI,578
-ER0.SI,ER0
-EB7.SI,EB7
-K29.SI,K29
-F9M.SI,F9M
-5TT.SI,5TT
-BN4.SI,BN4
-LH4U.SI,LH4U
-K17.SI,K17
-K71U.SI,K71U
-K11.SI,K11
-K03.SI,K03
-K22.SI,K22
-5G2.SI,5G2
-554.SI,554
-K14.SI,K14
-5MZ.SI,5MZ
-5TI.SI,5TI
-5BK.SI,5BK
-K75.SI,K75
-5HV.SI,5HV
-5DL.SI,5DL
-5VC.SI,5VC
-5OC.SI,5OC
-SK3.SI,SK3
-L15.SI,L15
-L22.SI,L22
-L38.SI,L38
-C4P.SI,C4P
-L10.SI,L10
-L17.SI,L17
-L05.SI,L05
-Q7W.SI,Q7W
-5EL.SI,5EL
-LS9.SI,LS9
-L25.SI,L25
-593.SI,593
-587.SI,587
-Q0X.SI,Q0X
-E9A.SI,E9A
-L03.SI,L03
-5TR.SI,5TR
-L20.SI,L20
-5FW.SI,5FW
-TI6.SI,TI6
-L08.SI,L08
-A78.SI,A78
-D5IU.SI,D5IU
-E94.SI,E94
-5VI.SI,5VI
-L28.SI,L28
-O6Z.SI,O6Z
-5IE.SI,5IE
-M22.SI,M22
-F1E.SI,F1E
-594.SI,594
-L19.SI,L19
-L09.SI,L09
-L34.SI,L34
-L46.SI,L46
-N14.SI,N14
-B2F.SI,B2F
-A27.SI,A27
-M11.SI,M11
-5BM.SI,5BM
-41C.SI,41C
-40U.SI,40U
-NC9.SI,NC9
-M05.SI,M05
-F86.SI,F86
-M41.SI,M41
-576.SI,576
-TY3.SI,TY3
-M04.SI,M04
-L02.SI,L02
-5QR.SI,5QR
-N2IU.SI,N2IU
-RW0U.SI,RW0U
-ME8U.SI,ME8U
-M44U.SI,M44U
-5LY.SI,5LY
-M12.SI,M12
-5OX.SI,5OX
-M15.SI,M15
-5UF.SI,5UF
-546.SI,546
-5DS.SI,5DS
-M30.SI,M30
-5MS.SI,5MS
-M26.SI,M26
-5NF.SI,5NF
-EE6.SI,EE6
-DU4.SI,DU4
-5DX.SI,5DX
-QG1.SI,QG1
-M01.SI,M01
-MV4.SI,MV4
-5DD.SI,5DD
-5EN.SI,5EN
-C68.SI,C68
-M03.SI,M03
-5WJ.SI,5WJ
-5WE.SI,5WE
-M06.SI,M06
-MF6.SI,MF6
-M20.SI,M20
-5AC.SI,5AC
-N03.SI,N03
-N02.SI,N02
-N4E.SI,N4E
-G0I.SI,G0I
-5IF.SI,5IF
-5UJ.SI,5UJ
-N01.SI,N01
-5QY.SI,5QY
-N08.SI,N08
-5FX.SI,5FX
-B07.SI,B07
-5GF.SI,5GF
-N32.SI,N32
-547.SI,547
-N21.SI,N21
-543.SI,543
-N33.SI,N33
-MR7.SI,MR7
-MR8.SI,MR8
-5HC.SI,5HC
-O39.SI,O39
-584.SI,584
-O02.SI,O02
-S3N.SI,S3N
-5CF.SI,5CF
-ADJ.SI,ADJ
-O23.SI,O23
-LJ3.SI,LJ3
-TS0U.SI,TS0U
-SK7.SI,SK7
-O05.SI,O05
-579.SI,579
-O32.SI,O32
-5ML.SI,5ML
-5FI.SI,5FI
-O08.SI,O08
-G4F.SI,G4F
-AJ2.SI,AJ2
-RQ1.SI,RQ1
-5UX.SI,5UX
-5UV.SI,5UV
-P19.SI,P19
-IX2.SI,IX2
-P07.SI,P07
-5BS.SI,5BS
-U6C.SI,U6C
-5WD.SI,5WD
-L6T.SI,L6T
-P11.SI,P11
-P15.SI,P15
-P47.SI,P47
-T8V.SI,T8V
-5EW.SI,5EW
-P36.SI,P36
-TO9.SI,TO9
-P52.SI,P52
-O9E.SI,O9E
-C2PU.SI,C2PU
-596.SI,596
-P13.SI,P13
-N9LU.SI,N9LU
-40S.SI,40S
-P34.SI,P34
-P31.SI,P31
-P82.SI,P82
-5PI.SI,5PI
-P01.SI,P01
-5BI.SI,5BI
-5AE.SI,5AE
-P29.SI,P29
-P12.SI,P12
-583.SI,583
-K6S.SI,K6S
-UD3.SI,UD3
-QC7.SI,QC7
-Q01.SI,Q01
-5I0.SI,5I0
-552.SI,552
-KT9.SI,KT9
-T13.SI,T13
-NR7.SI,NR7
-R01.SI,R01
-R14.SI,R14
-UV1.SI,UV1
-UV2.SI,UV2
-RF1U.SI,RF1U
-5DW.SI,5DW
-5MM.SI,5MM
-5WH.SI,5WH
-B1ZU.SI,B1ZU
-AP4.SI,AP4
-R07.SI,R07
-A50.SI,A50
-E8Z.SI,E8Z
-J8O.SI,J8O
-M09.SI,M09
-S58.SI,S58
-5PL.SI,5PL
-S61.SI,S61
-S68.SI,S68
-5UE.SI,5UE
-566.SI,566
-C6L.SI,C6L
-C6U.SI,C6U
-S59.SI,S59
-5GB.SI,5GB
-40B.SI,40B
-S53.SI,S53
-S13.SI,S13
-T39.SI,T39
-SK6U.SI,SK6U
-S63.SI,S63
-S24.SI,S24
-M1GU.SI,M1GU
-T8JU.SI,T8JU
-5DO.SI,5DO
-E6R.SI,E6R
-S56.SI,S56
-S46.SI,S46
-580.SI,580
-NF1.SI,NF1
-U77.SI,U77
-T20.SI,T20
-528.SI,528
-5FQ.SI,5FQ
-U96.SI,U96
-S51.SI,S51
-S69.SI,S69
-IW5.SI,IW5
-40R.SI,40R
-X27.SI,X27
-S07.SI,S07
-OV8.SI,OV8
-5CP.SI,5CP
-S05.SI,S05
-B7K.SI,B7K
-KF4.SI,KF4
-A26.SI,A26
-5UN.SI,5UN
-S35.SI,S35
-5H0.SI,5H0
-5IC.SI,5IC
-S45U.SI,S45U
-5OT.SI,5OT
-S08.SI,S08
-S49.SI,S49
-S19.SI,S19
-Z74.SI,Z74
-Z77.SI,Z77
-Z78.SI,Z78
-Y45.SI,Y45
-40V.SI,40V
-5WG.SI,5WG
-5HH.SI,5HH
-T4B.SI,T4B
-AD8.SI,AD8
-F3V.SI,F3V
-X06.SI,X06
-C9Q.SI,C9Q
-D3W.SI,D3W
-5CN.SI,5CN
-5LE.SI,5LE
-5RE.SI,5RE
-S7P.SI,S7P
-SV3U.SI,SV3U
-5MD.SI,5MD
-5KI.SI,5KI
-T77.SI,T77
-40E.SI,40E
-564.SI,564
-S23.SI,S23
-NC2.SI,NC2
-H07.SI,H07
-S29.SI,S29
-X64.SI,X64
-CC3.SI,CC3
-40D.SI,40D
-P40U.SI,P40U
-5UA.SI,5UA
-S85.SI,S85
-S20.SI,S20
-S73.SI,S73
-AAJ.SI,AAJ
-A7S.SI,A7S
-5AI.SI,5AI
-C2J.SI,C2J
-T35.SI,T35
-5GD.SI,5GD
-S71.SI,S71
-CZ3.SI,CZ3
-T82U.SI,T82U
-S10.SI,S10
-QF6.SI,QF6
-AK3.SI,AK3
-O2F.SI,O2F
-ADP.SI,ADP
-5UO.SI,5UO
-PA3.SI,PA3
-T15.SI,T15
-M1Z.SI,M1Z
-S9B.SI,S9B
-T55.SI,T55
-586.SI,586
-T18.SI,T18
-574.SI,574
-T09.SI,T09
-K1Q.SI,K1Q
-500.SI,500
-5G3.SI,5G3
-T03.SI,T03
-T12.SI,T12
-5CQ.SI,5CQ
-T43.SI,T43
-561.SI,561
-5OQ.SI,5OQ
-T41.SI,T41
-T28.SI,T28
-40I.SI,40I
-AI1.SI,AI1
-Y92.SI,Y92
-T04.SI,T04
-E5P.SI,E5P
-AGS.SI,AGS
-T14.SI,T14
-J7X.SI,J7X
-K2P.SI,K2P
-T06.SI,T06
-519.SI,519
-S2D.SI,S2D
-T19.SI,T19
-570.SI,570
-5KH.SI,5KH
-5AB.SI,5AB
-5G9.SI,5G9
-RC5.SI,RC5
-T24.SI,T24
-540.SI,540
-T08.SI,T08
-NI3.SI,NI3
-41A.SI,41A
-U06.SI,U06
-558.SI,558
-EH5.SI,EH5
-U11.SI,U11
-U10.SI,U10
-U13.SI,U13
-U14.SI,U14
-U09.SI,U09
-C3T.SI,C3T
-P30.SI,P30
-V69.SI,V69
-A6F.SI,A6F
-U04.SI,U04
-U19.SI,U19
-U01.SI,U01
-W81.SI,W81
-PH0.SI,PH0
-V01.SI,V01
-545.SI,545
-T6I.SI,T6I
-BN2.SI,BN2
-MS7.SI,MS7
-5BA.SI,5BA
-V03.SI,V03
-40N.SI,40N
-F01.SI,F01
-535.SI,535
-569.SI,569
-557.SI,557
-T8B.SI,T8B
-5RJ.SI,5RJ
-E3B.SI,E3B
-ON7.SI,ON7
-M35.SI,M35
-W12.SI,W12
-F34.SI,F34
-5F7.SI,5F7
-W05.SI,W05
-B49.SI,B49
-M9F.SI,M9F
-MN5.SI,MN5
-I04.SI,I04
-5WR.SI,5WR
-Y08.SI,Y08
-SO7.SI,SO7
-BS6.SI,BS6
-MC7.SI,MC7
-R8P.SI,R8P
-Z25.SI,Z25
-Y03.SI,Y03
-5DM.SI,5DM
-Z59.SI,Z59
-CX5.SI,CX5
-E6A.SI,E6A
-Y02.SI,Y02
-G10.SI,G10
-UR9.SI,UR9
-AFC.SI,AFC
-D5N.SI,D5N
-40W.SI,40W
-Z01.SI,Z01
-5SR.SI,5SR
-5EG.SI,5EG
-I9T.SI,I9T
+symbol,code[shareinvestor : sg : daily]
+502.SI,502,3Cnergy,--
+5TG.SI,5TG,800 Super,--
+E25.SI,E25,8Telecom,--
+A53.SI,A53,A-Sonic Aero,--
+5GZ.SI,5GZ,AA,--
+TF7.SI,TF7,AAT,--
+533.SI,533,ABR,--
+A18.SI,A18,AEI,--
+A10.SI,A10,AEM,--
+A54.SI,A54,AIM,--
+A0P.SI,A0P,AIMS Property,--
+O5RU.SI,O5RU,AIMSAMP Cap Reit,--
+5AU.SI,5AU,AP Oil,--
+5RA.SI,5RA,APAC Strategic,--
+D1R.SI,D1R,ARA Asset Mgt,--
+A04.SI,A04,ASL Marine,--
+575.SI,575,ASTI,--
+O2I.SI,O2I,AVIC,--
+A05.SI,A05,AVJennings A$,--
+L5I.SI,L5I,Abterra,--
+ADQU.SI,ADQU,Accordia Golf Tr,--
+A75.SI,A75,Ace Achieve Info,--
+A02.SI,A02,Achieva,--
+A01.SI,A01,Acma,--
+A59.SI,A59,Action Asia,--
+A31.SI,A31,Addvalue Tech,--
+5FH.SI,5FH,Advance SCT,--
+5IA.SI,5IA,Advanced,--
+5TY.SI,5TY,Advanced Systems,--
+5EF.SI,5EF,Adventus,--
+5IB.SI,5IB,Albedo,--
+S91.SI,S91,AliPictures HKD,--
+40F.SI,40F,Alliance Mineral,--
+A13.SI,A13,Allied Tech^,--
+A34.SI,A34,Amara,--
+C60.SI,C60,Amplefield^,--
+M1P.SI,M1P,Amtek Engg,--
+MF5.SI,MF5,Anchun Intl,--
+A52.SI,A52,AnnAik,--
+5AL.SI,5AL,Annica,--
+G5X.SI,G5X,Anwell Tech,--
+5EK.SI,5EK,Armarda,--
+5NK.SI,5NK,Artivision Tech,--
+A17U.SI,A17U,Ascendas Reit,--
+Q1P.SI,Q1P,Ascendas-hTrust,--
+CY6U.SI,CY6U,Ascendas-iTrust,--
+A68U.SI,A68U,Ascott Reit,--
+A55.SI,A55,Asia Enterprises,--
+GH3.SI,GH3,Asia Fashion,--
+505.SI,505,AsiaMedic,--
+5WV.SI,5WV,AsiaPhos,--
+585.SI,585,Asian Micro,--
+S7OU.SI,S7OU,Asian Pay Tv Tr,--
+5ET.SI,5ET,Asiasons Capital,--
+5CR.SI,5CR,Asiatic,--
+5AM.SI,5AM,Asiatravel.com,--
+A30.SI,A30,Aspial,--
+5UL.SI,5UL,Atlantic Nav,--
+A23.SI,A23,Auric Pacific,--
+5GJ.SI,5GJ,AusGroup,--
+X04.SI,X04,AusNet Services,--
+CT1.SI,CT1,Avi-Tech^,--
+A69.SI,A69,Azeus,--
+560.SI,560,Aztech,--
+B08.SI,B08,B&amp;M Trustees,--
+KJ5.SI,KJ5,BBR,--
+B32.SI,B32,BH Global,--
+B03.SI,B03,BRC Asia,--
+568.SI,568,Baker Technology,--
+B26.SI,B26,Ban Leong,--
+B58.SI,B58,Banyan Tree,--
+5MC.SI,5MC,Beng Kuang,--
+B66.SI,B66,Berlian LajuTank,--
+5ER.SI,5ER,Best World,--
+B20.SI,B20,Biosensors,--
+UQ7.SI,UQ7,BlueSkyPower,--
+A33.SI,A33,Blumont,--
+B10.SI,B10,Boardroom,--
+B28.SI,B28,Bonvests,--
+F9D.SI,F9D,Boustead,--
+5DA.SI,5DA,BreadTalk,--
+B69.SI,B69,Broadway Ind,--
+5OY.SI,5OY,Brooke Asia,--
+B61.SI,B61,Bukit Sembawang,--
+P8Z.SI,P8Z,Bumitama Agri,--
+MQ4.SI,MQ4,Bund Center,--
+D79.SI,D79,C&amp;G Env Protect,--
+5RF.SI,5RF,CCFH,--
+J85.SI,J85,CDL HTrust,--
+D38.SI,D38,CDW,--
+Y35.SI,Y35,CEFC Intl,--
+C11.SI,C11,CEI Contract Mfg,--
+5EB.SI,5EB,CFM,--
+C13.SI,C13,CH Offshore,--
+C22.SI,C22,CMPacific,--
+C03.SI,C03,CMProp HKD,--
+5GC.SI,5GC,CNA,--
+5TP.SI,5TP,CNMC Goldmine,--
+539.SI,539,CPH,--
+C06.SI,C06,CSC,--
+544.SI,544,CSE Global,--
+C14.SI,C14,CWT,--
+K2LU.SI,K2LU,Cache Log Trust,--
+D2U.SI,D2U,Cacola^,--
+J91U.SI,J91U,Cambridge Ind Tr,--
+C61U.SI,C61U,CapitaCom Trust,--
+C31.SI,C31,CapitaLand,--
+C38U.SI,C38U,CapitaMall Trust,--
+AU8U.SI,AU8U,CapitaR China Tr,--
+U18.SI,U18,Captii,--
+C04.SI,C04,Casa,--
+530.SI,530,Cedar Strategic,--
+C56.SI,C56,Celestial Nutri,--
+OU8.SI,OU8,Centurion,--
+573.SI,573,Challenger,--
+JA9.SI,JA9,Changjiang Fert,--
+D2V.SI,D2V,ChangtianPlastic,--
+5QT.SI,5QT,Charisma Energy,--
+5TW.SI,5TW,ChasWood Res,--
+5NV.SI,5NV,Chasen,--
+C05.SI,C05,Chemical Ind,--
+C50.SI,C50,Cheung Woh,--
+5SY.SI,5SY,Chew&#x27;s,--
+T42.SI,T42,China Auto Elec,--
+G92.SI,G92,China Aviation,--
+AD7.SI,AD7,China Bearing,--
+T16.SI,T16,China Dairy,--
+5OU.SI,5OU,China Env,--
+RS1.SI,RS1,China Env Res,--
+G54.SI,G54,China Essence^,--
+F6D.SI,F6D,China Fibretech,--
+B0Z.SI,B0Z,China Fishery,--
+C59.SI,C59,China Flexpack,--
+I4U.SI,I4U,China Gaoxian,--
+D50.SI,D50,China Great Land,--
+C92.SI,C92,China Haida,--
+C0Z.SI,C0Z,China Hongcheng^,--
+BR9.SI,BR9,China Hongxing,--
+C37.SI,C37,China Intl,--
+J18.SI,J18,China Jishan,--
+G86.SI,G86,China Milk,--
+Y34.SI,Y34,China Mining,--
+K2N.SI,K2N,China Minzhong,--
+D4N.SI,D4N,China New Town,--
+DT2.SI,DT2,China Oilfield^,--
+C71.SI,C71,China Paper,--
+E90.SI,E90,China Sky Chem,--
+FQ8.SI,FQ8,China Sports,--
+C86.SI,C86,China Sun Bio,--
+CH8.SI,CH8,China Sunsine,--
+F2X.SI,F2X,China Taisan,--
+5KK.SI,5KK,China Yongsheng,--
+B2X.SI,B2X,China Yuanbang,--
+P74.SI,P74,ChinaKangdaFood,--
+GU5.SI,GU5,ChinaKundaTech^,--
+O2R.SI,O2R,ChinaSing Inv^,--
+5CJ.SI,5CJ,Chinese Global,--
+C29.SI,C29,Chip Eng Seng,--
+ACW.SI,ACW,Chiwayland Intl,--
+C10.SI,C10,Chosen,--
+C33.SI,C33,Chuan Hup,--
+C09.SI,C09,CityDev,--
+A7RU.SI,A7RU,CitySpring Trust,--
+5HJ.SI,5HJ,Cityneon,--
+P9D.SI,P9D,Civmec,--
+KJ9.SI,KJ9,Cogent,--
+567.SI,567,Colex,--
+N0Z.SI,N0Z,Combine Will,--
+C52.SI,C52,ComfortDelGro,--
+5HT.SI,5HT,Comm Design,--
+T4E.SI,T4E,Compact Metal,--
+P8A.SI,P8A,Cordlife,--
+C41.SI,C41,Cortina,--
+F83.SI,F83,Cosco,--
+B9S.SI,B9S,CosmoSteel,--
+E91.SI,E91,Courage Marine,--
+RE2.SI,RE2,Courts Asia,--
+541.SI,541,Craft Print,--
+C76.SI,C76,Creative,--
+S6NU.SI,S6NU,Croesus RTrust,--
+D05.SI,D05,DBS,--
+5CH.SI,5CH,DMX Technologies,--
+D01.SI,D01,DairyFarm USD,--
+FP1.SI,FP1,Dapai Intl^,--
+5CB.SI,5CB,Darco Water Tech,--
+D04.SI,D04,Datapulse Tech,--
+5UZ.SI,5UZ,DeClout,--
+K2M.SI,K2M,Debao Property,--
+D03.SI,D03,Del Monte Pac,--
+B1N.SI,B1N,Delong,--
+D11.SI,D11,Design Studio,--
+G77.SI,G77,Digiland Intl,--
+MT1.SI,MT1,Dragon,--
+GJ8.SI,GJ8,Dukang,--
+CZ4.SI,CZ4,Dutech,--
+5SO.SI,5SO,Duty Free Intl,--
+NO4.SI,NO4,Dyna-Mac,--
+D6U.SI,D6U,Dynamic Colours,--
+5OF.SI,5OF,E2-Capital,--
+E18.SI,E18,ECS,--
+UQ4.SI,UQ4,EMAS Offshore,--
+5DE.SI,5DE,EMS Energy,--
+5RC.SI,5RC,ES,--
+N0L.SI,N0L,EastGate Tech,--
+5KU.SI,5KU,Eastern,--
+5CT.SI,5CT,EcoWise,--
+5HG.SI,5HG,Edition,--
+E16.SI,E16,Elec &amp; Eltek USD,--
+5VU.SI,5VU,Elektromotive,--
+E13.SI,E13,Ellipsiz,--
+S44.SI,S44,EnGro,--
+5FR.SI,5FR,Envictus,--
+L23.SI,L23,Enviro-Hub,--
+5MQ.SI,5MQ,Epicentre,--
+532.SI,532,Equation,--
+FO8.SI,FO8,Eratat Lifestyle,--
+E02.SI,E02,Eu Yan Sang,--
+5VT.SI,5VT,EuNetworks,--
+E27.SI,E27,Eucon^,--
+5G1.SI,5G1,EuroSports Gbl,--
+E23.SI,E23,Europtronic^,--
+E17.SI,E17,Excelpoint,--
+5ME.SI,5ME,Ezion,--
+5DN.SI,5DN,Ezra,--
+F99.SI,F99,F &amp; N,--
+F10.SI,F10,FJ Benjamin,--
+D8DU.SI,D8DU,FSL Trust,--
+I54.SI,I54,Fabchem China,--
+5FL.SI,5FL,Falcon Energy,--
+5TJ.SI,5TJ,Far East,--
+Q5T.SI,Q5T,Far East HTrust,--
+O10.SI,O10,Far East Orchard,--
+F20.SI,F20,Federal Int,--
+F12.SI,F12,Fibrechem Tech,--
+5F4.SI,5F4,Figtree,--
+AW9U.SI,AW9U,First Reit,--
+EB5.SI,EB5,First Resources,--
+ADN.SI,ADN,First Sponsor,--
+F22.SI,F22,Fischer Tech,--
+F03.SI,F03,Food Empire,--
+B0I.SI,B0I,Foreland FabriT,--
+LG2U.SI,LG2U,Forterra Trust,--
+F25U.SI,F25U,Fortune Reit HKD,--
+F31.SI,F31,Fragrance,--
+ND8U.SI,ND8U,Frasers Com Tr,--
+TQ5.SI,TQ5,Frasers Cpt,--
+J69U.SI,J69U,Frasers Cpt Tr,--
+ACV.SI,ACV,Frasers HTrust,--
+E28.SI,E28,Frencken,--
+F13.SI,F13,Fu Yu,--
+508.SI,508,Fuji Offset,--
+5KT.SI,5KT,Fujian Zhenyun,--
+F18.SI,F18,Full Apex,--
+F11.SI,F11,Fung Choi Media,--
+DC9.SI,DC9,Fuxing China,--
+QS9.SI,QS9,G Invacom,--
+G41.SI,G41,G K Goh,--
+5VP.SI,5VP,GDS Global,--
+595.SI,595,GKE,--
+5IM.SI,5IM,GMG Global,--
+G08.SI,G08,GP Batteries,--
+P9J.SI,P9J,GP Hotels,--
+G20.SI,G20,GP Industries,--
+G18.SI,G18,GRP,--
+J16.SI,J16,GSH,--
+5IG.SI,5IG,Gallant Venture,--
+RF7.SI,RF7,Gaylin,--
+S21.SI,S21,Genting HK US$,--
+G13.SI,G13,Genting Sing,--
+RE4.SI,RE4,Geo Energy Res,--
+542.SI,542,Giken Sakata,--
+B73.SI,B73,Global Inv,--
+MC0.SI,MC0,Global Logistic,--
+K6J.SI,K6J,Global Palm Res,--
+G11.SI,G11,Global Tech,--
+G31.SI,G31,Global Testing,--
+CH9.SI,CH9,GlobalMaster US$ S,--
+Y07.SI,Y07,GlobalYellowPgs,--
+E5H.SI,E5H,Golden Agri-Res,--
+KU3.SI,KU3,Golden Ocean,--
+5PC.SI,5PC,Goodland,--
+G50.SI,G50,Grand Banks,--
+G07.SI,G07,Great Eastern,--
+I5H.SI,I5H,Great Group,--
+Y06.SI,Y06,Green Build^,--
+F17.SI,F17,GuocoLand,--
+B16.SI,B16,GuocoLeisure,--
+526.SI,526,HG Metal,--
+L18.SI,L18,HL Global Ent^,--
+H27.SI,H27,HLH,--
+588.SI,588,HMI,--
+P7VU.SI,P7VU,HPH Trust SGD,--
+NS8U.SI,NS8U,HPH Trust USD,--
+H15.SI,H15,HPL,--
+H64.SI,H64,HTL Intl,--
+5VS.SI,5VS,Hafary,--
+GG7.SI,GG7,Hai Leck,--
+5VJ.SI,5VJ,Halcyon Agri,--
+U9E.SI,U9E,HanKoreEnv,--
+DM0.SI,DM0,Hanwell,--
+H02.SI,H02,Haw Par,--
+5NG.SI,5NG,Healthway Med,--
+5OR.SI,5OR,Heatec Jietong,--
+5DP.SI,5DP,Heeton,--
+I85.SI,I85,Hengxin Tech,--
+5PD.SI,5PD,Hengyang Petro,--
+H17.SI,H17,Hi-P,--
+5JK.SI,5JK,Hiap Hoe,--
+510.SI,510,Hiap Seng,--
+5PO.SI,5PO,Hiap Tong,--
+H13.SI,H13,Ho Bee Land,--
+J2T.SI,J2T,Hock Lian Seng,--
+H20.SI,H20,Hoe Leong,--
+H30.SI,H30,Hong Fok,--
+H22.SI,H22,Hong Leong Asia,--
+S41.SI,S41,Hong Leong Fin,--
+H78.SI,H78,HongkongLand USD,--
+H06.SI,H06,Hor Kew,--
+5EV.SI,5EV,Hosen,--
+H18.SI,H18,Hotel Grand,--
+H12.SI,H12,Hotel Royal,--
+NT1.SI,NT1,Hotung Inv,--
+KI3.SI,KI3,Hu An Cable,--
+H16.SI,H16,HuanHsin^,--
+41B.SI,41B,Huationg Global,--
+H73.SI,H73,HupSteel,--
+H19.SI,H19,Hwa Hong,--
+600.SI,600,Hyflux,--
+5I4.SI,5I4,ICP Ltd,--
+5TN.SI,5TN,IEV,--
+I49.SI,I49,IFS Capital,--
+5WA.SI,5WA,IHC,--
+Q0F.SI,Q0F,IHH,--
+571.SI,571,IP Softcom,--
+I12.SI,I12,IPC Corp,--
+I11.SI,I11,IPCO Intl,--
+40A.SI,40A,IPS Securex,--
+UD1U.SI,UD1U,IREIT Global,--
+I07.SI,I07,ISDN,--
+40T.SI,40T,ISEC,--
+5WF.SI,5WF,ISOTeam,--
+5EC.SI,5EC,ISR Capital,--
+581.SI,581,ITE Electric,--
+I4R.SI,I4R,Inch Kenneth,--
+F3EU.SI,F3EU,Indiabulls Trust,--
+5JS.SI,5JS,Indofood Agri,--
+5G4.SI,5G4,Infinio,--
+I03.SI,I03,Informatics,--
+I26.SI,I26,InnoPac,--
+M14.SI,M14,InnoTek,--
+591.SI,591,Innovalues,--
+5GI.SI,5GI,Interra Resource,--
+I06.SI,I06,Intraco,--
+I15.SI,I15,Isetan,--
+Q0W.SI,Q0W,JB Foods,--
+UQ3.SI,UQ3,JB Foods 500,--
+5FA.SI,5FA,JEP,--
+EG0.SI,EG0,JES Intl,--
+5TS.SI,5TS,JK Tech,--
+J36.SI,J36,JMH USD,--
+J37.SI,J37,JSH USD,--
+J11.SI,J11,Jacks Intl,--
+J17.SI,J17,Jackspeed,--
+J03.SI,J03,Jadason,--
+5OI.SI,5OI,Japan Foods,--
+UD2.SI,UD2,Japfa,--
+C07.SI,C07,Jardine C&amp;C,--
+5PF.SI,5PF,Jason Marine,--
+5I3.SI,5I3,JasonHldg,--
+FQ7.SI,FQ7,Jasper Inv,--
+J10.SI,J10,Jaya,--
+C8R.SI,C8R,Jiutian Chemical,--
+E9L.SI,E9L,Joyas Intl,--
+5OS.SI,5OS,Jubilee Ind,--
+5TF.SI,5TF,Junma Tyre Cord,--
+K01.SI,K01,K1 Ventures,--
+504.SI,504,KLW,--
+5I1.SI,5I1,KOP,--
+578.SI,578,KS Energy,--
+ER0.SI,ER0,KSH,--
+EB7.SI,EB7,KTL Global,--
+K29.SI,K29,Karin Tech,--
+F9M.SI,F9M,Kencana Agri,--
+5TT.SI,5TT,Keong Hong,--
+BN4.SI,BN4,Keppel Corp,--
+LH4U.SI,LH4U,Keppel Infra Tr,--
+K17.SI,K17,Keppel Land,--
+K71U.SI,K71U,Keppel Reit,--
+K11.SI,K11,Keppel T&amp;T,--
+K03.SI,K03,Khong Guan Flour,--
+K22.SI,K22,Kian Ho Bearings,--
+5G2.SI,5G2,KimHeng Offshore,--
+554.SI,554,King Wan,--
+K14.SI,K14,Kingboard Copper,--
+5MZ.SI,5MZ,KingsmenCreative,--
+5TI.SI,5TI,Kitchen Culture,--
+5BK.SI,5BK,Koda,--
+K75.SI,K75,Koh Bros,--
+5HV.SI,5HV,Koh Eco,--
+5DL.SI,5DL,Koon,--
+5VC.SI,5VC,Kori,--
+5OC.SI,5OC,Koyo Intl,--
+SK3.SI,SK3,KrisEnergy,--
+L15.SI,L15,L-Jacoberg,--
+L22.SI,L22,LANKom Elec^,--
+L38.SI,L38,LCD Global Inv,--
+C4P.SI,C4P,LH,--
+L10.SI,L10,LHT,--
+L17.SI,L17,LTC Corp,--
+L05.SI,L05,Lafe,--
+Q7W.SI,Q7W,LantroVision,--
+5EL.SI,5EL,Lasseters Intl,--
+LS9.SI,LS9,Leader Env,--
+L25.SI,L25,Lee Kim Tah,--
+593.SI,593,Lee Metal,--
+587.SI,587,Lereno Bio-Chem,--
+Q0X.SI,Q0X,Ley Choon,--
+E9A.SI,E9A,Li Heng Chem,--
+L03.SI,L03,Lian Beng,--
+5TR.SI,5TR,Libra,--
+L20.SI,L20,LifeBrandz,--
+5FW.SI,5FW,Linair Tech,--
+TI6.SI,TI6,Linc Energy,--
+L08.SI,L08,Lion Asiapac,--
+A78.SI,A78,LionGold,--
+D5IU.SI,D5IU,Lippo Malls Tr,--
+E94.SI,E94,Lizhong Wheel,--
+5VI.SI,5VI,Logistics,--
+L28.SI,L28,Longcheer,--
+O6Z.SI,O6Z,Lonza,--
+5IE.SI,5IE,Lorenzo Intl,--
+M22.SI,M22,LottVision,--
+F1E.SI,F1E,Low Keng Huat,--
+594.SI,594,Loyz Energy,--
+L19.SI,L19,Lum Chang,--
+L09.SI,L09,Lung Kee Bermuda,--
+L34.SI,L34,Luxking,--
+L46.SI,L46,Luzhou Bio-Chem,--
+N14.SI,N14,M Development,--
+B2F.SI,B2F,M1,--
+A27.SI,A27,MDR,--
+M11.SI,M11,MFG Integration,--
+5BM.SI,5BM,MFS Tech,--
+41C.SI,41C,MM2 Asia,--
+40U.SI,40U,MS Hldgs,--
+NC9.SI,NC9,MSC,--
+M05.SI,M05,MTQ,--
+F86.SI,F86,MYP,--
+M41.SI,M41,Macquarie Intl,--
+576.SI,576,Magnus Energy,--
+TY3.SI,TY3,Maiwai Fund USD S,--
+M04.SI,M04,Man Oriental USD,--
+L02.SI,L02,Manhattan Res,--
+5QR.SI,5QR,Mann Seng Metal,--
+N2IU.SI,N2IU,Mapletree Com Tr,--
+RW0U.SI,RW0U,Mapletree GCC Tr,--
+ME8U.SI,ME8U,Mapletree Ind Tr,--
+M44U.SI,M44U,Mapletree Log Tr,--
+5LY.SI,5LY,MarcoPolo Marine,--
+M12.SI,M12,Maruwa Yen1k,--
+5OX.SI,5OX,Mary Chia,--
+M15.SI,M15,Matex Intl^,--
+5UF.SI,5UF,Maxi-Cash Fin,--
+546.SI,546,Medtecs Intl,--
+5DS.SI,5DS,MegaChem,--
+M30.SI,M30,Meghmani SDS,--
+5MS.SI,5MS,Memstar Tech,--
+M26.SI,M26,Memtech Intl,--
+5NF.SI,5NF,Mencast,--
+EE6.SI,EE6,Mercator Lines,--
+DU4.SI,DU4,Mermaid Maritime,--
+5DX.SI,5DX,Metal Component,--
+QG1.SI,QG1,Metech Intl,--
+M01.SI,M01,Metro,--
+MV4.SI,MV4,Mewah Intl,--
+5DD.SI,5DD,Micro-Mechanics,--
+5EN.SI,5EN,Midas,--
+C68.SI,C68,Mirach Energy,--
+M03.SI,M03,Miyoshi^,--
+5WJ.SI,5WJ,MoneyMax Fin,--
+5WE.SI,5WE,Moya Asia,--
+M06.SI,M06,Multi-Chem,--
+MF6.SI,MF6,Mun Siong Engg,--
+M20.SI,M20,Murata Yen1k,--
+5AC.SI,5AC,NH Ceramics,--
+N03.SI,N03,NOL,--
+N02.SI,N02,NSL,--
+N4E.SI,N4E,Nam Cheong,--
+G0I.SI,G0I,Nam Lee Metal,--
+5IF.SI,5IF,Natural Cool,--
+5UJ.SI,5UJ,Neo,--
+N01.SI,N01,NeraTel,--
+5QY.SI,5QY,Net Pacific Fin,--
+N08.SI,N08,New Toyo,--
+5FX.SI,5FX,New Wave,--
+B07.SI,B07,Next-Gen Sat^,--
+5GF.SI,5GF,Nico Steel,--
+N32.SI,N32,Nippecraft^,--
+547.SI,547,Nobel Design,--
+N21.SI,N21,Noble,--
+543.SI,543,Noel Gifts Intl,--
+N33.SI,N33,Nomura Yen1k,--
+MR7.SI,MR7,Nordic,--
+MR8.SI,MR8,Novo^,--
+5HC.SI,5HC,Ntegrator Intl,--
+O39.SI,O39,OCBC Bank,--
+584.SI,584,OEL,--
+O02.SI,O02,OGL Resources A$,--
+S3N.SI,S3N,OKH Global,--
+5CF.SI,5CF,OKP,--
+ADJ.SI,ADJ,OLS^,--
+O23.SI,O23,OSIM Intl,--
+LJ3.SI,LJ3,OUE,--
+TS0U.SI,TS0U,OUE Com Reit,--
+SK7.SI,SK7,OUE HTrust,--
+O05.SI,O05,Ocean Sky Intl,--
+579.SI,579,Oceanus,--
+O32.SI,O32,Olam Intl,--
+5ML.SI,5ML,Old Chang Kee,--
+5FI.SI,5FI,Oriental,--
+O08.SI,O08,Ossia Intl,--
+G4F.SI,G4F,Otto Marine,--
+AJ2.SI,AJ2,Ouhua Energy^,--
+RQ1.SI,RQ1,Overseas Edu,--
+5UX.SI,5UX,Oxley,--
+5UV.SI,5UV,P99,--
+P19.SI,P19,PCI,--
+IX2.SI,IX2,PEC,--
+P07.SI,P07,PNE Industries,--
+5BS.SI,5BS,PNE Micron,--
+U6C.SI,U6C,POSH,--
+5WD.SI,5WD,PS Group,--
+L6T.SI,L6T,PSL,--
+P11.SI,P11,Pacific Andes,--
+P15.SI,P15,Pacific Century,--
+P47.SI,P47,Pacific Hc^,--
+T8V.SI,T8V,Pacific Radiance,--
+5EW.SI,5EW,Pan Asian,--
+P36.SI,P36,Pan Hong Prop,--
+TO9.SI,TO9,Pan Ocean,--
+P52.SI,P52,PanUnited,--
+O9E.SI,O9E,Parkson Retail,--
+C2PU.SI,C2PU,ParkwayLife Reit,--
+596.SI,596,Pavillon,--
+P13.SI,P13,Penguin Intl,--
+N9LU.SI,N9LU,Perennial CRT,--
+40S.SI,40S,Perennial Hldgs,--
+P34.SI,P34,Petra Foods,--
+P31.SI,P31,Pharmesis Intl,--
+P82.SI,P82,Plastoform,--
+5PI.SI,5PI,Plato Capital,--
+P01.SI,P01,Poh Tiong Choon,--
+5BI.SI,5BI,Polaris,--
+5AE.SI,5AE,Pollux Prop,--
+P29.SI,P29,Popular,--
+P12.SI,P12,Powermatic Data,--
+583.SI,583,Progen,--
+K6S.SI,K6S,Prudential USD,--
+UD3.SI,UD3,PterisGlobal,--
+QC7.SI,QC7,Q&amp;M Dental,--
+Q01.SI,Q01,QAF,--
+5I0.SI,5I0,QT Vascular,--
+552.SI,552,Qian Hu,--
+KT9.SI,KT9,Qingmei,--
+T13.SI,T13,RH PetroGas,--
+NR7.SI,NR7,Raffles Edu,--
+R01.SI,R01,Raffles Medical,--
+R14.SI,R14,Ramba Energy,--
+UV1.SI,UV1,Regal Intl,--
+UV2.SI,UV2,Regal Intl 333,--
+RF1U.SI,RF1U,Religare HTrust,--
+5DW.SI,5DW,Renewable Energy,--
+5MM.SI,5MM,Resources Prima,--
+5WH.SI,5WH,Rex Intl,--
+B1ZU.SI,B1ZU,RickmersMaritime,--
+AP4.SI,AP4,Riverstone,--
+R07.SI,R07,Rotary Engg,--
+A50.SI,A50,Rowsley,--
+E8Z.SI,E8Z,Roxy-Pacific,--
+J8O.SI,J8O,Ryobi Kiso,--
+M09.SI,M09,S i2i,--
+S58.SI,S58,SATS,--
+5PL.SI,5PL,SBI Offshore,--
+S61.SI,S61,SBS Transit,--
+S68.SI,S68,SGX,--
+5UE.SI,5UE,SHC Capital Asia,--
+566.SI,566,SHS,--
+C6L.SI,C6L,SIA,--
+C6U.SI,C6U,SIA 200,--
+S59.SI,S59,SIA Engineering,--
+5GB.SI,5GB,SIIC Environment,--
+40B.SI,40B,SMJ Intl,--
+S53.SI,S53,SMRT,--
+S13.SI,S13,SP Corp,--
+T39.SI,T39,SPH,--
+SK6U.SI,SK6U,SPHREIT,--
+S63.SI,S63,ST Engineering,--
+S24.SI,S24,STATS ChipPAC,--
+M1GU.SI,M1GU,Sabana Reit,--
+T8JU.SI,T8JU,Saizen Reit,--
+5DO.SI,5DO,Sakae,--
+E6R.SI,E6R,Samko Timber,--
+S56.SI,S56,SamuderaShipping,--
+S46.SI,S46,San Teh,--
+580.SI,580,Santak,--
+NF1.SI,NF1,Sapphire,--
+U77.SI,U77,Sarine Tech,--
+T20.SI,T20,Scintronix^,--
+528.SI,528,Second Chance,--
+5FQ.SI,5FQ,Select,--
+U96.SI,U96,Sembcorp Ind,--
+S51.SI,S51,Sembcorp Marine,--
+S69.SI,S69,Serial System,--
+IW5.SI,IW5,Seroja Inv,--
+40R.SI,40R,Serrano,--
+X27.SI,X27,Shanghai Turbo,--
+S07.SI,S07,Shangri-La HKD,--
+OV8.SI,OV8,Sheng Siong,--
+5CP.SI,5CP,Silverlake Axis,--
+S05.SI,S05,Sim Lian,--
+B7K.SI,B7K,Sin Ghee Huat,--
+KF4.SI,KF4,Sin Heng Mach,--
+A26.SI,A26,Sinarmas Land,--
+5UN.SI,5UN,Sincap,--
+S35.SI,S35,Sing Inv &amp; Fin,--
+5H0.SI,5H0,SingHaiyi,--
+5IC.SI,5IC,SingHoldings,--
+S45U.SI,S45U,SingIndexFund,--
+5OT.SI,5OT,SingMedical,--
+S08.SI,S08,SingPost,--
+S49.SI,S49,SingReinsurance,--
+S19.SI,S19,SingShipping,--
+Z74.SI,Z74,SingTel,--
+Z77.SI,Z77,SingTel 10,--
+Z78.SI,Z78,SingTel 100,--
+Y45.SI,Y45,SingWindsor,--
+40V.SI,40V,Singapore-eDev,--
+5WG.SI,5WG,SingaporeKitchen,--
+5HH.SI,5HH,Sinjia Land,--
+T4B.SI,T4B,Sino Grandness,--
+AD8.SI,AD8,Sino Techfibre,--
+F3V.SI,F3V,SinoConstruction,--
+X06.SI,X06,Sinopipe,--
+C9Q.SI,C9Q,Sinostar Pec,--
+D3W.SI,D3W,Sinotel Tech,--
+5CN.SI,5CN,Sinwa,--
+5LE.SI,5LE,Sitra,--
+5RE.SI,5RE,Smartflex,--
+S7P.SI,S7P,Soilbuild Const,--
+SV3U.SI,SV3U,SoilbuildBizReit,--
+5MD.SI,5MD,Soon Lian,--
+5KI.SI,5KI,Soup Restaurant,--
+T77.SI,T77,Southern Pkg,--
+40E.SI,40E,Spackman,--
+564.SI,564,Spindex Ind,--
+S23.SI,S23,Spura Finance,--
+NC2.SI,NC2,Sri Trang Agro,--
+H07.SI,H07,Stamford Land,--
+S29.SI,S29,Stamford Tyres,--
+X64.SI,X64,Star Pharm,--
+CC3.SI,CC3,StarHub,--
+40D.SI,40D,Starburst,--
+P40U.SI,P40U,StarhillGbl Reit,--
+5UA.SI,5UA,Starland,--
+S85.SI,S85,Straco,--
+S20.SI,S20,Straits Trading,--
+S73.SI,S73,StratechSystems^,--
+AAJ.SI,AAJ,SunMoonFood,--
+A7S.SI,A7S,SunVic Chemical,--
+5AI.SI,5AI,Sunlight,--
+C2J.SI,C2J,Sunmart,--
+T35.SI,T35,Sunningdale Tech,--
+5GD.SI,5GD,Sunpower,--
+S71.SI,S71,Sunright,--
+CZ3.SI,CZ3,Suntar Eco-City,--
+T82U.SI,T82U,Suntec Reit,--
+S10.SI,S10,Super Group,--
+QF6.SI,QF6,Swee Hong,--
+AK3.SI,AK3,Swiber,--
+O2F.SI,O2F,Swing Media Tech,--
+ADP.SI,ADP,Swissco Hldg,--
+5UO.SI,5UO,Sysma,--
+PA3.SI,PA3,TA,--
+T15.SI,T15,TCIL HK$,--
+M1Z.SI,M1Z,TEE Intl,--
+S9B.SI,S9B,TEE Land,--
+T55.SI,T55,TIH,--
+586.SI,586,TMC Education,--
+T18.SI,T18,TPV Tech,--
+574.SI,574,TSH,--
+T09.SI,T09,TT Intl,--
+K1Q.SI,K1Q,TTJ,--
+500.SI,500,Tai Sin Electric,--
+5G3.SI,5G3,TalkMed,--
+T03.SI,T03,Tat Hong,--
+T12.SI,T12,Tat Seng Pkg,--
+5CQ.SI,5CQ,Tech Oil &amp; Gas,--
+T43.SI,T43,Techcomp,--
+561.SI,561,Teckwah,--
+5OQ.SI,5OQ,Teho Intl,--
+T41.SI,T41,TeleChoice Intl,--
+T28.SI,T28,Teledata^,--
+40I.SI,40I,Terratech,--
+AI1.SI,AI1,Texchem-Pack^,--
+Y92.SI,Y92,ThaiBev,--
+T04.SI,T04,Thakral,--
+E5P.SI,E5P,The Hour Glass,--
+AGS.SI,AGS,TheHourGlass,--
+T14.SI,T14,Tianjin ZX USD,--
+J7X.SI,J7X,Tigerair,--
+K2P.SI,K2P,Tiong Seng,--
+T06.SI,T06,Tiong Woon,--
+519.SI,519,Top Global,--
+S2D.SI,S2D,Tosei,--
+T19.SI,T19,Transcorp,--
+570.SI,570,Transit Concrete,--
+5KH.SI,5KH,Travelite,--
+5AB.SI,5AB,Trek 2000 Intl,--
+5G9.SI,5G9,Tritech,--
+RC5.SI,RC5,Triyards,--
+T24.SI,T24,Tuan Sing,--
+540.SI,540,Tung Lok Rest,--
+T08.SI,T08,Tye Soon,--
+NI3.SI,NI3,UE E&amp;C,--
+41A.SI,41A,UG Healthcare,--
+U06.SI,U06,UIC,--
+558.SI,558,UMS,--
+EH5.SI,EH5,UOA,--
+U11.SI,U11,UOB,--
+U10.SI,U10,UOB Kay Hian,--
+U13.SI,U13,UOI,--
+U14.SI,U14,UOL,--
+U09.SI,U09,UPP,--
+C3T.SI,C3T,Uni-Asia,--
+P30.SI,P30,UniFiber System,--
+V69.SI,V69,Union Steel,--
+A6F.SI,A6F,Unionmet,--
+U04.SI,U04,United Engineers,--
+U19.SI,U19,United Envtech,--
+U01.SI,U01,United Food,--
+W81.SI,W81,Universal Res,--
+PH0.SI,PH0,VGO,--
+V01.SI,V01,VICOM,--
+545.SI,545,Vallianz,--
+T6I.SI,T6I,ValueMax,--
+BN2.SI,BN2,Valuetronics,--
+MS7.SI,MS7,Vard,--
+5BA.SI,5BA,Vashion,--
+V03.SI,V03,Venture,--
+40N.SI,40N,Versalink,--
+F01.SI,F01,Vibrant Group,--
+535.SI,535,VibroPower,--
+569.SI,569,Vicplas Intl,--
+557.SI,557,Viking Offshore,--
+T8B.SI,T8B,Viva Ind Tr,--
+5RJ.SI,5RJ,WE,--
+E3B.SI,E3B,Wee Hur,--
+ON7.SI,ON7,Weiye,--
+M35.SI,M35,Wheelock Prop,--
+W12.SI,W12,Willas-Array,--
+F34.SI,F34,Wilmar Intl,--
+5F7.SI,5F7,Wilton Resources,--
+W05.SI,W05,Wing Tai,--
+B49.SI,B49,World Precision,--
+M9F.SI,M9F,XMH,--
+MN5.SI,MN5,Xinren Aluminium,--
+I04.SI,I04,Xpress,--
+5WR.SI,5WR,Xyec,--
+Y08.SI,Y08,YHI Intl,--
+SO7.SI,SO7,YZJ Shipbldg RMB,--
+BS6.SI,BS6,YZJ Shipbldg SGD,--
+MC7.SI,MC7,Yamada Green Res,--
+R8P.SI,R8P,Yangi EURO S,--
+Z25.SI,Z25,Yanlord Land,--
+Y03.SI,Y03,Yeo Hiap Seng,--
+5DM.SI,5DM,Ying Li Intl,--
+Z59.SI,Z59,Yoma Strategic,--
+CX5.SI,CX5,Yong Xin Intl^,--
+E6A.SI,E6A,Yongmao,--
+Y02.SI,Y02,Yongnam,--
+G10.SI,G10,Yuexiu Prop,--
+UR9.SI,UR9,Yuexiu Prop 10,--
+AFC.SI,AFC,Yuuzoo,--
+D5N.SI,D5N,Z-Obee,--
+40W.SI,40W,ZICO Hldgs,--
+Z01.SI,Z01,Zagro Asia,--
+5SR.SI,5SR,Zhongmin Baihui,--
+5EG.SI,5EG,Zhongxin Fruit,--
+I9T.SI,I9T,Ziw,--

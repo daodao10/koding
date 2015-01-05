@@ -26,7 +26,11 @@ var settings = {
     }
 };
 
-batchProcess('yahoo.txt');
+if (process.argv.length > 2) {
+    console.log("processing", process.argv[2]);
+    batchProcess(process.argv[2]);
+}
+
 // batchProcess();
 
 
@@ -42,17 +46,22 @@ function batchProcess(filename) {
             index++;
 
             if (index === 1) {
-                var matches = /\[(\w+)\s*:\s*(\w+)\s*:\s*(\w+),\s*(\w+)\]/gi.exec(row);
+                var matches = /\[(\w+)\s*:\s*(\w+)\s*:\s*(\w+)(,\s*(\w+))*\]/gi.exec(row);
                 settings["source"] = etlUtil.encode_source(matches[1]);
                 settings["market"] = matches[2];
-                settings["period"] = [matches[3], matches[4]];
+                if (matches.length > 4) {
+                    settings["period"] = [matches[3], matches[5]];
+                } else {
+                    settings["period"] = [matches[3]];
+                }
 
                 return;
             }
 
             for (var i in settings.period) {
                 period = etlUtil.encode_period(settings.period[i]);
-                cells = row.split(',');
+                cells = row.stripLineBreaks().split(',');
+                // srcFile = "../{0}/dest/{1}.csv".format(settings.market, cells[0]);
                 srcFile = "{0}_{1}_{2}.csv".format(settings.market, cells[1], period);
                 destFile = "{3}{0}/{1}_{2}.js".format(settings.market, cells[1], period, settings.DestFolder);
                 // console.log(srcFile, destFile);
