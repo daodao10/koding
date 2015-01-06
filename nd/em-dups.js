@@ -2,7 +2,7 @@
 * handle duplicated em data
 */
 
-load("./DuplicatedHandler.js")
+load("../DuplicatedHandler.js")
 
 DuplicatedHandler(1, {
     dn: "test",
