@@ -23,12 +23,19 @@ var settings = {
         IsCompactDate: false,
         xCell: 0,
         yCell: 4
+    },
+    "WS": {
+        IsCompactDate: true,
+        xCell: 1,
+        yCell: 6
     }
 };
 
 if (process.argv.length > 2) {
     console.log("processing", process.argv[2]);
     batchProcess(process.argv[2]);
+} else {
+    console.log("USAGE: node opt_yahoo_etl.js <filename>");
 }
 
 // batchProcess();
@@ -61,7 +68,13 @@ function batchProcess(filename) {
             for (var i in settings.period) {
                 period = etlUtil.encode_period(settings.period[i]);
                 cells = row.stripLineBreaks().split(',');
+                // sg
                 // srcFile = "../{0}/dest/{1}.csv".format(settings.market, cells[0]);
+                // sh
+                // srcFile = "../../../Downloads/wsWDZ/etl/SH/{0}.txt".format(cells[0]);
+                // sz
+                // srcFile = "../../../Downloads/wsWDZ/etl/SZ/{0}.txt".format(cells[0]);
+                // common
                 srcFile = "{0}_{1}_{2}.csv".format(settings.market, cells[1], period);
                 destFile = "{3}{0}/{1}_{2}.js".format(settings.market, cells[1], period, settings.DestFolder);
                 // console.log(srcFile, destFile);

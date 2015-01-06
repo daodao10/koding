@@ -1,17 +1,17 @@
 //
 //
 
-main(1, {
-    dn: "day",
+main(2, {
+    dn: "test",
     m: {
-        date: "20141216"
+        d: "20141231"
     },
     s: {
-        date: 1
+        _id: 1
     },
     gid: {
-        date: "$date",
-        code: "$code"
+        date: "$d",
+        code: "$s"
     }
 });
 
