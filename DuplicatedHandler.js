@@ -1,21 +1,4 @@
-//
-//
-
-main(1, {
-    dn: "day",
-    m: {
-        date: "20141216"
-    },
-    s: {
-        date: 1
-    },
-    gid: {
-        date: "$date",
-        code: "$code"
-    }
-});
-
-function main(action, options) {
+var DuplicatedHandler = function(action, options) {
     /*
     action: 1 -- display record, 2 -- remove
     options: {
@@ -56,7 +39,6 @@ function main(action, options) {
             });
         }
     };
-
 
     if (options && options.gid) {
         var x = db[options.dn].aggregate([{
@@ -107,4 +89,4 @@ function main(action, options) {
         print("please set the options");
     }
 
-}
+};
