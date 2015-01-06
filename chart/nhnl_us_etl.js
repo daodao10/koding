@@ -101,10 +101,9 @@ function dailyRun() {
 
         myUtil.get({
             'host': 'unicorn.us.com',
-            'path': '/advdec/2014/adU{0}.txt'.format(dt)
+            'path': '/advdec/{0}/adU{1}.txt'.format(dt.substr(0, 4), dt)
         }, function(data) {
             var rows = parseDailyData(data.toString(), dt);
-
             for (var i in rows) {
                 (function(row) {
                     myMongo.find("nhnl", {
@@ -124,8 +123,10 @@ function dailyRun() {
                         }
 
                         row["_id"] = seq;
-                        myMongo.insert('nhnl', row);
-                        // console.log(row);
+                        myMongo.insert('nhnl', row, function(result) {
+                            console.log('inserted', result.length);
+                        });
+
                     });
                 }(rows[i]));
             }
