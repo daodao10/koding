@@ -82,10 +82,9 @@ var DuplicatedHandler = function(options) {
             rm: function(hard) {
                 // db.text.ensureIndex({"d": 1, "s": 1}, {unique: true, dropDups: true})
 
-                var ids = [];
-
                 var cursor = _search();
                 if (cursor) {
+                    var ids = [];
                     cursor.forEach(function(doc) {
                         doc.ids.shift();
                         if (doc.ids.length > 0) {
