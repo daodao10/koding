@@ -1,10 +1,10 @@
 /**
-* handle duplicated em data
-*/
+ * handle duplicated em data
+ */
 
-load("../DuplicatedHandler.js")
+load("./DuplicatedHandler.js")
 
-DuplicatedHandler(1, {
+var h = new DuplicatedHandler({
     dn: "test",
     m: {
         d: "20141231"
@@ -17,3 +17,6 @@ DuplicatedHandler(1, {
         code: "$s"
     }
 });
+
+h.display();
+// h.rm();

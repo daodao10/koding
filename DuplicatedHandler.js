@@ -1,4 +1,4 @@
-var DuplicatedHandler = function(action, options) {
+var DuplicatedHandler = function(options) {
     /*
     action: 1 -- display record, 2 -- remove
     options: {
@@ -10,7 +10,7 @@ var DuplicatedHandler = function(action, options) {
     }*/
 
 
-    var display = function(doc) {
+    var _display = function(doc) {
         var result = [];
         for (var i in doc) {
             if (typeof doc[i] === "object") {
@@ -28,20 +28,8 @@ var DuplicatedHandler = function(action, options) {
         print(result.join(','));
     };
 
-    // db.text.ensureIndex({"d": 1, "s": 1}, {unique: true, dropDups: true})
-    var rm = function(ids) {
-        ids.shift();
-        if (ids.length > 0) {
-            db[options.dn].remove({
-                _id: {
-                    '$in': ids
-                }
-            });
-        }
-    };
-
-    if (options && options.gid) {
-        var x = db[options.dn].aggregate([{
+    var _search = function(func) {
+        var cursor = db[options.dn].aggregate([{
             $match: options.m || {}
         }, {
             $sort: options.s || {
@@ -70,21 +58,56 @@ var DuplicatedHandler = function(action, options) {
         }]);
 
         // print help
-        // x.help();
-        // x.shellPrint();
+        // http://docs.mongodb.org/manual/reference/method/#js-query-cursor-methods
+        // cursor.help();
+        // cursor.shellPrint();
 
-        if (x) {
-            // print("found " + x.itcount() + " record(s)");
-            x.forEach(function(doc) {
-                if (action === 2) {
-                    rm(doc.ids);
-                } else {
-                    display(doc);
-                }
-            });
+        if (cursor && cursor.objsLeftInBatch() > 0) {
+            return cursor;
         } else {
             print("don't any have duplicated record!");
         }
+    };
+
+    if (options && options.gid) {
+        return {
+            display: function() {
+                var cursor = _search();
+                if (cursor) {
+                    cursor.forEach(function(doc) {
+                        _display(doc);
+                    });
+                }
+            },
+            rm: function(hard) {
+                // db.text.ensureIndex({"d": 1, "s": 1}, {unique: true, dropDups: true})
+
+                var ids = [];
+
+                var cursor = _search();
+                if (cursor) {
+                    cursor.forEach(function(doc) {
+                        doc.ids.shift();
+                        if (doc.ids.length > 0) {
+                            ids = ids.concat(doc.ids);
+                        }
+                    });
+
+                    if (ids.length) {
+                        if (hard) {
+                            db[options.dn].remove({
+                                _id: {
+                                    '$in': ids
+                                }
+                            });
+                            print(ids.length, 'removed');
+                        } else {
+                            print('found', ids.length, 'records\nplease use rm(true) to hard remove');
+                        }
+                    }
+                }
+            }
+        };
     } else {
         print("please set the options");
     }

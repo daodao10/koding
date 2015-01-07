@@ -4,7 +4,7 @@
 
 load("./DuplicatedHandler.js")
 
-DuplicatedHandler(2, {
+var h = new DuplicatedHandler({
     dn: "day",
     m: {
         date: "20150107"
@@ -17,3 +17,6 @@ DuplicatedHandler(2, {
         code: "$code"
     }
 });
+
+// h.display();
+h.rm();
