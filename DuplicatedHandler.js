@@ -1,6 +1,5 @@
 var DuplicatedHandler = function(options) {
     /*
-    action: 1 -- display record, 2 -- remove
     options: {
         dn: DB_Name,
         m: $match
