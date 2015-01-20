@@ -118,7 +118,7 @@ function getMarketInfo() {
             yAxis[5].push(item.m_value_current);
         }
 
-        fs.writeFileSync('../../daodao10.github.io/chart/sse.js', "var d=" + JSON.stringify({
+        fs.writeFileSync('../../daodao10.github.io/chart/sse.js', "define(" + JSON.stringify({
             "x": xAxis,
             "y0": yAxis[0],
             "y1": yAxis[1],
@@ -126,7 +126,7 @@ function getMarketInfo() {
             "y3": yAxis[3],
             "y4": yAxis[4],
             "y5": yAxis[5]
-        }) + ";", {
+        }) + ");", {
             'encoding': 'utf-8'
         });
     };
