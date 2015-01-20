@@ -106,5 +106,19 @@ MyUtil.prototype.sleep = function(milliSeconds) {
     while (new Date().getTime() < startTime + milliSeconds);
 };
 
+MyUtil.prototype.varReplace = function(input, dic) {
+    /// replace %VARIABLE_NAME% with dic[VARIABLE_NAME]
+    ///
+
+    var reg = /(%([a-zA-Z]*)%)/g,
+        m;
+    while ((m = reg.exec(input))) {
+        if (m.index === m.lastIndex) {
+            m.lastIndex++;
+        }
+        input = input.replace(m[1], dic[m[2]]);
+    }
+    return input;
+};
 
 module.exports = new MyUtil();
