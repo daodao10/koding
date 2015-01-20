@@ -84,7 +84,7 @@ function getMarketInfo() {
     var extract2File = function() {
         var i = 0,
             vm = require('vm'),
-            content = fs.readFileSync('../../daodao10.github.io/chart/cn/999999_m.js');
+            content = fs.readFileSync('../../daodao10.github.io/chart/world/^SSE_m.js');
         vm.runInThisContext(content);
 
         data.reverse();
@@ -110,7 +110,7 @@ function getMarketInfo() {
         for (i = 0; i < his.length; i++) {
             item = his[i];
             xAxis.push(item.month);
-            yAxis[0].push(Number(data[i][2]));
+            yAxis[0].push(Number(data[i][1]));
             yAxis[1].push(item.t_volume);
             yAxis[2].push(item.t_trans);
             yAxis[3].push(item.t_amount);
