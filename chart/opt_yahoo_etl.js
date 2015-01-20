@@ -5,17 +5,18 @@ var fs = require("fs"),
 
 var settings = {
     DestFolder: "../../daodao10.github.io/chart/",
-    ItemFormat: "[new Date({0},{1},{2}),{3},{4}]",
+    ItemFormat: "['{0}',{1}]",
+    // ItemFormat: "[new Date({0},{1},{2}),{3},{4}]",
     HasHeader: true,
     HasLastBlank: true,
 
-    "Y": {
-        IsCompactDate: false,
+    "Y": { // newest to oldest
+        IsCompactDate: false, //1990-01-01
         xCell: 0,
         yCell: 6
     },
     "SI": {
-        IsCompactDate: true,
+        IsCompactDate: true, //19900101
         xCell: 3,
         yCell: 7
     },
@@ -68,14 +69,20 @@ function batchProcess(filename) {
             for (var i in settings.period) {
                 period = etlUtil.encode_period(settings.period[i]);
                 cells = row.stripLineBreaks().split(',');
-                // sg
-                // srcFile = "../{0}/dest/{1}.csv".format(settings.market, cells[0]);
-                // sh
-                // srcFile = "../../../Downloads/wsWDZ/etl/SH/{0}.txt".format(cells[0]);
-                // sz
-                // srcFile = "../../../Downloads/wsWDZ/etl/SZ/{0}.txt".format(cells[0]);
-                // common
-                srcFile = "{0}_{1}_{2}.csv".format(settings.market, cells[1], period);
+                if (settings.market === "sg") {
+                    srcFile = "../{0}/dest/{1}.csv".format(settings.market, cells[0]);
+                } else if (settings.market === "cn") {
+                    if (cells[0].startsWith('SH')) {
+                        // sh
+                        srcFile = "../../wsWDZ/etl/SH/{0}.txt".format(cells[0]);
+                    } else {
+                        // sz
+                        srcFile = "../../wsWDZ/etl/SZ/{0}.txt".format(cells[0]);
+                    }
+                } else { // common
+                    srcFile = "{0}_{1}_{2}.csv".format(settings.market, cells[1], period);
+                }
+
                 destFile = "{3}{0}/{1}_{2}.js".format(settings.market, cells[1], period, settings.DestFolder);
                 // console.log(srcFile, destFile);
                 generate(srcFile, destFile);
@@ -112,7 +119,7 @@ function generate(srcFile, output) {
                 array.pop();
             }
             // sorting by date: newest to oldest
-            if (settings.source === "SQ") {
+            if (settings.source !== "Y") {
                 array.reverse();
             };
 
@@ -132,10 +139,11 @@ function generate(srcFile, output) {
 function mapFunc(line) {
     var part = line.split(",");
     var yCell = part[settings[settings.source].yCell];
-    value = Math.log(yCell) / Math.LN2;
-    if (isNaN(value)) return null; // || value < -0
     var xCell = part[settings[settings.source].xCell];
-    return settings[settings.source].IsCompactDate ?
-        settings.ItemFormat.format(xCell.substring(0, 4), parseInt(xCell.substring(4, 6), 10) - 1, xCell.substring(6, 8), value, yCell) :
-        settings.ItemFormat.format(xCell.substring(0, 4), parseInt(xCell.substring(5, 7), 10) - 1, xCell.substring(8, 10), value, yCell);
+    return settings.ItemFormat.format(settings[settings.source].IsCompactDate ? xCell : xCell.replace(/-/g, ''), yCell);
+    // value = Math.log(yCell) / Math.LN2;
+    // if (isNaN(value)) return null; // || value < -0
+    // return settings[settings.source].IsCompactDate ?
+    //     settings.ItemFormat.format(xCell.substring(0, 4), parseInt(xCell.substring(4, 6), 10) - 1, xCell.substring(6, 8), value, yCell) :
+    //     settings.ItemFormat.format(xCell.substring(0, 4), parseInt(xCell.substring(5, 7), 10) - 1, xCell.substring(8, 10), value, yCell);
 }
