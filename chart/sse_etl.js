@@ -82,11 +82,18 @@ function getMarketInfo() {
 
 
     var extract2File = function() {
-        var vm = require('vm'),
-            content = fs.readFileSync('../../daodao10.github.io/chart/cn/SH000001.js');
+        var i = 0,
+            vm = require('vm'),
+            content = fs.readFileSync('../../daodao10.github.io/chart/cn/999999_m.js');
         vm.runInThisContext(content);
 
-        if (data.length !== his.length) {
+        data.reverse();
+        if (data.length > his.length) {
+            i = data.length - his.length;
+            for (; i > 0; i--) {
+                data.shift();
+            }
+        } else if (data.length !== his.length) {
             console.log('something wrong with index data & historical data');
             return;
         }
@@ -100,7 +107,7 @@ function getMarketInfo() {
             yAxis[i] = [];
         }
         // fill
-        for (var i = 0; i < his.length; i++) {
+        for (i = 0; i < his.length; i++) {
             item = his[i];
             xAxis.push(item.month);
             yAxis[0].push(Number(data[i][2]));
