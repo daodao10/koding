@@ -43,7 +43,7 @@ module.exports = (function() {
             });
         };
     }
-    if (!String.prototype.startWith) {
+    if (!String.prototype.startsWith) {
         String.prototype.startsWith = function(prefix) {
             return this.indexOf(prefix) === 0;
         };
