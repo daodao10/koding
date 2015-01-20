@@ -42,6 +42,7 @@ class FAUtil:
 
 if __name__ == "__main__":
 
+    # cookies = ShareInvestor().refreshCookie()
     cookies = cookies = ShareInvestor.getPersistentCookie()
     # print cookies
 
@@ -59,18 +60,18 @@ if __name__ == "__main__":
     # get SGX fa data from share investor
     #
     symbols = SymbolUtil.getSGX()
-    for symbol in symbols:    
+    for symbol in symbols:
         counter = symbol["_id"]
-        print "%s,%s" % (counter,counter.replace('.SI',''))
-        # content = FAUtil.fetch(counter)
 
-        # saved = True #FAUtil.saveSource(counter, content)
+        content = FAUtil.fetch(ShareInvestor.Urls["fa-year"], counter, cookies)
 
-        # if saved:
-        #     saved = FAUtil.saveFa(counter, content) and saved
-        #     if saved:
-        #         print '%s done' % counter
-        #     else:
-        #         print '%s failed to extract to txt' % counter
-        # else:
-        #     print 'failed to get %s' % counter
+        saved = True #FAUtil.saveSource(counter, content)
+
+        if saved:
+            saved = FAUtil.saveFa(counter, content) and saved
+            if saved:
+                print '%s done' % counter
+            else:
+                print '%s failed to extract to txt' % counter
+        else:
+            print 'failed to get %s' % counter
