@@ -53,4 +53,13 @@ module.exports = (function() {
             return str.match(suffix + "$") == suffix;
         };
     }
+    if (!String.prototype.padding) {
+        String.prototype.padding = function(n, c) {
+            /// c: character
+            /// n: duplicate number of the character
+
+            c = c || '0';
+            return (this.length < n) ? c + this.padding(n - 1, c) : this;
+        };
+    }
 }());
