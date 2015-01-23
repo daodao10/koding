@@ -73,10 +73,8 @@ function batchProcess(filename) {
                     srcFile = "../{0}/dest/{1}.csv".format(settings.market, cells[0]);
                 } else if (settings.market === "cn") {
                     if (cells[0].startsWith('SH')) {
-                        // sh
                         srcFile = "../../wsWDZ/etl/SH/{0}.txt".format(cells[0]);
                     } else {
-                        // sz
                         srcFile = "../../wsWDZ/etl/SZ/{0}.txt".format(cells[0]);
                     }
                 } else { // common
@@ -90,18 +88,6 @@ function batchProcess(filename) {
 
             // console.log("finished:", index.toString());
         });
-    } else {
-        // single src file
-
-        var code = '^N225';
-        settings["source"] = etlUtil.encode_source('stooq');
-        settings["period"] = etlUtil.encode_period('daily');
-        settings["market"] = 'world';
-
-        srcFile = "{0}_{1}_{2}.csv".format(settings.market, code, settings.period);
-        destFile = "{3}{0}/{1}_{2}.js".format(settings.market, code, settings.period, settings.DestFolder);
-        generate(srcFile, destFile);
-
     }
 }
 
