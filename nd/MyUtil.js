@@ -106,5 +106,9 @@ MyUtil.prototype.sleep = function(milliSeconds) {
     while (new Date().getTime() < startTime + milliSeconds);
 };
 
+MyUtil.prototype.log2 = function(x) {
+    if (x <= 0) return NaN;
+    return Math.log(x) / Math.LN2;
+};
 
 module.exports = new MyUtil();
