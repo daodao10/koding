@@ -64,7 +64,7 @@ var DuplicatedHandler = function(options) {
         if (cursor && cursor.objsLeftInBatch() > 0) {
             return cursor;
         } else {
-            print("don't any have duplicated record!");
+            print("don't have any duplicated records!");
         }
     };
 
