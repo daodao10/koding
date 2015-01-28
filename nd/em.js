@@ -136,7 +136,7 @@ function coreProcess(content, s) {
 }
 
 function save(s, data) {
-    fs.writeFile(util.format("%s.txt", s), data, function(err) {
+    fs.writeFile("{0}.txt".format(s), data, function(err) {
         if (err) {
             throw err;
         }
