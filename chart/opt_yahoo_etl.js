@@ -9,6 +9,7 @@ var settings = {
     // ItemFormat: "[new Date({0},{1},{2}),{3},{4}]",
     HasHeader: true,
     HasLastBlank: true,
+    SortingOrder: 1, // 1 --accending, -1 -- decending
 
     "Y": { // newest to oldest
         IsCompactDate: false, //1990-01-01
@@ -32,14 +33,13 @@ var settings = {
     }
 };
 
+// main function
 if (process.argv.length > 2) {
     console.log("processing", process.argv[2]);
     batchProcess(process.argv[2]);
 } else {
     console.log("USAGE: node opt_yahoo_etl.js <filename>");
 }
-
-// batchProcess();
 
 
 function batchProcess(filename) {
@@ -104,10 +104,18 @@ function generate(srcFile, output) {
             if (settings.HasLastBlank) { // remove last blank line
                 array.pop();
             }
-            // sorting by date: newest to oldest
-            if (settings.source !== "Y") {
-                array.reverse();
-            };
+
+            if (SortingOrder === 1) {
+                // sorting by date: oldest to newest
+                if (settings.source === "Y") {
+                    array.reverse();
+                }
+            } else if (SortingOrder === -1) {
+                // sorting by date: newest to oldest
+                if (settings.source !== "Y") {
+                    array.reverse();
+                }
+            }
 
             var data = array.map(mapFunc);
 
