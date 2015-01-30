@@ -105,12 +105,12 @@ function generate(srcFile, output) {
                 array.pop();
             }
 
-            if (SortingOrder === 1) {
+            if (settings.SortingOrder === 1) {
                 // sorting by date: oldest to newest
                 if (settings.source === "Y") {
                     array.reverse();
                 }
-            } else if (SortingOrder === -1) {
+            } else if (settings.SortingOrder === -1) {
                 // sorting by date: newest to oldest
                 if (settings.source !== "Y") {
                     array.reverse();
