@@ -71,7 +71,7 @@ function batchProcess(filename) {
                 cells = row.stripLineBreaks().split(',');
                 if (settings.market === "sg") {
                     srcFile = "../{0}/dest/{1}.csv".format(settings.market, cells[0]);
-                } else if (settings.market === "cn") {
+                } else if (settings["source"] === "WS") {
                     if (cells[0].startsWith('SH')) {
                         srcFile = "../../wsWDZ/etl/SH/{0}.txt".format(cells[0]);
                     } else {
