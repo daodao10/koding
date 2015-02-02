@@ -1,6 +1,6 @@
 #!/usr/bin 
-today=`date +%Y%m%d`
-#today='20141208'
+today=`date -v-5H +%Y%m%d`
+# today='20150130'
 
 echo "get data from eastmoney.com ..."
 

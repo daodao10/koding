@@ -1,6 +1,7 @@
 #!/bin/bash
 
-today=`date +%Y%m%d`
+today=`date -v-5H +%Y%m%d`
+# today='20150129'
 
 if [ ! -d "$today" ]; then
     mkdir $today
