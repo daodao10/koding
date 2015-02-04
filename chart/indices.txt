@@ -1,5 +1,4 @@
 symbol,code[yahoo: world: monthly, daily]
-^DJI,^DJI
 ^GSPC,^SPX
 ^IXIC,^NDQ
 ^HSI,^HSI

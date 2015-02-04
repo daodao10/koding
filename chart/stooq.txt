@@ -1,2 +1,3 @@
-symbol,code[stooq : cn : daily]
-^shc,999999
+symbol,code[stooq : world : monthly, daily]
+^DJI,^DJI
+^shc,^SSE
