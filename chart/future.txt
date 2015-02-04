@@ -3,3 +3,4 @@ cl.f,CL
 gc.f,GC
 sgdcny,SGDCNY
 sgdusd,SGDUSD
+usdcny,USDCNY

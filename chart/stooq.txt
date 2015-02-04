@@ -1,3 +1,7 @@
 symbol,code[stooq : world : monthly, daily]
 ^DJI,^DJI
 ^shc,^SSE
+^JCI,^JCI,Jakarta Composite Index - Indonesia
+^DAX,^DAX,DAX Index - Germany
+^KLCI,^KLCI,Kuala Lumpur Composite Index
+^MXWO,^MXWO,MSCI World Index

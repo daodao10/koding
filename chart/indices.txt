@@ -3,6 +3,5 @@ symbol,code[yahoo: world: monthly, daily]
 ^IXIC,^NDQ
 ^HSI,^HSI
 ^STI,^STI
-000001.SS,^SSE
 ^N225,^N225
 ^TNX,^TNX
