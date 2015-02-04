@@ -4,15 +4,25 @@ var http = require('http'),
 var MyUtil = function() {};
 
 MyUtil.prototype.extend = function(origin, add) {
-    // don't do anything if add isn't an object
-    if (!add || typeof add !== 'object') return origin;
 
-    var keys = Object.keys(add);
-    var i = keys.length;
-    while (i--) {
-        origin[keys[i]] = add[keys[i]];
-    }
-    return origin;
+    var isObject = function(value) {
+        return Object(value) === value;
+    };
+
+    return (function() {
+        if (!add || typeof add !== 'object') return origin;
+
+        var keys = Object.keys(add); //Object.getOwnPropertyNames(add);
+        var i = keys.length;
+        while (i--) {
+            if (isObject(origin[keys[i]])) {
+                MyUtil.prototype.extend(origin[keys[i]], add[keys[i]]);
+            } else {
+                origin[keys[i]] = add[keys[i]];
+            }
+        }
+        return origin;
+    }(origin, add));
 };
 
 MyUtil.prototype.get = function(options, callback) {
@@ -97,7 +107,7 @@ MyUtil.prototype.readlinesSync = function(filePath, options) {
     }, options);
     var content = fs.readFileSync(filePath, options);
     if (content) {
-        return content.toString().split('\n');
+        return content.toString().split(/\r\n|\n/);
     }
 };
 
