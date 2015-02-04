@@ -54,15 +54,8 @@ function batchProcess(filename) {
             index++;
 
             if (index === 1) {
-                var matches = /\[(\w+)\s*:\s*(\w+)\s*:\s*(\w+)(,\s*(\w+))*\]/gi.exec(row);
-                settings["source"] = etlUtil.encode_source(matches[1]);
-                settings["market"] = matches[2];
-                if (matches.length > 4) {
-                    settings["period"] = [matches[3], matches[5]];
-                } else {
-                    settings["period"] = [matches[3]];
-                }
-
+                myUtil.extend(settings, etlUtil.parse_setting(row));
+                settings["source"] = etlUtil.encode_source(settings["source"]);
                 return;
             }
 
@@ -78,7 +71,7 @@ function batchProcess(filename) {
                         srcFile = "../../wsWDZ/etl/SZ/{0}.txt".format(cells[0]);
                     }
                 } else { // common
-                    srcFile = "{0}_{1}_{2}.csv".format(settings.market, cells[1], period);
+                    srcFile = "./d/{0}_{1}_{2}.csv".format(settings.market, cells[1], period);
                 }
 
                 destFile = "{3}{0}/{1}_{2}.js".format(settings.market, cells[1], period, settings.DestFolder);

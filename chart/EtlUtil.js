@@ -47,4 +47,25 @@ EtlUtil.prototype.decode_source = function(source) {
     }
 };
 
+EtlUtil.prototype.parse_setting = function(data) {
+    var matches = /\[(\w+)\s*:\s*(\w+)\s*:\s*(\w+)(,\s*(\w+))*\]/gi.exec(data);
+    var setting = {
+        "source": matches[1],
+        "market": matches[2]
+    };
+
+    if (matches.length > 4) {
+        if (matches[5]) {
+            setting["period"] = [matches[3], matches[5]];
+        } else {
+            setting["period"] = [matches[3]];
+        }
+    } else {
+        setting["period"] = [matches[3]];
+    }
+
+    console.log("setting: ", setting);
+    return setting;
+};
+
 module.exports = new EtlUtil();
