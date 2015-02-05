@@ -1,6 +1,6 @@
 symbol,code[stooq : world : monthly, daily]
-cl.f,CL
-gc.f,GC
-sgdcny,SGDCNY
-sgdusd,SGDUSD
-usdcny,USDCNY
+cl.f,CL,轻质低硫原油(WTI)期货,FUTURE
+gc.f,GC,黄金期货,FUTURE
+sgdcny,SGDCNY,新元对人民币,CURRENCY
+sgdusd,SGDUSD,新元对美元,CURRENCY
+usdcny,USDCNY,美元对人民币,CURRENCY
