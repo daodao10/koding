@@ -64,7 +64,7 @@ EtlUtil.prototype.parse_setting = function(data) {
         setting["period"] = [matches[3]];
     }
 
-    console.log("setting: ", setting);
+    // console.log("setting: ", setting);
     return setting;
 };
 
