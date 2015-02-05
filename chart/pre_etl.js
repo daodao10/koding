@@ -12,7 +12,9 @@ function main() {
     var index = 0,
         action,
         filename,
-        setting = {},
+        setting = {
+            sorting: 0 // 0: disabled, 1: sorting by code, 2: sorting by name
+        },
         period,
         start,
         today = new Date(),
@@ -27,7 +29,7 @@ function main() {
         console.log("\t2: output dropdown list");
         return;
     } else if (process.argv.length === 4) {
-        console.log("processing", process.argv[2]);
+        console.log("# processing", process.argv[2]);
         filename = process.argv[2];
         action = parseInt(process.argv[3], 10);
     }
@@ -50,12 +52,8 @@ function main() {
                     // console.log("symbol,code,name,sector[yahoo : us : daily]");
                     // console.log("symbol,code,name,sector[wstock : cn : daily]");
                 } else {
-                    setting = etlUtil.parse_setting(row);
-                    if (setting.market === "world") {
-                        setting["start"] = new Date(today.getFullYear() - 50, 0, 1);
-                    } else {
-                        setting["start"] = new Date(today.getFullYear() - 25, 0, 1);
-                    }
+                    setting = myUtil.extend(setting, etlUtil.parse_setting(row));
+
                     setting["end"] = today;
                 }
                 return;
@@ -71,10 +69,10 @@ function main() {
 
                     for (var i in setting.period) {
                         period = setting.period[i];
-                        if (period === "daily") {
-                            start = _get_mid_term_date(setting.end, -5);
+                        if (setting.period === "daily") {
+                            start = new Date(today.getFullYear() - 30, 0, 1);
                         } else {
-                            start = setting.start;
+                            start = new Date(today.getFullYear() - 50, 0, 1);
                         }
 
                         console.log(_output_stooq_download_link(
@@ -85,10 +83,10 @@ function main() {
 
                     for (var i in setting.period) {
                         period = setting.period[i];
-                        if (setting.market === "world" && period === "daily") {
-                            start = _get_mid_term_date(setting.end, -5);
+                        if (setting.period === "daily") {
+                            start = new Date(today.getFullYear() - 30, 0, 1);
                         } else {
-                            start = setting.start;
+                            start = new Date(today.getFullYear() - 50, 0, 1);
                         }
 
                         console.log(_output_yahoo_download_link(
@@ -115,14 +113,25 @@ function main() {
             }
         }
 
-        dropdownList.sort(function(obj1, obj2) {
-            if (obj1.n > obj2.n) {
-                return 1;
-            } else if (obj1.n < obj2.n) {
-                return -1;
-            }
-            return 0;
-        });
+        if (setting.sorting === 1) {
+            dropdownList.sort(function(obj1, obj2) {
+                if (obj1.c > obj2.c) {
+                    return 1;
+                } else if (obj1.c < obj2.c) {
+                    return -1;
+                }
+                return 0;
+            });
+        } else if (setting.sorting === 2) {
+            dropdownList.sort(function(obj1, obj2) {
+                if (obj1.n > obj2.n) {
+                    return 1;
+                } else if (obj1.n < obj2.n) {
+                    return -1;
+                }
+                return 0;
+            });
+        }
 
         fs.writeFile("{0}_.js".format(setting.market), JSON.stringify(dropdownList), {
             "encoding": 'utf-8'
