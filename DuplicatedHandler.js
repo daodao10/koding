@@ -68,6 +68,23 @@ var DuplicatedHandler = function(options) {
         }
     };
 
+    var _execute = function(func) {
+        var cursor = _search();
+        if (cursor) {
+            var ids = [];
+            cursor.forEach(function(doc) {
+                doc.ids.shift();
+                if (doc.ids.length > 0) {
+                    ids = ids.concat(doc.ids);
+                }
+            });
+
+            if (ids.length && func) {
+                func(ids);
+            }
+        }
+    };
+
     if (options && options.gid) {
         return {
             display: function() {
@@ -78,32 +95,35 @@ var DuplicatedHandler = function(options) {
                     });
                 }
             },
-            rm: function(hard) {
+            rm: function(removed) {
                 // db.text.ensureIndex({"d": 1, "s": 1}, {unique: true, dropDups: true})
 
-                var cursor = _search();
-                if (cursor) {
-                    var ids = [];
-                    cursor.forEach(function(doc) {
-                        doc.ids.shift();
-                        if (doc.ids.length > 0) {
-                            ids = ids.concat(doc.ids);
-                        }
-                    });
-
-                    if (ids.length) {
-                        if (hard) {
-                            db[options.dn].remove({
-                                _id: {
-                                    '$in': ids
-                                }
-                            });
-                            print(ids.length, 'removed');
-                        } else {
-                            print('found', ids.length, 'records\nplease use rm(true) to hard remove');
-                        }
+                _execute(function(ids) {
+                    if (removed) {
+                        db[options.dn].remove({
+                            _id: {
+                                '$in': ids
+                            }
+                        });
+                        print(ids.length, 'removed');
+                    } else {
+                        print('found', ids.length, 'records\nplease use rm(true) to hard remove');
                     }
-                }
+                });
+            },
+            update: function(updateQuery) {
+                _execute(function(ids) {
+                    db[options.dn].update({
+                        _id: {
+                            '$in': ids
+                        }
+                    }, {
+                        $set: updateQuery
+                    }, {
+                        multi: true
+                    });
+                    print(ids.length, 'update');
+                });
             }
         };
     } else {
