@@ -32,8 +32,8 @@ function getMarketInfo() {
             jsonp: true
         },
         urlFormat = '/marketdata/tradedata/queryMonthlyTrade.do?jsonCallBack=jsonpCallbackMV&prodType=9&inYear={0}&_=1414322768255',
-        start = 2014,
-        till = 2015,
+        start = 2015,
+        till = 2016,
         processed = 0,
         rows = [],
         y;
@@ -87,7 +87,7 @@ function getMarketInfo() {
             content = fs.readFileSync('../../daodao10.github.io/chart/world/^SSE_m.js');
         vm.runInThisContext(content);
 
-        data.reverse();
+        // data.reverse();
         if (data.length > his.length) {
             i = data.length - his.length;
             for (; i > 0; i--) {
