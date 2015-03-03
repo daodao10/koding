@@ -1,3 +1,4 @@
+symbol,code,name,sector[shareinvestor : sg : daily]
 40A.SI,40A,IPS Securex,--
 40B.SI,40B,SMJ Intl,--
 40D.SI,40D,Starburst,--
