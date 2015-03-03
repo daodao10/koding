@@ -1,5 +1,7 @@
 #!/usr/bin 
-today=`date -v-5H +%Y%m%d`
+# delay 12 hours based on UTC+8
+# today=`date -u -v-4H +%Y%m%d` # mac
+today=`date -u -d "-4 hour" +%Y%m%d`
 # today='20150130'
 
 echo "get data from eastmoney.com ..."
