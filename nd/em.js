@@ -15,28 +15,61 @@ var span = [
     ],
     options = {
         host: 'data.eastmoney.com'
-        // , debug: true
+        //, debug: true
     },
     urlFormat = '/stockcomment/{0}.html',
     myMongo = new MyMongo("{0}{1}".format(config.DbSettings.DbUri, 'em')),
     start = 1,
-    today = process.argv.length > 2 ? process.argv[2] : new Date().format('yyyyMMdd');
-
+    today = process.argv.length > 2 ? process.argv[2] : new Date().format('yyyyMMdd'),
+    helper = {
+        rt: 2596, //total
+        rc: 0, //counter
+        ri: 0, //current index
+        r: [], //record
+        rs: 0, //start
+        re: 0 //end
+    };
 
 function counterProcess(symbol) {
-    if (symbol === "999999" || symbol === "399001")
+    if (symbol === "999999" ||
+        symbol === "399001" ||
+        symbol === "399005" ||
+        symbol === "399006") {
+        helper.rt--;
         return;
+    }
 
     options.path = urlFormat.format(symbol);
-    myUtil.get(options, function(data) {
-        var content = iconv.decode(data, "GBK");
-        var o = coreProcess(content, symbol);
-        if (o) {
-            o._id = start++;
-            o.s = symbol;
-            o.d = today;
+    myUtil.get(options, function(data, statusCode) {
 
-            myMongo.insert("test", o);
+        if (statusCode === 200) {
+            var content = iconv.decode(data, "GBK");
+            var o = coreProcess(content, symbol);
+            if (o) {
+                o._id = start++;
+                o.s = symbol;
+                o.d = today;
+                helper.r.push(o);
+                helper.ri++;
+            }
+        } else {
+            console.dir([symbol, 'error ' + statusCode]);
+        }
+
+        helper.rc++;
+
+        if (helper.rc % 100 === 0 || helper.rc === helper.rt) {
+            helper.rs = helper.re;
+            helper.re = helper.ri;
+            console.log(helper.rs, helper.re);
+
+            if (helper.re > helper.rs) {
+                myMongo.insert("test", helper.r.slice(helper.rs, helper.re));
+            }
+
+            // if (helper.rc === helper.rt) {
+            //     console.log('done');
+            // }
         }
     });
 }
@@ -186,6 +219,7 @@ function patchFunc(seq) {
         if (index++ == 1) {
             return;
         }
+
         var symbol,
             arr = eval(row);
         if (arr instanceof Array) {
