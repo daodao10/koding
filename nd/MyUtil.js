@@ -1,6 +1,8 @@
 var http = require('http'),
     fs = require('fs');
 
+http.globalAgent.maxSockets = 25;
+
 var MyUtil = function() {};
 
 MyUtil.prototype.extend = function(origin, add) {
@@ -25,6 +27,17 @@ MyUtil.prototype.extend = function(origin, add) {
     }(origin, add));
 };
 
+http.ClientRequest.prototype.setTimeout = function(timeout, callback) {
+    var self = this;
+    if (callback) {
+        self.on('timeout', callback);
+    }
+    self.connection.setTimeout(timeout, function() {
+        self.abort();
+        self.emit('timeout');
+    });
+};
+
 MyUtil.prototype.get = function(options, callback) {
     options = this.extend({
         port: 80,
@@ -36,7 +49,9 @@ MyUtil.prototype.get = function(options, callback) {
         }
         // , debug: true
     }, options);
-    var req = http.get(options, function(res) {
+
+    http.get(options, function(res) {
+
         if (options.debug) {
             console.log('STATUS: ' + res.statusCode);
             console.log('HEADERS: ' + JSON.stringify(res.headers));
@@ -48,6 +63,7 @@ MyUtil.prototype.get = function(options, callback) {
             // process streamed parts here...
             bodyChunks.push(chunk);
         }).on('end', function() {
+
             var body = Buffer.concat(bodyChunks);
             if (options.debug) {
                 console.log('BODY: ' + body);
@@ -71,12 +87,10 @@ MyUtil.prototype.get = function(options, callback) {
                 callback(body, res.statusCode);
             }
         });
+    }).on('error', function(e) {
+        callback(null, 500);
+        // console.log('ERROR: ' + e.message);
     });
-
-    req.on('error', function(e) {
-        console.log('ERROR: ' + e.message);
-    });
-
 };
 
 MyUtil.prototype.readlines = function(filePath, callback) {
