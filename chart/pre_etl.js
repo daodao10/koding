@@ -104,7 +104,7 @@ function main() {
         var lines = myUtil.readlinesSync(filename);
         for (var i = 0; i < lines.length; i++) {
             if (i === 0) {
-                setting = etlUtil.parse_setting(lines[i]);
+                setting = myUtil.extend(setting, etlUtil.parse_setting(lines[i]));
             } else {
                 cells = lines[i].split(',');
                 if (cells.length === 4) {
