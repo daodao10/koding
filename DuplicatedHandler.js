@@ -3,7 +3,7 @@ var DuplicatedHandler = function(options) {
     options: {
         dn: DB_Name,
         m: $match
-        s: $sort,
+        s: $sort, //1: ascending, -1: descending
         gid: $group._id,
 
     }*/
@@ -69,6 +69,7 @@ var DuplicatedHandler = function(options) {
     };
 
     var _execute = function(func) {
+        // process the duplicated records after the first record
         var cursor = _search();
         if (cursor) {
             var ids = [];

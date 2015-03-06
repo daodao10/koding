@@ -2,12 +2,12 @@
  * handle duplicated em data
  */
 
-load("./DuplicatedHandler.js")
+load("../DuplicatedHandler.js")
 
 var h = new DuplicatedHandler({
     dn: "test",
     m: {
-        d: "20141231"
+        d: "20150306"
     },
     s: {
         _id: 1
@@ -19,4 +19,7 @@ var h = new DuplicatedHandler({
 });
 
 h.display();
-// h.rm();
+// h.rm(true);
+// h.update({
+//     d: "20150225"
+// });
