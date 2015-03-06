@@ -177,6 +177,17 @@ function save(s, data) {
     });
 }
 
+function totalLines(filename) {
+    var lines = myUtil.readlinesSync(filename);
+    if (lines) {
+        if (lines[lines.length - 1]) {
+            return lines.length;
+        }
+        return lines.length - 1;
+    }
+    return 0;
+}
+
 function driven(func) {
     if (func) {
         myMongo.find("test", {
@@ -202,32 +213,46 @@ function mainFunc(seq) {
     start = seq;
     console.log("start from", start);
 
-    myUtil.readlines("../symbols.txt", function(row) {
-        var symbol = row.split(',')[0];
-        if (symbol) {
-            counterProcess(symbol);
-        }
-    });
+    var filename = "../symbols.txt",
+        total = totalLines(filename);
+
+    if (total > 0) {
+        helper.rt = total;
+
+        myUtil.readlines(filename, function(row) {
+            var symbol = row.split(',')[0];
+            if (symbol) {
+                counterProcess(symbol);
+            }
+        });
+    }
 }
 
 function patchFunc(seq) {
     start = seq;
     console.log("start from", start);
 
-    var index = 1;
-    myUtil.readlines("./{0}.txt".format(today), function(row) {
-        if (index++ == 1) {
-            return;
-        }
+    var index = 1,
+        filename = "./{0}.txt".format(today),
+        total = totalLines(filename);
 
-        var symbol,
-            arr = eval(row);
-        if (arr instanceof Array) {
-            symbol = arr[0];
-            // console.log(symbol);
-            counterProcess(symbol);
-        }
-    });
+    if (total > 1) { // ignore first line
+        helper.rt = total - 1;
+
+        myUtil.readlines(filename, function(row) {
+            if (index++ == 1) {
+                return;
+            }
+
+            var symbol,
+                arr = eval(row);
+            if (arr instanceof Array) {
+                symbol = arr[0];
+                // console.log(symbol);
+                counterProcess(symbol);
+            }
+        });
+    }
 }
 
 
