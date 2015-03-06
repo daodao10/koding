@@ -61,7 +61,7 @@ function counterProcess(symbol) {
         if (helper.rc % 100 === 0 || helper.rc === helper.rt) {
             helper.rs = helper.re;
             helper.re = helper.ri;
-            console.log(helper.rs, helper.re);
+            console.log("{0}-{1}".format(helper.rs, helper.re));
 
             if (helper.re > helper.rs) {
                 myMongo.insert("test", helper.r.slice(helper.rs, helper.re));
