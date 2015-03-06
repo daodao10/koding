@@ -1,4 +1,5 @@
 var http = require('http'),
+    https = require('https'),
     fs = require('fs');
 
 http.globalAgent.maxSockets = 25;
@@ -27,44 +28,37 @@ MyUtil.prototype.extend = function(origin, add) {
     }(origin, add));
 };
 
-http.ClientRequest.prototype.setTimeout = function(timeout, callback) {
-    var self = this;
-    if (callback) {
-        self.on('timeout', callback);
-    }
-    self.connection.setTimeout(timeout, function() {
-        self.abort();
-        self.emit('timeout');
-    });
-};
-
+// refer to https://github.com/ncb000gt/node-es/blob/master/lib/request.js
 MyUtil.prototype.get = function(options, callback) {
     options = this.extend({
+        secure: false,
         port: 80,
         method: 'GET',
         headers: {
             'Accept-Language': 'zh-CN,zh;q=0.8,en-US;q=0.6,en;q=0.4,zh-TW;q=0.2',
             'Content-Type': 'application/json',
             'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_9_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/38.0.2125.104 Safari/537.36',
-        }
+        },
+        timeout: 15000,
         // , debug: true
     }, options);
 
-    http.get(options, function(res) {
+    var req = (options.secure ? https : http).get(options, function(res) {
+
+        var bodyChunks = [];
+        // res.setEncoding('utf-8');
 
         if (options.debug) {
             console.log('STATUS: ' + res.statusCode);
             console.log('HEADERS: ' + JSON.stringify(res.headers));
         }
 
-        // Buffer the body entirely for processing as a whole.
-        var bodyChunks = [];
         res.on('data', function(chunk) {
-            // process streamed parts here...
             bodyChunks.push(chunk);
         }).on('end', function() {
 
             var body = Buffer.concat(bodyChunks);
+
             if (options.debug) {
                 console.log('BODY: ' + body);
             }
@@ -87,10 +81,23 @@ MyUtil.prototype.get = function(options, callback) {
                 callback(body, res.statusCode);
             }
         });
-    }).on('error', function(e) {
-        callback(null, 500);
-        // console.log('ERROR: ' + e.message);
+
     });
+
+    req.on('error', function(err) {
+        // if (err.code === "ECONNRESET") {
+        //     console.log("Timeout occurs");
+        // } else {
+        //     console.log('ERROR: ' + err.message);
+        // }
+        callback(null, 500);
+    });
+
+    if (options.timeout) {
+        req.setTimeout(options.timeout, function() {
+            req.abort();
+        });
+    }
 };
 
 MyUtil.prototype.readlines = function(filePath, callback) {
