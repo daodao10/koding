@@ -15,7 +15,7 @@ var span = [
     ],
     options = {
         host: 'data.eastmoney.com'
-        //, debug: true
+            //, debug: true
     },
     urlFormat = '/stockcomment/{0}.html',
     myMongo = new MyMongo("{0}{1}".format(config.DbSettings.DbUri, 'em')),
@@ -31,10 +31,10 @@ var span = [
     };
 
 function counterProcess(symbol) {
-    if (symbol === "999999" ||
-        symbol === "399001" ||
-        symbol === "399005" ||
-        symbol === "399006") {
+    if (symbol.startsWith('999') ||
+        symbol.startsWith('399') ||
+        symbol.startsWith('510') ||
+        symbol.startsWith('159')) {
         helper.rt--;
         return;
     }
