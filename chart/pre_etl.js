@@ -19,9 +19,10 @@ function main() {
         start,
         today = new Date(),
         dropdownList = [],
-        cells;
+        cells,
+        lines;
 
-    if (process.argv.length <= 2) {
+    if (process.argv.length < 4) {
         console.log("USAGE: node pre_etl <filename> <action>");
         console.log("action: ");
         console.log("\t0: output processing file");
@@ -48,22 +49,24 @@ function main() {
                     // console.log("symbol,code,name,sector[yahoo : world : monthly, daily]");
                     // console.log("symbol,code,name,sector[stooq : world : monthly, daily]");
                     // console.log("symbol,code,name,sector[shareinvestor : sg : daily]");
-                    console.log("symbol,code,name,sector[yahoo : hk : daily]");
+                    // console.log("symbol,code,name,sector[yahoo : hk : daily]");
                     // console.log("symbol,code,name,sector[yahoo : us : daily]");
-                    // console.log("symbol,code,name,sector[wstock : cn : daily]");
+                    console.log("symbol,code,name,sector[wstock : cn : daily]");
                 } else {
                     setting = myUtil.extend(setting, etlUtil.parse_setting(row));
 
                     setting["end"] = today;
+                    return;
                 }
-                return;
             }
 
             cells = row.stripLineBreaks().split(',');
             if (action === 0) {
                 // console.log('%s,%s,%s,%s', cells[0], cells[0].replace('.SI', ''), cells[1], '--');
                 // console.log('%s,%s,%s,--', cells[0], cells[0], cells[1]);
-                console.log('%s.HK,%s,%s,--', cells[0].substring(1), cells[0], cells[1]);
+                // console.log('%s.HK,%s,%s,--', cells[0].substring(1), cells[0], cells[1]);
+                console.log('%s%s,%s,%s,--', cells[0].startsWith('0') || cells[0].startsWith('3') || cells[0].startsWith('15') ? 'SZ' : 'SH',
+                    cells[0] === '999999' ? '000001' : cells[0], cells[0], cells[1]);
             } else if (action === 1) {
                 if (setting.source === "stooq") {
 
@@ -101,7 +104,7 @@ function main() {
     } else if (action === 2) {
 
         // console.log(_output_dropdown_list(setting.market, cells[1], cells[2], cells[3]));
-        var lines = myUtil.readlinesSync(filename);
+        lines = myUtil.readlinesSync(filename);
         for (var i = 0; i < lines.length; i++) {
             if (i === 0) {
                 setting = myUtil.extend(setting, etlUtil.parse_setting(lines[i]));
@@ -141,6 +144,43 @@ function main() {
             }
             console.log("{0}_.js saved".format(setting.market));
         });
+    } else if (action === 3) {
+
+        var symbols = myUtil.readlinesSync(filename),
+            srcFile;
+
+        for (var i = 1; i < symbols.length; i++) {
+
+            cells = symbols[i].split(',');
+            if (cells.length > 1) {
+                console.log(cells[0]);
+                if (cells[0].startsWith('SH')) {
+                    srcFile = "../../wsWDZ/etl/SH/{0}.txt".format(cells[0]);
+                } else {
+                    srcFile = "../../wsWDZ/etl/SZ/{0}.txt".format(cells[0]);
+                }
+
+                var newLines = [],
+                    pre_date = '';
+                lines = myUtil.readlinesSync(srcFile);
+                if (lines) {
+                    for (var j = 0; j < lines.length; j++) {
+                        if (j === 0) {
+                            newLines.push(lines[j]);
+                        } else {
+                            cells = lines[j].split(',');
+                            if (cells[1] > pre_date) {
+                                pre_date = cells[1];
+                                newLines.push(lines[j]);
+                            }
+                        }
+                    }
+
+                    fs.writeFileSync(srcFile, newLines.join('\r\n') + '\r\n');
+                }
+            }
+        }
+
     }
 }
 
