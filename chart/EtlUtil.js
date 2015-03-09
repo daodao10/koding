@@ -28,6 +28,8 @@ EtlUtil.prototype.encode_source = function(source) {
         return "SI";
     } else if (source === "wstock") {
         return "WS";
+    } else if (source === "dao") {
+        return "D";
     } else {
         throw UserException("unknown data source");
     }
@@ -42,6 +44,8 @@ EtlUtil.prototype.decode_source = function(source) {
         return "shareinvestor.com";
     } else if (source === "WS") {
         return "wstock.net";
+    } else if (source === "D") {
+        return "dao";
     } else {
         throw UserException("unknown data source");
     }

@@ -30,6 +30,11 @@ var settings = {
         IsCompactDate: true,
         xCell: 1,
         yCell: 6
+    },
+    "D": {
+        IsCompactDate: false,
+        xCell: 0,
+        yCell: 1
     }
 };
 
