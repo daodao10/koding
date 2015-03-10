@@ -22,7 +22,7 @@ var span = [
     start = 1,
     today = process.argv.length > 2 ? process.argv[2] : new Date().format('yyyyMMdd'),
     helper = {
-        rt: 2596, //total
+        rt: 0, //total
         rc: 0, //counter
         ri: 0, //current index
         r: [], //record
@@ -57,6 +57,7 @@ function counterProcess(symbol) {
         }
 
         helper.rc++;
+        // console.log("{0},{1}".format(helper.rc, helper.rt));
 
         if (helper.rc % 100 === 0 || helper.rc === helper.rt) {
             helper.rs = helper.re;
@@ -233,26 +234,22 @@ function patchFunc(seq) {
     console.log("start from", start);
 
     var index = 1,
-        filename = "./{0}.txt".format(today),
-        total = totalLines(filename);
+        filename = "./{0}.txt".format(today);
 
-    if (total > 1) { // ignore first line
-        helper.rt = total - 1;
+    myUtil.readlines(filename, function(row) {
+        if (index++ == 1) {
+            return;
+        }
 
-        myUtil.readlines(filename, function(row) {
-            if (index++ == 1) {
-                return;
-            }
-
-            var symbol,
-                arr = eval(row);
-            if (arr instanceof Array) {
-                symbol = arr[0];
-                // console.log(symbol);
-                counterProcess(symbol);
-            }
-        });
-    }
+        var symbol,
+            arr = eval(row);
+        if (arr instanceof Array) {
+            helper.rt++;
+            symbol = arr[0];
+            // console.log(symbol);
+            counterProcess(symbol);
+        }
+    });
 }
 
 
