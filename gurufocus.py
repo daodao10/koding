@@ -44,7 +44,7 @@ class GuruFocus:
             table = m.group(1) + m.group(2).rstrip()
 
         if desc and table:
-            return {"date": web_tools.today(utcDiff = -4), "desc": desc, "table": table, "market": "US"}
+            return {"date": web_tools.today(utcDiff = -7), "desc": desc, "table": table, "market": "US"}
 
     def saveTmc2GdpData(self, content, refresh = True):
         arr = self.parseData(content)

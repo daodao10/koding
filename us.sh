@@ -1,7 +1,7 @@
 #!/usr/bin
-# delay 12 hours based on UTC-5
-# today=`date -u -v-17H +%Y%m%d` # mac
-today=`date -u -d '-17 Hour' +%Y%m%d`
+# delay 15 hours based on UTC+8
+today=`date -u -v-7H +%Y%m%d` # mac
+# today=`date -u -d '-7 Hour' +%Y%m%d`
 
 echo 'get data from gurufocus.com ...'
 python gurufocus.py
