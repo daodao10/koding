@@ -1,8 +1,9 @@
 symbol,code[yahoo: world: monthly, daily]
-^GSPC,^SPX,道琼斯工业指数,指数
-^IXIC,^NDQ,纳斯达克指数,指数
-^VIX,^VIX,VOLATILITY S&P 500,指数
-^HSI,^HSI,恒生指数,指数
-^STI,^STI,新加坡海峡指数,指数
-^N225,^N225,日经指数,指数
-^TNX,^TNX,美国10年期国债殖利率(收益率),债券
+^GSPC,^SPX,道琼斯工业指数,INDEX
+^IXIC,^NDQ,纳斯达克指数,INDEX
+^VIX,^VIX,VOLATILITY S&P 500,INDEX
+^HSI,^HSI,恒生指数,INDEX
+^STI,^STI,新加坡海峡指数,INDEX
+^N225,^N225,日经指数,INDEX
+^TNX,^TNX,美国10年期国债殖利率(收益率),BOND
++^RUT,^RUT,罗素2000,INDEX
