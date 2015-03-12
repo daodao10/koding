@@ -110,9 +110,12 @@ class GoogleQuote(Quote):
     # debug.save('data.txt', content)
     list = re.findall(self.RegRow, content)
     for group in list:
+      if group[1] == '-':
+        print 'non-trading day: %s' % str(group)
+        continue
       self.append(datetime.datetime.strptime(group[0],'%b %d, %Y'),
         float(group[1].replace(',', '')), float(group[2].replace(',', '')), float(group[3].replace(',', '')), float(group[4].replace(',', '')),
-        0 if group[5] == "-" else group[5])
+        0 if group[5] == "-" else group[5].replace(',', ''))
 
     if start == 0:
       for m in self.RegPagination.finditer(content):
@@ -133,12 +136,16 @@ if __name__ == '__main__':
   # q = GoogleQuote('aapl','2015-01-01')              # download year to date Apple data
   # print q                                           # print it out
   
-  q = GoogleQuote('orcl','2011-11-01','2011-11-30') # download Oracle data for February 2011
-  q.write_csv('orcl.csv')                           # save it to disk
+  # q = GoogleQuote('orcl','2011-11-01','2011-11-30') # download Oracle data for February 2011
+  # q.write_csv('orcl.csv')                           # save it to disk
   
   # q = Quote()                                       # create a generic quote object
   # q.read_csv('orcl.csv')                            # populate it with our previously saved data
   # print q                                           # print it out
 
-  q = GoogleQuote('^HXC','1985-01-01', '2015-12-31')
-  q.write_csv('^HXC.csv')
+  # q = GoogleQuote('^HXC','1985-01-01', '2015-12-31')
+  # q.write_csv('^HXC.csv')
+
+
+  q = GoogleQuote('601328','1985-01-01', '2015-12-31')
+  q.write_csv('601328.csv')
