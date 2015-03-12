@@ -30,6 +30,8 @@ EtlUtil.prototype.encode_source = function(source) {
         return "WS";
     } else if (source === "dao") {
         return "D";
+    } else if (source === "google") {
+        return "G";
     } else {
         throw UserException("unknown data source");
     }
@@ -46,6 +48,8 @@ EtlUtil.prototype.decode_source = function(source) {
         return "wstock.net";
     } else if (source === "D") {
         return "dao";
+    } else if (source === "G") {
+        return "finance.google.com";
     } else {
         throw UserException("unknown data source");
     }

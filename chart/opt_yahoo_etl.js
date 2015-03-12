@@ -16,6 +16,11 @@ var settings = {
         xCell: 0,
         yCell: 6
     },
+    "G": { // newest to oldest
+        IsCompactDate: false, //1990-01-01
+        xCell: 1,
+        yCell: 6
+    },
     "SI": {
         IsCompactDate: true, //19900101
         xCell: 3,
@@ -105,12 +110,12 @@ function generate(srcFile, output) {
 
             if (settings.SortingOrder === 1) {
                 // sorting by date: oldest to newest
-                if (settings.source === "Y") {
+                if (settings.source === "Y" || settings.source === "G") {
                     array.reverse();
                 }
             } else if (settings.SortingOrder === -1) {
                 // sorting by date: newest to oldest
-                if (settings.source !== "Y") {
+                if (settings.source !== "Y" && settings.source !== "G") {
                     array.reverse();
                 }
             }
