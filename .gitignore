@@ -8,7 +8,7 @@ sgx/fa/
 *.cookie
 *.png
 !us.sh
-!cn.sh
+!asia.sh
 node_modules/
 nd/*.txt
 !nd/*.sh
