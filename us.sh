@@ -5,8 +5,11 @@ today=`date -u -v-7H +%Y%m%d` # mac
 
 echo 'get data from gurufocus.com ...'
 python gurufocus.py
-echo 'done'
 
+echo 'check data ...'
+python check_us.py
+
+echo 'done'
 
 cd chart
 
