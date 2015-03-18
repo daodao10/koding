@@ -74,12 +74,6 @@ function getMarketInfo() {
         }
     };
 
-    for (y = start; y < till; y++) {
-        // console.log(urlFormat.format(y));
-        options.path = urlFormat.format(y);
-        myUtil.get(options, processYearlyMV);
-    }
-
 
     var extract2File = function() {
         var i = 0,
@@ -130,6 +124,18 @@ function getMarketInfo() {
             'encoding': 'utf-8'
         });
     };
+
+
+    var dynamic = true;
+    if (dynamic) {
+        for (y = start; y < till; y++) {
+            // console.log(urlFormat.format(y));
+            options.path = urlFormat.format(y);
+            myUtil.get(options, processYearlyMV);
+        }
+    } else {
+        extract2File();
+    }
 }
 
 function getAllSymbols() {
