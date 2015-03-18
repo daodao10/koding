@@ -14,10 +14,12 @@ def main():
         elif args[1] == 'cn':
             process4CN(dbUri, today)
         else:
-            process4SG(dbUri, today)
-            process4CN(dbUri, today)
+            help()
     else:
-        print 'USAGE: python asia.py [cn|sg]'
+        help()
+
+def help():
+    print 'USAGE: python asia.py [cn|sg]'
 
 def process4SG(dbUri, today):
     print 'processing for SG'

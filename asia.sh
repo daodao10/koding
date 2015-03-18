@@ -2,7 +2,7 @@
 
 echo '--------------------------------------------'
 echo '***** get data from sgx ... *****'
-python asia.py sgx
+python asia.py sg
 
 echo '***** get data from 163.com ... *****'
 python asia.py cn
