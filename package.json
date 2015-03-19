@@ -1,0 +1,9 @@
+{
+    "name": "dao-koding",
+    "version": "0.9.0",
+    "private": true,
+    "dependencies": {
+        "mongodb": "~1.4",
+        "iconv-lite": "~0.4"
+    }
+}
