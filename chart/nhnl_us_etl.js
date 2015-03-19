@@ -1,6 +1,6 @@
 /*
-extract ADV/DEC & NH-NL data from http://unicorn.us.com/
-*/
+ * extract ADV/DEC & NH-NL data from http://unicorn.us.com/
+ */
 
 var fs = require('fs'),
     anounymous = require('../nd/ProtoUtil'),
@@ -28,7 +28,12 @@ function firstRun() {
             rows.push(rowDic[k])
         }
 
-        myMongo.insert('nhnl', rows);
+        myMongo.insert('nhnl', rows, function(err, result) {
+            if (err) {
+                console.error(err);
+                return;
+            }
+        });
         // console.log(rows);
     };
 
@@ -116,14 +121,24 @@ function dailyRun() {
                         o: {
                             limit: 1
                         }
-                    }, function(docs) {
+                    }, function(err, docs) {
+                        if (err) {
+                            console.error(err);
+                            return;
+                        }
+
                         var seq = 1;
                         if (docs && docs.length === 1) {
                             seq = docs[0]._id + 1;
                         }
 
                         row["_id"] = seq;
-                        myMongo.insert('nhnl', row, function(result) {
+                        myMongo.insert('nhnl', row, function(err, result) {
+                            if (err) {
+                                console.error(err);
+                                return;
+                            }
+
                             console.log('inserted', result.length);
                         });
 

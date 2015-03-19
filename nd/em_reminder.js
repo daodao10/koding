@@ -31,7 +31,11 @@ function highlight(func, todayOnly) {
             s: {
                 s: 1
             }
-        }, function(docs) {
+        }, function(err, docs) {
+            if (err) {
+                console.error(err);
+                return;
+            }
             func(docs, "highlight-{0}.csv".format(today));
         });
     }
@@ -55,7 +59,11 @@ function notice(func, todayOnly) {
                 s: {
                     s: 1
                 }
-            }, function(docs) {
+            }, function(err, docs) {
+                if (err) {
+                    console.error(err);
+                    return;
+                }
                 func(docs, "note-{0}.csv".format(today));
             });
         }

@@ -110,7 +110,7 @@ MyUtil.prototype.readlines = function(filePath, callback) {
         while (index > -1) {
             var line = remaining.substring(0, index);
             remaining = remaining.substring(index + 1);
-            callback(line);
+            callback(line.replace(/\r/g, ''));
             index = remaining.indexOf('\n');
         }
     });

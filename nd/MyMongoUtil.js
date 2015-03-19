@@ -1,3 +1,4 @@
+// https://github.com/mongodb/node-mongodb-native/blob/master/docs/articles/MongoClient.md#mongoclientconnect
 var MongoClient = require('mongodb').MongoClient,
     assert = require('assert');
 
@@ -34,7 +35,9 @@ MyMongo.prototype.find = function(collectionName, query, callback) {
         db.collection(collectionName, function(err, collection) {
 
             if (err) {
-                console.log(err);
+                db.close();
+                // console.error(err);
+                return callback(err);
             }
 
             (query.s ? collection.find(query.q, query.f || {}, query.o || {}).sort(query.s) : collection.find(query.q, query.f || {}, query.o || {})).toArray(function(err, documents) {
@@ -42,11 +45,15 @@ MyMongo.prototype.find = function(collectionName, query, callback) {
                 // console.log(documents.length);
                 // console.dir(documents);
 
-                if (callback) {
-                    callback(documents);
+                db.close();
+
+                if (err) {
+                    return callback(err);
                 }
 
-                db.close();
+                if (callback) {
+                    callback(null, documents);
+                }
             });
 
         });
@@ -57,15 +64,16 @@ MyMongo.prototype.insert = function(collectionName, documents, callback) {
     this.connect(function(db) {
         var collection = db.collection(collectionName);
         collection.insert(documents, function(err, result) {
+            db.close();
+
             if (err) {
-                console.log(err);
+                // console.error(err);
+                return callback(err);
             }
 
             if (callback) {
-                callback(result);
+                callback(null, result);
             }
-
-            db.close();
         });
     });
 };
@@ -74,15 +82,16 @@ MyMongo.prototype.update = function(collectionName, query, callback) {
     this.connect(function(db) {
         var collection = db.collection(collectionName);
         collection.update(query.q, query.u, query.o || {}, function(err, result) {
+            db.close();
+
             if (err) {
-                console.log(err);
+                // console.error(err);
+                return callback(err);
             }
 
             if (callback) {
-                callback(result);
+                callback(null, result);
             }
-
-            db.close();
         });
     });
 };
@@ -100,10 +109,15 @@ MyMongo.prototype.nextSequence = function(name, callback) {
                 "upsert": true
             },
             function(err, docs) {
-                if (callback) {
-                    callback(docs.seq);
-                }
                 db.close();
+
+                if (err) {
+                    return callback(err);
+                }
+
+                if (callback) {
+                    callback(null, docs.seq);
+                }
             });
     });
 };

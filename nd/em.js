@@ -1,4 +1,6 @@
-// get recommendation from eastmoney.com
+/*
+ * get stock recommendation from eastmoney.com
+ */
 
 var iconv = require('iconv-lite'),
     fs = require('fs'),
@@ -65,7 +67,12 @@ function counterProcess(symbol) {
             console.log("{0}-{1}".format(helper.rs, helper.re));
 
             if (helper.re > helper.rs) {
-                myMongo.insert("test", helper.r.slice(helper.rs, helper.re));
+                myMongo.insert("test", helper.r.slice(helper.rs, helper.re), function(err, docs) {
+                    if (err) {
+                        console.error(err);
+                        return;
+                    }
+                });
             }
 
             // if (helper.rc === helper.rt) {
@@ -199,7 +206,12 @@ function driven(func) {
             o: {
                 limit: 1
             }
-        }, function(docs) {
+        }, function(err, docs) {
+            if (err) {
+                console.error(err);
+                return;
+            }
+
             var seq = 1;
             if (docs && docs.length === 1) {
                 seq = docs[0]._id + 1;
