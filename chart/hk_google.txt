@@ -1,0 +1,2 @@
+symbol,code[google : hk : daily]
+83136,83136,HARVEST MSCI CN A 50 ETF - CNY,--
