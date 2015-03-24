@@ -191,7 +191,7 @@ function _output_dropdown_list(market, code, name, sector) {
     // return '"{1}": {"n":"{2}", "s": "{3}"},'.format(market, code, name, sector);
     return {
         "c": code,
-        "n": name,
+        "n": name.toUpperCase(),
         "s": sector
     }
 }
