@@ -38,8 +38,11 @@ function getMarketInfo() {
         rows = [],
         y;
 
-    var processYearlyMV = function(data) {
-        // console.log('hello');
+    var processYearlyMV = function(data, statusCode) {
+        if (statusCode !== 200) {
+            console.error('error occurred:', statusCode);
+            return;
+        }
         var item,
             result = [];
         data = data.result;

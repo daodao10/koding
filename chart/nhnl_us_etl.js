@@ -107,7 +107,11 @@ function dailyRun() {
         myUtil.get({
             'host': 'unicorn.us.com',
             'path': '/advdec/{0}/adU{1}.txt'.format(dt.substr(0, 4), dt)
-        }, function(data) {
+        }, function(data, statusCode) {
+            if (statusCode !== 200) {
+                console.error('error occurred:', statusCode);
+                return;
+            }
             var rows = parseDailyData(data.toString(), dt);
             for (var i in rows) {
                 (function(row) {
