@@ -20,7 +20,7 @@ function firstRun() {
             rows = [];
 
         for (var i = 0; i < features.length; i++) {
-            startSequence = readFeatureFile(market, features[i], startSequence, rowDic);
+            startSequence = readFeatureFile(market, features[i], columns[i], startSequence, rowDic);
         }
 
         //convert to array
@@ -37,7 +37,8 @@ function firstRun() {
         // console.log(rows);
     };
 
-    var readFeatureFile = function(market, feature, startIndex, rowDic) {
+    var readFeatureFile = function(market, feature, column, startIndex, rowDic) {
+        // curl -O http://unicorn.us.com/advdec/NYSE_advn.txt
         var lines = myUtil.readlinesSync("./{0}_{1}.txt".format(market, feature));
         if (!lines) return;
 
@@ -57,7 +58,7 @@ function firstRun() {
                     "m": shortMarket
                 };
             }
-            item[feature] = cells[1];
+            item[column] = Number(cells[1]);
 
             rowDic[cells[0]] = item;
         }
@@ -104,6 +105,7 @@ function dailyRun() {
     if (process.argv.length == 3) {
         var dt = process.argv[2];
 
+        // curl -O http://unicorn.us.com/advdec/2015/adU20150326.txt
         myUtil.get({
             'host': 'unicorn.us.com',
             'path': '/advdec/{0}/adU{1}.txt'.format(dt.substr(0, 4), dt)
