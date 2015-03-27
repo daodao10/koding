@@ -60,6 +60,33 @@ MyMongo.prototype.find = function(collectionName, query, callback) {
     });
 };
 
+MyMongo.prototype.aggregate = function(collectionName, query, callback) {
+
+    // console.log(query);
+
+    this.connect(function(db) {
+        var docs = [],
+            counter = 0;
+
+        var cursor = db.collection(collectionName).aggregate(query, {
+            "cursor": {
+                "batchSize": 25
+            }
+        });
+
+        cursor.on('data', function(data) {
+            docs.push(data);
+            counter++;
+        });
+
+        cursor.on('end', function() {
+            console.log("Iterated " + counter + " times");
+            db.close();
+            callback(null, docs);
+        });
+    });
+};
+
 MyMongo.prototype.insert = function(collectionName, documents, callback) {
     this.connect(function(db) {
         var collection = db.collection(collectionName);
