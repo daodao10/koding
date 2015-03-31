@@ -15,6 +15,8 @@ cd chart
 
 echo 'get US ADV/DEC & NH-NL data ...'
 node nhnl_us_etl.js $today
+echo 'summary NH-NL data'
+node nhnl_us_sum_etl.js $today
 echo 'done'
 
 
