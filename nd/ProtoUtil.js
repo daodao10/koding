@@ -23,7 +23,7 @@ module.exports = (function() {
             }
         }
         return style;
-    }
+    };
 
 
     if (!String.prototype.stripLineBreaks) {
