@@ -99,7 +99,14 @@ function generate(srcFile, output) {
         if (err) {
             console.log(err);
         } else {
-            var array = data.toString().split("\n");
+            data = data.toString();
+
+            if ((/<title>Yahoo! - 404 Not Found<\/title>/gi).test(data)) {
+                console.log(srcFile);
+                return;
+            }
+
+            var array = data.split("\n");
 
             if (settings.HasHeader) { // remove header
                 array.shift();
