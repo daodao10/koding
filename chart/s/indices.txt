@@ -1,4 +1,4 @@
-symbol,code[yahoo: world: monthly, daily]
+﻿symbol,code[yahoo: world: monthly, daily]
 ^GSPC,^SPX,道琼斯工业指数,INDEX
 ^IXIC,^NDQ,纳斯达克指数,INDEX
 ^VIX,^VIX,VOLATILITY S&P 500,INDEX
@@ -6,4 +6,4 @@ symbol,code[yahoo: world: monthly, daily]
 ^STI,^STI,新加坡海峡指数,INDEX
 ^N225,^N225,日经指数,INDEX
 ^TNX,^TNX,美国10年期国债殖利率(收益率),BOND
-+^RUT,^RUT,罗素2000,INDEX
+^RUT,^RUT,罗素2000,INDEX

@@ -9,6 +9,7 @@ sgx/fa/
 *.png
 !us.sh
 !asia.sh
+!rp.sh
 node_modules/
 nd/*.txt
 !nd/*.sh
