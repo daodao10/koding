@@ -1,8 +1,8 @@
 #!/bin/bash
 
 # delay 12 hours based on UTC+8
-# today=`date -u -v-4H +%Y%m%d` # mac
-today=`date -u -d "-4 hour" +%Y%m%d`
+today=`date -u -v-4H +%Y%m%d` # mac
+# today=`date -u -d "-4 hour" +%Y%m%d`
 # today='20150129'
 
 if [ ! -d "$today" ]; then

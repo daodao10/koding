@@ -1,4 +1,4 @@
 symbol,code[dao : world : monthly]
-po.f,Palm-Oil,棕榈油期货(PALM OIL),FUTURE
-misc.world,MISC-World,全球指数(MISC WORLD INDEX),INDEX
+po.f,PALM-OIL,棕榈油期货(PALM OIL),FUTURE
+misc.world,MISC-WORLD,全球指数(MISC WORLD INDEX),INDEX
 misc.em,MISC-EM,新兴市场指数(MISC EMERGING MARKET),INDEX
