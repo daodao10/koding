@@ -1,58 +1,23 @@
+const re = /<td class="first chartoptionlinks">.*<\/td>\n<td><B>(.*)<\/B><\/td>\n<td><a.*>(.*)<\/a><\/td>\n<td>(.*)<\/td>\n<td>(.*)<\/td>\n<td>(.*)<\/td>\n<td>(.*)<\/td>\n<td>(.*)<\/td>\n<td>(.*)<\/td>\n<td>(.*)<\/td>/g;
+const EtlSettingsFile = './sc_settings.json';
+
 var fs = require('fs'),
     Promise = require('promise'),
     myUtil = require('./MyUtil'),
     anounymous = require('./ProtoUtil'),
     MyMongo = require('./MyMongoUtil'),
-    config = require('../config.json');
+    config = require('../config.json'),
+    EtlSettings = require(EtlSettingsFile);
 
-var re = /<td class="first chartoptionlinks">.*<\/td>\n<td><B>(.*)<\/B><\/td>\n<td><a.*>(.*)<\/a><\/td>\n<td>(.*)<\/td>\n<td>(.*)<\/td>\n<td>(.*)<\/td>\n<td>(.*)<\/td>\n<td>(.*)<\/td>\n<td>(.*)<\/td>\n<td>(.*)<\/td>/g;
-var SCAN = {
-        'N52WH': ['/def/servlet/SC.scan?s=I.Y|TVDL[T.T_EQ_S]![T.E_EQ_Y]![AS0,20,TV_GT_40000]![TH0_GT_AM1,253,TH]',
-            '/def/servlet/SC.scan?s=I.Y|TVDL[T.T_EQ_S]![T.E_EQ_N]![T.E_NE_O]![AS0,20,TV_GT_40000]![TH0_GT_AM1,253,TH]',
-            '/def/servlet/SC.scan?s=I.Y|TVDL[T.T_EQ_S]![T.E_EQ_X]![AS0,20,TV_GT_40000]![TH0_GT_AM1,253,TH]'
-        ],
-        'N52WL': ['/def/servlet/SC.scan?s=I.Y|TVDL[T.T_EQ_S]![T.E_EQ_Y]![AS0,20,TV_GT_40000]![TL0_LT_AN1,253,TL]',
-            '/def/servlet/SC.scan?s=I.Y|TVDL[T.T_EQ_S]![T.E_EQ_N]![T.E_NE_O]![AS0,20,TV_GT_40000]![TL0_LT_AN1,253,TL]',
-            '/def/servlet/SC.scan?s=I.Y|TVDL[T.T_EQ_S]![T.E_EQ_X]![AS0,20,TV_GT_40000]![TL0_LT_AN1,253,TL]'
-        ],
-        'TTB': ['/def/servlet/SC.scan?s=I.Y|TSAL[T.T_EQ_S]![T.E_EQ_Y]![AS0,20,TV_GT_40000]![YM_EQ_1]',
-            '/def/servlet/SC.scan?s=I.Y|TSAL[T.T_EQ_S]![T.E_EQ_N]![T.E_NE_O]![AS0,20,TV_GT_40000]![YM_EQ_1]',
-            '/def/servlet/SC.scan?s=I.Y|TSAL[T.T_EQ_S]![T.E_EQ_X]![AS0,20,TV_GT_40000]![YM_EQ_1]'
-        ],
-        'STTB': ['/def/servlet/SC.scan?s=I.Y|TSAL[T.T_EQ_S]![T.E_EQ_Y]![AS0,20,TV_GT_40000]![YH_EQ_1]',
-            '/def/servlet/SC.scan?s=I.Y|TSAL[T.T_EQ_S]![T.E_EQ_N]![T.E_NE_O]![AS0,20,TV_GT_40000]![YH_EQ_1]',
-            '/def/servlet/SC.scan?s=I.Y|TSAL[T.T_EQ_S]![T.E_EQ_X]![AS0,20,TV_GT_40000]![YH_EQ_1]'
-        ],
-        'QTB': ['/def/servlet/SC.scan?s=I.Y|TSAL[T.T_EQ_S]![T.E_EQ_Y]![AS0,20,TV_GT_40000]![YJ_EQ_1]',
-            '/def/servlet/SC.scan?s=I.Y|TSAL[T.T_EQ_S]![T.E_EQ_N]![T.E_NE_O]![AS0,20,TV_GT_40000]![YJ_EQ_1]',
-            '/def/servlet/SC.scan?s=I.Y|TSAL[T.T_EQ_S]![T.E_EQ_X]![AS0,20,TV_GT_40000]![YJ_EQ_1]'
-        ],
-        'TBB': ['/def/servlet/SC.scan?s=I.Y|TSAL[T.T_EQ_S]![T.E_EQ_Y]![AS0,20,TV_GT_40000]![YQ_EQ_1]',
-            '/def/servlet/SC.scan?s=I.Y|TSAL[T.T_EQ_S]![T.E_EQ_N]![T.E_NE_O]![AS0,20,TV_GT_40000]![YQ_EQ_1]',
-            '/def/servlet/SC.scan?s=I.Y|TSAL[T.T_EQ_S]![T.E_EQ_X]![AS0,20,TV_GT_40000]![YQ_EQ_1]'
-        ],
-        'STBB': ['/def/servlet/SC.scan?s=I.Y|TSAL[T.T_EQ_S]![T.E_EQ_Y]![AS0,20,TV_GT_40000]![YI_EQ_1]',
-            '/def/servlet/SC.scan?s=I.Y|TSAL[T.T_EQ_S]![T.E_EQ_N]![T.E_NE_O]![AS0,20,TV_GT_40000]![YI_EQ_1]',
-            '/def/servlet/SC.scan?s=I.Y|TSAL[T.T_EQ_S]![T.E_EQ_X]![AS0,20,TV_GT_40000]![YI_EQ_1]'
-        ],
-        'QBB': ['/def/servlet/SC.scan?s=I.Y|TSAL[T.T_EQ_S]![T.E_EQ_Y]![AS0,20,TV_GT_40000]![YN_EQ_1]',
-            '/def/servlet/SC.scan?s=I.Y|TSAL[T.T_EQ_S]![T.E_EQ_N]![T.E_NE_O]![AS0,20,TV_GT_40000]![YN_EQ_1]',
-            '/def/servlet/SC.scan?s=I.Y|TSAL[T.T_EQ_S]![T.E_EQ_X]![AS0,20,TV_GT_40000]![YN_EQ_1]'
-        ]
-    },
-    settings = {
-        price: 1,
-        volume: 300000,
-        etf: true
-    },
-    today,
-    yesterday,
+var today,
+    yesterday = EtlSettings.yesterday,
+    remaining = Object.keys(EtlSettings.scan).length,
     myMongo = new MyMongo("{0}{1}".format(config.DbSettings.DbUri, 'quotes'));
 
 
 function SCData(scanName) {
 
-    Promise.all(SCAN[scanName].map(get))
+    Promise.all(EtlSettings.scan[scanName].map(get))
         .then(function(content) {
 
             var tx = [];
@@ -61,9 +26,7 @@ function SCData(scanName) {
                 var arr = /<div class="scc-scans-timestamp">(.*),/.exec(content[0]);
                 if (arr && arr.length > 0) {
                     today = new Date(arr[1]);
-                    yesterday = new Date(today - 1000 * 60 * 60 * 24);
                     today = today.format('yyyyMMdd');
-                    yesterday = yesterday.format('yyyyMMdd');
 
                     // today = '20150330';
                     // yesterday = '20150327';
@@ -121,6 +84,14 @@ function SCData(scanName) {
 
             console.log(scanName, 'final: ', tx.length);
 
+            remaining--;
+            if (remaining === 0 && today && today != yesterday) {
+                EtlSettings.yesterday = today;
+                fs.writeFileSync(EtlSettingsFile, JSON.stringify(EtlSettings), {
+                    'encoding': 'utf-8'
+                });
+            }
+
         }).catch(function(statusCode) {
             console.log(statusCode);
         });
@@ -156,7 +127,7 @@ function SCData(scanName) {
     }
 
     function filter(element) {
-        return ((element[3] && element[4]) || (settings.etf && element[6] === 'etf')) && element[7] >= settings.price && element[8] >= settings.volume;
+        return ((element[3] && element[4]) || (EtlSettings.filter.etf && element[6] === 'etf')) && element[7] >= EtlSettings.filter.price && element[8] >= EtlSettings.filter.volume;
     }
 
     function findByName(name) {
@@ -224,6 +195,7 @@ function SCData(scanName) {
 
 }
 
-Object.getOwnPropertyNames(SCAN).forEach(function(key, idx, array) {
+
+Object.getOwnPropertyNames(EtlSettings.scan).forEach(function(key, idx, array) {
     SCData(key);
 });
