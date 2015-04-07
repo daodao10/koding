@@ -93,7 +93,7 @@ QuoteEtl.prototype = {
 
             get.call(self, pathArgs).then(function(pathArgsArray) {
                 Promise.all(pathArgsArray.map(function(element) {
-                        get.call(self, element);
+                        return get.call(self, element);
                     }))
                     .then(function(data) {
                         var x = [];
@@ -118,18 +118,18 @@ QuoteEtl.prototype = {
         });
     },
     write_csv: function(result) {
-        writeAdapter.call(this, result, function(result) {
-            var content = 'Date,Close\n' + result.data.join("\n"),
-                filename = result.symbol + '.csv';
+        writeAdapter.call(this, result, function(d) {
+            var content = 'Date,Close\n' + d.data.join("\n"),
+                filename = d.symbol + '.csv';
             write(filename, content);
         });
     },
     write_js: function(result) {
-        writeAdapter.call(this, result, function(result) {
-            result.data.reverse();
-            var content = 'var data=' + JSON.stringify(result.data) + ";\
+        writeAdapter.call(this, result, function(d) {
+            d.data.reverse();
+            var content = 'var data=' + JSON.stringify(d.data) + ";\
                 var source='" + this.settings.Host + "';",
-                filename = this.settings.DestFolder + result.symbol + '_d.js';
+                filename = this.settings.DestFolder + d.symbol + '_d.js';
             write(filename, content);
         });
     }
