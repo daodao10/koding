@@ -1,25 +1,29 @@
 symbol,code,name,sector[yahoo : us : weekly, daily]
-AAPL,AAPL,Apple,--
+AAPL,AAPL,APPLE,--
 ACTS,ACTS,炬力,信息技术
 ALN,ALN,绿润集团,必须消费
+AMAT,AMAT,APPLIED MATERIALS, INC.,--
 AMC,AMC,AMC院线,--
 AMCF,AMCF,星源燃料,能源
 AMCN,AMCN,航美传媒,可选消费
-AMZN,AMZN,Amazon.com,--
-ARO,ARO,Aéropostale,--
-ASPS,ASPS,Altisource Portfolio Solutions,--
+AMZN,AMZN,AMAZON.COM,--
+ARO,ARO,AÉROPOSTALE,--
+ASPS,ASPS,ALTISOURCE PORTFOLIO SOLUTIONS,--
 ASX,ASX,日月光半导体,可选消费
 ATHM,ATHM,汽车之家,信息技术
 ATV,ATV,橡果国际,信息技术
+ATW,ATW,ATWOOD OCEANICS, INC.,--
 BABA,BABA,阿里巴巴,信息技术
-BBRY,BBRY,BlackBerry,--
-BBY,BBY,Best Buy,--
+BBRY,BBRY,BLACKBERRY,--
+BBY,BBY,BEST BUY,--
+BHP,BHP,BHP BILLITON LIMITED,--
 BIDU,BIDU,百度,信息技术
 BITA,BITA,易车网,可选消费
 BORN,BORN,博润,必须消费
 BSPM,BSPM,奥星制药,医药
 CADC,CADC,新奥混凝土,原材料
 CALI,CALI,中国汽车物流,运输物流
+CAM,CAM,CAMERON INTERNATIONAL CORPORATION,--
 CBAK,CBAK,比克电池,能源
 CBPO,CBPO,泰邦生物,医药
 CCCL,CCCL,中国陶瓷,原材料
@@ -47,19 +51,24 @@ CREG,CREG,盈丰科技,能源
 CSUN,CSUN,中电光伏,能源
 CTC,CTC,21世纪不动产,房地产与建筑
 CTRP,CTRP,携程网,信息技术
-CVLT,CVLT,CommVault Systems,--
+CVLT,CVLT,COMMVAULT SYSTEMS,--
+CVX,CVX,CHEVRON CORPORATION,--
 CYD,CYD,玉柴国际,机械制造
 DL,DL,正保教育,可选消费
+EBIX,EBIX,EBIX INC.,--
 EDU,EDU,新东方,可选消费
 EFUT,EFUT,富基旋风,信息技术
 EGT,EGT,亚洲娱乐博彩,可选消费
+FCX,FCX,FREEPORT-MCMORAN INC.,--
 FFHL,FFHL,富维薄膜,原材料
+FLR,FLR,FLUOR CORPORATION,--
 GAGA,GAGA,利农国际,原材料
 GRO,GRO,中冠农业,必须消费
 HGSH,HGSH,汉广厦房地产,房地产与建筑
 HNP,HNP,华能电力,电力
 HOLI,HOLI,和利时自动化,机械制造
 HSOL,HSOL,韩华新能源,能源
+IBM,IBM,IBM,--
 JASO,JASO,晶澳太阳能,能源
 JFC,JFC,JF中国基金,综合金融
 JOBS,JOBS,前程无忧,信息技术
@@ -67,11 +76,11 @@ JRJC,JRJC,金融界,信息技术
 JST,JST,海南金盘,机械制造
 KANG,KANG,爱康国宾,健保
 KONE,KONE,联合信息,信息技术
-KORS,KORS,Michael Kors Holdings Limited,--
+KORS,KORS,MICHAEL KORS HOLDINGS LIMITED,--
 KUTV,KUTV,酷6网,信息技术
 LEJU,LEJU,乐居,信息技术
 LFC,LFC,中国人寿,保险
-MNST,MNST,Monster Beverage,--
+MNST,MNST,MONSTER BEVERAGE,--
 MPEL,MPEL,新濠博亚娱乐,可选消费
 NCTY,NCTY,第九城市,信息技术
 NPD,NPD,深圳海王星辰,医药
@@ -81,7 +90,7 @@ PTR,PTR,中石油,能源
 QIHU,QIHU,奇虎360,信息技术
 QKLS,QKLS,庆客隆,必须消费
 SCOK,SCOK,泓利煤焦,能源
-SDRL,SDRL,SeaDrill,--
+SDRL,SDRL,SEADRILL LIMITED,--
 SEED,SEED,奥瑞金种业,必须消费
 SFUN,SFUN,搜房网,信息技术
 SHI,SHI,上石化,能源
@@ -93,14 +102,14 @@ SOL,SOL,昱辉阳光,能源
 SPIL,SPIL,矽品,可选消费
 SPU,SPU,天人果汁,必须消费
 SUTR,SUTR,森特集团,机械制造
-SVM,SVM,Silvercorp Metals Inc.,--
+SVM,SVM,SILVERCORP METALS INC.,--
 TEDU,TEDU,达内科技,可选消费
 THTI,THTI,巨元瀚洋,公用事业
 TPI,TPI,天银制药,医药
-TSLA,TSLA,Tesla Motors,--
+TSLA,TSLA,TESLA MOTORS,--
 TSM,TSM,台积电,工业综合
 UMC,UMC,联电,可选消费
-USNA,USNA,USANA Health Sciences,--
+USNA,USNA,USANA HEALTH SCIENCES,--
 UTSI,UTSI,UT斯达康,信息技术
 VIPS,VIPS,唯品会,信息技术
 VISN,VISN,华视传媒,信息技术
