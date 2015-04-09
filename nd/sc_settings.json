@@ -1,1 +1,50 @@
-{"yesterday":"20150406","scan":{"N52WH":["/def/servlet/SC.scan?s=I.Y|TVDL[T.T_EQ_S]![T.E_EQ_Y]![AS0,20,TV_GT_40000]![TH0_GT_AM1,253,TH]","/def/servlet/SC.scan?s=I.Y|TVDL[T.T_EQ_S]![T.E_EQ_N]![T.E_NE_O]![AS0,20,TV_GT_40000]![TH0_GT_AM1,253,TH]","/def/servlet/SC.scan?s=I.Y|TVDL[T.T_EQ_S]![T.E_EQ_X]![AS0,20,TV_GT_40000]![TH0_GT_AM1,253,TH]"],"N52WL":["/def/servlet/SC.scan?s=I.Y|TVDL[T.T_EQ_S]![T.E_EQ_Y]![AS0,20,TV_GT_40000]![TL0_LT_AN1,253,TL]","/def/servlet/SC.scan?s=I.Y|TVDL[T.T_EQ_S]![T.E_EQ_N]![T.E_NE_O]![AS0,20,TV_GT_40000]![TL0_LT_AN1,253,TL]","/def/servlet/SC.scan?s=I.Y|TVDL[T.T_EQ_S]![T.E_EQ_X]![AS0,20,TV_GT_40000]![TL0_LT_AN1,253,TL]"],"TTB":["/def/servlet/SC.scan?s=I.Y|TSAL[T.T_EQ_S]![T.E_EQ_Y]![AS0,20,TV_GT_40000]![YM_EQ_1]","/def/servlet/SC.scan?s=I.Y|TSAL[T.T_EQ_S]![T.E_EQ_N]![T.E_NE_O]![AS0,20,TV_GT_40000]![YM_EQ_1]","/def/servlet/SC.scan?s=I.Y|TSAL[T.T_EQ_S]![T.E_EQ_X]![AS0,20,TV_GT_40000]![YM_EQ_1]"],"STTB":["/def/servlet/SC.scan?s=I.Y|TSAL[T.T_EQ_S]![T.E_EQ_Y]![AS0,20,TV_GT_40000]![YH_EQ_1]","/def/servlet/SC.scan?s=I.Y|TSAL[T.T_EQ_S]![T.E_EQ_N]![T.E_NE_O]![AS0,20,TV_GT_40000]![YH_EQ_1]","/def/servlet/SC.scan?s=I.Y|TSAL[T.T_EQ_S]![T.E_EQ_X]![AS0,20,TV_GT_40000]![YH_EQ_1]"],"QTB":["/def/servlet/SC.scan?s=I.Y|TSAL[T.T_EQ_S]![T.E_EQ_Y]![AS0,20,TV_GT_40000]![YJ_EQ_1]","/def/servlet/SC.scan?s=I.Y|TSAL[T.T_EQ_S]![T.E_EQ_N]![T.E_NE_O]![AS0,20,TV_GT_40000]![YJ_EQ_1]","/def/servlet/SC.scan?s=I.Y|TSAL[T.T_EQ_S]![T.E_EQ_X]![AS0,20,TV_GT_40000]![YJ_EQ_1]"],"TBB":["/def/servlet/SC.scan?s=I.Y|TSAL[T.T_EQ_S]![T.E_EQ_Y]![AS0,20,TV_GT_40000]![YQ_EQ_1]","/def/servlet/SC.scan?s=I.Y|TSAL[T.T_EQ_S]![T.E_EQ_N]![T.E_NE_O]![AS0,20,TV_GT_40000]![YQ_EQ_1]","/def/servlet/SC.scan?s=I.Y|TSAL[T.T_EQ_S]![T.E_EQ_X]![AS0,20,TV_GT_40000]![YQ_EQ_1]"],"STBB":["/def/servlet/SC.scan?s=I.Y|TSAL[T.T_EQ_S]![T.E_EQ_Y]![AS0,20,TV_GT_40000]![YI_EQ_1]","/def/servlet/SC.scan?s=I.Y|TSAL[T.T_EQ_S]![T.E_EQ_N]![T.E_NE_O]![AS0,20,TV_GT_40000]![YI_EQ_1]","/def/servlet/SC.scan?s=I.Y|TSAL[T.T_EQ_S]![T.E_EQ_X]![AS0,20,TV_GT_40000]![YI_EQ_1]"],"QBB":["/def/servlet/SC.scan?s=I.Y|TSAL[T.T_EQ_S]![T.E_EQ_Y]![AS0,20,TV_GT_40000]![YN_EQ_1]","/def/servlet/SC.scan?s=I.Y|TSAL[T.T_EQ_S]![T.E_EQ_N]![T.E_NE_O]![AS0,20,TV_GT_40000]![YN_EQ_1]","/def/servlet/SC.scan?s=I.Y|TSAL[T.T_EQ_S]![T.E_EQ_X]![AS0,20,TV_GT_40000]![YN_EQ_1]"]},"filter":{"price":1,"volume":300000,"etf":true}}
+{
+  "yesterday": "20150410",
+  "scan": {
+    "N52WH": [
+      "/def/servlet/SC.scan?s=I.Y|TVDL[T.T_EQ_S]![T.E_EQ_Y]![AS0,20,TV_GT_40000]![TH0_GT_AM1,253,TH]",
+      "/def/servlet/SC.scan?s=I.Y|TVDL[T.T_EQ_S]![T.E_EQ_N]![T.E_NE_O]![AS0,20,TV_GT_40000]![TH0_GT_AM1,253,TH]",
+      "/def/servlet/SC.scan?s=I.Y|TVDL[T.T_EQ_S]![T.E_EQ_X]![AS0,20,TV_GT_40000]![TH0_GT_AM1,253,TH]"
+    ],
+    "N52WL": [
+      "/def/servlet/SC.scan?s=I.Y|TVDL[T.T_EQ_S]![T.E_EQ_Y]![AS0,20,TV_GT_40000]![TL0_LT_AN1,253,TL]",
+      "/def/servlet/SC.scan?s=I.Y|TVDL[T.T_EQ_S]![T.E_EQ_N]![T.E_NE_O]![AS0,20,TV_GT_40000]![TL0_LT_AN1,253,TL]",
+      "/def/servlet/SC.scan?s=I.Y|TVDL[T.T_EQ_S]![T.E_EQ_X]![AS0,20,TV_GT_40000]![TL0_LT_AN1,253,TL]"
+    ],
+    "TTB": [
+      "/def/servlet/SC.scan?s=I.Y|TSAL[T.T_EQ_S]![T.E_EQ_Y]![AS0,20,TV_GT_40000]![YM_EQ_1]",
+      "/def/servlet/SC.scan?s=I.Y|TSAL[T.T_EQ_S]![T.E_EQ_N]![T.E_NE_O]![AS0,20,TV_GT_40000]![YM_EQ_1]",
+      "/def/servlet/SC.scan?s=I.Y|TSAL[T.T_EQ_S]![T.E_EQ_X]![AS0,20,TV_GT_40000]![YM_EQ_1]"
+    ],
+    "STTB": [
+      "/def/servlet/SC.scan?s=I.Y|TSAL[T.T_EQ_S]![T.E_EQ_Y]![AS0,20,TV_GT_40000]![YH_EQ_1]",
+      "/def/servlet/SC.scan?s=I.Y|TSAL[T.T_EQ_S]![T.E_EQ_N]![T.E_NE_O]![AS0,20,TV_GT_40000]![YH_EQ_1]",
+      "/def/servlet/SC.scan?s=I.Y|TSAL[T.T_EQ_S]![T.E_EQ_X]![AS0,20,TV_GT_40000]![YH_EQ_1]"
+    ],
+    "QTB": [
+      "/def/servlet/SC.scan?s=I.Y|TSAL[T.T_EQ_S]![T.E_EQ_Y]![AS0,20,TV_GT_40000]![YJ_EQ_1]",
+      "/def/servlet/SC.scan?s=I.Y|TSAL[T.T_EQ_S]![T.E_EQ_N]![T.E_NE_O]![AS0,20,TV_GT_40000]![YJ_EQ_1]",
+      "/def/servlet/SC.scan?s=I.Y|TSAL[T.T_EQ_S]![T.E_EQ_X]![AS0,20,TV_GT_40000]![YJ_EQ_1]"
+    ],
+    "TBB": [
+      "/def/servlet/SC.scan?s=I.Y|TSAL[T.T_EQ_S]![T.E_EQ_Y]![AS0,20,TV_GT_40000]![YQ_EQ_1]",
+      "/def/servlet/SC.scan?s=I.Y|TSAL[T.T_EQ_S]![T.E_EQ_N]![T.E_NE_O]![AS0,20,TV_GT_40000]![YQ_EQ_1]",
+      "/def/servlet/SC.scan?s=I.Y|TSAL[T.T_EQ_S]![T.E_EQ_X]![AS0,20,TV_GT_40000]![YQ_EQ_1]"
+    ],
+    "STBB": [
+      "/def/servlet/SC.scan?s=I.Y|TSAL[T.T_EQ_S]![T.E_EQ_Y]![AS0,20,TV_GT_40000]![YI_EQ_1]",
+      "/def/servlet/SC.scan?s=I.Y|TSAL[T.T_EQ_S]![T.E_EQ_N]![T.E_NE_O]![AS0,20,TV_GT_40000]![YI_EQ_1]",
+      "/def/servlet/SC.scan?s=I.Y|TSAL[T.T_EQ_S]![T.E_EQ_X]![AS0,20,TV_GT_40000]![YI_EQ_1]"
+    ],
+    "QBB": [
+      "/def/servlet/SC.scan?s=I.Y|TSAL[T.T_EQ_S]![T.E_EQ_Y]![AS0,20,TV_GT_40000]![YN_EQ_1]",
+      "/def/servlet/SC.scan?s=I.Y|TSAL[T.T_EQ_S]![T.E_EQ_N]![T.E_NE_O]![AS0,20,TV_GT_40000]![YN_EQ_1]",
+      "/def/servlet/SC.scan?s=I.Y|TSAL[T.T_EQ_S]![T.E_EQ_X]![AS0,20,TV_GT_40000]![YN_EQ_1]"
+    ]
+  },
+  "filter": {
+    "price": 1,
+    "volume": 300000,
+    "etf": true
+  }
+}

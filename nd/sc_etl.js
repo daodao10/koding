@@ -87,7 +87,7 @@ function SCData(scanName) {
             remaining--;
             if (remaining === 0 && today && today != yesterday) {
                 EtlSettings.yesterday = today;
-                fs.writeFileSync(EtlSettingsFile, JSON.stringify(EtlSettings), {
+                fs.writeFileSync(EtlSettingsFile, JSON.stringify(EtlSettings, null, 2), {
                     'encoding': 'utf-8'
                 });
             }
