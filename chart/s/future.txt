@@ -11,6 +11,9 @@ sgdcny,SGDCNY,新元对人民币,CURRENCY
 sgdusd,SGDUSD,新元对美元,CURRENCY
 usdsgd,USDSGD,美元对新元,CURRENCY
 usdcny,USDCNY,美元对人民币,CURRENCY
+usdjpy,USDJPY,美元对日元,CURRENCY
+usdhkd,USDHKD,美元对港币,CURRENCY
 eurusd,EURUSD,欧元对美元,CURRENCY
-chfusd,CHFUSD,瑞郎对美元,CURRENCY
 eurchf,EURCHF,欧元对瑞郎,CURRENCY
+chfusd,CHFUSD,瑞郎对美元,CURRENCY
+gbpusd,GDPUSD,英镑对美元,CURRENCY
