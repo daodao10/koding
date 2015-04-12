@@ -129,9 +129,7 @@ function generate(srcFile, output) {
 
             var data = array.map(mapFunc);
 
-            var content = "var data=[" + data.join(',') + "];\
-                var source='" + etlUtil.decode_source(settings.source) + "';";
-
+            var content = "var data=[" + data.join(',\n') + "];\nvar source='" + etlUtil.decode_source(settings.source) + "';";
             fs.writeFile(output, content, function(err) {
                 if (err) throw err;
                 console.log("Saved!");
@@ -141,7 +139,7 @@ function generate(srcFile, output) {
 }
 
 function mapFunc(line) {
-    var part = line.split(",");
+    var part = line.stripLineBreaks().split(",");
     var yCell = part[settings[settings.source].yCell];
     var xCell = part[settings[settings.source].xCell];
     return settings.ItemFormat.format(settings[settings.source].IsCompactDate ? xCell : xCell.replace(/-/g, ''), yCell);
