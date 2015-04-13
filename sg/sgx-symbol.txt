@@ -1,3 +1,24 @@
+FSTAS.SI,FTSE ST All-Share Index
+FSTAS1000.SI,FTSE ST Basic Materials Index
+FSTICA.SI,FTSE ST Catalist Index
+FSTC.SI,FTSE ST China Index
+FSTCT.SI,FTSE ST China Top Index
+FSTAS3000.SI,FTSE ST Consumer Goods Index
+FSTAS5000.SI,FTSE ST Consumer Services Index
+FSTAS8000.SI,FTSE ST Financials Index
+FSTF.SI,FTSE ST Fledgling Index
+FSTAS4000.SI,FTSE ST Health Care Index
+FSTAS2000.SI,FTSE ST Industrials Index
+FSTAM.SI,FTSE ST Maritime Index
+FSTM.SI,FTSE ST Mid Cap Index
+FSTAS0001.SI,FTSE ST Oil & Gas Index
+FSTAS8630.SI,FTSE ST Real Estate Holding and Development Index
+FSTAS8600.SI,FTSE ST Real Estate Index
+FSTAS8670.SI,FTSE ST Real Estate Investment Trusts Index
+FSTS.SI,FTSE ST Small Cap Index
+FSTAS9000.SI,FTSE ST Technology Index
+FSTAS6000.SI,FTSE ST Telecommunications Index
+FSTAS7000.SI,FTSE ST Utilities Index
 502.SI,3Cnergy
 5TG.SI,800 Super
 E25.SI,8Telecom
@@ -62,7 +83,7 @@ X04.SI,AusNet Services
 CT1.SI,Avi-Tech^
 A69.SI,Azeus
 560.SI,Aztech
-B08.SI,B&amp;M Trustees
+B08.SI,B&M Trustees
 KJ5.SI,BBR
 B32.SI,BH Global
 B03.SI,BRC Asia
@@ -84,7 +105,7 @@ B69.SI,Broadway Ind
 B61.SI,Bukit Sembawang
 P8Z.SI,Bumitama Agri
 MQ4.SI,Bund Center
-D79.SI,C&amp;G Env Protect
+D79.SI,C&G Env Protect
 5RF.SI,CCFH
 J85.SI,CDL HTrust
 D38.SI,CDW
@@ -120,7 +141,7 @@ D2V.SI,ChangtianPlastic
 5NV.SI,Chasen
 C05.SI,Chemical Ind
 C50.SI,Cheung Woh
-5SY.SI,Chew&#x27;s
+5SY.SI,Chew's
 T42.SI,China Auto Elec
 G92.SI,China Aviation
 AD7.SI,China Bearing
@@ -205,7 +226,7 @@ N0L.SI,EastGate Tech
 5KU.SI,Eastern
 5CT.SI,EcoWise
 5HG.SI,Edition
-E16.SI,Elec &amp; Eltek USD
+E16.SI,Elec & Eltek USD
 5VU.SI,Elektromotive
 E13.SI,Ellipsiz
 S44.SI,EnGro
@@ -222,7 +243,7 @@ E23.SI,Europtronic^
 E17.SI,Excelpoint
 5ME.SI,Ezion
 5DN.SI,Ezra
-F99.SI,F &amp; N
+F99.SI,F & N
 F10.SI,FJ Benjamin
 D8DU.SI,FSL Trust
 I54.SI,Fabchem China
@@ -364,7 +385,7 @@ J17.SI,Jackspeed
 J03.SI,Jadason
 5OI.SI,Japan Foods
 UD2.SI,Japfa
-C07.SI,Jardine C&amp;C
+C07.SI,Jardine C&C
 5PF.SI,Jason Marine
 5I3.SI,JasonHldg
 FQ7.SI,Jasper Inv
@@ -386,7 +407,7 @@ BN4.SI,Keppel Corp
 LH4U.SI,Keppel Infra Tr
 K17.SI,Keppel Land
 K71U.SI,Keppel Reit
-K11.SI,Keppel T&amp;T
+K11.SI,Keppel T&T
 K03.SI,Khong Guan Flour
 K22.SI,Kian Ho Bearings
 5G2.SI,KimHeng Offshore
@@ -557,7 +578,7 @@ P12.SI,Powermatic Data
 583.SI,Progen
 K6S.SI,Prudential USD
 UD3.SI,PterisGlobal
-QC7.SI,Q&amp;M Dental
+QC7.SI,Q&M Dental
 Q01.SI,QAF
 5I0.SI,QT Vascular
 552.SI,Qian Hu
@@ -622,7 +643,7 @@ B7K.SI,Sin Ghee Huat
 KF4.SI,Sin Heng Mach
 A26.SI,Sinarmas Land
 5UN.SI,Sincap
-S35.SI,Sing Inv &amp; Fin
+S35.SI,Sing Inv & Fin
 5H0.SI,SingHaiyi
 5IC.SI,SingHoldings
 S45U.SI,SingIndexFund
@@ -694,7 +715,7 @@ K1Q.SI,TTJ
 5G3.SI,TalkMed
 T03.SI,Tat Hong
 T12.SI,Tat Seng Pkg
-5CQ.SI,Tech Oil &amp; Gas
+5CQ.SI,Tech Oil & Gas
 T43.SI,Techcomp
 561.SI,Teckwah
 5OQ.SI,Teho Intl
@@ -721,7 +742,7 @@ RC5.SI,Triyards
 T24.SI,Tuan Sing
 540.SI,Tung Lok Rest
 T08.SI,Tye Soon
-NI3.SI,UE E&amp;C
+NI3.SI,UE E&C
 41A.SI,UG Healthcare
 U06.SI,UIC
 558.SI,UMS
