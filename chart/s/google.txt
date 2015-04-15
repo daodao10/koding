@@ -1,2 +1,2 @@
 symbol,code[google : world : daily]
-hxc,^HXC,Halter Golden Dragon China Index,INDEX
+^HXC,^HXC,Halter Golden Dragon China Index,INDEX
