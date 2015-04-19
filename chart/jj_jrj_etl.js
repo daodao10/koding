@@ -42,10 +42,12 @@ QuoteEtl.extend(JRJQuoteEtl, {
 
 function main() {
     var etl = new JRJQuoteEtl();
-    ['510510', '050026', '159915', '510050', '510660'].forEach(function(symbol) {
+    ['377020', '040007', '050026', '159915', '510050', '510660', '160616', '040004', '163302'].forEach(function(symbol) {
         etl.read(symbol).done(function(d) {
             console.log(d.symbol);
             etl.write_js(d);
         });
     });
 }
+
+main();
