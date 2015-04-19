@@ -31,7 +31,7 @@ function main() {
     // console.log(QuoteEtl.prototype.constructor);
     // console.log(x.constructor);
 
-    ['510510'].forEach(function(symbol) {
+    ['510510', '160616'].forEach(function(symbol) {
         etl.read(symbol).done(function(d) {
             console.log(d.symbol);
             etl.write_js(d);
