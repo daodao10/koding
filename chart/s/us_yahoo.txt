@@ -1,122 +1,1506 @@
 symbol,code,name,sector[yahoo : us : weekly, daily]
-AAPL,AAPL,APPLE,--
+A,A,Agilent Technologies Inc.,Healthcare
+AA,AA,Alcoa Inc.,Basic Materials
+AAL,AAL,American Airlines Group Inc.,Services
+AAP,AAP,Advance Auto Parts Inc.,Services
+AAPL,AAPL,Apple Inc.,Consumer Goods
+AB,AB,AllianceBernstein Holding L.P.,Financial
+ABG,ABG,Asbury Automotive Group Inc.,Services
+ABMD,ABMD,ABIOMED Inc.,Healthcare
+ABX,ABX,Barrick Gold Corporation,Basic Materials
+ACAD,ACAD,ACADIA Pharmaceuticals Inc.,Healthcare
+ACAS,ACAS,American Capital Ltd.,Financial
+ACC,ACC,American Campus Communities Inc.,Financial
+ACCO,ACCO,ACCO Brands Corporation,Consumer Goods
+ACE,ACE,ACE Limited,Financial
+ACGL,ACGL,Arch Capital Group Ltd.,Financial
+ACHC,ACHC,Acadia Healthcare Company Inc.,Healthcare
+ACHN,ACHN,Achillion Pharmaceuticals Inc.,Healthcare
+ACIW,ACIW,ACI Worldwide Inc.,Technology
+ACM,ACM,AECOM,Services
+ACN,ACN,Accenture plc,Technology
+ACOR,ACOR,Acorda Therapeutics Inc.,Healthcare
 ACTS,ACTS,炬力,信息技术
+ADI,ADI,Analog Devices Inc.,Technology
+ADM,ADM,Archer-Daniels-Midland Company,Consumer Goods
+ADP,ADP,Automatic Data Processing Inc.,Technology
+ADS,ADS,Alliance Data Systems Corporation,Services
+ADSK,ADSK,Autodesk Inc.,Technology
+ADT,ADT,The ADT Corporation,Services
+ADVS,ADVS,Advent Software Inc.,Technology
+AEC,AEC,Associated Estates Realty Corporation,Financial
+AEG,AEG,AEGON N.V.,Financial
+AEGR,AEGR,Aegerion Pharmaceuticals Inc.,Healthcare
+AEIS,AEIS,Advanced Energy Industries Inc.,Technology
+AEL,AEL,American Equity Investment Life Holding Co.,Financial
+AEP,AEP,American Electric Power Co. Inc.,Utilities
+AER,AER,AerCap Holdings N.V.,Services
+AES,AES,The AES Corporation,Utilities
+AET,AET,Aetna Inc.,Healthcare
+AF,AF,Astoria Financial Corporation,Financial
+AFFX,AFFX,Affymetrix Inc.,Technology
+AFL,AFL,AFLAC Inc.,Financial
+AFSI,AFSI,AmTrust Financial Services Inc.,Financial
+AGCO,AGCO,AGCO Corporation,Industrial Goods
+AGEN,AGEN,Agenus Inc.,Healthcare
+AGO,AGO,Assured Guaranty Ltd.,Financial
+AGU,AGU,Agrium Inc.,Basic Materials
+AHS,AHS,AMN Healthcare Services Inc.,Healthcare
+AHT,AHT,Ashford Hospitality Trust Inc.,Financial
+AIG,AIG,American International Group Inc.,Financial
+AINV,AINV,Apollo Investment Corporation,Financial
+AIRM,AIRM,Air Methods Corp.,Services
+AIV,AIV,Apartment Investment and Management Company,Financial
+AIZ,AIZ,Assurant Inc.,Financial
+AJG,AJG,Arthur J Gallagher & Co.,Financial
+AKAM,AKAM,Akamai Technologies Inc.,Technology
+AKR,AKR,Acadia Realty Trust,Financial
+AKRX,AKRX,Akorn Inc.,Healthcare
+AKS,AKS,AK Steel Holding Corporation,Basic Materials
+AL,AL,Air Lease Corporation,Services
+ALB,ALB,Albemarle Corporation,Basic Materials
+ALGN,ALGN,Align Technology Inc.,Healthcare
+ALJ,ALJ,Alon USA Energy Inc.,Basic Materials
+ALK,ALK,Alaska Air Group Inc.,Services
+ALKS,ALKS,Alkermes plc,Healthcare
+ALL,ALL,The Allstate Corporation,Financial
+ALLY,ALLY,Ally Financial Inc.,Financial
 ALN,ALN,绿润集团,必须消费
+ALSN,ALSN,Allison Transmission Holdings Inc.,Consumer Goods
+ALTR,ALTR,Altera Corp.,Technology
+ALV,ALV,Autoliv Inc.,Consumer Goods
+ALXN,ALXN,Alexion Pharmaceuticals Inc.,Healthcare
+AMAG,AMAG,AMAG Pharmaceuticals Inc.,Healthcare
+AMAT,AMAT,Applied Materials Inc.,Technology
 AMAT,AMAT,APPLIED MATERIALS, INC.,--
+AMBA,AMBA,Ambarella Inc.,Technology
 AMC,AMC,AMC院线,--
+AMCC,AMCC,Applied Micro Circuits Corporation,Technology
 AMCF,AMCF,星源燃料,能源
 AMCN,AMCN,航美传媒,可选消费
+AMCX,AMCX,AMC Networks Inc.,Services
+AME,AME,Ametek Inc.,Industrial Goods
+AMG,AMG,Affiliated Managers Group Inc.,Financial
+AMGN,AMGN,Amgen Inc.,Healthcare
+AMP,AMP,Ameriprise Financial Inc.,Financial
+AMRI,AMRI,Albany Molecular Research Inc.,Healthcare
+AMT,AMT,American Tower Corporation,Financial
+AMTD,AMTD,TD Ameritrade Holding Corporation,Financial
 AMZN,AMZN,AMAZON.COM,--
+AN,AN,AutoNation Inc.,Services
+ANAC,ANAC,Anacor Pharmaceuticals Inc.,Healthcare
+ANDE,ANDE,The Andersons Inc.,Consumer Goods
+ANGI,ANGI,Angie's List Inc.,Technology
+ANIP,ANIP,ANI Pharmaceuticals Inc.,Healthcare
+ANN,ANN,ANN INC.,Services
+ANSS,ANSS,Ansys Inc.,Technology
+AON,AON,Aon plc,Financial
+AOS,AOS,AO Smith Corp.,Industrial Goods
+APD,APD,Air Products & Chemicals Inc.,Basic Materials
+APH,APH,Amphenol Corporation,Technology
+APO,APO,Apollo Global Management LLC,Financial
+AR,AR,Antero Resources Corporation,Basic Materials
+ARCB,ARCB,ArcBest Corporation,Services
+AREX,AREX,Approach Resources Inc.,Basic Materials
+ARG,ARG,Airgas Inc.,Basic Materials
+ARI,ARI,Apollo Commercial Real Estate Finance Inc.,Financial
+ARMH,ARMH,ARM Holdings plc,Technology
 ARO,ARO,AÉROPOSTALE,--
+ARRS,ARRS,ARRIS Group Inc.,Technology
+ARRY,ARRY,Array BioPharma Inc.,Healthcare
+ARUN,ARUN,Aruba Networks Inc.,Technology
+ARW,ARW,Arrow Electronics Inc.,Services
+ARWR,ARWR,Arrowhead Research Corp.,Healthcare
+ASB,ASB,Associated Banc-Corp,Financial
+ASH,ASH,Ashland Inc.,Basic Materials
+ASML,ASML,ASML Holding NV,Technology
+ASNA,ASNA,Ascena Retail Group Inc.,Services
+ASPS,ASPS,Altisource Portfolio Solutions S.A.,Services
 ASPS,ASPS,ALTISOURCE PORTFOLIO SOLUTIONS,--
-ASX,ASX,日月光半导体,可选消费
-ATHM,ATHM,汽车之家,信息技术
+ASX,ASX,Advanced Semiconductor Engineering Inc.,Technology
+ATHM,ATHM,Autohome Inc.,Technology
+ATML,ATML,Atmel Corporation,Technology
+ATO,ATO,Atmos Energy Corporation,Utilities
+ATR,ATR,AptarGroup Inc.,Consumer Goods
+ATU,ATU,Actuant Corporation,Industrial Goods
 ATV,ATV,橡果国际,信息技术
+ATVI,ATVI,Activision Blizzard Inc.,Technology
+ATW,ATW,Atwood Oceanics Inc.,Basic Materials
 ATW,ATW,ATWOOD OCEANICS, INC.,--
+AU,AU,AngloGold Ashanti Ltd.,Basic Materials
+AVA,AVA,Avista Corp.,Utilities
+AVB,AVB,Avalonbay Communities Inc.,Financial
+AVG,AVG,AVG Technologies N.V.,Technology
+AVGO,AVGO,Avago Technologies Limited,Technology
+AVID,AVID,Avid Technology Inc.,Technology
+AVT,AVT,Avnet Inc.,Services
+AVY,AVY,Avery Dennison Corporation,Consumer Goods
+AWAY,AWAY,HomeAway Inc.,Technology
+AWH,AWH,Allied World Assurance Company Holdings AG,Financial
+AWI,AWI,Armstrong World Industries Inc.,Industrial Goods
+AWK,AWK,American Water Works Company Inc.,Utilities
+AXL,AXL,American Axle & Manufacturing Holdings Inc.,Consumer Goods
+AXP,AXP,American Express Company,Financial
+AXS,AXS,AXIS Capital Holdings Limited,Financial
+AYI,AYI,Acuity Brands Inc.,Technology
+AZPN,AZPN,Aspen Technology Inc.,Technology
+BA,BA,The Boeing Company,Industrial Goods
 BABA,BABA,阿里巴巴,信息技术
+BAC,BAC,Bank of America Corporation,Financial
+BAH,BAH,Booz Allen Hamilton Holding Corporation,Services
+BAK,BAK,Braskem S.A.,Basic Materials
+BAM,BAM,Brookfield Asset Management Inc.,Financial
+BAS,BAS,Basic Energy Services Inc.,Basic Materials
+BBBY,BBBY,Bed Bath & Beyond Inc.,Services
+BBCN,BBCN,BBCN Bancorp Inc.,Financial
+BBD,BBD,Banco Bradesco S.A.,Financial
+BBEP,BBEP,Breitburn Energy Partners LP,Basic Materials
+BBL,BBL,BHP Billiton plc,Basic Materials
 BBRY,BBRY,BLACKBERRY,--
-BBY,BBY,BEST BUY,--
-BHP,BHP,BHP BILLITON LIMITED,--
-BIDU,BIDU,百度,信息技术
-BITA,BITA,易车网,可选消费
+BBT,BBT,BB&T Corporation,Financial
+BBY,BBY,Best Buy Co. Inc.,Services
+BC,BC,Brunswick Corporation,Consumer Goods
+BCE,BCE,BCE Inc.,Technology
+BCEI,BCEI,Bonanza Creek Energy Inc.,Basic Materials
+BDBD,BDBD,Boulder Brands Inc.,Consumer Goods
+BDE,BDE,Black Diamond Inc.,Consumer Goods
+BDN,BDN,Brandywine Realty Trust,Financial
+BDX,BDX,Becton Dickinson and Company,Healthcare
+BEE,BEE,Strategic Hotels & Resorts Inc.,Financial
+BEL,BEL,Belmond Ltd.,Services
+BEN,BEN,Franklin Resources Inc.,Financial
+BF-B,BF-B,Brown-Forman Corporation,Consumer Goods
+BG,BG,Bunge Limited,Consumer Goods
+BGS,BGS,B&G Foods Inc.,Consumer Goods
+BHE,BHE,Benchmark Electronics Inc.,Technology
+BHI,BHI,Baker Hughes Incorporated,Basic Materials
+BHP,BHP,BHP Billiton Limited,Basic Materials
+BID,BID,Sotheby's,Services
+BIDU,BIDU,Baidu Inc.,Technology
+BIG,BIG,Big Lots Inc.,Services
+BIIB,BIIB,Biogen Inc.,Healthcare
+BITA,BITA,Bitauto Holdings Limited,Technology
+BJRI,BJRI,BJ's Restaurants Inc.,Services
+BK,BK,The Bank of New York Mellon Corporation,Financial
+BKCC,BKCC,BlackRock Kelso Capital Corpora,Financial
+BKU,BKU,BankUnited Inc.,Financial
+BLDR,BLDR,Builders FirstSource Inc.,Industrial Goods
+BLK,BLK,BlackRock Inc.,Financial
+BLL,BLL,Ball Corporation,Consumer Goods
+BLMN,BLMN,Bloomin' Brands Inc.,Services
+BLT,BLT,Blount International Inc.,Industrial Goods
+BMO,BMO,Bank of Montreal,Financial
+BMR,BMR,BioMed Realty Trust Inc.,Financial
+BMRN,BMRN,BioMarin Pharmaceutical Inc.,Healthcare
+BMS,BMS,Bemis Company Inc.,Consumer Goods
+BNCL,BNCL,Beneficial Bancorp Inc.,Financial
+BNS,BNS,The Bank of Nova Scotia,Financial
+BOBE,BOBE,Bob Evans Farms Inc.,Services
 BORN,BORN,博润,必须消费
+BPFH,BPFH,Boston Private Financial Holdings Inc.,Financial
+BPL,BPL,Buckeye Partners L.P.,Basic Materials
+BR,BR,Broadridge Financial Solutions Inc.,Technology
+BRCD,BRCD,Brocade Communications Systems Inc.,Technology
+BRCM,BRCM,Broadcom Corp.,Technology
+BRFS,BRFS,BRF S.A.,Consumer Goods
+BRO,BRO,Brown & Brown Inc.,Financial
+BRS,BRS,Bristow Group Inc.,Basic Materials
+BRX,BRX,Brixmor Property Group Inc.,Financial
+BSAC,BSAC,Banco Santander-Chile,Financial
+BSBR,BSBR,Banco Santander,Financial
 BSPM,BSPM,奥星制药,医药
+BSX,BSX,Boston Scientific Corporation,Healthcare
+BUD,BUD,Anheuser-Busch InBev SA/NV,Consumer Goods
+BWA,BWA,BorgWarner Inc.,Consumer Goods
+BWLD,BWLD,Buffalo Wild Wings Inc.,Services
+BWP,BWP,Boardwalk Pipeline Partners LP,Basic Materials
+BWS,BWS,Brown Shoe Co. Inc.,Consumer Goods
+BX,BX,The Blackstone Group L.P.,Financial
+BXMT,BXMT,Blackstone Mortgage Trust Inc.,Financial
+BXP,BXP,Boston Properties Inc.,Financial
+BXS,BXS,BancorpSouth Inc.,Financial
+BZH,BZH,Beazer Homes USA Inc.,Industrial Goods
+C,C,Citigroup Inc.,Financial
+CA,CA,CA Inc.,Technology
+CAB,CAB,Cabela's Incorporated,Services
 CADC,CADC,新奥混凝土,原材料
+CAH,CAH,Cardinal Health Inc.,Services
+CAKE,CAKE,The Cheesecake Factory Incorporated,Services
+CALD,CALD,Callidus Software Inc.,Technology
 CALI,CALI,中国汽车物流,运输物流
-CAM,CAM,CAMERON INTERNATIONAL CORPORATION,--
+CALM,CALM,Cal-Maine Foods Inc.,Consumer Goods
+CALX,CALX,Calix Inc.,Technology
+CAM,CAM,Cameron International Corporation,Basic Materials
+CAMP,CAMP,CalAmp Corp.,Technology
+CAR,CAR,Avis Budget Group Inc.,Services
+CAT,CAT,Caterpillar Inc.,Industrial Goods
+CATM,CATM,Cardtronics Inc.,Services
+CATY,CATY,Cathay General Bancorp,Financial
+CAVM,CAVM,Cavium Inc.,Technology
+CB,CB,The Chubb Corporation,Financial
 CBAK,CBAK,比克电池,能源
+CBD,CBD,Companhia Brasileira de Distribuicao,Services
+CBG,CBG,CBRE Group Inc.,Financial
+CBI,CBI,Chicago Bridge & Iron Company N.V.,Industrial Goods
+CBL,CBL,CBL & Associates Properties Inc.,Financial
+CBM,CBM,Cambrex Corporation.,Healthcare
+CBOE,CBOE,CBOE Holdings Inc.,Financial
 CBPO,CBPO,泰邦生物,医药
+CBRL,CBRL,Cracker Barrel Old Country Store Inc.,Services
+CBS,CBS,CBS Corporation,Services
+CBSH,CBSH,Commerce Bancshares Inc.,Financial
+CBT,CBT,Cabot Corporation,Basic Materials
 CCCL,CCCL,中国陶瓷,原材料
+CCE,CCE,Coca-Cola Enterprises Inc.,Consumer Goods
+CCI,CCI,Crown Castle International Corp,Technology
+CCK,CCK,Crown Holdings Inc.,Consumer Goods
+CCOI,CCOI,Cogent Communications Holdings Inc.,Technology
 CCSC,CCSC,乡村基,可选消费
+CDE,CDE,Coeur Mining Inc.,Basic Materials
+CDNS,CDNS,Cadence Design Systems Inc.,Technology
+CDR,CDR,Cedar Realty Trust Inc.,Financial
+CDW,CDW,CDW Corporation,Technology
+CE,CE,Celanese Corporation,Basic Materials
 CEA,CEA,东方航空,运输物流
+CELG,CELG,Celgene Corporation,Healthcare
+CENX,CENX,Century Aluminum Co.,Basic Materials
 CEO,CEO,中海油,能源
+CERN,CERN,Cerner Corporation,Technology
+CF,CF,CF Industries Holdings Inc.,Basic Materials
+CFFN,CFFN,Capitol Federal Financial Inc.,Financial
+CFR,CFR,Cullen/Frost Bankers Inc.,Financial
+CFX,CFX,Colfax Corporation,Industrial Goods
 CGA,CGA,中国绿色农业,原材料
+CGNX,CGNX,Cognex Corporation,Technology
 CHA,CHA,中国电信,电信
+CHD,CHD,Church & Dwight Co. Inc.,Consumer Goods
+CHK,CHK,Chesapeake Energy Corporation,Basic Materials
+CHKP,CHKP,Check Point Software Technologies Ltd.,Technology
 CHL,CHL,中移动,电信
 CHLN,CHLN,中华地产,房地产与建筑
+CHMT,CHMT,Chemtura Corporation,Basic Materials
 CHOP,CHOP,河南鸽瑞,信息技术
+CHRW,CHRW,CH Robinson Worldwide Inc.,Services
+CHS,CHS,Chico's FAS Inc.,Services
+CHSP,CHSP,Chesapeake Lodging Trust,Financial
 CHT,CHT,中华电信,电信
-CHU,CHU,中国联通(香港),电信
+CHU,CHU,China Unicom,Technology
+CI,CI,Cigna Corp.,Healthcare
+CIB,CIB,Bancolombia S.A.,Financial
+CIEN,CIEN,Ciena Corporation,Technology
+CIG,CIG,Companhia Energetica de Minas Gerais S.A.,Utilities
+CIM,CIM,Chimera Investment Corporation,Financial
+CINF,CINF,Cincinnati Financial Corp.,Financial
 CISG,CISG,泛华保险,保险
+CIT,CIT,CIT Group Inc.,Financial
+CJES,CJES,C&J Energy Services Ltd.,Basic Materials
 CJJD,CJJD,九洲大药房,医药
+CL,CL,Colgate-Palmolive Co.,Consumer Goods
+CLB,CLB,Core Laboratories NV,Basic Materials
+CLDX,CLDX,Celldex Therapeutics Inc.,Healthcare
+CLGX,CLGX,CoreLogic Inc.,Technology
 CLNT,CLNT,中国风能技术,能源
-CMGE,CMGE,中国手游,--
+CLNY,CLNY,Colony Capital Inc.,Financial
+CLR,CLR,Continental Resources Inc.,Basic Materials
+CLX,CLX,The Clorox Company,Consumer Goods
+CM,CM,Canadian Imperial Bank of Commerce,Financial
+CMA,CMA,Comerica Incorporated,Financial
+CMC,CMC,Commercial Metals Company,Basic Materials
+CMCSA,CMCSA,Comcast Corporation,Services
+CME,CME,CME Group Inc.,Financial
+CMG,CMG,Chipotle Mexican Grill Inc.,Services
+CMGE,CMGE,China Mobile Games and Entertainment Group Limited,Technology
+CMI,CMI,Cummins Inc.,Industrial Goods
+CMS,CMS,CMS Energy Corp.,Utilities
+CNC,CNC,Centene Corp.,Healthcare
 CNET,CNET,中网在线,信息技术
+CNI,CNI,Canadian National Railway Company,Services
+CNK,CNK,Cinemark Holdings Inc.,Services
+CNL,CNL,Cleco Corporation,Utilities
+CNP,CNP,CenterPoint Energy Inc.,Utilities
+CNQ,CNQ,Canadian Natural Resources Limited,Basic Materials
+CNW,CNW,Con-way Inc.,Services
 CNYD,CNYD,易达控股,可选消费
 CO,CO,中国脐带血库,医药
-COH,COH,COACH,--
+COF,COF,Capital One Financial Corporation,Financial
+COH,COH,Coach Inc.,Consumer Goods
+COL,COL,Rockwell Collins Inc.,Industrial Goods
+COLM,COLM,Columbia Sportswear Company,Consumer Goods
+COMM,COMM,CommScope Holding Company Inc.,Technology
+CONN,CONN,Conns Inc.,Services
+COO,COO,The Cooper Companies Inc.,Healthcare
+COP,COP,ConocoPhillips,Basic Materials
+CORT,CORT,Corcept Therapeutics Incorporated,Healthcare
+COST,COST,Costco Wholesale Corporation,Services
+COWN,COWN,Cowen Group Inc.,Financial
+CP,CP,Canadian Pacific Railway Limited,Services
+CPA,CPA,Copa Holdings SA,Services
+CPB,CPB,Campbell Soup Company,Consumer Goods
+CPG,CPG,Crescent Point Energy Corp.,Basic Materials
 CPHI,CPHI,中国医药控股有限公司,医药
+CPN,CPN,Calpine Corp.,Utilities
+CPPL,CPPL,Columbia Pipeline Partners LP,Basic Materials
+CPRT,CPRT,Copart Inc.,Services
 CPSL,CPSL,中国精密带钢,金属与采矿
+CPT,CPT,Camden Property Trust,Financial
+CR,CR,Crane Co.,Industrial Goods
+CREE,CREE,Cree Inc.,Technology
 CREG,CREG,盈丰科技,能源
+CRI,CRI,Carter's Inc.,Consumer Goods
+CRL,CRL,Charles River Laboratories International Inc.,Healthcare
+CROX,CROX,Crocs Inc.,Consumer Goods
+CRR,CRR,CARBO Ceramics Inc.,Basic Materials
+CRS,CRS,Carpenter Technology Corp.,Industrial Goods
+CRUS,CRUS,Cirrus Logic Inc.,Technology
+CRZO,CRZO,Carrizo Oil & Gas Inc.,Basic Materials
+CSCO,CSCO,Cisco Systems Inc.,Technology
+CSG,CSG,Chambers Street Properties,Financial
+CSIQ,CSIQ,Canadian Solar Inc.,Technology
+CSL,CSL,Carlisle Companies Incorporated,Consumer Goods
+CST,CST,CST Brands Inc.,Services
 CSUN,CSUN,中电光伏,能源
+CSX,CSX,CSX Corp.,Services
+CTAS,CTAS,Cintas Corporation,Services
+CTB,CTB,Cooper Tire & Rubber Co.,Consumer Goods
 CTC,CTC,21世纪不动产,房地产与建筑
+CTLT,CTLT,Catalent Inc.,Healthcare
 CTRP,CTRP,携程网,信息技术
-CVLT,CVLT,COMMVAULT SYSTEMS,--
-CVX,CVX,CHEVRON CORPORATION,--
+CTRX,CTRX,Catamaran Corporation,Technology
+CTSH,CTSH,Cognizant Technology Solutions Corporation,Technology
+CTSO,CTSO,Cytosorbents Corporation,Healthcare
+CTXS,CTXS,Citrix Systems Inc.,Technology
+CUBE,CUBE,CubeSmart,Financial
+CUZ,CUZ,Cousins Properties Incorporated,Financial
+CVBF,CVBF,CVB Financial Corp.,Financial
+CVC,CVC,Cablevision Systems Corporation,Services
+CVE,CVE,Cenovus Energy Inc.,Basic Materials
+CVG,CVG,Convergys Corporation,Services
+CVI,CVI,CVR Energy Inc.,Basic Materials
+CVLT,CVLT,CommVault Systems Inc.,Technology
+CVS,CVS,CVS Health Corporation,Healthcare
+CVX,CVX,Chevron Corporation,Basic Materials
+CXO,CXO,Concho Resources Inc.,Basic Materials
+CXP,CXP,Columbia Property Trust Inc.,Financial
+CXW,CXW,Corrections Corporation of America,Financial
+CY,CY,Cypress Semiconductor Corporation,Technology
+CYBX,CYBX,Cyberonics Inc.,Healthcare
 CYD,CYD,玉柴国际,机械制造
+CYN,CYN,City National Corporation,Financial
+CYT,CYT,Cytec Industries Inc.,Basic Materials
+D,D,Dominion Resources Inc.,Utilities
+DAL,DAL,Delta Air Lines Inc.,Services
+DAN,DAN,Dana Holding Corporation,Consumer Goods
+DANG,DANG,E-Commerce China Dangdang Inc.,Services
+DBD,DBD,Diebold Incorporated,Technology
+DCI,DCI,Donaldson Company Inc.,Industrial Goods
+DCT,DCT,DCT Industrial Trust Inc.,Financial
+DD,DD,E. I. du Pont de Nemours and Company,Basic Materials
+DDC,DDC,Dominion Diamond Corporation,Basic Materials
+DDD,DDD,3D Systems Corporation,Technology
+DDR,DDR,DDR Corp.,Financial
+DDS,DDS,Dillard's Inc.,Services
+DE,DE,Deere & Company,Industrial Goods
+DEI,DEI,Douglas Emmett Inc,Financial
+DEO,DEO,Diageo plc,Consumer Goods
+DEPO,DEPO,DepoMed Inc.,Healthcare
+DFS,DFS,Discover Financial Services,Financial
+DFT,DFT,DuPont Fabros Technology Inc.,Financial
+DG,DG,Dollar General Corporation,Services
+DHI,DHI,DR Horton Inc.,Industrial Goods
+DHR,DHR,Danaher Corp.,Industrial Goods
+DHX,DHX,Dice Holdings Inc.,Services
+DIS,DIS,The Walt Disney Company,Services
+DISCA,DISCA,Discovery Communications Inc.,Services
+DISH,DISH,Dish Network Corp.,Services
+DK,DK,Delek US Holdings Inc.,Basic Materials
+DKS,DKS,Dick's Sporting Goods Inc.,Services
 DL,DL,正保教育,可选消费
-EBIX,EBIX,EBIX INC.,--
-EDU,EDU,新东方,可选消费
+DLR,DLR,Digital Realty Trust Inc.,Financial
+DLTR,DLTR,Dollar Tree Inc.,Services
+DLX,DLX,Deluxe Corp.,Services
+DNKN,DNKN,Dunkin' Brands Group Inc.,Services
+DNR,DNR,Denbury Resources Inc.,Basic Materials
+DORM,DORM,Dorman Products Inc.,Consumer Goods
+DOV,DOV,Dover Corporation,Industrial Goods
+DOW,DOW,The Dow Chemical Company,Basic Materials
+DOX,DOX,Amdocs Limited,Technology
+DPLO,DPLO,Diplomat Pharmacy Inc.,Healthcare
+DPM,DPM,DCP Midstream Partners LP,Basic Materials
+DPS,DPS,Dr Pepper Snapple Group Inc.,Consumer Goods
+DPZ,DPZ,Domino's Pizza Inc.,Services
+DRE,DRE,Duke Realty Corporation,Financial
+DRH,DRH,Diamondrock Hospitality Co.,Financial
+DRQ,DRQ,Dril-Quip Inc.,Basic Materials
+DSW,DSW,DSW Inc.,Services
+DTE,DTE,DTE Energy Company,Utilities
+DTV,DTV,DIRECTV,Services
+DUK,DUK,Duke Energy Corporation,Utilities
+DV,DV,DeVry Education Group Inc.,Services
+DVA,DVA,DaVita HealthCare Partners Inc.,Healthcare
+DVAX,DVAX,Dynavax Technologies Corporation,Healthcare
+DVN,DVN,Devon Energy Corporation,Basic Materials
+DXCM,DXCM,DexCom Inc.,Healthcare
+DY,DY,Dycom Industries Inc.,Industrial Goods
+DYAX,DYAX,Dyax Corp.,Healthcare
+DYN,DYN,Dynegy Inc.,Utilities
+EA,EA,Electronic Arts Inc.,Technology
+EAT,EAT,Brinker International Inc.,Services
+EBIX,EBIX,Ebix Inc.,Technology
+EC,EC,Ecopetrol SA,Basic Materials
+ECA,ECA,Encana Corporation,Basic Materials
+ECHO,ECHO,Echo Global Logistics Inc.,Services
+ECL,ECL,Ecolab Inc.,Consumer Goods
+ECOM,ECOM,ChannelAdvisor Corporation,Technology
+ECYT,ECYT,Endocyte Inc.,Healthcare
+ED,ED,Consolidated Edison Inc.,Utilities
+EDR,EDR,EdR,Financial
+EDU,EDU,New Oriental Education & Technology Group Inc.,Services
+EEFT,EEFT,Euronet Worldwide Inc.,Services
+EFII,EFII,Electronics for Imaging Inc.,Technology
 EFUT,EFUT,富基旋风,信息技术
+EFX,EFX,Equifax Inc.,Financial
+EGHT,EGHT,8x8 Inc.,Technology
 EGT,EGT,亚洲娱乐博彩,可选消费
+EIX,EIX,Edison International,Utilities
+EL,EL,The Estee Lauder Companies Inc.,Consumer Goods
+ELLI,ELLI,Ellie Mae Inc.,Technology
+ELP,ELP,Companhia Paranaense de Energia,Utilities
+ELS,ELS,Equity LifeStyle Properties Inc.,Financial
+ELY,ELY,Callaway Golf Co.,Consumer Goods
+EMC,EMC,EMC Corporation,Technology
+EME,EME,EMCOR Group Inc.,Industrial Goods
+EMN,EMN,Eastman Chemical Co.,Basic Materials
+EMR,EMR,Emerson Electric Co.,Industrial Goods
+ENLK,ENLK,EnLink Midstream Partners LP,Basic Materials
+ENOC,ENOC,EnerNOC Inc.,Services
+ENPH,ENPH,Enphase Energy Inc.,Technology
+ENR,ENR,Energizer Holdings Inc.,Consumer Goods
+ENTG,ENTG,Entegris Inc.,Technology
+EOG,EOG,EOG Resources Inc.,Basic Materials
+EPAM,EPAM,EPAM Systems Inc.,Technology
+EPD,EPD,Enterprise Products Partners L.P.,Basic Materials
+EPE,EPE,EP Energy Corporation,Basic Materials
+EPR,EPR,EPR Properties,Financial
+EQM,EQM,EQT Midstream Partners LP,Basic Materials
+EQR,EQR,Equity Residential,Financial
+EQT,EQT,EQT Corporation,Basic Materials
+ERF,ERF,Enerplus Corporation,Basic Materials
+ERIC,ERIC,Ericsson,Technology
+ES,ES,Eversource Energy,Utilities
+ESRX,ESRX,Express Scripts Holding Company,Healthcare
+ETE,ETE,Energy Transfer Equity L.P.,Basic Materials
+ETFC,ETFC,E*TRADE Financial Corporation,Financial
+ETN,ETN,Eaton Corporation plc,Industrial Goods
+EV,EV,Eaton Vance Corp.,Financial
+EVEP,EVEP,EV Energy Partners LP,Basic Materials
+EVER,EVER,EverBank Financial Corp.,Financial
+EVHC,EVHC,Envision Healthcare Holdings Inc.,Healthcare
+EVR,EVR,Evercore Partners Inc.,Financial
+EVTC,EVTC,EVERTEC Inc.,Technology
+EW,EW,Edwards Lifesciences Corp.,Healthcare
+EWBC,EWBC,East West Bancorp Inc.,Financial
+EXAM,EXAM,ExamWorks Group Inc.,Financial
+EXH,EXH,Exterran Holdings Inc.,Basic Materials
+EXP,EXP,Eagle Materials Inc.,Industrial Goods
+EXPD,EXPD,Expeditors International of Washington Inc.,Services
+EXPE,EXPE,Expedia Inc.,Services
+EXR,EXR,Extra Space Storage Inc.,Financial
+FAF,FAF,First American Financial Corporation,Financial
+FANG,FANG,Diamondback Energy Inc.,Basic Materials
+FAST,FAST,Fastenal Company,Services
+FB,FB,Facebook Inc.,Technology
+FBHS,FBHS,Fortune Brands Home & Security Inc.,Consumer Goods
+FBP,FBP,First Bancorp,Financial
+FCAU,FCAU,Fiat Chrysler Automobiles N.V.,Consumer Goods
+FCF,FCF,First Commonwealth Financial Corp.,Financial
+FCH,FCH,FelCor Lodging Trust Incorporated,Financial
+FCS,FCS,Fairchild Semiconductor International Inc.,Technology
 FCX,FCX,FREEPORT-MCMORAN INC.,--
+FDO,FDO,Family Dollar Stores Inc.,Services
+FDS,FDS,FactSet Research Systems Inc.,Technology
+FDX,FDX,FedEx Corporation,Services
+FEIC,FEIC,FEI Company,Technology
+FET,FET,Forum Energy Technologies Inc.,Basic Materials
 FFHL,FFHL,富维薄膜,原材料
-FLR,FLR,FLUOR CORPORATION,--
+FFIV,FFIV,F5 Networks Inc.,Technology
+FHN,FHN,First Horizon National Corporation,Financial
+FIG,FIG,Fortress Investment Group LLC,Financial
+FINL,FINL,Finish Line Inc.,Services
+FIS,FIS,Fidelity National Information Services Inc.,Technology
+FISV,FISV,Fiserv Inc.,Services
+FITB,FITB,Fifth Third Bancorp,Financial
+FIVE,FIVE,Five Below Inc.,Services
+FL,FL,Foot Locker Inc.,Consumer Goods
+FLEX,FLEX,Flextronics International Ltd.,Technology
+FLO,FLO,Flowers Foods Inc.,Consumer Goods
+FLR,FLR,Fluor Corporation,Industrial Goods
+FLS,FLS,Flowserve Corp.,Industrial Goods
+FLT,FLT,FleetCor Technologies Inc.,Services
+FLTX,FLTX,Fleetmatics Group PLC,Technology
+FLWS,FLWS,1-800-Flowers.com Inc.,Services
+FMBI,FMBI,First Midwest Bancorp Inc.,Financial
+FMC,FMC,FMC Corp.,Basic Materials
+FMER,FMER,FirstMerit Corporation,Financial
+FMX,FMX,Fomento Economico Mexicano S.A.B de C.V,Consumer Goods
+FNB,FNB,F.N.B. Corporation,Financial
+FNF,FNF,Fidelity National Financial Inc.,Financial
+FNGN,FNGN,Financial Engines Inc.,Financial
+FNSR,FNSR,Finisar Corp.,Technology
+FOE,FOE,Ferro Corporation,Basic Materials
+FORM,FORM,FormFactor Inc.,Technology
+FOSL,FOSL,Fossil Group Inc.,Consumer Goods
+FOXA,FOXA,Twenty-First Century Fox Inc.,Services
+FR,FR,First Industrial Realty Trust Inc.,Financial
+FRAN,FRAN,Francesca's Holdings Corporation,Services
+FRC,FRC,First Republic Bank,Financial
+FRGI,FRGI,Fiesta Restaurant Group Inc.,Services
+FRT,FRT,Federal Realty Investment Trust,Financial
+FSC,FSC,Fifth Street Finance Corp.,Financial
+FTI,FTI,FMC Technologies Inc.,Basic Materials
+FTK,FTK,Flotek Industries Inc.,Basic Materials
+FULT,FULT,Fulton Financial Corporation,Financial
+G,G,Genpact Limited,Services
 GAGA,GAGA,利农国际,原材料
+GAS,GAS,AGL Resources Inc.,Utilities
+GBCI,GBCI,Glacier Bancorp Inc.,Financial
+GBX,GBX,The Greenbrier Companies Inc.,Services
+GCI,GCI,Gannett Co. Inc.,Services
+GD,GD,General Dynamics Corporation,Industrial Goods
+GDOT,GDOT,Green Dot Corporation,Financial
+GE,GE,General Electric Company,Industrial Goods
+GEL,GEL,Genesis Energy LP,Basic Materials
+GEO,GEO,The GEO Group Inc.,Financial
+GEVA,GEVA,Synageva BioPharma Corp.,Healthcare
+GGAL,GGAL,Grupo Financiero Galicia S.A.,Financial
+GGP,GGP,General Growth Properties Inc,Financial
+GIB,GIB,CGI Group Inc.,Technology
+GIL,GIL,Gildan Activewear Inc.,Consumer Goods
+GILD,GILD,Gilead Sciences Inc.,Healthcare
+GIS,GIS,General Mills Inc.,Consumer Goods
+GLDD,GLDD,Great Lakes Dredge & Dock Corporation,Industrial Goods
+GLF,GLF,Gulfmark Offshore Inc.,Basic Materials
+GLOG,GLOG,GasLog Ltd.,Services
+GLUU,GLUU,Glu Mobile Inc.,Technology
+GLW,GLW,Corning Inc.,Technology
+GMCR,GMCR,Keurig Green Mountain Inc.,Consumer Goods
+GME,GME,GameStop Corp.,Services
+GMED,GMED,Globus Medical Inc.,Healthcare
+GMT,GMT,GATX Corp.,Services
+GNC,GNC,GNC Holdings Inc.,Services
+GNRC,GNRC,Generac Holdings Inc.,Industrial Goods
+GNTX,GNTX,Gentex Corp.,Consumer Goods
+GOGO,GOGO,Gogo Inc.,Technology
+GOLD,GOLD,Randgold Resources Limited,Basic Materials
+GOOGL,GOOGL,Google Inc.,Technology
+GPC,GPC,Genuine Parts Company,Services
+GPK,GPK,Graphic Packaging Holding Company,Consumer Goods
+GPN,GPN,Global Payments Inc.,Services
+GPOR,GPOR,Gulfport Energy Corp.,Basic Materials
+GPRE,GPRE,Green Plains Inc.,Basic Materials
+GPS,GPS,The Gap Inc.,Services
+GPT,GPT,Gramercy Property Trust Inc.,Financial
+GRA,GRA,W.R. Grace & Co.,Basic Materials
+GRFS,GRFS,Grifols S.A.,Healthcare
 GRO,GRO,中冠农业,必须消费
+GSM,GSM,Globe Specialty Metals Inc.,Basic Materials
+GT,GT,The Goodyear Tire & Rubber Company,Consumer Goods
+GTLS,GTLS,Chart Industries Inc.,Industrial Goods
+GTN,GTN,Gray Television Inc.,Services
+GWR,GWR,Genesee & Wyoming Inc.,Services
+GWRE,GWRE,Guidewire Software Inc.,Technology
+GWW,GWW,W.W. Grainger Inc.,Services
+GXP,GXP,Great Plains Energy Incorporated,Utilities
+GY,GY,GenCorp Inc.,Industrial Goods
+H,H,Hyatt Hotels Corporation,Services
+HAIN,HAIN,The Hain Celestial Group Inc.,Services
+HAL,HAL,Halliburton Company,Basic Materials
+HALO,HALO,Halozyme Therapeutics Inc.,Healthcare
+HAR,HAR,Harman International Industries Incorporated,Consumer Goods
+HAS,HAS,Hasbro Inc.,Consumer Goods
+HAWK,HAWK,Blackhawk Network Holdings Inc.,Financial
+HBAN,HBAN,Huntington Bancshares Incorporated,Financial
+HBI,HBI,Hanesbrands Inc.,Consumer Goods
+HCA,HCA,HCA Holdings Inc.,Healthcare
+HCC,HCC,HCC Insurance Holdings Inc.,Financial
+HCLP,HCLP,Hi-Crush Partners LP,Basic Materials
+HCN,HCN,Health Care REIT Inc.,Financial
+HCP,HCP,HCP Inc.,Financial
+HD,HD,The Home Depot Inc.,Services
+HDB,HDB,HDFC Bank Ltd.,Financial
+HDS,HDS,HD Supply Holdings Inc.,Services
+HE,HE,Hawaiian Electric Industries Inc.,Utilities
+HEES,HEES,H&E Equipment Services Inc.,Services
+HES,HES,Hess Corporation,Basic Materials
+HFC,HFC,HollyFrontier Corporation,Basic Materials
 HGSH,HGSH,汉广厦房地产,房地产与建筑
+HIBB,HIBB,Hibbett Sports Inc.,Services
+HIG,HIG,The Hartford Financial Services Group Inc.,Financial
+HII,HII,Huntington Ingalls Industries Inc.,Industrial Goods
+HILL,HILL,Dot Hill Systems Corp.,Technology
+HIMX,HIMX,Himax Technologies Inc.,Technology
+HIW,HIW,Highwoods Properties Inc.,Financial
+HLF,HLF,Herbalife Ltd.,Consumer Goods
+HLS,HLS,HEALTHSOUTH Corp.,Healthcare
+HLX,HLX,Helix Energy Solutions Group Inc.,Basic Materials
+HMC,HMC,Honda Motor Co. Ltd.,Consumer Goods
+HME,HME,Home Properties Inc.,Financial
 HNP,HNP,华能电力,电力
-HOLI,HOLI,和利时自动化,机械制造
+HNT,HNT,Health Net Inc.,Healthcare
+HOG,HOG,Harley-Davidson Inc.,Consumer Goods
+HOLI,HOLI,HollySys Automation Technologies Ltd.,Industrial Goods
+HOLX,HOLX,Hologic Inc.,Healthcare
+HON,HON,Honeywell International Inc.,Industrial Goods
+HOS,HOS,Hornbeck Offshore Services Inc.,Basic Materials
+HOT,HOT,Starwood Hotels & Resorts Worldwide Inc.,Services
+HP,HP,Helmerich & Payne Inc.,Basic Materials
+HPP,HPP,Hudson Pacific Properties Inc.,Financial
+HPTX,HPTX,Hyperion Therapeutics Inc.,Healthcare
+HPY,HPY,Heartland Payment Systems Inc.,Services
+HRB,HRB,H&R Block Inc.,Services
+HRC,HRC,Hill-Rom Holdings Inc.,Healthcare
+HRG,HRG,HRG Group Inc.,Conglomerates
+HRL,HRL,Hormel Foods Corporation,Consumer Goods
+HRS,HRS,Harris Corporation,Technology
+HSBC,HSBC,HSBC Holdings plc,Financial
+HSIC,HSIC,Henry Schein Inc.,Services
+HSNI,HSNI,HSN Inc.,Services
 HSOL,HSOL,韩华新能源,能源
-IBM,IBM,IBM,--
+HST,HST,Host Hotels & Resorts Inc.,Financial
+HSY,HSY,The Hershey Company,Consumer Goods
+HT,HT,Hersha Hospitality Trust,Financial
+HTA,HTA,Healthcare Trust of America Inc.,Financial
+HTGC,HTGC,Hercules Technology Growth Capital Inc.,Financial
+HTH,HTH,Hilltop Holdings Inc.,Financial
+HTLD,HTLD,Heartland Express Inc.,Services
+HTZ,HTZ,Hertz Global Holdings Inc.,Services
+HUB-B,HUB-B,Hubbell Inc.,Technology
+HUM,HUM,Humana Inc.,Healthcare
+HUN,HUN,Huntsman Corporation,Basic Materials
+HW,HW,Headwaters Incorporated,Industrial Goods
+HXL,HXL,Hexcel Corp.,Industrial Goods
+HZO,HZO,Marinemax Inc.,Services
+IACI,IACI,IAC/InterActiveCorp,Technology
+IBM,IBM,International Business Machines Corporation,Technology
+IBN,IBN,ICICI Bank Ltd.,Financial
+ICE,ICE,Intercontinental Exchange Inc.,Financial
+ICLR,ICLR,ICON Public Limited Company,Healthcare
+ICON,ICON,Iconix Brand Group Inc.,Consumer Goods
+IDCC,IDCC,InterDigital Inc.,Technology
+IDTI,IDTI,Integrated Device Technology Inc.,Technology
+IDXX,IDXX,IDEXX Laboratories Inc.,Healthcare
+IEX,IEX,IDEX Corporation,Industrial Goods
+IFF,IFF,International Flavors & Fragrances Inc.,Basic Materials
+IG,IG,IGI Laboratories, Inc.
+IGT,IGT,International Game Technology,Services
+IHS,IHS,IHS Inc.,Technology
+ILMN,ILMN,Illumina Inc.,Healthcare
+IM,IM,Ingram Micro Inc.,Services
+IMAX,IMAX,IMAX Corporation,Services
+IMO,IMO,Imperial Oil Ltd.,Basic Materials
+INCY,INCY,Incyte Corporation,Healthcare
+INFA,INFA,Informatica Corporation,Technology
+INFI,INFI,Infinity Pharmaceuticals Inc.,Healthcare
+INFN,INFN,Infinera Corporation,Technology
+INFY,INFY,Infosys Ltd.,Technology
+ING,ING,ING Groep N.V.,Financial
+INGR,INGR,Ingredion Incorporated,Consumer Goods
+INN,INN,Summit Hotel Properties Inc.,Financial
+INO,INO,Inovio Pharmaceuticals Inc.,Healthcare
+INSY,INSY,INSYS Therapeutics Inc.,Healthcare
+INT,INT,World Fuel Services Corp.,Basic Materials
+INTC,INTC,Intel Corporation,Technology
+INTU,INTU,Intuit Inc.,Technology
+IPG,IPG,The Interpublic Group of Companies Inc.,Services
+IPGP,IPGP,IPG Photonics Corporation,Technology
+IPHI,IPHI,Inphi Corporation,Technology
+IR,IR,Ingersoll-Rand Plc,Industrial Goods
+IRBT,IRBT,iRobot Corporation,Consumer Goods
+IRC,IRC,Inland Real Estate Corp.,Financial
+IRDM,IRDM,Iridium Communications Inc.,Technology
+IRM,IRM,Iron Mountain Inc.,Technology
+IRWD,IRWD,Ironwood Pharmaceuticals Inc.,Healthcare
+ISBC,ISBC,Investors Bancorp Inc.,Financial
+ISIL,ISIL,Intersil Corporation,Technology
+ISSI,ISSI,Integrated Silicon Solution Inc.,Technology
+IT,IT,Gartner Inc.,Technology
+ITC,ITC,ITC Holdings Corp.,Utilities
+ITG,ITG,Investment Technology Group Inc.,Financial
+ITT,ITT,ITT Corporation,Industrial Goods
+ITUB,ITUB,Itau Unibanco Holding S.A.,Financial
+ITW,ITW,Illinois Tool Works Inc.,Industrial Goods
+IVZ,IVZ,Invesco Ltd.,Financial
+JAH,JAH,Jarden Corp.,Consumer Goods
+JAKK,JAKK,JAKKS Pacific Inc.,Consumer Goods
 JASO,JASO,晶澳太阳能,能源
+JAZZ,JAZZ,Jazz Pharmaceuticals Public Limited Company,Healthcare
+JBHT,JBHT,JB Hunt Transport Services Inc.,Services
+JBL,JBL,Jabil Circuit Inc.,Technology
+JBLU,JBLU,JetBlue Airways Corporation,Services
+JCI,JCI,Johnson Controls Inc.,Consumer Goods
+JCOM,JCOM,j2 Global Inc.,Technology
+JDSU,JDSU,JDS Uniphase Corporation,Technology
 JFC,JFC,JF中国基金,综合金融
+JKHY,JKHY,Jack Henry & Associates Inc.,Technology
+JKS,JKS,JinkoSolar Holding Co. Ltd.,Technology
+JLL,JLL,Jones Lang LaSalle Incorporated,Financial
+JNJ,JNJ,Johnson & Johnson,Healthcare
+JNS,JNS,Janus Capital Group Inc.,Financial
 JOBS,JOBS,前程无忧,信息技术
+JOE,JOE,The St. Joe Company,Financial
+JPM,JPM,JPMorgan Chase & Co.,Financial
 JRJC,JRJC,金融界,信息技术
 JST,JST,海南金盘,机械制造
+JWN,JWN,Nordstrom Inc.,Services
 KANG,KANG,爱康国宾,健保
+KAR,KAR,KAR Auction Services Inc.,Services
+KATE,KATE,Kate Spade & Company,Consumer Goods
+KBH,KBH,KB Home,Industrial Goods
+KEP,KEP,Korea Electric Power Corp.,Utilities
+KEX,KEX,Kirby Corporation,Services
+KEY,KEY,KeyCorp.,Financial
+KIM,KIM,Kimco Realty Corporation,Financial
+KING,KING,King Digital Entertainment plc,Services
+KKD,KKD,Krispy Kreme Doughnuts Inc.,Services
+KLAC,KLAC,KLA-Tencor Corporation,Technology
+KLIC,KLIC,Kulicke and Soffa Industries Inc.,Technology
+KMI,KMI,Kinder Morgan Inc.,Basic Materials
+KMT,KMT,Kennametal Inc.,Industrial Goods
+KMX,KMX,CarMax Inc.,Services
+KNDI,KNDI,Kandi Technologies Group Inc.,Consumer Goods
+KNL,KNL,Knoll Inc.,Consumer Goods
+KNX,KNX,Knight Transportation Inc.,Services
+KO,KO,The Coca-Cola Company,Consumer Goods
 KONE,KONE,联合信息,信息技术
-KORS,KORS,MICHAEL KORS HOLDINGS LIMITED,--
+KORS,KORS,Michael Kors Holdings Limited,Consumer Goods
+KOS,KOS,Kosmos Energy Ltd.,Basic Materials
+KR,KR,The Kroger Co.,Services
+KRC,KRC,Kilroy Realty Corp.,Financial
+KS,KS,KapStone Paper and Packaging Corporation,Consumer Goods
+KSS,KSS,Kohl's Corp.,Services
+KSU,KSU,Kansas City Southern,Services
+KTOS,KTOS,Kratos Defense & Security Solutions Inc.,Services
 KUTV,KUTV,酷6网,信息技术
+KW,KW,Kennedy-Wilson Holdings Inc.,Financial
+KYTH,KYTH,Kythera Biopharmaceuticals Inc.,Healthcare
+L,L,Loews Corporation,Financial
+LAMR,LAMR,Lamar Advertising Co.,Financial
+LAZ,LAZ,Lazard Ltd.,Financial
+LB,LB,L Brands Inc.,Services
+LBTYA,LBTYA,Liberty Global plc,Services
+LCI,LCI,Lannett Company Inc.,Healthcare
+LEA,LEA,Lear Corp.,Consumer Goods
+LEAF,LEAF,Springleaf Holdings Inc.,Financial
+LECO,LECO,Lincoln Electric Holdings Inc.,Industrial Goods
+LEG,LEG,Leggett & Platt Incorporated,Consumer Goods
 LEJU,LEJU,乐居,信息技术
+LEN,LEN,Lennar Corp.,Industrial Goods
 LFC,LFC,中国人寿,保险
-MNST,MNST,MONSTER BEVERAGE,--
-MPEL,MPEL,新濠博亚娱乐,可选消费
+LGF,LGF,Lions Gate Entertainment Corp.,Services
+LGND,LGND,Ligand Pharmaceuticals Incorporated,Healthcare
+LH,LH,Laboratory Corp. of America Holdings,Healthcare
+LHO,LHO,LaSalle Hotel Properties,Financial
+LII,LII,Lennox International Inc.,Industrial Goods
+LINE,LINE,Linn Energy LLC,Basic Materials
+LKQ,LKQ,LKQ Corp.,Consumer Goods
+LL,LL,Lumber Liquidators Holdings Inc.,Services
+LLTC,LLTC,Linear Technology Corporation,Technology
+LM,LM,Legg Mason Inc.,Financial
+LMNX,LMNX,Luminex Corporation,Healthcare
+LMT,LMT,Lockheed Martin Corporation,Industrial Goods
+LNC,LNC,Lincoln National Corporation,Financial
+LNG,LNG,Cheniere Energy Inc.,Basic Materials
+LNT,LNT,Alliant Energy Corporation,Utilities
+LO,LO,Lorillard Inc.,Consumer Goods
+LOCK,LOCK,LifeLock Inc.,Technology
+LOW,LOW,Lowe's Companies Inc.,Services
+LPI,LPI,Laredo Petroleum Inc.,Basic Materials
+LPLA,LPLA,LPL Financial Holdings Inc.,Financial
+LPNT,LPNT,Lifepoint Hospitals Inc.,Healthcare
+LPT,LPT,Liberty Property Trust,Financial
+LPX,LPX,Louisiana-Pacific Corp.,Services
+LRCX,LRCX,Lam Research Corporation,Technology
+LRE,LRE,LRR Energy L.P.,Basic Materials
+LSCC,LSCC,Lattice Semiconductor Corporation,Technology
+LSTR,LSTR,Landstar System Inc.,Services
+LTM,LTM,Life Time Fitness Inc.,Services
+LULU,LULU,Lululemon Athletica Inc.,Consumer Goods
+LUV,LUV,Southwest Airlines Co.,Services
+LVLT,LVLT,Level 3 Communications Inc.,Technology
+LVS,LVS,Las Vegas Sands Corp.,Services
+LXP,LXP,Lexington Realty Trust,Financial
+LYB,LYB,LyondellBasell Industries N.V.,Basic Materials
+LYV,LYV,Live Nation Entertainment Inc.,Services
+LZB,LZB,La-Z-Boy Incorporated,Consumer Goods
+M,M,Macy's Inc.,Services
+MA,MA,MasterCard Incorporated,Financial
+MAA,MAA,Mid-America Apartment Communities Inc.,Financial
+MAC,MAC,The Macerich Company,Financial
+MAN,MAN,ManpowerGroup Inc.,Services
+MANH,MANH,Manhattan Associates Inc.,Technology
+MAR,MAR,Marriott International Inc.,Services
+MAS,MAS,Masco Corporation,Industrial Goods
+MASI,MASI,Masimo Corporation,Healthcare
+MBT,MBT,Mobile Telesystems OJSC,Technology
+MCD,MCD,McDonald's Corp.,Services
+MCHP,MCHP,Microchip Technology Inc.,Technology
+MCK,MCK,McKesson Corporation,Services
+MCO,MCO,Moody's Corporation,Services
+MD,MD,MEDNAX Inc.,Healthcare
+MDC,MDC,MDC Holdings Inc.,Industrial Goods
+MDCA,MDCA,MDC Partners Inc.,Services
+MDCO,MDCO,The Medicines Company,Healthcare
+MDT,MDT,Medtronic plc,Healthcare
+MDU,MDU,MDU Resources Group Inc.,Industrial Goods
+MDVN,MDVN,Medivation Inc.,Healthcare
+MDXG,MDXG,MiMedx Group Inc.,Healthcare
+MEG,MEG,Media General Inc.,Services
+MEI,MEI,Methode Electronics Inc.,Technology
+MELI,MELI,Mercadolibre Inc.,Services
+MEMP,MEMP,Memorial Production Partners LP,Basic Materials
+MENT,MENT,Mentor Graphics Corp.,Technology
+MEOH,MEOH,Methanex Corporation,Basic Materials
+MERC,MERC,Mercer International Inc.,Consumer Goods
+MET,MET,MetLife Inc.,Financial
+MGA,MGA,Magna International Inc.,Services
+MGM,MGM,MGM Resorts International,Services
+MHK,MHK,Mohawk Industries Inc.,Consumer Goods
+MHLD,MHLD,Maiden Holdings Ltd.,Financial
+MIC,MIC,Macquarie Infrastructure Company LLC,Services
+MIDD,MIDD,Middleby Corp.,Industrial Goods
+MITL,MITL,Mitel Networks Corporation,Technology
+MJN,MJN,Mead Johnson Nutrition Company,Consumer Goods
+MKC,MKC,McCormick & Company Incorporated,Consumer Goods
+MLM,MLM,Martin Marietta Materials Inc.,Industrial Goods
+MMC,MMC,Marsh & McLennan Companies Inc.,Financial
+MMM,MMM,3M Company,Industrial Goods
+MMP,MMP,Magellan Midstream Partners LP,Basic Materials
+MMS,MMS,MAXIMUS Inc.,Services
+MNST,MNST,Monster Beverage Corporation,Consumer Goods
+MO,MO,Altria Group Inc.,Consumer Goods
+MOH,MOH,Molina Healthcare Inc.,Healthcare
+MON,MON,Monsanto Company,Basic Materials
+MOS,MOS,The Mosaic Company,Basic Materials
+MPC,MPC,Marathon Petroleum Corporation,Basic Materials
+MPEL,MPEL,Melco Crown Entertainment Limited,Services
+MPWR,MPWR,Monolithic Power Systems Inc.,Technology
+MR,MR,Mindray Medical International Limited,Healthcare
+MRC,MRC,MRC Global Inc.,Basic Materials
+MRO,MRO,Marathon Oil Corporation,Basic Materials
+MRVL,MRVL,Marvell Technology Group Ltd.,Technology
+MS,MS,Morgan Stanley,Financial
+MSCC,MSCC,Microsemi Corporation,Technology
+MSCI,MSCI,MSCI Inc.,Technology
+MSFT,MSFT,Microsoft Corporation,Technology
+MSG,MSG,The Madison Square Garden Company,Services
+MSM,MSM,MSC Industrial Direct Co. Inc.,Services
+MTB,MTB,M&T Bank Corporation,Financial
+MTDR,MTDR,Matador Resources Company,Basic Materials
+MTG,MTG,MGIC Investment Corp.,Financial
+MTGE,MTGE,American Capital Mortgage Investment Corp.,Financial
+MTH,MTH,Meritage Homes Corporation,Industrial Goods
+MTOR,MTOR,Meritor Inc.,Consumer Goods
+MTSI,MTSI,M/A-Com Technology Solutions Holdings Inc.,Technology
+MTU,MTU,Mitsubishi UFJ Financial Group Inc.,Financial
+MTW,MTW,The Manitowoc Company Inc.,Industrial Goods
+MTZ,MTZ,MasTec Inc.,Industrial Goods
+MU,MU,Micron Technology Inc.,Technology
+MUR,MUR,Murphy Oil Corporation,Basic Materials
+MWA,MWA,Mueller Water Products Inc.,Industrial Goods
+MWE,MWE,MarkWest Energy Partners L.P.,Basic Materials
+MWV,MWV,MeadWestvaco Corporation,Consumer Goods
+MWW,MWW,Monster Worldwide Inc.,Services
+MX,MX,MagnaChip Semiconductor Corporation,Technology
+MXIM,MXIM,Maxim Integrated Products Inc.,Technology
+MXWL,MXWL,Maxwell Technologies Inc.,Technology
+MYGN,MYGN,Myriad Genetics Inc.,Services
+MYL,MYL,Mylan N.V.,Healthcare
+NATI,NATI,National Instruments Corporation,Technology
+NBIX,NBIX,Neurocrine Biosciences Inc.,Healthcare
+NBL,NBL,Noble Energy Inc.,Basic Materials
+NCLH,NCLH,Norwegian Cruise Line Holdings Ltd.,Services
+NCR,NCR,NCR Corporation,Technology
+NCT,NCT,Newcastle Investment Corp.,Financial
 NCTY,NCTY,第九城市,信息技术
+NDAQ,NDAQ,The Nasdaq OMX Group Inc.,Financial
+NDLS,NDLS,Noodles & Company,Services
+NEE,NEE,NextEra Energy Inc.,Utilities
+NEWM,NEWM,New Media Investment Group Inc.,Services
+NFG,NFG,National Fuel Gas Company,Basic Materials
+NFLX,NFLX,Netflix Inc.,Services
+NFX,NFX,Newfield Exploration Co.,Basic Materials
+NGG,NGG,National Grid plc,Utilities
+NGL,NGL,NGL Energy Partners LP,Basic Materials
+NGLS,NGLS,Targa Resources Partners LP,Basic Materials
+NI,NI,NiSource Inc.,Utilities
+NJR,NJR,New Jersey Resources Corp.,Utilities
+NKE,NKE,Nike Inc.,Consumer Goods
+NKTR,NKTR,Nektar Therapeutics,Healthcare
+NLNK,NLNK,NewLink Genetics Corporation,Healthcare
+NLSN,NLSN,Nielsen N.V.,Technology
+NNN,NNN,National Retail Properties Inc.,Financial
+NOAH,NOAH,Noah Holdings Limited,Financial
+NOC,NOC,Northrop Grumman Corporation,Industrial Goods
+NOG,NOG,Northern Oil and Gas Inc.,Basic Materials
+NOK,NOK,Nokia Corporation,Technology
+NOV,NOV,National Oilwell Varco Inc.,Basic Materials
+NPBC,NPBC,National Penn Bancshares Inc.,Financial
 NPD,NPD,深圳海王星辰,医药
+NR,NR,Newpark Resources Inc.,Basic Materials
+NRF,NRF,NorthStar Realty Finance Corp.,Financial
+NSAM,NSAM,Northstar Asset Management Group Inc.,Financial
+NSC,NSC,Norfolk Southern Corporation,Services
+NSM,NSM,Nationstar Mortgage Holdings Inc.,Financial
+NSR,NSR,NeuStar Inc.,Technology
+NTAP,NTAP,NetApp Inc.,Technology
+NTES,NTES,NetEase Inc.,Technology
 NTES,NTES,网易,信息技术
+NTI,NTI,Northern Tier Energy LP,Basic Materials
+NTRS,NTRS,Northern Trust Corporation,Financial
+NTT,NTT,Nippon Telegraph and Telephone Corporation,Technology
+NUE,NUE,Nucor Corporation,Basic Materials
+NUS,NUS,Nu Skin Enterprises Inc.,Consumer Goods
+NVAX,NVAX,Novavax Inc.,Healthcare
+NVDA,NVDA,NVIDIA Corporation,Technology
+NVGN,NVGN,Novogen Limited,Healthcare
+NVO,NVO,Novo Nordisk A/S,Healthcare
+NVS,NVS,Novartis AG,Healthcare
+NWBI,NWBI,Northwest Bancshares Inc.,Financial
+NWBO,NWBO,Northwest Biotherapeutics Inc.,Healthcare
+NWL,NWL,Newell Rubbermaid Inc.,Consumer Goods
+NXPI,NXPI,NXP Semiconductors NV,Technology
+NXTM,NXTM,Nxstage Medical Inc.,Healthcare
+NYMT,NYMT,New York Mortgage Trust Inc.,Financial
+NYT,NYT,The New York Times Company,Services
+O,O,Realty Income Corporation,Financial
+OA,OA,Orbital ATK Inc.,Industrial Goods
+OAS,OAS,Oasis Petroleum Inc.,Basic Materials
+OC,OC,Owens Corning,Industrial Goods
+OCN,OCN,Ocwen Financial Corp.,Financial
+ODFL,ODFL,Old Dominion Freight Line Inc.,Services
+ODP,ODP,Office Depot Inc.,Services
+OFG,OFG,OFG Bancorp,Financial
+OGE,OGE,OGE Energy Corp.,Utilities
+OHI,OHI,Omega Healthcare Investors Inc.,Financial
+OI,OI,Owens-Illinois Inc.,Consumer Goods
+OII,OII,Oceaneering International Inc.,Basic Materials
+OIS,OIS,Oil States International Inc.,Basic Materials
+OKE,OKE,ONEOK Inc.,Utilities
+OKS,OKS,ONEOK Partners L.P.,Basic Materials
+OLED,OLED,Universal Display Corp.,Technology
+OMC,OMC,Omnicom Group Inc.,Services
+OMER,OMER,Omeros Corporation,Healthcare
+ONB,ONB,Old National Bancorp.,Financial
+ORCL,ORCL,Oracle Corporation,Technology
+OREX,OREX,Orexigen Therapeutics Inc.,Healthcare
+ORI,ORI,Old Republic International Corporation,Financial
+ORIG,ORIG,Ocean Rig UDW Inc.,Basic Materials
+ORLY,ORLY,O'Reilly Automotive Inc.,Services
+OSK,OSK,Oshkosh Corporation,Consumer Goods
 OSN,OSN,奥盛创新,金属与采矿
+OSUR,OSUR,OraSure Technologies Inc.,Healthcare
+OTEX,OTEX,Open Text Corporation,Technology
+OUT,OUT,Outfront Media Inc.,Financial
+OUTR,OUTR,Outerwall Inc.,Services
+OVTI,OVTI,OmniVision Technologies Inc.,Technology
+OWW,OWW,Orbitz Worldwide Inc.,Services
+OZM,OZM,Och-Ziff Capital Management Group LLC,Financial
+OZRK,OZRK,Bank of the Ozarks Inc.,Financial
+PAA,PAA,Plains All American Pipeline L.P.,Basic Materials
+PACB,PACB,Pacific Biosciences of California Inc.,Healthcare
+PACW,PACW,PacWest Bancorp,Financial
+PAG,PAG,Penske Automotive Group Inc.,Services
+PAY,PAY,VeriFone Systems Inc.,Consumer Goods
+PAYC,PAYC,Paycom Software Inc.,Technology
+PAYX,PAYX,Paychex Inc.,Services
+PB,PB,Prosperity Bancshares Inc.,Financial
+PBCT,PBCT,People's United Financial Inc.,Financial
+PBH,PBH,Prestige Brands Holdings Inc.,Services
+PBPB,PBPB,Potbelly Corporation,Services
+PCAR,PCAR,PACCAR Inc.,Consumer Goods
+PCLN,PCLN,The Priceline Group Inc.,Services
+PCP,PCP,Precision Castparts Corp.,Industrial Goods
+PCRX,PCRX,Pacira Pharmaceuticals Inc.,Healthcare
+PCYC,PCYC,Pharmacyclics Inc.,Healthcare
+PDCE,PDCE,PDC Energy Inc.,Basic Materials
+PDCO,PDCO,Patterson Companies Inc.,Services
+PDLI,PDLI,PDL BioPharma Inc.,Healthcare
+PEB,PEB,Pebblebrook Hotel Trust,Financial
+PEI,PEI,Pennsylvania Real Estate Investment Trust,Financial
+PEIX,PEIX,Pacific Ethanol Inc.,Basic Materials
+PENN,PENN,Penn National Gaming Inc.,Services
+PEP,PEP,Pepsico Inc.,Consumer Goods
+PER,PER,SandRidge Permian Trust,Basic Materials
+PFE,PFE,Pfizer Inc.,Healthcare
+PFG,PFG,Principal Financial Group Inc.,Financial
+PG,PG,The Procter & Gamble Company,Consumer Goods
+PGNX,PGNX,Progenics Pharmaceuticals Inc.,Healthcare
+PGR,PGR,Progressive Corp.,Financial
+PGTI,PGTI,PGT Inc.,Industrial Goods
+PH,PH,Parker-Hannifin Corporation,Industrial Goods
+PHM,PHM,PulteGroup Inc.,Industrial Goods
+PII,PII,Polaris Industries Inc.,Consumer Goods
+PKG,PKG,Packaging Corporation of America,Consumer Goods
+PKI,PKI,PerkinElmer Inc.,Healthcare
+PKY,PKY,Parkway Properties Inc.,Financial
+PLAY,PLAY,Dave & Buster's Entertainment Inc.,Services
+PLCM,PLCM,Polycom Inc.,Technology
+PLD,PLD,Prologis Inc.,Financial
+PLKI,PLKI,Popeyes Louisiana Kitchen Inc.,Services
+PLL,PLL,Pall Corporation,Industrial Goods
+PLNR,PLNR,Planar Systems Inc.,Technology
+PLT,PLT,Plantronics Inc.,Technology
+PM,PM,Philip Morris International Inc.,Consumer Goods
+PMT,PMT,PennyMac Mortgage Investment Trust,Financial
+PNC,PNC,The PNC Financial Services Group Inc.,Financial
+PNK,PNK,Pinnacle Entertainment Inc.,Services
+PNM,PNM,PNM Resources Inc.,Utilities
+PNR,PNR,Pentair plc,Industrial Goods
+PNRA,PNRA,Panera Bread Company,Services
+PNW,PNW,Pinnacle West Capital Corporation,Utilities
+PNY,PNY,Piedmont Natural Gas Co. Inc.,Utilities
+PODD,PODD,Insulet Corporation,Healthcare
+POR,POR,Portland General Electric Company,Utilities
+POT,POT,Potash Corp. of Saskatchewan Inc.,Basic Materials
+PPC,PPC,Pilgrim's Pride Corporation,Consumer Goods
+PPG,PPG,PPG Industries Inc.,Basic Materials
+PPL,PPL,PPL Corporation,Utilities
+PPO,PPO,Polypore International Inc.,Industrial Goods
+PPS,PPS,Post Properties Inc.,Financial
+PRAA,PRAA,PRA Group Inc.,Services
+PRGO,PRGO,Perrigo Company Public Limited Company,Healthcare
+PRIM,PRIM,Primoris Services Corporation,Industrial Goods
+PRLB,PRLB,Proto Labs Inc.,Industrial Goods
+PRXL,PRXL,PAREXEL International Corporation,Healthcare
+PSA,PSA,Public Storage,Financial
+PSX,PSX,Phillips 66,Basic Materials
+PTC,PTC,PTC Inc.,Technology
+PTEN,PTEN,Patterson-UTI Energy Inc.,Basic Materials
 PTR,PTR,中石油,能源
-QIHU,QIHU,奇虎360,信息技术
+PVH,PVH,PVH Corp.,Consumer Goods
+PVTB,PVTB,PrivateBancorp Inc.,Financial
+PWR,PWR,Quanta Services Inc.,Industrial Goods
+PX,PX,Praxair Inc.,Basic Materials
+PXD,PXD,Pioneer Natural Resources Co.,Basic Materials
+PZZA,PZZA,Papa John's International Inc.,Services
+Q,Q,Quintiles Transnational Holdings Inc.,Healthcare
+QCOM,QCOM,QUALCOMM Incorporated,Technology
+QIHU,QIHU,Qihoo 360 Technology Co. Ltd.,Technology
+QIWI,QIWI,Qiwi plc,Financial
 QKLS,QKLS,庆客隆,必须消费
+QLYS,QLYS,Qualys Inc.,Technology
+QRVO,QRVO,Qorvo Inc.,Technology
+QVCA,QVCA,Liberty Interactive Corporation,Services
+R,R,Ryder System Inc.,Services
+RAD,RAD,Rite Aid Corporation,Services
+RAI,RAI,Reynolds American Inc.,Consumer Goods
+RAS,RAS,RAIT Financial Trust,Financial
+RAX,RAX,Rackspace Hosting Inc.,Technology
+RBS,RBS,The Royal Bank of Scotland Group plc,Financial
+RCL,RCL,Royal Caribbean Cruises Ltd.,Services
+RDN,RDN,Radian Group Inc.,Financial
+RDNT,RDNT,RadNet Inc.,Healthcare
+RDS-A,RDS-A,Royal Dutch Shell plc,Basic Materials
+RDUS,RDUS,Radius Health Inc.,Healthcare
+RDWR,RDWR,Radware Ltd.,Technology
+RDY,RDY,Dr. Reddy's Laboratories Ltd.,Healthcare
+RE,RE,Everest Re Group Ltd.,Financial
+REG,REG,Regency Centers Corporation,Financial
+REGI,REGI,Renewable Energy Group Inc.,Basic Materials
+REGN,REGN,Regeneron Pharmaceuticals Inc.,Healthcare
+RES,RES,RPC Inc.,Basic Materials
+RF,RF,Regions Financial Corporation,Financial
+RGA,RGA,Reinsurance Group of America Inc.,Financial
+RGC,RGC,Regal Entertainment Group,Services
+RGEN,RGEN,Repligen Corporation,Healthcare
+RH,RH,Restoration Hardware Holdings Inc.,Services
+RHI,RHI,Robert Half International Inc.,Services
+RHP,RHP,Ryman Hospitality Properties Inc.,Financial
+RHT,RHT,Red Hat Inc.,Technology
+RIO,RIO,Rio Tinto plc,Basic Materials
+RJET,RJET,Republic Airways Holdings Inc.,Services
+RJF,RJF,Raymond James Financial Inc.,Financial
+RKT,RKT,Rock-Tenn Company,Consumer Goods
+RKUS,RKUS,Ruckus Wireless Inc.,Technology
+RL,RL,Ralph Lauren Corporation,Consumer Goods
+RLGY,RLGY,Realogy Holdings Corp.,Financial
+RLJ,RLJ,RLJ Lodging Trust,Financial
+RMBS,RMBS,Rambus Inc.,Technology
+RMD,RMD,ResMed Inc.,Healthcare
+ROIC,ROIC,Retail Opportunity Investments Corp.,Financial
+ROK,ROK,Rockwell Automation Inc.,Industrial Goods
+ROP,ROP,Roper Industries Inc.,Industrial Goods
+ROSE,ROSE,Rosetta Resources Inc.,Basic Materials
+ROST,ROST,Ross Stores Inc.,Services
+ROVI,ROVI,Rovi Corporation,Technology
+RPAI,RPAI,Retail Properties of America Inc.,Financial
+RPM,RPM,RPM International Inc.,Basic Materials
+RPRX,RPRX,Repros Therapeutics Inc.,Healthcare
+RPTP,RPTP,Raptor Pharmaceuticals Corp.,Healthcare
+RRC,RRC,Range Resources Corporation,Basic Materials
+RRD,RRD,R.R. Donnelley & Sons Company,Services
+RS,RS,Reliance Steel & Aluminum Co.,Basic Materials
+RSG,RSG,Republic Services Inc.,Industrial Goods
+RTI,RTI,RTI International Metals Inc.,Industrial Goods
+RTN,RTN,Raytheon Company,Industrial Goods
+RVBD,RVBD,Riverbed Technology Inc.,Technology
+RWT,RWT,Redwood Trust Inc.,Financial
+RXN,RXN,Rexnord Corporation,Industrial Goods
+RY,RY,Royal Bank of Canada,Financial
+RYAAY,RYAAY,Ryanair Holdings plc,Services
+RYL,RYL,Ryland Group Inc.,Industrial Goods
+SA,SA,Seabridge Gold Inc.,Basic Materials
+SAFM,SAFM,Sanderson Farms Inc.,Consumer Goods
+SAIA,SAIA,Saia Inc.,Services
+SANM,SANM,Sanmina Corporation,Technology
+SAP,SAP,SAP SE,Technology
+SAVE,SAVE,Spirit Airlines Inc.,Services
+SBAC,SBAC,SBA Communications Corp.,Technology
+SBGI,SBGI,Sinclair Broadcast Group Inc.,Services
+SBGL,SBGL,Sibanye Gold Limited,Basic Materials
+SBH,SBH,Sally Beauty Holdings Inc.,Services
+SBRA,SBRA,Sabra Health Care REIT Inc.,Financial
+SBS,SBS,Companhia de Saneamento Basico do Estado de Sao Paulo,Utilities
+SBUX,SBUX,Starbucks Corporation,Services
+SC,SC,Santander Consumer USA Holdings Inc.,Financial
+SCCO,SCCO,Southern Copper Corp.,Basic Materials
+SCG,SCG,SCANA Corp.,Utilities
+SCHN,SCHN,Schnitzer Steel Industries Inc.,Basic Materials
+SCHW,SCHW,The Charles Schwab Corporation,Financial
+SCI,SCI,Service Corporation International,Services
+SCLN,SCLN,SciClone Pharmaceuticals Inc.,Healthcare
+SCMP,SCMP,Sucampo Pharmaceuticals Inc.,Healthcare
 SCOK,SCOK,泓利煤焦,能源
-SDRL,SDRL,SEADRILL LIMITED,--
+SCS,SCS,Steelcase Inc.,Consumer Goods
+SCSS,SCSS,Select Comfort Corporation,Consumer Goods
+SCTY,SCTY,SolarCity Corporation,Technology
+SDLP,SDLP,Seadrill Partners LLC,Basic Materials
+SDRL,SDRL,SeaDrill Limited,Basic Materials
+SE,SE,Spectra Energy Corp.,Basic Materials
+SEAS,SEAS,SeaWorld Entertainment Inc.,Services
 SEED,SEED,奥瑞金种业,必须消费
-SFUN,SFUN,搜房网,信息技术
+SEIC,SEIC,SEI Investments Co.,Financial
+SEM,SEM,Select Medical Holdings Corporation,Healthcare
+SF,SF,Stifel Financial Corp.,Financial
+SFM,SFM,Sprouts Farmers Market Inc.,Services
+SFS,SFS,Smart & Final Stores Inc.,Services
+SFUN,SFUN,SouFun Holdings Ltd.,Technology
+SGEN,SGEN,Seattle Genetics Inc.,Healthcare
+SGMO,SGMO,Sangamo Biosciences Inc.,Healthcare
+SGY,SGY,Stone Energy Corp.,Basic Materials
 SHI,SHI,上石化,能源
+SHO,SHO,Sunstone Hotel Investors Inc.,Financial
+SHOO,SHOO,Steven Madden Ltd.,Consumer Goods
+SHOR,SHOR,ShoreTel Inc.,Technology
+SHPG,SHPG,Shire plc,Healthcare
+SHW,SHW,The Sherwin-Williams Company,Basic Materials
+SIAL,SIAL,Sigma-Aldrich Corporation,Basic Materials
+SIG,SIG,Signet Jewelers Limited,Services
 SINA,SINA,新浪,信息技术
 SINO,SINO,中环球船务,运输物流
+SIRO,SIRO,Sirona Dental Systems Inc.,Healthcare
+SIVB,SIVB,SVB Financial Group,Financial
+SIX,SIX,Six Flags Entertainment Corporation,Services
+SJM,SJM,The J. M. Smucker Company,Consumer Goods
+SJR,SJR,Shaw Communications Inc.,Services
+SKM,SKM,SK Telecom Co. Ltd.,Technology
+SKX,SKX,Skechers USA Inc.,Consumer Goods
+SLB,SLB,Schlumberger Limited,Basic Materials
+SLCA,SLCA,U.S. Silica Holdings Inc.,Basic Materials
+SLG,SLG,SL Green Realty Corp.,Financial
+SLW,SLW,Silver Wheaton Corp.,Basic Materials
+SM,SM,SM Energy Company,Basic Materials
+SMCI,SMCI,Super Micro Computer Inc.,Technology
+SMFG,SMFG,Sumitomo Mitsui Financial Group Inc.,Financial
+SMTC,SMTC,Semtech Corporation,Technology
+SN,SN,Sanchez Energy Corporation,Basic Materials
+SNA,SNA,Snap-on Incorporated,Industrial Goods
+SNCR,SNCR,Synchronoss Technologies Inc.,Technology
+SNDK,SNDK,SanDisk Corp.,Technology
+SNI,SNI,Scripps Networks Interactive Inc.,Services
+SNN,SNN,Smith & Nephew plc,Healthcare
 SNP,SNP,中石化,能源
+SNPS,SNPS,Synopsys Inc.,Technology
+SNV,SNV,Synovus Financial Corporation,Financial
+SO,SO,Southern Company,Utilities
+SODA,SODA,SodaStream International Ltd.,Consumer Goods
 SOHU,SOHU,搜狐,信息技术
 SOL,SOL,昱辉阳光,能源
+SON,SON,Sonoco Products Co.,Consumer Goods
+SONC,SONC,Sonic Corp.,Services
+SPF,SPF,Standard Pacific Corp.,Industrial Goods
+SPG,SPG,Simon Property Group Inc.,Financial
+SPIL,SPIL,Siliconware Precision Industries Co. Ltd.,Technology
 SPIL,SPIL,矽品,可选消费
+SPN,SPN,Superior Energy Services Inc.,Basic Materials
+SPR,SPR,Spirit AeroSystems Holdings Inc.,Industrial Goods
 SPU,SPU,天人果汁,必须消费
+SPW,SPW,SPX Corporation,Industrial Goods
+SPWR,SPWR,SunPower Corporation,Technology
+SRC,SRC,Spirit Realty Capital Inc.,Financial
+SRCL,SRCL,Stericycle Inc.,Industrial Goods
+SRE,SRE,Sempra Energy,Utilities
+SSI,SSI,Stage Stores Inc.,Services
+SSL,SSL,Sasol Ltd.,Basic Materials
+SSNC,SSNC,SS&C Technologies Holdings Inc.,Technology
+SSP,SSP,The E. W. Scripps Company,Services
+ST,ST,Sensata Technologies Holding NV,Technology
+STAR,STAR,iStar Financial Inc.,Financial
+STE,STE,Steris Corp.,Healthcare
+STI,STI,SunTrust Banks Inc.,Financial
+STJ,STJ,St. Jude Medical Inc.,Healthcare
+STKL,STKL,SunOpta Inc.,Consumer Goods
+STLD,STLD,Steel Dynamics Inc.,Basic Materials
+STM,STM,STMicroelectronics NV,Technology
+STO,STO,Statoil ASA,Basic Materials
+STR,STR,Questar Corporation,Utilities
+STT,STT,State Street Corporation,Financial
+STWD,STWD,Starwood Property Trust Inc.,Financial
+STX,STX,Seagate Technology Public Limited Company,Technology
+STZ,STZ,Constellation Brands Inc.,Consumer Goods
+SU,SU,Suncor Energy Inc.,Basic Materials
+SUPN,SUPN,Supernus Pharmaceuticals Inc.,Healthcare
+SUSQ,SUSQ,Susquehanna Bancshares Inc.,Financial
 SUTR,SUTR,森特集团,机械制造
 SVM,SVM,SILVERCORP METALS INC.,--
+SVU,SVU,SUPERVALU Inc.,Services
+SWC,SWC,Stillwater Mining Company,Basic Materials
+SWFT,SWFT,Swift Transportation Company,Services
+SWHC,SWHC,Smith & Wesson Holding Corporation,Industrial Goods
+SWI,SWI,SolarWinds Inc.,Technology
+SWIR,SWIR,Sierra Wireless Inc.,Technology
+SWK,SWK,Stanley Black & Decker Inc.,Industrial Goods
+SWKS,SWKS,Skyworks Solutions Inc.,Technology
+SWN,SWN,Southwestern Energy Co.,Basic Materials
+SYF,SYF,Synchrony Financial,Financial
+SYMC,SYMC,Symantec Corporation,Technology
+SYRG,SYRG,Synergy Resources Corporation,Basic Materials
+SYT,SYT,Syngenta AG,Basic Materials
+TA,TA,TravelCenters of America LLC,Services
+TASR,TASR,TASER International Inc.,Industrial Goods
+TBI,TBI,TrueBlue Inc.,Services
+TCB,TCB,TCF Financial Corporation,Financial
+TCBI,TCBI,Texas Capital BancShares Inc.,Financial
+TCS,TCS,The Container Store Group Inc.,Services
+TD,TD,The Toronto-Dominion Bank,Financial
+TDC,TDC,Teradata Corporation,Technology
+TDY,TDY,Teledyne Technologies Inc.,Technology
+TECD,TECD,Tech Data Corp.,Services
 TEDU,TEDU,达内科技,可选消费
+TEG,TEG,Integrys Energy Group Inc.,Utilities
+TEL,TEL,TE Connectivity Ltd.,Technology
+TEN,TEN,Tenneco Inc.,Consumer Goods
+TER,TER,Teradyne Inc.,Technology
+TESO,TESO,Tesco Corporation,Basic Materials
+TEVA,TEVA,Teva Pharmaceutical Industries Limited,Healthcare
+TEX,TEX,Terex Corporation,Industrial Goods
+TFM,TFM,The Fresh Market Inc.,Services
+TGI,TGI,Triumph Group Inc.,Industrial Goods
+TGT,TGT,Target Corp.,Services
+TGTX,TGTX,TG Therapeutics Inc.,Healthcare
+THO,THO,Thor Industries Inc.,Consumer Goods
+THOR,THOR,Thoratec Corp.,Healthcare
+THRM,THRM,Gentherm Incorporated,Consumer Goods
+THRX,THRX,Theravance Inc.,Healthcare
 THTI,THTI,巨元瀚洋,公用事业
+TIF,TIF,Tiffany & Co.,Services
+TILE,TILE,Interface Inc.,Industrial Goods
+TIVO,TIVO,TiVo Inc.,Services
+TJX,TJX,The TJX Companies Inc.,Services
+TKMR,TKMR,Tekmira Pharmaceuticals Corp,Healthcare
+TKR,TKR,The Timken Company,Industrial Goods
+TM,TM,Toyota Motor Corporation,Consumer Goods
+TMH,TMH,Team Health Holdings Inc.,Services
+TMK,TMK,Torchmark Corporation,Financial
+TMO,TMO,Thermo Fisher Scientific Inc.,Healthcare
+TOL,TOL,Toll Brothers Inc.,Industrial Goods
+TPH,TPH,TRI Pointe Homes Inc.,Industrial Goods
 TPI,TPI,天银制药,医药
-TSLA,TSLA,TESLA MOTORS,--
-TSM,TSM,台积电,工业综合
+TPLM,TPLM,Triangle Petroleum Corporation,Basic Materials
+TPX,TPX,Tempur Sealy International Inc.,Consumer Goods
+TREX,TREX,Trex Co. Inc.,Industrial Goods
+TRGP,TRGP,Targa Resources Corp.,Basic Materials
+TRI,TRI,Thomson Reuters Corporation,Services
+TRIP,TRIP,TripAdvisor Inc.,Technology
+TRMB,TRMB,Trimble Navigation Limited,Technology
+TRMK,TRMK,Trustmark Corporation,Financial
+TRN,TRN,Trinity Industries Inc.,Services
+TROW,TROW,T. Rowe Price Group Inc.,Financial
+TRP,TRP,TransCanada Corp.,Basic Materials
+TRV,TRV,The Travelers Companies Inc.,Financial
+TRW,TRW,TRW Automotive Holdings Corp.,Consumer Goods
+TS,TS,Tenaris S.A.,Industrial Goods
+TSCO,TSCO,Tractor Supply Company,Services
+TSEM,TSEM,Tower Semiconductor Ltd.,Technology
+TSLA,TSLA,Tesla Motors Inc.,Consumer Goods
+TSM,TSM,Taiwan Semiconductor Manufacturing Company Limited,Technology
+TSN,TSN,Tyson Foods Inc.,Consumer Goods
+TSO,TSO,Tesoro Corporation,Basic Materials
+TSRA,TSRA,Tessera Technologies Inc.,Technology
+TSS,TSS,Total System Services Inc.,Financial
+TSU,TSU,TIM Participacoes S.A.,Technology
+TTEK,TTEK,Tetra Tech Inc.,Services
+TTM,TTM,Tata Motors Limited,Consumer Goods
+TTMI,TTMI,TTM Technologies Inc.,Technology
+TTWO,TTWO,Take-Two Interactive Software Inc.,Technology
+TUMI,TUMI,Tumi Holdings Inc.,Consumer Goods
+TUP,TUP,Tupperware Brands Corporation,Consumer Goods
+TVPT,TVPT,Travelport Worldwide Limited,Consumer Goods
+TW,TW,Towers Watson & Co.,Services
+TWC,TWC,Time Warner Cable Inc.,Services
+TWO,TWO,Two Harbors Investment Corp.,Financial
+TWX,TWX,Time Warner Inc.,Services
+TXMD,TXMD,TherapeuticsMD Inc.,Healthcare
+TXN,TXN,Texas Instruments Inc.,Technology
+TXRH,TXRH,Texas Roadhouse Inc.,Services
+TXT,TXT,Textron Inc.,Industrial Goods
+TYC,TYC,Tyco International Ltd.,Services
+UA,UA,Under Armour Inc.,Consumer Goods
+UAL,UAL,United Continental Holdings Inc.,Services
+UBNT,UBNT,Ubiquiti Networks Inc.,Technology
+UBS,UBS,UBS Group AG,Financial
+UBSI,UBSI,United Bankshares Inc.,Financial
+UDR,UDR,UDR Inc.,Financial
+UFS,UFS,Domtar Corporation,Consumer Goods
+UGI,UGI,UGI Corporation,Utilities
+UGP,UGP,Ultrapar Holdings Inc.,Basic Materials
+UHS,UHS,Universal Health Services Inc.,Healthcare
+UIHC,UIHC,United Insurance Holdings Corp.,Financial
+UL,UL,Unilever plc,Consumer Goods
+ULTA,ULTA,ULTA Salon Cosmetics & Fragrance, Inc.
 UMC,UMC,联电,可选消费
-USNA,USNA,USANA HEALTH SCIENCES,--
+UMPQ,UMPQ,Umpqua Holdings Corporation,Financial
+UN,UN,Unilever NV,Consumer Goods
+UNFI,UNFI,United Natural Foods Inc.,Services
+UNH,UNH,UnitedHealth Group Incorporated,Healthcare
+UNP,UNP,Union Pacific Corporation,Services
+UNT,UNT,Unit Corporation,Basic Materials
+UPL,UPL,Ultra Petroleum Corp.,Basic Materials
+UPS,UPS,United Parcel Service Inc.,Services
+URBN,URBN,Urban Outfitters Inc.,Services
+URI,URI,United Rentals Inc.,Services
+USB,USB,U.S. Bancorp,Financial
+USG,USG,USG Corporation,Industrial Goods
+UTHR,UTHR,United Therapeutics Corporation,Healthcare
 UTSI,UTSI,UT斯达康,信息技术
+UTX,UTX,United Technologies Corporation,Industrial Goods
+UVE,UVE,Universal Insurance Holdings Inc.,Financial
+V,V,Visa Inc.,Financial
+VAL,VAL,The Valspar Corporation,Basic Materials
+VAR,VAR,Varian Medical Systems Inc.,Healthcare
+VC,VC,Visteon Corporation,Consumer Goods
+VDSI,VDSI,VASCO Data Security International Inc.,Technology
+VFC,VFC,V.F. Corporation,Consumer Goods
+VGR,VGR,Vector Group Ltd.,Consumer Goods
+VHC,VHC,VirnetX Holding Corp,Technology
+VIAB,VIAB,Viacom Inc.,Services
+VIMC,VIMC,Vimicro International Corp.,Technology
 VIPS,VIPS,唯品会,信息技术
 VISN,VISN,华视传媒,信息技术
+VIV,VIV,Telefonica Brasil S.A.,Technology
+VLO,VLO,Valero Energy Corporation,Basic Materials
+VLTC,VLTC,Voltari Corporation,Technology
+VMC,VMC,Vulcan Materials Company,Industrial Goods
+VMW,VMW,VMware Inc.,Technology
+VNDA,VNDA,Vanda Pharmaceuticals Inc.,Healthcare
 VNET,VNET,世纪互联,信息技术
-XRS,XRS,好未来,可选消费
+VNO,VNO,Vornado Realty Trust,Financial
+VNR,VNR,Vanguard Natural Resources LLC,Basic Materials
+VNTV,VNTV,Vantiv Inc.,Services
+VOD,VOD,Vodafone Group Public Limited Company,Technology
+VOYA,VOYA,Voya Financial Inc.,Financial
+VRNT,VRNT,Verint Systems Inc.,Technology
+VRSK,VRSK,Verisk Analytics Inc.,Services
+VRSN,VRSN,VeriSign Inc.,Technology
+VRTX,VRTX,Vertex Pharmaceuticals Incorporated,Healthcare
+VRX,VRX,Valeant Pharmaceuticals International Inc.,Healthcare
+VSH,VSH,Vishay Intertechnology Inc.,Technology
+VSI,VSI,Vitamin Shoppe Inc.,Services
+VTR,VTR,Ventas Inc.,Financial
+VTSS,VTSS,Vitesse Semiconductor Corp.,Technology
+VVC,VVC,Vectren Corporation,Utilities
+VWR,VWR,VWR Corporation,Healthcare
+VZ,VZ,Verizon Communications Inc.,Technology
+WAB,WAB,Westinghouse Air Brake Technologies Corporation,Services
+WAFD,WAFD,Washington Federal Inc.,Financial
+WAIR,WAIR,Wesco Aircraft Holdings Inc.,Services
+WAL,WAL,Western Alliance Bancorporation,Financial
+WAT,WAT,Waters Corporation,Healthcare
+WBAI,WBAI,500.com Limited,Services
+WBC,WBC,WABCO Holdings Inc.,Consumer Goods
+WBS,WBS,Webster Financial Corp.,Financial
+WCC,WCC,WESCO International Inc.,Services
+WCG,WCG,WellCare Health Plans Inc.,Healthcare
+WCN,WCN,Waste Connections Inc.,Industrial Goods
+WDAY,WDAY,Workday Inc.,Technology
+WDC,WDC,Western Digital Corporation,Technology
+WDR,WDR,Waddell & Reed Financial Inc.,Financial
+WEC,WEC,Wisconsin Energy Corp.,Utilities
+WEN,WEN,The Wendy's Company,Services
+WERN,WERN,Werner Enterprises Inc.,Services
+WETF,WETF,WisdomTree Investments Inc.,Financial
+WEX,WEX,WEX Inc.,Services
+WFC,WFC,Wells Fargo & Company,Financial
+WFM,WFM,Whole Foods Market Inc.,Services
+WGO,WGO,Winnebago Industries Inc.,Consumer Goods
+WHR,WHR,Whirlpool Corp.,Consumer Goods
+WIBC,WIBC,Wilshire Bancorp Inc.,Financial
+WIT,WIT,Wipro Ltd.,Technology
+WLK,WLK,Westlake Chemical Corp.,Basic Materials
+WLL,WLL,Whiting Petroleum Corp.,Basic Materials
+WM,WM,Waste Management Inc.,Industrial Goods
+WMB,WMB,Williams Companies Inc.,Basic Materials
+WMT,WMT,Wal-Mart Stores Inc.,Services
+WNC,WNC,Wabash National Corp.,Consumer Goods
+WNR,WNR,Western Refining Inc.,Basic Materials
+WOOF,WOOF,VCA Inc.,Services
+WOR,WOR,Worthington Industries Inc.,Basic Materials
+WPC,WPC,W. P. Carey Inc.,Financial
+WPG,WPG,WP GLIMCHER Inc.,Financial
+WPZ,WPZ,Williams Partners L.P.,Basic Materials
+WR,WR,Westar Energy Inc.,Utilities
+WRB,WRB,W.R. Berkley Corporation,Financial
+WRI,WRI,Weingarten Realty Investors,Financial
+WSM,WSM,Williams-Sonoma Inc.,Services
+WST,WST,West Pharmaceutical Services Inc.,Healthcare
+WSTC,WSTC,West Corporation,Technology
+WTI,WTI,W&T Offshore Inc.,Basic Materials
+WTR,WTR,Aqua America Inc.,Utilities
+WU,WU,The Western Union Company,Financial
+WWAV,WWAV,The WhiteWave Foods Company,Consumer Goods
+WWW,WWW,Wolverine World Wide Inc.,Consumer Goods
+WX,WX,WuXi PharmaTech,Healthcare
+WY,WY,Weyerhaeuser Co.,Industrial Goods
+WYN,WYN,Wyndham Worldwide Corporation,Services
+WYNN,WYNN,Wynn Resorts Ltd.,Services
+X,X,United States Steel Corp.,Basic Materials
+XCRA,XCRA,Xcerra Corporation,Technology
+XEC,XEC,Cimarex Energy Co.,Basic Materials
+XEL,XEL,Xcel Energy Inc.,Utilities
+XL,XL,XL Group plc,Financial
+XLNX,XLNX,Xilinx Inc.,Technology
+XNPT,XNPT,Xenoport Inc.,Healthcare
+XOM,XOM,Exxon Mobil Corporation,Basic Materials
+XOOM,XOOM,Xoom Corporation,Financial
+XRAY,XRAY,DENTSPLY International Inc.,Healthcare
+XRS,XRS,TAL Education Group,Services
+XRX,XRX,Xerox Corporation,Technology
+XXIA,XXIA,Ixia,Technology
+XYL,XYL,Xylem Inc.,Industrial Goods
+YELP,YELP,Yelp Inc.,Technology
 YGE,YGE,英利,能源
-YY,YY,欢聚时代,信息技术
+YHOO,YHOO,Yahoo! Inc.,Technology
+YNDX,YNDX,Yandex N.V.,Technology
+YOKU,YOKU,Youku Tudou Inc.,Technology
+YPF,YPF,YPF S.A.,Basic Materials
+YUM,YUM,Yum! Brands Inc.,Services
+YY,YY,YY Inc.,Technology
 YZC,YZC,兖州煤业,能源
 ZA,ZA,左岸,可选消费
+ZAGG,ZAGG,ZAGG Inc,Services
+ZINC,ZINC,Horsehead Holding Corp.,Basic Materials
+ZION,ZION,Zions Bancorporation,Financial
+ZIOP,ZIOP,ZIOPHARM Oncology Inc.,Healthcare
+ZLTQ,ZLTQ,ZELTIQ Aesthetics Inc.,Healthcare
+ZMH,ZMH,Zimmer Holdings Inc.,Healthcare
 ZNH,ZNH,南方航空,运输物流
+ZTS,ZTS,Zoetis Inc.,Healthcare
