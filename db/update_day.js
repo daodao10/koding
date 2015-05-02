@@ -1,6 +1,6 @@
 print("-------------------------");
 
-var action = 1;
+var action = 0;
 var db = db.getSiblingDB("quotes");
 
 if (action === 1) {

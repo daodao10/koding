@@ -15,4 +15,4 @@ function updateDate(d1, d2) {
 	db.QBB.update({d:d1}, {$set: {d:d2}}, {multi:true});
 }
 
-updateDate("20150501", "20150430");
+// updateDate("20150501", "20150430");
