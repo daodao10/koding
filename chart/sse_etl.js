@@ -39,7 +39,7 @@ function getMarketInfo() {
         y;
 
     var processYearlyMV = function(data, statusCode) {
-        if (statusCode !== 200) {
+        if (statusCode !== undefined && statusCode !== 200) {
             console.error('error occurred:', statusCode);
             return;
         }
@@ -66,7 +66,7 @@ function getMarketInfo() {
             his.push(rows.pop());
 
             // store historical data
-            fs.writeFileSync('sse_etl_his.js', "module.exports = " + JSON.stringify(his) + ";", {
+            fs.writeFileSync('sse_etl_his.js', "module.exports = " + JSON.stringify(his, null, 2) + ";", {
                 'encoding': 'utf-8'
             });
 
@@ -123,7 +123,7 @@ function getMarketInfo() {
             "y3": yAxis[3],
             "y4": yAxis[4],
             "y5": yAxis[5]
-        }) + ");", {
+        }, null, 2) + ");", {
             'encoding': 'utf-8'
         });
     };
