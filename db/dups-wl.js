@@ -3,7 +3,7 @@
 */
 
 
-load("./DuplicatedHandler.js")
+load("../DuplicatedHandler.js")
 
 var h = new DuplicatedHandler({
     dn: "wl",
@@ -17,5 +17,5 @@ var h = new DuplicatedHandler({
     }
 });
 
-// h.display();
-h.rm(true);
+h.display();
+// h.rm(true);

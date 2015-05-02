@@ -2,7 +2,7 @@
 * handle duplicated daily data
 */
 
-load("./DuplicatedHandler.js")
+load("../DuplicatedHandler.js")
 
 var h = new DuplicatedHandler({
     dn: "day",
