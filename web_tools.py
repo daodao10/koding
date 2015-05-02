@@ -212,6 +212,9 @@ def strDate(dt, format = None):
     #format = format if format else "%Y%m%d"
     return dt.strftime(format if format else "%Y%m%d")
 
+def parseDate(str, format = '%m/%d/%Y'):
+    return datetime.strptime(str, format)
+
 def getDateFromTimestamp(tick):
     return datetime.fromtimestamp(tick / 1e3)
 
@@ -268,6 +271,9 @@ if __name__ == "__main__":
     # print strLocalDate(datetime.utcnow(), utcDiff = -4, format = "%Y%m%d %H:%M:%S %f")
 
     # print today(format = "%Y%m%d %H:%M:%S %f")
+    print strLocalDate(getDateFromTimestamp(1430519546000), utcDiff = -8)
+    print strDate(parseDate('05/01/2015'))
+    # print strDate(parseDate('05/1/2015'))
 
     dbUri = getDbUri(key="QuotesDbUri")
     if dbUri:

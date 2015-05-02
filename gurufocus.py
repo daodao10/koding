@@ -9,6 +9,7 @@ class GuruFocus:
     __regData = re.compile(r"\{\s*animation:false,\s*name\s*:\s*'TMC\/GDP',\s*data\s*:(.+?\]\])")
     # __regTable = re.compile(r'<table class="at">(.*)</table>', re.S)
     __regTable = re.compile(r'Where are we today \((.*)\).* <td>(.*)</td>')
+    __regToday = re.compile(r'<b>(\d{2}/\d{2}/\d{4})</b>')
     __regDesc = re.compile(r'As of today, the Total Market Index is at .+?(?=<p>)', re.S)
 
     def __init__(self, dbUri = None):
@@ -32,6 +33,7 @@ class GuruFocus:
     def parseTmc2Gdp(self, content):
         desc = None
         table = None
+        today = None
         
         m = self.__regDesc.search(content)
         if m:
@@ -42,15 +44,19 @@ class GuruFocus:
         m = self.__regTable.search(content)
         if m:
             table = m.group(1) + m.group(2).rstrip()
+            if table:
+                m = self.__regToday.search(table)
+                if m:
+                    today = web_tools.parseDate(m.group(1))
 
         if desc and table:
-            return {"date": web_tools.today(utcDiff = -7), "desc": desc, "table": table, "market": "US"}
+            return {"date": web_tools.strDate(today), "desc": desc, "table": table, "market": "US"}
 
     def saveTmc2GdpData(self, content, refresh = True):
         arr = self.parseData(content)
         r = []
         for x in arr:
-            r.append({"date": web_tools.strDate(web_tools.getDateFromTimestamp(x[0])), "value": x[1], "market": "US"})
+            r.append({"date": web_tools.strLocalDate(web_tools.getDateFromTimestamp(x[0]), utcDiff = -8), "value": x[1], "market": "US"})
 
         if len(r) > 0:
             # web_tools.debug(r[-1] if refresh else r)
