@@ -1,7 +1,7 @@
 var MyMongo = require('../nd/MyMongoUtil'),
     anounymous = require('../nd/ProtoUtil'),
     config = require('../config.json'),
-    myMongo = new MyMongo("{0}{1}".format(config.DbSettings.DbUri, 'quotes'));
+    myMongo = new MyMongo("{0}{1}".format(config.DbSettings.QuotesDbUri, 'quotes'));
 
 function getDateRange() {
     var now = new Date(),

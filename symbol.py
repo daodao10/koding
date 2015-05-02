@@ -59,36 +59,17 @@ class SymbolUtil:
 
         return result
 
-   
-# 1)
-# for symbol in symbols:
-#     collection.insert(symbol)
-
-# 2) insert batch
-# collection.insert(symbols)
-
-
-# test insert
-# symbol = {"_id": "000001.ss", "name": "szzs", "market": "SSE"}
-# collection = getCollection("quotes", "symbol")
-# id = collection.insert(symbol)
-# print id
-
-
-# get & insert symbols
-# dbUri = web_tools.getDbUri()
-# symbols1 = SymbolUtil.getSSE()
-# symbols2 = SymbolUtil.getSGX()
-
-
-# dbContext = MyMongo("quotes", dbUri)
-# dbContext.collection("symbol").insert(symbols1)
-
 
 if __name__ == '__main__':
+    # dbContext = MyMongo("quotes", web_tools.getDbUri(key="QuotesDbUri"))
+
     symbols = SymbolUtil.getSSE()
+    # symbols = SymbolUtil.getSGX()
+    # batch insert
+    # dbContext.collection("symbol").insert(symbols)
     with codecs.open('cn.txt', 'wb', 'utf-8') as f:
         for symbol in symbols:
             f.write("%s,%s,%s,--\n" % (symbol["_id"], symbol["_id"], symbol["name"]))
+            # collection.insert(symbol)
 
     print 'done'

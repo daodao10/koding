@@ -252,10 +252,10 @@ def getConfig(configFile = 'config.json'):
     
     return config
 
-def getDbUri(configFile = 'config.json'):
+def getDbUri(configFile = 'config.json', key = 'DbUri'):
     config = getConfig(configFile)
     if config:
-        return config["DbSettings"]["DbUri"]
+        return config["DbSettings"][key]
     return None
 
 def debug(content):
@@ -269,7 +269,7 @@ if __name__ == "__main__":
 
     # print today(format = "%Y%m%d %H:%M:%S %f")
 
-    dbUri = getDbUri()
+    dbUri = getDbUri(key="QuotesDbUri")
     if dbUri:
         print dbUri
     else:

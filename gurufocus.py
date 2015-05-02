@@ -82,5 +82,5 @@ class GuruFocus:
             
 
 if __name__ == "__main__":
-    dbUri = web_tools.getDbUri()
+    dbUri = web_tools.getDbUri(key="QuotesDbUri")
     GuruFocus(dbUri = dbUri).doWork()

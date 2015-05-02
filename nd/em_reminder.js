@@ -3,11 +3,11 @@ var os = require('os'),
     MyMongo = require('./MyMongoUtil'),
     myUtil = require('./MyUtil'),
     anounymous = require('./ProtoUtil'),
-    config = require('./config.json');
+    config = require('../config.json');
 
 
 var EOL = os.EOL,
-    myMongo = new MyMongo("{0}{1}".format(config.DbSettings.DbUri, 'em')),
+    myMongo = new MyMongo("{0}{1}".format(config.DbSettings.EMDbUri, 'em')),
     today = process.argv.length > 2 ? process.argv[2] : new Date().format('yyyyMMdd');
 
 

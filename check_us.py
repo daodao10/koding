@@ -6,7 +6,7 @@ import web_tools
 if __name__ == "__main__":
     today = web_tools.today(utcDiff=-15)
     query = {"date": today}
-    dbUri = web_tools.getDbUri()
+    dbUri = web_tools.getDbUri(key="QuotesDbUri")
     client = MyMongo(dbName="quotes", dbUri = dbUri)
 
     print "-------today's data-------"

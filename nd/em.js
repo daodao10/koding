@@ -7,7 +7,7 @@ var iconv = require('iconv-lite'),
     MyMongo = require('./MyMongoUtil'),
     myUtil = require('./MyUtil'),
     anounymous = require('./ProtoUtil'),
-    config = require('./config.json');
+    config = require('../config.json');
 
 var span = [
         /<span id="sp_ggdp">([.\S\W]+?)<\/span>/g,
@@ -20,7 +20,7 @@ var span = [
             //, debug: true
     },
     urlFormat = '/stockcomment/{0}.html',
-    myMongo = new MyMongo("{0}{1}".format(config.DbSettings.DbUri, 'em')),
+    myMongo = new MyMongo("{0}{1}".format(config.DbSettings.EMDbUri, 'em')),
     start = 1,
     today = process.argv.length > 2 ? process.argv[2] : new Date().format('yyyyMMdd'),
     helper = {

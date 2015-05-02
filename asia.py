@@ -24,8 +24,10 @@ def help():
 def process4SG(dbUri, today):
     print 'processing for SG'
     s = sgx.SGX(dbUri = dbUri, today = today)
-    s.getSummary()
     s.getDayTick()
+
+    s = sgx.SGX(dbUri = web_tools.getDbUri(key="QuotesDbUri"), today = today)
+    s.getSummary()
 
 def process4CN(dbUri, today):
     print 'processing for China'

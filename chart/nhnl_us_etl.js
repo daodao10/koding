@@ -11,7 +11,7 @@ var fs = require('fs'),
 var markets = ['NYSE', 'AMEX', 'NASDAQ'],
     features = ['advn', 'decln', 'unchn', 'advv', 'declv', 'unchv', 'newhi', 'newlo'],
     columns = ['an', 'dn', 'un', 'av', 'dv', 'uv', 'nh', 'nl'],
-    myMongo = new MyMongo("{0}{1}".format(config.DbSettings.DbUri, 'quotes'));
+    myMongo = new MyMongo("{0}{1}".format(config.DbSettings.QuotesDbUri, 'quotes'));
 
 function firstRun() {
 

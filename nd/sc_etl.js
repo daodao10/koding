@@ -9,10 +9,10 @@ var fs = require('fs'),
     config = require('../config.json'),
     EtlSettings = require(EtlSettingsFile);
 
-var today,
+var today = process.argv.length === 3 ? process.argv[2] : null,
     yesterday = EtlSettings.yesterday,
     remaining = Object.keys(EtlSettings.scan).length,
-    myMongo = new MyMongo("{0}{1}".format(config.DbSettings.DbUri, 'quotes'));
+    myMongo = new MyMongo("{0}{1}".format(config.DbSettings.QuotesDbUri, 'quotes'));
 
 
 function SCData(scanName) {
@@ -142,13 +142,13 @@ function SCData(scanName) {
         return {
             '_id': index,
             'd': today,
-            's': element[0],
-            't': element[3],
-            'i': element[4],
-            'r': element[5],
-            'u': element[6],
-            'c': element[7],
-            'v': element[8],
+            's': element[0], //symbol
+            // 't': element[3],//sector
+            // 'i': element[4],//industry
+            'r': element[5], //stockcharts technical rank
+            'u': element[6], //capital size: sml,mid,lrg
+            'c': element[7], //close
+            'v': element[8], //volume
             'n': element.length === 10 ? element[9] : true
         };
     }
