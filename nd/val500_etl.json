@@ -1,0 +1,40 @@
+{
+    "GDP": {
+        "path": "/GDP.html",
+        "regex": "<td style=\"padding-left:10px;\">(.+)<\/td>\\s*<td style=\"padding-left:10px;\">(.+)<\/td>\\s*<td style=\"padding-left:10px;\">(.+)<\/td>",
+        "collection": "GDP_cn",
+        "first": false
+    },
+    "BDI": {
+        "path": "/BDI.asp",
+        "regex": "<td height=\"25\">(\\d{4})年(\\d+)月<\/td>\\s*<td height=\"25\">(\\d+)<\/td>",
+        "collection": "BDI",
+        "first": false,
+        "source": "http://www.cnss.com.cn/exponent/"
+    },
+    "PMI": {
+        "path": "/PMI.asp",
+        "regex": "<td>(\\d{4})年(\\d+)月<\/td>\\s*<td>([-0-9.]+)<\/td>\\s*<td>([-0-9.]*)(|&nbsp;<\/td>|\\s*<\/tr>)",
+        "collection": "PMI_cn",
+        "first": false
+    },
+    "CPI": {
+        "path": "/CPI.asp",
+        "regex": "<td>(\\d{4})年(\\d+)月<\/td>\\s*<td>([-0-9.]+)<\/td>\\s*<td>([-0-9.]*)(|&nbsp;<\/td>|\\s*<\/tr>)",
+        "collection": "CPI_cn",
+        "first": false
+    },
+    "PPI": {
+        "path": "/PPI.asp",
+        "regex": "<td.*>(\\d{4})年(\\d+)月<\/td>\\s*<td.*>([-0-9.]+)<\/td>",
+        "collection": "PPI_cn",
+        "first": false
+    },
+    "PE": {
+        "path": "/PE.asp",
+        "regex": "<value xid='(\\d+)'>(\\d{4})年(\\d+)月<\/value>|<value xid='(\\d+)'>([-0-9.]+)<\/value>",
+        "collection": "PE_cn",
+        "first": false,
+        "next": true
+    }
+}

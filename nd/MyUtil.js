@@ -29,7 +29,7 @@ MyUtil.prototype.extend = function(origin, add) {
     }(origin, add));
 };
 
-function _cbFunc(data, statusCode, options, callback) {
+function _getCallback(data, statusCode, options, callback) {
     if (options.jsonp) {
         if (options.debug) {
             console.log('jsonp');
@@ -90,7 +90,7 @@ MyUtil.prototype.get = function(options, callback) {
             if (encoding === "gzip") {
                 zlib.gunzip(body, function(err, decoded) {
                     data = decoded.toString();
-                    _cbFunc(data, res.statusCode, {
+                    _getCallback(data, res.statusCode, {
                         jsonp: options.jsonp,
                         debug: options.debug
                     }, callback);
@@ -98,14 +98,14 @@ MyUtil.prototype.get = function(options, callback) {
             } else if (encoding === "deflate") {
                 zlib.inflate(body, function(err, decoded) {
                     data = decoded.toString();
-                    _cbFunc(data, res.statusCode, {
+                    _getCallback(data, res.statusCode, {
                         jsonp: options.jsonp,
                         debug: options.debug
                     }, callback);
                 });
             } else {
                 data = body.toString();
-                _cbFunc(data, res.statusCode, {
+                _getCallback(data, res.statusCode, {
                     jsonp: options.jsonp,
                     debug: options.debug
                 }, callback);
@@ -115,11 +115,13 @@ MyUtil.prototype.get = function(options, callback) {
     });
 
     req.on('error', function(err) {
-        // if (err.code === "ECONNRESET") {
-        //     console.log("Timeout occurs");
-        // } else {
-        //     console.log('ERROR: ' + err.message);
-        // }
+        if (options.debug) {
+            if (err.code === "ECONNRESET") {
+                console.log("Timeout occurs");
+            } else {
+                console.log('ERROR: ' + err.message);
+            }
+        }
         callback(null, 500);
     });
 
@@ -185,6 +187,25 @@ MyUtil.prototype.varReplace = function(input, dic) {
 MyUtil.prototype.log2 = function(x) {
     if (x <= 0) return NaN;
     return Math.log(x) / Math.LN2;
+};
+
+MyUtil.prototype.toNumber = function(str) {
+    if (!str || str === "-") {
+        return 0;
+    } else {
+        return Number(str.replace(/[,%]/g, ''));
+    }
+};
+
+MyUtil.prototype.getLastDateOfMonth = function(year, month) {
+    if (typeof year === 'string') {
+        year = Number(year);
+    }
+    if (typeof month === 'string') {
+        month = Number(month);
+    }
+
+    return new Date(year, month, 0).getTime();
 };
 
 

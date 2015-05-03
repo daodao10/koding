@@ -73,4 +73,8 @@ module.exports = (function() {
             return (this.length < n) ? c + this.padding(n - 1, c) : this;
         };
     }
+
+    Array.prototype.clear = function() {
+        this.splice(0, this.length);
+    };
 }());
