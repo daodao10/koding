@@ -114,7 +114,7 @@ function dailyRun() {
                 console.error('error occurred:', statusCode);
                 return;
             }
-            var rows = parseDailyData(data.toString(), dt);
+            var rows = parseDailyData(data, dt);
             for (var i in rows) {
                 (function(row) {
                     myMongo.find("nhnl", {
@@ -147,7 +147,6 @@ function dailyRun() {
 
                             console.log('inserted', result.length);
                         });
-
                     });
                 }(rows[i]));
             }

@@ -109,7 +109,7 @@ function SCData(scanName) {
                     reject(statusCode);
                 }
 
-                resolve(data.toString());
+                resolve(data);
             });
         });
     }

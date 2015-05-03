@@ -2,8 +2,7 @@
  * get stock recommendation from eastmoney.com
  */
 
-var iconv = require('iconv-lite'),
-    fs = require('fs'),
+var fs = require('fs'),
     MyMongo = require('./MyMongoUtil'),
     myUtil = require('./MyUtil'),
     anounymous = require('./ProtoUtil'),
@@ -42,10 +41,9 @@ function counterProcess(symbol) {
     }
 
     options.path = urlFormat.format(symbol);
-    myUtil.get(options, function(data, statusCode) {
+    myUtil.get(options, function(content, statusCode) {
 
         if (statusCode === 200) {
-            var content = iconv.decode(data, "GBK");
             var o = coreProcess(content, symbol);
             if (o) {
                 o._id = start++;

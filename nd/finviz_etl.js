@@ -1,6 +1,6 @@
 /**
  * extract data from finviz.com
-**/
+ **/
 const RegPaging = /<td width="140" align="left" valign="bottom" class="count-text"><b>Total: <\/b>(\d+) #\d+<\/td>/g;
 const RegRows = /<a href="quote\.ashx.*class="tab-link">(.+?)<\/a><\/td><td height="10" align="left" class="body-table-nw">(.+?)<\/td><td height="10" align="left" class="body-table-nw">(.+?)<\/td>(<td height="10" align="right" class="body-table-nw"><span style="color:#[abcdef0-9]{6};">([-.,0-9%]+)<\/span><\/td>|<td height="10" align="right" class="body-table-nw">([-.,0-9%]+)<\/td>)(<td height="10" align="right" class="body-table-nw"><span style="color:#[abcdef0-9]{6};">([-.,0-9%]+)<\/span><\/td>|<td height="10" align="right" class="body-table-nw">([-.,0-9%]+)<\/td>)(<td height="10" align="right" class="body-table-nw"><span style="color:#[abcdef0-9]{6};">([-.,0-9%]+)<\/span><\/td>|<td height="10" align="right" class="body-table-nw">([-.,0-9%]+)<\/td>)(<td height="10" align="right" class="body-table-nw"><span style="color:#[abcdef0-9]{6};">([-.,0-9%]+)<\/span><\/td>|<td height="10" align="right" class="body-table-nw">([-.,0-9%]+)<\/td>)(<td height="10" align="right" class="body-table-nw"><span style="color:#[abcdef0-9]{6};">([-.,0-9%]+)<\/span><\/td>|<td height="10" align="right" class="body-table-nw">([-.,0-9%]+)<\/td>)(<td height="10" align="right" class="body-table-nw"><span style="color:#[abcdef0-9]{6};">([-.,0-9%]+)<\/span><\/td>|<td height="10" align="right" class="body-table-nw">([-.,0-9%]+)<\/td>)(<td height="10" align="right" class="body-table-nw"><span style="color:#[abcdef0-9]{6};">([-.,0-9%]+)<\/span><\/td>|<td height="10" align="right" class="body-table-nw">([-.,0-9%]+)<\/td>)(<td height="10" align="right" class="body-table-nw"><span style="color:#[abcdef0-9]{6};">([-.,0-9%]+)<\/span><\/td>|<td height="10" align="right" class="body-table-nw">([-.,0-9%]+)<\/td>)(<td height="10" align="right" class="body-table-nw"><span style="color:#[abcdef0-9]{6};">([-.,0-9%]+)<\/span><\/td>|<td height="10" align="right" class="body-table-nw">([-.,0-9%]+)<\/td>)(<td height="10" align="right" class="body-table-nw"><span style="color:#[abcdef0-9]{6};">([-.,0-9%]+)<\/span><\/td>|<td height="10" align="right" class="body-table-nw">([-.,0-9%]+)<\/td>)(<td height="10" align="right" class="body-table-nw"><span style="color:#[abcdef0-9]{6};">([-.,0-9%]+)<\/span><\/td>|<td height="10" align="right" class="body-table-nw">([-.,0-9%]+)<\/td>)(<td height="10" align="right" class="body-table-nw"><span style="color:#[abcdef0-9]{6};">([-.,0-9%]+)<\/span><\/td>|<td height="10" align="right" class="body-table-nw">([-.,0-9%]+)<\/td>)(<td height="10" align="right" class="body-table-nw"><span style="color:#[abcdef0-9]{6};">([-.,0-9%]+)<\/span><\/td>|<td height="10" align="right" class="body-table-nw">([-.,0-9%]+)<\/td>)(<td height="10" align="right" class="body-table-nw"><span style="color:#[abcdef0-9]{6};">([-.,0-9%]+)<\/span><\/td>|<td height="10" align="right" class="body-table-nw">([-.,0-9%]+)<\/td>)/g;
 const PageSize = 20;
@@ -25,7 +25,7 @@ function get(startRowIndex) {
                 reject(statusCode);
             }
 
-            resolve(data.toString());
+            resolve(data);
         });
     });
 }
@@ -106,7 +106,7 @@ function to_csv(arr) {
     return arr.map(function(element) {
         if (element[1].indexOf(',') >= 0) {
             //element[1] = "\"" + element[1] +  "\"";// keep , to excel
-            element[1] = element[1].replace(',', '');// remove , to coding
+            element[1] = element[1].replace(',', ''); // remove , to coding
         }
         return element.join(',');
     });

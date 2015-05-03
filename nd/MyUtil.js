@@ -1,6 +1,7 @@
 var http = require('http'),
     https = require('https'),
-    fs = require('fs');
+    fs = require('fs'),
+    zlib = require('zlib');
 
 http.globalAgent.maxSockets = 25;
 
@@ -28,6 +29,24 @@ MyUtil.prototype.extend = function(origin, add) {
     }(origin, add));
 };
 
+function _cbFunc(data, statusCode, options, callback) {
+    if (options.jsonp) {
+        if (options.debug) {
+            console.log('jsonp');
+        };
+
+        var index = data.indexOf("(");
+        if (index > 0) {
+            global[data.substring(0, index)] = callback;
+            eval(data);
+        } else {
+            console.log('JSONP ERROR');
+        }
+    } else {
+        callback(data, statusCode);
+    }
+}
+
 // refer to https://github.com/ncb000gt/node-es/blob/master/lib/request.js
 MyUtil.prototype.get = function(options, callback) {
     options = this.extend({
@@ -35,18 +54,22 @@ MyUtil.prototype.get = function(options, callback) {
         port: 80,
         method: 'GET',
         headers: {
-            'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+            'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+            'Accept-Encoding': 'gzip, deflate',
             'Cache-Control': 'max-age=0',
-            'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_2) AppleWebKit/600.4.10 (KHTML, like Gecko) Version/8.0.4 Safari/600.4.10'
+            'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/42.0.2311.135 Safari/537.36'
         },
         timeout: 15000,
-        // , debug: true
+        debug: false
     }, options);
 
     var req = (options.secure ? https : http).get(options, function(res) {
 
-        var bodyChunks = [];
-        // res.setEncoding('utf-8');
+        var data,
+            bodyChunks = [],
+            encoding = res.headers['content-encoding'];
+        // if (encoding === undefined) res.setEncoding('utf-8');
+        console.log('ENCODING:', encoding);
 
         if (options.debug) {
             console.log('STATUS: ' + res.statusCode);
@@ -61,27 +84,34 @@ MyUtil.prototype.get = function(options, callback) {
 
             if (options.debug) {
                 console.log('BODY: ' + body);
+                console.log('ENCODING:', encoding);
             }
 
-            if (options.jsonp) {
-                if (options.debug) {
-                    console.log('jsonp');
-                };
-
-                var str = body.toString(),
-                    index = str.indexOf("(");
-                if (index > 0) {
-                    global[str.substring(0, index)] = callback;
-                    eval(str);
-                } else {
-                    console.log('JSONP ERROR');
-                }
-
+            if (encoding === "gzip") {
+                zlib.gunzip(body, function(err, decoded) {
+                    data = decoded.toString();
+                    _cbFunc(data, res.statusCode, {
+                        jsonp: options.jsonp,
+                        debug: options.debug
+                    }, callback);
+                });
+            } else if (encoding === "deflate") {
+                zlib.inflate(body, function(err, decoded) {
+                    data = decoded.toString();
+                    _cbFunc(data, res.statusCode, {
+                        jsonp: options.jsonp,
+                        debug: options.debug
+                    }, callback);
+                });
             } else {
-                callback(body, res.statusCode);
+                data = body.toString();
+                _cbFunc(data, res.statusCode, {
+                    jsonp: options.jsonp,
+                    debug: options.debug
+                }, callback);
             }
-        });
 
+        });
     });
 
     req.on('error', function(err) {

@@ -3,7 +3,7 @@ var QuoteEtl = require('./jj_etl');
 
 function ESQuoteEtl() {
     this.getResolve = function(pathArgs, data) {
-        eval(data.toString());
+        eval(data);
 
         if (pathArgs.plain) {
             return this.parsePlain(pathArgs, apidata.pages);

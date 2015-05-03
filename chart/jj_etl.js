@@ -1,6 +1,5 @@
 var fs = require('fs'),
     Promise = require('promise'),
-    iconv = require('iconv-lite'),
     anounymous = require('../nd/ProtoUtil'),
     myUtil = require('../nd/MyUtil');
 
@@ -74,9 +73,9 @@ QuoteEtl.prototype = {
     getResolve: function(pathArgs, data) {
         var self = this;
         if (pathArgs.plain) {
-            return self.parsePlain(pathArgs, iconv.decode(data, "GBK"));
+            return self.parsePlain(pathArgs, data);
         } else {
-            return self.parseData(pathArgs, iconv.decode(data, "GBK"));
+            return self.parseData(pathArgs, data);
         }
     },
     wrapPathArgs: function(symbol) {
