@@ -178,7 +178,7 @@ function getAllSymbols() {
             if (item.val.startsWith('6'))
                 return item;
         }).map(function(item) {
-            return "{0},{1}-{2}".format(item.val, item.val3.replace('*', ''), item.val2);
+            return "{0},{1}-{2}".format(item.val, item.val3.replace('*', '').toUpperCase(), item.val2);
         });
 
         return symbols;
