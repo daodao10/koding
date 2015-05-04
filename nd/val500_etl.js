@@ -32,6 +32,18 @@ function main(key) {
             };
         },
 
+        CPI: function(element) {
+            return rowDataProcessor.BDI(element);
+        },
+
+        PPI: function(element) {
+            return rowDataProcessor.BDI(element);
+        },
+
+        USDX_m: function(element) {
+            return rowDataProcessor.BDI(element);
+        },
+
         GDP: function(element) {
             var index = element[1].indexOf("年");
             if (index > 0) {
@@ -52,22 +64,19 @@ function main(key) {
             };
         },
 
-        CPI: function(element) {
-            return {
-                "_id": myUtil.getLastDateOfMonth(element[1], element[2]),
-                "c": myUtil.toNumber(element[3])
-            };
-        },
-
-        PPI: function(element) {
-            return rowDataProcessor.CPI(element);
-        },
-
         PE: function(element) {
             if (element[1]) {
                 return [Number(element[1]), myUtil.getLastDateOfMonth(element[2], element[3])];
             } else {
                 return [Number(element[4]), element[5]];
+            }
+        },
+
+        USDX: function(element) {
+            if (element[1]) {
+                return [Number(element[1]), new Date(Number(element[2]), Number(element[3]) - 1, Number(element[4])).getTime()];
+            } else {
+                return [Number(element[5]), element[6]];
             }
         }
 
@@ -115,6 +124,48 @@ function main(key) {
                 if (a._id > b._id) return 1;
                 else if (a._id < b._id) return -1;
                 return 0;
+            });
+        },
+
+        USDX: function(elements) {
+            var start,
+                arrType = 0,
+                x = [],
+                y1 = [];
+            elements.forEach(function(element, index) {
+                if (index === 0) {
+                    start = element[0];
+                } else if (element[0] == start) {
+                    arrType++;
+                }
+
+                if (arrType === 0) {
+                    x["_" + element[0]] = element[1];
+                } else if (arrType === 1) {
+                    y1["_" + element[0]] = element[1];
+                }
+            });
+
+            elements.clear();
+            Object.keys(x).forEach(function(p, idx, array) {
+                if (y1[p] != undefined) {
+                    elements.push({
+                        "_id": x[p],
+                        "c": myUtil.toNumber(y1[p])
+                    });
+                }
+            });
+
+            // order by _id desc
+            elements.sort(function(a, b) {
+                if (a._id < b._id) return 1;
+                else if (a._id > b._id) return -1;
+                return 0;
+            });
+
+            // print
+            elements.forEach(function(element) {
+                console.log("{0},,,,,,{1}".format(new Date(element._id).format('yyyy-MM-dd'), element.c));
             });
         }
     };
@@ -201,6 +252,7 @@ function main(key) {
 
 }
 
+// main('USDX');
 // main('PE');
 // main('PPI');
 // main('CPI');
