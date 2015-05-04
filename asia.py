@@ -5,7 +5,7 @@ import sgx, sse, web_tools
 def main():
     #today = None
     today = web_tools.today(utcDiff = -4)
-    dbUri = web_tools.getDbUri()
+    dbUri = web_tools.getDbUri(key="DayDbUri")
 
     args = sys.argv
     if len(args) == 2:
