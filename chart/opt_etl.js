@@ -69,8 +69,8 @@ function batchProcess(filename) {
                 return;
             }
 
-            for (var i in settings.period) {
-                period = etlUtil.encode_period(settings.period[i]);
+            settings.period.forEach(function(period) {
+                period = etlUtil.encode_period(period);
                 cells = row.stripLineBreaks().split(',');
                 if (settings.market === "sg") {
                     srcFile = "../{0}/dest/{1}.csv".format(settings.market, cells[0]);
@@ -87,7 +87,7 @@ function batchProcess(filename) {
                 destFile = "{3}{0}/{1}_{2}.js".format(settings.market, cells[1], period, settings.DestFolder);
                 // console.log(srcFile, destFile);
                 generate(srcFile, destFile);
-            };
+            });
 
             // console.log("finished:", index.toString());
         });
@@ -127,7 +127,9 @@ function generate(srcFile, output) {
                 }
             }
 
-            var data = array.map(mapFunc);
+            var data = array.map(mapFunc).filter(function(element) {
+                return element != null;
+            });
 
             var content = "var data=[" + data.join(',\n') + "];\nvar source='" + etlUtil.decode_source(settings.source) + "';";
             fs.writeFile(output, content, function(err) {
@@ -142,6 +144,7 @@ function mapFunc(line) {
     var part = line.stripLineBreaks().split(",");
     var yCell = part[settings[settings.source].yCell];
     var xCell = part[settings[settings.source].xCell];
+    if (yCell == '0' || yCell == '') return null;
     return settings.ItemFormat.format(settings[settings.source].IsCompactDate ? xCell : xCell.replace(/-/g, ''), yCell);
     // value = Math.log(yCell) / Math.LN2;
     // if (isNaN(value)) return null; // || value < -0
