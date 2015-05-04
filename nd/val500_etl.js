@@ -99,7 +99,7 @@ function main(key) {
             });
 
             elements.clear();
-            Object.getOwnPropertyNames(x).forEach(function(p, idx, array) {
+            Object.keys(x).forEach(function(p, idx, array) {
 
                 if (!(y1[p] == undefined && y2[p] == undefined && y3[p] == undefined)) {
                     elements.push({
