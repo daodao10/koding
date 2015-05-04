@@ -13,6 +13,22 @@ var myMongo = new MyMongo("{0}{1}".format(config.DbSettings.QuotesDbUri, 'quotes
 function main(key) {
 
     var rowDataProcessor = {
+        _quarter2Date: function(year, str) {
+            if (str == "一季度") {
+                console.log(3);
+                return myUtil.getLastDateOfMonth(year, 3);
+            } else if (str == "一至二季度") {
+                console.log(6);
+                return myUtil.getLastDateOfMonth(year, 6);
+            } else if (str == "一至三季度") {
+                console.log(9);
+                return myUtil.getLastDateOfMonth(year, 9);
+            } else {
+                console.log(12);
+                return myUtil.getLastDateOfMonth(year, 12);
+            }
+        },
+
         BDI: function(element) {
             return {
                 "_id": myUtil.getLastDateOfMonth(element[1], element[2]),
@@ -24,7 +40,7 @@ function main(key) {
             var index = element[1].indexOf("年");
             if (index > 0) {
                 return {
-                    "_id": quarter2Date(element[1].substring(0, index), element[1].substr(index + 1)),
+                    "_id": rowDataProcessor._quarter2Date(element[1].substring(0, index), element[1].substr(index + 1)),
                     "c": myUtil.toNumber(element[2]),
                     "r": myUtil.toNumber(element[3])
                 };
@@ -119,7 +135,7 @@ function main(key) {
                 nextProcessor[key](docs);
             }
 
-            console.dir(docs);
+            // console.dir(docs);
 
             if (settings.first) {
                 myMongo.insert(settings.collection, docs, function(err, docs) {
@@ -133,8 +149,10 @@ function main(key) {
             console.log('empty');
         }
 
-    }).catch(function(statusCode) {
-        console.log(statusCode);
+    }, function(error) {
+        console.error('get url[%s] failed, error: %s', error.url, error.error);
+    }).catch(function(error) {
+        console.error(error);
     });
 
     function get(url) {
@@ -146,7 +164,10 @@ function main(key) {
 
                 if (statusCode !== 200) {
                     console.error('error occurred: ', statusCode);
-                    reject(statusCode);
+                    reject({
+                        url: url,
+                        error: statusCode
+                    });
                 }
 
                 resolve(data);
@@ -164,23 +185,6 @@ function main(key) {
             result.push(dataFunc(m));
         }
         return result;
-    }
-
-    function quarter2Date(year, str) {
-        if (str == "一季度") {
-            console.log(3);
-            return myUtil.getLastDateOfMonth(year, 3);
-        } else if (str == "一至二季度") {
-            console.log(6);
-            return myUtil.getLastDateOfMonth(year, 6);
-        } else if (str == "一至三季度") {
-            console.log(9);
-            return myUtil.getLastDateOfMonth(year, 9);
-        } else {
-            //if(str == "\\u4e00\\u81f3\\u56db\\u5b63\\u5ea6")
-            console.log(12);
-            return myUtil.getLastDateOfMonth(year, 12);
-        }
     }
 
     function save(name, content) {

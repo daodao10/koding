@@ -69,7 +69,7 @@ MyUtil.prototype.get = function(options, callback) {
             bodyChunks = [],
             encoding = res.headers['content-encoding'];
         // if (encoding === undefined) res.setEncoding('utf-8');
-        console.log('ENCODING:', encoding);
+        // console.log('ENCODING:', encoding);
 
         if (options.debug) {
             console.log('STATUS: ' + res.statusCode);

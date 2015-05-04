@@ -121,5 +121,7 @@ get(1).done(function(data) {
         console.error('page %d: get failed, error: %s', error.page, error.error);
     }).then(function() {
         save(result.join('\n') + "\n");
+    }).catch(function(error) {
+        console.error(error);
     });
 });

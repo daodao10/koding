@@ -92,8 +92,10 @@ function SCData(scanName) {
                 });
             }
 
-        }).catch(function(statusCode) {
-            console.log(statusCode);
+        }, function(error) {
+            console.error('get url[%s] failed, error: %s', error.url, error.error);
+        }).catch(function(error) {
+            console.log(error);
         });
 
 
@@ -106,7 +108,10 @@ function SCData(scanName) {
 
                 if (statusCode !== 200) {
                     console.error('error occurred: ', statusCode);
-                    reject(statusCode);
+                    reject({
+                        url: url,
+                        error: statusCode
+                    });
                 }
 
                 resolve(data);
