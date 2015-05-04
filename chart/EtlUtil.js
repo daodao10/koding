@@ -69,7 +69,7 @@ EtlUtil.prototype.parse_setting = function(data) {
             setting["period"] = [matches[3]];
         }
     } else {
-        setting["period"] = [matches[3]];
+        throw UserException("unknown period setting");
     }
 
     // console.log("setting: ", setting);

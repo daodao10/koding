@@ -84,8 +84,7 @@ function main() {
 
                 } else if (setting.source === "yahoo") {
 
-                    for (var i in setting.period) {
-                        period = setting.period[i];
+                    setting.period.forEach(function(period) {
                         if (setting.period === "daily") {
                             start = new Date(today.getFullYear() - 30, 0, 1);
                         } else {
@@ -96,8 +95,7 @@ function main() {
                             start.getMonth().toString(), start.getDate().toString(), start.getFullYear().toString(),
                             setting.end.getMonth().toString(), setting.end.getDate().toString(), setting.end.getFullYear().toString(),
                             setting.market, cells[0], cells[1], period));
-                    }
-
+                    });
                 }
             }
         });
