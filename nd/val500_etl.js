@@ -15,16 +15,12 @@ function main(key) {
     var rowDataProcessor = {
         _quarter2Date: function(year, str) {
             if (str == "一季度") {
-                console.log(3);
                 return myUtil.getLastDateOfMonth(year, 3);
             } else if (str == "一至二季度") {
-                console.log(6);
                 return myUtil.getLastDateOfMonth(year, 6);
             } else if (str == "一至三季度") {
-                console.log(9);
                 return myUtil.getLastDateOfMonth(year, 9);
             } else {
-                console.log(12);
                 return myUtil.getLastDateOfMonth(year, 12);
             }
         },
@@ -144,11 +140,18 @@ function main(key) {
                         return;
                     }
                 });
+            } else {
+                myMongo.upsertBatch(settings.collection, docs, function(err, result) {
+                    if (err) {
+                        console.error(err);
+                        return;
+                    }
+                    console.dir(result);
+                });
             }
         } else {
             console.log('empty');
         }
-
     }, function(error) {
         console.error('get url[%s] failed, error: %s', error.url, error.error);
     }).catch(function(error) {
