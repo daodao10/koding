@@ -1,4 +1,9 @@
-// https://github.com/mongodb/node-mongodb-native/blob/master/docs/articles/MongoClient.md#mongoclientconnect
+/**
+ * refer to:
+ * http://christiankvalheim.com/post/an_introduction_to_1_4_and_2_6/
+ * https://github.com/mongodb/node-mongodb-native/blob/master/docs/articles/MongoClient.md#mongoclientconnect
+ */
+
 var MongoClient = require('mongodb').MongoClient,
     assert = require('assert');
 
@@ -36,8 +41,8 @@ MyMongo.prototype.find = function(collectionName, query, callback) {
 
             if (err) {
                 db.close();
-                // console.error(err);
-                return callback(err);
+                if (callback) return callback(err);
+                return console.dir(err);
             }
 
             (query.s ? collection.find(query.q, query.f || {}, query.o || {}).sort(query.s) : collection.find(query.q, query.f || {}, query.o || {})).toArray(function(err, documents) {
@@ -48,7 +53,8 @@ MyMongo.prototype.find = function(collectionName, query, callback) {
                 db.close();
 
                 if (err) {
-                    return callback(err);
+                    if (callback) return callback(err);
+                    return console.dir(err);
                 }
 
                 if (callback) {
@@ -94,8 +100,8 @@ MyMongo.prototype.insert = function(collectionName, documents, callback) {
             db.close();
 
             if (err) {
-                // console.error(err);
-                return callback(err);
+                if (callback) return callback(err);
+                return console.dir(err);
             }
 
             if (callback) {
@@ -112,12 +118,44 @@ MyMongo.prototype.update = function(collectionName, query, callback) {
             db.close();
 
             if (err) {
-                // console.error(err);
-                return callback(err);
+                if (callback) return callback(err);
+                return console.dir(err);
             }
 
             if (callback) {
                 callback(null, result);
+            }
+        });
+    });
+};
+
+MyMongo.prototype.upsertBatch = function(collectionName, docs, callback) {
+    this.connect(function(db) {
+        var collection = db.collection(collectionName);
+
+        var bulk = collection.initializeUnorderedBulkOp();
+
+        docs.forEach(function(element) {
+            bulk.find({
+                _id: element._id
+            }).upsert().replaceOne({
+                $set: element
+            });
+        });
+
+        bulk.execute(function(err, result) {
+            db.close();
+
+            if (err) {
+                if (callback) return callback(err);
+                return console.dir(err);
+            }
+
+            if (callback) {
+                callback(null, {
+                    inserted: result.nInserted,
+                    upserted: result.nUpserted
+                });
             }
         });
     });
@@ -139,7 +177,8 @@ MyMongo.prototype.nextSequence = function(name, callback) {
                 db.close();
 
                 if (err) {
-                    return callback(err);
+                    if (callback) return callback(err);
+                    return console.dir(err);
                 }
 
                 if (callback) {
