@@ -15,7 +15,6 @@ if __name__ == "__main__":
         print r
 
     print "-------historical data-------"
-    query["date"] = web_tools.today()
     rows = client.collection("tmc2gdp_his").find(query)
     for r in rows:
         print r

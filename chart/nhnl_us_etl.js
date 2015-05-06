@@ -115,41 +115,41 @@ function dailyRun() {
                 return;
             }
             var rows = parseDailyData(data, dt);
-            for (var i in rows) {
-                (function(row) {
-                    myMongo.find("nhnl", {
-                        q: {
-                            m: row.m
-                        },
-                        s: {
-                            _id: -1
-                        },
-                        o: {
-                            limit: 1
-                        }
-                    }, function(err, docs) {
+
+            rows.forEach(function(row) {
+                myMongo.find("nhnl", {
+                    q: {
+                        m: row.m
+                    },
+                    s: {
+                        _id: -1
+                    },
+                    o: {
+                        limit: 1
+                    }
+                }, function(err, docs) {
+                    if (err) {
+                        console.error(err);
+                        return;
+                    }
+
+                    var seq = 1;
+                    if (docs && docs.length === 1) {
+                        seq = docs[0]._id + 1;
+                    }
+
+                    row["_id"] = seq;
+                    // console.dir(row);
+                    myMongo.insert('nhnl', row, function(err, result) {
                         if (err) {
                             console.error(err);
                             return;
                         }
 
-                        var seq = 1;
-                        if (docs && docs.length === 1) {
-                            seq = docs[0]._id + 1;
-                        }
-
-                        row["_id"] = seq;
-                        myMongo.insert('nhnl', row, function(err, result) {
-                            if (err) {
-                                console.error(err);
-                                return;
-                            }
-
-                            console.log('inserted', result.length);
-                        });
+                        console.log('inserted', result.length);
                     });
-                }(rows[i]));
-            }
+                });
+            });
         });
     } else {
         console.log("USAGE: node nhnl_us_etl.js <date with format YYYYMMdd>");
