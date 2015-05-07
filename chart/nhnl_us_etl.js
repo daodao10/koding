@@ -46,9 +46,9 @@ function firstRun() {
             item,
             cells;
 
-        for (var l in lines) {
-            cells = lines[l].split(', ');
-            if (cells.length != 2) continue;
+        lines.forEach(function(line) {
+            cells = line.split(', ');
+            if (cells.length != 2) return;
 
             item = rowDic[cells[0]];
             if (!item) {
@@ -61,7 +61,7 @@ function firstRun() {
             item[column] = Number(cells[1]);
 
             rowDic[cells[0]] = item;
-        }
+        });
 
         return startIndex;
     };
@@ -77,26 +77,26 @@ function dailyRun() {
     var parseDailyData = function(data, dt) {
         var lines = data.split('\n'),
             rows = [];
-        for (var i in lines) {
+        lines.forEach(function(line, i) {
             if (i >= 2) {
-                var cells = lines[i].split(',');
+                var cells = line.split(',');
                 if (cells.length === 9) {
                     var row;
-                    for (var j in cells) {
+                    cells.forEach(function(cell, j) {
                         if (j == 0) {
                             row = {
                                 "d": dt,
-                                "m": cells[j].trim().substr(0, 2)
+                                "m": cell.trim().substr(0, 2)
                             };
                         } else {
-                            row[columns[j - 1]] = Number(cells[j]);
+                            row[columns[j - 1]] = Number(cell);
                         }
-                    }
+                    });
 
                     rows.push(row);
                 }
             }
-        }
+        });
 
         return rows;
     };
