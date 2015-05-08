@@ -9,12 +9,17 @@ if __name__ == "__main__":
     dbUri = web_tools.getDbUri(key="QuotesDbUri")
     client = MyMongo(dbName="quotes", dbUri = dbUri)
 
-    print "-------today's data-------"
-    rows = client.collection("tmc2gdp_day").find(query)
-    for r in rows:
-        print r
+    # print "-------today's data-------"
+    # rows = client.collection("tmc2gdp_day").find(query)
+    # for r in rows:
+    #     print r
 
-    print "-------historical data-------"
-    rows = client.collection("tmc2gdp_his").find(query)
+    # print "-------historical data-------"
+    # rows = client.collection("tmc2gdp_his").find(query)
+    # for r in rows:
+    #     print r
+
+    print "-------today's market value data-------"
+    rows = client.collection("MV_us").find(query)
     for r in rows:
         print r
