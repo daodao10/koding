@@ -43,6 +43,7 @@ module.exports = (function() {
             });
         };
     }
+
     if (!String.prototype.startsWith) {
         String.prototype.startsWith = function(prefix) {
             return this.indexOf(prefix) === 0;
@@ -58,12 +59,12 @@ module.exports = (function() {
             var lastIndex = subjectString.indexOf(searchString, position);
             return lastIndex !== -1 && lastIndex === position;
         };
+        // b)
+        //     String.prototype.endsWith = function(suffix) {
+        //         return str.match(suffix + "$") == suffix;
+        //     };
     }
-    // if (!String.prototype.endsWith) {
-    //     String.prototype.endsWith = function(suffix) {
-    //         return str.match(suffix + "$") == suffix;
-    //     };
-    // }
+
     if (!String.prototype.padding) {
         String.prototype.padding = function(n, c) {
             /// c: character
@@ -77,4 +78,22 @@ module.exports = (function() {
     Array.prototype.clear = function() {
         this.splice(0, this.length);
     };
+
+    Array.prototype.chunk = function(chunkSize) {
+        // console.log(chunkSize);
+        // a)
+        // if (!this.length) {
+        //     return [];
+        // }
+        // console.log('here');
+        // return [this.slice(0, chunkSize)].concat(this.slice(chunkSize).chunk(chunkSize));
+        // b)
+        return this.reduce(function(n) {
+            return function(p, c, i) {
+                (p[i / n | 0] = p[i / n | 0] || []).push(c);
+                return p;
+            };
+        }(chunkSize), []);
+    };
+
 }());
