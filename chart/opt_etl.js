@@ -100,6 +100,10 @@ function fx(newRows, index, total, counter) {
                     srcFile = "../../wsWDZ/etl/SZ/{0}.txt".format(cells[0]);
                 }
             } else { // common
+                if (settings.market === "hk" && cells[6] == 1) {
+                    reject(new Error('ignore'));
+                    return;
+                }
                 srcFile = "./d/{0}_{1}_{2}.csv".format(settings.market, cells[1], period);
             }
 
@@ -128,7 +132,7 @@ function generate(srcFile, output, resolve, reject) {
             data = data.toString();
 
             if ((/<title>Yahoo! - 404 Not Found<\/title>/gi).test(data)) {
-                reject(srcFile);
+                reject(new Error(srcFile));
             } else {
                 var array = data.split("\n");
 
