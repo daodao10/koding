@@ -90,6 +90,10 @@ function fx(newRows, index, total, counter) {
             if (settings.market === "sg") {
                 srcFile = "../{0}/dest/{1}.csv".format(settings.market, cells[0]);
             } else if (settings["source"] === "WS") {
+                if (cells[4] == 1) {
+                    reject(new Error('ignore'));
+                    return;
+                }
                 if (cells[0].startsWith('SH')) {
                     srcFile = "../../wsWDZ/etl/SH/{0}.txt".format(cells[0]);
                 } else {
