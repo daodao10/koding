@@ -108,7 +108,9 @@ function main() {
                 setting = myUtil.extend(setting, etlUtil.parse_setting(lines[i]));
             } else {
                 cells = lines[i].split(',');
-                if (cells.length === 4) {
+                if (setting.market == "hk") {
+                    dropdownList.push(_output_dropdown_list1(setting.market, cells[1], cells[2] + "-" + cells[3], cells[4], cells[5]));
+                } else if (cells.length === 4) {
                     dropdownList.push(_output_dropdown_list(setting.market, cells[1], cells[2], cells[3]));
                 }
             }
@@ -191,6 +193,16 @@ function _output_dropdown_list(market, code, name, sector) {
         "c": code,
         "n": name.toUpperCase(),
         "s": sector
+    }
+}
+
+function _output_dropdown_list1(market, code, name, sector, industry) {
+    // return '"{1}": {"n":"{2}", "s": "{3}"},'.format(market, code, name, sector);
+    return {
+        "c": code,
+        "n": name.toUpperCase(),
+        "s": sector,
+        "i": industry
     }
 }
 

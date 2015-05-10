@@ -1,4 +1,4 @@
-SYMBOL,CODE,NAME,SECTOR,MARKET,INDUSTRY,IGNORE[YAHOO : HK : DAILY]
+symbol,code,name,sector,industry,ignore[yahoo : hk : daily]
 0001.HK,0001,CHEUNG KONG HOLDINGS LTD,長和,60 地產建築,603 地產發展,0
 0002.HK,0002,CLP HOLDINGS LTD,中電控股,45 電力,450 電力公用,0
 0003.HK,0003,HONG KONG & CHINA GAS,香港中華煤氣,00 能源,008 燃氣公用,0
