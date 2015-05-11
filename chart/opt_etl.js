@@ -1,4 +1,5 @@
 var fs = require("fs"),
+    Promise = require('promise'),
     myUtil = require('../nd/MyUtil'),
     anounymous = require('../nd/ProtoUtil'),
     etlUtil = require('./EtlUtil');
@@ -40,7 +41,8 @@ var settings = {
         IsCompactDate: false,
         xCell: 0,
         yCell: 1
-    }
+    },
+    ChunkSize: 200
 };
 
 // main function
@@ -51,91 +53,121 @@ if (process.argv.length > 2) {
     console.log("USAGE: node opt_yahoo_etl.js <filename>");
 }
 
-
 function batchProcess(filename) {
-    var index = 0,
-        period,
-        cells,
-        srcFile,
-        destFile;
-
     if (filename) {
-        myUtil.readlines(filename, function(row) {
-            index++;
+        var lines = myUtil.readlinesSync(filename);
 
-            if (index === 1) {
-                myUtil.extend(settings, etlUtil.parse_setting(row));
-                settings["source"] = etlUtil.encode_source(settings["source"]);
-                return;
+        myUtil.extend(settings, etlUtil.parse_setting(lines.shift()));
+        settings["source"] = etlUtil.encode_source(settings["source"]);
+
+        var newRows = [];
+        lines.forEach(function(row) {
+            if (row) {
+                settings.period.map(function(period) {
+                    newRows.push([row, period]);
+                });
             }
-
-            settings.period.forEach(function(period) {
-                period = etlUtil.encode_period(period);
-                cells = row.stripLineBreaks().split(',');
-                if (settings.market === "sg") {
-                    srcFile = "../{0}/dest/{1}.csv".format(settings.market, cells[0]);
-                } else if (settings["source"] === "WS") {
-                    if (cells[0].startsWith('SH')) {
-                        srcFile = "../../wsWDZ/etl/SH/{0}.txt".format(cells[0]);
-                    } else {
-                        srcFile = "../../wsWDZ/etl/SZ/{0}.txt".format(cells[0]);
-                    }
-                } else { // common
-                    srcFile = "./d/{0}_{1}_{2}.csv".format(settings.market, cells[1], period);
-                }
-
-                destFile = "{3}{0}/{1}_{2}.js".format(settings.market, cells[1], period, settings.DestFolder);
-                // console.log(srcFile, destFile);
-                generate(srcFile, destFile);
-            });
-
-            // console.log("finished:", index.toString());
         });
+
+        newRows = newRows.chunk(settings.ChunkSize);
+
+        fx(newRows, 0, newRows.length, 0);
     }
 }
 
-function generate(srcFile, output) {
+function fx(newRows, index, total, counter) {
+    if (index == total) {
+        console.log("------------- Saved %d -------------", counter);
+        return;
+    };
+
+    Promise.all(newRows[index].map(function(item) {
+        return new Promise(function(resolve, reject) {
+            var period = etlUtil.encode_period(item[1]);
+            var cells = item[0].stripLineBreaks().split(','),
+                srcFile,
+                destFile;
+            if (settings.market === "sg") {
+                srcFile = "../{0}/dest/{1}.csv".format(settings.market, cells[0]);
+            } else if (settings["source"] === "WS") {
+                if (cells[4] == 1) {
+                    reject(new Error('ignore'));
+                    return;
+                }
+                if (cells[0].startsWith('SH')) {
+                    srcFile = "../../wsWDZ/etl/SH/{0}.txt".format(cells[0]);
+                } else {
+                    srcFile = "../../wsWDZ/etl/SZ/{0}.txt".format(cells[0]);
+                }
+            } else { // common
+                if (settings.market === "hk" && cells[6] == 1) {
+                    reject(new Error('ignore'));
+                    return;
+                }
+                srcFile = "./d/{0}_{1}_{2}.csv".format(settings.market, cells[1], period);
+            }
+
+            destFile = "{3}{0}/{1}_{2}.js".format(settings.market, cells[1], period, settings.DestFolder);
+
+            // console.log(srcFile, destFile);
+            generate(srcFile, destFile, resolve, reject);
+
+        }).catch(function(e) {
+            console.log("oh, no!", e.message);
+        });
+    })).done(function(val) {
+        val.forEach(function(x) {
+            counter += (x == undefined ? 0 : x);
+        });
+
+        fx(newRows, index + 1, total, counter);
+    });
+}
+
+function generate(srcFile, output, resolve, reject) {
     fs.readFile(srcFile, function(err, data) {
         if (err) {
-            console.log(err);
+            reject(err);
         } else {
             data = data.toString();
 
             if ((/<title>Yahoo! - 404 Not Found<\/title>/gi).test(data)) {
-                console.log(srcFile);
-                return;
-            }
+                reject(new Error(srcFile));
+            } else {
+                var array = data.split("\n");
 
-            var array = data.split("\n");
-
-            if (settings.HasHeader) { // remove header
-                array.shift();
-            }
-            if (settings.HasLastBlank) { // remove last blank line
-                array.pop();
-            }
-
-            if (settings.SortingOrder === 1) {
-                // sorting by date: oldest to newest
-                if (settings.source === "Y" || settings.source === "G") {
-                    array.reverse();
+                if (settings.HasHeader) { // remove header
+                    array.shift();
                 }
-            } else if (settings.SortingOrder === -1) {
-                // sorting by date: newest to oldest
-                if (settings.source !== "Y" && settings.source !== "G") {
-                    array.reverse();
+                if (settings.HasLastBlank) { // remove last blank line
+                    array.pop();
                 }
+
+                if (settings.SortingOrder === 1) {
+                    // sorting by date: oldest to newest
+                    if (settings.source === "Y" || settings.source === "G") {
+                        array.reverse();
+                    }
+                } else if (settings.SortingOrder === -1) {
+                    // sorting by date: newest to oldest
+                    if (settings.source !== "Y" && settings.source !== "G") {
+                        array.reverse();
+                    }
+                }
+
+                var data = array.map(mapFunc).filter(function(element) {
+                    return element != null;
+                });
+
+                var content = "var data=[" + data.join(',\n') + "];\nvar source='" + etlUtil.decode_source(settings.source) + "';";
+                fs.writeFile(output, content, function(err) {
+                    if (err) {
+                        reject(err);
+                    }
+
+                    resolve(1);
+                });
             }
-
-            var data = array.map(mapFunc).filter(function(element) {
-                return element != null;
-            });
-
-            var content = "var data=[" + data.join(',\n') + "];\nvar source='" + etlUtil.decode_source(settings.source) + "';";
-            fs.writeFile(output, content, function(err) {
-                if (err) throw err;
-                console.log("Saved!");
-            });
         }
     });
 }

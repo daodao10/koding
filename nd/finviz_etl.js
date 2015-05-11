@@ -2,7 +2,7 @@
  * extract data from finviz.com
  **/
 const RegPaging = /<td width="140" align="left" valign="bottom" class="count-text"><b>Total: <\/b>(\d+) #\d+<\/td>/g;
-const RegRows = /<a href="quote\.ashx.*class="tab-link">(.+?)<\/a><\/td><td height="10" align="left" class="body-table-nw">(.+?)<\/td><td height="10" align="left" class="body-table-nw">(.+?)<\/td>(<td height="10" align="right" class="body-table-nw"><span style="color:#[abcdef0-9]{6};">([-.,0-9%]+)<\/span><\/td>|<td height="10" align="right" class="body-table-nw">([-.,0-9%]+)<\/td>)(<td height="10" align="right" class="body-table-nw"><span style="color:#[abcdef0-9]{6};">([-.,0-9%]+)<\/span><\/td>|<td height="10" align="right" class="body-table-nw">([-.,0-9%]+)<\/td>)(<td height="10" align="right" class="body-table-nw"><span style="color:#[abcdef0-9]{6};">([-.,0-9%]+)<\/span><\/td>|<td height="10" align="right" class="body-table-nw">([-.,0-9%]+)<\/td>)(<td height="10" align="right" class="body-table-nw"><span style="color:#[abcdef0-9]{6};">([-.,0-9%]+)<\/span><\/td>|<td height="10" align="right" class="body-table-nw">([-.,0-9%]+)<\/td>)(<td height="10" align="right" class="body-table-nw"><span style="color:#[abcdef0-9]{6};">([-.,0-9%]+)<\/span><\/td>|<td height="10" align="right" class="body-table-nw">([-.,0-9%]+)<\/td>)(<td height="10" align="right" class="body-table-nw"><span style="color:#[abcdef0-9]{6};">([-.,0-9%]+)<\/span><\/td>|<td height="10" align="right" class="body-table-nw">([-.,0-9%]+)<\/td>)(<td height="10" align="right" class="body-table-nw"><span style="color:#[abcdef0-9]{6};">([-.,0-9%]+)<\/span><\/td>|<td height="10" align="right" class="body-table-nw">([-.,0-9%]+)<\/td>)(<td height="10" align="right" class="body-table-nw"><span style="color:#[abcdef0-9]{6};">([-.,0-9%]+)<\/span><\/td>|<td height="10" align="right" class="body-table-nw">([-.,0-9%]+)<\/td>)(<td height="10" align="right" class="body-table-nw"><span style="color:#[abcdef0-9]{6};">([-.,0-9%]+)<\/span><\/td>|<td height="10" align="right" class="body-table-nw">([-.,0-9%]+)<\/td>)(<td height="10" align="right" class="body-table-nw"><span style="color:#[abcdef0-9]{6};">([-.,0-9%]+)<\/span><\/td>|<td height="10" align="right" class="body-table-nw">([-.,0-9%]+)<\/td>)(<td height="10" align="right" class="body-table-nw"><span style="color:#[abcdef0-9]{6};">([-.,0-9%]+)<\/span><\/td>|<td height="10" align="right" class="body-table-nw">([-.,0-9%]+)<\/td>)(<td height="10" align="right" class="body-table-nw"><span style="color:#[abcdef0-9]{6};">([-.,0-9%]+)<\/span><\/td>|<td height="10" align="right" class="body-table-nw">([-.,0-9%]+)<\/td>)(<td height="10" align="right" class="body-table-nw"><span style="color:#[abcdef0-9]{6};">([-.,0-9%]+)<\/span><\/td>|<td height="10" align="right" class="body-table-nw">([-.,0-9%]+)<\/td>)(<td height="10" align="right" class="body-table-nw"><span style="color:#[abcdef0-9]{6};">([-.,0-9%]+)<\/span><\/td>|<td height="10" align="right" class="body-table-nw">([-.,0-9%]+)<\/td>)/g;
+const RegRows = /<a href="quote\.ashx.*class="tab-link">(.+?)<\/a><\/td><td height="10" align="left" class="body-table-nw">(.+?)<\/td><td height="10" align="left" class="body-table-nw">(.+?)<\/td><td height="10" align="left" class="body-table-nw">(.+?)<\/td>(<td height="10" align="right" class="body-table-nw"><span style="color:#[abcdef0-9]{6};">([-.,0-9%]+)<\/span><\/td>|<td height="10" align="right" class="body-table-nw">([-.,0-9%]+)<\/td>)(<td height="10" align="right" class="body-table-nw"><span style="color:#[abcdef0-9]{6};">([-.,0-9%]+)<\/span><\/td>|<td height="10" align="right" class="body-table-nw">([-.,0-9%]+)<\/td>)(<td height="10" align="right" class="body-table-nw"><span style="color:#[abcdef0-9]{6};">([-.,0-9%]+)<\/span><\/td>|<td height="10" align="right" class="body-table-nw">([-.,0-9%]+)<\/td>)(<td height="10" align="right" class="body-table-nw"><span style="color:#[abcdef0-9]{6};">([-.,0-9%]+)<\/span><\/td>|<td height="10" align="right" class="body-table-nw">([-.,0-9%]+)<\/td>)(<td height="10" align="right" class="body-table-nw"><span style="color:#[abcdef0-9]{6};">([-.,0-9%]+)<\/span><\/td>|<td height="10" align="right" class="body-table-nw">([-.,0-9%]+)<\/td>)(<td height="10" align="right" class="body-table-nw"><span style="color:#[abcdef0-9]{6};">([-.,0-9%]+)<\/span><\/td>|<td height="10" align="right" class="body-table-nw">([-.,0-9%]+)<\/td>)(<td height="10" align="right" class="body-table-nw"><span style="color:#[abcdef0-9]{6};">([-.,0-9%]+)<\/span><\/td>|<td height="10" align="right" class="body-table-nw">([-.,0-9%]+)<\/td>)(<td height="10" align="right" class="body-table-nw"><span style="color:#[abcdef0-9]{6};">([-.,0-9%]+)<\/span><\/td>|<td height="10" align="right" class="body-table-nw">([-.,0-9%]+)<\/td>)(<td height="10" align="right" class="body-table-nw"><span style="color:#[abcdef0-9]{6};">([-.,0-9%]+)<\/span><\/td>|<td height="10" align="right" class="body-table-nw">([-.,0-9%]+)<\/td>)(<td height="10" align="right" class="body-table-nw"><span style="color:#[abcdef0-9]{6};">([-.,0-9%]+)<\/span><\/td>|<td height="10" align="right" class="body-table-nw">([-.,0-9%]+)<\/td>)(<td height="10" align="right" class="body-table-nw"><span style="color:#[abcdef0-9]{6};">([-.,0-9%]+)<\/span><\/td>|<td height="10" align="right" class="body-table-nw">([-.,0-9%]+)<\/td>)(<td height="10" align="right" class="body-table-nw"><span style="color:#[abcdef0-9]{6};">([-.,0-9%]+)<\/span><\/td>|<td height="10" align="right" class="body-table-nw">([-.,0-9%]+)<\/td>)(<td height="10" align="right" class="body-table-nw"><span style="color:#[abcdef0-9]{6};">([-.,0-9%]+)<\/span><\/td>|<td height="10" align="right" class="body-table-nw">([-.,0-9%]+)<\/td>)(<td height="10" align="right" class="body-table-nw"><span style="color:#[abcdef0-9]{6};">([-.,0-9%]+)<\/span><\/td>|<td height="10" align="right" class="body-table-nw">([-.,0-9%]+)<\/td>)/g;
 const PageSize = 20;
 
 var fs = require('fs'),
@@ -16,7 +16,7 @@ function get(startRowIndex) {
             host: 'finviz.com',
             path: '/screener.ashx?v=150&f=fa_eps5years_pos,ind_stocksonly,sh_avgvol_o300,sh_price_o5&ft=4&o=ticker&r={0}'.format(startRowIndex),
             headers: {
-                "Cookie": "customTable=1,2,3,7,9,10,11,13,19,32,33,52,53,54,59,66,67;"
+                "Cookie": "customTable=1,2,3,4,7,9,10,11,13,19,32,33,52,53,54,59,66,67;"
             }
         }, function(data, statusCode) {
 
@@ -34,22 +34,22 @@ function get(startRowIndex) {
 }
 
 function rowDataFunc(m) {
-    if (m && m.length === 46) {
-        return [m[1], m[2], m[3],
-            m[5] ? myUtil.toNumber(m[5]) : myUtil.toNumber(m[6]),
-            m[8] ? myUtil.toNumber(m[8]) : myUtil.toNumber(m[9]),
-            m[11] ? myUtil.toNumber(m[11]) : myUtil.toNumber(m[12]),
-            m[14] ? myUtil.toNumber(m[14]) : myUtil.toNumber(m[15]),
-            m[17] ? myUtil.toNumber(m[17]) : myUtil.toNumber(m[18]),
-            m[20] ? myUtil.toNumber(m[20]) : myUtil.toNumber(m[21]),
-            m[23] ? myUtil.toNumber(m[23]) : myUtil.toNumber(m[24]),
-            m[26] ? myUtil.toNumber(m[26]) : myUtil.toNumber(m[27]),
-            m[29] ? myUtil.toNumber(m[29]) : myUtil.toNumber(m[30]),
-            m[32] ? myUtil.toNumber(m[32]) : myUtil.toNumber(m[33]),
-            m[35] ? myUtil.toNumber(m[35]) : myUtil.toNumber(m[36]),
-            m[38] ? myUtil.toNumber(m[38]) : myUtil.toNumber(m[39]),
-            m[41] ? myUtil.toNumber(m[41]) : myUtil.toNumber(m[42]),
-            m[44] ? myUtil.toNumber(m[44]) : myUtil.toNumber(m[45])
+    if (m && m.length === 47) {
+        return [m[1], m[2], m[3], m[4],
+            m[6] ? myUtil.toNumber(m[6]) : myUtil.toNumber(m[7]),
+            m[9] ? myUtil.toNumber(m[9]) : myUtil.toNumber(m[10]),
+            m[12] ? myUtil.toNumber(m[12]) : myUtil.toNumber(m[13]),
+            m[15] ? myUtil.toNumber(m[15]) : myUtil.toNumber(m[16]),
+            m[18] ? myUtil.toNumber(m[18]) : myUtil.toNumber(m[19]),
+            m[21] ? myUtil.toNumber(m[21]) : myUtil.toNumber(m[22]),
+            m[24] ? myUtil.toNumber(m[24]) : myUtil.toNumber(m[25]),
+            m[27] ? myUtil.toNumber(m[27]) : myUtil.toNumber(m[28]),
+            m[30] ? myUtil.toNumber(m[30]) : myUtil.toNumber(m[31]),
+            m[33] ? myUtil.toNumber(m[33]) : myUtil.toNumber(m[34]),
+            m[36] ? myUtil.toNumber(m[36]) : myUtil.toNumber(m[37]),
+            m[39] ? myUtil.toNumber(m[39]) : myUtil.toNumber(m[40]),
+            m[42] ? myUtil.toNumber(m[42]) : myUtil.toNumber(m[43]),
+            m[45] ? myUtil.toNumber(m[45]) : myUtil.toNumber(m[46])
         ];
     }
     return null;
@@ -75,7 +75,7 @@ function parse(reg, input, dataFunc) {
 }
 
 function header() {
-    return 'Ticker,Company,Sector,P/E,PEG,P/S,P/B,P/FCF,EPS past 5Y,ROA,ROE,SMA20,SMA50,SMA200,RSI,Change,Volume';
+    return 'Ticker,Company,Sector,Industry,P/E,PEG,P/S,P/B,P/FCF,EPS past 5Y,ROA,ROE,SMA20,SMA50,SMA200,RSI,Change,Volume';
 }
 
 function to_csv(arr) {
@@ -83,6 +83,9 @@ function to_csv(arr) {
         if (element[1].indexOf(',') >= 0) {
             //element[1] = "\"" + element[1] +  "\"";// keep , to excel
             element[1] = element[1].replace(/,/g, ''); // remove , to coding
+        }
+        if (element[3].indexOf(',') >= 0) {
+            element[3] = element[3].replace(/,/g, ' -'); // remove , to coding
         }
         return element.join(',');
     });
