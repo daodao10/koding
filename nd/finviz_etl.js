@@ -14,7 +14,8 @@ function get(startRowIndex) {
     return new Promise(function(resolve, reject) {
         myUtil.get({
             host: 'finviz.com',
-            path: '/screener.ashx?v=150&f=fa_eps5years_pos,ind_stocksonly,sh_avgvol_o300,sh_price_o5&ft=4&o=ticker&r={0}'.format(startRowIndex),
+            // path: '/screener.ashx?v=150&f=fa_eps5years_pos,ind_stocksonly,sh_avgvol_o300,sh_price_o5&ft=4&o=ticker&r={0}'.format(startRowIndex),
+            path: '/screener.ashx?v=151&f=ind_stocksonly,sh_avgvol_o100,sh_price_o1&ft=4&o=ticker&r={0}'.format(startRowIndex),
             headers: {
                 "Cookie": "customTable=1,2,3,4,7,9,10,11,13,19,32,33,52,53,54,59,66,67;"
             }

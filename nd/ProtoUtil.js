@@ -43,7 +43,6 @@ module.exports = (function() {
             });
         };
     }
-
     if (!String.prototype.startsWith) {
         String.prototype.startsWith = function(prefix) {
             return this.indexOf(prefix) === 0;
@@ -64,7 +63,6 @@ module.exports = (function() {
         //         return str.match(suffix + "$") == suffix;
         //     };
     }
-
     if (!String.prototype.padding) {
         String.prototype.padding = function(n, c) {
             /// c: character
@@ -72,6 +70,13 @@ module.exports = (function() {
 
             c = c || '0';
             return (this.length < n) ? c + this.padding(n - 1, c) : this;
+        };
+    }
+    if (!String.prototype.htmlEntityToUnicode) {
+        String.prototype.htmlEntityToUnicode = function() {
+            return this.replace(/&#(([0-9]{1,7})|(x[0-9a-f]{1,6}));?/gi, function(match, p1, p2, p3, offset, s) {
+                return String.fromCharCode(p2 || ("0" + p3));
+            });
         };
     }
 
