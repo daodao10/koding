@@ -173,7 +173,7 @@ MyUtil.prototype.varReplace = function(input, dic) {
     /// replace %VARIABLE_NAME% with dic[VARIABLE_NAME]
     ///
 
-    var reg = /(%([a-zA-Z]*)%)/g,
+    var reg = /(%([a-zA-Z0-9]+)%)/g,
         m;
     while ((m = reg.exec(input))) {
         if (m.index === m.lastIndex) {
