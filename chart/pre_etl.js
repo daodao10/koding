@@ -69,9 +69,7 @@ function main() {
                     cells[0] === '999999' ? '000001' : cells[0], cells[0], cells[1]);
             } else if (action === 1) {
                 if (setting.source === "stooq") {
-
-                    for (var i in setting.period) {
-                        period = setting.period[i];
+                    setting.period.forEach(function(period) {
                         if (setting.period === "daily") {
                             start = new Date(today.getFullYear() - 30, 0, 1);
                         } else {
@@ -80,8 +78,8 @@ function main() {
 
                         console.log(_output_stooq_download_link(
                             start.format('yyyyMMdd'), setting.end.format('yyyyMMdd'), setting.market, cells[0], cells[1], period, period === "monthly"));
-                    }
 
+                    });
                 } else if (setting.source === "yahoo") {
 
                     setting.period.forEach(function(period) {

@@ -15,7 +15,7 @@ EtlUtil.prototype.encode_period = function(type) {
     } else if (type === "weekly") {
         return 'w';
     } else {
-        throw new UserException("unknown data source");
+        throw new UserException("unknown period setting");
     }
 };
 
