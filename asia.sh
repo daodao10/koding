@@ -11,11 +11,12 @@ echo '*****'
 cd ./learning/capture
 sh out.sh cn
 
-echo '*****'
-cd ../../nd
-sh em_etl.sh
+# echo '*****'
+# cd ../../nd
+# sh em_etl.sh
 
 echo '***** check data *****'
-cd ..
+# cd ..
+cd ../../
 python check_asia.py
 echo '--------------------------------------------'
