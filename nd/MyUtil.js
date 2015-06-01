@@ -37,7 +37,9 @@ function _getCallback(data, statusCode, options, callback) {
 
         var index = data.indexOf("(");
         if (index > 0) {
-            global[data.substring(0, index)] = callback;
+            global[data.substring(0, index)] = function(d) {
+                callback(d, statusCode);
+            };
             eval(data);
         } else {
             console.log('JSONP ERROR');
