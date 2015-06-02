@@ -27,8 +27,8 @@ AWQ.SI,A-SonicAero
 TF7.SI,AAT
 533.SI,ABR
 AWG.SI,AEI Corp
-A10.SI,AEM
-A54.SI,AIM
+AWX.SI,AEM Hldg
+AXH.SI,AIM
 A0P.SI,AIMS Property
 O5RU.SI,AIMSAMP Cap Reit
 5AU.SI,AP Oil
@@ -42,7 +42,7 @@ L5I.SI,Abterra
 ADQU.SI,Accordia Golf Tr
 A75.SI,Ace Achieve Info
 A02.SI,Achieva
-A01.SI,Acma
+AYV.SI,Acma Ltd
 A59.SI,Action Asia
 A31.SI,Addvalue Tech
 5FH.SI,Advance SCT^
@@ -83,7 +83,7 @@ A23.SI,Auric Pacific
 X04.SI,AusNet Services
 CT1.SI,Avi-Tech^
 A69.SI,Azeus
-560.SI,Aztech
+AVZ.SI,Aztech
 B08.SI,B&M Trustees
 KJ5.SI,BBR
 B32.SI,BH Global
@@ -136,7 +136,7 @@ C56.SI,Celestial Nutri
 OU8.SI,Centurion
 573.SI,Challenger
 JA9.SI,Changjiang Fert
-D2V.SI,ChangtianPlastic
+AXV.SI,ChangtianPlastic
 5QT.SI,Charisma Energy
 5TW.SI,ChasWood Res
 5NV.SI,Chasen
@@ -151,7 +151,7 @@ T16.SI,China Dairy
 RS1.SI,China Env Res
 G54.SI,China Essence^
 U9E.SI,China Everbright
-F6D.SI,China Fibretech
+AXL.SI,China Fibretech
 B0Z.SI,China Fishery
 C59.SI,China Flexpack
 I4U.SI,China Gaoxian
@@ -278,7 +278,7 @@ G41.SI,G K Goh
 41T.SI,GCCP
 5VP.SI,GDS Global
 595.SI,GKE
-5IM.SI,GMG Global
+AXJ.SI,GMG Global
 G08.SI,GP Batteries
 P9J.SI,GP Hotels
 G20.SI,GP Industries
@@ -294,7 +294,7 @@ B73.SI,Global Inv
 MC0.SI,Global Logistic
 K6J.SI,Global Palm Res
 G11.SI,Global Tech
-G31.SI,Global Testing
+AYN.SI,Global Testing
 CH9.SI,GlobalMaster US$ S
 AWS.SI,GlobalYellow Pgs
 E5H.SI,Golden Agri-Res
@@ -427,8 +427,7 @@ C4P.SI,LH
 41O.SI,LHN
 L10.SI,LHT
 L17.SI,LTC Corp
-L05.SI,Lafe
-ATO.SI,Lang Capital USD S
+AYB.SI,Lafe Corp
 Q7W.SI,LantroVision
 5EL.SI,Lasseters Intl
 LS9.SI,Leader Env
@@ -436,6 +435,7 @@ LS9.SI,Leader Env
 587.SI,Lereno Bio-Chem
 Q0X.SI,Ley Choon
 E9A.SI,Li Heng Chem
+AXZ.SI,Li Heng Chem
 L03.SI,Lian Beng
 5TR.SI,Libra
 L20.SI,LifeBrandz
@@ -500,7 +500,7 @@ AWO.SI,MirachEnergy
 M03.SI,Miyoshi^
 5WJ.SI,MoneyMax Fin
 5WE.SI,Moya Asia
-M06.SI,Multi-Chem
+AWZ.SI,Multi-Chem
 MF6.SI,Mun Siong Engg
 M20.SI,Murata Yen1k
 N03.SI,NOL
@@ -566,7 +566,7 @@ P13.SI,Penguin Intl
 40S.SI,Perennial Hldgs
 P34.SI,Petra Foods
 P31.SI,Pharmesis Intl
-P82.SI,Plastoform
+AYD.SI,Plastoform Hldg
 5PI.SI,Plato Capital
 P01.SI,Poh Tiong Choon
 5BI.SI,Polaris
@@ -673,7 +673,7 @@ S23.SI,Spura Finance
 NC2.SI,Sri Trang Agro
 H07.SI,Stamford Land
 S29.SI,Stamford Tyres
-X64.SI,Star Pharm
+AYL.SI,Star Pharm
 CC3.SI,StarHub
 40D.SI,Starburst
 P40U.SI,StarhillGbl Reit
@@ -743,10 +743,9 @@ U11.SI,UOB
 U10.SI,UOB Kay Hian
 U13.SI,UOI
 U14.SI,UOL
-ASN.SI,UOL A
 U09.SI,UPP
 A6F.SI,USP Group
-C3T.SI,Uni-Asia
+AYF.SI,Uni-Asia Hldg
 V69.SI,Union Steel
 U04.SI,United Engineers
 U19.SI,United Envtech
@@ -790,7 +789,7 @@ Y03.SI,Yeo Hiap Seng
 Z59.SI,Yoma Strategic
 CX5.SI,Yong Xin Intl^
 E6A.SI,Yongmao
-Y02.SI,Yongnam
+AXB.SI,Yongnam Hldg
 G10.SI,Yuexiu Prop
 AFC.SI,Yuuzoo
 D5N.SI,Z-Obee
