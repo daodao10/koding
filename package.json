@@ -4,7 +4,6 @@
     "private": true,
     "dependencies": {
         "mongodb": "~1.4",
-        "iconv-lite": "~0.4",
         "promise": "~6.1"
     }
 }
