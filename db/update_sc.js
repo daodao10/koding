@@ -15,4 +15,16 @@ function updateDate(d1, d2) {
 	db.QBB.update({d:d1}, {$set: {d:d2}}, {multi:true});
 }
 
-// updateDate("20150501", "20150430");
+function deleteByDate(d1) {
+	db.N52WH.remove({d:d1});
+	db.N52WL.remove({d:d1});
+	db.TTB.remove({d:d1});
+	db.STTB.remove({d:d1});
+	db.QTB.remove({d:d1});
+	db.TBB.remove({d:d1});
+	db.STBB.remove({d:d1});
+	db.QBB.remove({d:d1});
+}
+
+// updateDate("20150610", "20150609");
+// deleteByDate("20150611")
