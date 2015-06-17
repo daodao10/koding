@@ -2635,5 +2635,14 @@ module.exports = [
     "PE": 22.55,
     "m_value": 348418.88,
     "m_value_current": 311531.59
+  },
+  {
+    "month": "201505",
+    "t_trans": 57309.8,
+    "t_volume": 108042393.54,
+    "t_amount": 164773.36,
+    "PE": 21.94,
+    "m_value": 360625.68,
+    "m_value_current": 314407.47
   }
 ];
