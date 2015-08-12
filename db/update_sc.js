@@ -1,5 +1,8 @@
 /*
 * update stockcharts data
+* sample:
+* updateDate("20150708", "20150707");
+* deleteByDate("20150717")
 */
 
 var db = db.getSiblingDB("quotes");
@@ -25,6 +28,3 @@ function deleteByDate(d1) {
 	db.STBB.remove({d:d1});
 	db.QBB.remove({d:d1});
 }
-
-// updateDate("20150610", "20150609");
-// deleteByDate("20150611")

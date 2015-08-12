@@ -8,6 +8,12 @@ function getDateRange() {
         yesterday = new Date(now.getTime() - (24 * 60 * 60000));
     // console.log(yesterday, now);
 
+    // hard code:
+    // return {
+    //     start: "20150709",
+    //     end: "20150811"
+    // };
+
     return {
         start: yesterday.format('yyyyMMdd'),
         end: now.format('yyyyMMdd')
