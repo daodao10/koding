@@ -23,7 +23,7 @@ function main() {
         lines;
 
     if (process.argv.length < 4) {
-        console.log("USAGE: node pre_etl <filename> <action>");
+        console.log("USAGE: node opt_pre_etl <filename> <action>");
         console.log("action: ");
         console.log("\t0: output processing file");
         console.log("\t1: output download command");
