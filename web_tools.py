@@ -130,7 +130,7 @@ def download(url, data = None, headers = None, fileName = None):
         print('HTTPError = ' + str(e.code))
 
     except urllib2.URLError as e:
-        print('URLError = ' + str(e.reason))
+        print('URLError = ' + str(e.reason) + " *** " + url)
 
     except httplib.HTTPException as e:
         print('HTTPException')
