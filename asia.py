@@ -23,8 +23,9 @@ def help():
 
 def process4SG(dbUri, today):
     print 'processing for SG'
-    s = sgx.SGX(dbUri = dbUri, today = today)
-    s.getDayTick()
+    # comment out day data of sgx counters
+    # s = sgx.SGX(dbUri = dbUri, today = today)
+    # s.getDayTick()
 
     s = sgx.SGX(dbUri = web_tools.getDbUri(key="QuotesDbUri"), today = today)
     s.getSummary()
