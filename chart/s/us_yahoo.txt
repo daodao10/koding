@@ -1,4 +1,4 @@
-symbol,code,name,sector[yahoo : us : weekly, daily]
+symbol,code,name,sector[yahoo : us : daily]
 A,A,Agilent Technologies Inc.,Healthcare
 AA,AA,Alcoa Inc.,Basic Materials
 AAL,AAL,American Airlines Group Inc.,Services
