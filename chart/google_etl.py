@@ -73,7 +73,7 @@ def main():
       print settings
       continue
 
-    symbol,code = line.rstrip().split(',')
+    symbol,code = (lambda x: x.rstrip().split(',')[0:2])(line)
     if not settings:
       break
 

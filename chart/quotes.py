@@ -89,20 +89,20 @@ class GoogleQuote(Quote):
 
   RegRow = re.compile(r'<td\s+class="lm">([a-zA-Z0-9-\s,]*)\n<td\s+class="rgt">([0-9-,.]+)\n<td\s+class="rgt">([0-9-,.]+)\n<td\s+class="rgt">([0-9-,.]+)\n<td\s+class="rgt">([0-9-,.]+)\n<td\s+class="rgt rm">([0-9-,.]+)', re.MULTILINE)
   RegPagination = re.compile('google.finance.applyPagination\(\n[0-9]*,\n[0-9]*,\n([0-9]*),', re.MULTILINE)
-  NotFound = '<title>Not Found</title>'
+  NotFound = '<title>Error 404 \(Not Found\)!!1</title>'
 
   def __init__(self,symbol,start_date,end_date=datetime.date.today().isoformat()):
     super(GoogleQuote,self).__init__()
     self.symbol = symbol.upper()
     start = datetime.date(int(start_date[0:4]),int(start_date[5:7]),int(start_date[8:10]))
     end = datetime.date(int(end_date[0:4]),int(end_date[5:7]),int(end_date[8:10]))
-    url_string = "http://www.google.com/finance/historical?q={0}&startdate={1}&enddate={2}".format(
+    url_string = "https://www.google.com/finance/historical?q={0}&startdate={1}&enddate={2}".format(
       self.symbol,start.strftime('%b %d, %Y'),end.strftime('%b %d, %Y'))
 
     csv = urllib.urlopen(url_string + "&output=csv").readlines()
     m = re.search(self.NotFound, csv[0])
     if m:
-      # print 'not found'
+      print 'try again - get page by page'
       self.patch(url_string, 0, 0)
     else:
       #csv.reverse()
