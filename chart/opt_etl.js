@@ -119,7 +119,7 @@ function fx(newRows, index, total, counter) {
         }).catch(function(e) {
             console.log("oh, no!", e.message);
         });
-    })).done(function(val) {
+    })).then(function(val) {
         val.forEach(function(x) {
             counter += (x == undefined ? 0 : x);
         });
