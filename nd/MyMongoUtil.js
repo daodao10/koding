@@ -95,6 +95,15 @@ MyMongo.prototype.aggregate = function(collectionName, query, callback) {
 
 MyMongo.prototype.insert = function(collectionName, documents, callback) {
     this.connect(function(db) {
+        if (!documents || documents.length === 0) {
+            db.close();
+
+            if (callback) {
+                callback(new Error("document(s) is empty!"));
+            }
+            return;
+        }
+
         var collection = db.collection(collectionName);
         collection.insert(documents, function(err, result) {
             db.close();
