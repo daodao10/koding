@@ -146,7 +146,7 @@ function dailyRun() {
                             return;
                         }
 
-                        console.log('inserted', result.length);
+                        console.log('inserted', result.insertedCount);
                     });
                 });
             });

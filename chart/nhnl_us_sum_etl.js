@@ -10,8 +10,8 @@ function getDateRange() {
 
     // hard code:
     // return {
-    //     start: "20150709",
-    //     end: "20150811"
+    //     start: "20150901",
+    //     end: "20151002"
     // };
 
     return {
