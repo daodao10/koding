@@ -1,7 +1,7 @@
 const EtlSettingsFile = './val500_etl.json';
 
 var fs = require('fs'),
-    Promise = require('promise'),
+    //Promise = require('promise'),
     myUtil = require('./MyUtil'),
     anounymous = require('./ProtoUtil'),
     MyMongo = require('./MyMongoUtil'),

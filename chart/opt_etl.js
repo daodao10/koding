@@ -1,5 +1,5 @@
 var fs = require("fs"),
-    Promise = require('promise'),
+    //Promise = require('promise'),
     myUtil = require('../nd/MyUtil'),
     anounymous = require('../nd/ProtoUtil'),
     etlUtil = require('./EtlUtil');

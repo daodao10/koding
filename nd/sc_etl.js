@@ -2,7 +2,7 @@ const re = /<td class="first chartoptionlinks">.*<\/td>\n<td><B>(.*)<\/B><\/td>\
 const EtlSettingsFile = './sc_settings.json';
 
 var fs = require('fs'),
-    Promise = require('promise'),
+    //Promise = require('promise'),
     myUtil = require('./MyUtil'),
     anounymous = require('./ProtoUtil'),
     MyMongo = require('./MyMongoUtil'),
@@ -191,7 +191,7 @@ function SCData(scanName) {
                 return toJson(element, index + seq);
             }), function(err, docs) {
                 if (err) {
-                    console.error(err);
+                    console.error("error occurred during insert [%s], %s", name, err);
                     return;
                 }
             });
