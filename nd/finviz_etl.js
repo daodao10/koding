@@ -6,7 +6,7 @@ const RegRows = /<a href="quote\.ashx.*class="tab-link">(.+?)<\/a><\/td><td heig
 const PageSize = 20;
 
 var fs = require('fs'),
-    Promise = require('promise'),
+    //Promise = require('promise'),
     myUtil = require('./MyUtil'),
     anounymous = require('./ProtoUtil');
 
