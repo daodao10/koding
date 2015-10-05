@@ -105,7 +105,7 @@ MyMongo.prototype.insert = function(collectionName, documents, callback) {
         }
 
         var collection = db.collection(collectionName);
-        collection.insert(documents, function(err, result) {
+        collection.insertMany(documents, function(err, result) {
             db.close();
 
             if (err) {
@@ -123,7 +123,7 @@ MyMongo.prototype.insert = function(collectionName, documents, callback) {
 MyMongo.prototype.update = function(collectionName, query, callback) {
     this.connect(function(db) {
         var collection = db.collection(collectionName);
-        collection.update(query.q, query.u, query.o || {}, function(err, result) {
+        collection.updateMany(query.q, query.u, query.o || {}, function(err, result) {
             db.close();
 
             if (err) {
@@ -172,9 +172,9 @@ MyMongo.prototype.upsertBatch = function(collectionName, docs, callback) {
 
 MyMongo.prototype.nextSequence = function(name, callback) {
     this.connect(function(db) {
-        db.collection("counters").findAndModify({
+        db.collection("counters").findOneAndUpdate({
                 _id: name
-            }, null, {
+            }, {
                 $inc: {
                     seq: 1
                 }
@@ -182,7 +182,7 @@ MyMongo.prototype.nextSequence = function(name, callback) {
                 "new": true,
                 "upsert": true
             },
-            function(err, docs) {
+            function(err, doc) {
                 db.close();
 
                 if (err) {
@@ -191,7 +191,7 @@ MyMongo.prototype.nextSequence = function(name, callback) {
                 }
 
                 if (callback) {
-                    callback(null, docs.seq);
+                    callback(null, doc.value.seq);
                 }
             });
     });
