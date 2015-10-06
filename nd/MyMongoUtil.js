@@ -105,18 +105,22 @@ MyMongo.prototype.insert = function(collectionName, documents, callback) {
         }
 
         var collection = db.collection(collectionName);
-        collection.insertMany(documents, function(err, result) {
+        (Array.isArray(documents) ?
+            collection.insertMany(documents) :
+            collection.insertOne(documents))
+        .then(function(result) {
             db.close();
-
-            if (err) {
-                if (callback) return callback(err);
-                return console.dir(err);
-            }
 
             if (callback) {
                 callback(null, result);
             }
+        }).catch(function(err) {
+            db.close();
+            
+            if (callback) return callback(err);
+            return console.dir(err);
         });
+
     });
 };
 
