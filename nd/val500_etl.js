@@ -9,10 +9,7 @@ var fs = require('fs'),
     EtlSettings = require(EtlSettingsFile);
 
 var myMongo = new MyMongo("{0}{1}".format(config.DbSettings.QuotesDbUri, 'quotes'));
-
-function main(key) {
-
-    var rowDataProcessor = {
+var rowDataProcessor = {
         _quarter2Date: function(year, str) {
             if (str == "一季度") {
                 return myUtil.getLastDateOfMonth(year, 3);
@@ -80,8 +77,8 @@ function main(key) {
             }
         }
 
-    };
-    var nextProcessor = {
+    },
+    nextProcessor = {
         PE: function(elements) {
             var start,
                 arrType = 0,
@@ -163,19 +160,22 @@ function main(key) {
                 return 0;
             });
 
-            // print
-            elements.forEach(function(element) {
+            // print out the data for last 30 days
+            var tmpArr = elements.slice(0, elements.length > 30 ? 30 : elements.length);
+            tmpArr.forEach(function(element) {
                 console.log("{0},,,,,,{1}".format(new Date(element._id).format('yyyy-MM-dd'), element.c));
             });
         }
     };
 
+function main(key) {
+    console.log('%s is processing...', key);
     var settings = EtlSettings[key];
 
-    get(settings.path).then(function(content) {
-        // save(key, content);
+    _get(settings.path).then(function(content) {
+        // _save(key, content);
 
-        var docs = parse(new RegExp(settings.regex, 'gi'), content, rowDataProcessor[key]);
+        var docs = _parse(new RegExp(settings.regex, 'gi'), content, rowDataProcessor[key]);
         if (docs[0]) {
 
             if (settings.next) {
@@ -186,18 +186,11 @@ function main(key) {
 
             if (settings.first) {
                 myMongo.insert(settings.collection, docs, function(err, docs) {
-                    if (err) {
-                        console.error(err);
-                        return;
-                    }
+                    _logResult(key, err, result);
                 });
             } else {
                 myMongo.upsertBatch(settings.collection, docs, function(err, result) {
-                    if (err) {
-                        console.error(err);
-                        return;
-                    }
-                    console.dir(result);
+                    _logResult(key, err, result);
                 });
             }
         } else {
@@ -209,7 +202,7 @@ function main(key) {
         console.error(error);
     });
 
-    function get(url) {
+    function _get(url) {
         return new Promise(function(resolve, reject) {
             myUtil.get({
                 host: 'value500.com',
@@ -229,7 +222,7 @@ function main(key) {
         });
     }
 
-    function parse(reg, input, dataFunc) {
+    function _parse(reg, input, dataFunc) {
         var result = [],
             m;
         while ((m = reg.exec(input))) {
@@ -241,13 +234,22 @@ function main(key) {
         return result;
     }
 
-    function save(name, content) {
+    function _save(name, content) {
         fs.writeFile(name + ".txt", content, function(err) {
             if (err) {
                 throw err;
             }
             console.log('done');
         });
+    }
+
+    function _logResult(key, err, result) {
+        if (err) {
+            console.error(err);
+        } else {
+            console.log('%s done', key);
+            console.dir(result);
+        }
     }
 
 }
