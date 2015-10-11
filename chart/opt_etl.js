@@ -90,18 +90,9 @@ function fx(newRows, index, total, counter) {
             if (settings.market === "sg") {
                 srcFile = "../{0}/dest/{1}.csv".format(settings.market, cells[0]);
             } else if (settings["source"] === "WS") {
-                if (cells[4] == 1) {
-                    if (cells[0].startsWith('SH')) {
-                        srcFile = "../../wsWDZ/etl-2/SH/{0}.txt".format(cells[0]);
-                    } else {
-                        srcFile = "../../wsWDZ/etl-2/SZ/{0}.txt".format(cells[0]);
-                    }
-                } else {
-                    if (cells[0].startsWith('SH')) {
-                        srcFile = "../../wsWDZ/etl/SH/{0}.txt".format(cells[0]);
-                    } else {
-                        srcFile = "../../wsWDZ/etl/SZ/{0}.txt".format(cells[0]);
-                    }
+                srcFile = "../../wsWDZ/{0}/{1}/{2}.txt".format(cells[4] == 1 ? "etl-2" : "etl", cells[0].startsWith('SH') ? "SH" : "SZ", cells[0]);
+                if (!fs.existsSync(srcFile)) {
+                    srcFile = "../../wsWDZ/{0}/{1}/{2}.txt".format("etl-2", cells[0].startsWith('SH') ? "SH" : "SZ", cells[0]);
                 }
             } else { // common
                 if (settings.market === "hk" && cells[6] == 1) {
@@ -117,7 +108,12 @@ function fx(newRows, index, total, counter) {
             generate(srcFile, destFile, resolve, reject);
 
         }).catch(function(e) {
-            console.log("oh, no!", e.message);
+            // console.error(e);
+            if (e.code === 'ENOENT') {
+                console.log("file is not found", e.path);
+            } else {
+                console.log("oh, no!", e.message);
+            }
         });
     })).then(function(val) {
         val.forEach(function(x) {
