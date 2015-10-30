@@ -6,13 +6,6 @@ var MyMongo = require('../nd/MyMongoUtil'),
 function getDateRange() {
     var now = new Date(),
         yesterday = new Date(now.getTime() - (24 * 60 * 60000));
-    // console.log(yesterday, now);
-
-    // hard code:
-    // return {
-    //     start: "20150901",
-    //     end: "20151002"
-    // };
 
     return {
         start: yesterday.format('yyyyMMdd'),
@@ -22,9 +15,9 @@ function getDateRange() {
 
 function main() {
 
-    var date = (process.argv.length == 3) ? {
+    var date = (process.argv.length >= 3) ? {
         start: process.argv[2],
-        end: process.argv[2]
+        end: (process.argv.length > 3 ? process.argv[3] : process.argv[2])
     } : getDateRange();
 
     var query = [{
