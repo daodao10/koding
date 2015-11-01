@@ -21,31 +21,51 @@ var rowDataProcessor = {
                 return myUtil.getLastDateOfMonth(year, 12);
             }
         },
-
-        BDI: function(element) {
+        _chartYearMonth: function(element, options) {
+            if (element[1]) {
+                return [Number(element[1]), myUtil.getLastDateOfMonth(element[2], element[3])];
+            } else {
+                return [Number(element[4]), element[5]];
+            }
+        },
+        _chartYearMonthDay: function(element, options) {
             if (element[1]) {
                 return [Number(element[1]), new Date(Number(element[2]), Number(element[3]) - 1, Number(element[4])).getTime()];
             } else {
                 return [Number(element[5]), element[6]];
             }
         },
+        _tableYearMonth: function(element, options) {
+            var cols = options.cols,
+                tmp = {
+                    "_id": myUtil.getLastDateOfMonth(element[1], element[2])
+                };
+            for (var i = 0; i < cols.length; i++) {
+                tmp[cols[i]] = myUtil.toNumber(element[3 + i]);
+            }
+
+            return tmp;
+        },
 
         CPI: function(element) {
-            return {
-                "_id": myUtil.getLastDateOfMonth(element[1], element[2]),
-                "c": myUtil.toNumber(element[3])
-            };
+            return rowDataProcessor._tableYearMonth(element, {
+                cols: ["c"]
+            });
         },
 
         PPI: function(element) {
-            return rowDataProcessor.CPI(element);
+            return rowDataProcessor._tableYearMonth(element, {
+                cols: ["c"]
+            });
         },
 
         USDX_m: function(element) {
-            return rowDataProcessor.CPI(element);
+            return rowDataProcessor._tableYearMonth(element, {
+                cols: ["c"]
+            });
         },
 
-        GDP: function(element) {
+        GDP: function(element, options) {
             var index = element[1].indexOf("年");
             if (index > 0) {
                 return {
@@ -57,54 +77,69 @@ var rowDataProcessor = {
             return null;
         },
 
-        PMI: function(element) {
-            return {
-                "_id": myUtil.getLastDateOfMonth(element[1], element[2]),
-                "c": myUtil.toNumber(element[3]),
-                "hsbc": myUtil.toNumber(element[4])
-            };
+        PMI: function(element, options) {
+            return rowDataProcessor._tableYearMonth(element, {
+                cols: ["c", "hsbc"]
+            });
+        },
+
+        KQI3: function(element) {
+            return rowDataProcessor._tableYearMonth(element, {
+                "cols": ["rail", "loan", "power"]
+            });
+        },
+
+        BDI: function(element) {
+            return rowDataProcessor._chartYearMonthDay(element);
+        },
+
+        KQI: function(element) {
+            return rowDataProcessor._chartYearMonth(element);
         },
 
         PE: function(element) {
-            if (element[1]) {
-                return [Number(element[1]), myUtil.getLastDateOfMonth(element[2], element[3])];
-            } else {
-                return [Number(element[4]), element[5]];
-            }
+            return rowDataProcessor._chartYearMonth(element);
         },
 
         USDX: function(element) {
-            return rowDataProcessor.BDI(element);
+            return rowDataProcessor._chartYearMonthDay(element);
         }
-
     },
     nextProcessor = {
-        BDI: function(elements) {
+        _chartProcessor: function(elements, options) {
             var start = 0,
                 arrType = 0,
                 x = [],
-                y1 = [];
+                yn = [],
+                cols = options.cols;
             elements.forEach(function(element, index) {
-                // xid decreased
-                if (element[0] >= start && index !== 0) {
-                    arrType++;
+                if (options.xid == -1) { // xid decreased
+                    if (element[0] >= start && index !== 0) arrType++;
+                } else if (options.xid == 1) { // xid increased
+                    if (element[0] <= start && index !== 0) arrType++;
                 }
+
                 start = element[0];
 
                 if (arrType === 0) {
                     x["_" + element[0]] = element[1];
-                } else if (arrType === 1) {
-                    y1["_" + element[0]] = element[1];
+                } else {
+                    if (yn[arrType - 1] == undefined) yn[arrType - 1] = [];
+                    yn[arrType - 1]["_" + element[0]] = element[1];
                 }
             });
 
             elements.clear();
             Object.keys(x).forEach(function(p, idx, array) {
-                if (y1[p] != undefined) {
-                    elements.push({
-                        "_id": x[p],
-                        "c": myUtil.toNumber(y1[p])
-                    });
+                if (x[p] != undefined) {
+                    var tmp = {
+                        "_id": x[p]
+                    };
+                    for (var i = 0; i < cols.length; i++) {
+                        if (yn[i][p] !== undefined)
+                            tmp[cols[i]] = myUtil.toNumber(yn[i][p]);
+                    }
+                    elements.push(tmp);
                 }
             });
 
@@ -116,56 +151,21 @@ var rowDataProcessor = {
             });
         },
 
-        PE: function(elements) {
-            var start = 0,
-                arrType = 0,
-                x = [],
-                y1 = [],
-                y2 = [],
-                y3 = [];
-            elements.forEach(function(element, index) {
-                // xid increased
-                if (element[0] <= start && index !== 0) {
-                    arrType++;
-                }
-                start = element[0];
-
-
-                if (arrType === 0) {
-                    x["_" + element[0]] = element[1];
-                } else if (arrType === 1) {
-                    y1["_" + element[0]] = element[1];
-                } else if (arrType === 2) {
-                    y2["_" + element[0]] = element[1];
-                } else if (arrType === 3) {
-                    y3["_" + element[0]] = element[1];
-                }
-            });
-
-            elements.clear();
-            Object.keys(x).forEach(function(p, idx, array) {
-
-                if (!(y1[p] == undefined && y2[p] == undefined && y3[p] == undefined)) {
-                    elements.push({
-                        "_id": x[p],
-                        "sh": myUtil.toNumber(y1[p]),
-                        "sz": myUtil.toNumber(y2[p]),
-                        "hk": myUtil.toNumber(y3[p])
-                    });
-                }
-            });
-
-            // order by _id asc
-            elements.sort(function(a, b) {
-                if (a._id > b._id) return -1;
-                else if (a._id < b._id) return 1;
-                return 0;
-            });
+        BDI: function(elements, options) {
+            nextProcessor._chartProcessor(elements, options);
         },
 
-        USDX: function(elements) {
+        PE: function(elements, options) {
+            nextProcessor._chartProcessor(elements, options);
+        },
 
-            nextProcessor.BDI(elements);
+        KQI: function(elements, options) {
+            nextProcessor._chartProcessor(elements, options);
+        },
+
+        USDX: function(elements, options) {
+
+            nextProcessor._chartProcessor(elements, options);
 
             // additional, print out the data for last 30 days
             var tmpArr = elements.slice(-30);
@@ -178,39 +178,27 @@ var rowDataProcessor = {
 function main(key) {
     console.log('%s is processing...', key);
     var settings = EtlSettings[key];
+    if (!settings) {
+        console.log("settings of %s cannot find", key);
+        return;
+    }
 
-    _get(settings.path).then(function(content) {
+    _get(settings.path, settings.file).then(function(content) {
             // _save(key, content);
 
-            if (settings.chartnth && settings.chartnth > 0) {
-                var nth = settings.chartnth;
-                _parse(/<chart><series>(.+)<\/graphs><\/chart>/g, content, function(elements) {
-                    if (--nth == 0) {
-                        content = elements[1];
-                    }
+            var regex = new RegExp(settings.regex, 'gi');
+
+            if (settings.chart) {
+                settings.chart.forEach(function(chart) {
+                    var nth = chart.nth;
+                    _parse(/<chart><series>(.+)<\/graphs><\/chart>/g, content, function(elements) {
+                        if (--nth == 0) {
+                            _x(key, regex, elements[1], chart);
+                        }
+                    });
                 });
-            }
-
-            var docs = _parse(new RegExp(settings.regex, 'gi'), content, rowDataProcessor[key]);
-            if (docs[0]) {
-
-                if (settings.next) {
-                    nextProcessor[key](docs);
-                }
-
-                // console.dir(docs);
-
-                if (settings.first) {
-                    myMongo.insert(settings.collection, docs, function(err, docs) {
-                        _logResult(key, err, result);
-                    });
-                } else {
-                    myMongo.upsertBatch(settings.collection, docs, function(err, result) {
-                        _logResult(key, err, result);
-                    });
-                }
             } else {
-                console.log(key, 'empty');
+                _x(key, regex, content);
             }
         },
         function(error) {
@@ -219,24 +207,64 @@ function main(key) {
         console.error(error);
     });
 
-    function _get(url) {
+
+    function _x(key, regex, content, options) {
+        var docs = _parse(regex, content, rowDataProcessor[key]);
+        if (docs[0]) {
+
+            if (settings.next) {
+                nextProcessor[key](docs, options);
+            }
+
+            // console.dir(docs);
+
+            if (settings.first) {
+                myMongo.insert(settings.collection, docs, function(err, docs) {
+                    _logResult(key, err, result);
+                });
+            } else {
+                myMongo.upsertBatch(settings.collection, docs, function(err, result) {
+                    _logResult(key, err, result);
+                });
+            }
+        } else {
+            console.log(key, 'empty');
+        }
+    }
+
+    function _get(url, fileSystem) {
+        // enable load content from url or file system
+
         return new Promise(function(resolve, reject) {
-            myUtil.get({
-                host: 'value500.com',
-                path: url,
-                "Upgrade-Insecure-Requests": 1
-            }, function(data, statusCode) {
+            if (fileSystem) {
+                fs.readFile(url, function(err, data) {
+                    if (err) {
+                        reject({
+                            url: url,
+                            error: err
+                        });
+                    }
 
-                if (statusCode !== 200) {
-                    console.error('error occurred: ', statusCode);
-                    reject({
-                        url: url,
-                        error: statusCode
-                    });
-                }
+                    resolve(data);
+                });
+            } else {
+                myUtil.get({
+                    host: 'value500.com',
+                    path: url,
+                    "Upgrade-Insecure-Requests": 1
+                }, function(data, statusCode) {
 
-                resolve(data);
-            });
+                    if (statusCode !== 200) {
+                        console.error('error occurred: ', statusCode);
+                        reject({
+                            url: url,
+                            error: statusCode
+                        });
+                    }
+
+                    resolve(data);
+                });
+            }
         });
     }
 
@@ -272,7 +300,10 @@ function main(key) {
 
 }
 
+// main('KQI3');
+// main('KQI');
 // main('USDX');
+// main('USDX_m');
 // main('PE');
 // main('PPI');
 // main('CPI');
