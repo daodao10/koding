@@ -23,22 +23,26 @@ var rowDataProcessor = {
         },
 
         BDI: function(element) {
+            if (element[1]) {
+                return [Number(element[1]), new Date(Number(element[2]), Number(element[3]) - 1, Number(element[4])).getTime()];
+            } else {
+                return [Number(element[5]), element[6]];
+            }
+        },
+
+        CPI: function(element) {
             return {
                 "_id": myUtil.getLastDateOfMonth(element[1], element[2]),
                 "c": myUtil.toNumber(element[3])
             };
         },
 
-        CPI: function(element) {
-            return rowDataProcessor.BDI(element);
-        },
-
         PPI: function(element) {
-            return rowDataProcessor.BDI(element);
+            return rowDataProcessor.CPI(element);
         },
 
         USDX_m: function(element) {
-            return rowDataProcessor.BDI(element);
+            return rowDataProcessor.CPI(element);
         },
 
         GDP: function(element) {
@@ -70,28 +74,62 @@ var rowDataProcessor = {
         },
 
         USDX: function(element) {
-            if (element[1]) {
-                return [Number(element[1]), new Date(Number(element[2]), Number(element[3]) - 1, Number(element[4])).getTime()];
-            } else {
-                return [Number(element[5]), element[6]];
-            }
+            return rowDataProcessor.BDI(element);
         }
 
     },
     nextProcessor = {
+        BDI: function(elements) {
+            var start = 0,
+                arrType = 0,
+                x = [],
+                y1 = [];
+            elements.forEach(function(element, index) {
+                // xid decreased
+                if (element[0] >= start && index !== 0) {
+                    arrType++;
+                }
+                start = element[0];
+
+                if (arrType === 0) {
+                    x["_" + element[0]] = element[1];
+                } else if (arrType === 1) {
+                    y1["_" + element[0]] = element[1];
+                }
+            });
+
+            elements.clear();
+            Object.keys(x).forEach(function(p, idx, array) {
+                if (y1[p] != undefined) {
+                    elements.push({
+                        "_id": x[p],
+                        "c": myUtil.toNumber(y1[p])
+                    });
+                }
+            });
+
+            // order by _id asc
+            elements.sort(function(a, b) {
+                if (a._id < b._id) return -1;
+                else if (a._id > b._id) return 1;
+                return 0;
+            });
+        },
+
         PE: function(elements) {
-            var start,
+            var start = 0,
                 arrType = 0,
                 x = [],
                 y1 = [],
                 y2 = [],
                 y3 = [];
             elements.forEach(function(element, index) {
-                if (index === 0) {
-                    start = element[0];
-                } else if (element[0] == start) {
+                // xid increased
+                if (element[0] <= start && index !== 0) {
                     arrType++;
                 }
+                start = element[0];
+
 
                 if (arrType === 0) {
                     x["_" + element[0]] = element[1];
@@ -117,51 +155,20 @@ var rowDataProcessor = {
                 }
             });
 
+            // order by _id asc
             elements.sort(function(a, b) {
-                if (a._id > b._id) return 1;
-                else if (a._id < b._id) return -1;
+                if (a._id > b._id) return -1;
+                else if (a._id < b._id) return 1;
                 return 0;
             });
         },
 
         USDX: function(elements) {
-            var start,
-                arrType = 0,
-                x = [],
-                y1 = [];
-            elements.forEach(function(element, index) {
-                if (index === 0) {
-                    start = element[0];
-                } else if (element[0] == start) {
-                    arrType++;
-                }
 
-                if (arrType === 0) {
-                    x["_" + element[0]] = element[1];
-                } else if (arrType === 1) {
-                    y1["_" + element[0]] = element[1];
-                }
-            });
+            nextProcessor.BDI(elements);
 
-            elements.clear();
-            Object.keys(x).forEach(function(p, idx, array) {
-                if (y1[p] != undefined) {
-                    elements.push({
-                        "_id": x[p],
-                        "c": myUtil.toNumber(y1[p])
-                    });
-                }
-            });
-
-            // order by _id desc
-            elements.sort(function(a, b) {
-                if (a._id < b._id) return 1;
-                else if (a._id > b._id) return -1;
-                return 0;
-            });
-
-            // print out the data for last 30 days
-            var tmpArr = elements.slice(0, elements.length > 30 ? 30 : elements.length);
+            // additional, print out the data for last 30 days
+            var tmpArr = elements.slice(-30);
             tmpArr.forEach(function(element) {
                 console.log("{0},,,,,,{1}".format(new Date(element._id).format('yyyy-MM-dd'), element.c));
             });
@@ -173,32 +180,42 @@ function main(key) {
     var settings = EtlSettings[key];
 
     _get(settings.path).then(function(content) {
-        // _save(key, content);
+            // _save(key, content);
 
-        var docs = _parse(new RegExp(settings.regex, 'gi'), content, rowDataProcessor[key]);
-        if (docs[0]) {
-
-            if (settings.next) {
-                nextProcessor[key](docs);
+            if (settings.chartnth && settings.chartnth > 0) {
+                var nth = settings.chartnth;
+                _parse(/<chart><series>(.+)<\/graphs><\/chart>/g, content, function(elements) {
+                    if (--nth == 0) {
+                        content = elements[1];
+                    }
+                });
             }
 
-            // console.dir(docs);
+            var docs = _parse(new RegExp(settings.regex, 'gi'), content, rowDataProcessor[key]);
+            if (docs[0]) {
 
-            if (settings.first) {
-                myMongo.insert(settings.collection, docs, function(err, docs) {
-                    _logResult(key, err, result);
-                });
+                if (settings.next) {
+                    nextProcessor[key](docs);
+                }
+
+                // console.dir(docs);
+
+                if (settings.first) {
+                    myMongo.insert(settings.collection, docs, function(err, docs) {
+                        _logResult(key, err, result);
+                    });
+                } else {
+                    myMongo.upsertBatch(settings.collection, docs, function(err, result) {
+                        _logResult(key, err, result);
+                    });
+                }
             } else {
-                myMongo.upsertBatch(settings.collection, docs, function(err, result) {
-                    _logResult(key, err, result);
-                });
+                console.log(key, 'empty');
             }
-        } else {
-            console.log('empty');
-        }
-    }, function(error) {
-        console.error('get url[%s] failed, error: %s', error.url, error.error);
-    }).catch(function(error) {
+        },
+        function(error) {
+            console.error('get url[%s] failed, error: %s', error.url, error.error);
+        }).catch(function(error) {
         console.error(error);
     });
 
@@ -206,7 +223,8 @@ function main(key) {
         return new Promise(function(resolve, reject) {
             myUtil.get({
                 host: 'value500.com',
-                path: url
+                path: url,
+                "Upgrade-Insecure-Requests": 1
             }, function(data, statusCode) {
 
                 if (statusCode !== 200) {

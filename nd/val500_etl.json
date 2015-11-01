@@ -1,42 +1,44 @@
 {
     "GDP": {
-        "comments": "3 columns",
+        "comments": "table: 3 columns",
         "path": "/GDP.html",
         "regex": "<td style=\"padding-left:10px;\">(.+)<\/td>\\s*<td style=\"padding-left:10px;\">(.+)<\/td>\\s*<td style=\"padding-left:10px;\">(.+)<\/td>",
         "collection": "GDP_cn",
         "first": false
     },
     "BDI": {
-        "comments": "2 columns",
+        "comments": "chart: 2-1 (2 chart with 1 serie)",
         "path": "/BDI.asp",
-        "regex": "<td.*>(\\d{4})年(\\d+)月<\/td>\\s*<td.*>([-0-9.]+)<\/td>",
+        "chartnth": 1,
+        "regex": "<value xid='(\\d+)'>(\\d{4})年(\\d+)月(\\d+)日<\/value>|<value xid='(\\d+)'>([-0-9.]+)<\/value>",
         "collection": "BDI",
         "first": false,
+        "next": true,
         "source": "http://www.cnss.com.cn/exponent/"
     },
     "PMI": {
-        "comments": "3 columns with something wrong",
+        "comments": "table: 3 columns with something wrong",
         "path": "/PMI.asp",
         "regex": "<td>(\\d{4})年(\\d+)月<\/td>\\s*<td>([-0-9.]+)<\/td>\\s*<td>([-0-9.]*)(|&nbsp;<\/td>|\\s*<\/tr>)",
         "collection": "PMI_cn",
         "first": false
     },
     "CPI": {
-        "comments": "2 columns with something wrong",
+        "comments": "table: 2 columns with something wrong",
         "path": "/CPI.asp",
         "regex": "<td>(\\d{4})年(\\d+)月<\/td>\\s*<td>([-0-9.]+)<\/td>\\s*<td>([-0-9.]*)(|&nbsp;<\/td>|\\s*<\/tr>)",
         "collection": "CPI_cn",
         "first": false
     },
     "PPI": {
-        "comments": "2 columns",
+        "comments": "table: 2 columns",
         "path": "/PPI.asp",
         "regex": "<td.*>(\\d{4})年(\\d+)月<\/td>\\s*<td.*>([-0-9.]+)<\/td>",
         "collection": "PPI_cn",
         "first": false
     },
     "PE": {
-        "comments": "get data from chart: 4 series",
+        "comments": "chart: 1-3",
         "path": "/PE.asp",
         "regex": "<value xid='(\\d+)'>(\\d{4})年(\\d+)月<\/value>|<value xid='(\\d+)'>([-0-9.]+)<\/value>",
         "collection": "PE_cn",
@@ -44,7 +46,7 @@
         "next": true
     },
     "USDX": {
-        "comments": "get data from chart: 2 series",
+        "comments": "chart: 1-2",
         "path": "/USDX.asp",
         "regex": "<value xid='(\\d+)'>(\\d{4})年(\\d+)月(\\d+)日<\/value>|<value xid='(\\d+)'>([-0-9.]+)<\/value>",
         "collection": "USDX",
@@ -52,7 +54,7 @@
         "next": true
     },
     "USDX_m": {
-        "comments": "2 columns",
+        "comments": "table: 2 columns",
         "path": "/USDX.asp",
         "regex": "<td.*>(\\d{4})年(\\d+)月<\/td>\\s*<td.*>([-0-9.]+)<\/td>",
         "collection": "USDX_m",
