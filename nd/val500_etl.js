@@ -9,7 +9,7 @@ var fs = require('fs'),
     EtlSettings = require(EtlSettingsFile);
 
 var myMongo = new MyMongo("{0}{1}".format(config.DbSettings.QuotesDbUri, 'quotes'));
-var rowDataProcessor = {
+var tableProcessor = {
         _quarter2Date: function(year, str) {
             if (str == "一季度") {
                 return myUtil.getLastDateOfMonth(year, 3);
@@ -21,21 +21,7 @@ var rowDataProcessor = {
                 return myUtil.getLastDateOfMonth(year, 12);
             }
         },
-        _chartYearMonth: function(element, options) {
-            if (element[1]) {
-                return [Number(element[1]), myUtil.getLastDateOfMonth(element[2], element[3])];
-            } else {
-                return [Number(element[4]), element[5]];
-            }
-        },
-        _chartYearMonthDay: function(element, options) {
-            if (element[1]) {
-                return [Number(element[1]), new Date(Number(element[2]), Number(element[3]) - 1, Number(element[4])).getTime()];
-            } else {
-                return [Number(element[5]), element[6]];
-            }
-        },
-        _tableYearMonth: function(element, options) {
+        _YearMonth: function(element, options) {
             var cols = options.cols,
                 tmp = {
                     "_id": myUtil.getLastDateOfMonth(element[1], element[2])
@@ -48,19 +34,19 @@ var rowDataProcessor = {
         },
 
         CPI: function(element) {
-            return rowDataProcessor._tableYearMonth(element, {
+            return tableProcessor._YearMonth(element, {
                 cols: ["c"]
             });
         },
 
         PPI: function(element) {
-            return rowDataProcessor._tableYearMonth(element, {
+            return tableProcessor._YearMonth(element, {
                 cols: ["c"]
             });
         },
 
         USDX_m: function(element) {
-            return rowDataProcessor._tableYearMonth(element, {
+            return tableProcessor._YearMonth(element, {
                 cols: ["c"]
             });
         },
@@ -69,7 +55,7 @@ var rowDataProcessor = {
             var index = element[1].indexOf("年");
             if (index > 0) {
                 return {
-                    "_id": rowDataProcessor._quarter2Date(element[1].substring(0, index), element[1].substr(index + 1)),
+                    "_id": tableProcessor._quarter2Date(element[1].substring(0, index), element[1].substr(index + 1)),
                     "c": myUtil.toNumber(element[2]),
                     "r": myUtil.toNumber(element[3])
                 };
@@ -78,100 +64,95 @@ var rowDataProcessor = {
         },
 
         PMI: function(element, options) {
-            return rowDataProcessor._tableYearMonth(element, {
+            return tableProcessor._YearMonth(element, {
                 cols: ["c", "hsbc"]
             });
         },
 
         KQI3: function(element) {
-            return rowDataProcessor._tableYearMonth(element, {
+            return tableProcessor._YearMonth(element, {
                 "cols": ["rail", "loan", "power"]
             });
-        },
-
-        BDI: function(element) {
-            return rowDataProcessor._chartYearMonthDay(element);
-        },
-
-        KQI: function(element) {
-            return rowDataProcessor._chartYearMonth(element);
-        },
-
-        PE: function(element) {
-            return rowDataProcessor._chartYearMonth(element);
-        },
-
-        USDX: function(element) {
-            return rowDataProcessor._chartYearMonthDay(element);
         }
     },
-    nextProcessor = {
-        _chartProcessor: function(elements, options) {
-            var start = 0,
-                arrType = 0,
-                x = [],
+    chartProcessor = {
+        _core: function(xy, options) {
+            var result = [],
                 yn = [],
                 cols = options.cols;
-            elements.forEach(function(element, index) {
-                if (options.xid == -1) { // xid decreased
-                    if (element[0] >= start && index !== 0) arrType++;
-                } else if (options.xid == 1) { // xid increased
-                    if (element[0] <= start && index !== 0) arrType++;
-                }
 
-                start = element[0];
-
-                if (arrType === 0) {
-                    x["_" + element[0]] = element[1];
-                } else {
-                    if (yn[arrType - 1] == undefined) yn[arrType - 1] = [];
-                    yn[arrType - 1]["_" + element[0]] = element[1];
-                }
+            xy.yn.forEach(function(yi, index) {
+                yi.forEach(function(y) {
+                    if (yn[index] == undefined) yn[index] = {};
+                    yn[index][y[0]] = y[1];
+                });
             });
 
-            elements.clear();
-            Object.keys(x).forEach(function(p, idx, array) {
-                if (x[p] != undefined) {
+            xy.x.forEach(function(x) {
+                if (x != undefined) {
                     var tmp = {
-                        "_id": x[p]
+                        "_id": x[1]
                     };
                     for (var i = 0; i < cols.length; i++) {
-                        if (yn[i][p] !== undefined)
-                            tmp[cols[i]] = myUtil.toNumber(yn[i][p]);
+                        if (yn[i][x[0]] !== undefined)
+                            tmp[cols[i]] = myUtil.toNumber(yn[i][x[0]]);
                     }
-                    elements.push(tmp);
+                    result.push(tmp);
                 }
             });
 
             // order by _id asc
-            elements.sort(function(a, b) {
+            result.sort(function(a, b) {
                 if (a._id < b._id) return -1;
                 else if (a._id > b._id) return 1;
                 return 0;
             });
+
+            return result;
         },
 
         BDI: function(elements, options) {
-            nextProcessor._chartProcessor(elements, options);
+            return chartProcessor._core(elements, options);
         },
 
         PE: function(elements, options) {
-            nextProcessor._chartProcessor(elements, options);
+            return chartProcessor._core(elements, options);
         },
 
         KQI: function(elements, options) {
-            nextProcessor._chartProcessor(elements, options);
+            return chartProcessor._core(elements, options);
         },
 
         USDX: function(elements, options) {
-
-            nextProcessor._chartProcessor(elements, options);
+            var result = chartProcessor._core(elements, options);
 
             // additional, print out the data for last 30 days
-            var tmpArr = elements.slice(-30);
+            var tmpArr = result.slice(-30);
             tmpArr.forEach(function(element) {
                 console.log("{0},,,,,,{1}".format(new Date(element._id).format('yyyy-MM-dd'), element.c));
             });
+
+            return result;
+        },
+
+        BOND: function(elements, options) {
+            return chartProcessor._core(elements, options);
+        }
+    },
+    serieProcessor = {
+        yearMonthPattern: "<value xid='(\\d+)'>(\\d{4})年(\\d+)月<\/value>",
+        yearMonthDayPattern: "<value xid='(\\d+)'>(\\d{4})年(\\d+)月(\\d+)日<\/value>",
+        yearMonth: function(element) {
+            return ["_" + element[1], myUtil.getLastDateOfMonth(element[2], element[3])];
+        },
+        yearMonthDay: function(element) {
+            return ["_" + element[1], new Date(Number(element[2]), Number(element[3]) - 1, Number(element[4])).getTime()];
+        }
+    },
+    graphProcessor = {
+        numberPattern: "<value xid='(\\d+)'>([-0-9.]+)<\/value>",
+        parseNumber: function(element) {
+            return ["_" + element[1], element[2]];
         }
     };
 
@@ -186,19 +167,34 @@ function main(key) {
     _get(settings.path, settings.file).then(function(content) {
             // _save(key, content);
 
-            var regex = new RegExp(settings.regex, 'gi');
-
             if (settings.chart) {
-                settings.chart.forEach(function(chart) {
-                    var nth = chart.nth;
-                    _parse(/<chart><series>(.+)<\/graphs><\/chart>/g, content, function(elements) {
-                        if (--nth == 0) {
-                            _x(key, regex, elements[1], chart);
-                        }
+                var chartElements = content.toString().match(new RegExp(_chartPaser.chartPattern, "gi"));
+
+                if (chartElements) {
+                    settings.chart.forEach(function(chartOptions) {
+                        var chartContent = chartElements[chartOptions.nth];
+
+                        var x = _chartPaser.parseYearMonth(chartContent);
+                        var y = _chartPaser.parseNumber(chartContent);
+
+                        var xy = {
+                            "x": x ? x[0] : null,
+                            "yn": y
+                        };
+
+                        // console.dir(xy.x);
+                        // console.log("--------------");
+                        // console.dir(xy.yn);
+
+                        _store(key, chartProcessor[key](xy, chartOptions));
+
                     });
-                });
+                } else {
+                    console.error("failed to parse chart");
+                }
             } else {
-                _x(key, regex, content);
+                var docs = _parse(new RegExp(settings.regex, 'gi'), content, tableProcessor[key]);
+                _store(key, docs);
             }
         },
         function(error) {
@@ -208,14 +204,8 @@ function main(key) {
     });
 
 
-    function _x(key, regex, content, options) {
-        var docs = _parse(regex, content, rowDataProcessor[key]);
+    function _store(key, docs) {
         if (docs[0]) {
-
-            if (settings.next) {
-                nextProcessor[key](docs, options);
-            }
-
             // console.dir(docs);
 
             if (settings.first) {
@@ -228,7 +218,7 @@ function main(key) {
                 });
             }
         } else {
-            console.log(key, 'empty');
+            console.log("document", key, 'is empty');
         }
     }
 
@@ -280,6 +270,20 @@ function main(key) {
         return result;
     }
 
+    var _chartPaser = {
+        chartPattern: "<chart>(.+)<\/chart>",
+        parseYearMonth: function(chartContent) {
+            return _parse(/<series>(.+?)<\/series>/g, chartContent, function(serieElement) {
+                return _parse(new RegExp(serieProcessor.yearMonthPattern, "g"), serieElement[1], serieProcessor.yearMonth);
+            });
+        },
+        parseNumber: function(chartContent) {
+            return _parse(/<graph\s.+?>(.+?)<\/graph>/g, chartContent, function(graphElement) {
+                return _parse(new RegExp(graphProcessor.numberPattern, "g"), graphElement[1], graphProcessor.parseNumber);
+            });
+        }
+    }
+
     function _save(name, content) {
         fs.writeFile(name + ".txt", content, function(err) {
             if (err) {
@@ -300,6 +304,7 @@ function main(key) {
 
 }
 
+// main('BOND');
 // main('KQI3');
 // main('KQI');
 // main('USDX');
