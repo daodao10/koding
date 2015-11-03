@@ -174,7 +174,7 @@ function main(key) {
                     settings.chart.forEach(function(chartOptions) {
                         var chartContent = chartElements[chartOptions.nth];
 
-                        var x = _chartPaser.parseYearMonth(chartContent);
+                        var x = _chartPaser["parse" + chartOptions.parser](chartContent);
                         var y = _chartPaser.parseNumber(chartContent);
 
                         var xy = {
@@ -272,10 +272,16 @@ function main(key) {
 
     var _chartPaser = {
         chartPattern: "<chart>(.+)<\/chart>",
-        parseYearMonth: function(chartContent) {
+        _dateParse: function(chartContent, pattern, processor) {
             return _parse(/<series>(.+?)<\/series>/g, chartContent, function(serieElement) {
-                return _parse(new RegExp(serieProcessor.yearMonthPattern, "g"), serieElement[1], serieProcessor.yearMonth);
+                return _parse(new RegExp(pattern, "g"), serieElement[1], processor);
             });
+        },
+        parseYearMonth: function(chartContent) {
+            return _chartPaser._dateParse(chartContent, serieProcessor.yearMonthPattern, serieProcessor.yearMonth);
+        },
+        parseYearMonthDay: function(chartContent) {
+            return _chartPaser._dateParse(chartContent, serieProcessor.yearMonthDayPattern, serieProcessor.yearMonthDay);
         },
         parseNumber: function(chartContent) {
             return _parse(/<graph\s.+?>(.+?)<\/graph>/g, chartContent, function(graphElement) {

@@ -3,28 +3,28 @@
         "comments": "table: 3 columns",
         "path": "/GDP.html",
         "regex": "<td style=\"padding-left:10px;\">(.+)<\/td>\\s*<td style=\"padding-left:10px;\">(.+)<\/td>\\s*<td style=\"padding-left:10px;\">(.+)<\/td>",
-        "collection": "GDP_cn",
+        "collection": "GDP",
         "first": false
     },
     "PMI": {
         "comments": "table: 3 columns with something wrong",
         "path": "/PMI.asp",
         "regex": "<td>(\\d{4})年(\\d+)月<\/td>\\s*<td>([-0-9.]+)<\/td>\\s*<td>([-0-9.]*)(|&nbsp;<\/td>|\\s*<\/tr>)",
-        "collection": "PMI_cn",
+        "collection": "PMI",
         "first": false
     },
     "CPI": {
         "comments": "table: 2 columns with something wrong",
         "path": "/CPI.asp",
         "regex": "<td>(\\d{4})年(\\d+)月<\/td>\\s*<td>([-0-9.]+)<\/td>\\s*<td>([-0-9.]*)(|&nbsp;<\/td>|\\s*<\/tr>)",
-        "collection": "CPI_cn",
+        "collection": "CPI",
         "first": false
     },
     "PPI": {
         "comments": "table: 2 columns",
         "path": "/PPI.asp",
         "regex": "<td.*>(\\d{4})年(\\d+)月<\/td>\\s*<td.*>([-0-9.]+)<\/td>",
-        "collection": "PPI_cn",
+        "collection": "PPI",
         "first": false
     },
     "USDX_m": {
@@ -49,6 +49,7 @@
         "path": "/BDI.asp",
         "chart": [{
             "nth": 0,
+            "parser": "YearMonthDay",
             "cols": ["c"]
         }],
         "collection": "BDI",
@@ -61,9 +62,11 @@
         "path": "industry.html",
         "chart": [{
             "nth": 0,
+            "parser": "YearMonth",
             "cols": ["power"]
         }, {
             "nth": 1,
+            "parser": "YearMonth",
             "cols": ["rail"]
         }],
         "collection": "KQI",
@@ -74,9 +77,10 @@
         "path": "/PE.asp",
         "chart": [{
             "nth": 0,
+            "parser": "YearMonth",
             "cols": ["sh", "sz", "hk"]
         }],
-        "collection": "PE_cn",
+        "collection": "PE",
         "first": false
     },
     "BOND": {
@@ -84,6 +88,7 @@
         "path": "/bond.asp",
         "chart": [{
             "nth": 0,
+            "parser": "YearMonth",
             "cols": ["yr5", "yr10"]
         }],
         "collection": "BOND",
@@ -94,6 +99,7 @@
         "path": "/USDX.asp",
         "chart": [{
             "nth": 0,
+            "parser": "YearMonthDay",
             "cols": ["c"]
         }],
         "collection": "USDX",
