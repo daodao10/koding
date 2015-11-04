@@ -6,6 +6,20 @@
         "collection": "GDP",
         "first": false
     },
+    "MV": {
+        "comments": "table: 3 columns",
+        "path": "/BuffettIndex.asp",
+        "regex": "<td style=\"padding-left:10px;\">(\\d{4})年(\\d+)月<\/td>\\s*<td style=\"padding-left:10px;\">(.+)<\/td>\\s*<td style=\"padding-left:10px;\">(.+)<\/td>",
+        "collection": "MV",
+        "first": false
+    },
+    "MV_GDP": {
+        "comments": "table: 3 columns",
+        "path": "/GDP.html",
+        "regex": "<td style=\"padding-left:10px;\">(.+)<\/td>\\s*<td style=\"padding-left:10px;\">(.+)<\/td>\\s*<td style=\"padding-left:10px;\">(.+)<\/td>",
+        "collection": "MV",
+        "first": false
+    },
     "PMI": {
         "comments": "table: 3 columns with something wrong",
         "path": "/PMI.asp",
@@ -82,6 +96,18 @@
         }],
         "collection": "PE",
         "first": false
+    },
+    "PE_HSI": {
+        "comments": "chart: 1-1",
+        "path": "/HSIPE.html",
+        "chart": [{
+            "nth": 0,
+            "parser": "YearMonth",
+            "cols": ["c"]
+        }],
+        "collection": "PE_hk",
+        "first": false,
+        "source": "http://www.analystz.hk/options/hsi-pe-dividend-valuation.php"
     },
     "BOND": {
         "comments": "chart: 1-2",

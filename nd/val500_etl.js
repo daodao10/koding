@@ -38,10 +38,14 @@ var tableProcessor = {
                 cols: ["c"]
             });
         },
-
         PPI: function(element) {
             return tableProcessor._YearMonth(element, {
                 cols: ["c"]
+            });
+        },
+        PMI: function(element) {
+            return tableProcessor._YearMonth(element, {
+                cols: ["c", "hsbc"]
             });
         },
 
@@ -51,7 +55,7 @@ var tableProcessor = {
             });
         },
 
-        GDP: function(element, options) {
+        GDP: function(element) {
             var index = element[1].indexOf("年");
             if (index > 0) {
                 return {
@@ -63,10 +67,21 @@ var tableProcessor = {
             return null;
         },
 
-        PMI: function(element, options) {
+        MV: function(element) {
             return tableProcessor._YearMonth(element, {
-                cols: ["c", "hsbc"]
+                cols: ["tmc", "cmc"]
             });
+        },
+
+        MV_GDP: function(element) {
+            var index = element[1].indexOf("年");
+            if (index > 0) {
+                return {
+                    "_id": tableProcessor._quarter2Date(element[1].substring(0, index), element[1].substr(index + 1)),
+                    "gdp": myUtil.toNumber(element[2])
+                };
+            }
+            return null;
         },
 
         KQI3: function(element) {
@@ -116,6 +131,10 @@ var tableProcessor = {
         },
 
         PE: function(elements, options) {
+            return chartProcessor._core(elements, options);
+        },
+
+        PE_HSI: function(elements, options) {
             return chartProcessor._core(elements, options);
         },
 
@@ -310,6 +329,9 @@ function main(key) {
 
 }
 
+// main('MV');
+// main('MV_GDP');
+// main('PE_HSI');
 // main('BOND');
 // main('KQI3');
 // main('KQI');
