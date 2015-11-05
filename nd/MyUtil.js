@@ -1,7 +1,8 @@
 var http = require('http'),
     https = require('https'),
     fs = require('fs'),
-    zlib = require('zlib');
+    zlib = require('zlib'),
+    iconv = require('iconv-lite');
 
 http.globalAgent.maxSockets = 25;
 
@@ -91,7 +92,7 @@ MyUtil.prototype.get = function(options, callback) {
 
             if (encoding === "gzip") {
                 zlib.gunzip(body, function(err, decoded) {
-                    data = decoded.toString();
+                    data = options.encoding ? iconv.decode(decoded, options.encoding) : decoded.toString();
                     _getCallback(data, res.statusCode, {
                         jsonp: options.jsonp,
                         debug: options.debug

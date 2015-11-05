@@ -3,6 +3,7 @@
     "version": "0.9.0",
     "private": true,
     "dependencies": {
-        "mongodb": "~2"
+        "mongodb": "~2",
+        "iconv-lite": "0.4.x"
     }
 }
