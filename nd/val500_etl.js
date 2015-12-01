@@ -147,7 +147,9 @@ var tableProcessor = {
 
             // additional, print out the data for last 30 days
             var tmpArr = result.slice(-30);
-            tmpArr.forEach(function(element) {
+            tmpArr.sort(function(a, b) {
+                return +(b._id > a._id) || +(b._id === a._id) - 1;
+            }).forEach(function(element) {
                 console.log("{0},,,,,,{1}".format(new Date(element._id).format('yyyy-MM-dd'), element.c));
             });
 
