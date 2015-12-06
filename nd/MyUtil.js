@@ -211,5 +211,11 @@ MyUtil.prototype.getLastDateOfMonth = function(year, month) {
     return new Date(year, month, 0).getTime();
 };
 
+MyUtil.prototype.getLastDateOfMonthFromStr = function(dateStr, yearOptions, monthOptions) { // dateStr: yyyyMMdd
+    var year = dateStr.substr(yearOptions.i, yearOptions.l),
+        month = dateStr.substr(monthOptions.i, monthOptions.l);
+
+    return new Date(Number(year), Number(month), 0);
+};
 
 module.exports = new MyUtil();
