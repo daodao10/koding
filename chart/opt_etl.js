@@ -37,7 +37,7 @@ var settings = {
         xCell: 1,
         yCell: 6
     },
-    "D": {
+    "D": { // dao
         IsCompactDate: false,
         xCell: 0,
         yCell: 1
@@ -87,25 +87,25 @@ function fx(newRows, index, total, counter) {
             var cells = item[0].stripLineBreaks().split(','),
                 srcFile,
                 destFile;
-            if (settings.market === "sg") {
+            if (settings.market === "sg") { // special case
                 srcFile = "../{0}/dest/{1}.csv".format(settings.market, cells[0]);
-            } else if (settings["source"] === "WS") {
+            } else if (settings["source"] === "WS") { // special case
                 srcFile = "../../wsWDZ/{0}/{1}/{2}.txt".format(cells[4] == 1 ? "etl-2" : "etl", cells[0].startsWith('SH') ? "SH" : "SZ", cells[0]);
                 if (!fs.existsSync(srcFile)) {
                     srcFile = "../../wsWDZ/{0}/{1}/{2}.txt".format("etl-2", cells[0].startsWith('SH') ? "SH" : "SZ", cells[0]);
                 }
-            } else { // common
-                if (settings.market === "hk" && cells[6] == 1) {
-                    reject(new Error('ignore'));
-                    return;
-                }
+            } else { // normal
+                // if (settings.market === "hk" && cells[6] == 1) { // specially process for hk ignored
+                //     reject(new Error('ignore: ' + cells[1]));
+                //     return;
+                // }
                 srcFile = "./d/{0}_{1}_{2}.csv".format(settings.market, cells[1], period);
             }
 
             destFile = "{3}{0}/{1}_{2}.js".format(settings.market, cells[1], period, settings.DestFolder);
 
-            // console.log(srcFile, destFile);
-            generate(srcFile, destFile, resolve, reject);
+            // console.log('params:', settings.source, period, srcFile, destFile);
+            generate(srcFile, destFile, getDateProcessor(settings.source, period), resolve, reject);
 
         }).catch(function(e) {
             // console.error(e);
@@ -124,7 +124,7 @@ function fx(newRows, index, total, counter) {
     });
 }
 
-function generate(srcFile, output, resolve, reject) {
+function generate(srcFile, output, dateProcessor, resolve, reject) {
     fs.readFile(srcFile, function(err, data) {
         if (err) {
             reject(err);
@@ -155,7 +155,9 @@ function generate(srcFile, output, resolve, reject) {
                     }
                 }
 
-                var data = array.map(mapFunc).filter(function(element) {
+                var data = array.map(function(line) {
+                    return mapFunc(line, dateProcessor);
+                }).filter(function(element) {
                     return element != null;
                 });
 
@@ -172,10 +174,32 @@ function generate(srcFile, output, resolve, reject) {
     });
 }
 
-function mapFunc(line) {
+function getDateProcessor(source, period) {
+    // special case: adjust end date of monthly data from yahoo
+    if (source === "Y" && period === "m") {
+        return function(dateStr) {
+            // console.log(dateStr);
+            return myUtil.getLastDateOfMonthFromStr(dateStr, {
+                i: 0,
+                l: 4
+            }, {
+                i: 5,
+                l: 2
+            }).format("yyyyMMdd");
+        };
+    }
+    return null;
+}
+
+function mapFunc(line, dateFunc) {
     var part = line.stripLineBreaks().split(",");
     var yCell = part[settings[settings.source].yCell];
     var xCell = part[settings[settings.source].xCell];
+
+    if (dateFunc) {
+        xCell = dateFunc(xCell);
+    }
+
     if (yCell == '0' || yCell == '') return null;
     return settings.ItemFormat.format(settings[settings.source].IsCompactDate ? xCell : xCell.replace(/-/g, ''), yCell);
     // value = Math.log(yCell) / Math.LN2;
