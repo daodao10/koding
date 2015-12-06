@@ -53,8 +53,7 @@
         "path": "/industry.html",
         "regex": "<td.*>(\\d{4})年(\\d+)月<\/td>\\s*<td.*>([-0-9.]+)<\/td>\\s*<td.*>([-0-9.]+)<\/td>\\s*<td.*>([-0-9.]*|&nbsp;)<\/td>",
         "collection": "KQI",
-        "first": false,
-        "source": "http://www.cnss.com.cn/exponent/"
+        "first": false
     },
 
 
@@ -72,8 +71,7 @@
     },
     "KQI": {
         "comments": "chart: 2-1 (2 chart with 1 serie)",
-        "file": true,
-        "path": "industry.html",
+        "path": "/industry.html",
         "chart": [{
             "nth": 0,
             "parser": "YearMonth",
