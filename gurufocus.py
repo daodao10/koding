@@ -63,6 +63,15 @@ class GuruFocus:
         # sort
         merged.sort(key = lambda i: i["date"])
 
+        if refresh:
+            r = merged[0]
+            gdp1 = self.getGdp(r["date"], 1)
+            gdp2 = self.getGdp(r["date"], 2)
+            # print gdp1, gdp2
+
+            r["TMC2GDP1"] = round(r["TMC"] / gdp1 * 100, 2)
+            r["TMC2GDP2"] = round(r["TMC"] / gdp2 * 100, 2)
+
         print merged
         collection = self.__dbContext.collection("MV_us")
         collection.insert(merged)
@@ -75,6 +84,41 @@ class GuruFocus:
             self.saveMarketValue(content)
         else:
             print "empty"
+
+    def getGdp(self, d, shift):
+        if shift == 1:
+            if d >= '20140701' and d < '20141001':
+                return 17.3282; # 2014Q2
+            elif d >= '20141001' and d < '20150101':
+                return 17.5998; # 2014Q3
+            elif d >= '20150101' and d < '20150401':
+                return 17.7037; # 2014Q4
+            elif d >= '20150401'and d < '20150701':
+                return 17.6993; # 2015Q1
+            elif d >= '20150701' and d < '20151001':
+                return 17.9137; # 2015Q2
+            elif d >= '201501001' and d < '20160101':
+                return 18.0647; # 2015Q3
+            else:
+                return None
+        else: # by default shift 2 months
+            if d >= '20140701' and d < '20141001':
+                return 17.016; # 2014Q1
+            elif d >= '20141001' and d < '20150101':
+                return 17.3282; # 2014Q2
+            elif d >= '20150101' and d < '20150401':
+                return 17.5998; # 2014Q3
+            elif d >= '20150401' and d < '20150701':
+                return 17.7037; # 2014Q4
+            elif d >= '20150701' and d < '20151001':
+                return 17.6993; # 2015Q1
+            elif d >= '201501001' and d < '20160101':
+                return 17.9137; # 2015Q2
+            elif d >= '20160101' and d < '20160401':
+                return 18.0647; # 2015Q3
+            else:
+                return None
+
 
     def to_csv(self, rows):
         return 'Date,Value\n' + ''.join(["{0},{1}\n".format(k, rows[k]) 
