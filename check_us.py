@@ -1,11 +1,17 @@
 # -*- coding: utf-8 -*-
 
+import sys
 from mymongo import MyMongo
 import web_tools
 
 if __name__ == "__main__":
     # today = "20150528"
-    today = web_tools.today(utcDiff=-15)
+    args = sys.argv
+    if len(args) == 2:
+        today = args[1]
+    else:
+        today = web_tools.today(utcDiff=-15)
+   
     query = {"date": today}
     dbUri = web_tools.getDbUri(key="QuotesDbUri")
     client = MyMongo(dbName="quotes", dbUri = dbUri)
