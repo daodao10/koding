@@ -87,7 +87,7 @@ def main():
     elif settings["market"] == "sg":
       symbol = "SGX:" + symbol
 
-    q = GoogleQuote(symbol,'1985-01-01', '2015-12-31')
+    q = GoogleQuote(symbol,'1985-01-01', '2016-12-31')
     q.write_csv(get_output(settings, code))
 
     print '-------------------- done %s --------------------' % symbol
