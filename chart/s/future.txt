@@ -16,4 +16,4 @@ usdhkd,USDHKD,美元对港币,CURRENCY
 eurusd,EURUSD,欧元对美元,CURRENCY
 eurchf,EURCHF,欧元对瑞郎,CURRENCY
 chfusd,CHFUSD,瑞郎对美元,CURRENCY
-gbpusd,GDPUSD,英镑对美元,CURRENCY
+gbpusd,GBPUSD,英镑对美元,CURRENCY
