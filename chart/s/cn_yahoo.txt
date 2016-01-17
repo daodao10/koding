@@ -1,0 +1,4 @@
+symbol,code,name,sector,industry,ignore[yahoo : cn : daily]
+600535.ss,600535
+600804.ss,600804
+600655.ss,600655
