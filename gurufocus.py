@@ -99,6 +99,8 @@ class GuruFocus:
                 return 17.9137; # 2015Q2
             elif d >= '20151001' and d < '20160101':
                 return 18.0647; # 2015Q3
+            elif d >='20160101' and d <'20160401':
+                return 18.0647; # 2015Q4 -- need to update around 29 Jan, 2016
             else:
                 return None
         else: # by default use 2 quarters early data
