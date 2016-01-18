@@ -28,6 +28,8 @@ class GuruFocus:
             content = m.group(1)
             arr = eval(content)
             return arr
+        else:
+            raise Exception("error occurs on the page")
 
     def extractChartData(self, content, regex, refresh):
         '''
