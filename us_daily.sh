@@ -18,7 +18,8 @@ node nhnl_us_etl.js $today
 node nhnl_us_sum_etl.js $today
 
 cd ../learning/capture
-sh out.sh us
+echo 'capture from finviz.com ...'
+phantomjs finviz.js $today
 
 cd ../../
 
