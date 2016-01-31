@@ -196,7 +196,10 @@ MyUtil.prototype.toNumber = function(str) {
     if (!str || str === "-") {
         return 0;
     } else {
-        return Number(str.replace(/[,%]/g, ''));
+        if (typeof str == 'string') {
+            return Number(str.replace(/[,%]/g, ''));
+        }
+        return str;
     }
 };
 
