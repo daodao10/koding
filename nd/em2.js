@@ -41,7 +41,24 @@ function EM() {
             }
         }
     };
-    var _genRecord = function(cells) {
+    var _getLastNYears = function(d, n) {
+            var dates = [];
+            var year = myUtil.toNumber(d.substring(0, 4)),
+                month = myUtil.toNumber(d.substring(5, 7));
+
+            if (month == 12) {
+                for (var i = 0; i < n; i++) {
+                    dates.push((year - i).toString() + '-12-31')
+                }
+            } else {
+                for (var i = 1; i <= n; i++) {
+                    dates.push((year - i).toString() + '-12-31')
+                }
+            }
+
+            return dates;
+        },
+        _genRecord = function(cells) {
             return [cells[17], myUtil.toNumber(cells[2]), myUtil.toNumber(cells[10]), myUtil.toNumber(cells[11]), myUtil.toNumber(cells[12]), myUtil.toNumber(cells[13])];
         },
         _parseFA = function(code, reject, resolve) {
@@ -58,27 +75,40 @@ function EM() {
                     reject(err);
                 } else {
                     var lines = data.toString().split(/\r\n|\n/),
-                        years = [],
-                        quarters = [];
+                        lastN = [],
+                        ttm = [];
+
                     lines.forEach(function(line, index) {
-                        if (dates.length == 0) {
-                            return;
-                        }
+                        if (index == 0) return;
+
                         var cells = line.split(',');
-                        if (index < 5 && index > 0) {
-                            quarters.push(_genRecord(cells));
+                        if (index == 1) {
+                            dates = _getLastNYears(cells[17], 10);
                         }
+                        if (dates.length == 0) return;
+
+                        // get for ttm
+                        if (index < 5) {
+                            ttm.push(_genRecord(cells));
+                        }
+                        // get for last n years
                         if (cells[17] == dates[0]) {
-                            years.push(_genRecord(cells));
+                            lastN.push(_genRecord(cells));
                             dates.shift();
                         }
                     });
 
-                    console.log(srcFile);
-                    console.dir(quarters);
-                    console.dir(years);
+                    fs.writeFile(srcFile.replace('.csv', '.json'), JSON.stringify({
+                        lastn: lastN,
+                        ttm: ttm
+                    }), function(err) {
+                        if (err) {
+                            reject(err);
+                        }
+                        resolve(1);
+                        console.log('saved.');
+                    });
 
-                    resolve(1);
                 }
             });
         };
@@ -156,7 +186,7 @@ function EM() {
         },
         getEarningsBatch: function(action) {
             var func,
-                symbolFile = '../chart/s/cn_yahoo.txt';
+                symbolFile = './cn-test.csv';
 
             if (action == 'download') {
                 func = downloadFA;
