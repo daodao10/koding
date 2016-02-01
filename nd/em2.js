@@ -42,6 +42,9 @@ function EM() {
         }
     };
     var _getLastNYears = function(d, n) {
+            if (d == undefined) {
+                return;
+            }
             var dates = [];
             var year = myUtil.toNumber(d.substring(0, 4)),
                 month = myUtil.toNumber(d.substring(5, 7));
@@ -63,13 +66,7 @@ function EM() {
         },
         _parseFA = function(code, reject, resolve) {
             var srcFile = './cn-fa/' + code + '.csv',
-                dates = [
-                    '2014-12-31',
-                    '2013-12-31',
-                    '2012-12-31',
-                    '2011-12-31',
-                    '2010-12-31'
-                ];
+                dates;
             fs.readFile(srcFile, function(err, data) {
                 if (err) {
                     reject(err);
@@ -84,6 +81,10 @@ function EM() {
                         var cells = line.split(',');
                         if (index == 1) {
                             dates = _getLastNYears(cells[17], 10);
+                        }
+                        if (dates == undefined) {
+                            console.log('please check the file %s', srcFile);
+                            return;
                         }
                         if (dates.length == 0) return;
 
@@ -186,7 +187,7 @@ function EM() {
         },
         getEarningsBatch: function(action) {
             var func,
-                symbolFile = './cn-test.csv';
+                symbolFile = '../chart/s/cn.txt';
 
             if (action == 'download') {
                 func = downloadFA;
@@ -242,8 +243,12 @@ function EM() {
 var util = new EM();
 
 util.getEarningsBatch('parse');
-// util.getEarnings('600545');
-// getEarnings('000635');
+// util.getEarnings('600832');
+// util.getEarnings('600656');
+// util.getEarnings('000024');
+// util.getEarnings('000033');
+// util.getEarnings('002185');
+// util.getEarnings('300186');
 
 // util.getAnualReport();
 // util.getEstimations();
