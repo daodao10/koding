@@ -1,9 +1,15 @@
+/**
+ * 
+ */
+
 var fs = require('fs'),
     myUtil = require('./MyUtil'),
     anounymous = require('./ProtoUtil'),
     em_quote = require('./EM_Quote');
 
 function EM() {
+    "use strict";
+
     var downloadFA = function(code, reject, resolve) {
         try {
             var quote = new em_quote.Path({
@@ -11,7 +17,7 @@ function EM() {
                 reportType: 'SR',
                 subReportType: 'YJBB',
                 param: {
-                    'code': '{1}'
+                    code: '{1}'
                 },
                 sort: {
                     id: "14",
@@ -27,12 +33,14 @@ function EM() {
                 urlParam: [code],
                 csvFile: './cn-fa/' + code + '.csv',
                 header: function() {
-                    return "代码,名称,每股收益,每股收益(扣除),营业收入(万元),同比增长,季度环比增长,净利润(万元),同比增长,季度环比增长,每股净资产,净资产收益率,每股经营现金流,销售毛利率,利润分配,股息率,公告日期,报告期,交易所";
-                },
+                    return unescape("\u4ee3\u7801,\u540d\u79f0,\u6bcf\u80a1\u6536\u76ca,\u6bcf\u80a1\u6536\u76ca(\u6263\u9664),\u8425\u4e1a\u6536\u5165(\u4e07\u5143),\u540c\u6bd4\u589e\u957f,\u5b63\u5ea6\u73af\u6bd4\u589e\u957f,\u51c0\u5229\u6da6(\u4e07\u5143),\u540c\u6bd4\u589e\u957f,\u5b63\u5ea6\u73af\u6bd4\u589e\u957f,\u6bcf\u80a1\u51c0\u8d44\u4ea7,\u51c0\u8d44\u4ea7\u6536\u76ca\u7387,\u6bcf\u80a1\u7ecf\u8425\u73b0\u91d1\u6d41,\u9500\u552e\u6bdb\u5229\u7387,\u5229\u6da6\u5206\u914d,\u80a1\u606f\u7387,\u516c\u544a\u65e5\u671f,\u62a5\u544a\u671f,\u4ea4\u6613\u6240");
+                }
             });
 
             x.exec();
-            if (resolve) resolve(1);
+            if (resolve) {
+                resolve(1);
+            }
         } catch (err) {
             if (reject) {
                 reject(err);
@@ -45,17 +53,17 @@ function EM() {
             if (d == undefined) {
                 return;
             }
-            var dates = [];
+            var i, dates = [];
             var year = myUtil.toNumber(d.substring(0, 4)),
                 month = myUtil.toNumber(d.substring(5, 7));
 
             if (month == 12) {
-                for (var i = 0; i < n; i++) {
-                    dates.push((year - i).toString() + '-12-31')
+                for (i = 0; i < n; i++) {
+                    dates.push((year - i).toString() + '-12-31');
                 }
             } else {
-                for (var i = 1; i <= n; i++) {
-                    dates.push((year - i).toString() + '-12-31')
+                for (i = 1; i <= n; i++) {
+                    dates.push((year - i).toString() + '-12-31');
                 }
             }
 
@@ -76,17 +84,21 @@ function EM() {
                         ttm = [];
 
                     lines.forEach(function(line, index) {
-                        if (index == 0) return;
+                        if (index === 0) {
+                            return;
+                        }
 
                         var cells = line.split(',');
-                        if (index == 1) {
+                        if (index === 1) {
                             dates = _getLastNYears(cells[17], 10);
                         }
-                        if (dates == undefined) {
+                        if (dates === undefined) {
                             console.log('please check the file %s', srcFile);
                             return;
                         }
-                        if (dates.length == 0) return;
+                        if (dates.length === 0) {
+                            return;
+                        }
 
                         // get for ttm
                         if (index < 5) {
@@ -122,15 +134,15 @@ function EM() {
                 reportType: 'SR',
                 subReportType: 'YJYG',
                 param: {
-                    'fd': '{1}',
-                    'stat': '0'
+                    fd: '{1}',
+                    stat: '0'
                 },
                 sort: {
                     id: "4",
                     desc: true
                 },
                 page: '{0}',
-                pagesize: 100,
+                pagesize: 100
             });
 
             var x = new em_quote.Runner({
@@ -139,7 +151,7 @@ function EM() {
                 urlParam: ['2015-12-31'],
                 csvFile: 'es_yjyg.csv',
                 header: function() {
-                    return "代码,名称,业绩变动,业绩变动幅度,预告类型,上年同期净利润(万元),公告日期";
+                    return unescape("\u4ee3\u7801,\u540d\u79f0,\u4e1a\u7ee9\u53d8\u52a8,\u4e1a\u7ee9\u53d8\u52a8\u5e45\u5ea6,\u9884\u544a\u7c7b\u578b,\u4e0a\u5e74\u540c\u671f\u51c0\u5229\u6da6(\u4e07\u5143),\u516c\u544a\u65e5\u671f");
                 },
                 refine: function(line) {
                     var cells = line.split(',');
@@ -168,7 +180,7 @@ function EM() {
                     desc: false
                 },
                 page: '{0}',
-                pagesize: 50,
+                pagesize: 50
             });
 
             var x = new em_quote.Runner({
@@ -176,8 +188,8 @@ function EM() {
                 path: quote.path,
                 csvFile: 'es_ylyc.csv',
                 header: function() {
-                    return "序号,代码,名称,最新价,涨跌幅,研报数,买入,增持,中性,减持,卖出,2014收益,2015收益,2015PE,2016收益,2016PE,2017收益,2017PE,预留1,预留2,预留3";
-                },
+                    return unescape("\u5e8f\u53f7,\u4ee3\u7801,\u540d\u79f0,\u6700\u65b0\u4ef7,\u6da8\u8dcc\u5e45,\u7814\u62a5\u6570,\u4e70\u5165,\u589e\u6301,\u4e2d\u6027,\u51cf\u6301,\u5356\u51fa,2014\u6536\u76ca,2015\u6536\u76ca,2015PE,2016\u6536\u76ca,2016PE,2017\u6536\u76ca,2017PE,\u9884\u75591,\u9884\u75592,\u9884\u75593");
+                }
             });
 
             x.exec();
@@ -187,21 +199,29 @@ function EM() {
         },
         getEarningsBatch: function(action) {
             var func,
-                symbolFile = '../chart/s/cn.txt';
+                symbolFile = './cn-test.csv';
 
-            if (action == 'download') {
+            if (action === 'download') {
                 func = downloadFA;
-            } else if (action == 'parse') {
+            } else if (action === 'parse') {
                 func = _parseFA;
             } else {
                 throw new Error('don\'t support');
             }
 
-            var fx = function(newRows, index, total, counter) {
+            var settings = {
+                    ChunkSize: 200
+                },
+                lines = myUtil.readlinesSync(symbolFile);
+
+            lines.shift();
+            lines = lines.chunk(settings.ChunkSize);
+
+            (function fx(newRows, index, total, counter) {
                 if (index == total) {
-                    console.log("------------- Saved %d -------------", counter);
+                    console.log("------------- processed %d -------------", counter);
                     return;
-                };
+                }
 
                 Promise.all(newRows[index].map(function(item) {
                     return new Promise(function(resolve, reject) {
@@ -219,36 +239,22 @@ function EM() {
                     });
                 })).then(function(val) {
                     val.forEach(function(x) {
-                        counter += (x == undefined ? 0 : x);
+                        counter += (x === undefined ? 0 : x);
                     });
 
                     fx(newRows, index + 1, total, counter);
                 });
-            };
+            }(lines, 0, lines.length, 0));
 
-            var settings = {
-                    ChunkSize: 200
-                },
-                lines = myUtil.readlinesSync(symbolFile);
-
-            lines.shift();
-            lines = lines.chunk(settings.ChunkSize);
-
-            fx(lines, 0, lines.length, 0);
         }
-    }
-};
+    };
+}
 
 
 var util = new EM();
 
-util.getEarningsBatch('parse');
+// util.getEarningsBatch('parse');
 // util.getEarnings('600832');
-// util.getEarnings('600656');
-// util.getEarnings('000024');
-// util.getEarnings('000033');
-// util.getEarnings('002185');
-// util.getEarnings('300186');
 
 // util.getAnualReport();
 // util.getEstimations();

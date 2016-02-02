@@ -4,7 +4,8 @@ var fs = require('fs'),
     myUtil = require('./MyUtil'),
     anounymous = require('./ProtoUtil');
 
-const Urls = {
+var Urls = {
+        'Quote': '/EM_Quote2010NumericApplication/Index.aspx?type=F&jsName=zjlx_hq&id={0}&rt=48473768',
         'FA': '/EM_Finance2014NumericApplication/JS.aspx?type={reportType}&sty={subReportType}&st=(Code)&sr=1&p={page}&ps={pageSize}&js=var%20daoESData={pages:(pc),data:[(x)]}{param}',
         'DC': '/EM_DataCenter/JS.aspx?type={reportType}&sty={subReportType}&st={sortType}&sr={sortRule}&p={page}&ps={pageSize}&js=var%20daoESData={pages:(pc),data:[(x)]}{param}'
     },
