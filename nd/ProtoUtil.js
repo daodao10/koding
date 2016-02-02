@@ -101,4 +101,12 @@ module.exports = (function() {
         }(chunkSize), []);
     };
 
+    Array.prototype.findByProperty = function(property, keywords) {
+        return this.find(function(element) {
+            while (element[property] === keywords) {
+                return element;
+            }
+        });
+    };
+
 }());
