@@ -126,6 +126,26 @@ function EM() {
             });
         };
 
+    function round(value, decimals) {
+        return Number(Math.round(value + 'e' + decimals) + 'e-' + decimals);
+    }
+
+    function calcPEG(e1, e2, pe) {
+        var growth, peg = 0;
+        if (e1 == Number.NaN || e1 == 0) {
+            growth = Number.NaN;
+        } else {
+            growth = (Math.sqrt(e2 / e1) - 1) * 100;
+            if (growth == 0) {
+                peg = Number.NaN;
+            } else {
+                peg = round(pe / growth, 2);
+                growth = round(growth, 2);
+            }
+        }
+        return [growth, peg];
+    }
+
     return {
         getAnualReport: function() {
 
@@ -246,12 +266,62 @@ function EM() {
                 });
             }(lines, 0, lines.length, 0));
 
+        },
+        gen: function() {
+            // 序号,代码,名称,最新价,涨跌幅,研报数,买入,增持,中性,减持,卖出,2014收益,2015收益,2015PE,2016收益,2016PE,2017收益,2017PE
+            // 0  ,1   ,2  ,3    ,4     ,5    ,6  ,7   ,8  ,9   ,10 ,11      ,12     ,13    ,14     ,15    ,16      ,17
+            var docs = {},
+                rs = {};
+            var lines = myUtil.readlinesSync('./es_ylyc.csv');
+            for (var i = 1; i < lines.length; i++) {
+                var cells = lines[i].split(',');
+                if (cells.length > 1) {
+
+                    var item = [];
+                    var p = calcPEG(cells[11], cells[14], cells[13]);
+                    item.push(['2015', p[0], p[1]]);
+
+                    p = calcPEG(cells[12], cells[16], cells[15]);
+                    item.push(['2016', p[0], p[1]]);
+
+                    docs[cells[1]] = item;
+
+                    rs[cells[1]] = [myUtil.toNumber(cells[5]),
+                        myUtil.toNumber(cells[6]),
+                        myUtil.toNumber(cells[7]),
+                        myUtil.toNumber(cells[8]),
+                        myUtil.toNumber(cells[9]),
+                        myUtil.toNumber(cells[10]),
+                        myUtil.toNumber(cells[11]),
+                        myUtil.toNumber(cells[12]),
+                        myUtil.toNumber(cells[13]),
+                        myUtil.toNumber(cells[14]),
+                        myUtil.toNumber(cells[15]),
+                        myUtil.toNumber(cells[16]),
+                        myUtil.toNumber(cells[17])
+                    ];
+                }
+            }
+
+            fs.writeFile('peg.json', JSON.stringify(docs, null, 1), function(err) {
+                if (err) {
+                    throw err;
+                }
+                console.log('saved.');
+            });
+            fs.writeFile('e.json', JSON.stringify(rs, null, 1), function(err) {
+                if (err) {
+                    throw err;
+                }
+                console.log('saved.');
+            });
         }
     };
 }
 
 
 var util = new EM();
+util.gen();
 
 // util.getEarningsBatch('parse');
 // util.getEarnings('600832');
