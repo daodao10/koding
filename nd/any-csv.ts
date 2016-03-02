@@ -4,4 +4,5 @@
 
 var CsvSerieUtil = require('./CsvSerieUtil');
 
-new CsvSerieUtil().doSomething('./x.csv');
+var util = new CsvSerieUtil();
+util.extract('./_801040_黑色金属.csv', '../../daodao10.github.io/chart/dao/801040.js');

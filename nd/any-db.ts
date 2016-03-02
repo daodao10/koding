@@ -6,8 +6,8 @@ var fs = require('fs'),
     myUtil = require('./MyUtil'),
     anounymous = require('./ProtoUtil'),
     MyMongo = require('./MyMongoUtil'),
-    config = require('../config.json');
-    require('./CsvSerieUtil');
+    config = require('../config.json'),
+	CsvSerieUtil = require('./CsvSerieUtil');
 
 class DbSerieUtil{
 	public myMongo;
@@ -33,24 +33,29 @@ class DbSerieUtil{
 		});
 	}
 
-	toSeries(docs:Array<Object>, cols:Array<Array<Object>>){
+	toSeries(docs:Array<Object>, cols:Array<Array<String>>){
 		var rows = this.toCsv(docs, cols);
-		this.csvUtil.toSeries(rows);
+		var content = this.csvUtil.toSeries(rows);
+		//TODO: save ?
+		console.log(content);
 	}
 
 	toCsv(docs:Array<Object>, cols:Array<Array<String>>): Array<Array<Object>>{
+		var _self = this;
 		if(docs && cols && Object.keys(docs[0]).length == cols.length) {
 			var rows= [];
-			rows[0] = [];
-			cols.forEach((col)=>{
-				rows[0].push(col[1]);
-			});
+
 			docs.forEach((doc, index)=>{
 				var row = [];
 				cols.forEach((col)=>{
 					row.push(doc[col[0]]);
 				});
 				rows.push(row);
+			});
+			rows.sort(_self.csvUtil.sort);
+
+			cols.forEach((col)=>{
+				rows.unshift(col[1]);
 			});
 			console.log('smell good');
 			return rows;
@@ -74,19 +79,34 @@ class DbSerieUtil{
 		_self.get(docName, query).then((docs)=>{
 			var rows = _self.toCsv(docs, cols);
 			if(rows) {
-				fs.writeFile(csvFile, rows.join('\n'), function(err) {
-			        if (err) {
-			            throw err;
-			        }
-			        console.log('saved.');
-		   		});
+				_self.csvUtil.save(csvFile, rows.join('\n'));
 			}
 		}).catch((err)=>{
 			console.error('get for ', docName, query, err);
 		});
 	}
+
+	extractOpt(docName, query, cols, optFile): void {
+		var _self = this;
+		_self.get(docName, query).then((docs)=>{
+			var newRows = [], item;
+			var rows = _self.toCsv(docs, cols);
+			for (var i = 1; i <rows.length; i++) {
+				item = rows[i];
+				if(item[1] && item[1] > 0) {
+					newRows.push([new Date(item[0]).format('yyyyMMdd'), item[1]]);
+				}
+			}
+			rows = null;
+			_self.csvUtil.save(optFile, "var data=" + JSON.stringify(newRows) + ";var source=\"dao.farbox.com\"");
+		}).catch((err)=>{
+			console.error('get for ', docName, query, err);
+		});
+	}
+
 }
 
 var util = new DbSerieUtil("{0}{1}".format(config.DbSettings.QuotesDbUri, 'quotes'));
 // util.extractSeries('BDI', null, [['_id','date'],['c','value']]);
-util.extractCsv('BDI', null, [['_id','date'],['c','value']], './BDI.csv');
+// util.extractCsv('BDI', null, [['_id','date'],['c','value']], './BDI.csv');
+util.extractOpt('BDI', null, [['_id','date'],['c','value']], "../../daodao10.github.io/chart/world/BDI_m.js");
