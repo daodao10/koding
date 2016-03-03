@@ -8,7 +8,7 @@ var fs = require('fs'),
 
 class CsvSerieUtil {
 
-	constructor() { }
+	constructor(private sw: boolean = false) { }
 
 	/**
 	 * convert string of date to timestamp
@@ -31,12 +31,21 @@ class CsvSerieUtil {
 				rows = [];
 			lines.forEach((line, index: number) => {
 				var cells = line.split(',');
+				if(_self.sw) {
+					cells.shift();
+					cells.shift();
+					// and so on ...
+				}
 				if (index == 0) {
 					rows.push(cells);
 				} else {
 					// special process item
 					if (cells[0]) {
-						cells[0] = _self.toUtcDate(cells[0], true);
+						if(_self.sw) {
+							cells[0] = _self.toUtcDate(cells[0].substring(0,10), false);
+						}else{
+							cells[0] = _self.toUtcDate(cells[0], true);							
+						}
 					}
 					rows.push(cells);
 				}
