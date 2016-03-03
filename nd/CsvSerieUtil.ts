@@ -34,7 +34,8 @@ class CsvSerieUtil {
 				if(_self.sw) {
 					cells.shift();
 					cells.shift();
-					// and so on ...
+					cells.splice(1, 3);
+					cells.splice(3, 2);
 				}
 				if (index == 0) {
 					rows.push(cells);
@@ -44,12 +45,11 @@ class CsvSerieUtil {
 						if(_self.sw) {
 							cells[0] = _self.toUtcDate(cells[0].substring(0,10), false);
 						}else{
-							cells[0] = _self.toUtcDate(cells[0], true);							
+							cells[0] = _self.toUtcDate(cells[0], true);
 						}
+						rows.push(cells);
 					}
-					rows.push(cells);
 				}
-
 			});
 
 			// console.dir(rows);
@@ -81,7 +81,8 @@ class CsvSerieUtil {
 			}
 		});
 
-		return "define(" + JSON.stringify(series) + ");";
+		return JSON.stringify(series);
+		// return "define(" + JSON.stringify(series) + ");";
 	}
 
 	sort(a: Array<number>, b: Array<number>) {
