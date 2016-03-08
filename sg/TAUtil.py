@@ -48,7 +48,7 @@ if __name__ == "__main__":
     cookies = ShareInvestor.getPersistentCookie()
     # print cookies
 
-    taUtil = TAUtil('./src/', './dest/', cookies)
+    taUtil = TAUtil('./src-hid/', './dest-hid/', cookies)
 
     # # signle counter testing
     # #
