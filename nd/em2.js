@@ -10,6 +10,12 @@ var fs = require('fs'),
 function EM() {
     "use strict";
 
+    var wrapRequireJs = function(content){
+        return "define(function() {\n\
+    return {0};\n\
+});".format(content);
+    };
+
     var downloadFA = function(code, reject, resolve) {
         try {
             var quote = new em_quote.Path({
@@ -303,13 +309,13 @@ function EM() {
                 }
             }
 
-            fs.writeFile('peg.json', JSON.stringify(docs, null, 1), function(err) {
+            fs.writeFile('../../daodao10.github.io/chart/dao/peg.js', wrapRequireJs(JSON.stringify(docs, null, 1)), function(err) {
                 if (err) {
                     throw err;
                 }
                 console.log('saved.');
             });
-            fs.writeFile('e.json', JSON.stringify(rs, null, 1), function(err) {
+            fs.writeFile('../../daodao10.github.io/chart/dao/e.js', wrapRequireJs(JSON.stringify(rs, null, 1)), function(err) {
                 if (err) {
                     throw err;
                 }
@@ -321,10 +327,10 @@ function EM() {
 
 
 var util = new EM();
-util.gen();
 
 // util.getEarningsBatch('parse');
 // util.getEarnings('600832');
 
 // util.getAnualReport();
 // util.getEstimations();
+// util.gen();
