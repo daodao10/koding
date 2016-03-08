@@ -37,7 +37,7 @@ function EM() {
                 host: 'datainterface.eastmoney.com',
                 path: quote.path,
                 urlParam: [code],
-                csvFile: './cn-fa/' + code + '.csv',
+                csvFile: './cn-fa-hid/' + code + '.csv',
                 header: function() {
                     return unescape("\u4ee3\u7801,\u540d\u79f0,\u6bcf\u80a1\u6536\u76ca,\u6bcf\u80a1\u6536\u76ca(\u6263\u9664),\u8425\u4e1a\u6536\u5165(\u4e07\u5143),\u540c\u6bd4\u589e\u957f,\u5b63\u5ea6\u73af\u6bd4\u589e\u957f,\u51c0\u5229\u6da6(\u4e07\u5143),\u540c\u6bd4\u589e\u957f,\u5b63\u5ea6\u73af\u6bd4\u589e\u957f,\u6bcf\u80a1\u51c0\u8d44\u4ea7,\u51c0\u8d44\u4ea7\u6536\u76ca\u7387,\u6bcf\u80a1\u7ecf\u8425\u73b0\u91d1\u6d41,\u9500\u552e\u6bdb\u5229\u7387,\u5229\u6da6\u5206\u914d,\u80a1\u606f\u7387,\u516c\u544a\u65e5\u671f,\u62a5\u544a\u671f,\u4ea4\u6613\u6240");
                 }
@@ -79,7 +79,7 @@ function EM() {
             return [cells[17], myUtil.toNumber(cells[2]), myUtil.toNumber(cells[10]), myUtil.toNumber(cells[11]), myUtil.toNumber(cells[12]), myUtil.toNumber(cells[13])];
         },
         _parseFA = function(code, reject, resolve) {
-            var srcFile = './cn-fa/' + code + '.csv',
+            var srcFile = './cn-fa-hid/' + code + '.csv',
                 dates;
             fs.readFile(srcFile, function(err, data) {
                 if (err) {
@@ -153,7 +153,7 @@ function EM() {
     }
 
     return {
-        getAnualReport: function() {
+        getYJYG: function() {
 
             var quote = new em_quote.Path({
                 dataType: 'DC',
@@ -174,7 +174,7 @@ function EM() {
             var x = new em_quote.Runner({
                 host: 'datainterface.eastmoney.com',
                 path: quote.path,
-                urlParam: ['2015-12-31'],
+                urlParam: ['2016-12-31'],
                 csvFile: 'es_yjyg.csv',
                 header: function() {
                     return unescape("\u4ee3\u7801,\u540d\u79f0,\u4e1a\u7ee9\u53d8\u52a8,\u4e1a\u7ee9\u53d8\u52a8\u5e45\u5ea6,\u9884\u544a\u7c7b\u578b,\u4e0a\u5e74\u540c\u671f\u51c0\u5229\u6da6(\u4e07\u5143),\u516c\u544a\u65e5\u671f");
@@ -189,7 +189,7 @@ function EM() {
 
             x.exec();
         },
-        getEstimations: function() {
+        getYLYC: function() {
 
             var quote = new em_quote.Path({
                 dataType: 'FA',
@@ -220,12 +220,12 @@ function EM() {
 
             x.exec();
         },
-        getEarnings: function(code) {
+        getYJBB: function(code) {
             downloadFA(code);
         },
-        getEarningsBatch: function(action) {
+        getYJBBBatch: function(action) {
             var func,
-                symbolFile = './cn-test.csv';
+                symbolFile = '../chart/s/cn.txt';
 
             if (action === 'download') {
                 func = downloadFA;
@@ -328,9 +328,12 @@ function EM() {
 
 var util = new EM();
 
-// util.getEarningsBatch('parse');
-// util.getEarnings('600832');
+util.getYJBB('600832');
+// util.getYJBBBatch('download');
+// util.getYJBBBatch('parse');
+// mv cn-fa-hid/*.json ../../daodao10.github.io/chart/fa/cn/
 
-// util.getAnualReport();
-// util.getEstimations();
+// util.getYJYG();
+
+// util.getYLYC();
 // util.gen();
