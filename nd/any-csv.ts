@@ -10,5 +10,5 @@ var idx = ["801001", "801002", "801003", "801005", "801010", "801020", "801030",
 
 idx.forEach((it)=>{
 	// var it = '801790';
-	util.extract('./{0}.csv'.format(it), '../../daodao10.github.io/chart/dao/{0}.json'.format(it));
+	util.extract('./swi-hid/{0}.csv'.format(it), '../../daodao10.github.io/chart/swi/{0}.json'.format(it));
 });
