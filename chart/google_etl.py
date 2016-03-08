@@ -80,7 +80,7 @@ def main():
     if settings["market"] == "cn":
       if symbol.startswith("6"):
         symbol = "SHA:" + symbol
-      else:
+      elif symbol.startswith("0") or symbol.startswith("3"):
         symbol = "SHE:" + symbol
     elif settings["market"] == "hk":
       symbol = "HKG:" + symbol
