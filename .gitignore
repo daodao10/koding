@@ -21,4 +21,5 @@ chart/d/*.csv
 !chart/d/world_^USX_d.csv
 !learning/capture/*.sh
 .DS_Store
+*-hid/
 
