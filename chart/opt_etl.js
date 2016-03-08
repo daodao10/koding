@@ -143,23 +143,27 @@ function generate(srcFile, output, dateProcessor, resolve, reject) {
                     array.pop();
                 }
 
-                if (settings.SortingOrder === 1) {
-                    // sorting by date: oldest to newest
-                    if (settings.source === "Y" || settings.source === "G") {
-                        array.reverse();
-                    }
-                } else if (settings.SortingOrder === -1) {
-                    // sorting by date: newest to oldest
-                    if (settings.source !== "Y" && settings.source !== "G") {
-                        array.reverse();
-                    }
-                }
+                // replace with array.sort()
+                // if (settings.SortingOrder === 1) {
+                //     // sorting by date: oldest to newest
+                //     if (settings.source === "Y" || settings.source === "G") {
+                //         array.reverse();
+                //     }
+                // } else if (settings.SortingOrder === -1) {
+                //     // sorting by date: newest to oldest
+                //     if (settings.source !== "Y" && settings.source !== "G") {
+                //         array.reverse();
+                //     }
+                // }
 
                 var data = array.map(function(line) {
                     return mapFunc(line, dateProcessor);
                 }).filter(function(element) {
                     return element != null;
                 });
+
+                // slow...
+                data.sort();
 
                 var content = "var data=[" + data.join(',\n') + "];\nvar source='" + etlUtil.decode_source(settings.source) + "';";
                 fs.writeFile(output, content, function(err) {
