@@ -108,3 +108,4 @@ var util = new DbSerieUtil("{0}{1}".format(config.DbSettings.QuotesDbUri, 'quote
 // util.extractSeries('BDI', null, [['_id','date'],['c','value']]);
 // util.extractCsv('BDI', null, [['_id','date'],['c','value']], './BDI.csv');
 util.extractOpt('BDI', null, [['_id','date'],['c','value']], "../../daodao10.github.io/chart/world/BDI_m.js");
+util.extractCsv('MV', null, [['_id','date'],['tmc','tmc'],['cmc','cmc'],['gdp','gdp']], './MV.csv');
