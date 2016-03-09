@@ -6,7 +6,7 @@ var myUtil = require('./MyUtil');
 
 class RP {
 	private out = new Colors();
-	constructor(public schedule = require('node-schedule'), private wl = require('./wl.json')) {
+	constructor(public schedule = require('node-schedule'), private wl = require('./wl-sample.json')) {
 		console.log('job start...');
 	}
 
