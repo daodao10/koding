@@ -54,9 +54,7 @@ class DbSerieUtil{
 			});
 			rows.sort(_self.csvUtil.sort);
 
-			cols.forEach((col)=>{
-				rows.unshift(col[1]);
-			});
+			rows.unshift(cols.map((col)=> col[1]));
 			console.log('smell good');
 			return rows;
 		} else {
@@ -93,7 +91,7 @@ class DbSerieUtil{
 			var rows = _self.toCsv(docs, cols);
 			for (var i = 1; i <rows.length; i++) {
 				item = rows[i];
-				if(item[1] && item[1] > 0) {
+				if(item[1] && item[1] > 0) { // value > 0 => format date
 					newRows.push([new Date(item[0]).format('yyyyMMdd'), item[1]]);
 				}
 			}
