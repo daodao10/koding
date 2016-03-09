@@ -6,5 +6,8 @@
     "casper": "^0.1.1",
     "iconv-lite": "0.4.x",
     "mongodb": "~2"
+  },
+  "devDependencies": {
+    "node-schedule": "^1.0.0"
   }
 }
