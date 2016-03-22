@@ -1467,6 +1467,7 @@ UPS,UPS,United Parcel Service Inc.,Services
 URBN,URBN,Urban Outfitters Inc.,Services
 URI,URI,United Rentals Inc.,Services
 USB,USB,U.S. Bancorp,Financial
+USNA,USNA,USANA Health Sciences Inc.,ealthcare
 USG,USG,USG Corporation,Industrial Goods
 UTHR,UTHR,United Therapeutics Corporation,Healthcare
 UTSI,UTSI,UT斯达康,信息技术
