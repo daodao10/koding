@@ -44,12 +44,12 @@ class SymbolUtil:
     def getSGX():
         result = []
         try:
-            f=codecs.open('sgx-symbol.txt',mode='r')
+            f=codecs.open('../chart/s/sg_shareinvestor.txt',mode='r')
             lines=f.readlines()
             for l in lines:
                 splits = str.split(l,',')
                 code = splits[0]
-                name = splits[1][:-1]
+                name = splits[2]
                 #print "%d. code: %s, name: %s" % (i, code, name)
                 result.append({"_id": code, "name": name, "market": "SGX"})
             f.close()
