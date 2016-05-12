@@ -177,7 +177,8 @@ function EM() {
                 urlParam: ['2016-12-31'],
                 csvFile: 'es_yjyg.csv',
                 header: function() {
-                    return unescape("\u4ee3\u7801,\u540d\u79f0,\u4e1a\u7ee9\u53d8\u52a8,\u4e1a\u7ee9\u53d8\u52a8\u5e45\u5ea6,\u9884\u544a\u7c7b\u578b,\u4e0a\u5e74\u540c\u671f\u51c0\u5229\u6da6(\u4e07\u5143),\u516c\u544a\u65e5\u671f");
+                    // return unescape("\u4ee3\u7801,\u540d\u79f0,\u4e1a\u7ee9\u53d8\u52a8,\u4e1a\u7ee9\u53d8\u52a8\u5e45\u5ea6,\u9884\u544a\u7c7b\u578b,\u4e0a\u5e74\u540c\u671f\u51c0\u5229\u6da6(\u4e07\u5143),\u516c\u544a\u65e5\u671f");
+                    return unescape("序号,代码,名称,最新价,涨跌幅,研报数,买入,增持,中性,减持,卖出,2015收益,2016收益,2016PE,2017收益,2017PE,2018收益,2018PE,预留1,预留2,预留3");
                 },
                 refine: function(line) {
                     var cells = line.split(',');
@@ -276,6 +277,7 @@ function EM() {
         gen: function() {
             // 序号,代码,名称,最新价,涨跌幅,研报数,买入,增持,中性,减持,卖出,2014收益,2015收益,2015PE,2016收益,2016PE,2017收益,2017PE
             // 0  ,1   ,2  ,3    ,4     ,5    ,6  ,7   ,8  ,9   ,10 ,11      ,12     ,13    ,14     ,15    ,16      ,17
+            // 序号,代码,名称,最新价,涨跌幅,研报数,买入,增持,中性,减持,卖出,2015收益,2016收益,2016PE,2017收益,2017PE,2018收益,2018PE
             var docs = {},
                 rs = {};
             var lines = myUtil.readlinesSync('./es_ylyc.csv');
@@ -285,10 +287,12 @@ function EM() {
 
                     var item = [];
                     var p = calcPEG(cells[11], cells[14], cells[13]);
-                    item.push(['2015', p[0], p[1]]);
+                    // item.push(['2015', p[0], p[1]]);
+                    item.push(['2016', p[0], p[1]]);
 
                     p = calcPEG(cells[12], cells[16], cells[15]);
-                    item.push(['2016', p[0], p[1]]);
+                    // item.push(['2016', p[0], p[1]]);
+                    item.push(['2017', p[0], p[1]]);
 
                     docs[cells[1]] = item;
 
