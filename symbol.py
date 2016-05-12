@@ -12,26 +12,22 @@ class SymbolUtil:
         result = []
         market = None
         try:
-            f = codecs.open('symbols.txt', 'r', 'utf-8')
+            f = codecs.open('./chart/s/cn.txt', 'r', 'utf-8')
             lines = f.readlines()
             for l in lines:
                 splits = l.split(',')
-                code = splits[0]
-                name = splits[1].rstrip('\r\n')
-
-                if code == "999999":
-                    # code = "000001.ss"
-                    market = "SSE"
-                elif code[0] == "6":
-                    # code = code + ".ss"
+                code = splits[1]
+                name = splits[2]
+                sector = splits[3].rstrip('\r\n')
+                
+                if splits[0].startswith( 'SH' ):
                     market = "SSE"
                 else:
-                    # code = code + ".sz"
                     market = "SZSE"
 
                 #print "%d. code: %s, name: %s" % (i, code, name.decode('gbk').encode('utf-8'))
                 # result.append({"_id": code, "name": name.decode('gbk').encode('utf-8'), "market": market })
-                result.append({"_id": code, "name": name, "market": market })
+                result.append({"_id": code, "name": name, "sector":sector, "market": market })
 
             f.close()
         except Exception as e:
@@ -44,14 +40,15 @@ class SymbolUtil:
     def getSGX():
         result = []
         try:
-            f=codecs.open('../chart/s/sg_shareinvestor.txt',mode='r')
+            f=codecs.open('./chart/s/sg_shareinvestor.txt',mode='r')
             lines=f.readlines()
             for l in lines:
                 splits = str.split(l,',')
                 code = splits[0]
                 name = splits[2]
+                sector = splits[3].rstrip('\r\n')
                 #print "%d. code: %s, name: %s" % (i, code, name)
-                result.append({"_id": code, "name": name, "market": "SGX"})
+                result.append({"_id": code, "name": name, "sector": sector, "market": "SGX"})
             f.close()
         except Exception as e:
             print e
@@ -69,7 +66,7 @@ if __name__ == '__main__':
     # dbContext.collection("symbol").insert(symbols)
     with codecs.open('cn.txt', 'wb', 'utf-8') as f:
         for symbol in symbols:
-            f.write("%s,%s,%s,--\n" % (symbol["_id"], symbol["_id"], symbol["name"]))
+            f.write("%s,%s,%s,%s\n" % (symbol["_id"], symbol["_id"], symbol["name"], symbol["sector"]))
             # collection.insert(symbol)
 
     print 'done'
