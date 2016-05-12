@@ -9,3 +9,6 @@ symbol,code[stooq : world : monthly, daily]
 ^KLCI,^KLCI,吉隆坡综合指数,INDEX
 ^JCI,^JCI,雅加达综合指数,INDEX
 ^MXWO,^MXWO,MSCI World Index,INDEX
+^SNX,^SNX,印度孟买30指数,INDEX
+^RTS,^RTS,俄罗斯指数,INDEX
+^BVP,^BVP,巴西博维斯帕指数,INDEX
