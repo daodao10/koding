@@ -87,6 +87,7 @@ class GuruFocus:
         else:
             print "empty"
 
+    #https://research.stlouisfed.org/fred2/data/GDP.txt
     def getGdp(self, d, shift):
         if shift == 1: # use 1 quarter early data
             if d >= '20140701' and d < '20141001':
@@ -100,9 +101,11 @@ class GuruFocus:
             elif d >= '20150701' and d < '20151001':
                 return 17.9137; # 2015Q2
             elif d >= '20151001' and d < '20160101':
-                return 18.0647; # 2015Q3
-            elif d >='20160101' and d <'20160401':
-                return 18.1282; # 2015Q4 -- need to update around 29 Jan, 2016
+                return 18.0602; # 2015Q3
+            elif d >='20160101' and d <'20160501':
+                return 18.1648; # 2015Q4 -- need to update around 29 Jan, 2016
+            elif d >='20160501' and d <'20160801':
+                return 18.2211; # 2016Q1
             else:
                 return None
         else: # by default use 2 quarters early data
@@ -119,7 +122,9 @@ class GuruFocus:
             elif d >= '20151001' and d < '20160101':
                 return 17.9137; # 2015Q2
             elif d >= '20160101' and d < '20160401':
-                return 18.0647; # 2015Q3
+                return 18.0602; # 2015Q3
+            elif d >= '20160401' and d < '20160701':
+                return 18.1648; # 2015Q4
             else:
                 return None
 
