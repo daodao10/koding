@@ -49,7 +49,7 @@ def encode_period(period):
     return "d"
 
 def get_output(settings, code):
-  return "%s_%s_%s.csv" % (settings["market"], code, encode_period(settings["period"][0]))
+  return "./d/%s_%s_%s.csv" % (settings["market"], code, encode_period(settings["period"][0]))
 
 def main():
   '''
