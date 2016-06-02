@@ -4,16 +4,19 @@ var fs = require('fs'),
     myUtil = require('./MyUtil'),
     anounymous = require('./ProtoUtil');
 
-var Urls = {
+var
+    Urls = {
         'Quote': '/EM_Quote2010NumericApplication/Index.aspx?type=F&jsName=zjlx_hq&id={0}&rt=48473768',
+        //host: nufm.dfcfw.com
         'FA': '/EM_Finance2014NumericApplication/JS.aspx?type={reportType}&sty={subReportType}&st=(Code)&sr=1&p={page}&ps={pageSize}&js=var%20daoESData={pages:(pc),data:[(x)]}{param}',
+        //host: datainterface.eastmoney.com
         'DC': '/EM_DataCenter/JS.aspx?type={reportType}&sty={subReportType}&st={sortType}&sr={sortRule}&p={page}&ps={pageSize}&js=var%20daoESData={pages:(pc),data:[(x)]}{param}'
     },
-    debug = true;
+    debug = false;
 
 function _get(options) {
-    return new Promise(function(resolve, reject) {
-        myUtil.get(options, function(data, statusCode) {
+    return new Promise(function (resolve, reject) {
+        myUtil.get(options, function (data, statusCode) {
             if (debug) {
                 console.log(options.path);
             }
@@ -53,7 +56,7 @@ function _prepareUrl(options) {
 };
 
 function _save(csvFile, data) {
-    fs.writeFile(csvFile, data, function(err) {
+    fs.writeFile(csvFile, data, function (err) {
         if (err) {
             throw err;
         }
@@ -62,20 +65,20 @@ function _save(csvFile, data) {
 }
 
 
-function EM_Quote() {}
+function EM_Quote() { }
 
-EM_Quote.prototype.Path = function(options) {
+EM_Quote.prototype.Path = function (options) {
     this.path = _prepareUrl(options);
 };
 
-EM_Quote.prototype.Runner = function(options) {
+EM_Quote.prototype.Runner = function (options) {
 
     var options = myUtil.extend({
         //host:"",
         //path: "",
         //csvFile:"",
         //urlParam:[]
-        getByPage: function(pageIndex) {
+        getByPage: function (pageIndex) {
             if (debug) {
                 console.log('get data for page:', pageIndex);
             }
@@ -92,27 +95,28 @@ EM_Quote.prototype.Runner = function(options) {
 
     return {
         // options: options,
-        exec: function() {
-            options.getByPage(1).then(function(data) {
+        exec: function (maxBatch) {
+            if (!maxBatch) maxBatch = 50;
+            options.getByPage(1).then(function (data) {
                 eval(data);
 
                 // get paging info
                 var indices = [1];
-                for (var i = 2; i <= daoESData.pages; i++) {
+                for (var i = 2; i <= daoESData.pages && i <= maxBatch; i++) {
                     indices.push(i)
                 }
                 if (debug) {
                     // console.log(refine(daoESData.data[0]));
-                    console.log('total page: %d', indices.length);
+                    console.log('total page: %d', daoESData.pages);
                 }
 
                 var result = [options.header()];
-                Promise.all(indices.map(options.getByPage)).then(function(contents) {
+                Promise.all(indices.map(options.getByPage)).then(function (contents) {
                     if (debug) {
                         console.log('done');
                     }
 
-                    contents.forEach(function(content, index) {
+                    contents.forEach(function (content, index) {
                         eval(content);
 
                         if (daoESData && daoESData.data.length > 0) {
@@ -123,9 +127,9 @@ EM_Quote.prototype.Runner = function(options) {
                         }
                     });
 
-                }, function(error) {
+                }, function (error) {
                     throw new Error('page {0}: get failed, error: {1}'.format(error.page, error.error));
-                }).then(function() {
+                }).then(function () {
                     if (options.csvFile) {
                         // save('./est.csv', iconv.encode(result.join('\n') + "\n", 'GB18030'));
                         _save(options.csvFile, result.join('\n') + "\n");
@@ -133,7 +137,7 @@ EM_Quote.prototype.Runner = function(options) {
                         console.dir(result);
                         // console.log(result.join('\n') + "\n");
                     }
-                }).catch(function(error) {
+                }).catch(function (error) {
                     throw error;
                 });
 
