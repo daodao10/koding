@@ -1,3 +1,4 @@
+# download swi data
 wget -O ./swi-hid/801001.xls --referer "http://www.swsindex.com/idx0510.aspx" "http://www.swsindex.com/downloadfiles.aspx?swindexcode=801001&type=510&columnid=8890"
 wget -O ./swi-hid/801002.xls --referer "http://www.swsindex.com/idx0510.aspx" "http://www.swsindex.com/downloadfiles.aspx?swindexcode=801002&type=510&columnid=8890"
 wget -O ./swi-hid/801003.xls --referer "http://www.swsindex.com/idx0510.aspx" "http://www.swsindex.com/downloadfiles.aspx?swindexcode=801003&type=510&columnid=8890"
@@ -69,6 +70,8 @@ wget -O ./swi-hid/802613.xls --referer "http://www.swsindex.com/idx0510.aspx" "h
 wget -O ./swi-hid/803611.xls --referer "http://www.swsindex.com/idx0510.aspx" "http://www.swsindex.com/downloadfiles.aspx?swindexcode=803611&type=510&columnid=8890"
 wget -O ./swi-hid/803612.xls --referer "http://www.swsindex.com/idx0510.aspx" "http://www.swsindex.com/downloadfiles.aspx?swindexcode=803612&type=510&columnid=8890"
 wget -O ./swi-hid/803613.xls --referer "http://www.swsindex.com/idx0510.aspx" "http://www.swsindex.com/downloadfiles.aspx?swindexcode=803613&type=510&columnid=8890"
+
+# html 2 csv
 python ../html2csv.py ./swi-hid/801001.xls
 python ../html2csv.py ./swi-hid/801002.xls
 python ../html2csv.py ./swi-hid/801003.xls
@@ -140,3 +143,10 @@ python ../html2csv.py ./swi-hid/802613.xls
 python ../html2csv.py ./swi-hid/803611.xls
 python ../html2csv.py ./swi-hid/803612.xls
 python ../html2csv.py ./swi-hid/803613.xls
+
+# generate swi data
+node any-csv.js
+
+# generate opt swi data
+cd ../../daodao10.github.io/chart/auto
+node swi_etl.js
