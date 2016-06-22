@@ -1,2 +1,2 @@
 symbol,code[yahoo : world : daily]
-usx,^USX,US Dollar Index,CURRENCY
+usx,USX,US Dollar Index,CURRENCY
