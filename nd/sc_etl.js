@@ -1,5 +1,5 @@
 const re = /<td class="first chartoptionlinks">.*<\/td>\n<td><B>(.*)<\/B><\/td>\n<td><a.*>(.*)<\/a><\/td>\n<td>(.*)<\/td>\n<td>(.*)<\/td>\n<td>(.*)<\/td>\n<td>(.*)<\/td>\n<td>(.*)<\/td>\n<td>(.*)<\/td>\n<td>(.*)<\/td>/g;
-const EtlSettingsFile = './sc_settings.json';
+const EtlSettingsFile = './sc_etl.json';
 
 var fs = require('fs'),
     //Promise = require('promise'),
