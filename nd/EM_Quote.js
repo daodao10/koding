@@ -1,4 +1,3 @@
-//http://hqdigi2.eastmoney.com/EM_Quote2010NumericApplication/Index.aspx?Type=F&jsName=zjlx_hq&id=6000371&rt=48473768
 
 var fs = require('fs'),
     myUtil = require('./MyUtil'),
@@ -6,6 +5,7 @@ var fs = require('fs'),
 
 var
     Urls = {
+        //host: hqdigi2.eastmoney.com
         'Quote': '/EM_Quote2010NumericApplication/Index.aspx?type=F&jsName=zjlx_hq&id={0}&rt=48473768',
         //host: nufm.dfcfw.com
         'FA': '/EM_Finance2014NumericApplication/JS.aspx?type={reportType}&sty={subReportType}&st=(Code)&sr=1&p={page}&ps={pageSize}&js=var%20daoESData={pages:(pc),data:[(x)]}{param}',
@@ -21,7 +21,7 @@ function _get(options) {
                 console.log(options.path);
             }
             if (statusCode !== 200) {
-                console.error('error occurred: ', statusCode);
+                if (debug) console.error('error occurred: ', statusCode);
                 reject({
                     url: options.path,
                     error: statusCode
@@ -94,8 +94,7 @@ EM_Quote.prototype.Runner = function (options) {
     }, options);
 
     return {
-        // options: options,
-        exec: function (maxBatch) {
+        exec: function (maxBatch, reject, resolve) {
             if (!maxBatch) maxBatch = 50;
             options.getByPage(1).then(function (data) {
                 eval(data);
@@ -116,6 +115,8 @@ EM_Quote.prototype.Runner = function (options) {
                         console.log('done');
                     }
 
+                    if (resolve) resolve(1);
+
                     contents.forEach(function (content, index) {
                         eval(content);
 
@@ -123,12 +124,13 @@ EM_Quote.prototype.Runner = function (options) {
                             result = result.concat(options.refine ? daoESData.data.map(options.refine) : daoESData.data);
                             // result = result.concat(daoESData.data);
                         } else {
-                            throw new Error('page {0}, parse failed'.format((index + 1).toString()));
+                            throw new Error('parse failed, page {0}'.format((index + 1).toString()));
                         }
                     });
 
-                }, function (error) {
-                    throw new Error('page {0}: get failed, error: {1}'.format(error.page, error.error));
+                }, function (err) {
+                    if (reject) reject(err);
+                    else throw new Error('get failed, url: {0}, error: {1}'.format(err.url, err.error));
                 }).then(function () {
                     if (options.csvFile) {
                         // save('./est.csv', iconv.encode(result.join('\n') + "\n", 'GB18030'));
@@ -137,8 +139,8 @@ EM_Quote.prototype.Runner = function (options) {
                         console.dir(result);
                         // console.log(result.join('\n') + "\n");
                     }
-                }).catch(function (error) {
-                    throw error;
+                }).catch(function (err) {
+                    throw err;
                 });
 
             });
