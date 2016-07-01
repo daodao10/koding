@@ -125,6 +125,8 @@ class GuruFocus:
                 return 18.0602; # 2015Q3
             elif d >= '20160401' and d < '20160701':
                 return 18.1648; # 2015Q4
+            elif d >= '20160701' and d < '20161001':
+                return 18.2211; # 2016Q1
             else:
                 return None
 
