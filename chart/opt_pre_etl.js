@@ -8,6 +8,8 @@ var fs = require("fs"),
     anounymous = require('../nd/ProtoUtil'),
     etlUtil = require('./EtlUtil');
 
+var enableWGET = false;
+
 function main() {
     var index = 0,
         action,
@@ -18,6 +20,7 @@ function main() {
         period,
         start,
         today = new Date(),
+        // today = new Date(2016,6,31),
         dropdownList = [],
         cells,
         lines;
@@ -41,7 +44,7 @@ function main() {
     }
 
     if (action === 0 || action === 1) {
-        myUtil.readlines(filename, function(row) {
+        myUtil.readlines(filename, function (row) {
             index++;
 
             if (index === 1) {
@@ -69,7 +72,7 @@ function main() {
                     cells[0] === '999999' ? '000001' : cells[0], cells[0], cells[1]);
             } else if (action === 1) {
                 if (setting.source === "stooq") {
-                    setting.period.forEach(function(period) {
+                    setting.period.forEach(function (period) {
                         if (setting.period === "daily") {
                             start = new Date(today.getFullYear() - 30, 0, 1);
                         } else {
@@ -82,7 +85,7 @@ function main() {
                     });
                 } else if (setting.source === "yahoo") {
 
-                    setting.period.forEach(function(period) {
+                    setting.period.forEach(function (period) {
                         if (setting.period === "daily") {
                             start = new Date(today.getFullYear() - 30, 0, 1);
                         } else {
@@ -115,7 +118,7 @@ function main() {
         }
 
         if (setting.sorting === 1) {
-            dropdownList.sort(function(obj1, obj2) {
+            dropdownList.sort(function (obj1, obj2) {
                 if (obj1.c > obj2.c) {
                     return 1;
                 } else if (obj1.c < obj2.c) {
@@ -124,7 +127,7 @@ function main() {
                 return 0;
             });
         } else if (setting.sorting === 2) {
-            dropdownList.sort(function(obj1, obj2) {
+            dropdownList.sort(function (obj1, obj2) {
                 if (obj1.n > obj2.n) {
                     return 1;
                 } else if (obj1.n < obj2.n) {
@@ -136,7 +139,7 @@ function main() {
 
         fs.writeFile("{0}_.js".format(setting.market), JSON.stringify(dropdownList), {
             "encoding": 'utf-8'
-        }, function(err) {
+        }, function (err) {
             if (err) {
                 throw err;
             }
@@ -207,14 +210,17 @@ function _output_dropdown_list1(market, code, name, sector, industry) {
 function _output_stooq_download_link(start, end, market, symbol, code, type, ignoreDateRange) {
     type = etlUtil.encode_period(type);
     if (ignoreDateRange) {
-        return 'curl -o ./d/{4}_{5}_{3}.csv "http://stooq.com/q/d/l/?s={2}&i={3}"'.format(start, end, symbol, type, market, code);
+        if (enableWGET) return 'wget -O ./d/{4}_{5}_{3}.csv "http://stooq.com/q/d/l/?s={2}&i={3}"'.format(start, end, symbol, type, market, code);
+        else return 'curl -o ./d/{4}_{5}_{3}.csv "http://stooq.com/q/d/l/?s={2}&i={3}"'.format(start, end, symbol, type, market, code);
     }
-    return 'curl -o ./d/{4}_{5}_{3}.csv "http://stooq.com/q/d/l/?s={2}&d1={0}&d2={1}&i={3}"'.format(start, end, symbol, type, market, code);
+    if (enableWGET) return 'wget -O ./d/{4}_{5}_{3}.csv "http://stooq.com/q/d/l/?s={2}&d1={0}&d2={1}&i={3}"'.format(start, end, symbol, type, market, code);
+    else return 'curl -o ./d/{4}_{5}_{3}.csv "http://stooq.com/q/d/l/?s={2}&d1={0}&d2={1}&i={3}"'.format(start, end, symbol, type, market, code);
 }
 
 function _output_yahoo_download_link(a, b, c, d, e, f, market, symbol, code, type) {
     type = etlUtil.encode_period(type);
-    return 'curl -o ./d/{8}_{9}_{7}.csv "http://real-chart.finance.yahoo.com/table.csv?s={6}&a={0}&b={1}&c={2}&d={3}&e={4}&f={5}&g={7}&ignore=.csv"'.format(a, b, c, d, e, f, symbol, type, market, code);
+    if (enableWGET) return 'wget -O ./d/{8}_{9}_{7}.csv "http://real-chart.finance.yahoo.com/table.csv?s={6}&a={0}&b={1}&c={2}&d={3}&e={4}&f={5}&g={7}&ignore=.csv"'.format(a, b, c, d, e, f, symbol, type, market, code);
+    else return 'curl -o ./d/{8}_{9}_{7}.csv "http://real-chart.finance.yahoo.com/table.csv?s={6}&a={0}&b={1}&c={2}&d={3}&e={4}&f={5}&g={7}&ignore=.csv"'.format(a, b, c, d, e, f, symbol, type, market, code);
 }
 
 function _get_mid_term_date(reference, offsetYear) {
