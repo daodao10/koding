@@ -17,3 +17,5 @@ cd ../nd
 node any-db.js
 # MSCI etl
 node msci_etl.js
+# CNYX & CNYR
+node cnindex_etl.js

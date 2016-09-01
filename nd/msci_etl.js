@@ -1,9 +1,12 @@
-// https://www.msci.com/webapp/indexperf/charts?baseValue=false&currency=15&priceLevel=0&site=gimi&scope=C&endDate=31%20Dec,%202016&frequency=M&format=XML&startDate=31%20Dec,%201969&indices=13,C,30|100016,C,30|106,C,36
+/**
+ * etl for MSCI https://www.msci.com/webapp/indexperf/charts?baseValue=false&currency=15&priceLevel=0&site=gimi&scope=C&endDate=31%20Dec,%202016&frequency=M&format=XML&startDate=31%20Dec,%201969&indices=13,C,30|100016,C,30|106,C,36
+ */
+"use strict";
+require('./ProtoUtil');
 
 var libxmljs = require("libxmljs"),
     fs = require('fs'),
-    myUtil = require('./MyUtil'),
-    anounymous = require('./ProtoUtil');
+    myUtil = require('./MyUtil');
 
 function _get(indices) {
     options = {

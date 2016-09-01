@@ -19,8 +19,8 @@ function main() {
         },
         period,
         start,
-        today = new Date(),
-        // today = new Date(2016,6,31),
+        // today = new Date(),
+        today = new Date(2016,7,31),
         dropdownList = [],
         cells,
         lines;
