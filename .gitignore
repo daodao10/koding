@@ -1,5 +1,6 @@
 config.ini
 config.json
+nd/mail-config.json
 bak/
 data/
 sgx/fa/
@@ -22,4 +23,3 @@ chart/d/*.csv
 !learning/capture/*.sh
 .DS_Store
 *-hid/
-
