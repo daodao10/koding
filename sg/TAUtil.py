@@ -9,6 +9,7 @@ from koding.symbol import SymbolUtil
 from ShareInvestor import ShareInvestor
 
 import zipfile
+import os
 
 
 class TAUtil:
@@ -24,19 +25,21 @@ class TAUtil:
 
     #@staticmethod
     def extract(self, counter):
-        fileHandle = open(self.SourceDir + counter, 'rb')
+        fileName = self.SourceDir + counter
+        if os.path.exists(fileName):
+            fileHandle = open(fileName, 'rb')
 
-        zf = zipfile.ZipFile(fileHandle)
-        for name in zf.namelist():
-            try:
-                data = zf.read(name)
-            except KeyError:
-                print 'ERROR: did not find %s in zip file' % name
-            else:
-                web_tools.save(self.OutputDir + counter + ".csv", data)
-                print counter, ' done'
+            zf = zipfile.ZipFile(fileHandle)
+            for name in zf.namelist():
+                try:
+                    data = zf.read(name)
+                except KeyError:
+                    print 'ERROR: did not find %s in zip file' % name
+                else:
+                    web_tools.save(self.OutputDir + counter + ".csv", data)
+                    print counter, ' done'
 
-        fileHandle.close()
+            fileHandle.close()
 
     def process(self, counter):
         if self.download(counter):

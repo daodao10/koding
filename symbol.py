@@ -40,7 +40,7 @@ class SymbolUtil:
     def getSGX():
         result = []
         try:
-            f=codecs.open('./chart/s/sg_shareinvestor.txt',mode='r')
+            f=codecs.open('../chart/s/sg_shareinvestor.txt',mode='r')
             lines=f.readlines()
             for l in lines:
                 splits = str.split(l,',')
