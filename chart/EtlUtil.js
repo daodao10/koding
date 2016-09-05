@@ -1,13 +1,13 @@
-var EtlUtil = function() {};
+var EtlUtil = function () { };
 
-var UserException = function(message) {
+var UserException = function (message) {
     this.message = message;
     this.name = "UserException";
 };
 
 EtlUtil.prototype = UserException;
 
-EtlUtil.prototype.encode_period = function(type) {
+EtlUtil.prototype.encode_period = function (type) {
     if (type === undefined || type === "daily") {
         return 'd';
     } else if (type === "monthly") {
@@ -19,13 +19,15 @@ EtlUtil.prototype.encode_period = function(type) {
     }
 };
 
-EtlUtil.prototype.encode_source = function(source) {
+EtlUtil.prototype.encode_source = function (source) {
     if (source === undefined || source === "yahoo") {
         return "Y";
     } else if (source === "stooq") {
         return "SQ";
     } else if (source === "shareinvestor") {
         return "SI";
+    } else if (source === "sgx") {
+        return "SGX";
     } else if (source === "wstock") {
         return "WS";
     } else if (source === "dao") {
@@ -37,13 +39,15 @@ EtlUtil.prototype.encode_source = function(source) {
     }
 };
 
-EtlUtil.prototype.decode_source = function(source) {
+EtlUtil.prototype.decode_source = function (source) {
     if (source === undefined || source === "Y") {
         return "finance.yahoo.com";
     } else if (source === "SQ") {
         return "stooq.com";
     } else if (source === "SI") {
         return "shareinvestor.com";
+    } else if (source === "SGX") {
+        return "www.sgx.com";
     } else if (source === "WS") {
         return "wstock.net";
     } else if (source === "D") {
@@ -55,7 +59,7 @@ EtlUtil.prototype.decode_source = function(source) {
     }
 };
 
-EtlUtil.prototype.parse_setting = function(data) {
+EtlUtil.prototype.parse_setting = function (data) {
     var matches = /\[(\w+)\s*:\s*(\w+)\s*:\s*(\w+)(,\s*(\w+))*\]/gi.exec(data);
     var setting = {
         "source": matches[1],

@@ -12,32 +12,37 @@ var settings = {
     HasLastBlank: true,
     SortingOrder: 1, // 1 --accending, -1 -- decending
 
-    "Y": { // newest to oldest
+    "Y": { // Yahoo: newest to oldest
         IsCompactDate: false, //1990-01-01
         xCell: 0,
         yCell: 6
     },
-    "G": { // newest to oldest
+    "G": { // Google: newest to oldest
         IsCompactDate: false, //1990-01-01
         xCell: 1,
         yCell: 6
     },
-    "SI": {
+    "SI": {// shareinvestor.sg
         IsCompactDate: true, //19900101
         xCell: 3,
         yCell: 7
     },
-    "SQ": {
+    "SGX": {// sgx.com
+        IsCompactDate: true,// set true when date format is yyyyMMdd or dateProcessor needed (e.g. 19/08/2013)
+        xCell: 0,
+        yCell: 4
+    },
+    "SQ": {// stooq.com
         IsCompactDate: false,
         xCell: 0,
         yCell: 4
     },
-    "WS": {
+    "WS": {// wsstock.com
         IsCompactDate: true,
         xCell: 1,
         yCell: 6
     },
-    "D": { // dao
+    "D": { // dao - customized
         IsCompactDate: false,
         xCell: 0,
         yCell: 1
@@ -61,9 +66,9 @@ function batchProcess(filename) {
         settings["source"] = etlUtil.encode_source(settings["source"]);
 
         var newRows = [];
-        lines.forEach(function(row) {
+        lines.forEach(function (row) {
             if (row) {
-                settings.period.map(function(period) {
+                settings.period.map(function (period) {
                     newRows.push([row, period]);
                 });
             }
@@ -81,13 +86,13 @@ function fx(newRows, index, total, counter) {
         return;
     };
 
-    Promise.all(newRows[index].map(function(item) {
-        return new Promise(function(resolve, reject) {
+    Promise.all(newRows[index].map(function (item) {
+        return new Promise(function (resolve, reject) {
             var period = etlUtil.encode_period(item[1]);
             var cells = item[0].stripLineBreaks().split(','),
                 srcFile,
                 destFile;
-            if (settings.market === "sg") { // special case
+            if (settings["source"] === "SI") { // special case
                 srcFile = "../{0}/dest-hid/{1}.csv".format(settings.market, cells[0]);
             } else if (settings["source"] === "WS") { // special case
                 srcFile = "../../wsWDZ/{0}/{1}/{2}.txt".format(cells[4] == 1 ? "etl-2" : "etl", cells[0].startsWith('SH') ? "SH" : "SZ", cells[0]);
@@ -107,7 +112,7 @@ function fx(newRows, index, total, counter) {
             // console.log('params:', settings.source, period, srcFile, destFile);
             generate(srcFile, destFile, getDateProcessor(settings.source, period), resolve, reject);
 
-        }).catch(function(e) {
+        }).catch(function (e) {
             // console.error(e);
             if (e.code === 'ENOENT') {
                 console.log("file is not found", e.path);
@@ -115,8 +120,8 @@ function fx(newRows, index, total, counter) {
                 console.log("oh, no!", e.message);
             }
         });
-    })).then(function(val) {
-        val.forEach(function(x) {
+    })).then(function (val) {
+        val.forEach(function (x) {
             counter += (x == undefined ? 0 : x);
         });
 
@@ -125,7 +130,7 @@ function fx(newRows, index, total, counter) {
 }
 
 function generate(srcFile, output, dateProcessor, resolve, reject) {
-    fs.readFile(srcFile, function(err, data) {
+    fs.readFile(srcFile, function (err, data) {
         if (err) {
             reject(err);
         } else {
@@ -156,9 +161,9 @@ function generate(srcFile, output, dateProcessor, resolve, reject) {
                 //     }
                 // }
 
-                var data = array.map(function(line) {
+                var data = array.map(function (line) {
                     return mapFunc(line, dateProcessor);
-                }).filter(function(element) {
+                }).filter(function (element) {
                     return element != null;
                 });
 
@@ -166,7 +171,7 @@ function generate(srcFile, output, dateProcessor, resolve, reject) {
                 data.sort();
 
                 var content = "var data=[" + data.join(',\n') + "];\nvar source='" + etlUtil.decode_source(settings.source) + "';";
-                fs.writeFile(output, content, function(err) {
+                fs.writeFile(output, content, function (err) {
                     if (err) {
                         reject(err);
                     }
@@ -181,16 +186,21 @@ function generate(srcFile, output, dateProcessor, resolve, reject) {
 function getDateProcessor(source, period) {
     // special case: adjust end date of monthly data from yahoo
     if (source === "Y" && period === "m") {
-        return function(dateStr) {
+        return function (dateStr) {
             // console.log(dateStr);
             return myUtil.getLastDateOfMonthFromStr(dateStr, {
                 i: 0,
                 l: 4
             }, {
-                i: 5,
-                l: 2
-            }).format("yyyyMMdd");
+                    i: 5,
+                    l: 2
+                }).format("yyyyMMdd");
         };
+    } else if (source === "SGX") {
+        return function (dateStr) {
+            //19/08/2013: ddMMyyyy
+            return dateStr.substr(6, 4) + dateStr.substr(3, 2) + dateStr.substr(0, 2);
+        }
     }
     return null;
 }
