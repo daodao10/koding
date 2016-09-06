@@ -8,6 +8,43 @@ var fs = require('fs'),
     anounymous = require('./ProtoUtil'),
     enabledAllotment = false;// 是否允许配股
 
+function _get(symbol) {
+    return new Promise(function (resolve, reject) {
+
+        myUtil.get({
+            host: 'vip.stock.finance.sina.com.cn',
+            path: '/corp/go.php/vISSUE_ShareBonus/stockid/' + symbol + '.phtml',
+            "Upgrade-Insecure-Requests": 1,
+            "charset": "GBK",
+            // debug:true
+        }, function (data, statusCode) {
+
+            if (statusCode !== 200) {
+                console.error('error occurred: ', statusCode);
+                reject({
+                    url: symbol,
+                    error: statusCode
+                });
+            }
+
+            resolve(data);
+        });
+
+    });
+}
+
+function _parse(reg, input, dataFunc) {
+    var result = [],
+        m;
+    while ((m = reg.exec(input))) {
+        if (m.index === m.lastIndex) {
+            m.lastIndex++;
+        }
+        result.push(dataFunc(m));
+    }
+    return result;
+}
+
 function main() {
 
     if (!enabledAllotment) console.log('代码,公告日期,送股(股),转增(股),派息(税前)(元),除权除息日');
@@ -46,43 +83,6 @@ function main() {
             });
         }
     });
-}
-
-function _get(symbol) {
-    return new Promise(function (resolve, reject) {
-
-        myUtil.get({
-            host: 'vip.stock.finance.sina.com.cn',
-            path: '/corp/go.php/vISSUE_ShareBonus/stockid/' + symbol + '.phtml',
-            "Upgrade-Insecure-Requests": 1,
-            "charset": "GBK",
-            // debug:true
-        }, function (data, statusCode) {
-
-            if (statusCode !== 200) {
-                console.error('error occurred: ', statusCode);
-                reject({
-                    url: symbol,
-                    error: statusCode
-                });
-            }
-
-            resolve(data);
-        });
-
-    });
-}
-
-function _parse(reg, input, dataFunc) {
-    var result = [],
-        m;
-    while ((m = reg.exec(input))) {
-        if (m.index === m.lastIndex) {
-            m.lastIndex++;
-        }
-        result.push(dataFunc(m));
-    }
-    return result;
 }
 
 // main();
