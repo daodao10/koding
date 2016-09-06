@@ -13,7 +13,7 @@ var fs = require('fs'),
     MyMongo = require('./MyMongoUtil'),
     config = require('../config.json'),
     myMongo = new MyMongo("{0}{1}".format(config.DbSettings.DbUri, 'test')),
-    mock = true;
+    mock = false;
 
 function _request(options) {
     return new Promise(function (resolve, reject) {
@@ -202,7 +202,7 @@ var SSE = {
                 // Cookie:"PHPStat_First_Time_10000011=1457371409512; PHPStat_Cookie_Global_User_Id=_ck16030801232916136963712121213; PHPStat_Main_Website_10000011=_ck16030801232916136963712121213%7C10000011%7C%7C%7C; PHPStat_Return_Count_10000011=4; PHPStat_Return_Time_10000011=1458918026357",
                 Referer: "http://www.sse.com.cn/market/stockdata/overview/day/"
             },
-            debug: true
+            // debug: true
         }).then(function (content) {
             var x = eval(content);
             if (typeof func === 'function') {
@@ -213,7 +213,7 @@ var SSE = {
         });
     },
     store: function (line) {
-        updateMarket('ss', line);
+        Market.update('ss', line);
     }
 };
 
@@ -266,7 +266,7 @@ var SZSE = {
             headers: {
                 'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8'
             },
-            debug: true,
+            // debug: true,
             data: "ACTIONID=7&AJAX=AJAX-TRUE&CATALOGID=1803&TABKEY=tab1&REPORT_ACTION=search&txtQueryDate=" + today
         }).then(function (content) {
             if (typeof func === 'function') {
@@ -277,7 +277,7 @@ var SZSE = {
         });
     },
     store: function (line) {
-        updateMarket('sz', line);
+        Market.update('sz', line);
     }
 };
 
@@ -338,7 +338,7 @@ var GDP = {
                 console.log(rows);
             } else {
                 myMongo.upsertBatch('GDP_Q', rows, function (err, result) {
-                    logResult('update GDP_Q', err, result);
+                    logDbResult('update GDP_Q', err, result);
                 });
             }
         });
@@ -371,15 +371,18 @@ function etl() {
 
 
     // batch process
-    var dts = ['20160823', '20160824'];
+    var dts = ['20160830', '20160831', '20160901', '20160902', '20160905'];
 
     // // 1) etl sse & szse
     // dts.forEach(function (item) {
-    //     var dt = item[0];
+    //     var dt = item;
     //     dt = dt.substr(0, 4) + "-" + dt.substr(4, 2) + "-" + dt.substr(6, 2);
 
-    //     SSE.etl(dt, SSE.log);
-    //     // SZSE.etl(dt, SZSE.log);
+    //     // SSE.etl(dt, console.log);
+    //     // SZSE.etl(dt, console.log);
+
+    //     SSE.etl(dt, SSE.store);
+    //     SZSE.etl(dt, SZSE.store);
     // });
 
     // // 2.1) sum market cap
@@ -387,13 +390,13 @@ function etl() {
     // // 2.2) update SSE index
     // Market.updateSSEIndex(dts[0]);
 
-    // // 3) etl GDP by quarter
+    // // 2.3) etl GDP by quarter
     // GDP.etl();
 
-    // // 4) export market value from db
+    // // 3) export market value from db
     // Market.export();
 
-    // // 5) export market value json file
+    // // 4) export market value json file
     // var util = new CsvSerieUtil(false);
     // util.extract('./-hid/MV_cn.csv', '../../daodao10.github.io/chart/swi/mv.json');
 }
