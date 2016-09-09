@@ -1,7 +1,8 @@
 var MyMongo = require('../nd/MyMongoUtil'),
     anounymous = require('../nd/ProtoUtil'),
     config = require('../config.json'),
-    myMongo = new MyMongo("{0}{1}".format(config.DbSettings.QuotesDbUri, 'quotes'));
+    // myMongo = new MyMongo("{0}{1}".format(config.DbSettings.QuotesDbUri, 'quotes'));
+    myMongo = new MyMongo("{0}{1}".format(config.DbSettings.DbUri, 'test'));
 
 function getDateRange() {
     var now = new Date(),
@@ -69,7 +70,7 @@ function main() {
         if (docs && docs.length > 0) {
             // insert:
             // console.dir(docs);
-            myMongo.insert("nhnl_sum", docs, function(err, result) {
+            myMongo.insert("marketUS", docs, function(err, result) {
                 if (err) {
                     console.error(err);
                     return;
@@ -84,4 +85,5 @@ function main() {
     });
 }
 
+// first run start from 20051027
 main();

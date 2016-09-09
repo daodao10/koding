@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 import web_tools
-import re
+import re,sys,datetime
 from mymongo import MyMongo
 
 
@@ -11,8 +11,9 @@ class GuruFocus:
     __PeterLynchChartDataFormat = r"\{\s*animation:false,\s*lineWidth: 2,\s*name : '%s',\s*data :(.*)\};"
     __PeterLynchChartNames = { "p": "%s  Price", "pl": "%s Peter Lynch Earnings Line" }
 
-    def __init__(self, dbUri = None):
-        self.__dbContext = MyMongo("quotes", dbUri)
+    def __init__(self, today, dbUri = None):
+        self.__dbContext = MyMongo("test", dbUri)
+        self.__today = today
 
     def fetch(self, url):
         content =  web_tools.get(url)
@@ -57,18 +58,19 @@ class GuruFocus:
             rows.append(self.extractChartData(content, regex, refresh))
 
         for k in rows[0].keys():
-            item = {"date": k}
+            item = {"_id": k}
             for x in range(0,len(keys)):
                 item[keys[x]] = rows[x][k]
             merged.append(item)
 
         # sort
-        merged.sort(key = lambda i: i["date"])
+        merged.sort(key = lambda i: i["_id"])
 
         if refresh:
             r = merged[0]
-            gdp1 = self.getGdp(r["date"], 1)
-            gdp2 = self.getGdp(r["date"], 2)
+            r["_id"] = today
+            gdp1 = self.getGdp(r["_id"], 1)
+            gdp2 = self.getGdp(r["_id"], 2)
             # print gdp1, gdp2
 
             r["TMC2GDP1"] = round(r["TMC"] / gdp1 * 100, 2)
@@ -105,7 +107,7 @@ class GuruFocus:
             elif d >='20160101' and d <'20160501':
                 return 18.1648; # 2015Q4 -- need to update around 29 Jan, 2016
             elif d >='20160501' and d <'20160801':
-                return 18.2211; # 2016Q1
+                return 18281.6; # 2016Q1
             elif d >='20160801' and d <'20161101':
                 return 18436.5; # 2016Q2
             else:
@@ -127,8 +129,8 @@ class GuruFocus:
                 return 18.0602; # 2015Q3
             elif d >= '20160401' and d < '20160701':
                 return 18.1648; # 2015Q4
-            elif d >= '20160701' and d < '20161001':
-                return 18.2211; # 2016Q1
+            elif d >= '20160801' and d < '20161101':
+                return 18281.6; # 2016Q1
             else:
                 return None
 
@@ -193,8 +195,13 @@ class GuruFocus:
             print "empty"
 
 if __name__ == "__main__":
-    dbUri = web_tools.getDbUri(key="QuotesDbUri")
-    guru = GuruFocus(dbUri = dbUri)
+    # dbUri = web_tools.getDbUri(key="QuotesDbUri")
+    dbUri = web_tools.getDbUri(key="DbUri")
+    if len(sys.argv) == 2:
+        today = sys.argv[1]
+    else:
+        today = web_tools.today()
+    guru = GuruFocus(today = today, dbUri = dbUri)
     guru.doMarketValue()
     # guru.doPeterLynch("BIDU")
     # guru.doPeterLynch("AAPL")

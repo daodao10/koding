@@ -8,7 +8,8 @@ var fs = require('fs'),
     config = require('../config.json'),
     EtlSettings = require(EtlSettingsFile);
 
-var myMongo = new MyMongo("{0}{1}".format(config.DbSettings.QuotesDbUri, 'quotes'));
+// var myMongo = new MyMongo("{0}{1}".format(config.DbSettings.QuotesDbUri, 'quotes'));
+var myMongo = new MyMongo("{0}{1}".format(config.DbSettings.DbUri, 'test'));
 var tableProcessor = {
         _quarter2Date: function(year, str) {
             if (str == "一季度") {
