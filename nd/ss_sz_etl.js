@@ -371,7 +371,7 @@ function etl() {
 
 
     // batch process
-    var dts = ['20160830', '20160831', '20160901', '20160902', '20160905'];
+    var dts = ['20160906', '20160907', '20160908', '20160909'];
 
     // // 1) etl sse & szse
     // dts.forEach(function (item) {

@@ -10,12 +10,12 @@ fi
 
 python gurufocus.py $today
 
-cd nd
-node sc_etl.js $today
-
-cd ../chart
+cd chart
 node nhnl_us_etl.js $today
 node nhnl_us_sum_etl.js $today
+
+cd ../nd
+node sc_etl.js $today
 
 cd ../learning/capture
 echo 'capture from finviz.com ...'
