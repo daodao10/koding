@@ -9,7 +9,7 @@ var libxmljs = require("libxmljs"),
     myUtil = require('./MyUtil');
 
 function _get(indices) {
-    options = {
+    var options = {
         host: 'www.msci.com',
         path: '/webapp/indexperf/charts?baseValue=false&currency=15&priceLevel=0&site=gimi&scope=C&endDate=31%20Dec,%202016&frequency=M&format=XML&startDate=31%20Dec,%201969&indices=' + indices,
         "Upgrade-Insecure-Requests": 1

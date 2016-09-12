@@ -1,4 +1,4 @@
-symbol,code[stooq : world : monthly, daily]
+symbol,code[stooq : world : monthly]
 ^DJI,^DJI,道琼斯工业指数,INDEX
 ^shc,^SSE,中国上证指数,INDEX
 ^TWSE,^TWSE,台湾加权指数,INDEX
@@ -12,3 +12,4 @@ symbol,code[stooq : world : monthly, daily]
 ^SNX,^SNX,印度孟买30指数,INDEX
 ^RTS,^RTS,俄罗斯指数,INDEX
 ^BVP,^BVP,巴西博维斯帕指数,INDEX
+^STI,^STI,新加坡海峡指数,INDEX

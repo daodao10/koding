@@ -104,7 +104,7 @@ class DbSerieUtil{
 
 }
 
-var util = new DbSerieUtil("{0}{1}".format(config.DbSettings.QuotesDbUri, 'quotes'));
+var util = new DbSerieUtil("{0}{1}".format(config.DbSettings.DbUri, 'test'));
 // util.extractSeries('BDI', null, [['_id','date'],['c','value']]);
 // util.extractCsv('BDI', null, [['_id','date'],['c','value']], './BDI.csv');
 util.extractOpt('BDI', null, [['_id','date'],['c','value']], "../../daodao10.github.io/chart/world/BDI_m.js");
