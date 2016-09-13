@@ -6,15 +6,15 @@ var http = require('http'),
 
 http.globalAgent.maxSockets = 25;
 
-var MyUtil = function() {};
+var MyUtil = function () { };
 
-MyUtil.prototype.extend = function(origin, add) {
+MyUtil.prototype.extend = function (origin, add) {
 
-    var isObject = function(value) {
+    var isObject = function (value) {
         return Object(value) === value;
     };
 
-    return (function() {
+    return (function () {
         if (!add || typeof add !== 'object') return origin;
 
         var keys = Object.keys(add); //Object.getOwnPropertyNames(add);
@@ -27,7 +27,7 @@ MyUtil.prototype.extend = function(origin, add) {
             }
         }
         return origin;
-    }(origin, add));
+    } (origin, add));
 };
 
 function _getCallback(data, statusCode, options, callback) {
@@ -38,7 +38,7 @@ function _getCallback(data, statusCode, options, callback) {
 
         var index = data.indexOf("(");
         if (index > 0) {
-            global[data.substring(0, index)] = function(d) {
+            global[data.substring(0, index)] = function (d) {
                 callback(d, statusCode);
             };
             eval(data);
@@ -49,9 +49,17 @@ function _getCallback(data, statusCode, options, callback) {
         callback(data, statusCode);
     }
 }
+function _getCharset(contentType) {
+    // text/html; charset=utf-8 || text/html; charset=GBK
+    var m;
+    if (m = /.*charset=([\w-]+)/ig.exec(contentType)) {
+        return m[1];
+    }
+    return null;
+}
 
 // refer to https://github.com/ncb000gt/node-es/blob/master/lib/request.js
-MyUtil.prototype.get = function(options, callback) {
+MyUtil.prototype.request = function (options, callback) {
     options = this.extend({
         secure: false,
         port: 80,
@@ -63,10 +71,11 @@ MyUtil.prototype.get = function(options, callback) {
             'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/42.0.2311.135 Safari/537.36'
         },
         timeout: 15000,
+        // charset: 'UTF-8',
         debug: false
     }, options);
 
-    var req = (options.secure ? https : http).get(options, function(res) {
+    var req = (options.secure ? https : http).request(options, function (res) {
 
         var data,
             bodyChunks = [],
@@ -79,9 +88,9 @@ MyUtil.prototype.get = function(options, callback) {
             console.log('HEADERS: ' + JSON.stringify(res.headers));
         }
 
-        res.on('data', function(chunk) {
+        res.on('data', function (chunk) {
             bodyChunks.push(chunk);
-        }).on('end', function() {
+        }).on('end', function () {
 
             var body = Buffer.concat(bodyChunks);
 
@@ -90,24 +99,33 @@ MyUtil.prototype.get = function(options, callback) {
                 console.log('ENCODING:', encoding);
             }
 
+            var charset = options.charset || _getCharset(res.headers['content-type']);
+            if (options.debug) console.log('charset:', charset);
+
             if (encoding === "gzip") {
-                zlib.gunzip(body, function(err, decoded) {
-                    data = options.encoding ? iconv.decode(decoded, options.encoding) : decoded.toString();
-                    _getCallback(data, res.statusCode, {
-                        jsonp: options.jsonp,
-                        debug: options.debug
-                    }, callback);
+                zlib.gunzip(body, function (err, decoded) {
+                    if (err) throw err;
+                    else {
+                        data = (charset == null || charset == 'UTF-8' ? decoded.toString() : iconv.decode(decoded, charset));
+                        _getCallback(data, res.statusCode, {
+                            jsonp: options.jsonp,
+                            debug: options.debug
+                        }, callback);
+                    }
                 });
             } else if (encoding === "deflate") {
-                zlib.inflate(body, function(err, decoded) {
-                    data = decoded.toString();
-                    _getCallback(data, res.statusCode, {
-                        jsonp: options.jsonp,
-                        debug: options.debug
-                    }, callback);
+                zlib.inflate(body, function (err, decoded) {
+                    if (err) throw err;
+                    else {
+                        data = decoded.toString();
+                        _getCallback(data, res.statusCode, {
+                            jsonp: options.jsonp,
+                            debug: options.debug
+                        }, callback);
+                    }
                 });
             } else {
-                data = body.toString();
+                data = (charset == null || charset == 'UTF-8' ? body.toString('utf8') : iconv.decode(body, charset));
                 _getCallback(data, res.statusCode, {
                     jsonp: options.jsonp,
                     debug: options.debug
@@ -117,7 +135,11 @@ MyUtil.prototype.get = function(options, callback) {
         });
     });
 
-    req.on('error', function(err) {
+    if (options.method == 'POST') {
+        req.write(options.data);
+    }
+
+    req.on('error', function (err) {
         if (options.debug) {
             if (err.code === "ECONNRESET") {
                 console.log("Timeout occurs");
@@ -129,17 +151,19 @@ MyUtil.prototype.get = function(options, callback) {
     });
 
     if (options.timeout) {
-        req.setTimeout(options.timeout, function() {
+        req.setTimeout(options.timeout, function () {
             req.abort();
         });
     }
+
+    req.end();
 };
 
-MyUtil.prototype.readlines = function(filePath, callback) {
+MyUtil.prototype.readlines = function (filePath, callback) {
     var input = fs.createReadStream(filePath);
     var remaining = '';
 
-    input.on('data', function(data) {
+    input.on('data', function (data) {
         remaining += data;
         var index = remaining.indexOf('\n');
         while (index > -1) {
@@ -150,14 +174,14 @@ MyUtil.prototype.readlines = function(filePath, callback) {
         }
     });
 
-    input.on('end', function() {
+    input.on('end', function () {
         if (remaining.length > 0) {
             callback(remaining);
         }
     });
 };
 
-MyUtil.prototype.readlinesSync = function(filePath, options) {
+MyUtil.prototype.readlinesSync = function (filePath, options) {
     options = this.extend({
         encoding: 'utf-8'
     }, options);
@@ -167,12 +191,12 @@ MyUtil.prototype.readlinesSync = function(filePath, options) {
     }
 };
 
-MyUtil.prototype.sleep = function(milliSeconds) {
+MyUtil.prototype.sleep = function (milliSeconds) {
     var startTime = new Date().getTime();
     while (new Date().getTime() < startTime + milliSeconds);
 };
 
-MyUtil.prototype.varReplace = function(input, dic) {
+MyUtil.prototype.varReplace = function (input, dic) {
     /// replace %VARIABLE_NAME% with dic[VARIABLE_NAME]
     ///
 
@@ -187,12 +211,12 @@ MyUtil.prototype.varReplace = function(input, dic) {
     return input;
 };
 
-MyUtil.prototype.log2 = function(x) {
+MyUtil.prototype.log2 = function (x) {
     if (x <= 0) return NaN;
     return Math.log(x) / Math.LN2;
 };
 
-MyUtil.prototype.toNumber = function(str) {
+MyUtil.prototype.toNumber = function (str) {
     if (!str || str === "-") {
         return 0;
     } else {
@@ -203,7 +227,7 @@ MyUtil.prototype.toNumber = function(str) {
     }
 };
 
-MyUtil.prototype.getLastDateOfMonth = function(year, month) {
+MyUtil.prototype.getLastDateOfMonth = function (year, month) {
     if (typeof year === 'string') {
         year = Number(year);
     }
@@ -214,7 +238,7 @@ MyUtil.prototype.getLastDateOfMonth = function(year, month) {
     return new Date(year, month, 0).getTime();
 };
 
-MyUtil.prototype.getLastDateOfMonthFromStr = function(dateStr, yearOptions, monthOptions) { // dateStr: yyyyMMdd
+MyUtil.prototype.getLastDateOfMonthFromStr = function (dateStr, yearOptions, monthOptions) { // dateStr: yyyyMMdd
     var year = dateStr.substr(yearOptions.i, yearOptions.l),
         month = dateStr.substr(monthOptions.i, monthOptions.l);
 

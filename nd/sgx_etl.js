@@ -42,7 +42,7 @@ function _post(options) {
     // curl -H "Content-Type: application/json" -X POST  --data '{ "id": "1A0" }'  https://sgx-premium.wealthmsi.com/sgx/company/priceHistory
 
     return new Promise(function (resolve, reject) {
-        myUtil.get(options, function (data, statusCode) {
+        myUtil.request(options, function (data, statusCode) {
             if (statusCode !== 200) {
                 reject({
                     url: options.path,
@@ -61,7 +61,7 @@ function _get(options) {
     }, options);
 
     return new Promise(function (resolve, reject) {
-        myUtil.get(options, function (data, statusCode) {
+        myUtil.request(options, function (data, statusCode) {
             if (statusCode !== 200) {
                 reject({
                     url: options.path,

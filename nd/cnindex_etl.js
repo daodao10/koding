@@ -9,7 +9,7 @@ var fs = require('fs'),
 
 function _get(options) {
     return new Promise(function (resolve, reject) {
-        myUtil.get(options, function (data, statusCode) {
+        myUtil.request(options, function (data, statusCode) {
             if (options.debug) {
                 console.log(options.path);
             }

@@ -101,7 +101,7 @@ function SCData(scanName) {
 
     function get(url) {
         return new Promise(function(resolve, reject) {
-            myUtil.get({
+            myUtil.request({
                 host: 'stockcharts.com',
                 path: url
             }, function(data, statusCode) {

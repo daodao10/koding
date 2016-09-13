@@ -11,7 +11,7 @@ var fs = require('fs'),
 function _get(symbol) {
     return new Promise(function (resolve, reject) {
 
-        myUtil.get({
+        myUtil.request({
             host: 'vip.stock.finance.sina.com.cn',
             path: '/corp/go.php/vISSUE_ShareBonus/stockid/' + symbol + '.phtml',
             "Upgrade-Insecure-Requests": 1,

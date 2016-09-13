@@ -260,7 +260,7 @@ function main(key) {
                     resolve(data);
                 });
             } else {
-                myUtil.get({
+                myUtil.request({
                     host: 'value500.com',
                     path: url,
                     "Upgrade-Insecure-Requests": 1

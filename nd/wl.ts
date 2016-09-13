@@ -50,7 +50,7 @@ class WL {
 			charset: 'GBK'
 		};
 		return new Promise(function (resolve, reject) {
-			myUtil.get(options, function (data, statusCode) {
+			myUtil.request(options, function (data, statusCode) {
 				if (statusCode !== 200) {
 					console.error('error occurred: ', statusCode);
 					reject({

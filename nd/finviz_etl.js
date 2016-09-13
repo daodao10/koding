@@ -12,7 +12,7 @@ var fs = require('fs'),
 
 function get(startRowIndex) {
     return new Promise(function(resolve, reject) {
-        myUtil.get({
+        myUtil.request({
             host: 'finviz.com',
             path: '/screener.ashx?v=150&f=fa_eps5years_pos,ind_stocksonly,sh_avgvol_o300,sh_price_o5&o=ticker&r={0}'.format(startRowIndex),
             // path: '/screener.ashx?v=151&f=ind_stocksonly,sh_avgvol_o100,sh_price_o1&ft=4&o=ticker&r={0}'.format(startRowIndex),

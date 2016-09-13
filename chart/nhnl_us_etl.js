@@ -107,7 +107,7 @@ function dailyRun() {
         var dt = process.argv[2];
 
         // curl -O http://unicorn.us.com/advdec/2015/adU20150326.txt
-        myUtil.get({
+        myUtil.request({
             'host': 'unicorn.us.com',
             'path': '/advdec/{0}/adU{1}.txt'.format(dt.substr(0, 4), dt)
         }, function(data, statusCode) {

@@ -19,7 +19,7 @@ var get = function(pathArgs) {
         var self = this;
         // console.log(self.settings.PathFormat.format(pathArgs.s, pathArgs.i));
         return new Promise(function(resolve, reject) {
-            myUtil.get({
+            myUtil.request({
                 host: self.settings.Host,
                 path: self.settings.PathFormat.format(pathArgs.s, pathArgs.i)
             }, function(data, statusCode) {
