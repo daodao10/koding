@@ -12,9 +12,9 @@ if __name__ == "__main__":
     else:
         today = web_tools.today(utcDiff=-15)
    
-    query = {"date": today}
-    dbUri = web_tools.getDbUri(key="QuotesDbUri")
-    client = MyMongo(dbName="quotes", dbUri = dbUri)
+    query = {"_id": today}
+    dbUri = web_tools.getDbUri(key="DbUri")
+    client = MyMongo(dbName="test", dbUri = dbUri)
 
     # print "-------today's data-------"
     # rows = client.collection("tmc2gdp_day").find(query)
