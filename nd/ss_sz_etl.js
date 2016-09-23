@@ -151,7 +151,7 @@ var Market = {
     },
     updateBatch: function (market) {
         var rows = [],
-            src = (market == 'sz') ? './-hid/szse.csv' : './-hid/sse.csv',
+            src = './-hid/' + market + '.csv',
             lines = myUtil.readlinesSync(src),
             i;
 
@@ -227,17 +227,28 @@ var SZSE = {
         }
         return 0;
     },
-    _extract: function (today, content) {
-        var x = [today,
-            null,
-            null,
-            this._parse('股票成交金额（元）', content) / 100000000,//亿元
-            this._parse('股票平均市盈率', content),
-            this._parse('股票总市值（元）', content) / 100000000,//亿元
-            this._parse('股票流通市值（元）', content) / 100000000,//亿元
-            this._parse('股票平均换手率', content)];//%
+    _extract: function (today, board, content) {
+        // date,transaction,volume,amount,pe,market value,negotiable value,exchange rate
+        var x = (board === 'sz' ?
+            [today,
+                null,
+                null,
+                this._parse('股票成交金额（元）', content) / 100000000,//亿元
+                this._parse('股票平均市盈率', content),
+                this._parse('股票总市值（元）', content) / 100000000,//亿元
+                this._parse('股票流通市值（元）', content) / 100000000,//亿元
+                this._parse('股票平均换手率', content)//%
+            ] : [today,
+                this._parse('总成交笔数', content) / 10000,//万笔
+                this._parse('总成交股数', content) / 10000,//万股
+                this._parse('总成交金额\\(元\\)', content) / 100000000,//亿元
+                this._parse('平均市盈率\\(倍\\)', content),
+                this._parse('上市公司市价总值\\(元\\)', content) / 100000000,//亿元
+                this._parse('上市公司流通市值\\(元\\)', content) / 100000000,//亿元
+                null//%
+            ]);
 
-        return "{0},,,{1},{2},{3},{4},{5}".format(x[0], x[3], x[4], x[5], x[6], x[7]);
+        return "{0},{6},{7},{1},{2},{3},{4},{5}".format(x[0], x[3], x[4], x[5], x[6], x[7], x[1], x[2]);
     },
 
     // getDL: function (today) {
@@ -257,8 +268,34 @@ var SZSE = {
     //     });
     // },
 
-    etl: function (today, func) {
+    _getTabIndex: function (board) {
+        switch (board) {
+            case 'sz':
+                return 1;
+            case 'szm':
+                return 2;
+            case 'zx':
+                return 3;
+            case 'cy':
+                return 4;
+        }
+    },
+
+    _validBoard: function (board) {
+        switch (board) {
+            case 'sz':
+            case 'szm':
+            case 'zx':
+            case 'cy':
+                return board;
+            default:
+                return 'sz';
+        }
+    },
+
+    etl: function (today, func, board) {
         var self = this;
+        board = self._validBoard(board);
         _request({
             host: 'www.szse.cn',
             path: '/szseWeb/FrontController.szse',
@@ -267,17 +304,17 @@ var SZSE = {
                 'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8'
             },
             // debug: true,
-            data: "ACTIONID=7&AJAX=AJAX-TRUE&CATALOGID=1803&TABKEY=tab1&REPORT_ACTION=search&txtQueryDate=" + today
+            data: "ACTIONID=7&AJAX=AJAX-TRUE&CATALOGID=1803&TABKEY=tab{0}&REPORT_ACTION=search&txtQueryDate={1}".format(self._getTabIndex(board), today)
         }).then(function (content) {
             if (typeof func === 'function') {
-                func(self._extract(today, content));
+                func(self._extract(today, board, content), board);
             } else {
                 console.log('nothing to do');
             }
         });
     },
-    store: function (line) {
-        Market.update('sz', line);
+    store: function (line, board) {
+        Market.update(board, line);
     }
 };
 
@@ -371,7 +408,7 @@ function etl() {
 
 
     // batch process
-    var dts = ['20160906', '20160907', '20160908', '20160909'];
+    var dts = ['20160920', '20160921', '20160922', '20160923'];
 
     // // 1) etl sse & szse
     // dts.forEach(function (item) {
@@ -379,10 +416,16 @@ function etl() {
     //     dt = dt.substr(0, 4) + "-" + dt.substr(4, 2) + "-" + dt.substr(6, 2);
 
     //     // SSE.etl(dt, console.log);
-    //     // SZSE.etl(dt, console.log);
+    //     // SZSE.etl(dt, console.log, 'sz');
+    //     // SZSE.etl(dt, console.log, 'szm');
+    //     // SZSE.etl(dt, console.log, 'zx');
+    //     // SZSE.etl(dt, console.log, 'cy');
 
     //     SSE.etl(dt, SSE.store);
-    //     SZSE.etl(dt, SZSE.store);
+    //     SZSE.etl(dt, SZSE.store, 'sz');
+    //     SZSE.etl(dt, SZSE.store, 'szm');
+    //     SZSE.etl(dt, SZSE.store, 'zx');
+    //     SZSE.etl(dt, SZSE.store, 'cy');
     // });
 
     // // 2.1) sum market cap
@@ -404,3 +447,4 @@ function etl() {
 etl();
 // console.log(GDP.ttm(917539200000));
 // console.log(toTimestamp('20160823',true));
+// Market.updateBatch('cy');
