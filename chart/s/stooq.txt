@@ -8,7 +8,7 @@ symbol,code[stooq : world : monthly]
 ^AOR,^AOR,澳大利亚股指,INDEX
 ^KLCI,^KLCI,吉隆坡综合指数,INDEX
 ^JCI,^JCI,雅加达综合指数,INDEX
-^MXWO,^MXWO,MSCI World Index,INDEX
+^IPC,^IPC,墨西哥指数,INDEX
 ^SNX,^SNX,印度孟买30指数,INDEX
 ^RTS,^RTS,俄罗斯指数,INDEX
 ^BVP,^BVP,巴西博维斯帕指数,INDEX

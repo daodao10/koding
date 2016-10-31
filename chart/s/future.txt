@@ -3,11 +3,11 @@ sc.f,BRENT,布伦特原油期货(BRENT OIL),FUTURE
 cl.f,CL,轻质低硫原油期货(LIGHT CRUDE OIL),FUTURE
 gc.f,GC,黄金期货(GOLD),FUTURE,XAUUSD
 si.f,SI,白银期货(SILVER),FUTURE,XAGUSD
-ty.f,ZN,美国10年期国债期货(10Y NOTE),FUTURE
-c.f,ZC,玉米期货(CORN),FUTURE
-w.f,ZW,小麦期货(WHEAT),FUTURE
+zn.f,ZN,美国10年期国债期货(10Y NOTE),FUTURE
+zc.f,ZC,玉米期货(CORN),FUTURE
+zw.f,ZW,小麦期货(WHEAT),FUTURE
 kc.f,KC,咖啡期货(COFFEE C),FUTURE
-s.f,ZS,大豆期货(SOYBEAN),FUTURE
+zs.f,ZS,大豆期货(SOYBEAN),FUTURE
 sgdcny,SGDCNY,新元对人民币,CURRENCY
 sgdusd,SGDUSD,新元对美元,CURRENCY
 usdsgd,USDSGD,美元对新元,CURRENCY
