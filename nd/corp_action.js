@@ -48,7 +48,7 @@ function _parse(reg, input, dataFunc) {
 function main() {
 
     if (!enabledAllotment) console.log('代码,公告日期,送股(股),转增(股),派息(税前)(元),除权除息日');
-    myUtil.readlines("./-hid/symbol.txt", function (symbol) {
+    myUtil.readlines("./-hid/cn_symbol.txt", function (symbol) {
         // var symbol = '600298';
         if (symbol) {
             _get(symbol).then(function (content) {
