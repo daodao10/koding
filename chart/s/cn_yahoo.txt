@@ -40,6 +40,7 @@ symbol,code,name,sector,industry,ignore[yahoo : cn : daily]
 000596.sz,000596
 000600.sz,000600
 000603.sz,000603
+000612.sz,000612
 000619.sz,000619
 000625.sz,000625
 000636.sz,000636
