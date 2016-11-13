@@ -114,6 +114,7 @@ symbol,code,name,sector,industry,ignore[yahoo : cn : daily]
 600139.ss,600139
 600143.ss,600143
 600150.ss,600150
+600157.ss,600157
 600166.ss,600166
 600170.ss,600170
 600177.ss,600177
