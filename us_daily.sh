@@ -16,6 +16,7 @@ node nhnl_us_sum_etl.js $today
 
 cd ../nd
 node sc_etl.js $today
+node yahoo_etl.js
 
 cd ../learning/capture
 echo 'capture from finviz.com ...'
