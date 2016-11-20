@@ -1,6 +1,13 @@
 /**
+ * 1)
  * https://sgx-premium.wealthmsi.com/sgx/company/priceHistory 
+ * Request Method:POST
+ * application/json : {id: "AAJ"}
  * https://sgx-premium.wealthmsi.com/sgx/search
+ * 2)
+ * https://sgx-premium.wealthmsi.com/sgx/company
+ * Request Method:POST
+ * application/json : {id: "AAJ"}
 */
 
 "use strict";
@@ -9,7 +16,8 @@ require('./ProtoUtil');
 var
     fs = require('fs'),
     myUtil = require('./MyUtil'),
-    vm = require('vm');
+    vm = require('vm'),
+    requirejs = require('requirejs');
 
 
 function loadJs(vm, filename) {
@@ -87,6 +95,16 @@ function _search(criteria) {
     var options = {
         path: '/sgx/search',
         data: JSON.stringify({ "criteria": criteria })
+    };
+
+    return _post(options);
+}
+
+function _getCompnayInfo(code) {
+    var options = {
+        path: '/sgx/company',
+        // debug:true,
+        data: JSON.stringify({ "id": code })
     };
 
     return _post(options);
@@ -286,10 +304,74 @@ function export_sg_indices_dl() {
     } (myUtil.readlinesSync('../chart/s/sg_indices.txt')));
 }
 
+function save_sg_company(symbols) {
+    if (symbols && Array.isArray(symbols)) {
+        symbols.forEach((code) => {
+            _getCompnayInfo(code).then(function (content) {
+                _save('./sg-company-hid/' + code + '.json', content);
+            });
+        });
+    } else {
+        (function (lines) {
+            var cells;
+            lines.forEach((line, index) => {
+                if (index === 0) return;
+                cells = line.split(',');
+                if (cells.length > 1) {
+                    var code = cells[1];
+                    if (index > 22) {
+                        _getCompnayInfo(code).then(function (content) {
+                            _save('./sg-company-hid/' + code + '.json', content);
+                        });
+                    }
+                }
+            });
+        } (myUtil.readlinesSync('../chart/s/sg_shareinvestor.txt')));
+    }
+}
+// company.companyInfo.sharesOutstanding
+function sg_company_etl() {
+    var dir = './sg-company-hid/',
+        sg = requirejs('../../daodao10.github.io/chart/dao/sg.js'),
+        content,
+        json;
+    fs.readdir(dir, function (err, files) {
+        files
+            .filter(function (file) { return file.substr(-5) === '.json'; })
+            .forEach(function (file) {
+                content = fs.readFileSync(dir + file, 'utf8');
+                json = JSON.parse(content);
+                var item = sg.findByProperty('c', file.replace('.json', ''));
+                if (item) {
+                    item['mv'] = json.company.companyInfo.sharesOutstanding;
+                }
 
-// export_opt_data(['W05'], false);
+            });
+        console.log((sg.map((item) => {
+            return JSON.stringify(item);
+        })).join(',\n'));
+    });
+}
 
+// sg_symbol_etl();
+// sg_opt_symbol_etl(0.15);
+
+// export_opt_data([
+//     '5UJ',
+//     'ADJ',
+//     'AZI',
+//     'UV1',
+//     'Z74'
+// ], false);
 // export_opt_data(null, true);
 // export_opt_data(null, false);
 
-// sg_opt_symbol_etl(0.2);
+// save_sg_company();
+// save_sg_company([
+//     '5UJ',
+//     'ADJ',
+//     'AZI',
+//     'UV1',
+//     'Z74'
+// ]);
+// sg_company_etl();

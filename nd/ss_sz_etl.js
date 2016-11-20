@@ -16,8 +16,8 @@ var fs = require('fs'),
     mock = false;
 
 function _request(options) {
-    return new Promise(function (resolve, reject) {
-        myUtil.request(options, function (data, statusCode) {
+    return new Promise(function(resolve, reject) {
+        myUtil.request(options, function(data, statusCode) {
             if (options.debug) {
                 console.log(options.path);
             }
@@ -35,7 +35,7 @@ function _request(options) {
 }
 
 function _save(filePath, content) {
-    fs.writeFile(filePath, content, function (err) {
+    fs.writeFile(filePath, content, function(err) {
         if (err) {
             throw err;
         }
@@ -61,18 +61,18 @@ function logDbResult(msg, err, result) {
 }
 
 var Market = {
-    _update: function (rows, msg) {
+    _update: function(rows, msg) {
         if (mock) {
             console.log(msg, rows.length);
             console.log('first', rows[0]);
         } else {
-            myMongo.upsertBatch('marketCN', rows, function (err, result) {
+            myMongo.upsertBatch('marketCN', rows, function(err, result) {
                 logDbResult(msg, err, result);
             });
         }
     },
 
-    sumMV: function (startDate, endDate) {
+    sumMV: function(startDate, endDate) {
         var self = this,
             dr = {
                 start: toTimestamp(startDate, true),
@@ -82,8 +82,8 @@ var Market = {
         myMongo.find('marketCN', {
             q: { _id: { $gte: dr.start, $lte: dr.end } },
             f: { "mv_ss": 1, "mv_sz": 1, "nv_ss": 1, "nv_sz": 1 }
-        }, function (err, docs) {
-            docs.forEach(function (doc) {
+        }, function(err, docs) {
+            docs.forEach(function(doc) {
                 doc["mv"] = doc["mv_ss"] + doc["mv_sz"];
                 doc["nv"] = doc["nv_ss"] + doc["nv_sz"];
             });
@@ -92,7 +92,7 @@ var Market = {
         });
     },
 
-    updateSSEIndex: function (startDate, endDate) {
+    updateSSEIndex: function(startDate, endDate) {
         if (!startDate) startDate = '19901219';
         if (!endDate) endDate = new Date().format('yyyyMMdd');
 
@@ -102,7 +102,7 @@ var Market = {
             host: 'quotes.money.163.com',
             path: '/service/chddata.html?code=0000001&start={0}&end={1}&fields=TCLOSE;HIGH;LOW;TOPEN'.format(startDate, endDate),
             charset: 'GBK'
-        }).then(function (content) {
+        }).then(function(content) {
             var data = [],
                 lines = content.split('\n'),
                 cells,
@@ -118,9 +118,9 @@ var Market = {
             myMongo.find('marketCN', {
                 q: {},
                 f: { _id: 1 }
-            }, function (err, docs) {
-                data.forEach(function (d) {
-                    var item = docs.find(function (ele) {
+            }, function(err, docs) {
+                data.forEach(function(d) {
+                    var item = docs.find(function(ele) {
                         return ele._id === d[0];
                     });
                     if (item) item["c_ss"] = d[1];
@@ -131,25 +131,25 @@ var Market = {
         });
     },
 
-    _buildRow: function (cell, market) {
+    _buildRow: function(cell, market) {
         // date,transaction,volume,amount,pe,market value,negotiable value,exchange rate
         var x = {
             "_id": toTimestamp(cell[0], false)
         };
-        x["tt_" + market] = myUtil.toNumber(cell[1]);
-        x["tv_" + market] = myUtil.toNumber(cell[2]);
-        x["ta_" + market] = myUtil.toNumber(cell[3]);
-        x["pe_" + market] = myUtil.toNumber(cell[4]);
-        x["mv_" + market] = myUtil.toNumber(cell[5]);
-        x["nv_" + market] = myUtil.toNumber(cell[6]);
-        x["er_" + market] = myUtil.toNumber(cell[7]);
+        x["tt_" + market] = myUtil.toNumber(cell[1]);//总成交笔数(万笔)
+        x["tv_" + market] = myUtil.toNumber(cell[2]);//总成交股数(万股)
+        x["ta_" + market] = myUtil.toNumber(cell[3]);//总成交金额(亿元)
+        x["pe_" + market] = myUtil.toNumber(cell[4]);//平均市盈率
+        x["mv_" + market] = myUtil.toNumber(cell[5]);//上市公司市价总值(亿元)
+        x["nv_" + market] = myUtil.toNumber(cell[6]);//上市公司流通市值(亿元)
+        x["er_" + market] = myUtil.toNumber(cell[7]);//股票平均换手率(%)
         return x;
     },
-    update: function (market, line) {
+    update: function(market, line) {
         var rows = [this._buildRow(line.split(','), market)];
         this._update(rows, 'update market info ' + market);
     },
-    updateBatch: function (market) {
+    updateBatch: function(market) {
         var rows = [],
             src = './-hid/' + market + '.csv',
             lines = myUtil.readlinesSync(src),
@@ -163,14 +163,14 @@ var Market = {
         this._update(rows, 'batch update market info ' + market);
     },
 
-    export: function () {
-        myMongo.find("marketCN", { q: { mv: { $gt: 0 } }, f: { mv: 1, nv: 1, c_ss: 1 }, s: { _id: 1 } }, function (err, docs) {
+    export: function() {
+        myMongo.find("marketCN", { q: { mv: { $gt: 0 } }, f: { mv: 1, nv: 1, c_ss: 1 }, s: { _id: 1 } }, function(err, docs) {
             // console.log(JSON.stringify(docs));
 
-            myMongo.find("GDP_Q", { q: {}, f: {}, s: { _id: 1 } }, function (err, gdps) {
+            myMongo.find("GDP_Q", { q: {}, f: {}, s: { _id: 1 } }, function(err, gdps) {
                 // console.log(JSON.stringify(gdps));
 
-                var x = docs.map(function (doc) {
+                var x = docs.map(function(doc) {
                     var gdp = GDP.ttm(doc._id, gdps);
                     // return { _id: doc._id, c: doc.c_ss, mv: doc.mv / gdp * 100, nv: doc.nv / gdp * 100 };
                     return [new Date(doc._id).format('yyyyMMdd'), doc.c_ss, doc.mv / gdp * 100, doc.nv / gdp * 100];
@@ -183,7 +183,7 @@ var Market = {
 };
 
 var SSE = {
-    _extract: function (json) {
+    _extract: function(json) {
         if (json.result && Array.isArray(json.result)) {
             var d = json.result[2];
             return "{0},{1},{2},{3},{4},{5},{6},{7}".format(d.searchDate, d.trdTm1, d.trdVol1, d.trdAmt1, d.profitRate1, d.marketValue1, d.negotiableValue1, d.exchangeRate);
@@ -192,7 +192,7 @@ var SSE = {
         }
     },
 
-    etl: function (today, func) {
+    etl: function(today, func) {
         var self = this;
         _request({
             host: 'query.sse.com.cn',
@@ -203,7 +203,7 @@ var SSE = {
                 Referer: "http://www.sse.com.cn/market/stockdata/overview/day/"
             },
             // debug: true
-        }).then(function (content) {
+        }).then(function(content) {
             var x = eval(content);
             if (typeof func === 'function') {
                 func(x);
@@ -212,14 +212,14 @@ var SSE = {
             }
         });
     },
-    store: function (line) {
+    store: function(line) {
         Market.update('ss', line);
     }
 };
 
 var SZSE = {
-    _parse: function (keyword, content) {
-        var reg = new RegExp("<td  class='cls-data-td' null align='left' >" + keyword + "<\/td><td.*?>([0-9,.]+)<\/td>"),
+    _parse: function(keyword, content) {
+        var reg = new RegExp("<td  class='cls-data-td' null align='left'  >" + keyword + "<\/td><td.*?>([0-9,.]+)<\/td>"),
             m;
 
         if (m = reg.exec(content)) {
@@ -227,7 +227,7 @@ var SZSE = {
         }
         return 0;
     },
-    _extract: function (today, board, content) {
+    _extract: function(today, board, content) {
         // date,transaction,volume,amount,pe,market value,negotiable value,exchange rate
         var x = (board === 'sz' ?
             [today,
@@ -268,7 +268,7 @@ var SZSE = {
     //     });
     // },
 
-    _getTabIndex: function (board) {
+    _getTabIndex: function(board) {
         switch (board) {
             case 'sz':
                 return 1;
@@ -281,7 +281,7 @@ var SZSE = {
         }
     },
 
-    _validBoard: function (board) {
+    _validBoard: function(board) {
         switch (board) {
             case 'sz':
             case 'szm':
@@ -293,7 +293,7 @@ var SZSE = {
         }
     },
 
-    etl: function (today, func, board) {
+    etl: function(today, func, board) {
         var self = this;
         board = self._validBoard(board);
         _request({
@@ -305,7 +305,7 @@ var SZSE = {
             },
             // debug: true,
             data: "ACTIONID=7&AJAX=AJAX-TRUE&CATALOGID=1803&TABKEY=tab{0}&REPORT_ACTION=search&txtQueryDate={1}".format(self._getTabIndex(board), today)
-        }).then(function (content) {
+        }).then(function(content) {
             if (typeof func === 'function') {
                 func(self._extract(today, board, content), board);
             } else {
@@ -313,13 +313,13 @@ var SZSE = {
             }
         });
     },
-    store: function (line, board) {
+    store: function(line, board) {
         Market.update(board, line);
     }
 };
 
 var GDP = {
-    _getKeys: function (timestamp) {
+    _getKeys: function(timestamp) {
         var keys,
             dt = new Date(timestamp),
             yr = dt.getFullYear(),
@@ -359,14 +359,14 @@ var GDP = {
     },
 
     // http://data.stats.gov.cn/easyquery.htm?m=QueryData&dbcode=hgjd&rowcode=zb&colcode=sj&wds=%5B%5D&dfwds=%5B%7B%22wdcode%22%3A%22sj%22%2C%22valuecode%22%3A%221992-%22%7D%5D&k1=1472256990935
-    etl: function () {
+    etl: function() {
         _request({
             host: 'data.stats.gov.cn',
             path: '/easyquery.htm?m=QueryData&dbcode=hgjd&rowcode=zb&colcode=sj&wds=%5B%5D&dfwds=%5B%7B%22wdcode%22%3A%22sj%22%2C%22valuecode%22%3A%221992-%22%7D%5D&k1=1472258305872'
-        }).then(function (data) {
+        }).then(function(data) {
             var json = JSON.parse(data),
                 rows = [];
-            json.returndata.datanodes.forEach(function (ele) {
+            json.returndata.datanodes.forEach(function(ele) {
                 if (ele.wds[0].valuecode == 'A010101') {
                     rows.push({ _id: ele.wds[1].valuecode, v: ele.data.data });
                 }
@@ -374,20 +374,20 @@ var GDP = {
             if (mock) {
                 console.log(rows);
             } else {
-                myMongo.upsertBatch('GDP_Q', rows, function (err, result) {
+                myMongo.upsertBatch('GDP_Q', rows, function(err, result) {
                     logDbResult('update GDP_Q', err, result);
                 });
             }
         });
     },
 
-    ttm: function (timestamp, gdps) {
-        if (!gdps) gdps = [{ "_id": "1992A", "v": 5262.8 }, { "_id": "1992B", "v": 6484.3 }, { "_id": "1992C", "v": 7192.6 }, { "_id": "1992D", "v": 8254.8 }, { "_id": "1993A", "v": 6834.6 }, { "_id": "1993B", "v": 8357 }, { "_id": "1993C", "v": 9385.8 }, { "_id": "1993D", "v": 11095.9 }, { "_id": "1994A", "v": 9375.1 }, { "_id": "1994B", "v": 11481 }, { "_id": "1994C", "v": 12868 }, { "_id": "1994D", "v": 14913.3 }, { "_id": "1995A", "v": 12111.7 }, { "_id": "1995B", "v": 14612.9 }, { "_id": "1995C", "v": 16164.1 }, { "_id": "1995D", "v": 18451.2 }, { "_id": "1996A", "v": 14628 }, { "_id": "1996B", "v": 17147.5 }, { "_id": "1996C", "v": 18605.8 }, { "_id": "1996D", "v": 21432.4 }, { "_id": "1997A", "v": 16689.1 }, { "_id": "1997B", "v": 19163.6 }, { "_id": "1997C", "v": 20500.9 }, { "_id": "1997D", "v": 23361.5 }, { "_id": "1998A", "v": 18049.1 }, { "_id": "1998B", "v": 20296.6 }, { "_id": "1998C", "v": 21775.6 }, { "_id": "1998D", "v": 25074.2 }, { "_id": "1999A", "v": 19361.9 }, { "_id": "1999B", "v": 21567.7 }, { "_id": "1999C", "v": 23050.8 }, { "_id": "1999D", "v": 26583.9 }, { "_id": "2000A", "v": 21329.9 }, { "_id": "2000B", "v": 24043.4 }, { "_id": "2000C", "v": 25712.5 }, { "_id": "2000D", "v": 29194.3 }, { "_id": "2001A", "v": 24086.4 }, { "_id": "2001B", "v": 26726.6 }, { "_id": "2001C", "v": 28333.3 }, { "_id": "2001D", "v": 31716.8 }, { "_id": "2002A", "v": 26295 }, { "_id": "2002B", "v": 29194.8 }, { "_id": "2002C", "v": 31257.3 }, { "_id": "2002D", "v": 34970.3 }, { "_id": "2003A", "v": 29825.5 }, { "_id": "2003B", "v": 32537.3 }, { "_id": "2003C", "v": 35291.9 }, { "_id": "2003D", "v": 39767.4 }, { "_id": "2004A", "v": 34544.6 }, { "_id": "2004B", "v": 38700.8 }, { "_id": "2004C", "v": 41855 }, { "_id": "2004D", "v": 46739.8 }, { "_id": "2005A", "v": 40453.3 }, { "_id": "2005B", "v": 44793.1 }, { "_id": "2005C", "v": 48047.8 }, { "_id": "2005D", "v": 54024.8 }, { "_id": "2006A", "v": 47078.9 }, { "_id": "2006B", "v": 52673.3 }, { "_id": "2006C", "v": 56064.7 }, { "_id": "2006D", "v": 63621.6 }, { "_id": "2007A", "v": 57177 }, { "_id": "2007B", "v": 64809.6 }, { "_id": "2007C", "v": 69524.3 }, { "_id": "2007D", "v": 78721.4 }, { "_id": "2008A", "v": 69410.4 }, { "_id": "2008B", "v": 78769 }, { "_id": "2008C", "v": 82541.9 }, { "_id": "2008D", "v": 88794.3 }, { "_id": "2009A", "v": 74053.1 }, { "_id": "2009B", "v": 83981.3 }, { "_id": "2009C", "v": 90014.1 }, { "_id": "2009D", "v": 101032.8 }, { "_id": "2010A", "v": 87616.7 }, { "_id": "2010B", "v": 99532.4 }, { "_id": "2010C", "v": 106238.7 }, { "_id": "2010D", "v": 119642.5 }, { "_id": "2011A", "v": 104641.3 }, { "_id": "2011B", "v": 119174.3 }, { "_id": "2011C", "v": 126981.6 }, { "_id": "2011D", "v": 138503.3 }, { "_id": "2012A", "v": 117593.9 }, { "_id": "2012B", "v": 131682.5 }, { "_id": "2012C", "v": 138622.2 }, { "_id": "2012D", "v": 152468.9 }, { "_id": "2013A", "v": 129747 }, { "_id": "2013B", "v": 143967 }, { "_id": "2013C", "v": 152905.3 }, { "_id": "2013D", "v": 168625.1 }, { "_id": "2014A", "v": 140618.3 }, { "_id": "2014B", "v": 156461.3 }, { "_id": "2014C", "v": 165711.9 }, { "_id": "2014D", "v": 181182.5 }, { "_id": "2015A", "v": 149987.7 }, { "_id": "2015B", "v": 167651.2 }, { "_id": "2015C", "v": 175616 }, { "_id": "2015D", "v": 192250.8 }, { "_id": "2016A", "v": 160710.2 }, { "_id": "2016B", "v": 179926.6 }];
+    ttm: function(timestamp, gdps) {
+        if (!gdps) gdps = [{ "_id": "1992A", "v": 5262.8 }, { "_id": "1992B", "v": 6484.3 }, { "_id": "1992C", "v": 7192.6 }, { "_id": "1992D", "v": 8254.8 }, { "_id": "1993A", "v": 6834.6 }, { "_id": "1993B", "v": 8357 }, { "_id": "1993C", "v": 9385.8 }, { "_id": "1993D", "v": 11095.9 }, { "_id": "1994A", "v": 9375.1 }, { "_id": "1994B", "v": 11481 }, { "_id": "1994C", "v": 12868 }, { "_id": "1994D", "v": 14913.3 }, { "_id": "1995A", "v": 12111.7 }, { "_id": "1995B", "v": 14612.9 }, { "_id": "1995C", "v": 16164.1 }, { "_id": "1995D", "v": 18451.2 }, { "_id": "1996A", "v": 14628 }, { "_id": "1996B", "v": 17147.5 }, { "_id": "1996C", "v": 18605.8 }, { "_id": "1996D", "v": 21432.4 }, { "_id": "1997A", "v": 16689.1 }, { "_id": "1997B", "v": 19163.6 }, { "_id": "1997C", "v": 20500.9 }, { "_id": "1997D", "v": 23361.5 }, { "_id": "1998A", "v": 18049.1 }, { "_id": "1998B", "v": 20296.6 }, { "_id": "1998C", "v": 21775.6 }, { "_id": "1998D", "v": 25074.2 }, { "_id": "1999A", "v": 19361.9 }, { "_id": "1999B", "v": 21567.7 }, { "_id": "1999C", "v": 23050.8 }, { "_id": "1999D", "v": 26583.9 }, { "_id": "2000A", "v": 21329.9 }, { "_id": "2000B", "v": 24043.4 }, { "_id": "2000C", "v": 25712.5 }, { "_id": "2000D", "v": 29194.3 }, { "_id": "2001A", "v": 24086.4 }, { "_id": "2001B", "v": 26726.6 }, { "_id": "2001C", "v": 28333.3 }, { "_id": "2001D", "v": 31716.8 }, { "_id": "2002A", "v": 26295 }, { "_id": "2002B", "v": 29194.8 }, { "_id": "2002C", "v": 31257.3 }, { "_id": "2002D", "v": 34970.3 }, { "_id": "2003A", "v": 29825.5 }, { "_id": "2003B", "v": 32537.3 }, { "_id": "2003C", "v": 35291.9 }, { "_id": "2003D", "v": 39767.4 }, { "_id": "2004A", "v": 34544.6 }, { "_id": "2004B", "v": 38700.8 }, { "_id": "2004C", "v": 41855 }, { "_id": "2004D", "v": 46739.8 }, { "_id": "2005A", "v": 40453.3 }, { "_id": "2005B", "v": 44793.1 }, { "_id": "2005C", "v": 48047.8 }, { "_id": "2005D", "v": 54024.8 }, { "_id": "2006A", "v": 47078.9 }, { "_id": "2006B", "v": 52673.3 }, { "_id": "2006C", "v": 56064.7 }, { "_id": "2006D", "v": 63621.6 }, { "_id": "2007A", "v": 57177 }, { "_id": "2007B", "v": 64809.6 }, { "_id": "2007C", "v": 69524.3 }, { "_id": "2007D", "v": 78721.4 }, { "_id": "2008A", "v": 69410.4 }, { "_id": "2008B", "v": 78769 }, { "_id": "2008C", "v": 82541.9 }, { "_id": "2008D", "v": 88794.3 }, { "_id": "2009A", "v": 74053.1 }, { "_id": "2009B", "v": 83981.3 }, { "_id": "2009C", "v": 90014.1 }, { "_id": "2009D", "v": 101032.8 }, { "_id": "2010A", "v": 87616.7 }, { "_id": "2010B", "v": 99532.4 }, { "_id": "2010C", "v": 106238.7 }, { "_id": "2010D", "v": 119642.5 }, { "_id": "2011A", "v": 104641.3 }, { "_id": "2011B", "v": 119174.3 }, { "_id": "2011C", "v": 126981.6 }, { "_id": "2011D", "v": 138503.3 }, { "_id": "2012A", "v": 117593.9 }, { "_id": "2012B", "v": 131682.5 }, { "_id": "2012C", "v": 138622.2 }, { "_id": "2012D", "v": 152468.9 }, { "_id": "2013A", "v": 129747 }, { "_id": "2013B", "v": 143967 }, { "_id": "2013C", "v": 152905.3 }, { "_id": "2013D", "v": 168625.1 }, { "_id": "2014A", "v": 140618.3 }, { "_id": "2014B", "v": 156461.3 }, { "_id": "2014C", "v": 165711.9 }, { "_id": "2014D", "v": 181182.5 }, { "_id": "2015A", "v": 149987.7 }, { "_id": "2015B", "v": 167651.2 }, { "_id": "2015C", "v": 175616 }, { "_id": "2015D", "v": 192250.8 }, { "_id": "2016A", "v": 160710.2 }, { "_id": "2016B", "v": 179926.6 }, { "_id": "2016C", "v": 189334 }];
 
         var sum = 0;
 
-        this._getKeys(timestamp).forEach(function (key) {
-            var item = gdps.find(function (ele) {
+        this._getKeys(timestamp).forEach(function(key) {
+            var item = gdps.find(function(ele) {
                 return ele._id === key;
             });
             sum += item.v;
@@ -408,10 +408,16 @@ function etl() {
 
 
     // batch process
-    var dts = ['20160920', '20160921', '20160922', '20160923'];
+    var dts = [
+        '20161107',
+        '20161108',
+        '20161109',
+        '20161110',
+        '20161111'
+    ];
 
     // // 1) etl sse & szse
-    // dts.forEach(function (item) {
+    // dts.forEach(function(item) {
     //     var dt = item;
     //     dt = dt.substr(0, 4) + "-" + dt.substr(4, 2) + "-" + dt.substr(6, 2);
 
