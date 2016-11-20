@@ -23,3 +23,4 @@ chart/d/*.csv
 !learning/capture/*.sh
 .DS_Store
 *-hid/
+*.map
