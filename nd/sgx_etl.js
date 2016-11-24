@@ -15,9 +15,12 @@ require('./ProtoUtil');
 
 var
     fs = require('fs'),
-    myUtil = require('./MyUtil'),
     vm = require('vm'),
-    requirejs = require('requirejs');
+    requirejs = require('requirejs'),
+    myUtil = require('./MyUtil'),
+    cu = require('./CounterUtil');
+
+var counterUtil = new cu.CounterUtil('counterSG');
 
 
 function loadJs(vm, filename) {
@@ -130,7 +133,7 @@ function sg_symbol_etl() {
             if (ele.industry && ele.industry.indexOf(',') >= 0) ele.industry = ele.industry.replace(',', ' |');
             if (ele.industryGroup && ele.industryGroup.indexOf(',') >= 0) ele.industryGroup = ele.industryGroup.replace(',', ' |');
 
-            return [ele.tickerCode, ele.companyName, ele.industry, ele.industryGroup];
+            return [ele.tickerCode, ele.companyName, ele.industryGroup, ele.industry];
         });
 
         console.log('symbol,code,name,sector[shareinvestor : sg : daily]');
@@ -142,33 +145,29 @@ function sg_symbol_etl() {
         console.log(err);
     });
 }
+
 /**
- * export sg opt symbol list from sg_shareinvestor.txt
+ * export sg opt symbol list from db
  */
 function sg_opt_symbol_etl(minPrice) {
-    (function (lines) {
-        var x = [], cells, code, jsFile, last;
-        lines.forEach((line, index) => {
-            if (index === 0) return;
-            cells = line.split(',');
-            if (cells.length > 1) {
-                code = cells[1];
-                jsFile = '../../daodao10.github.io/chart/sg/' + code + '_d.js';
-                if (loadJs(vm, jsFile)) {
-                    last = data[data.length - 1];
-                    if (last[1] >= minPrice) {
-                        x.push({ "c": cells[1], "n": cells[2].toUpperCase(), "s": cells[4] });
-                    }
-                } else {
-                    console.log('%s not found', code);
+    counterUtil.get({}, (err, docs) => {
+        var x = [], code, jsFile, last;
+        docs.forEach((doc) => {
+            code = doc.code;
+            jsFile = '../../daodao10.github.io/chart/sg/' + code + '_d.js';
+            if (loadJs(vm, jsFile)) {
+                last = data[data.length - 1];
+                if (last[1] >= minPrice) {
+                    x.push(JSON.stringify({ "c": doc.code, "n": doc.name.toUpperCase(), "s": doc.sector, "mv": doc.mv }));
                 }
+            } else {
+                console.log('%s not found', code);
             }
         });
 
-        console.log(JSON.stringify(x));
-    } (myUtil.readlinesSync('../chart/s/sg_shareinvestor.txt')));
+        console.log(x.join(',\n'));
+    });
 }
-
 function export_opt_data(symbols, isIndex) {
     var
         _dateProcessor = function (dateStr) {
@@ -276,34 +275,6 @@ function export_opt_data(symbols, isIndex) {
     }
 }
 
-
-function sg_indices_etl() {
-    // etl sg_indices.txt from http://www.sgx.com/JsonRead/JsonData?qryId=NTP.INDICES
-    var sgxIndices = require('./-hid/sgx_indices.json');
-    var indices = sgxIndices.items.map(function (ele) {
-        // if (ele.N.startsWith('FTSE ST')) {
-        // console.log(ele.N, ele.PID);
-        // }
-
-        return [ele.N.toUpperCase() + " INDEX", ele.PID];
-    });
-    console.log(indices);
-}
-
-function export_sg_indices_dl() {
-    // http://scr.trkd-hs.com/SGX-MarketInfo-ChartAPI/historical?ric=.FTFSTM
-    (function (lines) {
-        var cells;
-        lines.forEach((line, index) => {
-            if (index === 0) return;
-            cells = line.split(',');
-            if (cells.length > 1) {
-                console.log('curl -o ./d/sg_%s_d.csv "http://scr.trkd-hs.com/SGX-MarketInfo-ChartAPI/historical?ric=%s"', cells[1], cells[0]);
-            }
-        });
-    } (myUtil.readlinesSync('../chart/s/sg_indices.txt')));
-}
-
 function save_sg_company(symbols) {
     if (symbols && Array.isArray(symbols)) {
         symbols.forEach((code) => {
@@ -329,38 +300,58 @@ function save_sg_company(symbols) {
         } (myUtil.readlinesSync('../chart/s/sg_shareinvestor.txt')));
     }
 }
-// company.companyInfo.sharesOutstanding
-function sg_company_etl() {
-    var dir = './sg-company-hid/',
-        sg = requirejs('../../daodao10.github.io/chart/dao/sg.js'),
-        content,
-        json;
-    fs.readdir(dir, function (err, files) {
-        files
-            .filter(function (file) { return file.substr(-5) === '.json'; })
-            .forEach(function (file) {
-                content = fs.readFileSync(dir + file, 'utf8');
-                json = JSON.parse(content);
-                var item = sg.findByProperty('c', file.replace('.json', ''));
-                if (item) {
-                    item['mv'] = json.company.companyInfo.sharesOutstanding;
-                }
 
+function storeToDB() {
+    // symbol,code,name,sector,industry
+    (function (lines) {
+        var docs = [];
+        lines.forEach((line, index) => {
+            if (index == 0) return;
+            var cells = line.split(',');
+            docs.push({
+                _id: cells[0],
+                code: cells[1],
+                name: cells[2],
+                sector: cells[3],
+                industry: cells[4]
             });
-        console.log((sg.map((item) => {
-            return JSON.stringify(item);
-        })).join(',\n'));
+        });
+        counterUtil.update(docs, 'insert qualitified docs');
+    } (myUtil.readlinesSync('../chart/s/sg_shareinvestor.txt')));
+}
+function patch() {
+    // var query = { sector: { $ne: 'Index' } };
+    var query = { $and: [{ sector: { $ne: 'Index' } }, { mv: null }] };
+    counterUtil.get(query, (err, docs) => {
+        if (err) {
+            console.error(err);
+            return;
+        }
+
+        var updated = false;
+        docs.forEach((doc) => {
+            var filename = './sg-company-hid/' + doc.code + '.json';
+            if (fs.existsSync(filename)) {
+                var content = fs.readFileSync(filename, 'utf8');
+                var json = JSON.parse(content);
+                doc['mv'] = (json.company && json.company.companyInfo ? json.company.companyInfo.sharesOutstanding : null);
+                updated = true;
+            } else {
+                console.log('cannot find', doc.code);
+            }
+        });
+
+        if (updated)
+            counterUtil.update(docs, 'patch for counterSG');
     });
 }
 
 // sg_symbol_etl();
-// sg_opt_symbol_etl(0.15);
+sg_opt_symbol_etl(0.15);
 
 // export_opt_data([
 //     '5UJ',
 //     'ADJ',
-//     'AZI',
-//     'UV1',
 //     'Z74'
 // ], false);
 // export_opt_data(null, true);
@@ -368,10 +359,10 @@ function sg_company_etl() {
 
 // save_sg_company();
 // save_sg_company([
-//     '5UJ',
-//     'ADJ',
-//     'AZI',
-//     'UV1',
-//     'Z74'
+//     '1A1',
+//     '1B1',
+//     'A17U'
 // ]);
-// sg_company_etl();
+
+// storeToDB();
+// patch();
