@@ -1,5 +1,9 @@
 /**
  * http://f10.eastmoney.com/f10_v2/BackOffice.aspx?command=RptEarningsForecastDetails&paramCode=60029801&paramNum=0&paramType=&timetip=1472717177308
+ * depends on:
+ * 1) em_ylyc.csv: excute getYLYC in em2.js
+ * 2) ylyc files under the folder cn-ylyc-hid: sh dl_ylyc.sh & sh dl_ylyc_2.sh
+ * 3) corp_actions: node corp_action.js > -hid/corp_action.txt
  */
 "use strict";
 require('./ProtoUtil');
@@ -116,7 +120,7 @@ function fill(code, cells, corp_actions, forced, reject) {
             //   [ '2016-04-20', 0.3399, 1.42, 1.79, NaN ] ]
             var x = corp || forced ? parseDetails(content) : parseLast6Mon(content),
                 rec,
-                updated = '201608', //TODO: hard code
+                updated = '201612', //TODO: hard code
                 i;
 
             if (x && x.length > 0) {
@@ -221,7 +225,7 @@ function main() {
     var symbols = (function (lines) {
         var x = [], cells;
         lines.forEach((line, index) => {
-            if(index === 0) return;
+            if (index === 0) return;
             cells = line.split(',');
             if (cells.length > 1) x.push(cells[0]);
         });

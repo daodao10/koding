@@ -64,7 +64,8 @@ function EM() {
 
             fs.readFile(srcFile, function (err, data) {
                 if (err) {
-                    reject(err);
+                    if (reject) reject(err);
+                    else console.error('@parseFA', err);
                 } else {
                     var lines = data.toString().split(/\r\n|\n/),
                         lastN = [],
@@ -103,9 +104,10 @@ function EM() {
                         ttm: ttm
                     }), function (err) {
                         if (err) {
-                            reject(err);
+                            if (reject) reject(err);
+                            else console.error('@writeFile', err);
                         }
-                        resolve(1);
+                        if (resolve) resolve(1);
                         console.log('saved.');
                     });
 
@@ -137,20 +139,21 @@ function EM() {
         return Number(Math.round(value + 'e' + decimals) + 'e-' + decimals);
     }
 
-    function calcPEG(e1, e2, pe) {
-        var growth, peg = 0;
+    function calcPEG(e1, e2, e3, p) {
+        var growth = Number.NaN, peg = Number.NaN, target = Number.NaN;
         if (e1 == Number.NaN || e1 == 0) {
             growth = Number.NaN;
         } else {
-            growth = (Math.sqrt(e2 / e1) - 1) * 100;
+            growth = (Math.sqrt(e3 / e1) - 1) * 100;
             if (growth == 0) {
                 peg = Number.NaN;
             } else {
-                peg = round(pe / growth, 2);
-                growth = round(growth, 2);
+                peg = round(p / e2 / growth, 3);
+                target = round(growth * e2, 3);
+                growth = round(growth, 3);
             }
         }
-        return [growth, peg];
+        return [growth, peg, target];
     }
 
     return {
@@ -192,7 +195,7 @@ function EM() {
             x.exec();
         },
 
-        // 公司研报
+        // 机构研报
         getGGSR: function (code) {
             var quote = new em_quote.Path({
                 dataType: 'DC',
@@ -284,7 +287,7 @@ function EM() {
                 host: 'datainterface.eastmoney.com',
                 path: quote.path,
                 urlParam: ['2016-12-31'],
-                csvFile: 'es_yjyg.csv',
+                csvFile: './-hid/em_yjyg.csv',
                 header: function () {
                     return unescape("序号,代码,名称,最新价,涨跌幅,研报数,买入,增持,中性,减持,卖出,2015收益,2016收益,2016PE,2017收益,2017PE,2018收益,2018PE,预留1,预留2,预留3");
                 },
@@ -322,9 +325,106 @@ function EM() {
             var x = new em_quote.Runner({
                 host: 'nufm.dfcfw.com',
                 path: quote.path,
-                csvFile: 'es_ylyc.csv',
+                csvFile: './-hid/em_ylyc.csv',
                 header: function () {
-                    return unescape("序号,代码,名称,最新价,涨跌幅,研报数,买入,增持,中性,减持,卖出,2014收益,2015收益,2015PE,2016收益,2016PE,2017收益,2017PE,预留1,预留2,预留3");
+                    return unescape("序号,代码,名称,最新价,涨跌幅,研报数,买入,增持,中性,减持,卖出,2015收益,2016收益,2016PE,2017收益,2017PE,2018收益,2018PE,预留1");
+                },
+                refine: function (line) {
+                    //? why should be removed
+                    var removed = ['000003',
+                        '000013',
+                        '000015',
+                        '000024',
+                        '000033',
+                        '000047',
+                        '000405',
+                        '000406',
+                        '000412',
+                        '000508',
+                        '000515',
+                        '000522',
+                        '000527',
+                        '000535',
+                        '000542',
+                        '000549',
+                        '000556',
+                        '000562',
+                        '000569',
+                        '000578',
+                        '000583',
+                        '000588',
+                        '000594',
+                        '000602',
+                        '000618',
+                        '000621',
+                        '000653',
+                        '000658',
+                        '000660',
+                        '000675',
+                        '000689',
+                        '000699',
+                        '000730',
+                        '000763',
+                        '000765',
+                        '000769',
+                        '000787',
+                        '000805',
+                        '000817',
+                        '000827',
+                        '000832',
+                        '000866',
+                        '000956',
+                        '002809',
+                        '002810',
+                        '002811',
+                        '002812',
+                        '300186',
+                        '300534',
+                        '300536',
+                        '300537',
+                        '300538',
+                        '300539',
+                        '300540',
+                        '300541',
+                        '300542',
+                        '300543',
+                        '600001',
+                        '600002',
+                        '600003',
+                        '600065',
+                        '600087',
+                        '600092',
+                        '600102',
+                        '600181',
+                        '600205',
+                        '600253',
+                        '600263',
+                        '600286',
+                        '600296',
+                        '600357',
+                        '600472',
+                        '600553',
+                        '600591',
+                        '600607',
+                        '600625',
+                        '600627',
+                        '600631',
+                        '600632',
+                        '600646',
+                        '600656',
+                        '600659',
+                        '600669',
+                        '600670',
+                        '600672',
+                        '600700',
+                        '600709'];
+                    var cells = line.split(',');
+                    var item = removed.find((r) => {
+                        return r === cells[1];
+                    });
+                    if (!item) {
+                        return line;
+                    }
                 }
             });
 
@@ -333,39 +433,38 @@ function EM() {
         // 导出盈利预测和PEG
         gen: function () {
             // 序号,代码,名称,最新价,涨跌幅,研报数,买入,增持,中性,减持,卖出,2014收益,2015收益,2015PE,2016收益,2016PE,2017收益,2017PE
-            // 0  ,1   ,2  ,3    ,4     ,5    ,6  ,7   ,8  ,9   ,10 ,11      ,12     ,13    ,14     ,15    ,16      ,17
             // 序号,代码,名称,最新价,涨跌幅,研报数,买入,增持,中性,减持,卖出,2015收益,2016收益,2016PE,2017收益,2017PE,2018收益,2018PE
-            var docs = {},
-                rs = {};
-            var lines = myUtil.readlinesSync('./es_ylyc.csv');
+            // 0  ,1   ,2  ,3    ,4     ,5    ,6  ,7   ,8  ,9   ,10 ,11      ,12     ,13    ,14     ,15    ,16      ,17
+            var docs = {}, // peg
+                rs = {}; // ylyc
+            var lines = myUtil.readlinesSync('./-hid/em_ylyc_bak.csv');
             for (var i = 1; i < lines.length; i++) {
                 var cells = lines[i].split(',');
                 if (cells.length > 1) {
 
-                    var item = [];
-                    var p = calcPEG(cells[11], cells[14], cells[13]);
-                    // item.push(['2015', p[0], p[1]]);
-                    item.push(['2016', p[0], p[1]]);
+                    var p = calcPEG(cells[11], cells[12], cells[14], cells[3]);
+                    docs[cells[1]] = [p[0], p[1], p[2]];
 
-                    p = calcPEG(cells[12], cells[16], cells[15]);
-                    // item.push(['2016', p[0], p[1]]);
-                    item.push(['2017', p[0], p[1]]);
-
-                    docs[cells[1]] = item;
+                    // // debug
+                    // if (cells[1] == '300119') {
+                    //     console.log(cells[11], cells[12], cells[14], cells[3]);
+                    //     console.log(p[0], p[1], p[2]);
+                    // }
 
                     rs[cells[1]] = [myUtil.toNumber(cells[5]),
-                        myUtil.toNumber(cells[6]),
-                        myUtil.toNumber(cells[7]),
-                        myUtil.toNumber(cells[8]),
-                        myUtil.toNumber(cells[9]),
-                        myUtil.toNumber(cells[10]),
-                        myUtil.toNumber(cells[11]),
-                        myUtil.toNumber(cells[12]),
-                        myUtil.toNumber(cells[13]),
-                        myUtil.toNumber(cells[14]),
-                        myUtil.toNumber(cells[15]),
-                        myUtil.toNumber(cells[16]),
-                        myUtil.toNumber(cells[17])
+                    myUtil.toNumber(cells[6]),
+                    myUtil.toNumber(cells[7]),
+                    myUtil.toNumber(cells[8]),
+                    myUtil.toNumber(cells[9]),
+                    myUtil.toNumber(cells[10]),
+                    myUtil.toNumber(cells[11]),
+                    myUtil.toNumber(cells[12]),
+                    myUtil.toNumber(cells[13]),
+                    myUtil.toNumber(cells[14]),
+                    myUtil.toNumber(cells[15]),
+                    myUtil.toNumber(cells[16]),
+                    myUtil.toNumber(cells[17]),
+                    myUtil.toNumber(cells[20])
                     ];
                 }
             }
@@ -385,8 +484,12 @@ function EM() {
         },
 
         // 业绩报表：个股数据下载
-        getYJBB: function (code) {
-            _downloadFA(code);
+        getYJBB: function (code, reject, resolve) {
+            _downloadFA(code, reject, resolve);
+        },
+        // 业绩报表：个股分析
+        parseYJBB: function (code, reject, resolve) {
+            _parseFA(code, reject, resolve);
         },
         // 业绩报表：批量处理
         // download：下载
@@ -451,20 +554,57 @@ var util = new EM();
 // util.getYJYG();
 
 // 获取业绩报表，分析业绩报表
-// util.getYJBB('600832');
+// util.getYJBB('002710');
 // util.getYJBBBatch('download');
 // util.getYJBBBatch('parse');
 // mv cn-fa-hid/*.json ../../daodao10.github.io/chart/fa/cn/
 
 // 盈利预测
+// 1)
 // util.getYLYC();
+// download ylyc files
+// 2.a) processed by file
+// (function (lines) {
+//     lines.forEach((line) => {
+//         var cells = line.split(',');
+//         if (cells.length > 1) {
+//             var code = cells[0];
+//             console.log("wget -O ./cn-ylyc-hid/{0}.txt --referer \"http://f10.eastmoney.com/f10_v2/CapitalStockStructure.aspx?code={0}\" \"http://f10.eastmoney.com/f10_v2/ProfitForecast.aspx?code={0}\"".format(code));
+//         }
+//     });
+// } (myUtil.readlinesSync('../chart/s/cn.txt')));
+// 2.b) processed by item
+// ['SH603306'].forEach(function (code) {
+//     console.log("wget -O ./cn-ylyc-hid/{0}.txt --referer \"http://f10.eastmoney.com/f10_v2/CapitalStockStructure.aspx?code={0}\" \"http://f10.eastmoney.com/f10_v2/ProfitForecast.aspx?code={0}\"".format(code));
+// });
+// 3) get corp_action file
+// node corp_action.js > -hid/corp_action.txt
+// 4) 
+// node em-ylyc_etl.js > -hid/em_ylyc_bak.csv
+// 5)
 // util.gen();
 
+// 行业报告
 // util.getHYSR('537');
 
 // var wl = ['300156', '300148', '002669', '600093', '600298', '300049', '002111', '300048', '300119', '600419', '300342', '000639', '600405', '002072', '300025', '600114', '300232', '300095', '603306', '603168', '300243', '300398', '300219', '002531'];
-// wl.forEach(function (item) {
-//     // console.log(item);
+// var length = wl.length, processed = 0;
+// wl.forEach((item) => {
+//     // // 业绩报表
+//     // util.getYJBB(item, (err) => {
+//     //     console.error(err);
+//     // }, (data) => {
+//     //     processed++;
+//     //     if (processed == length) {
+//     //         wl.forEach((item1) => {
+//     //             util.parseYJBB(item1);
+//     //         });
+//     //     }
+//     // });
+
+//     // 机构研报
 //     util.getGGSR(item);
+
+//     // // 高管持股
 //     util.getGGCG(item);
 // });

@@ -158,7 +158,7 @@ function sg_opt_symbol_etl(minPrice) {
             if (loadJs(vm, jsFile)) {
                 last = data[data.length - 1];
                 if (last[1] >= minPrice) {
-                    x.push(JSON.stringify({ "c": doc.code, "n": doc.name.toUpperCase(), "s": doc.sector, "mv": doc.mv }));
+                    x.push(JSON.stringify({ "c": doc.code, "n": doc.name.toUpperCase(), "s": doc.sector, "i": doc.industry, "mv": doc.mv }));
                 }
             } else {
                 console.log('%s not found', code);
@@ -349,6 +349,7 @@ function patch() {
 // sg_symbol_etl();
 sg_opt_symbol_etl(0.15);
 
+// -rw-r--r--  1 dao  staff  \s*\d+ Nov 13 \d{2}:\d{2} \./sg/([A-Z0-9]+)_d\.js
 // export_opt_data([
 //     '5UJ',
 //     'ADJ',
