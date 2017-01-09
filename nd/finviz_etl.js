@@ -18,10 +18,11 @@ var Settings = {
     FilePath: './-hid/test_us.csv',
     // UrlPath: '/screener.ashx?v=151&f=geo_chinahongkong,ind_stocksonly&ft=4&o=ticker&r={0}',
     // FilePath: '/-hid/test_cn.csv',
-    // UrlPath:'/screener.ashx?v=151&f=ind_stocksonly&ft=4&o=ticker&r={0}&t=AMC,APWC,AUO,CHT,CYD,GIGM,GSOL,HIMX,IMOS,LEDS,NVFY,OIIM,SINO,SPIL,SYUT,UMC',
+
     // update name of 中概股
+    // UrlPath:'/screener.ashx?v=151&f=ind_stocksonly&ft=4&o=ticker&r={0}&t=AMC,APWC,AUO,CHT,CYD,GIGM,GSOL,HIMX,IMOS,LEDS,NVFY,OIIM,SINO,SPIL,SYUT,UMC',
     // FilePath:'./-hid/patch_cn.csv',
-    PatchFile: './-hid/_patch.csv'
+    ßPatchFile: './-hid/_patch.csv'
 };
 
 function get(startRowIndex) {
@@ -212,9 +213,9 @@ function us_opt_symbol_etl() {
             jsFile = '../../daodao10.github.io/chart/us/' + doc.code + '_d.js';
             if (fs.existsSync(jsFile)) {
                 if (doc.pinyin)
-                    x.push(JSON.stringify({ "c": doc.code, "n": doc.name.toUpperCase() + " (" + doc.pinyin + ")", "s": doc.sector, "mv": doc.mv }));
+                    x.push(JSON.stringify({ "c": doc.code, "n": doc.name.toUpperCase() + " (" + doc.pinyin + ")", "s": doc.sector, "i": doc.industry, "mv": doc.mv }));
                 else
-                    x.push(JSON.stringify({ "c": doc.code, "n": doc.name.toUpperCase(), "s": doc.sector, "mv": doc.mv }));
+                    x.push(JSON.stringify({ "c": doc.code, "n": doc.name.toUpperCase(), "s": doc.sector, "i": doc.industry, "mv": doc.mv }));
             } else {
                 console.log('%s not found', doc.code);
             }
@@ -240,5 +241,6 @@ function us_symbol_etl() {
 // etl();
 // storeToDB();
 // patch();
+
 us_opt_symbol_etl();
 // us_symbol_etl();

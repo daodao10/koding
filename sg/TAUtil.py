@@ -60,6 +60,6 @@ if __name__ == "__main__":
     
     # batch process
     symbols = SymbolUtil.getSGX()
-    for symbol in symbols:
+    for symbol in symbols[23:]:#security symbol starts from line 23 
         counter = symbol["_id"]
         taUtil.process(counter)
