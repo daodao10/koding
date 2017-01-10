@@ -9,6 +9,15 @@ var fs = require("fs"),
     etlUtil = require('./EtlUtil');
 
 var enableWGET = false;
+//-rw-r--r--  1 dao  staff  \s*\d+ Jan  3 \d{2}:\d{2} \./d/us_([A-Z0-9-]+)_d\.csv
+//TODO: update
+var ignoredList = [
+    // 'AAL',
+    // 'AAN',
+    // 'AAP',
+    // 'ZX'
+];
+
 
 function main() {
     var index = 0,
@@ -19,8 +28,8 @@ function main() {
         },
         period,
         start,
-        today = new Date(),
-        // today = new Date(2016,7,31),
+        // today = new Date(),
+        today = new Date(2017, 0, 31),
         dropdownList = [],
         cells,
         lines;
@@ -86,6 +95,11 @@ function main() {
                 } else if (setting.source === "yahoo") {
 
                     setting.period.forEach(function (period) {
+
+                        if (ignoredList.some((element) => {
+                            return element === cells[0];
+                        })) return;
+
                         if (setting.period === "daily") {
                             start = new Date(today.getFullYear() - 30, 0, 1);
                         } else {
