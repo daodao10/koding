@@ -42,6 +42,11 @@ var settings = {
         xCell: 1,
         yCell: 6
     },
+    "TS": { // sina
+        IsCompactDate: false,
+        xCell: 0,
+        yCell: 1
+    },
     "D": { // dao - customized
         IsCompactDate: false,
         xCell: 0,

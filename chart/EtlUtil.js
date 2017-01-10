@@ -34,7 +34,10 @@ EtlUtil.prototype.encode_source = function (source) {
         return "D";
     } else if (source === "google") {
         return "G";
-    } else {
+    } else if (source === 'tushare') {
+        return 'TS'
+    }
+    else {
         throw UserException("unknown data source");
     }
 };
@@ -54,6 +57,8 @@ EtlUtil.prototype.decode_source = function (source) {
         return "dao";
     } else if (source === "G") {
         return "finance.google.com";
+    } else if (source === "TS") {
+        return "finance.sina.com"
     } else {
         throw UserException("unknown data source");
     }
