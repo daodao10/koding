@@ -219,7 +219,7 @@ var SSE = {
 
 var SZSE = {
     _parse: function (keyword, content) {
-        var reg = new RegExp("<td  class='cls-data-td' null align='left'  >" + keyword + "<\/td><td.*?>([0-9,.]+)<\/td>"),
+        var reg = new RegExp("<td.*?>" + keyword + "<\/td><td.*?>([0-9,.]+)<\/td>"),
             m;
 
         if (m = reg.exec(content)) {
@@ -409,11 +409,11 @@ function etl() {
 
     // batch process
     var dts = [
-        '20170103',
-        '20170104',
-        '20170105',
-        '20170106',
-        '20170109'
+        '20170116',
+        '20170117',
+        '20170118',
+        '20170119',
+        '20170120'
     ];
 
     // // 1) etl sse & szse
@@ -451,6 +451,6 @@ function etl() {
 }
 
 etl();
-// console.log(GDP.ttm(917539200000));
-// console.log(toTimestamp('20160823',true));
+// console.log(toTimestamp('20161223',true));
+// console.log(GDP.ttm(toTimestamp('201701021',true)));
 // Market.updateBatch('cy');
