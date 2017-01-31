@@ -9,7 +9,7 @@ def etl(code):
         df = ts.get_h_data(code, start="1995-01-01")
         df.to_csv("./d/cn_{0}_d.csv".format(code), columns=["close"])
     except Exception as e:
-        print e
+        print(e)
 
 def get_symbols(symbolFile):
     symbolList = []
@@ -23,7 +23,7 @@ def get_symbols(symbolFile):
                 symbolList.append(splits[0])
         f.close()
     except Exception as e:
-        print e
+        print(e)
         sys.exit()
 
     return symbolList
@@ -33,3 +33,4 @@ if __name__ == "__main__":
     for s in symbols:
         print(s)
         etl(s)
+    # etl('300291')

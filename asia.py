@@ -19,10 +19,10 @@ def main():
         help()
 
 def help():
-    print 'USAGE: python asia.py [cn|sg]'
+    print ('USAGE: python asia.py [cn|sg]')
 
 def process4SG(dbUri, today):
-    print 'processing for SG'
+    print ('processing for SG')
     # comment out day data of sgx counters
     # s = sgx.SGX(dbUri = dbUri, today = today)
     # s.getDayTick()
@@ -31,7 +31,7 @@ def process4SG(dbUri, today):
     s.getSummary()
 
 def process4CN(dbUri, today):
-    print 'processing for China'
+    print ('processing for China')
     s = sse.SSE(dbUri = dbUri, today = today)
     s.getDayTick()
 

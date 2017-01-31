@@ -71,12 +71,12 @@ class GuruFocus:
             r["_id"] = today
             gdp1 = self.getGdp(r["_id"], 1)
             gdp2 = self.getGdp(r["_id"], 2)
-            # print gdp1, gdp2
+            # print (gdp1, gdp2)
 
             r["TMC2GDP1"] = round(r["TMC"] / gdp1 * 100, 2)
             r["TMC2GDP2"] = round(r["TMC"] / gdp2 * 100, 2)
 
-        print merged
+        print (merged)
         collection = self.__dbContext.collection("MV_us")
         collection.insert(merged)
 
@@ -87,7 +87,7 @@ class GuruFocus:
         if content:
             self.saveMarketValue(content)
         else:
-            print "empty"
+            print ("empty")
 
     #https://research.stlouisfed.org/fred2/data/GDP.txt
     def getGdp(self, d, shift):
@@ -196,7 +196,7 @@ class GuruFocus:
         if content:
             self.savePeterLynch(content, symbol)
         else:
-            print "empty"
+            print ("empty")
 
 if __name__ == "__main__":
     # dbUri = web_tools.getDbUri(key="QuotesDbUri")

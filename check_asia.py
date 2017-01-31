@@ -10,16 +10,16 @@ if __name__ == "__main__":
     client = MyMongo(dbName="em", dbUri = emDbUri)
 
     query = {"d": today}
-    print "market comment: %d" % client.collection("test").find(query).count()
+    print ("market comment: %d" % client.collection("test").find(query).count())
 
 
     query = {"date": today}
 
     client = MyMongo(dbName="quotes", dbUri = web_tools.getDbUri(key='DayDbUri'))
-    print "market share: %d" % client.collection("day").find(query).count()
+    print ("market share: %d" % client.collection("day").find(query).count())
 
 
     client = MyMongo(dbName="quotes", dbUri = web_tools.getDbUri(key='QuotesDbUri'))
     rows = client.collection("summary").find(query)
     for r in rows:
-        print r['summary'][0:250]
+        print (r['summary'][0:250])

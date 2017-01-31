@@ -21,13 +21,13 @@ class SGX:
             if m:
                 content = m.group(0).replace('\n', '')
                 timestamp = web_tools.today() if not self.__today else self.__today
-                # print { "date": timestamp, "summary": content, "market": "SGX"}
+                # print( { "date": timestamp, "summary": content, "market": "SGX"})
                 dbCollection = self.__dbContext.collection("summary")
                 dbCollection.insert({ "date": timestamp, "summary": content, "market": "SGX"})
             else:
-                print "occurs error when get SGX market summary"
+                print( "occurs error when get SGX market summary")
         else:
-             print "empty"
+             print( "empty")
 
     def getDayTick(self):
         url = "http://www.sgx.com/JsonRead/JsonData?qryId=RStock&timeout=30&%20noCache=1409062326197.193901.9152537007"
@@ -36,7 +36,7 @@ class SGX:
         # json format
         content = re.sub(r"([A-Za-z_]+[0-9]*[A-Za-z_]*):", r'"\1":', re.sub("[']", '"', content[5:]))
         if content:
-            #print content
+            #print (content)
             data = json.loads(content)
         
             # get trading date
@@ -47,10 +47,10 @@ class SGX:
             for item in data["items"]:
                 j.append({"code": item["NC"] + ".SI", "date": trading_day, "price": item["LT"], "chg": item["C"], "volumn": item["VL"], "market": "SGX" })
                 
-            # print j[0]["code"]
+            # print (j[0]["code"])
             dayCollection = self.__dbContext.collection("day")
             dayCollection.insert(j)
         
         else:
-            print 'empty'
+            print ('empty')
 

@@ -67,7 +67,7 @@ def get(url, data = None, headers = None):
 
         request = urllib2.Request(url, headers = newHeaders)
         with contextlib.closing(urllib2.urlopen(request)) as response:
-            # print response.info()
+            # print(response.info())
             if response.info().get('Content-Encoding') == 'gzip':
                 buffer = StringIO( response.read())
                 deflatedContent = gzip.GzipFile(fileobj=buffer)
@@ -106,7 +106,7 @@ def download(url, data = None, headers = None, fileName = None):
                     if m:
                         fileName = m.group(1)
                     else:
-                        print "don't have valid Disposition"
+                        print("don't have valid Disposition")
 
             if fileName:
                 f = open(fileName, 'wb')
@@ -121,10 +121,10 @@ def download(url, data = None, headers = None, fileName = None):
 
                 f.close()
                 if downloaded > 0:
-                    print "downloaded size: %d" % downloaded
+                    print("downloaded size: %d" % downloaded)
                     return fileName
             else:
-                print "don't have Disposition"
+                print("don't have Disposition")
 
     except urllib2.HTTPError as e:
         print('HTTPError = ' + str(e.code))
@@ -148,19 +148,19 @@ def getCredentials(loginUrl, data, checkHandler, redirectHandler = None, debug =
 
     with contextlib.closing(opener.open(request)) as response:
         if debug:
-            print loginUrl
-            print data
-            print headers
-            print response.info()
-            # print response.read()
+            print(loginUrl)
+            print(data)
+            print(headers)
+            print(response.info())
+            # print(response.read())
         cookie = getServerCookie(response.info())
         if cookie:
             content = response.read()
             if checkHandler(content):
-                print "done"
+                print("done")
                 return cookie
 
-    print "failed"
+    print("failed")
     return None
 
 def buildHeader(headers):
@@ -178,10 +178,10 @@ def buildHeader(headers):
 
 def getServerCookie(info):
     if info:
-        # print info
+        # print(info)
         if info.has_key('Set-Cookie'):
             cookie = {"Cookie":info["Set-Cookie"]}
-            # print info['Set-Cookie']
+            # print(info['Set-Cookie'])
             return cookie
     return None
 
@@ -262,21 +262,21 @@ def getDbUri(configFile = 'config.json', key = 'DbUri'):
     return None
 
 def debug(content):
-    print "====== debug ======"
-    print content
-    print "======"
+    print ("====== debug ======")
+    print (content)
+    print ("======")
 
 if __name__ == "__main__":
-    # print strDate(datetime.utcnow(), format = "%Y%m%d %H:%M:%S %f")
-    # print strLocalDate(datetime.utcnow(), utcDiff = -4, format = "%Y%m%d %H:%M:%S %f")
+    # print (strDate(datetime.utcnow(), format = "%Y%m%d %H:%M:%S %f"))
+    # print (strLocalDate(datetime.utcnow(), utcDiff = -4, format = "%Y%m%d %H:%M:%S %f"))
 
-    # print today(format = "%Y%m%d %H:%M:%S %f")
-    print strLocalDate(getDateFromTimestamp(1430519546000), utcDiff = -8)
-    print strDate(parseDate('05/01/2015'))
+    # print (today(format = "%Y%m%d %H:%M:%S %f"))
+    print (strLocalDate(getDateFromTimestamp(1430519546000), utcDiff = -8))
+    print (strDate(parseDate('05/01/2015')))
     # print strDate(parseDate('05/1/2015'))
 
     dbUri = getDbUri(key="QuotesDbUri")
     if dbUri:
-        print dbUri
+        print (dbUri)
     else:
-        print 'None'
+        print ('None')

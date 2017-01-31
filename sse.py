@@ -30,7 +30,7 @@ class SSE:
                     trading_day = json_data["time"][:10].replace("-", "") if not self.__today else self.__today
                     for l in json_data['list']:
                         if l['HIGH'] == 0:
-                            print 'ignore stock %s on non-trading day' % l['SYMBOL']
+                            print ('ignore stock %s on non-trading day' % l['SYMBOL'])
                             continue
 
                         rows.append({"code": l['SYMBOL'] + postfix, "date": trading_day, "price": l['PRICE'], "chg": l["UPDOWN"], "volumn": l['VOLUME'], "market": exchange})
@@ -44,4 +44,4 @@ class SSE:
                 dayCollection = dbContext.collection("day")
                 dayCollection.insert(rows)
 
-            print 'done for exchange[%s], has %d pages' % (exchange, page_index)
+            print ('done for exchange[%s], has %d pages' % (exchange, page_index))

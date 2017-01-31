@@ -25,13 +25,13 @@ class SymbolUtil:
                 else:
                     market = "SZSE"
 
-                #print "%d. code: %s, name: %s" % (i, code, name.decode('gbk').encode('utf-8'))
+                #print ("%d. code: %s, name: %s" % (i, code, name.decode('gbk').encode('utf-8')))
                 # result.append({"_id": code, "name": name.decode('gbk').encode('utf-8'), "market": market })
                 result.append({"_id": code, "name": name, "sector":sector, "market": market })
 
             f.close()
         except Exception as e:
-            print e
+            print (e)
             sys.exit()
 
         return result
@@ -47,11 +47,11 @@ class SymbolUtil:
                 code = splits[0]
                 name = splits[2]
                 sector = splits[3].rstrip('\r\n')
-                #print "%d. code: %s, name: %s" % (i, code, name)
+                #print ("%d. code: %s, name: %s" % (i, code, name))
                 result.append({"_id": code, "name": name, "sector": sector, "market": "SGX"})
             f.close()
         except Exception as e:
-            print e
+            print (e)
             sys.exit()
 
         return result
@@ -69,4 +69,4 @@ if __name__ == '__main__':
             f.write("%s,%s,%s,%s\n" % (symbol["_id"], symbol["_id"], symbol["name"], symbol["sector"]))
             # collection.insert(symbol)
 
-    print 'done'
+    print ('done')
