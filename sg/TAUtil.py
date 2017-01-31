@@ -10,6 +10,7 @@ from ShareInvestor import ShareInvestor
 
 import zipfile
 import os
+import codecs
 
 
 class TAUtil:
@@ -34,10 +35,10 @@ class TAUtil:
                 try:
                     data = zf.read(name)
                 except KeyError:
-                    print 'ERROR: did not find %s in zip file' % name
+                    print('ERROR: did not find %s in zip file' % name)
                 else:
                     web_tools.save(self.OutputDir + counter + ".csv", data)
-                    print counter, ' done'
+                    print(counter, ' done')
 
             fileHandle.close()
 
@@ -45,11 +46,29 @@ class TAUtil:
         if self.download(counter):
             self.extract(counter)
 
+    @staticmethod
+    def get_symbols(symbolFile):
+        symbolList = []
+        try:
+            f = codecs.open(symbolFile, mode='r')
+            lines = f.readlines()
+            lines.pop(0)
+            for l in lines:
+                splits = str.split(l, ',')
+                if len(splits) > 0:
+                    symbolList.append(splits[0])
+            f.close()
+        except Exception as e:
+            print(e)
+            sys.exit()
+
+        return symbolList
+
 if __name__ == "__main__":
 
     # cookies = ShareInvestor().refreshCookie()
     cookies = ShareInvestor.getPersistentCookie()
-    # print cookies
+    # print(cookies)
 
     taUtil = TAUtil('./src-hid/', './dest-hid/', cookies)
 
@@ -59,7 +78,14 @@ if __name__ == "__main__":
     # taUtil.process(counter)
     
     # batch process
-    symbols = SymbolUtil.getSGX()
-    for symbol in symbols[23:]:#security symbol starts from line 23 
-        counter = symbol["_id"]
+    # # 1)
+    # symbols = SymbolUtil.getSGX()
+    # for symbol in symbols:[23:]:#security symbol starts from line 23
+    #     counter = symbol["_id"]
+    #     taUtil.process(counter)
+
+    # 2)
+    symbols = TAUtil.get_symbols('../chart/s/sg_shareinvestor.txt')
+    # symbols = TAUtil.get_symbols('../chart/s/hk_shareinvestor.txt')
+    for counter in symbols:
         taUtil.process(counter)

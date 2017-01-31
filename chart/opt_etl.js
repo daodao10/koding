@@ -98,7 +98,8 @@ function fx(newRows, index, total, counter) {
                 srcFile,
                 destFile;
             if (settings["source"] === "SI") { // special case
-                srcFile = "../{0}/dest-hid/{1}.csv".format(settings.market, cells[0]);
+                // srcFile = "../{0}/dest-hid/{1}.csv".format(settings.market, cells[0]);
+                srcFile = "../sg/dest-hid/{0}.csv".format(cells[0]);
             } else if (settings["source"] === "WS") { // special case
                 srcFile = "../../wsWDZ/{0}/{1}/{2}.txt".format(cells[4] == 1 ? "etl-2" : "etl", cells[0].startsWith('SH') ? "SH" : "SZ", cells[0]);
                 if (!fs.existsSync(srcFile)) {
