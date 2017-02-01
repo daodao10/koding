@@ -1,3 +1,0 @@
-symbol,code[google : cn : daily]
-SHE:000651,000651
-SHA:600397,600397
