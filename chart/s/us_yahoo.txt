@@ -1,1009 +1,1139 @@
 symbol,code,name,sector[yahoo : us : daily]
-AAL,AAL,American Airlines Group Inc.,Services,519.47
-AAN,AAN,Aaron's Inc.,Services,72.61
-AAP,AAP,Advance Auto Parts Inc.,Services,73.58
-AAPL,AAPL,Apple Inc.,Consumer Goods,5490
-ABAC,ABAC,Aoxin Tianli Group Inc.,Consumer Goods,7.89
+AAL,AAL,American Airlines Group Inc.,Services,515.9
+AAN,AAN,Aaron's Inc.,Services,73.16
+AAOI,AAOI,Applied Optoelectronics Inc.,Technology,16.52
+AAP,AAP,Advance Auto Parts Inc.,Services,73.47
+AAPL,AAPL,Apple Inc.,Consumer Goods,5300
+ABAC,ABAC,Aoxin Tianli Group Inc.,Consumer Goods,7.49
 ABBV,ABBV,AbbVie Inc.,Healthcare,1630
-ABC,ABC,AmerisourceBergen Corporation,Services,226
+ABC,ABC,AmerisourceBergen Corporation,Services,214.29
 ABMD,ABMD,ABIOMED Inc.,Healthcare,42.88
-ACC,ACC,American Campus Communities Inc.,Financial,136.11
-ACCO,ACCO,ACCO Brands Corporation,Consumer Goods,106.79
-ACH,ACH,Aluminum Corporation Of China Limited(中国铝业),Basic Materials,742.9
-ACHC,ACHC,Acadia Healthcare Company Inc.,Healthcare,86.47
-ACN,ACN,Accenture plc,Technology,631.29
+ACC,ACC,American Campus Communities Inc.,Financial,131.77
+ACCO,ACCO,ACCO Brands Corporation,Consumer Goods,105.57
+ACH,ACH,Aluminum Corporation Of China Limited(中国铝业),Basic Materials,798.09
+ACHC,ACHC,Acadia Healthcare Company Inc.,Healthcare,86.37
+ACN,ACN,Accenture plc,Technology,645.11
 ACOR,ACOR,Acorda Therapeutics Inc.,Healthcare,45.38
 ACTS,ACTS,Actions Semiconductor Co. Ltd.(炬力),Technology,44.08
-ADP,ADP,Automatic Data Processing Inc.,Technology,452.3
-ADS,ADS,Alliance Data Systems Corporation,Services,57.08
+ADBE,ADBE,Adobe Systems Incorporated,Technology,495.71
+ADP,ADP,Automatic Data Processing Inc.,Technology,448.61
+ADS,ADS,Alliance Data Systems Corporation,Services,57.21
 ADSW,ADSW,Advanced Disposal Services Inc.,Industrial Goods,88.27
-ADXS,ADXS,Advaxis Inc.,Healthcare,39.22
-AEE,AEE,Ameren Corporation,Utilities,248.98
-AEL,AEL,American Equity Investment Life Holding Company,Financial,86.26
-AEO,AEO,American Eagle Outfitters Inc.,Services,173.66
-AEP,AEP,American Electric Power Co. Inc.,Utilities,504.14
-AET,AET,Aetna Inc.,Healthcare,351.4
-AFL,AFL,Aflac Incorporated,Financial,398.91
-AFSI,AFSI,AmTrust Financial Services Inc.,Financial,168.22
-AGCO,AGCO,AGCO Corporation,Industrial Goods,79.93
+ADXS,ADXS,Advaxis Inc.,Healthcare,39.18
+AEE,AEE,Ameren Corporation,Utilities,242.17
+AEL,AEL,American Equity Investment Life Holding Company,Financial,85.26
+AEO,AEO,American Eagle Outfitters Inc.,Services,182.49
+AEP,AEP,American Electric Power Company Inc.,Utilities,491.7
+AET,AET,Aetna Inc.,Healthcare,344.86
+AF,AF,Astoria Financial Corporation,Financial,99.98
+AFL,AFL,Aflac Incorporated,Financial,403.46
+AFSI,AFSI,AmTrust Financial Services Inc.,Financial,167.81
+AGCO,AGCO,AGCO Corporation,Industrial Goods,79.28
 AGEN,AGEN,Agenus Inc.,Healthcare,82.95
-AGO,AGO,Assured Guaranty Ltd.,Financial,131.9
+AGO,AGO,Assured Guaranty Ltd.,Financial,129.04
 AGU,AGU,Agrium Inc.,Basic Materials,133.87
-AHT,AHT,Ashford Hospitality Trust Inc.,Financial,97.95
-AIRM,AIRM,Air Methods Corp.,Services,34.79
-AIV,AIV,Apartment Investment and Management Company,Financial,161.53
-AJG,AJG,Arthur J Gallagher & Co.,Financial,177.6
-AKAM,AKAM,Akamai Technologies Inc.,Technology,175.54
-AKRX,AKRX,Akorn Inc.,Healthcare,127.28
-AL,AL,Air Lease Corporation,Services,100.33
-ALGN,ALGN,Align Technology Inc.,Healthcare,80.29
-ALJ,ALJ,Alon USA Energy Inc.,Basic Materials,71.77
-ALK,ALK,Alaska Air Group Inc.,Services,123.15
-ALL,ALL,The Allstate Corporation,Financial,371.5
-ALLY,ALLY,Ally Financial Inc.,Financial,482.39
-ALN,ALN,American Lorain Corporation(绿润集团),Consumer Goods,38.24
-ALR,ALR,Alere Inc.,Healthcare,87.75
+AHT,AHT,Ashford Hospitality Trust Inc.,Financial,91.72
+AIRM,AIRM,Air Methods Corporation,Services,35.97
+AIV,AIV,Apartment Investment and Management Company,Financial,156.36
+AJG,AJG,Arthur J. Gallagher & Co.,Financial,177.92
+AKAM,AKAM,Akamai Technologies Inc.,Technology,172.93
+AKRX,AKRX,Akorn Inc.,Healthcare,124.15
+AKS,AKS,AK Steel Holding Corporation,Basic Materials,306.05
+AL,AL,Air Lease Corporation,Services,101.4
+ALGN,ALGN,Align Technology Inc.,Healthcare,79.12
+ALJ,ALJ,Alon USA Energy Inc.,Basic Materials,70.32
+ALK,ALK,Alaska Air Group Inc.,Services,123.85
+ALL,ALL,The Allstate Corporation,Financial,367.87
+ALLY,ALLY,Ally Financial Inc.,Financial,472.5
+ALN,ALN,American Lorain Corporation(绿润集团),Consumer Goods,38.31
+ALR,ALR,Alere Inc.,Healthcare,86.75
 ALSN,ALSN,Allison Transmission Holdings Inc.,Consumer Goods,166.9
-ALXN,ALXN,Alexion Pharmaceuticals Inc.,Healthcare,224.74
-AMAG,AMAG,AMAG Pharmaceuticals Inc.,Healthcare,34.09
-AMAT,AMAT,Applied Materials Inc.,Technology,1120
-AMBA,AMBA,Ambarella Inc.,Technology,32.56
-AMC,AMC,AMC Entertainment Holdings Inc.(AMC院线),Services,97.44
+ALXN,ALXN,Alexion Pharmaceuticals Inc.,Healthcare,226.4
+AMAG,AMAG,AMAG Pharmaceuticals Inc.,Healthcare,34.17
+AMAT,AMAT,Applied Materials Inc.,Technology,1080
+AMBA,AMBA,Ambarella Inc.,Technology,32.45
+AMC,AMC,AMC Entertainment Holdings Inc.(AMC院线),Services,102.44
 AMCF,AMCF,Andatee China Marine Fuel Services Corporation,Basic Materials,10.26
-AMCN,AMCN,AirMedia Group Inc.(航美传媒),Services,62.82
-AMCX,AMCX,AMC Networks Inc.,Services,70.54
-AME,AME,Ametek Inc.,Industrial Goods,231.89
-AMG,AMG,Affiliated Managers Group Inc.,Financial,51.7
-AMGN,AMGN,Amgen Inc.,Healthcare,747
-AMN,AMN,AMN Healthcare Services Inc AMN,Healthcare,48.05
-AMP,AMP,Ameriprise Financial Inc.,Financial,164
+AMCN,AMCN,AirMedia Group Inc.(航美传媒),Services,61.85
+AMCX,AMCX,AMC Networks Inc.,Services,70.43
+AME,AME,AMETEK Inc.,Industrial Goods,229.32
+AMG,AMG,Affiliated Managers Group Inc.,Financial,53.72
+AMGN,AMGN,Amgen Inc.,Healthcare,742
+AMN,AMN,AMN Healthcare Services Inc.,Industrial Goods,48.05
+AMP,AMP,Ameriprise Financial Inc.,Financial,160.4
 AMPH,AMPH,Amphastar Pharmaceuticals Inc.,Healthcare,45.34
 AMSG,AMSG,AmSurg Corp.,Healthcare,54.39
-AMT,AMT,American Tower Corporation,Financial,439.82
-AMTD,AMTD,TD Ameritrade Holding Corporation,Financial,517.42
-AN,AN,AutoNation Inc.,Services,99.04
-ANET,ANET,Arista Networks Inc.,Technology,69.79
-ANTM,ANTM,Anthem Inc.,Healthcare,263.2
+AMT,AMT,American Tower Corporation,Financial,422.29
+AMTD,AMTD,TD Ameritrade Holding Corporation,Financial,521.66
+AMZN,AMZN,Amazon.com Inc.,Services,492.61
+AN,AN,AutoNation Inc.,Services,105.11
+ANET,ANET,Arista Networks Inc.,Technology,69.74
+ANTM,ANTM,Anthem Inc.,Healthcare,268.7
+AOBC,AOBC,American Outdoor Brands Corporation,Industrial Goods,57.45
 AON,AON,Aon plc,Financial,267.5
-AOS,AOS,AO Smith Corp.,Industrial Goods,171.86
-APD,APD,Air Products and Chemicals Inc.,Basic Materials,217.2
-APH,APH,Amphenol Corporation,Technology,312.56
-APLE,APLE,Apple Hospitality REIT Inc.,Financial,225.54
-APWC,APWC,Asia Pacific Wire & Cable Corp. Ltd.(亚太电线电缆),Industrial Goods,14.6
-AR,AR,Antero Resources Corporation,Basic Materials,320.25
-ARAY,ARAY,Accuray Incorporated,Healthcare,81.58
-ARI,ARI,Apollo Commercial Real Estate Finance Inc.,Financial,80.89
-ARMK,ARMK,Aramark,Services,249.61
-ARRS,ARRS,ARRIS International plc,Technology,186.65
-ARRY,ARRY,Array BioPharma Inc.,Healthcare,163.03
+AOS,AOS,A. O. Smith Corporation,Industrial Goods,166.27
+APD,APD,Air Products and Chemicals Inc.,Basic Materials,217.7
+APH,APH,Amphenol Corporation,Technology,307.06
+APLE,APLE,Apple Hospitality REIT Inc.,Financial,221.69
+APWC,APWC,Asia Pacific Wire & Cable Corporation Limited(亚太电线电缆),Industrial Goods,14.18
+AR,AR,Antero Resources Corporation,Basic Materials,306.98
+ARAY,ARAY,Accuray Incorporated,Healthcare,80.23
+ARI,ARI,Apollo Commercial Real Estate Finance Inc.,Financial,90.82
+ARMK,ARMK,Aramark,Services,244.4
+ARRS,ARRS,ARRIS International plc,Technology,189.49
+ARRY,ARRY,Array BioPharma Inc.,Healthcare,170.27
+ARW,ARW,Arrow Electronics Inc.,Services,90.94
 ASB,ASB,Associated Banc-Corp,Financial,148.71
 ASML,ASML,ASML Holding NV,Technology,444.36
-ASX,ASX,Advanced Semiconductor Engineering Inc.(日月光半导体),Technology,1600
-ATAI,ATAI,ATA Inc.(ATA公司),Services,22.59
-ATHM,ATHM,Autohome Inc.(汽车之家),Technology,112.67
-ATV,ATV,Acorn International Inc.(橡果国际),Services,4.52
-ATVI,ATVI,Activision Blizzard Inc.,Technology,771.06
+ASX,ASX,Advanced Semiconductor Engineering Inc.(日月光半导体),Technology,1570
+ATAI,ATAI,ATA Inc.(ATA公司),Services,23.5
+ATHM,ATHM,Autohome Inc.(汽车之家),Technology,111.52
+ATV,ATV,Acorn International Inc.(橡果国际),Services,4.77
+ATVI,ATVI,Activision Blizzard Inc.,Technology,751.76
 ATW,ATW,Atwood Oceanics Inc.,Basic Materials,63.76
 AU,AU,AngloGold Ashanti Ltd.,Basic Materials,460.15
-AUO,AUO,AU Optronics Corp.(友达光电),Technology,988.13
-AVB,AVB,AvalonBay Communities Inc.,Financial,139.61
+AUO,AUO,AU Optronics Corp.(友达光电),Technology,968
+AVB,AVB,AvalonBay Communities Inc.,Financial,138.92
 AVG,AVG,AVG Technologies N.V.,Technology,50.73
 AVGO,AVGO,Broadcom Limited,Technology,410.29
-AVY,AVY,Avery Dennison Corporation,Consumer Goods,89.95
-AWI,AWI,Armstrong World Industries Inc.,Industrial Goods,53.93
-AWK,AWK,American Water Works Company Inc.,Utilities,181.06
-AXL,AXL,American Axle & Manufacturing Holdings Inc.,Consumer Goods,78.24
-AXP,AXP,American Express Company,Financial,920
-AZPN,AZPN,Aspen Technology Inc.,Technology,78.01
-BA,BA,The Boeing Company,Industrial Goods,632.7
-BABA,BABA,Alibaba Group Holding Limited(阿里巴巴),Services,2540
-BAC,BAC,Bank of America Corporation,Financial,10250
-BAH,BAH,Booz Allen Hamilton Holding Corporation,Services,149.52
-BANC,BANC,Banc of California Inc.,Financial,49.03
-BBBY,BBBY,Bed Bath & Beyond Inc.,Services,149.73
-BBD,BBD,Banco Bradesco S.A.,Financial,6410
-BBT,BBT,BB&T Corporation,Financial,812.52
-BC,BC,Brunswick Corporation,Consumer Goods,91.1
-BCE,BCE,BCE Inc.,Technology,897.59
-BCRX,BCRX,BioCryst Pharmaceuticals Inc.,Healthcare,72.98
-BDN,BDN,Brandywine Realty Trust,Financial,179.33
-BEAV,BEAV,B/E Aerospace Inc.,Industrial Goods,102.67
-BECN,BECN,Beacon Roofing Supply Inc.,Industrial Goods,59.62
-BEN,BEN,Franklin Resources Inc.,Financial,585.86
-BERY,BERY,Berry Plastics Group Inc.,Consumer Goods,124.78
-BF-B,BF-B,Brown-Forman Corporation,Consumer Goods,405.05
-BGCP,BGCP,BGC Partners Inc.,Financial,272.28
-BGNE,BGNE,BeiGene Ltd.,Healthcare,30.97
-BGS,BGS,B&G Foods Inc.,Consumer Goods,69.71
-BIDU,BIDU,Baidu Inc.(百度),Technology,357.93
-BIIB,BIIB,Biogen Inc.,Healthcare,218.9
-BITA,BITA,Bitauto Holdings Limited(易车网),Technology,71.98
-BK,BK,The Bank of New York Mellon Corporation,Financial,1060
-BKS,BKS,Barnes & Noble Inc.,Services,69.87
-BKU,BKU,BankUnited Inc.,Financial,103
+AVID,AVID,Avid Technology Inc.,Technology,39.98
+AVXL,AVXL,Anavex Life Sciences Corp.,Healthcare,39.33
+AVY,AVY,Avery Dennison Corporation,Consumer Goods,90.07
+AWH,AWH,Allied World Assurance Company Holdings AG,Financial,86.79
+AWI,AWI,Armstrong World Industries Inc.,Industrial Goods,54.97
+AWK,AWK,American Water Works Company Inc.,Utilities,179.43
+AXL,AXL,American Axle & Manufacturing Holdings Inc.,Consumer Goods,76.62
+AXP,AXP,American Express Company,Financial,910
+AXS,AXS,AXIS Capital Holdings Limited,Financial,88.53
+AYI,AYI,Acuity Brands Inc.,Technology,44.03
+AZPN,AZPN,Aspen Technology Inc.,Technology,76.91
+BA,BA,The Boeing Company,Industrial Goods,616.63
+BABA,BABA,Alibaba Group Holding Limited(阿里巴巴),Services,2490
+BABY,BABY,Natus Medical Incorporated,Healthcare,33.42
+BAC,BAC,Bank of America Corporation,Financial,10170
+BAH,BAH,Booz Allen Hamilton Holding Corporation,Services,149.78
+BAK,BAK,Braskem S.A.,Basic Materials,397.78
+BANC,BANC,Banc of California Inc.,Financial,51.18
+BAX,BAX,Baxter International Inc.,Healthcare,538.33
+BBBY,BBBY,Bed Bath & Beyond Inc.,Services,150.2
+BBD,BBD,Banco Bradesco S.A.,Financial,5450
+BBT,BBT,BB&T Corporation,Financial,810.59
+BC,BC,Brunswick Corporation,Consumer Goods,90.4
+BCE,BCE,BCE Inc.,Technology,870.99
+BCR,BCR,C. R. Bard Inc.,Healthcare,73.45
+BCRX,BCRX,BioCryst Pharmaceuticals Inc.,Healthcare,74.65
+BDN,BDN,Brandywine Realty Trust,Financial,174.81
+BEAV,BEAV,B/E Aerospace Inc.,Industrial Goods,101.13
+BECN,BECN,Beacon Roofing Supply Inc.,Industrial Goods,59.94
+BEN,BEN,Franklin Resources Inc.,Financial,559.57
+BERY,BERY,Berry Plastics Group Inc.,Consumer Goods,124.1
+BF-B,BF-B,Brown-Forman Corporation,Consumer Goods,385.12
+BGCP,BGCP,BGC Partners Inc.,Financial,274.67
+BGNE,BGNE,BeiGene Ltd.,Healthcare,38.91
+BGS,BGS,B&G Foods Inc.,Consumer Goods,65.96
+BIDU,BIDU,Baidu Inc.(百度),Technology,343.41
+BIIB,BIIB,Biogen Inc.,Healthcare,217.21
+BITA,BITA,Bitauto Holdings Limited(易车网),Technology,69.98
+BK,BK,The Bank of New York Mellon Corporation,Financial,1050
+BKE,BKE,The Buckle Inc.,Services,50.29
+BKS,BKS,Barnes & Noble Inc.,Services,71.61
+BKU,BKU,BankUnited Inc.,Financial,103.02
 BLDR,BLDR,Builders FirstSource Inc.,Industrial Goods,111.19
-BLK,BLK,BlackRock Inc.,Financial,159.23
-BLMN,BLMN,Bloomin' Brands Inc.,Services,109.4
+BLK,BLK,BlackRock Inc.,Financial,160.38
+BLMN,BLMN,Bloomin' Brands Inc.,Services,104.59
 BMO,BMO,Bank of Montreal,Financial,644.24
-BMS,BMS,Bemis Company Inc.,Consumer Goods,94.95
+BMS,BMS,Bemis Company Inc.,Consumer Goods,93.62
+BMY,BMY,Bristol-Myers Squibb Company,Healthcare,1660
 BNS,BNS,The Bank of Nova Scotia,Financial,1210
-BNSO,BNSO,Bonso Electronics International Inc.(恒异电子),Industrial Goods,4.97
-BOFI,BOFI,BofI Holding Inc.,Financial,58.62
-BORN,BORN,China New Borun Corporation(博润),Consumer Goods,25.77
-BPL,BPL,Buckeye Partners L.P.,Basic Materials,141.38
-BPOP,BPOP,Popular Inc.,Financial,103.3
-BR,BR,Broadridge Financial Solutions Inc.,Technology,121.27
-BRCD,BRCD,Brocade Communications Systems Inc.,Technology,401.85
-BRFS,BRFS,BRF S.A.,Consumer Goods,909.59
-BRKR,BRKR,Bruker Corporation,Healthcare,156.87
-BRO,BRO,Brown & Brown Inc.,Financial,137.72
-BRX,BRX,Brixmor Property Group Inc.,Financial,310.52
-BSMX,BSMX,Grupo Financiero Santander Mexico S.A.B. de C.V.,Financial,1670
-BSPM,BSPM,Biostar Pharmaceuticals Inc.(奥星制药),Healthcare,2.28
+BNSO,BNSO,Bonso Electronics International Inc.(恒异电子),Industrial Goods,4.79
+BOFI,BOFI,BofI Holding Inc.,Financial,62.27
+BORN,BORN,China New Borun Corporation(博润),Consumer Goods,25.75
+BPFH,BPFH,Boston Private Financial Holdings Inc.,Financial,81.22
+BPL,BPL,Buckeye Partners L.P.,Basic Materials,137.57
+BPOP,BPOP,Popular Inc.,Financial,103.28
+BR,BR,Broadridge Financial Solutions Inc.,Technology,118.5
+BRCD,BRCD,Brocade Communications Systems Inc.,Technology,404.96
+BRFS,BRFS,BRF S.A.,Consumer Goods,809.82
+BRKR,BRKR,Bruker Corporation,Healthcare,158.2
+BRO,BRO,Brown & Brown Inc.,Financial,139.32
+BRX,BRX,Brixmor Property Group Inc.,Financial,303.94
+BSMX,BSMX,Grupo Financiero Santander Mexico S.A.B. de C.V.,Financial,1360
+BSPM,BSPM,Biostar Pharmaceuticals Inc.(奥星制药),Healthcare,2.69
 BSX,BSX,Boston Scientific Corporation,Healthcare,1360
-BT,BT,BT Group plc,Technology,2029.9999999999998
-BTI,BTI,British American Tobacco p.l.c.,Consumer Goods,975.81
-BUD,BUD,Anheuser-Busch InBev SA/NV,Consumer Goods,1770
-BURL,BURL,Burlington Stores Inc.,Services,71.73
-BWA,BWA,BorgWarner Inc.,Consumer Goods,212.87
-BWXT,BWXT,BWX Technologies Inc.,Industrial Goods,99.61
-BX,BX,The Blackstone Group L.P.,Financial,1150
-BXMT,BXMT,Blackstone Mortgage Trust Inc.,Financial,93.53
-BXP,BXP,Boston Properties Inc.,Financial,153.75
-BXS,BXS,BancorpSouth Inc.,Financial,89.95
-BYD,BYD,Boyd Gaming Corporation,Services,113.08
-BZH,BZH,Beazer Homes USA Inc.,Industrial Goods,31.81
-BZUN,BZUN,Baozun Inc.,Services,52.02
-C,C,Citigroup Inc.,Financial,2880
-CA,CA,CA Inc.,Technology,415.87
-CAA,CAA,CalAtlantic Group Inc.,Industrial Goods,115.22
-CAAS,CAAS,China Automotive Systems Inc.(中汽系统),Consumer Goods,30.95
-CAB,CAB,Cabela's Incorporated,Services,68.9
-CADC,CADC,China Advanced Construction Materials Group Inc.(新奥混凝土),Industrial Goods,2.25
+BT,BT,BT Group plc,Technology,1990
+BTI,BTI,British American Tobacco p.l.c.,Consumer Goods,929.89
+BUD,BUD,Anheuser-Busch InBev SA/NV,Consumer Goods,1680
+BURL,BURL,Burlington Stores Inc.,Services,70.24
+BWA,BWA,BorgWarner Inc.,Consumer Goods,212.3
+BWXT,BWXT,BWX Technologies Inc.,Industrial Goods,98.76
+BX,BX,The Blackstone Group L.P.,Financial,1200
+BXMT,BXMT,Blackstone Mortgage Trust Inc.,Financial,94.07
+BXP,BXP,Boston Properties Inc.,Financial,153.48
+BXS,BXS,BancorpSouth Inc.,Financial,91.3
+BYD,BYD,Boyd Gaming Corporation,Services,112.59
+BZH,BZH,Beazer Homes USA Inc.,Industrial Goods,33.19
+BZUN,BZUN,Baozun Inc.,Services,51.44
+C,C,Citigroup Inc.,Financial,2760
+CA,CA,CA Inc.,Technology,412.33
+CAA,CAA,CalAtlantic Group Inc.,Industrial Goods,115.34
+CAAS,CAAS,China Automotive Systems Inc.(中汽系统),Consumer Goods,31.15
+CAB,CAB,Cabela's Incorporated,Services,68.25
+CADC,CADC,China Advanced Construction Materials Group Inc.(新奥混凝土),Industrial Goods,2.48
 CAH,CAH,Cardinal Health Inc.,Services,320
-CAKE,CAKE,The Cheesecake Factory Incorporated,Services,46.42
+CAKE,CAKE,The Cheesecake Factory Incorporated,Services,47.2
 CALD,CALD,Callidus Software Inc.,Technology,64.07
-CALI,CALI,China Auto Logistic Inc.(中国汽车物流),Services,4.16
+CALI,CALI,China Auto Logistics Inc.(中国汽车物流),Services,3.98
 CALM,CALM,Cal-Maine Foods Inc.,Consumer Goods,46.81
 CAMP,CAMP,CalAmp Corp.,Technology,36.09
-CAR,CAR,Avis Budget Group Inc.,Services,90.4
-CBAK,CBAK,China BAK Battery Inc.(比克电池),Technology,18.21
-CBD,CBD,Companhia Brasileira de Distribuicao,Services,295.59
-CBG,CBG,CBRE Group Inc.,Financial,330.41
-CBOE,CBOE,CBOE Holdings Inc.,Financial,81.29
-CBPO,CBPO,China Biologic Products Inc.(泰邦生物),Healthcare,26.86
-CBS,CBS,CBS Corporation,Services,469.97
-CCCL,CCCL,China Ceramics Co. Ltd.(中国陶瓷),Industrial Goods,2.53
-CCCR,CCCR,China Commercial Credit Inc.(鲈乡小贷),Financial,13.31
-CCE,CCE,Coca-Cola European Partners Plc,Consumer Goods,529
-CCI,CCI,Crown Castle International Corp.,Technology,372.92
-CCIH,CCIH,ChinaCache International Holdings Ltd.(蓝汛),Technology,27.8
-CCK,CCK,Crown Holdings Inc.,Consumer Goods,143.56
-CCM,CCM,Concord Medical Services Holdings Limited(泰和诚医疗),Healthcare,44.18
-CCRC,CCRC,China Customer Relations Centers Inc.,Services,18.33
-CDK,CDK,CDK Global Inc.,Technology,152.95
-CDNS,CDNS,Cadence Design Systems Inc.,Technology,289.26
-CDW,CDW,CDW Corporation,Technology,160.47
-CEA,CEA,China Eastern Airlines Corp. Ltd.(东方航空),Services,502.08
-CELG,CELG,Celgene Corporation,Healthcare,775.8
-CEO,CEO,CNOOC Ltd.(中海油),Basic Materials,443.24
-CERN,CERN,Cerner Corporation,Technology,348.69
-CETC,CETC,Hongli Clean Energy Technologies Corp.,Basic Materials,2.16
-CF,CF,CF Industries Holdings Inc.,Basic Materials,233.1
-CFX,CFX,Colfax Corporation,Industrial Goods,119.45
-CGA,CGA,China Green Agriculture Inc.(中国绿色农业),Basic Materials,35.21
-CHA,CHA,China Telecom Corp. Ltd.(中国电信),Technology,815.92
-CHD,CHD,Church & Dwight Co. Inc.,Consumer Goods,271.42
+CAR,CAR,Avis Budget Group Inc.,Services,86.96
+CASY,CASY,Casey's General Stores Inc.,Services,39.19
+CAVM,CAVM,Cavium Inc.,Technology,66.15
+CB,CB,Chubb Limited,Financial,463.53
+CBAK,CBAK,CBAK Energy Technology Inc.(比克电池),Technology,19.63
+CBD,CBD,Companhia Brasileira de Distribuicao,Services,348.83
+CBG,CBG,CBRE Group Inc.,Financial,335.77
+CBL,CBL,CBL & Associates Properties Inc.,Financial,169.18
+CBOE,CBOE,CBOE Holdings Inc.,Financial,81.1
+CBPO,CBPO,China Biologic Products Inc.(泰邦生物),Healthcare,27.11
+CBS,CBS,CBS Corporation,Services,468.33
+CCCL,CCCL,China Ceramics Co. Ltd.(中国陶瓷),Industrial Goods,2.72
+CCCR,CCCR,China Commercial Credit Inc.(鲈乡小贷),Financial,15.76
+CCE,CCE,Coca-Cola European Partners Plc,Consumer Goods,484.34
+CCI,CCI,Crown Castle International Corp.,Technology,356.66
+CCIH,CCIH,ChinaCache International Holdings Ltd.(蓝汛),Technology,28.31
+CCK,CCK,Crown Holdings Inc.,Consumer Goods,142.4
+CCL,CCL,Carnival Corporation,Services,723.32
+CCM,CCM,Concord Medical Services Holdings Limited(泰和诚医疗),Healthcare,44.42
+CCRC,CCRC,China Customer Relations Centers Inc.,Services,20.23
+CDK,CDK,CDK Global Inc.,Technology,147.22
+CDNS,CDNS,Cadence Design Systems Inc.,Technology,284.75
+CDW,CDW,CDW Corporation,Technology,158.88
+CE,CE,Celanese Corporation,Basic Materials,145.04
+CEA,CEA,China Eastern Airlines Corporation Limited(东方航空),Services,479.14
+CEB,CEB,CEB Inc.,Services,32.16
+CELG,CELG,Celgene Corporation,Healthcare,774.53
+CEO,CEO,CNOOC Limited(中海油),Basic Materials,442.5
+CERN,CERN,Cerner Corporation,Technology,339.24
+CETC,CETC,Hongli Clean Energy Technologies Corp.,Basic Materials,2.44
+CF,CF,CF Industries Holdings Inc.,Basic Materials,232.79
+CFFN,CFFN,Capitol Federal Financial Inc.,Financial,136.02
+CFG,CFG,Citizens Financial Group Inc.,Financial,512.02
+CFR,CFR,Cullen/Frost Bankers Inc.,Financial,61.42
+CFX,CFX,Colfax Corporation,Industrial Goods,120.08
+CGA,CGA,China Green Agriculture Inc.(中国绿色农业),Basic Materials,37.08
+CGNX,CGNX,Cognex Corporation,Technology,83.64
+CHA,CHA,China Telecom Corporation Limited(中国电信),Technology,803.48
+CHD,CHD,Church & Dwight Co. Inc.,Consumer Goods,258
 CHFC,CHFC,Chemical Financial Corporation,Financial,35.74
 CHGS,CHGS,China Gengsheng Minerals Inc.,Basic Materials,26.8
-CHKP,CHKP,Check Point Software Technologies Ltd.,Technology,174.14
-CHL,CHL,China Mobile Limited(中移动),Technology,4140
+CHKP,CHKP,Check Point Software Technologies Ltd.,Technology,173.2
+CHL,CHL,China Mobile Limited(中移动),Technology,4100
 CHMT,CHMT,Chemtura Corporation,Basic Materials,63.17
-CHNR,CHNR,China Natural Resources Inc.(中国天然资源),Basic Materials,28.08
-CHRW,CHRW,CH Robinson Worldwide Inc.,Services,142.61
-CHT,CHT,Chunghwa Telecom Co. Ltd.(中华电信),Technology,797.23
-CHU,CHU,China Unicom (Hong Kong) Limited(中国联通(香港)),Technology,2420
-CI,CI,Cigna Corp.,Healthcare,258.7
-CIEN,CIEN,Ciena Corporation,Technology,138.88
-CINF,CINF,Cincinnati Financial Corp.,Financial,161.14
+CHNR,CHNR,China Natural Resources Inc.(中国天然资源),Basic Materials,27.19
+CHRW,CHRW,C.H. Robinson Worldwide Inc.,Services,140.57
+CHT,CHT,Chunghwa Telecom Co. Ltd.(中华电信),Technology,775.89
+CHU,CHU,China Unicom (Hong Kong) Limited(中国联通(香港)),Technology,2380
+CI,CI,Cigna Corporation,Healthcare,255
+CIEN,CIEN,Ciena Corporation,Technology,139.75
+CINF,CINF,Cincinnati Financial Corporation,Financial,162.95
 CISG,CISG,CNinsure Inc.(泛华保险),Financial,56.23
-CIT,CIT,CIT Group Inc.,Financial,197.84
-CJJD,CJJD,China Jo-Jo Drugstores Inc.(九洲大药房),Services,18.93
-CLGX,CLGX,CoreLogic Inc.,Technology,90.41
-CLNT,CLNT,Cleantech Solutions International Inc.(中国风能技术),Industrial Goods,5.07
-CLWT,CLWT,Euro Tech Holdings Company Limited(欧陆科仪),Industrial Goods,1.93
-CLX,CLX,The Clorox Company,Consumer Goods,132.02
-CMA,CMA,Comerica Incorporated,Financial,171
-CMC,CMC,Commercial Metals Company,Basic Materials,115.81
-CMCM,CMCM,Cheetah Mobile Inc.(猎豹移动),Technology,143.91
-CMCSA,CMCSA,Comcast Corporation,Services,2330
+CIT,CIT,CIT Group Inc.,Financial,202.08
+CJJD,CJJD,China Jo-Jo Drugstores Inc.(九洲大药房),Services,20.27
+CL,CL,Colgate-Palmolive Company,Consumer Goods,884.94
+CLC,CLC,CLARCOR Inc.,Industrial Goods,48.9
+CLGX,CLGX,CoreLogic Inc.,Technology,84.23
+CLNS,CLNS,Colony NorthStar Inc.,Financial,549.31
+CLNT,CLNT,Cleantech Solutions International Inc.(中国风能技术),Industrial Goods,5.34
+CLWT,CLWT,Euro Tech Holdings Company Limited(欧陆科仪),Industrial Goods,2.11
+CLX,CLX,The Clorox Company,Consumer Goods,123.7
+CM,CM,Canadian Imperial Bank of Commerce,Financial,393.38
+CMA,CMA,Comerica Incorporated,Financial,169.19
+CMC,CMC,Commercial Metals Company,Basic Materials,115.1
+CMCM,CMCM,Cheetah Mobile Inc.(猎豹移动),Technology,140.28
+CMCSA,CMCSA,Comcast Corporation,Services,2390
 CME,CME,CME Group Inc.,Financial,324.71
 CMG,CMG,Chipotle Mexican Grill Inc.,Services,29.06
-CMI,CMI,Cummins Inc.,Industrial Goods,167.8
-CMRX,CMRX,Chimerix Inc.,Healthcare,45.61
-CMS,CMS,CMS Energy Corp.,Utilities,285.93
-CNC,CNC,Centene Corp.,Healthcare,170.78
-CNET,CNET,ChinaNet Online Holdings Inc.(中网在线),Services,13.28
-CNI,CNI,Canadian National Railway Company,Services,772.3
-CNIT,CNIT,China Information Technology Inc.(中国信息技术),Technology,39.2
-CNK,CNK,Cinemark Holdings Inc.,Services,116.28
+CMI,CMI,Cummins Inc.,Industrial Goods,167.67
+CMRE,CMRE,Costamare Inc.,Services,92.46
+CMRX,CMRX,Chimerix Inc.,Healthcare,45.34
+CMS,CMS,CMS Energy Corporation,Utilities,280.83
+CNC,CNC,Centene Corporation,Healthcare,169.02
+CNET,CNET,ChinaNet Online Holdings Inc.(中网在线),Services,12.18
+CNI,CNI,Canadian National Railway Company,Services,766.7
+CNIT,CNIT,China Information Technology Inc.(中国信息技术),Technology,38.41
+CNK,CNK,Cinemark Holdings Inc.,Services,115.84
 CNO,CNO,CNO Financial Group Inc.,Financial,174.25
-CNTF,CNTF,China Techfaith Wireless Communication Technology Limited(泰克飞石),Technology,10.59
-CO,CO,China Cord Blood Corporation(中国脐带血库),Healthcare,80.64
+CNTF,CNTF,China Techfaith Wireless Communication Technology Limited(泰克飞石),Technology,10.58
+CO,CO,China Cord Blood Corporation(中国脐带血库),Healthcare,72.76
 COF,COF,Capital One Financial Corporation,Financial,501.1
-COL,COL,Rockwell Collins Inc.,Industrial Goods,131.5
-CONN,CONN,Conns Inc.,Services,27.91
-COO,COO,The Cooper Companies Inc.,Healthcare,49.15
-COST,COST,Costco Wholesale Corporation,Services,437.39
-COTY,COTY,Coty Inc.,Consumer Goods,790.33
-CP,CP,Canadian Pacific Railway Limited,Services,147.3
-CPG,CPG,Crescent Point Energy Corp.,Basic Materials,null
-CPHI,CPHI,China Pharma Holdings Inc.(中国医药控股有限公司),Healthcare,45.33
-CPN,CPN,Calpine Corp.,Utilities,376.4
-CPRT,CPRT,Copart Inc.,Services,114.33
+COL,COL,Rockwell Collins Inc.,Industrial Goods,131.9
+CONN,CONN,Conn's Inc.,Services,30.71
+COO,COO,The Cooper Companies Inc.,Healthcare,48.64
+CORT,CORT,Corcept Therapeutics Incorporated,Healthcare,105.04
+COST,COST,Costco Wholesale Corporation,Services,438.8
+COTY,COTY,Coty Inc.,Consumer Goods,743.63
+COWN,COWN,Cowen Group Inc.,Financial,30.51
+CP,CP,Canadian Pacific Railway Limited,Services,146.3
+CPE,CPE,Callon Petroleum Company,Basic Materials,200.63
+CPG,CPG,Crescent Point Energy Corp.,Basic Materials,541.38
+CPHI,CPHI,China Pharma Holdings Inc.(中国医药控股有限公司),Healthcare,43.75
+CPN,CPN,Calpine Corporation,Utilities,356.35
+CPRT,CPRT,Copart Inc.,Services,112.75
 CPSL,CPSL,China Precision Steel Inc.,Basic Materials,null
-CPT,CPT,Camden Property Trust,Financial,90.18
-CREG,CREG,China Recycling Energy Corporation(盈丰科技),Industrial Goods,8.46
-CRH,CRH,CRH plc,Industrial Goods,839.12
-CRI,CRI,Carter's Inc.,Consumer Goods,49.74
-CRK,CRK,Comstock Resources Inc.,Basic Materials,13.4
-CRTO,CRTO,Criteo SA,Technology,66.95
-CSCO,CSCO,Cisco Systems Inc.,Technology,5080
-CSIQ,CSIQ,Canadian Solar Inc.(阿特斯),Technology,57.46
-CSX,CSX,CSX Corp.,Services,942
-CTAS,CTAS,Cintas Corporation,Services,104.46
-CTB,CTB,Cooper Tire & Rubber Co.,Consumer Goods,54.06
+CPT,CPT,Camden Property Trust,Financial,87.84
+CRAY,CRAY,Cray Inc.,Technology,39.94
+CREG,CREG,China Recycling Energy Corporation(盈丰科技),Industrial Goods,8.18
+CRH,CRH,CRH plc,Industrial Goods,829.79
+CRI,CRI,Carter's Inc.,Consumer Goods,51.01
+CRK,CRK,Comstock Resources Inc.,Basic Materials,13.26
+CRTO,CRTO,Criteo S.A.,Technology,63.92
+CSCO,CSCO,Cisco Systems Inc.,Technology,5030
+CSIQ,CSIQ,Canadian Solar Inc.(阿特斯),Technology,55.97
+CSX,CSX,CSX Corporation,Services,935
+CTAS,CTAS,Cintas Corporation,Services,104.23
+CTB,CTB,Cooper Tire & Rubber Company,Consumer Goods,54.06
 CTLT,CTLT,Catalent Inc.,Healthcare,124.82
-CTRP,CTRP,Ctrip.com International Ltd.(携程网),Services,513.54
+CTRP,CTRP,Ctrip.com International Ltd.(携程网),Services,496.36
 CTSH,CTSH,Cognizant Technology Solutions Corporation,Technology,606.2
-CTXS,CTXS,Citrix Systems Inc.,Technology,154.58
-CUBE,CUBE,CubeSmart,Financial,185.63
-CUZ,CUZ,Cousins Properties Incorporated,Financial,395.51
-CVA,CVA,Covanta Holding Corporation,Industrial Goods,130.87
-CVG,CVG,Convergys Corporation,Services,101.62
-CVI,CVI,CVR Energy Inc.,Basic Materials,86.5
+CTXS,CTXS,Citrix Systems Inc.,Technology,158.25
+CUBE,CUBE,CubeSmart,Financial,179.22
+CUZ,CUZ,Cousins Properties Incorporated,Financial,386.62
+CVA,CVA,Covanta Holding Corporation,Industrial Goods,131.65
+CVBF,CVBF,CVB Financial Corp.,Financial,104.85
+CVG,CVG,Convergys Corporation,Services,94.61
+CVI,CVI,CVR Energy Inc.,Basic Materials,86
 CVS,CVS,CVS Health Corporation,Healthcare,1070
-CX,CX,CEMEX S.A.B. de C.V.,Industrial Goods,1660
-CXDC,CXDC,China XD Plastics Company Ltd.(鑫达集团),Consumer Goods,48.87
-CXP,CXP,Columbia Property Trust Inc.,Financial,126.13
-CXW,CXW,Corrections Corporation of America,Financial,117.52
-CYD,CYD,China Yuchai International Limited(玉柴国际),Industrial Goods,40.96
-CYOU,CYOU,Changyou.com Limited(畅游),Technology,17.24
-CZR,CZR,Caesars Entertainment Corporation,Services,149.02
-DAL,DAL,Delta Air Lines Inc.,Services,737.5
-DAN,DAN,Dana Incorporated,Consumer Goods,144.56
-DATA,DATA,Tableau Software Inc.,Technology,75.55
-DBD,DBD,Diebold Incorporated,Technology,74.79
-DCT,DCT,DCT Industrial Trust Inc.,Financial,93.35
-DDS,DDS,Dillard's Inc.,Services,31.14
+CX,CX,CEMEX S.A.B. de C.V.,Industrial Goods,1400
+CXDC,CXDC,China XD Plastics Company Ltd.(鑫达集团),Consumer Goods,48.64
+CXP,CXP,Columbia Property Trust Inc.,Financial,123.7
+CXW,CXW,CoreCivic Inc.,Financial,116.68
+CYD,CYD,China Yuchai International Limited(玉柴国际),Industrial Goods,39.94
+CYNO,CYNO,Cynosure Inc.,Healthcare,25.11
+CYOU,CYOU,Changyou.com Limited(畅游),Technology,52.17
+CZR,CZR,Caesars Entertainment Corporation,Services,146.97
+D,D,Dominion Resources Inc.,Utilities,626.58
+DAL,DAL,Delta Air Lines Inc.,Services,742.17
+DAN,DAN,Dana Incorporated,Consumer Goods,144
+DATA,DATA,Tableau Software Inc.,Technology,66.36
+DBD,DBD,Diebold Nixdorf Incorporated,Technology,75
+DCT,DCT,DCT Industrial Trust Inc.,Financial,91.07
+DDS,DDS,Dillard's Inc.,Services,33.19
 DE,DE,Deere & Company,Industrial Goods,314.3
-DEI,DEI,Douglas Emmett Inc.,Financial,158.04
-DELT,DELT,Delta Technology Holdings Limited,Basic Materials,10.36
-DEO,DEO,Diageo plc,Consumer Goods,633.01
+DEI,DEI,Douglas Emmett Inc.,Financial,149.89
+DELT,DELT,Delta Technology Holdings Limited,Basic Materials,9.46
+DEO,DEO,Diageo plc,Consumer Goods,627.75
 DEPO,DEPO,Depomed Inc.,Healthcare,61.42
-DFS,DFS,Discover Financial Services,Financial,402
-DG,DG,Dollar General Corporation,Services,283.13
-DGX,DGX,Quest Diagnostics Inc.,Healthcare,139
-DHI,DHI,DR Horton Inc.,Industrial Goods,372.56
-DHR,DHR,Danaher Corp.,Industrial Goods,691.62
+DFS,DFS,Discover Financial Services,Financial,392
+DG,DG,Dollar General Corporation,Services,277.62
+DGX,DGX,Quest Diagnostics Incorporated,Healthcare,137.41
+DHI,DHI,D.R. Horton Inc.,Industrial Goods,373.29
+DHR,DHR,Danaher Corporation,Industrial Goods,691.79
 DHRM,DHRM,Dehaier Medical Systems Limited(德海尔医疗),Healthcare,7.09
-DIS,DIS,The Walt Disney Company,Services,1600
-DISCA,DISCA,Discovery Communications Inc.,Services,388.37
-DK,DK,Delek US Holdings Inc.,Basic Materials,60.5
-DKS,DKS,Dick's Sporting Goods Inc.,Services,111.41
-DL,DL,China Distance Education Holdings Limited(正保教育),Services,34.35
-DLPH,DLPH,Delphi Automotive PLC,Consumer Goods,272.19
-DLR,DLR,Digital Realty Trust Inc.,Financial,164.33
-DNKN,DNKN,Dunkin' Brands Group Inc.,Services,93.24
+DIS,DIS,The Walt Disney Company,Services,1590
+DISCA,DISCA,Discovery Communications Inc.,Services,387.71
+DK,DK,Delek US Holdings Inc.,Basic Materials,60.87
+DKS,DKS,Dick's Sporting Goods Inc.,Services,110.45
+DL,DL,China Distance Education Holdings Limited(正保教育),Services,32.96
+DLPH,DLPH,Delphi Automotive PLC,Consumer Goods,269.99
+DLR,DLR,Digital Realty Trust Inc.,Financial,157.64
+DNKN,DNKN,Dunkin' Brands Group Inc.,Services,91.62
 DOV,DOV,Dover Corporation,Industrial Goods,155.3
-DOW,DOW,The Dow Chemical Company,Basic Materials,1120
-DOX,DOX,Amdocs Limited,Technology,145.55
-DPLO,DPLO,Diplomat Pharmacy Inc.,Healthcare,62.46
-DPS,DPS,Dr Pepper Snapple Group Inc.,Consumer Goods,189.65
-DPZ,DPZ,Domino's Pizza Inc.,Services,50.84
-DQ,DQ,Daqo New Energy Corp.(大全新能源),Technology,10.88
-DRE,DRE,Duke Realty Corporation,Financial,366.18
-DRH,DRH,DiamondRock Hospitality Company,Financial,200.47
-DSW,DSW,DSW Inc.,Services,77.85
-DSWL,DSWL,Deswell Industries Inc.(德卫),Consumer Goods,15.98
-DTE,DTE,DTE Energy Company,Utilities,181.58
-DUK,DUK,Duke Energy Corporation,Utilities,708.92
+DOW,DOW,The Dow Chemical Company,Basic Materials,1110
+DOX,DOX,Amdocs Limited,Technology,146.82
+DPLO,DPLO,Diplomat Pharmacy Inc.,Healthcare,67.91
+DPS,DPS,Dr Pepper Snapple Group Inc.,Consumer Goods,183.43
+DPZ,DPZ,Domino's Pizza Inc.,Services,47.92
+DQ,DQ,Daqo New Energy Corp.(大全新能源),Technology,10.43
+DRE,DRE,Duke Realty Corporation,Financial,347.53
+DRH,DRH,DiamondRock Hospitality Company,Financial,198.01
+DSW,DSW,DSW Inc.,Services,80.23
+DSWL,DSWL,Deswell Industries Inc.(德卫),Consumer Goods,15.68
+DTE,DTE,DTE Energy Company,Utilities,179.33
+DUK,DUK,Duke Energy Corporation,Utilities,690.18
 DVMT,DVMT,Dell Technologies Inc.,Technology,223.47
-DXCM,DXCM,DexCom Inc.,Healthcare,83.79
-DY,DY,Dycom Industries Inc.,Industrial Goods,30.57
-DYN,DYN,Dynegy Inc.,Utilities,126.96
-EA,EA,Electronic Arts Inc.,Technology,311.14
-EAT,EAT,Brinker International Inc.,Services,54.84
-EBAY,EBAY,eBay Inc.,Services,1120
-ECL,ECL,Ecolab Inc.,Consumer Goods,291.6
-ED,ED,Consolidated Edison Inc.,Utilities,311.5
-EDR,EDR,EdR,Financial,76.03
-EDU,EDU,New Oriental Education & Technology Group Inc.(新东方),Services,157.35
-EEP,EEP,Enbridge Energy Partners L.P.,Basic Materials,341.83
+DXCM,DXCM,DexCom Inc.,Healthcare,84.1
+DY,DY,Dycom Industries Inc.,Industrial Goods,31.44
+DYN,DYN,Dynegy Inc.,Utilities,117.06
+EA,EA,Electronic Arts Inc.,Technology,306.32
+EAT,EAT,Brinker International Inc.,Services,49.37
+EBAY,EBAY,eBay Inc.,Services,1110
+ECL,ECL,Ecolab Inc.,Consumer Goods,290.25
+ED,ED,Consolidated Edison Inc.,Utilities,305.84
+EDR,EDR,EdR,Financial,73.21
+EDU,EDU,New Oriental Education & Technology Group Inc.(新东方),Services,160.23
+EEP,EEP,Enbridge Energy Partners L.P.,Basic Materials,369.53
 EFUT,EFUT,eFuture Holding Inc.(富基旋风),Technology,5.28
-EFX,EFX,Equifax Inc.,Financial,126.25
-EGT,EGT,Entertainment Gaming Asia Inc.(亚洲娱乐博彩),Services,14.38
-EHIC,EHIC,eHi Car Services Limited(一嗨租车),Services,31.88
-EIGI,EIGI,Endurance International Group Holdings Inc.,Technology,145.7
-EL,EL,The Estee Lauder Companies Inc.,Consumer Goods,376.65
-ELLI,ELLI,Ellie Mae Inc.,Technology,36.47
+EFX,EFX,Equifax Inc.,Financial,119.5
+EGT,EGT,Entertainment Gaming Asia Inc.(亚洲娱乐博彩),Services,14.57
+EHIC,EHIC,eHi Car Services Limited(一嗨租车),Services,69.4
+EIGI,EIGI,Endurance International Group Holdings Inc.,Technology,140.61
+EL,EL,The Estee Lauder Companies Inc.,Consumer Goods,361.94
+ELLI,ELLI,Ellie Mae Inc.,Technology,33.2
 ELP,ELP,Companhia Paranaense de Energia - COPEL,Utilities,267.77
-ELY,ELY,Callaway Golf Co.,Consumer Goods,93.24
-EMN,EMN,Eastman Chemical Co.,Basic Materials,147.2
+ELY,ELY,Callaway Golf Company,Consumer Goods,100.42
+EMN,EMN,Eastman Chemical Company,Basic Materials,146.22
 EPD,EPD,Enterprise Products Partners L.P.,Basic Materials,2060
-EQC,EQC,Equity Commonwealth,Financial,127.95
-EQIX,EQIX,Equinix Inc.,Technology,75.08
-EQR,EQR,Equity Residential,Financial,373.59
-EQY,EQY,Equity One Inc.,Financial,145.57
+EQC,EQC,Equity Commonwealth,Financial,125.53
+EQIX,EQIX,Equinix Inc.,Technology,71.06
+EQR,EQR,Equity Residential,Financial,367.96
+EQY,EQY,Equity One Inc.,Financial,144.45
 ERIC,ERIC,Telefonaktiebolaget LM Ericsson (publ),Technology,3270
-ES,ES,Eversource Energy,Utilities,322.27
-ESNT,ESNT,Essent Group Ltd.,Financial,89.43
+ES,ES,Eversource Energy,Utilities,314.78
+ESNT,ESNT,Essent Group Ltd.,Financial,91.03
 ESRX,ESRX,Express Scripts Holding Company,Healthcare,622.6
-ETE,ETE,Energy Transfer Equity L.P.,Basic Materials,1050
-ETFC,ETFC,E*TRADE Financial Corporation,Financial,274.36
-ETN,ETN,Eaton Corporation plc,Industrial Goods,453.9
-EV,EV,Eaton Vance Corp.,Financial,110.45
-EVHC,EVHC,Envision Healthcare Holdings Inc.,Healthcare,185.99
-EVK,EVK,Ever-Glory International Group Inc.(华瑞服装),Consumer Goods,14.78
-EW,EW,Edwards Lifesciences Corp.,Healthcare,212.89
-EWBC,EWBC,East West Bancorp Inc.,Financial,144.12
-EXEL,EXEL,Exelixis Inc.,Healthcare,273.35
-EXP,EXP,Eagle Materials Inc.,Industrial Goods,46.87
+ETE,ETE,Energy Transfer Equity L.P.,Basic Materials,1020
+ETFC,ETFC,E*TRADE Financial Corporation,Financial,274.59
+ETN,ETN,Eaton Corporation plc,Industrial Goods,450.41
+EV,EV,Eaton Vance Corp.,Financial,113.34
+EVER,EVER,EverBank Financial Corp,Financial,126.51
+EVHC,EVHC,Envision Healthcare Corporation,Healthcare,116.44
+EVK,EVK,Ever-Glory International Group Inc.(华瑞服装),Consumer Goods,14.77
+EW,EW,Edwards Lifesciences Corporation,Healthcare,214.85
+EWBC,EWBC,East West Bancorp Inc.,Financial,144.17
+EXEL,EXEL,Exelixis Inc.,Healthcare,264.26
+EXP,EXP,Eagle Materials Inc.,Industrial Goods,48.06
 EXPD,EXPD,Expeditors International of Washington Inc.,Services,181.18
-EXPE,EXPE,Expedia Inc.,Services,151.39
-EXR,EXR,Extra Space Storage Inc.,Financial,130.17
+EXPE,EXPE,Expedia Inc.,Services,148.87
+EXR,EXR,Extra Space Storage Inc.,Financial,124.86
 F,F,Ford Motor Co.,Consumer Goods,3970
-FAF,FAF,First American Financial Corporation,Financial,112.41
-FAST,FAST,Fastenal Company,Services,289
-FB,FB,Facebook Inc.,Technology,2940
-FBHS,FBHS,Fortune Brands Home & Security Inc.,Consumer Goods,151.43
+FAF,FAF,First American Financial Corporation,Financial,108.22
+FANH,FANH,Fanhua Inc.,Financial,57.83
+FAST,FAST,Fastenal Company,Services,288.93
+FB,FB,Facebook Inc.,Technology,2880
+FBHS,FBHS,Fortune Brands Home & Security Inc.,Consumer Goods,153.04
 FBP,FBP,First Bancorp,Financial,212.93
-FCAU,FCAU,Fiat Chrysler Automobiles N.V.,Consumer Goods,null
-FCH,FCH,FelCor Lodging Trust Incorporated,Financial,137.17
-FDX,FDX,FedEx Corporation,Services,262.28
-FENG,FENG,Phoenix New Media Limited(凤凰新媒体),Technology,68.64
-FFHL,FFHL,Fuwei Films (Holdings) Co. Ltd.(富维薄膜),Consumer Goods,13.44
-FHN,FHN,First Horizon National Corporation,Financial,231.86
-FIG,FIG,Fortress Investment Group LLC,Financial,381.21
-FIS,FIS,Fidelity National Information Services Inc.,Technology,327.59
-FISV,FISV,Fiserv Inc.,Services,218.6
-FITB,FITB,Fifth Third Bancorp,Financial,730.44
-FIVE,FIVE,Five Below Inc.,Services,54.8
-FL,FL,Foot Locker Inc.,Consumer Goods,134.4
-FLEX,FLEX,Flex Ltd.,Technology,544.67
+FBR,FBR,Fibria Celulose S.A.,Consumer Goods,563.66
+FCAU,FCAU,Fiat Chrysler Automobiles N.V.,Consumer Goods,1290
+FCE-A,FCE-A,Forest City Realty Trust Inc,Financial,265.92
+FCH,FCH,FelCor Lodging Trust Incorporated,Financial,135.45
+FDX,FDX,FedEx Corporation,Services,261.41
+FENG,FENG,Phoenix New Media Limited(凤凰新媒体),Technology,69.46
+FFHL,FFHL,Fuwei Films (Holdings) Co. Ltd.(富维薄膜),Consumer Goods,3.37
+FHN,FHN,First Horizon National Corporation,Financial,232.73
+FIG,FIG,Fortress Investment Group LLC,Financial,378.21
+FII,FII,Federated Investors Inc.,Financial,101.14
+FIS,FIS,Fidelity National Information Services Inc.,Technology,326.82
+FISV,FISV,Fiserv Inc.,Services,219.2
+FITB,FITB,Fifth Third Bancorp,Financial,734.06
+FIVE,FIVE,Five Below Inc.,Services,55.67
+FL,FL,Foot Locker Inc.,Consumer Goods,131.87
+FLEX,FLEX,Flex Ltd.,Technology,532.12
 FLIR,FLIR,FLIR Systems Inc.,Technology,136.96
-FLO,FLO,Flowers Foods Inc.,Consumer Goods,210.85
+FLO,FLO,Flowers Foods Inc.,Consumer Goods,206.91
 FLR,FLR,Fluor Corporation,Industrial Goods,139.25
-FLT,FLT,FleetCor Technologies Inc.,Services,95
-FNB,FNB,F.N.B. Corporation,Financial,210.31
+FLT,FLT,FleetCor Technologies Inc.,Services,91.15
+FNB,FNB,F.N.B. Corporation,Financial,214.26
+FNF,FNF,Fidelity National Financial Inc.,Financial,289.72
 FOE,FOE,Ferro Corporation,Basic Materials,83.27
-FOLD,FOLD,Amicus Therapeutics Inc.,Healthcare,139.12
-FOSL,FOSL,Fossil Group Inc.,Consumer Goods,43.32
-FOXA,FOXA,Twenty-First Century Fox Inc.,Services,1870
-FR,FR,First Industrial Realty Trust Inc.,Financial,118.85
-FRAN,FRAN,Francesca's Holdings Corporation,Services,38.66
-FRC,FRC,First Republic Bank,Financial,149.8
+FOLD,FOLD,Amicus Therapeutics Inc.,Healthcare,140.66
+FOSL,FOSL,Fossil Group Inc.,Consumer Goods,47.01
+FOXA,FOXA,Twenty-First Century Fox Inc.,Services,1840
+FR,FR,First Industrial Realty Trust Inc.,Financial,116.47
+FRAN,FRAN,Francesca's Holdings Corporation,Services,37.44
+FRC,FRC,First Republic Bank,Financial,151.8
 FTI,FTI,FMC Technologies Inc.,Basic Materials,226.9
-FTK,FTK,Flotek Industries Inc.,Basic Materials,55.92
-FULT,FULT,Fulton Financial Corporation,Financial,173.02
+FTK,FTK,Flotek Industries Inc.,Basic Materials,54.88
+FULT,FULT,Fulton Financial Corporation,Financial,173.55
 G,G,Genpact Limited,Services,206.15
-GD,GD,General Dynamics Corporation,Industrial Goods,296.44
-GEO,GEO,The GEO Group Inc.,Financial,74.11
-GGP,GGP,General Growth Properties Inc,Financial,885.09
-GIGM,GIGM,GigaMedia Ltd.(和信超媒体),Technology,11.3
-GIII,GIII,G-III Apparel Group Ltd.,Consumer Goods,41.61
-GILD,GILD,Gilead Sciences Inc.,Healthcare,1330
-GIS,GIS,General Mills Inc.,Consumer Goods,607.56
-GLNG,GLNG,Golar LNG Ltd.,Services,93
-GLPI,GLPI,Gaming and Leisure Properties Inc,Financial,211.18
-GM,GM,General Motors Company,Consumer Goods,1440
-GME,GME,GameStop Corp.,Services,102.36
-GMED,GMED,Globus Medical Inc.,Healthcare,94.5
+GATX,GATX,GATX Corporation,Services,39.7
+GBX,GBX,The Greenbrier Companies Inc.,Services,27.41
+GD,GD,General Dynamics Corporation,Industrial Goods,299.93
+GEO,GEO,The GEO Group Inc.,Financial,75.25
+GGP,GGP,GGP Inc.,Financial,894.14
+GIGM,GIGM,GigaMedia Limited(和信超媒体),Technology,11.07
+GIII,GIII,G-III Apparel Group Ltd.,Consumer Goods,49.6
+GIL,GIL,Gildan Activewear Inc.,Consumer Goods,250.35
+GILD,GILD,Gilead Sciences Inc.,Healthcare,1320
+GIMO,GIMO,Gigamon Inc.,Technology,38.15
+GIS,GIS,General Mills Inc.,Consumer Goods,588.8
+GLNG,GLNG,Golar LNG Limited,Services,97.05
+GLPI,GLPI,Gaming and Leisure Properties Inc.,Financial,205.63
+GLW,GLW,Corning Incorporated,Technology,942
+GM,GM,General Motors Company,Consumer Goods,1500
+GME,GME,GameStop Corp.,Services,100.39
+GMED,GMED,Globus Medical Inc.,Healthcare,94.73
 GNC,GNC,GNC Holdings Inc.,Services,68.19
 GNRC,GNRC,Generac Holdings Inc.,Industrial Goods,63.35
-GNTX,GNTX,Gentex Corp.,Consumer Goods,282.96
-GOGO,GOGO,Gogo Inc.,Technology,87.52
-GOLD,GOLD,Randgold Resources Limited,Basic Materials,106.47
-GOOGL,GOOGL,Alphabet Inc.,Technology,702.62
-GPC,GPC,Genuine Parts Company,Services,148.9
-GPK,GPK,Graphic Packaging Holding Company,Consumer Goods,316.08
-GPN,GPN,Global Payments Inc.,Services,157.77
-GPS,GPS,The Gap Inc.,Services,382.17
-GRFS,GRFS,Grifols S.A.,Healthcare,null
-GSH,GSH,Guangshen Railway Co. Ltd.(广深铁路),Services,162.66
-GSK,GSK,GlaxoSmithKline plc,Healthcare,2420
-GSOL,GSOL,Global Sources Ltd.(环球资源),Services,23.74
-GT,GT,The Goodyear Tire & Rubber Company,Consumer Goods,262
-GTN,GTN,Gray Television Inc.,Services,69.52
-GURE,GURE,Gulf Resources Inc.(海湾资源),Basic Materials,46.25
-GWW,GWW,W.W. Grainger Inc.,Services,57.74
-HA,HA,Hawaiian Holdings Inc.,Services,55.04
-HAIN,HAIN,The Hain Celestial Group Inc.,Services,105.74
-HALO,HALO,Halozyme Therapeutics Inc.,Healthcare,121.71
-HAR,HAR,Harman International Industries Incorporated,Consumer Goods,70.89
-HAS,HAS,Hasbro Inc.,Consumer Goods,124.09
+GNTX,GNTX,Gentex Corporation,Consumer Goods,284.55
+GOGO,GOGO,Gogo Inc.,Technology,86.72
+GOLD,GOLD,Randgold Resources Limited,Basic Materials,94.24
+GOOGL,GOOGL,Alphabet Inc.,Technology,679.37
+GORO,GORO,Gold Resource Corp,Basic Materials,55.14
+GPC,GPC,Genuine Parts Company,Services,147.94
+GPK,GPK,Graphic Packaging Holding Company,Consumer Goods,317.32
+GPN,GPN,Global Payments Inc.,Services,153.17
+GPRC,GPRC,Guanwei Recycling Corp.,Industrial Goods,10.41
+GPS,GPS,The Gap Inc.,Services,395.76
+GRFS,GRFS,Grifols S.A.,Healthcare,682.82
+GRUB,GRUB,GrubHub Inc.,Technology,86.6
+GS,GS,The Goldman Sachs Group Inc.,Financial,415.2
+GSH,GSH,Guangshen Railway Company Limited(广深铁路),Services,168.17
+GSK,GSK,GlaxoSmithKline plc,Healthcare,2430
+GSOL,GSOL,Global Sources Ltd.(环球资源),Services,23.88
+GT,GT,The Goodyear Tire & Rubber Company,Consumer Goods,261.22
+GTN,GTN,Gray Television Inc.,Services,71.45
+GURE,GURE,Gulf Resources Inc.(海湾资源),Basic Materials,46.57
+GV,GV,The Goldfield Corporation,Industrial Goods,23.67
+GWR,GWR,Genesee & Wyoming Inc.,Services,60.54
+GWW,GWW,W.W. Grainger Inc.,Services,59.68
+H,H,Hyatt Hotels Corporation,Services,129.12
+HA,HA,Hawaiian Holdings Inc.,Services,52.74
+HAIN,HAIN,The Hain Celestial Group Inc.,Services,103.29
+HALO,HALO,Halozyme Therapeutics Inc.,Healthcare,126.53
+HAR,HAR,Harman International Industries Incorporated,Consumer Goods,70.03
+HAS,HAS,Hasbro Inc.,Consumer Goods,124.5
 HAWK,HAWK,Blackhawk Network Holdings Inc.,Financial,54.82
-HBAN,HBAN,Huntington Bancshares Incorporated,Financial,751.62
+HBAN,HBAN,Huntington Bancshares Incorporated,Financial,1090
 HBHC,HBHC,Hancock Holding Company,Financial,77.55
-HBI,HBI,Hanesbrands Inc.,Consumer Goods,377.63
-HCA,HCA,HCA Holdings Inc.,Healthcare,375.21
-HCLP,HCLP,Hi-Crush Partners LP,Basic Materials,63.28
-HCN,HCN,Welltower Inc.,Financial,372.87
-HD,HD,The Home Depot Inc.,Services,1240
-HDS,HDS,HD Supply Holdings Inc.,Services,193.68
-HE,HE,Hawaiian Electric Industries Inc.,Utilities,109.99
-HFC,HFC,HollyFrontier Corporation,Basic Materials,177.6
-HGSH,HGSH,China HGS Real Estate Inc.(汉广厦房地产),Financial,47.18
-HIG,HIG,The Hartford Financial Services Group Inc.,Financial,383.8
-HIHO,HIHO,Highway Holdings Limited(公路控股),Industrial Goods,3.85
-HIMX,HIMX,Himax Technologies Inc.(奇景光电),Technology,175.19
-HIW,HIW,Highwoods Properties Inc.,Financial,103.66
+HBI,HBI,Hanesbrands Inc.,Consumer Goods,452.22
+HCA,HCA,HCA Holdings Inc.,Healthcare,367.93
+HCLP,HCLP,Hi-Crush Partners LP,Basic Materials,60.7
+HCN,HCN,Welltower Inc.,Financial,367.57
+HD,HD,The Home Depot Inc.,Services,1220
+HDS,HDS,HD Supply Holdings Inc.,Services,198.87
+HDSN,HDSN,Hudson Technologies Inc.,Industrial Goods,39.89
+HE,HE,Hawaiian Electric Industries Inc.,Utilities,107.85
+HEBT,HEBT,Hebron Technology Co. Ltd.,Industrial Goods,14.7
+HFC,HFC,HollyFrontier Corporation,Basic Materials,175.87
+HGSH,HGSH,China HGS Real Estate Inc.(汉广厦房地产),Financial,45.28
+HIG,HIG,The Hartford Financial Services Group Inc.,Financial,382.84
+HIHO,HIHO,Highway Holdings Limited(公路控股),Industrial Goods,3.84
+HIIQ,HIIQ,Health Insurance Innovations Inc.,Healthcare,14.91
+HIMX,HIMX,Himax Technologies Inc.(奇景光电),Technology,174.64
+HIW,HIW,Highwoods Properties Inc.,Financial,100.47
 HK,HK,Halcon Resources Corporation,Basic Materials,3.74
-HLF,HLF,Herbalife Ltd.,Consumer Goods,96.33
-HLG,HLG,Hailiang Education Group Inc.,Services,25.72
-HLT,HLT,Hilton Worldwide Holdings Inc.,Services,996.11
-HMHC,HMHC,Houghton Mifflin Harcourt Company,Services,118
-HNP,HNP,Huaneng Power International Inc.(华能电力),Utilities,565.17
-HOG,HOG,Harley-Davidson Inc.,Consumer Goods,178.44
-HOLI,HOLI,HollySys Automation Technologies Ltd.(和利时自动化),Industrial Goods,59.38
-HOLX,HOLX,Hologic Inc.,Healthcare,277.55
-HOMB,HOMB,Home Bancshares Inc. (Conway AR),Financial,134.18
-HON,HON,Honeywell International Inc.,Industrial Goods,763.7
-HOPE,HOPE,Hope Bancorp Inc.,Financial,128.35
+HLF,HLF,Herbalife Ltd.,Consumer Goods,92.75
+HLG,HLG,Hailiang Education Group Inc.,Services,24.21
+HLT,HLT,Hilton Worldwide Holdings Inc.,Services,327.07
+HMHC,HMHC,Houghton Mifflin Harcourt Company,Services,123
+HNP,HNP,Huaneng Power International Inc.(华能电力),Utilities,553.41
+HOG,HOG,Harley-Davidson Inc.,Consumer Goods,176.15
+HOLI,HOLI,HollySys Automation Technologies Ltd.(和利时自动化),Industrial Goods,60.01
+HOLX,HOLX,Hologic Inc.,Healthcare,278.47
+HOMB,HOMB,Home Bancshares Inc. (Conway AR),Financial,135.38
+HON,HON,Honeywell International Inc.,Industrial Goods,762.4
+HOPE,HOPE,Hope Bancorp Inc.,Financial,135.24
+HOS,HOS,Hornbeck Offshore Services Inc.,Basic Materials,32.86
 HP,HP,Helmerich & Payne Inc.,Basic Materials,107.85
-HPJ,HPJ,Highpower International Inc.(豪鹏国际),Industrial Goods,15.38
-HPT,HPT,Hospitality Properties Trust,Financial,167.04
-HR,HR,Healthcare Realty Trust Incorporated,Financial,120.56
-HRB,HRB,H&R Block Inc.,Services,220.48
-HRL,HRL,Hormel Foods Corporation,Consumer Goods,561.15
-HRTX,HRTX,Heron Therapeutics Inc.,Healthcare,39.11
-HSIC,HSIC,Henry Schein Inc.,Services,81.96
-HST,HST,Host Hotels & Resorts Inc.,Financial,741.71
-HSY,HSY,The Hershey Company,Consumer Goods,219.19
-HTA,HTA,Healthcare Trust of America Inc.,Financial,147.35
-HTHT,HTHT,China Lodging Group Limited(华住酒店集团),Services,70.92
+HPJ,HPJ,Highpower International Inc.(豪鹏国际),Industrial Goods,14.43
+HPT,HPT,Hospitality Properties Trust,Financial,162.91
+HR,HR,Healthcare Realty Trust Incorporated,Financial,114.77
+HRB,HRB,H&R Block Inc.,Services,204.31
+HRG,HRG,HRG Group Inc.,Conglomerates,201.5
+HRL,HRL,Hormel Foods Corporation,Consumer Goods,526.31
+HRTX,HRTX,Heron Therapeutics Inc.,Healthcare,50.35
+HSIC,HSIC,Henry Schein Inc.,Services,79.78
+HST,HST,Host Hotels & Resorts Inc.,Financial,732.5
+HSY,HSY,The Hershey Company,Consumer Goods,209.47
+HTA,HTA,Healthcare Trust of America Inc.,Financial,140.62
+HTHT,HTHT,China Lodging Group Limited(华住酒店集团),Services,66.95
 HTLD,HTLD,Heartland Express Inc.,Services,81.69
-HTZ,HTZ,Hertz Global Holdings Inc.,Services,83.61
-HUM,HUM,Humana Inc.,Healthcare,149.42
-HUN,HUN,Huntsman Corporation,Basic Materials,228.81
-HW,HW,Headwaters Incorporated,Industrial Goods,73.91
-HXL,HXL,Hexcel Corp.,Industrial Goods,92.85
+HTZ,HTZ,Hertz Global Holdings Inc.,Services,84
+HUM,HUM,Humana Inc.,Healthcare,149.97
+HUN,HUN,Huntsman Corporation,Basic Materials,238.62
+HW,HW,Headwaters Incorporated,Industrial Goods,74.92
+HXL,HXL,Hexcel Corporation,Industrial Goods,91.8
 HZNP,HZNP,Horizon Pharma plc,Healthcare,161.04
-IAC,IAC,IAC/InterActiveCorp,Technology,79.35
+IAC,IAC,IAC/InterActiveCorp,Technology,77.3
 IBM,IBM,International Business Machines Corporation,Technology,954
-IBN,IBN,ICICI Bank Ltd.,Financial,2910
-ICE,ICE,Intercontinental Exchange Inc.,Financial,596.09
-IDTI,IDTI,Integrated Device Technology Inc.,Technology,137.51
-IFF,IFF,International Flavors & Fragrances Inc.,Basic Materials,83.15
-IGT,IGT,International Game Technology PLC,Services,208.7
-ILMN,ILMN,Illumina Inc.,Healthcare,146.71
-IMOS,IMOS,ChipMOS TECHNOLOGIES (Bermuda) LTD.(南茂科技),Technology,27.37
-IMPV,IMPV,Imperva Inc.,Technology,32.92
-INCY,INCY,Incyte Corporation,Healthcare,187.34
+IBN,IBN,ICICI Bank Limited,Financial,2910
+ICE,ICE,Intercontinental Exchange Inc.,Financial,594.15
+IDTI,IDTI,Integrated Device Technology Inc.,Technology,132.66
+IDXX,IDXX,IDEXX Laboratories Inc.,Healthcare,89.29
+IFF,IFF,International Flavors & Fragrances Inc.,Basic Materials,78.66
+IGT,IGT,International Game Technology PLC,Services,197.98
+ILG,ILG,ILG Inc.,Services,132.68
+ILMN,ILMN,Illumina Inc.,Healthcare,147.57
+IMOS,IMOS,ChipMOS TECHNOLOGIES INC.(南茂科技),Technology,866.56
+IMPV,IMPV,Imperva Inc.,Technology,32.76
+INCY,INCY,Incyte Corporation,Healthcare,189.29
 INFN,INFN,Infinera Corporation,Technology,143.85
 INFY,INFY,Infosys Limited,Technology,2290
-ING,ING,ING Groep N.V.,Financial,3860
-INGR,INGR,Ingredion Incorporated,Consumer Goods,75.79
-INO,INO,Inovio Pharmaceuticals Inc.,Healthcare,70.06
-INSY,INSY,INSYS Therapeutics Inc.,Healthcare,69.27
+ING,ING,ING Groep N.V.,Financial,3880
+INGR,INGR,Ingredion Incorporated,Consumer Goods,71.59
+INN,INN,Summit Hotel Properties Inc.,Financial,85.99
+INO,INO,Inovio Pharmaceuticals Inc.,Healthcare,72.62
+INSY,INSY,INSYS Therapeutics Inc.,Healthcare,71.62
 INTC,INTC,Intel Corporation,Technology,4770
-INTU,INTU,Intuit Inc.,Technology,258.24
-INVA,INVA,Innoviva Inc.,Technology,108.74
-INXN,INXN,Interxion Holding NV,Technology,74.37
+INTU,INTU,Intuit Inc.,Technology,255.5
+INVA,INVA,Innoviva Inc.,Technology,105.08
+INXN,INXN,Interxion Holding N.V.,Technology,68.93
 IP,IP,International Paper Company,Consumer Goods,409.78
-IPG,IPG,The Interpublic Group of Companies Inc.,Services,397.92
-IR,IR,Ingersoll-Rand Plc,Industrial Goods,259.2
-IRET,IRET,Investors Real Estate Trust,Financial,121.07
-IRT,IRT,Independence Realty Trust Inc.,Financial,69.15
-ISBC,ISBC,Investors Bancorp Inc.,Financial,301.19
-ITT,ITT,ITT Inc.,Industrial Goods,89.2
-ITUB,ITUB,Itau Unibanco Holding S.A.,Financial,6840
-ITW,ITW,Illinois Tool Works Inc.,Industrial Goods,353.5
-IVZ,IVZ,Invesco Ltd.,Financial,412.6
-JASO,JASO,JA Solar Holdings Co. Ltd.(晶澳太阳能),Technology,47.91
-JAZZ,JAZZ,Jazz Pharmaceuticals Public Limited Company,Healthcare,60.44
-JBHT,JBHT,JB Hunt Transport Services Inc.,Services,109.7
-JBLU,JBLU,JetBlue Airways Corporation,Services,323.7
+IPG,IPG,The Interpublic Group of Companies Inc.,Services,397.7
+IR,IR,Ingersoll-Rand Plc,Industrial Goods,262.6
+IRET,IRET,Investors Real Estate Trust,Financial,121.15
+IRT,IRT,Independence Realty Trust Inc.,Financial,68.48
+ISBC,ISBC,Investors Bancorp Inc.,Financial,303.31
+IT,IT,Gartner Inc.,Technology,82.24
+ITT,ITT,ITT Inc.,Industrial Goods,87.92
+ITUB,ITUB,Itau Unibanco Holding S.A.,Financial,6000
+ITW,ITW,Illinois Tool Works Inc.,Industrial Goods,350.37
+IVZ,IVZ,Invesco Ltd.,Financial,390.69
+JACK,JACK,Jack in the Box Inc.,Services,31.25
+JASO,JASO,JA Solar Holdings Co. Ltd.(晶澳太阳能),Technology,46.97
+JAZZ,JAZZ,Jazz Pharmaceuticals Public Limited Company,Healthcare,59.29
+JBHT,JBHT,J.B. Hunt Transport Services Inc.,Services,109.46
+JBLU,JBLU,JetBlue Airways Corporation,Services,321.57
 JCI,JCI,Johnson Controls International plc,Consumer Goods,906.77
-JD,JD,JD.com Inc.(京东),Technology,1490
+JD,JD,JD.com Inc.(京东),Technology,1440
 JEC,JEC,Jacobs Engineering Group Inc.,Services,119.3
-JKS,JKS,JinkoSolar Holding Co. Ltd.(晶科能源),Technology,32.42
-JMEI,JMEI,Jumei International Holding Limited(聚美优品),Services,148.69
-JNJ,JNJ,Johnson & Johnson,Healthcare,2740
-JNPR,JNPR,Juniper Networks Inc.,Technology,384.33
-JOBS,JOBS,51job Inc.(前程无忧),Services,61.21
-JP,JP,Jupai Holdings Limited(钜派),Financial,31.25
-JPM,JPM,JPMorgan Chase & Co.,Financial,3600
-JRJC,JRJC,China Finance Online Co. Ltd.(金融界),Technology,22.93
-JWN,JWN,Nordstrom Inc.,Services,161.86
-K,K,Kellogg Company,Consumer Goods,361.68
-KANG,KANG,iKang Healthcare Group Inc.(爱康国宾),Healthcare,68.84
-KAR,KAR,KAR Auction Services Inc.,Services,140.16
+JKS,JKS,JinkoSolar Holding Co. Ltd.(晶科能源),Technology,31.26
+JMEI,JMEI,Jumei International Holding Limited(聚美优品),Services,146.63
+JMU,JMU,JMU Limited,#Technology,85.48
+JNJ,JNJ,Johnson & Johnson,Healthcare,2720
+JNPR,JNPR,Juniper Networks Inc.,Technology,378.79
+JOBS,JOBS,51job Inc.(前程无忧),Services,58.35
+JP,JP,Jupai Holdings Limited(钜派),Financial,29.93
+JPM,JPM,JPMorgan Chase & Co.,Financial,3570
+JRJC,JRJC,China Finance Online Co. Limited(金融界),Technology,23.79
+JWN,JWN,Nordstrom Inc.,Services,171.8
+K,K,Kellogg Company,Consumer Goods,350
+KANG,KANG,iKang Healthcare Group Inc.(爱康国宾),Healthcare,67.01
+KAR,KAR,KAR Auction Services Inc.,Services,138
 KATE,KATE,Kate Spade & Company,Consumer Goods,128.1
-KBH,KBH,KB Home,Industrial Goods,82.19
-KEP,KEP,Korea Electric Power Corp.,Utilities,1270
+KBH,KBH,KB Home,Industrial Goods,84.35
+KEP,KEP,Korea Electric Power Corporation,Utilities,1290
 KEX,KEX,Kirby Corporation,Services,53.46
 KEY,KEY,KeyCorp.,Financial,1040
-KGJI,KGJI,Kingold Jewelry Inc.(金凰珠宝),Basic Materials,66.68
-KHC,KHC,The Kraft Heinz Company,Consumer Goods,1270
-KIM,KIM,Kimco Realty Corporation,Financial,422.05
+KGJI,KGJI,Kingold Jewelry Inc.(金凰珠宝),Basic Materials,65.04
+KHC,KHC,The Kraft Heinz Company,Consumer Goods,1220
+KIM,KIM,Kimco Realty Corporation,Financial,425.37
+KMB,KMB,Kimberly-Clark Corporation,Consumer Goods,357.77
 KMI,KMI,Kinder Morgan Inc.,Basic Materials,2210
-KMX,KMX,CarMax Inc.,Services,191.54
-KNDI,KNDI,Kandi Technologies Group Inc.(康迪车业),Consumer Goods,46.5
-KNX,KNX,Knight Transportation Inc.,Services,79.17
-KONE,KONE,Kingtone Wirelessinfo Solution(联合信息),Technology,1.54
-KORS,KORS,Michael Kors Holdings Limited,Consumer Goods,163.85
-KR,KR,The Kroger Co.,Services,943
-KRC,KRC,Kilroy Realty Corporation,Financial,93.51
+KMX,KMX,CarMax Inc.,Services,189.2
+KNDI,KNDI,Kandi Technologies Group Inc.(康迪车业),Consumer Goods,47.13
+KNX,KNX,Knight Transportation Inc.,Services,78.69
+KONE,KONE,Kingtone Wirelessinfo Solution Holding Ltd(联合信息),Technology,1.48
+KORS,KORS,Michael Kors Holdings Limited,Consumer Goods,163.73
+KOS,KOS,Kosmos Energy Ltd.,Basic Materials,389.13
+KR,KR,The Kroger Co.,Services,940.33
+KRC,KRC,Kilroy Realty Corporation,Financial,97.33
+KRG,KRG,Kite Realty Group Trust,Financial,83.51
 KRNY,KRNY,Kearny Financial Corp.,Financial,88.09
-KS,KS,KapStone Paper and Packaging Corporation,Consumer Goods,94.79
-KSU,KSU,Kansas City Southern,Services,109.4
-KZ,KZ,KongZhong Corporation(空中网),Technology,47.11
-LAMR,LAMR,Lamar Advertising Co.,Financial,99.29
-LAZ,LAZ,Lazard Ltd.,Financial,131.36
-LB,LB,L Brands Inc.,Services,279.05
-LBTYA,LBTYA,Liberty Global plc,Services,1070
-LC,LC,LendingClub Corporation,Financial,372.56
-LCI,LCI,Lannett Company Inc.,Healthcare,33.61
-LEA,LEA,Lear Corp.,Consumer Goods,71.26
-LEDS,LEDS,SemiLEDs Corporation(旭明光电),Technology,3.01
-LEG,LEG,Leggett & Platt Incorporated,Consumer Goods,131.37
-LEJU,LEJU,Leju Holdings Limited(乐居),Financial,146.19
-LEN,LEN,Lennar Corporation,Industrial Goods,204.76
-LFC,LFC,China Life Insurance Co. Ltd.(中国人寿),Financial,6910
+KS,KS,KapStone Paper and Packaging Corporation,Consumer Goods,93.54
+KSU,KSU,Kansas City Southern,Services,105.81
+KZ,KZ,KongZhong Corporation(空中网),Technology,47.18
+LADR,LADR,Ladder Capital Corp,Financial,108.71
+LAMR,LAMR,Lamar Advertising Company,Financial,97.1
+LAZ,LAZ,Lazard Ltd,Financial,128.78
+LB,LB,L Brands Inc.,Services,284.52
+LBTYA,LBTYA,Liberty Global plc,Services,986.33
+LC,LC,LendingClub Corporation,Financial,387.44
+LCI,LCI,Lannett Company Inc.,Healthcare,40.42
+LEA,LEA,Lear Corporation,Consumer Goods,70.16
+LEDS,LEDS,SemiLEDs Corporation(旭明光电),Technology,3.51
+LEG,LEG,Leggett & Platt Incorporated,Consumer Goods,132.14
+LEJU,LEJU,Leju Holdings Limited(乐居),Financial,135.29
+LEN,LEN,Lennar Corporation,Industrial Goods,220.14
+LFC,LFC,China Life Insurance Company Limited(中国人寿),Financial,7100
 LGF,LGF,Lions Gate Entertainment Corp.,Services,145.66
-LHO,LHO,LaSalle Hotel Properties,Financial,112.78
-LITB,LITB,LightInTheBox Holding Co. Ltd.(兰亭集势),Services,69.01
-LKQ,LKQ,LKQ Corp.,Consumer Goods,309.63
-LMT,LMT,Lockheed Martin Corporation,Industrial Goods,298.5
-LNC,LNC,Lincoln National Corporation,Financial,231.04
+LHO,LHO,LaSalle Hotel Properties,Financial,112.81
+LIOX,LIOX,Lionbridge Technologies Inc.,Services,61.5
+LITB,LITB,LightInTheBox Holding Co. Ltd.(兰亭集势),Services,67.87
+LKQ,LKQ,LKQ Corporation,Consumer Goods,305.39
+LLL,LLL,L3 Technologies Inc.,Industrial Goods,77.3
+LMT,LMT,Lockheed Martin Corporation,Industrial Goods,290.11
+LNC,LNC,Lincoln National Corporation,Financial,227.65
 LNCE,LNCE,Snyder's-Lance Inc.,Consumer Goods,97.54
 LNKD,LNKD,LinkedIn Corporation,Technology,135.55
-LNT,LNT,Alliant Energy Corporation,Utilities,235.96
-LOCK,LOCK,LifeLock Inc.,Technology,93.49
+LNT,LNT,Alliant Energy Corporation,Utilities,227.2
+LOCK,LOCK,LifeLock Inc.,Technology,94.15
 LOGI,LOGI,Logitech International SA,Technology,176.05
-LOW,LOW,Lowe's Companies Inc.,Services,883
+LOW,LOW,Lowe's Companies Inc.,Services,873
 LPLA,LPLA,LPL Financial Holdings Inc.,Financial,89.09
-LPNT,LPNT,LifePoint Health Inc.,Healthcare,39.45
-LPT,LPT,Liberty Property Trust,Financial,152.27
-LSI,LSI,Life Storage Inc.,Technology,47.28
-LULU,LULU,Lululemon Athletica Inc.,Consumer Goods,138.8
-LUV,LUV,Southwest Airlines Co.,Services,618
-LVLT,LVLT,Level 3 Communications Inc.,Technology,365.28
-LVNTA,LVNTA,Liberty Ventures,Services,330.87
-LVS,LVS,Las Vegas Sands Corp.,Services,809.99
-LXP,LXP,Lexington Realty Trust,Financial,242.38
-LXRX,LXRX,Lexicon Pharmaceuticals Inc.,Healthcare,107.47
-LYV,LYV,Live Nation Entertainment Inc.,Services,197.64
+LPNT,LPNT,LifePoint Health Inc.,Healthcare,39.13
+LPT,LPT,Liberty Property Trust,Financial,146.22
+LQ,LQ,La Quinta Holdings Inc.,Services,116.24
+LSI,LSI,Life Storage Inc.,Technology,46.04
+LULU,LULU,Lululemon Athletica Inc.,Consumer Goods,137.35
+LUV,LUV,Southwest Airlines Co.,Services,615.36
+LVLT,LVLT,Level 3 Communications Inc.,Technology,358.4
+LVNTA,LVNTA,Liberty Ventures,Services,297.63
+LVS,LVS,Las Vegas Sands Corp.,Services,792.95
+LXP,LXP,Lexington Realty Trust,Financial,234.91
+LXRX,LXRX,Lexicon Pharmaceuticals Inc.,Healthcare,103.89
+LYB,LYB,LyondellBasell Industries N.V.,Basic Materials,403.48
+LYV,LYV,Live Nation Entertainment Inc.,Services,202.8
 M,M,Macy's Inc.,Services,308.4
-MA,MA,Mastercard Incorporated,Financial,1110
-MAA,MAA,Mid-America Apartment Communities Inc.,Financial,77.35
+MA,MA,Mastercard Incorporated,Financial,1070
+MAA,MAA,Mid-America Apartment Communities Inc.,Financial,113.17
 MAC,MAC,The Macerich Company,Financial,143.92
-MAN,MAN,ManpowerGroup Inc.,Services,68.4
-MANH,MANH,Manhattan Associates Inc.,Technology,71.04
-MAR,MAR,Marriott International Inc.,Services,393.55
-MAS,MAS,Masco Corporation,Industrial Goods,322.88
-MBFI,MBFI,MB Financial Inc.,Financial,82.69
-MBI,MBI,MBIA Inc.,Financial,131.63
-MBT,MBT,Mobile TeleSystems PJSC,Technology,994.53
-MCD,MCD,McDonald's Corp.,Services,833.85
-MCK,MCK,McKesson Corporation,Services,226
-MCO,MCO,Moody's Corporation,Services,191.96
-MD,MD,MEDNAX Inc.,Healthcare,93.61
-MDLZ,MDLZ,Mondelez International Inc.,Consumer Goods,1620
-MDRX,MDRX,Allscripts Healthcare Solutions Inc.,Technology,189.72
-MDXG,MDXG,MiMedx Group Inc.,Healthcare,112.11
+MAN,MAN,ManpowerGroup Inc.,Services,67.5
+MANH,MANH,Manhattan Associates Inc.,Technology,70.74
+MAR,MAR,Marriott International Inc.,Services,386.14
+MAS,MAS,Masco Corporation,Industrial Goods,326.03
+MBFI,MBFI,MB Financial Inc.,Financial,81.91
+MBI,MBI,MBIA Inc.,Financial,134.7
+MBT,MBT,Public Joint-Stock Company Mobile TeleSystems,Technology,864.23
+MCD,MCD,McDonald's Corporation,Services,823.63
+MCK,MCK,McKesson Corporation,Services,212.3
+MCO,MCO,Moody's Corporation,Services,191.7
+MD,MD,MEDNAX Inc.,Healthcare,92.82
+MDLZ,MDLZ,Mondelez International Inc.,Consumer Goods,1560
+MDRX,MDRX,Allscripts Healthcare Solutions Inc.,Technology,185.57
+MDXG,MDXG,MiMedx Group Inc.,Healthcare,107.97
 MEG,MEG,Media General Inc.,Services,129.12
-MELI,MELI,Mercadolibre Inc.,Services,46.88
-MENT,MENT,Mentor Graphics Corp.,Technology,107.37
+MELI,MELI,Mercadolibre Inc.,Services,43.8
+MENT,MENT,Mentor Graphics Corporation,Technology,109.46
 MEOH,MEOH,Methanex Corporation,Basic Materials,89.8
 MET,MET,MetLife Inc.,Financial,1050
-MFC,MFC,Manulife Financial Corporation,Financial,1820
-MGA,MGA,Magna International Inc.,Services,375.85
-MGM,MGM,MGM Resorts International,Services,574.75
-MHK,MHK,Mohawk Industries Inc.,Consumer Goods,72.46
-MHLD,MHLD,Maiden Holdings Ltd.,Financial,84.69
-MIK,MIK,The Michaels Companies Inc.,Services,206.36
-MJN,MJN,Mead Johnson Nutrition Company,Consumer Goods,193.92
-MKC,MKC,McCormick & Company Incorporated,Consumer Goods,130.61
+MFC,MFC,Manulife Financial Corporation,Financial,1960
+MGA,MGA,Magna International Inc.,Services,377.95
+MGI,MGI,MoneyGram International Inc.,Financial,52.74
+MGM,MGM,MGM Resorts International,Services,572.18
+MHK,MHK,Mohawk Industries Inc.,Consumer Goods,74.39
+MHLD,MHLD,Maiden Holdings Ltd.,Financial,85.65
+MIK,MIK,The Michaels Companies Inc.,Services,203.31
+MJN,MJN,Mead Johnson Nutrition Company,Consumer Goods,185.38
+MKC,MKC,McCormick & Company Incorporated,Consumer Goods,124.59
 MLM,MLM,Martin Marietta Materials Inc.,Industrial Goods,63.45
-MLNX,MLNX,Mellanox Technologies Ltd.,Technology,49.73
-MMC,MMC,Marsh & McLennan Companies Inc.,Financial,518
-MMM,MMM,3M Company,Industrial Goods,604.4
-MMP,MMP,Magellan Midstream Partners LP,Basic Materials,227.58
-MNK,MNK,Mallinckrodt Public Limited Company,Healthcare,108.6
-MNST,MNST,Monster Beverage Corporation,Consumer Goods,596.15
-MO,MO,Altria Group Inc.,Consumer Goods,2020
+MLNX,MLNX,Mellanox Technologies Ltd.,Technology,47.03
+MMC,MMC,Marsh & McLennan Companies Inc.,Financial,515
+MMM,MMM,3M Company,Industrial Goods,600.2
+MMP,MMP,Magellan Midstream Partners L.P.,Basic Materials,231.81
+MNK,MNK,Mallinckrodt Public Limited Company,Healthcare,105.56
+MNST,MNST,Monster Beverage Corporation,Consumer Goods,559.86
+MO,MO,Altria Group Inc.,Consumer Goods,1950
 MOBI,MOBI,Sky-mobi Limited(斯凯),Technology,28.17
-MOH,MOH,Molina Healthcare Inc.,Healthcare,55.82
-MOMO,MOMO,Momo Inc.(陌陌),Technology,204.99
-MORE,MORE,Monogram Residential Trust Inc.,Financial,166.51
+MOH,MOH,Molina Healthcare Inc.,Healthcare,56.57
+MOMO,MOMO,Momo Inc.(陌陌),Technology,194.32
+MORE,MORE,Monogram Residential Trust Inc.,Financial,166.18
 MPC,MPC,Marathon Petroleum Corporation,Basic Materials,524.8
-MPEL,MPEL,Melco Crown Entertainment Limited(新濠博亚娱乐),Services,563.44
-MPW,MPW,Medical Properties Trust Inc.,Financial,317.9
-MRK,MRK,Merck & Co. Inc.,Healthcare,2770
-MS,MS,Morgan Stanley,Financial,1800
+MPEL,MPEL,Melco Crown Entertainment Limited(新濠博亚娱乐),Services,494.37
+MPSX,MPSX,Multi Packaging Solutions International Limited,Consumer Goods,77.41
+MPW,MPW,Medical Properties Trust Inc.,Financial,316.03
+MRK,MRK,Merck & Co. Inc.,Healthcare,2750
+MS,MS,Morgan Stanley,Financial,1780
 MSCC,MSCC,Microsemi Corporation,Technology,113.5
-MSCI,MSCI,MSCI Inc.,Technology,94.84
-MSI,MSI,Motorola Solutions Inc.,Technology,165.48
-MSM,MSM,MSC Industrial Direct Co. Inc.,Services,54.82
+MSCI,MSCI,MSCI Inc.,Technology,93.33
+MSI,MSI,Motorola Solutions Inc.,Technology,165.4
+MSM,MSM,MSC Industrial Direct Co. Inc.,Services,55.96
 MTB,MTB,M&T Bank Corporation,Financial,152.53
-MTG,MTG,MGIC Investment Corp.,Financial,349.38
-MTOR,MTOR,Meritor Inc.,Consumer Goods,82.76
-MTU,MTU,Mitsubishi UFJ Financial Group Inc.,Financial,12650
+MTG,MTG,MGIC Investment Corporation,Financial,341.36
+MTOR,MTOR,Meritor Inc.,Consumer Goods,87.1
+MTSI,MTSI,MACOM Technology Solutions Holdings Inc.,Technology,54.11
+MTU,MTU,Mitsubishi UFJ Financial Group Inc.,Financial,13050
 MTW,MTW,The Manitowoc Company Inc.,Industrial Goods,138.42
-MWA,MWA,Mueller Water Products Inc.,Industrial Goods,161.7
-MYGN,MYGN,Myriad Genetics Inc.,Services,68.42
-MYL,MYL,Mylan N.V.,Healthcare,543.86
-NAT,NAT,Nordic American Tankers Limited,Services,89.31
-NCLH,NCLH,Norwegian Cruise Line Holdings Ltd.,Services,212.52
+MUSA,MUSA,Murphy USA Inc.,Services,38.84
+MWA,MWA,Mueller Water Products Inc.,Industrial Goods,160.05
+MYGN,MYGN,Myriad Genetics Inc.,Services,69.33
+MYL,MYL,Mylan N.V.,Healthcare,532.24
+NAT,NAT,Nordic American Tankers Limited,Services,88.75
+NCLH,NCLH,Norwegian Cruise Line Holdings Ltd.,Services,226.8
 NCS,NCS,NCI Building Systems Inc.,Industrial Goods,73.1
-NCTY,NCTY,The9 Limited(第九城市),Technology,40
+NCTY,NCTY,The9 Limited(第九城市),Technology,37.63
 NDAQ,NDAQ,Nasdaq Inc.,Financial,165.03
-NEE,NEE,NextEra Energy Inc.,Utilities,477.14
-NFEC,NFEC,NF Energy Saving Corp.(能发伟业),Industrial Goods,7.07
-NGG,NGG,National Grid plc,Utilities,779.72
-NKE,NKE,NIKE Inc.,Consumer Goods,1690
+NEE,NEE,NextEra Energy Inc.,Utilities,469
+NEWM,NEWM,New Media Investment Group Inc.,Services,52.14
+NFEC,NFEC,NF Energy Saving Corporation(能发伟业),Industrial Goods,6.67
+NGG,NGG,National Grid plc,Utilities,753.94
+NJR,NJR,New Jersey Resources Corporation,Utilities,85.27
+NKE,NKE,NIKE Inc.,Consumer Goods,1670
 NLS,NLS,Nautilus Inc.,Consumer Goods,31.63
-NLSN,NLSN,Nielsen Holdings plc,Technology,359.5
-NNN,NNN,National Retail Properties Inc.,Financial,152.02
-NOAH,NOAH,Noah Holdings Limited(诺亚财富),Financial,54.32
-NOC,NOC,Northrop Grumman Corporation,Industrial Goods,178.1
-NORD,NORD,Nord Anglia Education Inc.,Services,103.41
-NQ,NQ,NQ Mobile Inc.(网秦),Technology,95.28
+NLSN,NLSN,Nielsen Holdings plc,Technology,357.09
+NNN,NNN,National Retail Properties Inc.,Financial,147.6
+NOAH,NOAH,Noah Holdings Limited(诺亚财富),Financial,55.33
+NOC,NOC,Northrop Grumman Corporation,Industrial Goods,173.46
+NORD,NORD,Nord Anglia Education Inc.,Services,101.14
+NOW,NOW,ServiceNow Inc.,Technology,163.38
+NQ,NQ,NQ Mobile Inc.(网秦),Technology,94.47
 NRF,NRF,NorthStar Realty Finance Corp.,Financial,179.42
-NRZ,NRZ,New Residential Investment Corp.,Financial,250.95
+NRZ,NRZ,New Residential Investment Corp.,Financial,250.31
 NSAM,NSAM,Northstar Asset Management Group Inc.,Financial,188.58
-NSC,NSC,Norfolk Southern Corporation,Services,292.7
-NSR,NSR,NeuStar Inc.,Technology,54.34
-NTES,NTES,NetEase Inc.(网易),Technology,146.08
-NTP,NTP,Nam Tai Property Inc.,Technology,37.18
-NTRS,NTRS,Northern Trust Corporation,Financial,226.54
-NUE,NUE,Nucor Corporation,Basic Materials,319.74
-NUS,NUS,Nu Skin Enterprises Inc.,Consumer Goods,56.23
-NVDA,NVDA,NVIDIA Corporation,Technology,552.29
-NVFY,NVFY,Nova Lifestyle Inc.(诺华家具),Consumer Goods,24.12
-NVO,NVO,Novo Nordisk A/S,Healthcare,2070
-NWL,NWL,Newell Brands Inc.,Consumer Goods,501.83
+NSC,NSC,Norfolk Southern Corporation,Services,289.54
+NSR,NSR,NeuStar Inc.,Technology,54.58
+NTES,NTES,NetEase Inc.(网易),Technology,133.12
+NTP,NTP,Nam Tai Property Inc.,Technology,36.45
+NTRS,NTRS,Northern Trust Corporation,Financial,227.64
+NUE,NUE,Nucor Corporation,Basic Materials,319.26
+NUS,NUS,Nu Skin Enterprises Inc.,Consumer Goods,54.19
+NVDA,NVDA,NVIDIA Corporation,Technology,539.72
+NVFY,NVFY,Nova Lifestyle Inc.(诺华家具),Consumer Goods,27.1
+NVO,NVO,Novo Nordisk A/S,Healthcare,1980
+NWL,NWL,Newell Brands Inc.,Consumer Goods,491.86
 NXPI,NXPI,NXP Semiconductors NV,Technology,348.48
-NXST,NXST,Nexstar Broadcasting Group Inc.,Services,30.7
-NYRT,NYRT,New York REIT Inc.,Financial,167.62
+NXST,NXST,Nexstar Media Group Inc.,Services,30.68
+NYLD,NYLD,NRG Yield Inc.,Utilities,62.78
+NYRT,NYRT,New York REIT Inc.,Financial,165.38
 NYT,NYT,The New York Times Company,Services,156.87
-O,O,Realty Income Corporation,Financial,264.98
-OCLR,OCLR,Oclaro Inc.,Technology,174.19
-ODFL,ODFL,Old Dominion Freight Line Inc.,Services,78.76
+O,O,Realty Income Corporation,Financial,258.09
+OCLR,OCLR,Oclaro Inc.,Technology,162.7
+ODFL,ODFL,Old Dominion Freight Line Inc.,Services,80.08
 OFC,OFC,Corporate Office Properties Trust,Financial,94.43
-OHI,OHI,Omega Healthcare Investors Inc.,Financial,198.62
+OHI,OHI,Omega Healthcare Investors Inc.,Financial,193.93
+OI,OI,Owens-Illinois Inc.,Consumer Goods,163.04
 OII,OII,Oceaneering International Inc.,Basic Materials,98.06
-OIIM,OIIM,O2Micro International Ltd.(凹凸科技),Technology,25.29
+OIIM,OIIM,O2Micro International Limited(凹凸科技),Technology,25.59
 OLED,OLED,Universal Display Corp.,Technology,46.59
-OLLI,OLLI,Ollie's Bargain Outlet Holdings Inc.,Services,58.67
-OMC,OMC,Omnicom Group Inc.,Services,237.17
-ONB,ONB,Old National Bancorp.,Financial,134.49
-ONP,ONP,Orient Paper Inc.(东方纸业),Consumer Goods,20.81
-ORCL,ORCL,Oracle Corporation,Technology,4100
-ORI,ORI,Old Republic International Corporation,Financial,260.16
-ORLY,ORLY,O'Reilly Automotive Inc.,Services,95.31
-OSN,OSN,Ossen Innovation Co. Ltd.(奥盛创新),Basic Materials,19.17
+OLLI,OLLI,Ollie's Bargain Outlet Holdings Inc.,Services,58.82
+OMAM,OMAM,OM Asset Management plc,Financial,117.7
+OMC,OMC,Omnicom Group Inc.,Services,234.53
+ONB,ONB,Old National Bancorp,Financial,134.67
+ONP,ONP,Orient Paper Inc.(东方纸业),Consumer Goods,21.42
+ORC,ORC,Orchid Island Capital Inc.,Financial,25.96
+ORCL,ORCL,Oracle Corporation,Technology,4059.9999999999995
+ORI,ORI,Old Republic International Corporation,Financial,262.47
+ORLY,ORLY,O'Reilly Automotive Inc.,Services,93.32
+OSG,OSG,Overseas Shipholding Group Inc.,Services,66.48
+OSN,OSN,Ossen Innovation Co. Ltd.(奥盛创新),Basic Materials,20.2
 OSUR,OSUR,OraSure Technologies Inc.,Healthcare,55.65
-OZRK,OZRK,Bank of the Ozarks Inc.,Financial,114.75
+OTEX,OTEX,Open Text Corporation,Technology,262.05
+OZRK,OZRK,Bank of the Ozarks Inc.,Financial,118.23
 PACB,PACB,Pacific Biosciences of California Inc.,Healthcare,90.5
-PACW,PACW,PacWest Bancorp,Financial,114.98
+PACW,PACW,PacWest Bancorp,Financial,120.01
 PAG,PAG,Penske Automotive Group Inc.,Services,82.38
-PAGP,PAGP,Plains GP Holdings L.P.,Basic Materials,668.12
+PAGP,PAGP,Plains GP Holdings L.P.,Basic Materials,231.86
 PAH,PAH,Platform Specialty Products Corporation,Basic Materials,276.24
-PAYC,PAYC,Paycom Software Inc.,Technology,64.62
-PAYX,PAYX,Paychex Inc.,Services,356.36
-PBCT,PBCT,People's United Financial Inc.,Financial,303.32
+PAYC,PAYC,Paycom Software Inc.,Technology,57.93
+PAYX,PAYX,Paychex Inc.,Services,362.43
+PBCT,PBCT,People's United Financial Inc.,Financial,306.11
 PBI,PBI,Pitney Bowes Inc.,Consumer Goods,185.6
 PCAR,PCAR,PACCAR Inc.,Consumer Goods,351
 PCRX,PCRX,Pacira Pharmaceuticals Inc.,Healthcare,37.31
-PDM,PDM,Piedmont Office Realty Trust Inc.,Financial,149.84
-PEB,PEB,Pebblebrook Hotel Trust,Financial,71.7
-PEG,PEG,Public Service Enterprise Group Inc.,Utilities,513.37
+PDM,PDM,Piedmont Office Realty Trust Inc.,Financial,145.17
+PEB,PEB,Pebblebrook Hotel Trust,Financial,71.3
+PEG,PEG,Public Service Enterprise Group Incorporated,Utilities,503.72
 PENN,PENN,Penn National Gaming Inc.,Services,81.53
-PF,PF,Pinnacle Foods Inc.,Consumer Goods,130.76
-PFE,PFE,Pfizer Inc.,Healthcare,5820
-PFG,PFG,Principal Financial Group Inc.,Financial,288.1
-PGNX,PGNX,Progenics Pharmaceuticals Inc.,Healthcare,69.45
-PGR,PGR,Progressive Corp.,Financial,581.5
-PHM,PHM,PulteGroup Inc.,Industrial Goods,319.23
-PII,PII,Polaris Industries Inc.,Consumer Goods,59.7
-PINC,PINC,Premier Inc.,Technology,142.15
-PKG,PKG,Packaging Corporation of America,Consumer Goods,94.4
-PKI,PKI,PerkinElmer Inc.,Healthcare,108.5
-PLAY,PLAY,Dave & Buster's Entertainment Inc.,Services,41.87
-PLD,PLD,Prologis Inc.,Financial,546.27
-PLNT,PLNT,Planet Fitness Inc.,Services,94.95
+PF,PF,Pinnacle Foods Inc.,Consumer Goods,117.22
+PFE,PFE,Pfizer Inc.,Healthcare,6000
+PFG,PFG,Principal Financial Group Inc.,Financial,292
+PGNX,PGNX,Progenics Pharmaceuticals Inc.,Healthcare,69.61
+PGR,PGR,The Progressive Corporation,Financial,580.16
+PHM,PHM,PulteGroup Inc.,Industrial Goods,328.73
+PII,PII,Polaris Industries Inc.,Consumer Goods,63.35
+PINC,PINC,Premier Inc.,Technology,138.27
+PKG,PKG,Packaging Corporation of America,Consumer Goods,93.38
+PKI,PKI,PerkinElmer Inc.,Healthcare,113.07
+PLAB,PLAB,Photronics Inc.,Technology,67.44
+PLAY,PLAY,Dave & Buster's Entertainment Inc.,Services,41.73
+PLD,PLD,Prologis Inc.,Financial,550.89
+PLNT,PLNT,Planet Fitness Inc.,Services,98.67
 PM,PM,Philip Morris International Inc.,Consumer Goods,1620
-PME,PME,Pingtan Marine Enterprise Ltd.,Consumer Goods,74.3
-PNC,PNC,The PNC Financial Services Group Inc.,Financial,490
-PNM,PNM,PNM Resources Inc.,Utilities,81.03
+PME,PME,Pingtan Marine Enterprise Ltd.,Consumer Goods,82.3
+PNC,PNC,The PNC Financial Services Group Inc.,Financial,487
+PNM,PNM,PNM Resources Inc.,Utilities,79.75
+PNR,PNR,Pentair plc,Industrial Goods,181.8
 PNRA,PNRA,Panera Bread Company,Services,23.21
-PNW,PNW,Pinnacle West Capital Corporation,Utilities,113.08
+PNW,PNW,Pinnacle West Capital Corporation,Utilities,110.96
 PODD,PODD,Insulet Corporation,Healthcare,57.34
-POR,POR,Portland General Electric Company,Utilities,90.41
-PPC,PPC,Pilgrim's Pride Corporation,Consumer Goods,261.86
+POL,POL,PolyOne Corporation,Basic Materials,82.77
+POR,POR,Portland General Electric Company,Utilities,88.74
+POST,POST,Post Holdings Inc.,Consumer Goods,63.56
+PPC,PPC,Pilgrim's Pride Corporation,Consumer Goods,251.33
 PPG,PPG,PPG Industries Inc.,Basic Materials,266.3
 PPL,PPL,PPL Corporation,Utilities,689.28
 PPS,PPS,Post Properties Inc.,Financial,54.85
+PRAH,PRAH,PRA Health Sciences Inc.,Healthcare,60.64
+PRI,PRI,Primerica Inc.,Financial,47.01
 PRU,PRU,Prudential Financial Inc.,Financial,435.9
-PRXL,PRXL,PAREXEL International Corporation,Healthcare,52.8
-PSA,PSA,Public Storage,Financial,175.64
+PRXL,PRXL,PAREXEL International Corporation,Healthcare,54.05
+PSA,PSA,Public Storage,Financial,172.23
 PSX,PSX,Phillips 66,Basic Materials,525.99
-PTLA,PTLA,Portola Pharmaceuticals Inc.,Healthcare,57.77
-PTR,PTR,PetroChina Co. Ltd.(中石油),Basic Materials,2810
+PTLA,PTLA,Portola Pharmaceuticals Inc.,Healthcare,56.51
+PTR,PTR,PetroChina Company Limited(中石油),Basic Materials,2820
 PUK,PUK,Prudential plc,Financial,1180
-PVH,PVH,PVH Corp.,Consumer Goods,80.7
-PVTB,PVTB,PrivateBancorp Inc.,Financial,79.49
+PVH,PVH,PVH Corp.,Consumer Goods,80.92
+PVTB,PVTB,PrivateBancorp Inc.,Financial,78.44
 PX,PX,Praxair Inc.,Basic Materials,285.86
-Q,Q,Quintiles IMS Holdings Inc.,Healthcare,244.11
-QCOM,QCOM,QUALCOMM Incorporated,Technology,1510
+PYPL,PYPL,PayPal Holdings Inc.,Financial,1210
+Q,Q,Quintiles IMS Holdings Inc.,Healthcare,248.05
+QCOM,QCOM,QUALCOMM Incorporated,Technology,1480
+QIWI,QIWI,Qiwi plc,Financial,60.42
 QKLS,QKLS,QKL Stores Inc.,Services,1.52
-QUNR,QUNR,Qunar Cayman Islands Limited(去哪儿),Services,147.62
-R,R,Ryder System Inc.,Services,52.95
-RAD,RAD,Rite Aid Corporation,Services,1040
-RAI,RAI,Reynolds American Inc.,Consumer Goods,1480
+QUNR,QUNR,Qunar Cayman Islands Limited(去哪儿),Services,146.05
+R,R,Ryder System Inc.,Services,53.4
+RAD,RAD,Rite Aid Corporation,Services,1050
+RAI,RAI,Reynolds American Inc.,Consumer Goods,1410
 RBA,RBA,Ritchie Bros. Auctioneers Incorporated,Services,106.62
-RCL,RCL,Royal Caribbean Cruises Ltd.,Services,211
-RCON,RCON,Recon Technology Ltd.(研控科技),Basic Materials,6.25
+RCL,RCL,Royal Caribbean Cruises Ltd.,Services,213.47
+RCON,RCON,Recon Technology Ltd.(研控科技),Basic Materials,6.06
 RDN,RDN,Radian Group Inc.,Financial,214.39
-REG,REG,Regency Centers Corporation,Financial,105.26
-REGN,REGN,Regeneron Pharmaceuticals Inc.,Healthcare,104.33
-REN,REN,Resolute Energy Corporation,Basic Materials,18.85
-RENN,RENN,Renren Inc.(人人公司),Technology,342.1
-RF,RF,Regions Financial Corporation,Financial,1250
-RGC,RGC,Regal Entertainment Group,Services,162.96
-RH,RH,Restoration Hardware Holdings Inc.,Services,40.65
-RHI,RHI,Robert Half International Inc.,Services,127.62
-RHT,RHT,Red Hat Inc.,Technology,179.27
-RJF,RJF,Raymond James Financial Inc.,Financial,137.33
-RLGY,RLGY,Realogy Holdings Corp.,Financial,146.67
-RLJ,RLJ,RLJ Lodging Trust,Financial,122.58
-RMBS,RMBS,Rambus Inc.,Technology,111.34
-RMD,RMD,ResMed Inc.,Healthcare,140.79
-ROIC,ROIC,Retail Opportunity Investments Corp.,Financial,111.42
-ROK,ROK,Rockwell Automation Inc.,Industrial Goods,129.8
-ROP,ROP,Roper Technologies Inc.,Industrial Goods,99.82
-ROST,ROST,Ross Stores Inc.,Services,394.2
-RPAI,RPAI,Retail Properties of America Inc.,Financial,238.33
-RPM,RPM,RPM International Inc.,Basic Materials,133.22
-RPT,RPT,Ramco-Gershenson Properties Trust,Financial,78.94
-RS,RS,Reliance Steel & Aluminum Co.,Basic Materials,71.14
+REG,REG,Regency Centers Corporation,Financial,103.96
+REGN,REGN,Regeneron Pharmaceuticals Inc.,Healthcare,106.15
+REN,REN,Resolute Energy Corporation,Basic Materials,20.66
+RENN,RENN,Renren Inc.(人人公司),Technology,342.35
+RF,RF,Regions Financial Corporation,Financial,1220
+RGC,RGC,Regal Entertainment Group,Services,154.91
+RH,RH,RH,Services,41.56
+RHI,RHI,Robert Half International Inc.,Services,126.34
+RHT,RHT,Red Hat Inc.,Technology,177.33
+RJF,RJF,Raymond James Financial Inc.,Financial,139.68
+RLGY,RLGY,Realogy Holdings Corp.,Financial,144
+RLJ,RLJ,RLJ Lodging Trust,Financial,122.75
+RMBS,RMBS,Rambus Inc.,Technology,110.28
+RMD,RMD,ResMed Inc.,Healthcare,141.31
+ROIC,ROIC,Retail Opportunity Investments Corp.,Financial,108.68
+ROK,ROK,Rockwell Automation Inc.,Industrial Goods,128.3
+ROP,ROP,Roper Technologies Inc.,Industrial Goods,100.86
+ROST,ROST,Ross Stores Inc.,Services,392.21
+RPAI,RPAI,Retail Properties of America Inc.,Financial,237.69
+RPM,RPM,RPM International Inc.,Basic Materials,132.57
+RPT,RPT,Ramco-Gershenson Properties Trust,Financial,78.88
+RRR,RRR,Red Rock Resorts Inc.,Services,115.31
+RS,RS,Reliance Steel & Aluminum Co.,Basic Materials,71.67
 RSG,RSG,Republic Services Inc.,Industrial Goods,342.6
-RTN,RTN,Raytheon Company,Industrial Goods,295.2
+RTN,RTN,Raytheon Company,Industrial Goods,294.2
 RTRX,RTRX,Retrophin Inc.,Healthcare,36.16
-RXN,RXN,Rexnord Corporation,Industrial Goods,102.73
+RXN,RXN,Rexnord Corporation,Industrial Goods,103.11
 RY,RY,Royal Bank of Canada,Financial,1480
-SABR,SABR,Sabre Corporation,Technology,277.37
-SAFM,SAFM,Sanderson Farms Inc.,Consumer Goods,23.17
-SAP,SAP,SAP SE,Technology,1260
+SABR,SABR,Sabre Corporation,Technology,277.08
+SAFM,SAFM,Sanderson Farms Inc.,Consumer Goods,23.55
+SANM,SANM,Sanmina Corporation,Technology,73.26
+SAP,SAP,SAP SE,Technology,1220
 SAVE,SAVE,Spirit Airlines Inc.,Services,69.73
-SBAC,SBAC,SBA Communications Corp.,Technology,129.05
-SBGI,SBGI,Sinclair Broadcast Group Inc.,Services,91.69
-SBGL,SBGL,Sibanye Gold Limited,Basic Materials,260.97
-SBH,SBH,Sally Beauty Holdings Inc.,Services,145.96
+SBAC,SBAC,SBA Communications Corporation,Technology,120.64
+SBGI,SBGI,Sinclair Broadcast Group Inc.,Services,89.43
+SBGL,SBGL,Sibanye Gold Limited,Basic Materials,243.86
+SBH,SBH,Sally Beauty Holdings Inc.,Services,143.63
 SBNY,SBNY,Signature Bank,Financial,53.68
-SBUX,SBUX,Starbucks Corporation,Services,1490
-SC,SC,Santander Consumer USA Holdings Inc.,Financial,338.2
-SCG,SCG,SCANA Corp.,Utilities,145.07
-SCHW,SCHW,The Charles Schwab Corporation,Financial,1270
-SCI,SCI,Service Corporation International,Services,193.19
-SCS,SCS,Steelcase Inc.,Consumer Goods,116.69
-SCSS,SCSS,Select Comfort Corporation,Consumer Goods,45.62
+SBRA,SBRA,Sabra Health Care REIT Inc.,Financial,64.39
+SBUX,SBUX,Starbucks Corporation,Services,1430
+SC,SC,Santander Consumer USA Holdings Inc.,Financial,348.76
+SCAI,SCAI,Surgical Care Affiliates Inc.,Healthcare,40.4
+SCG,SCG,SCANA Corporation,Utilities,141.83
+SCHW,SCHW,The Charles Schwab Corporation,Financial,1290
+SCI,SCI,Service Corporation International,Services,188.68
+SCMP,SCMP,Sucampo Pharmaceuticals Inc.,Healthcare,44.44
+SCS,SCS,Steelcase Inc.,Consumer Goods,115.54
+SCSS,SCSS,Select Comfort Corporation,Consumer Goods,44.76
 SCTY,SCTY,SolarCity Corporation,Technology,100.62
-SEAS,SEAS,SeaWorld Entertainment Inc.,Services,85.22
-SEDG,SEDG,SolarEdge Technologies Inc.,Technology,41.19
-SEE,SEE,Sealed Air Corporation,Consumer Goods,192.57
-SEED,SEED,Origin Agritech Limited(奥瑞金种业),Consumer Goods,23.14
-SEIC,SEIC,SEI Investments Co.,Financial,160.89
-SEM,SEM,Select Medical Holdings Corporation,Healthcare,130.63
-SEMG,SEMG,SemGroup Corporation,Basic Materials,65.6
+SEAS,SEAS,SeaWorld Entertainment Inc.,Services,88.97
+SEDG,SEDG,SolarEdge Technologies Inc.,Technology,40.58
+SEE,SEE,Sealed Air Corporation,Consumer Goods,193.73
+SEED,SEED,Origin Agritech Limited(奥瑞金种业),Consumer Goods,23.33
+SEIC,SEIC,SEI Investments Co.,Financial,158.66
+SEM,SEM,Select Medical Holdings Corporation,Healthcare,126.64
+SEMG,SEMG,SemGroup Corporation,Basic Materials,64.14
 SEP,SEP,Spectra Energy Partners LP,Basic Materials,316.09
-SFM,SFM,Sprouts Farmers Market Inc.,Services,137.89
-SFUN,SFUN,Fang Holdings Limited(搜房网),Technology,479.25
-SGOC,SGOC,SGOCO Group Ltd.(上为),Consumer Goods,7.08
-SHI,SHI,Sinopec Shanghai Petrochemical Co. Ltd.(上石化),Basic Materials,162.17
+SFM,SFM,Sprouts Farmers Market Inc.,Services,142.93
+SFUN,SFUN,Fang Holdings Limited(搜房网),Technology,459.76
+SGOC,SGOC,SGOCO Group Ltd.(上为),Consumer Goods,7.16
+SHI,SHI,Sinopec Shanghai Petrochemical Company Limited(上石化),Basic Materials,148.46
 SHO,SHO,Sunstone Hotel Investors Inc.,Financial,215.41
-SHOR,SHOR,ShoreTel Inc.,Technology,68.44
-SHPG,SHPG,Shire plc,Healthcare,288.46
-SHW,SHW,The Sherwin-Williams Company,Basic Materials,90.36
-SIG,SIG,Signet Jewelers Limited,Services,77.1
-SIMO,SIMO,Silicon Motion Technology Corp.(慧荣科技),Technology,35.74
-SINA,SINA,SINA Corporation(新浪),Technology,73.29
-SINO,SINO,Sino-Global Shipping America Ltd.(中环球船务),Services,7.33
-SIVB,SIVB,SVB Financial Group,Financial,52.05
-SJM,SJM,The J. M. Smucker Company,Consumer Goods,119.81
+SHOO,SHOO,Steven Madden Ltd.,Consumer Goods,60.63
+SHOR,SHOR,ShoreTel Inc.,Technology,68.42
+SHPG,SHPG,Shire plc,Healthcare,302.97
+SHW,SHW,The Sherwin-Williams Company,Basic Materials,92.87
+SIG,SIG,Signet Jewelers Limited,Services,69.42
+SIMO,SIMO,Silicon Motion Technology Corporation(慧荣科技),Technology,34.73
+SINA,SINA,SINA Corporation(新浪),Technology,71.75
+SINO,SINO,Sino-Global Shipping America Ltd.(中环球船务),Services,8.02
+SITE,SITE,SiteOne Landscape Supply Inc.,Industrial Goods,39.49
+SIVB,SIVB,SVB Financial Group,Financial,52.13
+SJM,SJM,The J. M. Smucker Company,Consumer Goods,115.43
 SKBI,SKBI,Skystar Bio Pharmaceutical Company,Healthcare,8.7
-SKT,SKT,Tanger Factory Outlet Centers Inc.,Financial,95.04
-SKX,SKX,Skechers U.S.A. Inc.,Consumer Goods,156.33
-SKYS,SKYS,Sky Solar Holdings Ltd.(天华阳光),Utilities,48.11
-SLCA,SLCA,U.S. Silica Holdings Inc.,Basic Materials,74.06
-SMI,SMI,Semiconductor Manufacturing International Corp.(中芯国际),Technology,798.09
-SNE,SNE,Sony Corporation,Consumer Goods,1220
-SNI,SNI,Scripps Networks Interactive Inc.,Services,126.2
-SNP,SNP,China Petroleum & Chemical Corp.(中石化),Basic Materials,1240
-SNV,SNV,Synovus Financial Corporation,Financial,122.92
-SO,SO,Southern Company,Utilities,1010
-SOHU,SOHU,Sohu.com Inc.(搜狐),Technology,39.5
-SOL,SOL,ReneSola Ltd.(昱辉阳光),Technology,108.22
-SONC,SONC,Sonic Corp.,Services,45.16
-SORL,SORL,SORL Auto Parts Inc.(瑞立集团),Consumer Goods,19
-SPG,SPG,Simon Property Group Inc.,Financial,311.63
+SKT,SKT,Tanger Factory Outlet Centers Inc.,Financial,95.42
+SKX,SKX,Skechers U.S.A. Inc.,Consumer Goods,158.89
+SKYS,SKYS,Sky Solar Holdings Ltd.(天华阳光),Utilities,47.54
+SLCA,SLCA,U.S. Silica Holdings Inc.,Basic Materials,69.88
+SMG,SMG,The Scotts Miracle-Gro Company,Basic Materials,59.55
+SMI,SMI,Semiconductor Manufacturing International Corporation(中芯国际),Technology,848.58
+SNE,SNE,Sony Corporation,Consumer Goods,1190
+SNI,SNI,Scripps Networks Interactive Inc.,Services,128.43
+SNP,SNP,China Petroleum & Chemical Corporation(中石化),Basic Materials,1300
+SNPS,SNPS,Synopsys Inc.,Technology,151.68
+SNV,SNV,Synovus Financial Corp.,Financial,122.33
+SO,SO,The Southern Company,Utilities,983.01
+SOHU,SOHU,Sohu.com Inc.(搜狐),Technology,38.72
+SOL,SOL,ReneSola Ltd(昱辉阳光),Technology,99.52
+SONC,SONC,Sonic Corp.,Services,43.55
+SORL,SORL,SORL Auto Parts Inc.(瑞立集团),Consumer Goods,19.53
+SPB,SPB,Spectrum Brands Holdings Inc.,Consumer Goods,59.57
+SPG,SPG,Simon Property Group Inc.,Financial,313.69
 SPGI,SPGI,S&P Global Inc.,Services,262.9
-SPIL,SPIL,Siliconware Precision Industries Co. Ltd.(矽品),Technology,635.61
-SPR,SPR,Spirit AeroSystems Holdings Inc.,Industrial Goods,121.83
-SPU,SPU,SkyPeople Fruit Juice Inc.(天人果汁),Consumer Goods,3.33
-SRC,SRC,Spirit Realty Capital Inc.,Financial,519.39
-SRCL,SRCL,Stericycle Inc.,Industrial Goods,84.31
-SRE,SRE,Sempra Energy,Utilities,256.31
-SSNC,SSNC,SS&C Technologies Holdings Inc.,Technology,209.06
-SSW,SSW,Seaspan Corporation(西斯班),Services,104.13
-ST,ST,Sensata Technologies Holding NV,Technology,170.84
-STI,STI,SunTrust Banks Inc.,Financial,496.3
+SPIL,SPIL,Siliconware Precision Industries Co. Ltd.(矽品),Technology,614.51
+SPR,SPR,Spirit AeroSystems Holdings Inc.,Industrial Goods,118.72
+SPU,SPU,SkyPeople Fruit Juice Inc.(天人果汁),Consumer Goods,3.9
+SPWH,SPWH,Sportsman's Warehouse Holdings Inc.,Consumer Goods,44.47
+SRC,SRC,Spirit Realty Capital Inc.,Financial,481.73
+SRCL,SRCL,Stericycle Inc.,Industrial Goods,88.65
+SRE,SRE,Sempra Energy,Utilities,249.89
+SSNC,SSNC,SS&C Technologies Holdings Inc.,Technology,200.88
+SSW,SSW,Seaspan Corporation(西斯班),Services,103.4
+ST,ST,Sensata Technologies Holding N.V.,Technology,175.17
+STAR,STAR,iStar Inc.,Financial,79.06
+STI,STI,SunTrust Banks Inc.,Financial,491.5
 STJ,STJ,St. Jude Medical Inc.,Healthcare,283.85
-STL,STL,Sterling Bancorp.,Financial,130.24
+STL,STL,Sterling Bancorp,Financial,130.73
+STLD,STLD,Steel Dynamics Inc.,Basic Materials,245.47
 STRZA,STRZA,Starz,Services,97.73
-STT,STT,State Street Corporation,Financial,388.36
-STV,STV,China Digital TV Holding Co. Ltd.(永新视博),Technology,62.01
-STWD,STWD,Starwood Property Trust Inc.,Financial,243.11
-STZ,STZ,Constellation Brands Inc.,Consumer Goods,202.32
-SUN,SUN,Sunoco LP,Basic Materials,121.33
-SUPN,SUPN,Supernus Pharmaceuticals Inc.,Healthcare,48.9
+STT,STT,State Street Corporation,Financial,384.12
+STV,STV,China Digital TV Holding Co. Ltd.(永新视博),Technology,59.77
+STWD,STWD,Starwood Property Trust Inc.,Financial,256.05
+STZ,STZ,Constellation Brands Inc.,Consumer Goods,196.58
+SUN,SUN,Sunoco LP,Basic Materials,109.85
+SUPN,SUPN,Supernus Pharmaceuticals Inc.,Healthcare,48.81
 SVA,SVA,Sinovac Biotech Ltd.(科兴生物),Healthcare,56.91
-SWFT,SWFT,Swift Transportation Company,Services,131.87
+SWFT,SWFT,Swift Transportation Company,Services,129.56
 SWHC,SWHC,Smith & Wesson Holding Corporation,Industrial Goods,61.76
-SWK,SWK,Stanley Black & Decker Inc.,Industrial Goods,144.46
-SWKS,SWKS,Skyworks Solutions Inc.,Technology,191.82
-SYF,SYF,Synchrony Financial,Financial,828
-SYK,SYK,Stryker Corporation,Healthcare,381.71
-SYNA,SYNA,Synaptics Inc.,Technology,36.37
-SYNT,SYNT,Syntel Inc.,Technology,83.26
-SYUT,SYUT,Synutra International Inc.(圣元国际),Consumer Goods,63.52
-TANH,TANH,Tantech Holdings Ltd,Basic Materials,23
+SWK,SWK,Stanley Black & Decker Inc.,Industrial Goods,149.27
+SWKS,SWKS,Skyworks Solutions Inc.,Technology,183.89
+SYF,SYF,Synchrony Financial,Financial,799.01
+SYK,SYK,Stryker Corporation,Healthcare,374.54
+SYNA,SYNA,Synaptics Incorporated,Technology,35.21
+SYNT,SYNT,Syntel Inc.,Technology,82.29
+SYUT,SYUT,Synutra International Inc.(圣元国际),Consumer Goods,56.21
+T,T,AT&T Inc.,Technology,6130
+TANH,TANH,Tantech Holdings Ltd,Basic Materials,23.44
 TASR,TASR,TASER International Inc.,Industrial Goods,52.21
-TD,TD,The Toronto-Dominion Bank,Financial,1830
+TCB,TCB,TCF Financial Corporation,Financial,167.38
+TCBI,TCBI,Texas Capital Bancshares Inc.,Financial,47.82
+TD,TD,The Toronto-Dominion Bank,Financial,1850
+TDG,TDG,TransDigm Group Incorporated,Industrial Goods,55.84
 TECD,TECD,Tech Data Corp.,Services,35.87
-TEDU,TEDU,Tarena International Inc.(达内科技),Services,57.71
-TEL,TEL,TE Connectivity Ltd.,Technology,351.18
+TEDU,TEDU,Tarena International Inc.(达内科技),Services,55.98
+TEL,TEL,TE Connectivity Ltd.,Technology,356
 TEN,TEN,Tenneco Inc.,Consumer Goods,53.9
-TEX,TEX,Terex Corporation,Industrial Goods,103.83
-TGT,TGT,Target Corp.,Services,582.2
-THO,THO,Thor Industries Inc.,Consumer Goods,51.71
-THS,THS,Treehouse Foods Inc.,Consumer Goods,60.17
-TIF,TIF,Tiffany & Co.,Services,125.3
-TJX,TJX,The TJX Companies Inc.,Services,658.12
-TK,TK,Teekay Corporation,Services,72.6
-TMH,TMH,Team Health Holdings Inc.,Services,74.17
-TMO,TMO,Thermo Fisher Scientific Inc.,Healthcare,394.7
-TOL,TOL,Toll Brothers Inc.,Industrial Goods,154.07
-TOUR,TOUR,Tuniu Corporation(途牛),Consumer Goods,129.35
-TPH,TPH,TRI Pointe Group Inc.,Industrial Goods,157.93
-TRGP,TRGP,Targa Resources Corp.,Basic Materials,182.9
-TRI,TRI,Thomson Reuters Corporation,Services,733.78
-TRIP,TRIP,TripAdvisor Inc.,Technology,147.91
-TRMB,TRMB,Trimble Inc.,Technology,253.81
-TRN,TRN,Trinity Industries Inc.,Services,143.59
-TROW,TROW,T. Rowe Price Group Inc.,Financial,236.72
-TRV,TRV,The Travelers Companies Inc.,Financial,286
-TSCO,TSCO,Tractor Supply Company,Services,133.39
-TSE,TSE,Trinseo SA,Consumer Goods,45.87
-TSEM,TSEM,Tower Semiconductor Ltd.,Technology,86.4
-TSL,TSL,Trina Solar Limited(天合光能),Technology,91.75
-TSM,TSM,Taiwan Semiconductor Manufacturing Company Limited(台积电),Technology,5120
-TSN,TSN,Tyson Foods Inc.,Consumer Goods,385.65
+TEX,TEX,Terex Corporation,Industrial Goods,102.98
+TGT,TGT,Target Corporation,Services,561.08
+THO,THO,Thor Industries Inc.,Consumer Goods,51.91
+THS,THS,Treehouse Foods Inc.,Consumer Goods,55.71
+TIF,TIF,Tiffany & Co.,Services,124.6
+TILE,TILE,Interface Inc.,Industrial Goods,64.81
+TJX,TJX,The TJX Companies Inc.,Services,653.56
+TK,TK,Teekay Corporation,Services,83.53
+TMH,TMH,Team Health Holdings Inc.,Services,74.46
+TMHC,TMHC,Taylor Morrison Home Corporation,Industrial Goods,117.79
+TMK,TMK,Torchmark Corporation,Financial,117.71
+TMO,TMO,Thermo Fisher Scientific Inc.,Healthcare,395.65
+TOL,TOL,Toll Brothers Inc.,Industrial Goods,160.77
+TOUR,TOUR,Tuniu Corporation(途牛),Consumer Goods,125.2
+TPH,TPH,TRI Pointe Group Inc.,Industrial Goods,158.38
+TRGP,TRGP,Targa Resources Corp.,Basic Materials,189.51
+TRI,TRI,Thomson Reuters Corporation,Services,723.49
+TRIP,TRIP,TripAdvisor Inc.,Technology,144.18
+TRMB,TRMB,Trimble Inc.,Technology,250.5
+TRN,TRN,Trinity Industries Inc.,Services,148.64
+TROW,TROW,T. Rowe Price Group Inc.,Financial,238.9
+TRV,TRV,The Travelers Companies Inc.,Financial,283.7
+TSCO,TSCO,Tractor Supply Company,Services,132.02
+TSE,TSE,Trinseo S.A.,Consumer Goods,44.62
+TSEM,TSEM,Tower Semiconductor Ltd.,Technology,84.78
+TSL,TSL,Trina Solar Limited(天合光能),Technology,91.65
+TSM,TSM,Taiwan Semiconductor Manufacturing Company Limited(台积电),Technology,4940
+TSN,TSN,Tyson Foods Inc.,Consumer Goods,356.57
 TSO,TSO,Tesoro Corporation,Basic Materials,118.2
-TSS,TSS,Total System Services Inc.,Financial,186.58
-TTC,TTC,The Toro Company,Industrial Goods,109.34
-TV,TV,Grupo Televisa S.A.B.,Services,652.71
-TVPT,TVPT,Travelport Worldwide Limited,Consumer Goods,124.41
-TWX,TWX,Time Warner Inc.,Services,773.54
-TXN,TXN,Texas Instruments Inc.,Technology,1010
-TXRH,TXRH,Texas Roadhouse Inc.,Services,66.92
-TXT,TXT,Textron Inc.,Industrial Goods,270.56
+TSS,TSS,Total System Services Inc.,Financial,183.67
+TTC,TTC,The Toro Company,Industrial Goods,107.08
+TUP,TUP,Tupperware Brands Corporation,Consumer Goods,50.81
+TV,TV,Grupo Televisa S.A.B.,Services,575.82
+TVPT,TVPT,Travelport Worldwide Limited,Consumer Goods,123.77
+TWX,TWX,Time Warner Inc.,Services,769.2
+TXN,TXN,Texas Instruments Incorporated,Technology,1020
+TXRH,TXRH,Texas Roadhouse Inc.,Services,69.53
+TXT,TXT,Textron Inc.,Industrial Goods,273.11
+TYHT,TYHT,Shineco Inc.,Healthcare,20.98
 UA,UA,Under Armour Inc.,Consumer Goods,398.79
-UAL,UAL,United Continental Holdings Inc.,Services,318.29
-UDR,UDR,UDR Inc.,Financial,273.93
-UGI,UGI,UGI Corporation,Utilities,186.43
-UGP,UGP,Ultrapar Participacoes S.A.,Basic Materials,615.12
-UHS,UHS,Universal Health Services Inc.,Healthcare,96.02
-UL,UL,Unilever PLC,Consumer Goods,3100
-ULTA,ULTA,ULTA Salon Cosmetics & Fragrance Inc.,Services,62.3
-UMC,UMC,United Microelectronics Corporation(联电),Technology,2550
-UMPQ,UMPQ,Umpqua Holdings Corporation,Financial,220.29
-UN,UN,Unilever N.V.,Consumer Goods,3110
-UNFI,UNFI,United Natural Foods Inc.,Services,49.66
-UNH,UNH,UnitedHealth Group Incorporated,Healthcare,952
-UNP,UNP,Union Pacific Corporation,Services,829
-UNVR,UNVR,Univar Inc.,Basic Materials,139
-UPS,UPS,United Parcel Service Inc.,Services,867.96
-URBN,URBN,Urban Outfitters Inc.,Services,111.01
-URI,URI,United Rentals Inc.,Services,83.62
-USB,USB,U.S. Bancorp,Financial,1710
+UAA,UAA,Under Armour Inc.,Consumer Goods,410.21
+UAL,UAL,United Continental Holdings Inc.,Services,313.29
+UBSI,UBSI,United Bankshares Inc.,Financial,78.88
+UCBI,UCBI,United Community Banks Inc.,Financial,70.25
+UDR,UDR,UDR Inc.,Financial,269.65
+UGI,UGI,UGI Corporation,Utilities,171.16
+UGP,UGP,Ultrapar Participacoes S.A.,Basic Materials,542.31
+UHS,UHS,Universal Health Services Inc.,Healthcare,96.04
+UL,UL,Unilever PLC,Consumer Goods,2950
+ULTA,ULTA,Ulta Beauty Inc.,Services,61.93
+UMC,UMC,United Microelectronics Corporation(联电),Technology,2520
+UMPQ,UMPQ,Umpqua Holdings Corporation,Financial,220.19
+UN,UN,Unilever N.V.,Consumer Goods,2970
+UNFI,UNFI,United Natural Foods Inc.,Services,50.37
+UNH,UNH,UnitedHealth Group Incorporated,Healthcare,945.29
+UNM,UNM,Unum Group,Financial,231.52
+UNP,UNP,Union Pacific Corporation,Services,814.92
+UNVR,UNVR,Univar Inc.,Basic Materials,137.75
+UPS,UPS,United Parcel Service Inc.,Services,857.56
+URBN,URBN,Urban Outfitters Inc.,Services,115.84
+URI,URI,United Rentals Inc.,Services,84.34
+USB,USB,U.S. Bancorp,Financial,1700
 USCR,USCR,U.S. Concrete Inc.,Industrial Goods,15.22
-USG,USG,USG Corporation,Industrial Goods,139.38
-UTHR,UTHR,United Therapeutics Corporation,Healthcare,42.66
-UTSI,UTSI,UTStarcom Holdings Corp.(UT斯达康),Technology,35.56
-V,V,Visa Inc.,Financial,2400
-VAR,VAR,Varian Medical Systems Inc.,Healthcare,93.02
-VEEV,VEEV,Veeva Systems Inc.,Technology,137.92
-VFC,VFC,V.F. Corporation,Consumer Goods,413.46
-VG,VG,Vonage Holdings Corporation,Technology,224.8
-VIPS,VIPS,Vipshop Holdings Limited(唯品会),Services,588.83
-VISN,VISN,VisionChina Media Inc.(华视传媒),Services,5.18
-VLO,VLO,Valero Energy Corporation,Basic Materials,454.53
-VMC,VMC,Vulcan Materials Company,Industrial Goods,127.94
-VMW,VMW,VMware Inc.,Technology,412.37
-VNET,VNET,21Vianet Group Inc.(世纪互联),Technology,88.05
-VNO,VNO,Vornado Realty Trust,Financial,184.78
-VNTV,VNTV,Vantiv Inc.,Services,195.76
+USG,USG,USG Corporation,Industrial Goods,145.84
+UTHR,UTHR,United Therapeutics Corporation,Healthcare,42.78
+UTSI,UTSI,UTStarcom Holdings Corp.(UT斯达康),Technology,35
+UTX,UTX,United Technologies Corporation,Industrial Goods,813.72
+V,V,Visa Inc.,Financial,2220
+VAR,VAR,Varian Medical Systems Inc.,Healthcare,93.5
+VEEV,VEEV,Veeva Systems Inc.,Technology,134.93
+VFC,VFC,V.F. Corporation,Consumer Goods,423.23
+VG,VG,Vonage Holdings Corp.,Technology,219.85
+VIPS,VIPS,Vipshop Holdings Limited(唯品会),Services,585.88
+VISN,VISN,VisionChina Media Inc.(华视传媒),Services,4.99
+VLO,VLO,Valero Energy Corporation,Basic Materials,452.04
+VMC,VMC,Vulcan Materials Company,Industrial Goods,133.02
+VMW,VMW,VMware Inc.,Technology,407.17
+VNET,VNET,21Vianet Group Inc.(世纪互联),Technology,110.47
+VNO,VNO,Vornado Realty Trust,Financial,188.39
+VNTV,VNTV,Vantiv Inc.,Services,192.46
 VOYA,VOYA,Voya Financial Inc.,Financial,199.6
-VRSK,VRSK,Verisk Analytics Inc.,Services,167.87
-VRSN,VRSN,VeriSign Inc.,Technology,105.86
+VR,VR,Validus Holdings Ltd.,Financial,80.64
+VRSK,VRSK,Verisk Analytics Inc.,Services,164.7
+VRSN,VRSN,VeriSign Inc.,Technology,104.05
 VRTX,VRTX,Vertex Pharmaceuticals Incorporated,Healthcare,241.58
-VRX,VRX,Valeant Pharmaceuticals International Inc.,Healthcare,349.5
-VSTO,VSTO,Vista Outdoor Inc.,Consumer Goods,59.92
-VWR,VWR,VWR Corporation,Healthcare,129.97
-VZ,VZ,Verizon Communications Inc.,Technology,4180
-WAB,WAB,Westinghouse Air Brake Technologies Corporation,Services,86.42
-WAL,WAL,Western Alliance Bancorporation,Financial,98.97
-WAT,WAT,Waters Corporation,Healthcare,80.05
-WB,WB,Weibo Corporation(微博),Technology,227.09
-WBA,WBA,Walgreens Boots Alliance Inc.,Services,1090
-WBAI,WBAI,500.com Limited(500彩票网),Services,45.34
-WBMD,WBMD,WebMD Health Corp.,Technology,39.6
-WBS,WBS,Webster Financial Corp.,Financial,91.3
+VRX,VRX,Valeant Pharmaceuticals International Inc.,Healthcare,341.72
+VSTO,VSTO,Vista Outdoor Inc.,Consumer Goods,60.61
+VWR,VWR,VWR Corporation,Healthcare,131.7
+VZ,VZ,Verizon Communications Inc.,Technology,4080
+WAB,WAB,Westinghouse Air Brake Technologies Corporation,Services,87.53
+WAL,WAL,Western Alliance Bancorporation,Financial,102.22
+WAT,WAT,Waters Corporation,Healthcare,79.87
+WB,WB,Weibo Corporation(微博),Technology,215.18
+WBA,WBA,Walgreens Boots Alliance Inc.,Services,1080
+WBAI,WBAI,500.com Limited(500彩票网),Services,42.36
+WBMD,WBMD,WebMD Health Corp.,Technology,38.05
+WBS,WBS,Webster Financial Corporation,Financial,91.57
 WCC,WCC,WESCO International Inc.,Services,45.6
 WCIC,WCIC,WCI Communities Inc.,Industrial Goods,26.57
-WCN,WCN,Waste Connections Inc.,Industrial Goods,177.22
+WCN,WCN,Waste Connections Inc.,Industrial Goods,174.55
 WDR,WDR,Waddell & Reed Financial Inc.,Financial,80.35
-WEC,WEC,WEC Energy Group Inc.,Utilities,320.06
-WEN,WEN,The Wendy's Company,Services,262.18
+WEC,WEC,WEC Energy Group Inc.,Utilities,315.6
+WEN,WEN,The Wendy's Company,Services,253.22
 WERN,WERN,Werner Enterprises Inc.,Services,71.64
-WETF,WETF,WisdomTree Investments Inc.,Financial,131.64
-WFC,WFC,Wells Fargo & Company,Financial,5040
-WFM,WFM,Whole Foods Market Inc.,Services,318.5
-WHR,WHR,Whirlpool Corp.,Consumer Goods,75.7
-WIT,WIT,Wipro Ltd.,Technology,1780
-WLK,WLK,Westlake Chemical Corp.,Basic Materials,126.2
+WETF,WETF,WisdomTree Investments Inc.,Financial,155.6
+WFC,WFC,Wells Fargo & Company,Financial,5030
+WFM,WFM,Whole Foods Market Inc.,Services,316.99
+WFT,WFT,Weatherford International plc,Basic Materials,921.86
+WGL,WGL,WGL Holdings Inc.,Utilities,51.04
+WHR,WHR,Whirlpool Corporation,Consumer Goods,75.2
+WIT,WIT,Wipro Limited,Technology,1830
+WLK,WLK,Westlake Chemical Corporation,Basic Materials,128.44
 WMT,WMT,Wal-Mart Stores Inc.,Services,3080
-WNC,WNC,Wabash National Corp.,Consumer Goods,63.6
-WNR,WNR,Western Refining Inc.,Basic Materials,110.13
-WOOF,WOOF,VCA Inc.,Services,84.23
-WOR,WOR,Worthington Industries Inc.,Basic Materials,63.25
-WR,WR,Westar Energy Inc.,Utilities,142.72
+WNC,WNC,Wabash National Corporation,Consumer Goods,60.36
+WNR,WNR,Western Refining Inc.,Basic Materials,107.07
+WOOF,WOOF,VCA Inc.,Services,81.07
+WOR,WOR,Worthington Industries Inc.,Basic Materials,63.48
+WR,WR,Westar Energy Inc.,Utilities,141.53
 WRE,WRE,Washington Real Estate Investment Trust,Financial,75.02
-WRI,WRI,Weingarten Realty Investors,Financial,128.49
-WSM,WSM,Williams-Sonoma Inc.,Services,84.62
-WTR,WTR,Aqua America Inc.,Utilities,180.95
-WU,WU,The Western Union Company,Financial,483.15
-WUBA,WUBA,58.com Inc.(58同城),Technology,173.73
-WWAV,WWAV,The WhiteWave Foods Company,Consumer Goods,178.93
-WWW,WWW,Wolverine World Wide Inc.,Consumer Goods,95.6
-WYN,WYN,Wyndham Worldwide Corporation,Services,106.39
+WRI,WRI,Weingarten Realty Investors,Financial,126.99
+WSM,WSM,Williams-Sonoma Inc.,Services,88.23
+WTR,WTR,Aqua America Inc.,Utilities,177.34
+WU,WU,The Western Union Company,Financial,487
+WUBA,WUBA,58.com Inc.(58同城),Technology,145.63
+WWAV,WWAV,The WhiteWave Foods Company,Consumer Goods,176.62
+WWW,WWW,Wolverine World Wide Inc.,Consumer Goods,107.02
+WYN,WYN,Wyndham Worldwide Corporation,Services,106.82
 WYNN,WYNN,Wynn Resorts Ltd.,Services,104.77
-XEL,XEL,Xcel Energy Inc.,Utilities,519.77
-XIN,XIN,Xinyuan Real Estate Co. Ltd.(鑫苑置业),Financial,66.59
-XL,XL,XL Group Ltd,Financial,273.66
-XNET,XNET,Xunlei Limited(迅雷),Technology,66.56
-XNY,XNY,China Xiniya Fashion Limited(希尼亚),Consumer Goods,14.75
+XEL,XEL,Xcel Energy Inc.,Utilities,507.22
+XIN,XIN,Xinyuan Real Estate Co. Ltd.(鑫苑置业),Financial,67.03
+XL,XL,XL Group Ltd,Financial,271.08
+XNET,XNET,Xunlei Limited(迅雷),Technology,65.35
+XNY,XNY,China Xiniya Fashion Limited(希尼亚),Consumer Goods,14.46
 XOMA,XOMA,XOMA Corporation,Healthcare,6.02
 XRS,XRS,TAL Education Group(好未来),Services,80.59
 XRX,XRX,Xerox Corporation,Technology,1010
 XYL,XYL,Xylem Inc.,Industrial Goods,179.3
-YECO,YECO,Yulong Eco-Materials Limited,Industrial Goods,11.72
-YGE,YGE,Yingli Green Energy Holding Co. Ltd.(英利),Technology,18.24
-YNDX,YNDX,Yandex N.V.,Technology,335.71
-YRD,YRD,Yirendai Ltd.(宜人贷),Financial,58.42
-YUM,YUM,Yum! Brands Inc.,Services,370.18
-YUMC,YUMC,Yum China Holdings Inc. Common,Services,382.9
-YY,YY,YY Inc.(欢聚时代),Technology,37.82
-YZC,YZC,Yanzhou Coal Mining Co. Ltd.(兖州煤业),Basic Materials,948.04
-ZION,ZION,Zions Bancorporation,Financial,204.31
+YECO,YECO,Yulong Eco-Materials Limited,Industrial Goods,11.79
+YGE,YGE,Yingli Green Energy Holding Company Limited(英利),Technology,18.5
+YNDX,YNDX,Yandex N.V.,Technology,325.29
+YRD,YRD,Yirendai Ltd.(宜人贷),Financial,61.23
+YUM,YUM,Yum! Brands Inc.,Services,392
+YUMC,YUMC,Yum China Holdings Inc.,Services,383.95
+YY,YY,YY Inc.(欢聚时代),Technology,55.92
+YZC,YZC,Yanzhou Coal Mining Company Limited(兖州煤业),Basic Materials,828.72
+ZION,ZION,Zions Bancorporation,Financial,202.89
 ZLTQ,ZLTQ,ZELTIQ Aesthetics Inc.,Healthcare,39.75
-ZNH,ZNH,China Southern Airlines Co. Ltd.(南方航空),Services,323.89
-ZOES,ZOES,Zoe's Kitchen Inc.,Services,19.44
-ZPIN,ZPIN,Zhaopin Ltd.(智联招聘),Services,54.86
-ZTO,ZTO,ZTO EXPRESS (CAYMAN) INC.(中通),Services,null
-ZTS,ZTS,Zoetis Inc.,Healthcare,492.96
-ZX,ZX,China Zenix Auto International Limited(正兴集团),Consumer Goods,51.2
+ZNH,ZNH,China Southern Airlines Company Limited(南方航空),Services,319.98
+ZOES,ZOES,Zoe's Kitchen Inc.,Services,19.28
+ZPIN,ZPIN,Zhaopin Limited(智联招聘),Services,55.64
+ZTO,ZTO,ZTO Express (Cayman) Inc.(中通),Services,748.73
+ZTS,ZTS,Zoetis Inc.,Healthcare,495.2
+ZX,ZX,China Zenix Auto International Limited(正兴集团),Consumer Goods,51.62
