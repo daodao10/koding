@@ -15,14 +15,14 @@ var counterUtil = new cu.CounterUtil('counterUS');
 
 var Settings = {
     // UrlPath: '/screener.ashx?v=150&f=fa_eps5years_pos,ind_stocksonly,sh_avgvol_o500,sh_price_o5&o=ticker&r={0}',
-    FilePath: './-hid/test_us.csv',
+    // FilePath: './-hid/test_us.csv',
     // UrlPath: '/screener.ashx?v=151&f=geo_chinahongkong,ind_stocksonly&ft=4&o=ticker&r={0}',
-    // FilePath: '/-hid/test_cn.csv',
+    // FilePath: './-hid/test_cn.csv',
 
     // update name of 中概股
     // UrlPath:'/screener.ashx?v=151&f=ind_stocksonly&ft=4&o=ticker&r={0}&t=AMC,APWC,AUO,CHT,CYD,GIGM,GSOL,HIMX,IMOS,LEDS,NVFY,OIIM,SINO,SPIL,SYUT,UMC',
     // FilePath:'./-hid/patch_cn.csv',
-    ßPatchFile: './-hid/_patch.csv'
+    PatchFile: './-hid/_patch.csv'
 };
 
 function get(startRowIndex) {
@@ -237,10 +237,37 @@ function us_symbol_etl() {
         console.log(x.join('\n'));
     });
 }
+/**
+ * remove redundant file from chart
+ */
+function us_symbol_remove(list) {
+    if (!Array.isArray(list) || list.length < 1) return;
+
+    counterUtil.get({}, (err, docs) => {
+        var
+            source = docs.map((doc) => {
+                return doc.code
+            });
+
+        source.forEach((item) => {
+            index = list.indexOf(item);
+            if (index >= 0) {
+                list.splice(index, 1);
+            } else {
+                console.log(item, 'not found');
+            }
+        });
+        list.forEach((item) => {
+            console.log('rm ' + item + '_d.js');
+        });
+    });
+}
 
 // etl();
 // storeToDB();
 // patch();
 
-us_opt_symbol_etl();
+// us_opt_symbol_etl();
 // us_symbol_etl();
+
+// us_symbol_remove([]);

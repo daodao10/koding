@@ -38,7 +38,8 @@ export class CounterUtil {
 
     public get(query, func): void {
         this.myMongo.find(this.counterDb, {
-            q: query
+            q: query,
+            s: { _id: 1 }
         }, func);
     }
 
