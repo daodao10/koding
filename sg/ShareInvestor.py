@@ -14,7 +14,7 @@ class ShareInvestor:
         "login": "https://www.shareinvestor.com/user/do_login.html",
         "fa-year":"http://www.shareinvestor.com/fundamental/financials.html?counter=%s&period=fy&cols=10",
         "fa-quarter": "http://www.shareinvestor.com/fundamental/financials.html?counter=%s&period=quarter&cols=10",
-        "price-download":"http://www.shareinvestor.com/prices/price_download_zip_file.zip?type=historical&counter=%s"
+        "price-download":"https://www.shareinvestor.com/prices/price_download_zip_file.zip?type=historical&counter=%s"
     }
 
     def __init__(self):

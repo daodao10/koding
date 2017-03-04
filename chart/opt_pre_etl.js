@@ -29,7 +29,7 @@ function main() {
         period,
         start,
         // today = new Date(),
-        today = new Date(2017, 0, 31),
+        today = new Date(2017, 1, 28),
         dropdownList = [],
         cells,
         lines;
@@ -224,11 +224,11 @@ function _output_dropdown_list1(market, code, name, sector, industry) {
 function _output_stooq_download_link(start, end, market, symbol, code, type, ignoreDateRange) {
     type = etlUtil.encode_period(type);
     if (ignoreDateRange) {
-        if (enableWGET) return 'wget -O ./d/{4}_{5}_{3}.csv "http://stooq.com/q/d/l/?s={2}&i={3}"'.format(start, end, symbol, type, market, code);
-        else return 'curl -o ./d/{4}_{5}_{3}.csv "http://stooq.com/q/d/l/?s={2}&i={3}"'.format(start, end, symbol, type, market, code);
+        if (enableWGET) return 'wget -O ./d/{4}_{5}_{3}.csv "https://stooq.com/q/d/l/?s={2}&i={3}"'.format(start, end, symbol, type, market, code);
+        else return 'curl -o ./d/{4}_{5}_{3}.csv "https://stooq.com/q/d/l/?s={2}&i={3}"'.format(start, end, symbol, type, market, code);
     }
-    if (enableWGET) return 'wget -O ./d/{4}_{5}_{3}.csv "http://stooq.com/q/d/l/?s={2}&d1={0}&d2={1}&i={3}"'.format(start, end, symbol, type, market, code);
-    else return 'curl -o ./d/{4}_{5}_{3}.csv "http://stooq.com/q/d/l/?s={2}&d1={0}&d2={1}&i={3}"'.format(start, end, symbol, type, market, code);
+    if (enableWGET) return 'wget -O ./d/{4}_{5}_{3}.csv "https://stooq.com/q/d/l/?s={2}&d1={0}&d2={1}&i={3}"'.format(start, end, symbol, type, market, code);
+    else return 'curl -o ./d/{4}_{5}_{3}.csv "https://stooq.com/q/d/l/?s={2}&d1={0}&d2={1}&i={3}"'.format(start, end, symbol, type, market, code);
 }
 
 function _output_yahoo_download_link(a, b, c, d, e, f, market, symbol, code, type) {

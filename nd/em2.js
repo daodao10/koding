@@ -303,6 +303,7 @@ function EM() {
         },
 
         // 盈利预测
+        // http://data.eastmoney.com/report/ylyc.html
         getYLYC: function () {
             var quote = new em_quote.Path({
                 dataType: 'FA',
@@ -328,97 +329,17 @@ function EM() {
                 csvFile: './-hid/em_ylyc.csv',
                 header: function () {
                     return unescape("序号,代码,名称,最新价,涨跌幅,研报数,买入,增持,中性,减持,卖出,2015收益,2016收益,2016PE,2017收益,2017PE,2018收益,2018PE,预留1");
+                    //                0  ,1   ,2  ,3    ,4     ,5    ,6  ,7  ,8  ,9 ,10    ,11      ,12     ,13    ,14     ,15    ,16      ,17    
                 },
                 refine: function (line) {
-                    //? why should be removed
-                    var removed = ['000003',
-                        '000013',
-                        '000015',
-                        '000024',
-                        '000033',
-                        '000047',
-                        '000405',
-                        '000406',
-                        '000412',
-                        '000508',
-                        '000515',
-                        '000522',
-                        '000527',
-                        '000535',
-                        '000542',
-                        '000549',
-                        '000556',
-                        '000562',
-                        '000569',
-                        '000578',
-                        '000583',
-                        '000588',
-                        '000594',
-                        '000602',
-                        '000618',
-                        '000621',
-                        '000653',
-                        '000658',
-                        '000660',
-                        '000675',
-                        '000689',
-                        '000699',
-                        '000730',
-                        '000763',
-                        '000765',
-                        '000769',
-                        '000787',
-                        '000805',
-                        '000817',
-                        '000827',
-                        '000832',
-                        '000866',
-                        '000956',
-                        '002809',
-                        '002810',
-                        '002811',
-                        '002812',
-                        '300186',
-                        '300534',
-                        '300536',
-                        '300537',
-                        '300538',
-                        '300539',
-                        '300540',
-                        '300541',
-                        '300542',
-                        '300543',
-                        '600001',
-                        '600002',
-                        '600003',
-                        '600065',
-                        '600087',
-                        '600092',
-                        '600102',
-                        '600181',
-                        '600205',
-                        '600253',
-                        '600263',
-                        '600286',
-                        '600296',
-                        '600357',
-                        '600472',
-                        '600553',
-                        '600591',
-                        '600607',
-                        '600625',
-                        '600627',
-                        '600631',
-                        '600632',
-                        '600646',
-                        '600656',
-                        '600659',
-                        '600669',
-                        '600670',
-                        '600672',
-                        '600700',
-                        '600709'];
                     var cells = line.split(',');
+                    // skip the items those 2016收益(预测) is invalid
+                    if (cells[12] === '-' || cells[12] === '0.000') {
+                        return;
+                    }
+
+                    // special processed: removed
+                    var removed = [];
                     var item = removed.find((r) => {
                         return r === cells[1];
                     });
@@ -443,7 +364,7 @@ function EM() {
                 if (cells.length > 1) {
 
                     var p = calcPEG(cells[11], cells[12], cells[14], cells[3]);
-                    docs[cells[1]] = [p[0], p[1], p[2]];
+                    docs[cells[1]] = [p[0], p[1], p[2]];//[growth, peg, target]
 
                     // // debug
                     // if (cells[1] == '300119') {
@@ -451,20 +372,21 @@ function EM() {
                     //     console.log(p[0], p[1], p[2]);
                     // }
 
-                    rs[cells[1]] = [myUtil.toNumber(cells[5]),
-                    myUtil.toNumber(cells[6]),
-                    myUtil.toNumber(cells[7]),
-                    myUtil.toNumber(cells[8]),
-                    myUtil.toNumber(cells[9]),
-                    myUtil.toNumber(cells[10]),
-                    myUtil.toNumber(cells[11]),
-                    myUtil.toNumber(cells[12]),
-                    myUtil.toNumber(cells[13]),
-                    myUtil.toNumber(cells[14]),
-                    myUtil.toNumber(cells[15]),
-                    myUtil.toNumber(cells[16]),
-                    myUtil.toNumber(cells[17]),
-                    myUtil.toNumber(cells[20])
+                    rs[cells[1]] = [
+                        myUtil.toNumber(cells[5]),
+                        myUtil.toNumber(cells[6]),
+                        myUtil.toNumber(cells[7]),
+                        myUtil.toNumber(cells[8]),
+                        myUtil.toNumber(cells[9]),
+                        myUtil.toNumber(cells[10]),
+                        myUtil.toNumber(cells[11]),
+                        myUtil.toNumber(cells[12]),
+                        myUtil.toNumber(cells[13]),
+                        myUtil.toNumber(cells[14]),
+                        myUtil.toNumber(cells[15]),
+                        myUtil.toNumber(cells[16]),
+                        myUtil.toNumber(cells[17]),
+                        myUtil.toNumber(cells[20])
                     ];
                 }
             }

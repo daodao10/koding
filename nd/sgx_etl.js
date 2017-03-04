@@ -347,7 +347,7 @@ function patch() {
 }
 
 // sg_symbol_etl();
-sg_opt_symbol_etl(0.15);
+// sg_opt_symbol_etl(0.15);
 
 // -rw-r--r--  1 dao  staff  \s*\d+ Nov 13 \d{2}:\d{2} \./sg/([A-Z0-9]+)_d\.js
 // export_opt_data([
@@ -355,7 +355,7 @@ sg_opt_symbol_etl(0.15);
 //     'ADJ',
 //     'Z74'
 // ], false);
-// export_opt_data(null, true);
+export_opt_data(null, true);
 // export_opt_data(null, false);
 
 // save_sg_company();
