@@ -120,7 +120,7 @@ function fill(code, cells, corp_actions, forced, reject) {
             //   [ '2016-04-20', 0.3399, 1.42, 1.79, NaN ] ]
             var x = corp || forced ? parseDetails(content) : parseLast6Mon(content),
                 rec,
-                updated = '201702', //TODO: hard code
+                updated = '201703', //TODO: hard code
                 i;
 
             if (x && x.length > 0) {

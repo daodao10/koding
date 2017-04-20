@@ -29,7 +29,7 @@ function main() {
         period,
         start,
         // today = new Date(),
-        today = new Date(2017, 1, 28),
+        today = new Date(2017, 2, 31),
         dropdownList = [],
         cells,
         lines;

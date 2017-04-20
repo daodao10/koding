@@ -70,6 +70,7 @@ function main() {
                         // print
                         // console.log(record);
                         record.forEach(function (r) {
+                            //TODO: update start date
                             if (r[4] > '2015-12-31') {// && (r[1] > 0 || r[2] > 0)) {
                                 console.log('%s,%s,%d,%d,%d,%s', symbol, r[0], r[1], r[2], r[3], r[4]);
                             }
@@ -85,4 +86,4 @@ function main() {
     });
 }
 
-// main();
+main();
