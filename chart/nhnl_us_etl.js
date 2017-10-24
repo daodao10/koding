@@ -163,29 +163,29 @@ just run on the first time to initialize data
 please download nhnl data first
 
 curl -O http://unicorn.us.com/advdec/NYSE_advn.txt
-curl -O http://unicorn.us.com/advdec/NYSE_decln.txt
-curl -O http://unicorn.us.com/advdec/NYSE_unchn.txt
 curl -O http://unicorn.us.com/advdec/NYSE_advv.txt
+curl -O http://unicorn.us.com/advdec/NYSE_decln.txt
 curl -O http://unicorn.us.com/advdec/NYSE_declv.txt
-curl -O http://unicorn.us.com/advdec/NYSE_unchv.txt
 curl -O http://unicorn.us.com/advdec/NYSE_newhi.txt
 curl -O http://unicorn.us.com/advdec/NYSE_newlo.txt
+curl -O http://unicorn.us.com/advdec/NYSE_unchn.txt
+curl -O http://unicorn.us.com/advdec/NYSE_unchv.txt
 curl -O http://unicorn.us.com/advdec/AMEX_advn.txt
-curl -O http://unicorn.us.com/advdec/AMEX_decln.txt
-curl -O http://unicorn.us.com/advdec/AMEX_unchn.txt
 curl -O http://unicorn.us.com/advdec/AMEX_advv.txt
+curl -O http://unicorn.us.com/advdec/AMEX_decln.txt
 curl -O http://unicorn.us.com/advdec/AMEX_declv.txt
-curl -O http://unicorn.us.com/advdec/AMEX_unchv.txt
 curl -O http://unicorn.us.com/advdec/AMEX_newhi.txt
 curl -O http://unicorn.us.com/advdec/AMEX_newlo.txt
+curl -O http://unicorn.us.com/advdec/AMEX_unchn.txt
+curl -O http://unicorn.us.com/advdec/AMEX_unchv.txt
 curl -O http://unicorn.us.com/advdec/NASDAQ_advn.txt
-curl -O http://unicorn.us.com/advdec/NASDAQ_decln.txt
-curl -O http://unicorn.us.com/advdec/NASDAQ_unchn.txt
 curl -O http://unicorn.us.com/advdec/NASDAQ_advv.txt
+curl -O http://unicorn.us.com/advdec/NASDAQ_decln.txt
 curl -O http://unicorn.us.com/advdec/NASDAQ_declv.txt
-curl -O http://unicorn.us.com/advdec/NASDAQ_unchv.txt
 curl -O http://unicorn.us.com/advdec/NASDAQ_newhi.txt
 curl -O http://unicorn.us.com/advdec/NASDAQ_newlo.txt
+curl -O http://unicorn.us.com/advdec/NASDAQ_unchn.txt
+curl -O http://unicorn.us.com/advdec/NASDAQ_unchv.txt
 */
 // firstRun();
 
