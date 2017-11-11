@@ -24,6 +24,14 @@ class CsvSerieUtil {
 		return new Date(Date.UTC(parseInt(strDate.substring(0, 4), 10), parseInt(strDate.substring(5, 7), 10) - 1, parseInt(strDate.substring(8, 10)))).getTime();
 	}
 
+	toDate(strDate, isCompact) {
+		if (isCompact) {
+			return new Date(parseInt(strDate.substring(0, 4), 10), parseInt(strDate.substring(4, 6), 10) - 1, parseInt(strDate.substring(6, 8))).getTime();
+		}
+
+		return new Date(parseInt(strDate.substring(0, 4), 10), parseInt(strDate.substring(5, 7), 10) - 1, parseInt(strDate.substring(8, 10))).getTime();
+	}
+
 	extract(srcFile: string, destFile: string) {
 		var _self = this;
 		fs.readFile(srcFile, function(err, data) {
