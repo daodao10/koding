@@ -66,15 +66,15 @@ class TAUtil:
 
 if __name__ == "__main__":
 
-    cookies = ShareInvestor().refreshCookie()
-    # cookies = ShareInvestor.getPersistentCookie()
+    # cookies = ShareInvestor().refreshCookie()
+    cookies = ShareInvestor.getPersistentCookie()
     # print(cookies)
 
     taUtil = TAUtil('./src-hid/', './dest-hid/', cookies)
 
     # # signle counter testing
     # #
-    # counter = "Q1P.SI"
+    # counter = "BVP.SI"
     # taUtil.process(counter)
     
     # batch process
@@ -86,7 +86,7 @@ if __name__ == "__main__":
 
     # 2)
     symbols = TAUtil.get_symbols('../chart/s/sg_shareinvestor.txt')
-    for counter in symbols[23:]:
+    for counter in symbols[22:]:
     # symbols = TAUtil.get_symbols('../chart/s/hk_shareinvestor.txt')
     # for counter in symbols:
         taUtil.process(counter)
