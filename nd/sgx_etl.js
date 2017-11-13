@@ -139,8 +139,9 @@ function sg_symbol_etl() {
         console.log('symbol,code,name,sector[shareinvestor : sg : daily]');
         //STI.SI,STI,STRAITS TIMES INDEX (STI),Index
         x.forEach(function (ele) {
-            console.log("%s.SI,%s,%s,%s,%s", ele[0], ele[0], ele[1], ele[2], ele[3]);
-        })
+            // symbol,code,name,sector,industry
+            console.log("%s.SI,%s,%s,%s,%s", ele[0], ele[0], ele[1], ele[3], ele[2]);
+        });
     }).catch(function (err) {
         console.log(err);
     });
@@ -275,7 +276,7 @@ function export_opt_data(symbols, isIndex) {
     }
 }
 
-function save_sg_company(symbols) {
+function save_sg_company_info(symbols) {
     if (symbols && Array.isArray(symbols)) {
         symbols.forEach((code) => {
             _getCompnayInfo(code).then(function (content) {
@@ -347,9 +348,12 @@ function patch() {
 }
 
 // sg_symbol_etl();
-// sg_opt_symbol_etl(0.15);
+// sg_opt_symbol_etl(0.10);
 
-// -rw-r--r--  1 dao  staff  \s*\d+ Nov 13 \d{2}:\d{2} \./sg/([A-Z0-9]+)_d\.js
+// -rw-r--r--  1 dao  staff  \s*\d+ Nov 13 \d{2}:\d{2} ([A-Z0-9]+)_d\.js
+// -rw-r--r--  1 dao  staff  \s*\d+ Nov \d+  \d{4} ([A-Z0-9]+)\.json
+// -rw-r--r--  1 dao  staff     75 Nov 13 \d{2}:\d{2} ([A-Z0-9]+)\.json
+
 // export_opt_data([
 //     '5UJ',
 //     'ADJ',
@@ -358,11 +362,9 @@ function patch() {
 export_opt_data(null, true);
 // export_opt_data(null, false);
 
-// save_sg_company();
-// save_sg_company([
-//     '1A1',
-//     '1B1',
-//     'A17U'
+// save_sg_company_info();
+// save_sg_company_info([
+//     'H27',
 // ]);
 
 // storeToDB();
