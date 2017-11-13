@@ -30,7 +30,7 @@ def get_symbols(symbolFile):
 
 if __name__ == "__main__":
     symbols = get_symbols('./s/cn_ts.txt')
+    # symbols = ['600132']
     for s in symbols:
         print(s)
         etl(s)
-    # etl('300291')
