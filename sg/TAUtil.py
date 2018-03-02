@@ -22,7 +22,7 @@ class TAUtil:
     #@staticmethod
     def download(self, counter):
         url = ShareInvestor.Urls["price-download"] % counter
-        return web_tools.download(url, headers = self.Cookies, fileName = self.SourceDir + counter)
+        return web_tools.download(url, headers=self.Cookies, fileName=self.SourceDir + counter)
 
     #@staticmethod
     def extract(self, counter):
@@ -64,10 +64,11 @@ class TAUtil:
 
         return symbolList
 
+
 if __name__ == "__main__":
 
-    # cookies = ShareInvestor().refreshCookie()
-    cookies = ShareInvestor.getPersistentCookie()
+    cookies = ShareInvestor().refreshCookie()
+    # cookies = ShareInvestor.getPersistentCookie()
     # print(cookies)
 
     taUtil = TAUtil('./src-hid/', './dest-hid/', cookies)
@@ -76,7 +77,7 @@ if __name__ == "__main__":
     # #
     # counter = "BVP.SI"
     # taUtil.process(counter)
-    
+
     # batch process
     # # 1)
     # symbols = SymbolUtil.getSGX()
@@ -90,3 +91,8 @@ if __name__ == "__main__":
     # symbols = TAUtil.get_symbols('../chart/s/hk_shareinvestor.txt')
     # for counter in symbols:
         taUtil.process(counter)
+
+    # # 3) patch: -rw-r--r--  1 dao  staff\s*\d+ Jan 22 12:25\s+(\w+)_d\.js
+    # symbols = []
+    # for counter in symbols:
+    #     taUtil.process(counter)

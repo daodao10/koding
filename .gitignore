@@ -18,3 +18,11 @@ node_modules/
 *.png
 *-hid/
 tutorial/
+nd/any-db.js
+nd/any-csv.js
+nd/Colors.js
+nd/CounterUtil.js
+nd/CsvSerieUtil.js
+nd/em-f10_etl.js
+nd/finviz_util.js
+nd/wl.js

@@ -16,7 +16,6 @@ require('./ProtoUtil');
 var
     fs = require('fs'),
     vm = require('vm'),
-    requirejs = require('requirejs'),
     myUtil = require('./MyUtil'),
     cu = require('./CounterUtil');
 
@@ -155,7 +154,7 @@ function sg_opt_symbol_etl(minPrice) {
         var x = [], code, jsFile, last;
         docs.forEach((doc) => {
             code = doc.code;
-            jsFile = '../../daodao10.github.io/chart/sg/' + code + '_d.js';
+            jsFile = '../../chart/sg/' + code + '_d.js';
             if (loadJs(vm, jsFile)) {
                 last = data[data.length - 1];
                 if (last[1] >= minPrice) {
@@ -190,7 +189,7 @@ function export_opt_data(symbols, isIndex) {
                         return [new Date(parseInt(ele.date)).format('yyyyMMdd'), ele.value];
                     });
 
-                var jsFile = '../../daodao10.github.io/chart/sg/' + code + '_d.js';
+                var jsFile = '../../chart/sg/' + code + '_d.js';
                 if (loadJs(vm, jsFile)) {
                     var last = data[data.length - 1]
                     x.forEach(function (ele) {
@@ -225,7 +224,7 @@ function export_opt_data(symbols, isIndex) {
                         return [_dateProcessor(record[0]), myUtil.toNumber(record[4])];
                     });
 
-                    var jsFile = '../../daodao10.github.io/chart/sg/' + code + '_d.js';
+                    var jsFile = '../../chart/sg/' + code + '_d.js';
                     if (loadJs(vm, jsFile)) {
                         var last = data[data.length - 1]
                         x.forEach(function (ele) {

@@ -53,7 +53,7 @@ function getCNY(code, startDate, endDate) {
                 rows.push("['{0}',{1}]".format(new Date(item[0]).format('yyyyMMdd'), item[4]));
             });
 
-            _save('../../daodao10.github.io/chart/world/' + code + '_d.js',
+            _save('../../chart/world/' + code + '_d.js',
                 "var data=[" + rows.join(',\n') + "];\nvar source=\"www.cnindex.com.cn\"");
         }
         else {

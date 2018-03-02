@@ -2,11 +2,12 @@
 
 "use strict";
 
-var fs = require('fs'),    
+const
+	fs = require('fs'),
 	myUtil = require('./MyUtil'),
-    anounymous = require('./ProtoUtil');
+	anounymous = require('./ProtoUtil');
 
-class CsvSerieUtil {
+export default class CsvSerieUtil {
 
 	constructor(private sw: boolean = false) { }
 
@@ -34,12 +35,12 @@ class CsvSerieUtil {
 
 	extract(srcFile: string, destFile: string) {
 		var _self = this;
-		fs.readFile(srcFile, function(err, data) {
+		fs.readFile(srcFile, function (err, data) {
 			var lines = data.toString().split(/\r\n|\n/),
 				rows = [];
 			lines.forEach((line, index: number) => {
 				var cells = line.split(',');
-				if(_self.sw) {
+				if (_self.sw) {
 					cells.shift();
 					cells.shift();
 					cells.splice(1, 3);
@@ -50,9 +51,9 @@ class CsvSerieUtil {
 				} else {
 					// special process item
 					if (cells[0]) {
-						if(_self.sw) {
-							cells[0] = _self.toUtcDate(cells[0].substring(0,10), false);
-						}else{
+						if (_self.sw) {
+							cells[0] = _self.toUtcDate(cells[0].substring(0, 10), false);
+						} else {
 							cells[0] = _self.toUtcDate(cells[0], true);
 						}
 						rows.push(cells);
@@ -82,7 +83,7 @@ class CsvSerieUtil {
 			} else {
 				for (var i = 1; i < cells.length; ++i) {
 					val = Number(cells[i]);
-					if(val != 0) {
+					if (val != 0) {
 						series[prefix + i.toString()].d.push([cells[0], val]);
 					}
 				}
@@ -97,15 +98,13 @@ class CsvSerieUtil {
 		return a[0] - b[0];
 	}
 
-	save(filePath, content):void{
-		fs.writeFile(filePath, content, function(err) {
+	save(filePath, content): void {
+		fs.writeFile(filePath, content, function (err) {
 			if (err) {
-			    throw err;
+				throw err;
 			}
 			console.log('saved.');
 		});
 	}
 
 }
-
-module.exports = CsvSerieUtil;
