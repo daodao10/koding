@@ -11,6 +11,7 @@ from StringIO import StringIO
 from datetime import datetime, timedelta
 import json, re
 # from ConfigParser import ConfigParser
+import os, sys
 
 
 class SmartRedirectHandler(urllib2.HTTPRedirectHandler):
@@ -246,6 +247,9 @@ def guid():
 #     return config.get('DbSettings', 'DbUri')
 
 def getConfig(configFile = 'config.json'):
+    if not(os.path.isabs(configFile)):
+        configFile  = os.path.join(os.path.dirname(__file__), configFile)
+
     config = None
     try:
         content = open(configFile).read()
