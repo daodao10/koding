@@ -1,10 +1,12 @@
 /// <reference path="../../node.d.ts" />
+/// <reference path="../../lib.es6.d.ts" />
 
-'use strict';
-import {Colors} from './Colors';
+
+import { Colors } from './Colors';
 require('./ProtoUtil');
 
-var myUtil = require('./MyUtil'),
+const
+	myUtil = require('./MyUtil'),
 	nodemailer = require('nodemailer');
 
 class WL {
@@ -41,7 +43,7 @@ class WL {
 		});
 	}
 
-	get(symbol): Promise {
+	get(symbol): Promise<any> {
 		var _self = this;
 		var options = {
 			host: 'hq.sinajs.cn',
@@ -106,20 +108,20 @@ class WL {
 		if (watch && watch.al) {
 			var o = watch.al;
 			if (data.c > o[2]) {
-				content.push('rise above $ [{0}]'.format(o[2]));
+				content.push(`rise above $ [${o[2]}]`);
 			}
 			if (data.c < o[0]) {
-				content.push('fall below $ [{0}]'.format(o[0]));
+				content.push(`fall below $ [${o[0]}]`);
 			}
 			if (data.r > o[3]) {
-				content.push('rise above % [{0}]'.format(o[3]));
+				content.push(`rise above % [${o[3]}]`);
 			}
 			if (data.r < o[1]) {
-				content.push('fall below % [{0}]'.format(o[1]));
+				content.push(`fall below % [${o[1]}]`);
 			}
 
 			if (content.length > 0) {
-				content.unshift('{0} current $ [{1}]'.format(data.n, data.c));
+				content.unshift(`${data.n} current $ [${data.c}]`);
 				_self.send(content.join('<br/>'));
 			}
 		}
