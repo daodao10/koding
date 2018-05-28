@@ -10,13 +10,8 @@ sh dl_world.sh
 node opt_etl.js s/indices.txt
 node opt_etl.js s/future.txt
 node opt_etl.js s/stooq.txt
-<<<<<<< HEAD
 node opt_etl.js s/google_d.txt
 node opt_etl.js s/yahoo_d.txt
-=======
-#node opt_etl.js s/google_d.txt
-# # node opt_etl.js s/yahoo_d.txt
->>>>>>> 032674e... update file property
 
 cd ../nd
 # BDI etl
