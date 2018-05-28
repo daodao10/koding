@@ -40,7 +40,7 @@ def post(url, data = None, headers = None):
             request = urllib2.Request(url= url, headers = newHeaders)
 
         with contextlib.closing(urllib2.urlopen(request)) as response:
-                # getServerCookie(response.info())
+                getServerCookie(response.info())
                 if response.info().get('Content-Encoding') == 'gzip':
                     buffer = StringIO( response.read())
                     deflatedContent = gzip.GzipFile(fileobj=buffer)
@@ -144,9 +144,9 @@ def download(url, data = None, headers = None, fileName = None):
 
 def getCredentials(loginUrl, data, checkHandler, redirectHandler = None, debug = False):
     request = urllib2.Request(loginUrl, data = urllib.urlencode(data))
-    # httplib.HTTPConnection.debuglevel = 1
+    httplib.HTTPConnection.debuglevel = 1
     opener = urllib2.build_opener(SmartRedirectHandler(redirectHandler))
-
+    
     with contextlib.closing(opener.open(request)) as response:
         if debug:
             print(loginUrl)

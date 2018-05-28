@@ -1,6 +1,7 @@
 bak/
 chart/
 node_modules/
+learning/
 !us_daily.sh
 !asia.sh
 !rp.sh
@@ -14,6 +15,7 @@ node_modules/
 *config.json
 !tsconfig.json
 *.log
+*.bak
 *.cookie
 *.png
 *-hid/
