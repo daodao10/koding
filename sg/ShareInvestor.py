@@ -11,7 +11,7 @@ from koding import web_tools
 class ShareInvestor:
     __CookieFile = "shareinvestor.cookie"
     Urls ={
-        "login": "https://www.shareinvestor.com/user/do_login.html",
+        "login": "http://www.shareinvestor.com/user/do_login.html?use_https=0",
         "fa-year":"http://www.shareinvestor.com/fundamental/financials.html?counter=%s&period=fy&cols=10",
         "fa-quarter": "http://www.shareinvestor.com/fundamental/financials.html?counter=%s&period=quarter&cols=10",
         "price-download":"https://www.shareinvestor.com/prices/price_download_zip_file.zip?type=historical&counter=%s"
