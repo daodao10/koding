@@ -9,8 +9,10 @@ from koding.symbol import SymbolUtil
 from ShareInvestor import ShareInvestor
 
 import zipfile
-import os
+import os, sys
 import codecs
+import time
+import random
 
 
 class TAUtil:
@@ -30,15 +32,21 @@ class TAUtil:
         if os.path.exists(fileName):
             fileHandle = open(fileName, 'rb')
 
-            zf = zipfile.ZipFile(fileHandle)
-            for name in zf.namelist():
-                try:
-                    data = zf.read(name)
-                except KeyError:
-                    print('ERROR: did not find %s in zip file' % name)
-                else:
-                    web_tools.save(self.OutputDir + counter + ".csv", data)
-                    print(counter, ' done')
+            try:
+                zf = zipfile.ZipFile(fileHandle)
+                for name in zf.namelist():
+                    try:
+                        data = zf.read(name)
+                    except KeyError:
+                        print('ERROR: did not find %s in zip file' % name)
+                    except:
+                        print('%s file' % name)
+                        print("Unexpected error: ", sys.exc_info()[0])
+                    else:
+                        web_tools.save(self.OutputDir + counter + ".csv", data)
+                        print(counter, ' done')
+            except zipfile.BadZipfile:
+                print('ERROR: bad zip file %s' % fileName)
 
             fileHandle.close()
 
@@ -70,8 +78,6 @@ if __name__ == "__main__":
     cookies = ShareInvestor.getPersistentCookie()
     # print(cookies)
 
-    taUtil = TAUtil('./src-hid/', './dest-hid/', cookies)
-
     # # signle counter testing
     # #
     # counter = "BVP.SI"
@@ -84,7 +90,7 @@ if __name__ == "__main__":
     #     counter = symbol["_id"]
     #     taUtil.process(counter)
 
-    # 2)
+    # # 2) anti spider
     symbols = TAUtil.get_symbols('../chart/s/sg_shareinvestor.txt')
     for counter in symbols[22:]:
     # symbols = TAUtil.get_symbols('../chart/s/hk_shareinvestor.txt')
