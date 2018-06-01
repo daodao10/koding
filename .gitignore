@@ -2,6 +2,7 @@ bak/
 chart/
 node_modules/
 learning/
+doc/
 !us_daily.sh
 !asia.sh
 !rp.sh
