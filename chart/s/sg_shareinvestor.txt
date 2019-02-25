@@ -24,21 +24,21 @@ symbol,code,name,sector[shareinvestor : sg : daily]
 1A0.SI,1A0,Katrina Group Ltd.,Hotels | Restaurants and Leisure,Consumer Services
 1A1.SI,1A1,Wong Fong Industries Limited,Machinery,Capital Goods
 1A4.SI,1A4,AGV Group Limited,Metals and Mining,Materials
-1B0.SI,1B0,mm2 Asia Ltd.,Media,Media
-1B1.SI,1B1,HC Surgical Specialists Limited,Healthcare Providers and Services,Healthcare Equipment and Services
+1B0.SI,1B0,mm2 Asia Ltd.,Entertainment,Media and Entertainment
+1B1.SI,1B1,HC Surgical Specialists Limited,Health Care Providers and Services,Health Care Equipment and Services
 1B6.SI,1B6,Ocean Sky International Limited,Construction and Engineering,Capital Goods
 1C0.SI,1C0,Emerging Towns & Cities Singapore Ltd.,Real Estate Management and Development,Real Estate
 1C3.SI,1C3,Samurai 2K Aerosol Limited,Chemicals,Materials
 1C5.SI,1C5,Pacific Star Development Limited,Real Estate Management and Development,Real Estate
 1D0.SI,1D0,Kimly Limited,Hotels | Restaurants and Leisure,Consumer Services
-1D1.SI,1D1,UnUsUaL Limited,Media,Media
-1D3.SI,1D3,LifeBrandz Ltd,Internet and Direct Marketing Retail,Retailing
-1D4.SI,1D4,Aoxin Q & M Dental Group Limited,Healthcare Providers and Services,Healthcare Equipment and Services
+1D1.SI,1D1,UnUsUaL Limited,Entertainment,Media and Entertainment
+1D3.SI,1D3,LifeBrandz Ltd.,Internet and Direct Marketing Retail,Retailing
+1D4.SI,1D4,Aoxin Q & M Dental Group Limited,Health Care Providers and Services,Health Care Equipment and Services
 1D5.SI,1D5,Capital World Limited,Real Estate Management and Development,Real Estate
-1D8.SI,1D8,Singapore O&G Ltd.,Healthcare Providers and Services,Healthcare Equipment and Services
+1D8.SI,1D8,Singapore O&G Ltd.,Health Care Providers and Services,Health Care Equipment and Services
 1E3.SI,1E3,Sanli Environmental Limited,Construction and Engineering,Capital Goods
 1E6.SI,1E6,World Class Global Limited,Real Estate Management and Development,Real Estate
-1F0.SI,1F0,shopper360 Limited,Media,Media
+1F0.SI,1F0,shopper360 Limited,Media,Media and Entertainment
 1F1.SI,1F1,Y Ventures Group Ltd.,Internet and Direct Marketing Retail,Retailing
 1F2.SI,1F2,Union Gas Holdings Limited,Gas Utilities,Utilities
 1F3.SI,1F3,Aspen (Group) Holdings Limited,Real Estate Management and Development,Real Estate
@@ -46,25 +46,26 @@ symbol,code,name,sector[shareinvestor : sg : daily]
 1G1.SI,1G1,RE&S Holdings Limited,Hotels | Restaurants and Leisure,Consumer Services
 1G6.SI,1G6,No Signboard Holdings Ltd.,Hotels | Restaurants and Leisure,Consumer Services
 1H2.SI,1H2,Olive Tree Estates Limited,Real Estate Management and Development,Real Estate
-1H3.SI,1H3,Clearbridge Health Limited,Healthcare Providers and Services,Healthcare Equipment and Services
+1H3.SI,1H3,Clearbridge Health Limited,Health Care Providers and Services,Health Care Equipment and Services
 1H4.SI,1H4,Memories Group Limited,Hotels | Restaurants and Leisure,Consumer Services
 1H8.SI,1H8,LY Corporation Limited,Household Durables,Consumer Durables and Apparel
 1I5.SI,1I5,ayondo Ltd.,Capital Markets,Diversified Financials
 1J0.SI,1J0,SLB Development Ltd.,Real Estate Management and Development,Real Estate
-1J3.SI,1J3,Asian Healthcare Specialists Limited,Healthcare Providers and Services,Healthcare Equipment and Services
-1J5.SI,1J5,Hyphens Pharma International Limited,Healthcare Providers and Services,Healthcare Equipment and Services
+1J3.SI,1J3,Asian Healthcare Specialists Limited,Health Care Providers and Services,Health Care Equipment and Services
+1J4.SI,1J4,JEP Holdings Ltd.,Aerospace and Defense,Capital Goods
+1J5.SI,1J5,Hyphens Pharma International Limited,Pharmaceuticals,Pharmaceuticals | Biotechnology and Life Sciences
+1J7.SI,1J7,Jawala Inc.,Paper and Forest Products,Materials
 40B.SI,40B,SMJ International Holdings Ltd.,Professional Services,Commercial and Professional Services
 40D.SI,40D,Starburst Holdings Limited,Aerospace and Defense,Capital Goods
-40E.SI,40E,Spackman Entertainment Group Limited,Media,Media
+40E.SI,40E,Spackman Entertainment Group Limited,Entertainment,Media and Entertainment
 40F.SI,40F,Alliance Mineral Assets Limited,Metals and Mining,Materials
 40N.SI,40N,Versalink Holdings Limited,Commercial Services and Supplies,Commercial and Professional Services
-40R.SI,40R,Serrano Limited,Building Products,Capital Goods
 40S.SI,40S,Perennial Real Estate Holdings Limited,Real Estate Management and Development,Real Estate
-40T.SI,40T,ISEC Healthcare Ltd.,Healthcare Providers and Services,Healthcare Equipment and Services
+40T.SI,40T,ISEC Healthcare Ltd.,Health Care Providers and Services,Health Care Equipment and Services
 40U.SI,40U,MS Holdings Limited,Trading Companies and Distributors,Capital Goods
 40V.SI,40V,Singapore eDevelopment Limited,Real Estate Management and Development,Real Estate
 40W.SI,40W,ZICO Holdings Inc.,Professional Services,Commercial and Professional Services
-41A.SI,41A,UG Healthcare Corporation Limited,Healthcare Equipment and Supplies,Healthcare Equipment and Services
+41A.SI,41A,UG Healthcare Corporation Limited,Health Care Equipment and Supplies,Health Care Equipment and Services
 41B.SI,41B,Huationg Global Limited,Construction and Engineering,Capital Goods
 41F.SI,41F,GSS Energy Limited,Electronic Equipment | Instruments and Components,Technology Hardware and Equipment
 41H.SI,41H,BlackGold Natural Resources Limited,Oil | Gas and Consumable Fuels,Energy
@@ -76,7 +77,6 @@ symbol,code,name,sector[shareinvestor : sg : daily]
 42E.SI,42E,Choo Chiang Holdings Ltd.,Specialty Retail,Retailing
 42F.SI,42F,Yinda Infocomm Limited,Diversified Telecommunication Services,Telecommunication Services
 42G.SI,42G,SK Jewellery Group Limited,Specialty Retail,Retailing
-42H.SI,42H,Lereno Bio-Chem Ltd.,Oil | Gas and Consumable Fuels,Energy
 42L.SI,42L,TLV Holdings Limited,Specialty Retail,Retailing
 42N.SI,42N,IPS Securex Holdings Limited,Electronic Equipment | Instruments and Components,Technology Hardware and Equipment
 42R.SI,42R,Jumbo Group Limited,Hotels | Restaurants and Leisure,Consumer Services
@@ -94,7 +94,7 @@ symbol,code,name,sector[shareinvestor : sg : daily]
 500.SI,500,Tai Sin Electric Limited,Electrical Equipment,Capital Goods
 502.SI,502,3Cnergy Limited,Real Estate Management and Development,Real Estate
 504.SI,504,KLW Holdings Limited,Building Products,Capital Goods
-505.SI,505,AsiaMedic Limited,Healthcare Providers and Services,Healthcare Equipment and Services
+505.SI,505,AsiaMedic Limited,Health Care Providers and Services,Health Care Equipment and Services
 508.SI,508,Fuji Offset Plates Manufacturing Ltd,Machinery,Capital Goods
 510.SI,510,Hiap Seng Engineering Ltd,Energy Equipment and Services,Energy
 528.SI,528,Second Chance Properties Ltd,Specialty Retail,Retailing
@@ -105,8 +105,7 @@ symbol,code,name,sector[shareinvestor : sg : daily]
 541.SI,541,Abundance International Limited,Trading Companies and Distributors,Capital Goods
 543.SI,543,Noel Gifts International Ltd,Specialty Retail,Retailing
 544.SI,544,CSE Global Limited,IT Services,Software and Services
-545.SI,545,Vallianz Holdings Limited,Energy Equipment and Services,Energy
-546.SI,546,Medtecs International Corporation Limited,Healthcare Equipment and Supplies,Healthcare Equipment and Services
+546.SI,546,Medtecs International Corporation Limited,Health Care Equipment and Supplies,Health Care Equipment and Services
 554.SI,554,King Wan Corporation Limited,Construction and Engineering,Capital Goods
 557.SI,557,Viking Offshore and Marine Limited,Energy Equipment and Services,Energy
 558.SI,558,UMS Holdings Limited,Semiconductors and Semiconductor Equipment,Semiconductors and Semiconductor Equipment
@@ -114,11 +113,10 @@ symbol,code,name,sector[shareinvestor : sg : daily]
 564.SI,564,Spindex Industries Limited,Machinery,Capital Goods
 566.SI,566,SHS Holdings Ltd.,Construction and Engineering,Capital Goods
 567.SI,567,Colex Holdings Limited,Commercial Services and Supplies,Commercial and Professional Services
-569.SI,569,Vicplas International Ltd,Healthcare Equipment and Supplies,Healthcare Equipment and Services
+569.SI,569,Vicplas International Ltd,Health Care Equipment and Supplies,Health Care Equipment and Services
 570.SI,570,Transit-Mixed Concrete Ltd,Construction Materials,Materials
 571.SI,571,International Press Softcom Limited,IT Services,Software and Services
 573.SI,573,Challenger Technologies Limited,Specialty Retail,Retailing
-574.SI,574,TSH Corporation Limited,Household Durables,Consumer Durables and Apparel
 575.SI,575,ASTI Holdings Limited,Semiconductors and Semiconductor Equipment,Semiconductors and Semiconductor Equipment
 578.SI,578,KS Energy Limited,Trading Companies and Distributors,Capital Goods
 579.SI,579,Oceanus Group Limited,Food Products,Food | Beverage and Tobacco
@@ -127,9 +125,8 @@ symbol,code,name,sector[shareinvestor : sg : daily]
 583.SI,583,Progen Holdings Limited,Construction and Engineering,Capital Goods
 584.SI,584,OEL (Holdings) Limited,Real Estate Management and Development,Real Estate
 585.SI,585,Asian Micro Holdings Limited,Commercial Services and Supplies,Commercial and Professional Services
-586.SI,586,Global Dragon Limited,Diversified Consumer Services,Consumer Services
-588.SI,588,Health Management International Ltd,Healthcare Providers and Services,Healthcare Equipment and Services
-593.SI,593,Lee Metal Group Limited,Metals and Mining,Materials
+586.SI,586,Global Dragon Limited,Real Estate Management and Development,Real Estate
+588.SI,588,Health Management International Ltd,Health Care Providers and Services,Health Care Equipment and Services
 594.SI,594,CWX Global Limited,Oil | Gas and Consumable Fuels,Energy
 595.SI,595,GKE Corporation Limited,Air Freight and Logistics,Transportation
 596.SI,596,Pavillon Holdings Ltd.,Hotels | Restaurants and Leisure,Consumer Services
@@ -156,41 +153,37 @@ symbol,code,name,sector[shareinvestor : sg : daily]
 5DX.SI,5DX,Metal Component Engineering Limited,Machinery,Capital Goods
 5EB.SI,5EB,CFM Holdings Limited,Machinery,Capital Goods
 5EC.SI,5EC,ISR Capital Limited,Capital Markets,Diversified Financials
-5EF.SI,5EF,Adventus Holdings Limited,Electronic Equipment | Instruments and Components,Technology Hardware and Equipment
+5EF.SI,5EF,Adventus Holdings Limited,Hotels | Restaurants and Leisure,Consumer Services
 5EG.SI,5EG,Zhongxin Fruit and Juice Limited,Food Products,Food | Beverage and Tobacco
 5EK.SI,5EK,SinoCloud Group Limited,IT Services,Software and Services
 5EL.SI,5EL,Lasseters International Holdings Limited,Hotels | Restaurants and Leisure,Consumer Services
-5EN.SI,5EN,Midas Holdings Limited,Metals and Mining,Materials
-5ET.SI,5ET,Attilan Group Limited,Capital Markets,Diversified Financials
 5EV.SI,5EV,Hosen Group Ltd.,Food and Staples Retailing,Food and Staples Retailing
 5EW.SI,5EW,Pan Asian Holdings Limited,Machinery,Capital Goods
 5F4.SI,5F4,Figtree Holdings Limited,Construction and Engineering,Capital Goods
 5F7.SI,5F7,Wilton Resources Corporation Limited,Metals and Mining,Materials
-5FH.SI,5FH,Advance SCT Limited,Metals and Mining,Materials
+5FH.SI,5FH,Citicode Ltd.,Trading Companies and Distributors,Capital Goods
 5FL.SI,5FL,Falcon Energy Group Limited,Energy Equipment and Services,Energy
 5FW.SI,5FW,Acesian Partners Limited,Machinery,Capital Goods
 5FX.SI,5FX,New Wave Holdings Ltd.,Trading Companies and Distributors,Capital Goods
 5G1.SI,5G1,Eurosports Global Limited,Specialty Retail,Retailing
 5G2.SI,5G2,Kim Heng Offshore & Marine Holdings Limited,Energy Equipment and Services,Energy
-5G3.SI,5G3,TalkMed Group Limited,Healthcare Providers and Services,Healthcare Equipment and Services
+5G3.SI,5G3,TalkMed Group Limited,Health Care Providers and Services,Health Care Equipment and Services
 5G4.SI,5G4,Rich Capital Holdings Limited,Metals and Mining,Materials
 5G9.SI,5G9,Tritech Group Limited,Construction and Engineering,Capital Goods
 5GD.SI,5GD,Sunpower Group Ltd.,Machinery,Capital Goods
-5GF.SI,5GF,Nico Steel Holdings Limited,Metals and Mining,Materials
+5GF.SI,5GF,Nico Steel Holdings Limited,Electronic Equipment | Instruments and Components,Technology Hardware and Equipment
 5GI.SI,5GI,Interra Resources Limited,Oil | Gas and Consumable Fuels,Energy
 5GJ.SI,5GJ,AusGroup Limited,Construction and Engineering,Capital Goods
 5GZ.SI,5GZ,AA Group Holdings Ltd.,Electronic Equipment | Instruments and Components,Technology Hardware and Equipment
 5H0.SI,5H0,SingHaiyi Group Ltd.,Real Estate Management and Development,Real Estate
 5HC.SI,5HC,Ntegrator International Ltd.,IT Services,Software and Services
 5HG.SI,5HG,Edition Ltd.,Food Products,Food | Beverage and Tobacco
-5HH.SI,5HH,Sinjia Land Limited,Chemicals,Materials
-5HJ.SI,5HJ,Cityneon Holdings Limited,Commercial Services and Supplies,Commercial and Professional Services
+5HH.SI,5HH,Sinjia Land Limited,Hotels | Restaurants and Leisure,Consumer Services
 5HT.SI,5HT,Imperium Crown Limited,Real Estate Management and Development,Real Estate
 5HV.SI,5HV,Koh Brothers Eco Engineering Limited,Construction and Engineering,Capital Goods
-5I0.SI,5I0,QT Vascular Ltd.,Healthcare Equipment and Supplies,Healthcare Equipment and Services
+5I0.SI,5I0,QT Vascular Ltd.,Health Care Equipment and Supplies,Health Care Equipment and Services
 5I1.SI,5I1,KOP Limited,Hotels | Restaurants and Leisure,Consumer Services
 5I4.SI,5I4,ICP Ltd.,Marine,Transportation
-5IB.SI,5IB,China Medical (International) Group Limited,Trading Companies and Distributors,Capital Goods
 5IC.SI,5IC,Sing Holdings Limited,Real Estate Management and Development,Real Estate
 5IE.SI,5IE,Lorenzo International Limited,Household Durables,Consumer Durables and Apparel
 5IF.SI,5IF,Natural Cool Holdings Limited,Commercial Services and Supplies,Commercial and Professional Services
@@ -203,11 +196,10 @@ symbol,code,name,sector[shareinvestor : sg : daily]
 5MD.SI,5MD,Soon Lian Holdings Limited,Trading Companies and Distributors,Capital Goods
 5ME.SI,5ME,Ezion Holdings Limited,Energy Equipment and Services,Energy
 5ML.SI,5ML,Old Chang Kee Ltd.,Food Products,Food | Beverage and Tobacco
-5MM.SI,5MM,Resources Prima Group Limited,Oil | Gas and Consumable Fuels,Energy
 5MQ.SI,5MQ,Epicentre Holdings Limited,Specialty Retail,Retailing
 5MZ.SI,5MZ,Kingsmen Creatives Ltd.,Professional Services,Commercial and Professional Services
 5NF.SI,5NF,Mencast Holdings Ltd.,Energy Equipment and Services,Energy
-5NG.SI,5NG,Healthway Medical Corporation Limited,Healthcare Providers and Services,Healthcare Equipment and Services
+5NG.SI,5NG,Healthway Medical Corporation Limited,Health Care Providers and Services,Health Care Equipment and Services
 5NK.SI,5NK,Artivision Technologies Ltd.,Electronic Equipment | Instruments and Components,Technology Hardware and Equipment
 5NV.SI,5NV,Chasen Holdings Limited,Commercial Services and Supplies,Commercial and Professional Services
 5OC.SI,5OC,Koyo International Limited,Construction and Engineering,Capital Goods
@@ -215,7 +207,7 @@ symbol,code,name,sector[shareinvestor : sg : daily]
 5OQ.SI,5OQ,TEHO International Inc Ltd.,Trading Companies and Distributors,Capital Goods
 5OR.SI,5OR,Heatec Jietong Holdings Ltd.,Energy Equipment and Services,Energy
 5OS.SI,5OS,Jubilee Industries Holdings Ltd.,Machinery,Capital Goods
-5OT.SI,5OT,Singapore Medical Group Limited,Healthcare Providers and Services,Healthcare Equipment and Services
+5OT.SI,5OT,Singapore Medical Group Limited,Health Care Providers and Services,Health Care Equipment and Services
 5OX.SI,5OX,Mary Chia Holdings Limited,Diversified Consumer Services,Consumer Services
 5PC.SI,5PC,Goodland Group Limited,Real Estate Management and Development,Real Estate
 5PD.SI,5PD,Hengyang Petrochemical Logistics Limited,Oil | Gas and Consumable Fuels,Energy
@@ -225,15 +217,15 @@ symbol,code,name,sector[shareinvestor : sg : daily]
 5PO.SI,5PO,Hiap Tong Corporation Ltd.,Trading Companies and Distributors,Capital Goods
 5QR.SI,5QR,MSM International Limited,Machinery,Capital Goods
 5QT.SI,5QT,Charisma Energy Services Limited,Trading Companies and Distributors,Capital Goods
-5QY.SI,5QY,Net Pacific Financial Holdings Limited,Thrifts and Mortgage Finance,Banks
-5RA.SI,5RA,Asia-Pacific Strategic Investments Limited,Real Estate Management and Development,Real Estate
+5QY.SI,5QY,Net Pacific Financial Holdings Limited,Diversified Financial Services,Diversified Financials
+5RA.SI,5RA,China Real Estate Grp Ltd.,Real Estate Management and Development,Real Estate
 5RC.SI,5RC,ES Group (Holdings) Limited,Machinery,Capital Goods
-5RE.SI,5RE,Smartflex Holdings Ltd.,Semiconductors and Semiconductor Equipment,Semiconductors and Semiconductor Equipment
+5RE.SI,5RE,Asia Vets Holdings Ltd.,Health Care Providers and Services,Health Care Equipment and Services
 5RF.SI,5RF,Mercurius Capital Investment Limited,Textiles | Apparel and Luxury Goods,Consumer Durables and Apparel
-5RJ.SI,5RJ,Accrelist Ltd.,Trading Companies and Distributors,Capital Goods
+5RJ.SI,5RJ,Accrelist Ltd.,Electronic Equipment | Instruments and Components,Technology Hardware and Equipment
 5SO.SI,5SO,Duty Free International Limited,Specialty Retail,Retailing
 5SR.SI,5SR,Zhongmin Baihui Retail Group Ltd.,Multiline Retail,Retailing
-5SY.SI,5SY,Chew's Group Limited,Food Products,Food | Beverage and Tobacco
+5SY.SI,5SY,OneApex Limited,Food Products,Food | Beverage and Tobacco
 5TG.SI,5TG,800 Super Holdings Limited,Commercial Services and Supplies,Commercial and Professional Services
 5TI.SI,5TI,Kitchen Culture Holdings Ltd.,Distributors,Retailing
 5TJ.SI,5TJ,Far East Group Limited,Trading Companies and Distributors,Capital Goods
@@ -257,8 +249,7 @@ symbol,code,name,sector[shareinvestor : sg : daily]
 5VJ.SI,5VJ,Halcyon Agri Corporation Limited,Commercial Services and Supplies,Commercial and Professional Services
 5VP.SI,5VP,GDS Global Limited,Building Products,Capital Goods
 5VS.SI,5VS,Hafary Holdings Limited,Trading Companies and Distributors,Capital Goods
-5VU.SI,5VU,Arion Entertainment Singapore Limited,Media,Media
-5WA.SI,5WA,OUE Lippo Healthcare Limited,Healthcare Providers and Services,Healthcare Equipment and Services
+5WA.SI,5WA,OUE Lippo Healthcare Limited,Health Care Providers and Services,Health Care Equipment and Services
 5WD.SI,5WD,PS Group Holdings Ltd.,Trading Companies and Distributors,Capital Goods
 5WE.SI,5WE,Moya Holdings Asia Limited,Commercial Services and Supplies,Commercial and Professional Services
 5WF.SI,5WF,ISOTeam Ltd.,Construction and Engineering,Capital Goods
@@ -267,16 +258,17 @@ symbol,code,name,sector[shareinvestor : sg : daily]
 5WJ.SI,5WJ,MoneyMax Financial Services Ltd.,Specialty Retail,Retailing
 5WV.SI,5WV,AsiaPhos Limited,Metals and Mining,Materials
 600.SI,600,Hyflux Ltd,Water Utilities,Utilities
+8YY.SI,8YY,Biolidics Limited,Health Care Equipment and Supplies,Health Care Equipment and Services
 A04.SI,A04,ASL Marine Holdings Ltd.,Machinery,Capital Goods
 A13.SI,A13,Allied Technologies Limited,Machinery,Capital Goods
 A17U.SI,A17U,Ascendas Real Estate Investment Trust,Equity Real Estate Investment Trusts (REITs),Real Estate
 A26.SI,A26,Sinarmas Land Limited,Real Estate Management and Development,Real Estate
-A27.SI,A27,mDR LIMITED,Electronic Equipment | Instruments and Components,Technology Hardware and Equipment
+A27.SI,A27,mDR Limited,Electronic Equipment | Instruments and Components,Technology Hardware and Equipment
 A30.SI,A30,Aspial Corporation Limited,Real Estate Management and Development,Real Estate
 A31.SI,A31,Addvalue Technologies Ltd,Communications Equipment,Technology Hardware and Equipment
 A33.SI,A33,Blumont Group Ltd.,Commercial Services and Supplies,Commercial and Professional Services
 A34.SI,A34,Amara Holdings Limited,Hotels | Restaurants and Leisure,Consumer Services
-A50.SI,A50,Thomson Medical Group Limited,Professional Services,Commercial and Professional Services
+A50.SI,A50,Thomson Medical Group Limited,Health Care Providers and Services,Health Care Equipment and Services
 A52.SI,A52,AnnAik Limited,Metals and Mining,Materials
 A55.SI,A55,Asia Enterprises Holding Limited,Trading Companies and Distributors,Capital Goods
 A68U.SI,A68U,Ascott Residence Trust,Equity Real Estate Investment Trusts (REITs),Real Estate
@@ -286,16 +278,16 @@ A7RU.SI,A7RU,Keppel Infrastructure Trust,Multi-Utilities,Utilities
 A7S.SI,A7S,SunVic Chemical Holdings Limited,Chemicals,Materials
 AAJ.SI,AAJ,Sunmoon Food Company Limited,Food and Staples Retailing,Food and Staples Retailing
 ACV.SI,ACV,Frasers Hospitality Trust,Equity Real Estate Investment Trusts (REITs),Real Estate
-ADJ.SI,ADJ,Pine Capital Group Limited,Media,Media
+ADJ.SI,ADJ,Pine Capital Group Limited,Capital Markets,Diversified Financials
 ADN.SI,ADN,First Sponsor Group Limited,Real Estate Management and Development,Real Estate
 ADQU.SI,ADQU,Accordia Golf Trust,Hotels | Restaurants and Leisure,Consumer Services
-AFC.SI,AFC,Yuuzoo Corporation Limited,Internet Software and Services,Software and Services
+AFC.SI,AFC,YuuZoo Networks Group Corporation,IT Services,Software and Services
 AGS.SI,AGS,The Hour Glass Limited,Specialty Retail,Retailing
-AIY.SI,AIY,iFAST Corporation Ltd.,Internet Software and Services,Software and Services
+AIY.SI,AIY,iFAST Corporation Ltd.,Diversified Financial Services,Diversified Financials
 AJ2.SI,AJ2,Ouhua Energy Holdings Limited,Oil | Gas and Consumable Fuels,Energy
 AJBU.SI,AJBU,Keppel DC REIT,Equity Real Estate Investment Trusts (REITs),Real Estate
 AOF.SI,AOF,Amplefield Limited,Real Estate Management and Development,Real Estate
-AP4.SI,AP4,Riverstone Holdings Limited,Commercial Services and Supplies,Commercial and Professional Services
+AP4.SI,AP4,Riverstone Holdings Limited,Health Care Equipment and Supplies,Health Care Equipment and Services
 AU8U.SI,AU8U,CapitaLand Retail China Trust,Equity Real Estate Investment Trusts (REITs),Real Estate
 AUE.SI,AUE,Golden Energy and Resources Limited,Oil | Gas and Consumable Fuels,Energy
 AVM.SI,AVM,Boustead Projects Limited,Construction and Engineering,Capital Goods
@@ -304,17 +296,16 @@ AVX.SI,AVX,HL Global Enterprises Limited,Hotels | Restaurants and Leisure,Consum
 AW9U.SI,AW9U,First Real Estate Investment Trust,Equity Real Estate Investment Trusts (REITs),Real Estate
 AWC.SI,AWC,Brook Crompton Holdings Ltd.,Trading Companies and Distributors,Capital Goods
 AWE.SI,AWE,SP Corporation Limited,Trading Companies and Distributors,Capital Goods
-AWG.SI,AWG,AEI Corporation Ltd.,Machinery,Capital Goods
+AWG.SI,AWG,AEI Corporation Ltd.,Metals and Mining,Materials
 AWI.SI,AWI,Thakral Corporation Ltd,Distributors,Retailing
 AWK.SI,AWK,Fuxing China Group Limited,Textiles | Apparel and Luxury Goods,Consumer Durables and Apparel
 AWM.SI,AWM,Shanghai Turbo Enterprises Ltd,Electrical Equipment,Capital Goods
 AWO.SI,AWO,Mirach Energy Limited,Energy Equipment and Services,Energy
-AWS.SI,AWS,Global Yellow Pages Limited,Food and Staples Retailing,Food and Staples Retailing
+AWS.SI,AWS,GYP Properties Limited,Food and Staples Retailing,Food and Staples Retailing
 AWV.SI,AWV,Captii Limited,Communications Equipment,Technology Hardware and Equipment
 AWX.SI,AWX,AEM Holdings Ltd,Semiconductors and Semiconductor Equipment,Semiconductors and Semiconductor Equipment
 AWZ.SI,AWZ,Multi-Chem Limited,Electronic Equipment | Instruments and Components,Technology Hardware and Equipment
 AXB.SI,AXB,Yongnam Holdings Limited,Construction and Engineering,Capital Goods
-AXL.SI,AXL,China Fibretech Ltd.,Textiles | Apparel and Luxury Goods,Consumer Durables and Apparel
 AYB.SI,AYB,Lafe Corporation Limited,Real Estate Management and Development,Real Estate
 AYD.SI,AYD,Plastoform Holdings Limited,Household Durables,Consumer Durables and Apparel
 AYL.SI,AYL,STAR Pharmaceutical Limited,Pharmaceuticals,Pharmaceuticals | Biotechnology and Life Sciences
@@ -322,7 +313,6 @@ AYN.SI,AYN,Global Testing Corporation Limited,Semiconductors and Semiconductor E
 AYV.SI,AYV,Acma Ltd.,Machinery,Capital Goods
 AZA.SI,AZA,IPC Corporation Ltd,Real Estate Management and Development,Real Estate
 AZG.SI,AZG,8Telecom International Holdings Co. Ltd.,Communications Equipment,Technology Hardware and Equipment
-AZI.SI,AZI,AusNet Services Ltd,Electric Utilities,Utilities
 AZR.SI,AZR,United Food Holdings Limited,Food Products,Food | Beverage and Tobacco
 AZT.SI,AZT,NutryFarm International Limited,Personal Products,Household and Personal Products
 AZW.SI,AZW,China Taisan Technology Group Holdings Limited,Textiles | Apparel and Luxury Goods,Consumer Durables and Apparel
@@ -342,7 +332,7 @@ B73.SI,B73,Global Investments Limited,Capital Markets,Diversified Financials
 B7K.SI,B7K,Sin Ghee Huat Corporation Ltd.,Trading Companies and Distributors,Capital Goods
 B9S.SI,B9S,CosmoSteel Holdings Limited,Energy Equipment and Services,Energy
 BAC.SI,BAC,Camsing Healthcare Limited,Distributors,Retailing
-BAI.SI,BAI,S i2i Limited,Wireless Telecommunication Services,Telecommunication Services
+BAI.SI,BAI,SEVAK Limited,Wireless Telecommunication Services,Telecommunication Services
 BAZ.SI,BAZ,Lion Asiapac Limited,Construction Materials,Materials
 BBP.SI,BBP,Hor Kew Corporation Limited,Construction and Engineering,Capital Goods
 BBW.SI,BBW,Azeus Systems Holdings Ltd.,IT Services,Software and Services
@@ -359,14 +349,13 @@ BDX.SI,BDX,GSH Corporation Limited,Real Estate Management and Development,Real E
 BEC.SI,BEC,BRC Asia Limited,Building Products,Capital Goods
 BEH.SI,BEH,China International Holdings Limited,Water Utilities,Utilities
 BEI.SI,BEI,LHT Holdings Limited,Paper and Forest Products,Materials
-BEV.SI,BEV,Swing Media Technology Group Limited,Technology Hardware | Storage and Peripherals,Technology Hardware and Equipment
 BEW.SI,BEW,JB Foods Limited,Food Products,Food | Beverage and Tobacco
 BEZ.SI,BEZ,Beng Kuang Marine Limited,Commercial Services and Supplies,Commercial and Professional Services
 BFI.SI,BFI,Tiong Seng Holdings Limited,Construction and Engineering,Capital Goods
 BFK.SI,BFK,Pharmesis International Ltd.,Pharmaceuticals,Pharmaceuticals | Biotechnology and Life Sciences
 BFT.SI,BFT,Fabchem China Limited,Chemicals,Materials
 BFU.SI,BFU,Tye Soon Limited,Distributors,Retailing
-BHD.SI,BHD,China Mining International Limited,Metals and Mining,Materials
+BHD.SI,BHD,China Mining International Limited,Real Estate Management and Development,Real Estate
 BHK.SI,BHK,SIIC Environment Holdings Ltd.,Water Utilities,Utilities
 BHO.SI,BHO,Top Global Limited,Real Estate Management and Development,Real Estate
 BHQ.SI,BHQ,Sunningdale Tech Ltd,Machinery,Capital Goods
@@ -375,7 +364,6 @@ BIP.SI,BIP,Vibrant Group Limited,Air Freight and Logistics,Transportation
 BIX.SI,BIX,Ellipsiz Ltd,Semiconductors and Semiconductor Equipment,Semiconductors and Semiconductor Equipment
 BJD.SI,BJD,VibroPower Corporation Limited,Electrical Equipment,Capital Goods
 BJL.SI,BJL,LCT  Holdings Limited,Real Estate Management and Development,Real Estate
-BJV.SI,BJV,Yamada Green Resources Limited,Food Products,Food | Beverage and Tobacco
 BJW.SI,BJW,Shinvest Holding Ltd.,Machinery,Capital Goods
 BJZ.SI,BJZ,Koda Ltd,Household Durables,Consumer Durables and Apparel
 BKA.SI,BKA,Sin Heng Heavy Machinery Limited,Trading Companies and Distributors,Capital Goods
@@ -393,7 +381,6 @@ BLS.SI,BLS,Hotung Investment Holdings Limited,Capital Markets,Diversified Financ
 BLU.SI,BLU,GRP Limited,Electronic Equipment | Instruments and Components,Technology Hardware and Equipment
 BLW.SI,BLW,Global Palm Resources Holdings Limited,Food Products,Food | Beverage and Tobacco
 BLZ.SI,BLZ,Advanced Holdings Ltd.,Energy Equipment and Services,Energy
-BMA.SI,BMA,Weiye Holdings Limited,Real Estate Management and Development,Real Estate
 BMGU.SI,BMGU,BHG Retail REIT,Equity Real Estate Investment Trusts (REITs),Real Estate
 BMH.SI,BMH,Hupsteel Limited,Trading Companies and Distributors,Capital Goods
 BMT.SI,BMT,New Silkroutes Group Limited,Oil | Gas and Consumable Fuels,Energy
@@ -412,10 +399,9 @@ BQN.SI,BQN,BH Global Corporation Limited,Electrical Equipment,Capital Goods
 BQO.SI,BQO,Delong Holdings Limited,Metals and Mining,Materials
 BQP.SI,BQP,Southern Packaging Group Limited,Containers and Packaging,Materials
 BRD.SI,BRD,Sapphire Corporation Limited,Construction and Engineering,Capital Goods
-BRR.SI,BRR,The Stratech Group Limited,Software,Software and Services
 BRS.SI,BRS,USP Group Limited,Oil | Gas and Consumable Fuels,Energy
 BS6.SI,BS6,Yangzijiang Shipbuilding (Holdings) Ltd.,Machinery,Capital Goods
-BSL.SI,BSL,Raffles Medical Group Ltd,Healthcare Providers and Services,Healthcare Equipment and Services
+BSL.SI,BSL,Raffles Medical Group Ltd,Health Care Providers and Services,Health Care Equipment and Services
 BTE.SI,BTE,Bund Center Investment Ltd,Real Estate Management and Development,Real Estate
 BTF.SI,BTF,Debao Property Development Ltd.,Real Estate Management and Development,Real Estate
 BTG.SI,BTG,HG Metal Manufacturing Limited,Trading Companies and Distributors,Capital Goods
@@ -423,22 +409,22 @@ BTJ.SI,BTJ,A-Sonic Aerospace Limited,Air Freight and Logistics,Transportation
 BTM.SI,BTM,Penguin International Limited,Marine,Transportation
 BTOU.SI,BTOU,Manulife US Real Estate Investment Trust,Equity Real Estate Investment Trusts (REITs),Real Estate
 BTP.SI,BTP,Baker Technology Limited,Energy Equipment and Services,Energy
-BTX.SI,BTX,Anchun International Holdings Ltd.,Chemicals,Materials
-BTY.SI,BTY,Full Apex (Holdings) Limited,Containers and Packaging,Materials
+BTX.SI,BTX,Anchun International Holdings Ltd.,Machinery,Capital Goods
 BUOU.SI,BUOU,Frasers Logistics & Industrial Trust,Equity Real Estate Investment Trusts (REITs),Real Estate
-BVA.SI,BVA,Top Glove Corporation Bhd.,Healthcare Equipment and Supplies,Healthcare Equipment and Services
+BVA.SI,BVA,Top Glove Corporation Bhd.,Health Care Equipment and Supplies,Health Care Equipment and Services
 BVP.SI,BVP,Aims Property Securities Fund,Equity Real Estate Investment Trusts (REITs),Real Estate
 BVQ.SI,BVQ,Procurri Corporation Limited,Electronic Equipment | Instruments and Components,Technology Hardware and Equipment
 BWCU.SI,BWCU,EC World Real Estate Investment Trust,Equity Real Estate Investment Trusts (REITs),Real Estate
 BWM.SI,BWM,China Jinjiang Environment Holding Company Limited,Independent Power and Renewable Electricity Producers,Utilities
+BWQU.SI,BWQU,Frasers Logistics & Industrial Trust,Equity Real Estate Investment Trusts (REITs),Real Estate
 BXE.SI,BXE,CDW Holding Limited,Semiconductors and Semiconductor Equipment,Semiconductors and Semiconductor Equipment
-C04.SI,C04,CASA Holdings Limited,Distributors,Retailing
+C04.SI,C04,Casa Holdings Limited,Distributors,Retailing
 C05.SI,C05,Chemical Industries (Far East) Limited,Chemicals,Materials
 C06.SI,C06,CSC Holdings Limited,Construction and Engineering,Capital Goods
 C07.SI,C07,Jardine Cycle & Carriage Limited,Distributors,Retailing
 C09.SI,C09,City Developments Limited,Real Estate Management and Development,Real Estate
 C13.SI,C13,CH Offshore Ltd,Energy Equipment and Services,Energy
-C29.SI,C29,Chip Eng Seng Corporation Ltd,Construction and Engineering,Capital Goods
+C29.SI,C29,Chip Eng Seng Corporation Ltd,Real Estate Management and Development,Real Estate
 C2PU.SI,C2PU,Parkway Life Real Estate Investment Trust,Equity Real Estate Investment Trusts (REITs),Real Estate
 C31.SI,C31,CapitaLand Limited,Real Estate Management and Development,Real Estate
 C33.SI,C33,Chuan Hup Holdings Limited,Electronic Equipment | Instruments and Components,Technology Hardware and Equipment
@@ -448,7 +434,7 @@ C50.SI,C50,Cheung Woh Technologies Ltd,Machinery,Capital Goods
 C52.SI,C52,ComfortDelGro Corporation Limited,Road and Rail,Transportation
 C61U.SI,C61U,CapitaLand Commercial Trust,Equity Real Estate Investment Trusts (REITs),Real Estate
 C6L.SI,C6L,Singapore Airlines Limited,Airlines,Transportation
-C76.SI,C76,Creative Technology Ltd.,Technology Hardware | Storage and Peripherals,Technology Hardware and Equipment
+C76.SI,C76,Creative Technology Ltd,Technology Hardware | Storage and Peripherals,Technology Hardware and Equipment
 C8R.SI,C8R,Jiutian Chemical Group Limited,Chemicals,Materials
 C92.SI,C92,China Haida Ltd.,Building Products,Capital Goods
 C9Q.SI,C9Q,Sinostar PEC Holdings Limited,Oil | Gas and Consumable Fuels,Energy
@@ -462,12 +448,15 @@ CHJ.SI,CHJ,Uni-Asia Group Limited,Capital Markets,Diversified Financials
 CHZ.SI,CHZ,HRnetGroup Limited,Professional Services,Commercial and Professional Services
 CIN.SI,CIN,Courage Investment Group Limited,Marine,Transportation
 CJLU.SI,CJLU,NetLink NBN Trust,Diversified Telecommunication Services,Telecommunication Services
+CJN.SI,CJN,British and Malayan Holdings Limited,Capital Markets,Diversified Financials
 CLN.SI,CLN,APAC Realty Limited,Real Estate Management and Development,Real Estate
 CMOU.SI,CMOU,Keppel-KBS US REIT,Equity Real Estate Investment Trusts (REITs),Real Estate
 CNE.SI,CNE,MindChamps PreSchool Limited,Diversified Consumer Services,Consumer Services
 CNNU.SI,CNNU,Cromwell European Real Estate Investment Trust,Equity Real Estate Investment Trusts (REITs),Real Estate
 CRPU.SI,CRPU,Sasseur Real Estate Investment Trust,Equity Real Estate Investment Trusts (REITs),Real Estate
+CSFU.SI,CSFU,Cromwell European Real Estate Investment Trust,Equity Real Estate Investment Trusts (REITs),Real Estate
 CTN.SI,CTN,BreadTalk Group Limited,Hotels | Restaurants and Leisure,Consumer Services
+CTO.SI,CTO,Hong Lai Huat Group Limited,Real Estate Management and Development,Real Estate
 CY6U.SI,CY6U,Ascendas India Trust,Real Estate Management and Development,Real Estate
 CZ4.SI,CZ4,Dutech Holdings Limited,Commercial Services and Supplies,Commercial and Professional Services
 D01.SI,D01,Dairy Farm International Holdings Limited,Food and Staples Retailing,Food and Staples Retailing
@@ -482,13 +471,13 @@ D8DU.SI,D8DU,First Ship Lease Trust,Diversified Financial Services,Diversified F
 DM0.SI,DM0,Hanwell Holdings Limited,Food Products,Food | Beverage and Tobacco
 DU4.SI,DU4,Mermaid Maritime Public Company Limited,Energy Equipment and Services,Energy
 E16.SI,E16,Elec & Eltek International Company Limited,Electronic Equipment | Instruments and Components,Technology Hardware and Equipment
-E27.SI,E27,The Place Holdings Limited,Media,Media
+E27.SI,E27,The Place Holdings Limited,Media,Media and Entertainment
 E28.SI,E28,Frencken Group Limited,Machinery,Capital Goods
 E3B.SI,E3B,Wee Hur Holdings Ltd.,Construction and Engineering,Capital Goods
 E5H.SI,E5H,Golden Agri-Resources Ltd,Food Products,Food | Beverage and Tobacco
 E6R.SI,E6R,Samko Timber Limited,Paper and Forest Products,Materials
 E8Z.SI,E8Z,Roxy-Pacific Holdings Limited,Real Estate Management and Development,Real Estate
-E9L.SI,E9L,Joyas International Holdings Limited,Textiles | Apparel and Luxury Goods,Consumer Durables and Apparel
+E9L.SI,E9L,Joyas International Holdings Limited,Diversified Financial Services,Diversified Financials
 EB5.SI,EB5,First Resources Limited,Food Products,Food | Beverage and Tobacco
 EB7.SI,EB7,KTL Global Limited,Trading Companies and Distributors,Capital Goods
 EH5.SI,EH5,United Overseas Australia Limited,Real Estate Management and Development,Real Estate
@@ -498,7 +487,7 @@ F10.SI,F10,F J Benjamin Holdings Ltd,Specialty Retail,Retailing
 F13.SI,F13,Fu Yu Corporation Limited,Machinery,Capital Goods
 F17.SI,F17,GuocoLand Limited,Real Estate Management and Development,Real Estate
 F1E.SI,F1E,Low Keng Huat (Singapore) Limited,Construction and Engineering,Capital Goods
-F25U.SI,F25U,Fortune REIT,Equity Real Estate Investment Trusts (REITs),Real Estate
+F25U.SI,F25U,Fortune Real Estate Investment Trust,Equity Real Estate Investment Trusts (REITs),Real Estate
 F31.SI,F31,Fragrance Group Limited,Real Estate Management and Development,Real Estate
 F34.SI,F34,Wilmar International Limited,Food Products,Food | Beverage and Tobacco
 F3V.SI,F3V,MMP Resources Limited,Construction and Engineering,Capital Goods
@@ -506,13 +495,11 @@ F83.SI,F83,COSCO Shipping International (Singapore) Co. Ltd.,Machinery,Capital G
 F86.SI,F86,MYP Ltd.,Real Estate Management and Development,Real Estate
 F99.SI,F99,Fraser and Neave Limited,Food Products,Food | Beverage and Tobacco
 F9D.SI,F9D,Boustead Singapore Limited,Construction and Engineering,Capital Goods
-FP1.SI,FP1,Dapai International Holdings Co. Ltd.,Textiles | Apparel and Luxury Goods,Consumer Durables and Apparel
 FQ7.SI,FQ7,Jasper Investments Limited,Energy Equipment and Services,Energy
-FQ8.SI,FQ8,China Sports International Limited,Textiles | Apparel and Luxury Goods,Consumer Durables and Apparel
 G07.SI,G07,Great Eastern Holdings Limited,Insurance,Insurance
 G0I.SI,G0I,Nam Lee Pressed Metal Industries Limited,Building Products,Capital Goods
 G11.SI,G11,Guoan International Limited,Commercial Services and Supplies,Commercial and Professional Services
-G13.SI,G13,Genting Singapore PLC,Hotels | Restaurants and Leisure,Consumer Services
+G13.SI,G13,Genting Singapore Limited,Hotels | Restaurants and Leisure,Consumer Services
 G20.SI,G20,GP Industries Limited,Electronic Equipment | Instruments and Components,Technology Hardware and Equipment
 G41.SI,G41,G. K. Goh Holdings Limited,Professional Services,Commercial and Professional Services
 G50.SI,G50,Grand Banks Yachts Limited,Machinery,Capital Goods
@@ -533,7 +520,7 @@ H30.SI,H30,Hong Fok Corporation Limited,Real Estate Management and Development,R
 H78.SI,H78,Hongkong Land Holdings Limited,Real Estate Management and Development,Real Estate
 I06.SI,I06,Intraco Limited,Trading Companies and Distributors,Capital Goods
 I07.SI,I07,ISDN Holdings Limited,Electrical Equipment,Capital Goods
-I11.SI,I11,Ipco International Limited,Gas Utilities,Utilities
+I11.SI,I11,Renaissance United Limited,Gas Utilities,Utilities
 I15.SI,I15,Isetan (Singapore) Limited,Multiline Retail,Retailing
 I26.SI,I26,Innopac Holdings Limited,Capital Markets,Diversified Financials
 I49.SI,I49,IFS Capital Limited,Diversified Financial Services,Diversified Financials
@@ -550,6 +537,7 @@ J37.SI,J37,Jardine Strategic Holdings Limited,Industrial Conglomerates,Capital G
 J69U.SI,J69U,Frasers Centrepoint Trust,Equity Real Estate Investment Trusts (REITs),Real Estate
 J85.SI,J85,CDL Hospitality Trusts,Equity Real Estate Investment Trusts (REITs),Real Estate
 J91U.SI,J91U,ESR-REIT,Equity Real Estate Investment Trusts (REITs),Real Estate
+JLB.SI,JLB,Grand Venture Technology Limited,Machinery,Capital Goods
 K03.SI,K03,Khong Guan Limited,Food and Staples Retailing,Food and Staples Retailing
 K11.SI,K11,Keppel Telecommunications & Transportation Ltd,Air Freight and Logistics,Transportation
 K14.SI,K14,Kingboard Copper Foil Holdings Limited,Chemicals,Materials
@@ -562,6 +550,8 @@ K71U.SI,K71U,Keppel REIT,Equity Real Estate Investment Trusts (REITs),Real Estat
 K75.SI,K75,Koh Brothers Group Limited,Construction and Engineering,Capital Goods
 KI3.SI,KI3,Hu An Cable Holdings Ltd.,Electrical Equipment,Capital Goods
 KJ5.SI,KJ5,BBR Holdings (S) Ltd,Construction and Engineering,Capital Goods
+KUH.SI,KUH,TSH Corporation Limited,Hotels | Restaurants and Leisure,Consumer Services
+KUX.SI,KUX,DLF Holdings Limited,Construction and Engineering,Capital Goods
 L02.SI,L02,Manhattan Resources Limited,Marine,Transportation
 L03.SI,L03,Lian Beng Group Ltd,Construction and Engineering,Capital Goods
 L09.SI,L09,Lung Kee (Bermuda) Holdings Limited,Machinery,Capital Goods
@@ -573,6 +563,7 @@ L46.SI,L46,Luzhou Bio-chem Technology Limited,Food Products,Food | Beverage and 
 L5I.SI,L5I,Abterra Ltd.,Trading Companies and Distributors,Capital Goods
 LJ3.SI,LJ3,OUE Limited,Real Estate Management and Development,Real Estate
 LS9.SI,LS9,Leader Environmental Technologies Limited,Commercial Services and Supplies,Commercial and Professional Services
+LUY.SI,LUY,Raffles Infrastructure Holdings Limited,Textiles | Apparel and Luxury Goods,Consumer Durables and Apparel
 M01.SI,M01,Metro Holdings Limited,Multiline Retail,Retailing
 M03.SI,M03,Miyoshi Limited,Machinery,Capital Goods
 M04.SI,M04,Mandarin Oriental International Limited,Hotels | Restaurants and Leisure,Consumer Services
@@ -583,27 +574,23 @@ M15.SI,M15,Matex International Limited,Chemicals,Materials
 M1GU.SI,M1GU,Sabana Shari'ah Compliant Industrial Real Estate Investment Trust,Equity Real Estate Investment Trusts (REITs),Real Estate
 M1Z.SI,M1Z,TEE International Limited,Construction and Engineering,Capital Goods
 M30.SI,M30,Meghmani Organics Limited,Chemicals,Materials
-M35.SI,M35,Wheelock Properties (Singapore) Limited,Real Estate Management and Development,Real Estate
 M44U.SI,M44U,Mapletree Logistics Trust,Equity Real Estate Investment Trusts (REITs),Real Estate
 ME8U.SI,ME8U,Mapletree Industrial Trust,Equity Real Estate Investment Trusts (REITs),Real Estate
 MF6.SI,MF6,Mun Siong Engineering Limited,Construction and Engineering,Capital Goods
 MR7.SI,MR7,Nordic Group Limited,Construction and Engineering,Capital Goods
-MR8.SI,MR8,Yorkshine Holdings Limited,Trading Companies and Distributors,Capital Goods
-MS7.SI,MS7,Vard Holdings Limited,Machinery,Capital Goods
 MT1.SI,MT1,Dragon Group International Limited,Electronic Equipment | Instruments and Components,Technology Hardware and Equipment
 MV4.SI,MV4,Mewah International Inc.,Food Products,Food | Beverage and Tobacco
 N01.SI,N01,Nera Telecommunications Ltd,Communications Equipment,Technology Hardware and Equipment
 N02.SI,N02,NSL Ltd,Construction Materials,Materials
 N08.SI,N08,New Toyo International Holdings Ltd,Paper and Forest Products,Materials
 N0Z.SI,N0Z,Combine Will International Holdings Limited,Leisure Products,Consumer Durables and Apparel
-N14.SI,N14,M Development Ltd.,Diversified Financial Services,Diversified Financials
 N2IU.SI,N2IU,Mapletree Commercial Trust,Equity Real Estate Investment Trusts (REITs),Real Estate
-N32.SI,N32,Nippecraft Limited,Commercial Services and Supplies,Commercial and Professional Services
+N32.SI,N32,Nippecraft Limited,Trading Companies and Distributors,Capital Goods
 N4E.SI,N4E,Nam Cheong Limited,Machinery,Capital Goods
 NC2.SI,NC2,Sri Trang Agro-Industry Public Company Limited,Auto Components,Automobiles and Components
-NC9.SI,NC9,Malaysia Smelting Corporation Berhad,Metals and Mining,Materials
 ND8U.SI,ND8U,Frasers Commercial Trust,Equity Real Estate Investment Trusts (REITs),Real Estate
 NO4.SI,NO4,Dyna-Mac Holdings Limited,Energy Equipment and Services,Energy
+NPW.SI,NPW,Malaysia Smelting Corporation Berhad,Metals and Mining,Materials
 NR7.SI,NR7,Raffles Education Corporation Limited,Diversified Consumer Services,Consumer Services
 NS8U.SI,NS8U,Hutchison Port Holdings Trust,Transportation Infrastructure,Transportation
 O08.SI,O08,Ossia International Limited,Distributors,Retailing
@@ -613,8 +600,11 @@ O32.SI,O32,Olam International Limited,Food and Staples Retailing,Food and Staple
 O39.SI,O39,Oversea-Chinese Banking Corporation Limited,Banks,Banks
 O5RU.SI,O5RU,AIMS AMP Capital Industrial REIT,Equity Real Estate Investment Trusts (REITs),Real Estate
 O9E.SI,O9E,Parkson Retail Asia Limited,Multiline Retail,Retailing
+OMK.SI,OMK,Vividthree Holdings Ltd.,Entertainment,Media and Entertainment
+OTX.SI,OTX,Medinex Limited,Health Care Providers and Services,Health Care Equipment and Services
 OU8.SI,OU8,Centurion Corporation Limited,Real Estate Management and Development,Real Estate
 OV8.SI,OV8,Sheng Siong Group Ltd,Food and Staples Retailing,Food and Staples Retailing
+OYY.SI,OYY,PropNex Limited,Real Estate Management and Development,Real Estate
 P15.SI,P15,Pacific Century Regional Developments Limited,Diversified Financial Services,Diversified Financials
 P19.SI,P19,PCI Limited,Electronic Equipment | Instruments and Components,Technology Hardware and Equipment
 P34.SI,P34,Delfi Limited,Food Products,Food | Beverage and Tobacco
@@ -622,26 +612,25 @@ P36.SI,P36,Pan Hong Holdings Group Limited,Real Estate Management and Developmen
 P40U.SI,P40U,Starhill Global Real Estate Investment Trust,Equity Real Estate Investment Trusts (REITs),Real Estate
 P52.SI,P52,Pan-United Corporation Ltd,Trading Companies and Distributors,Capital Goods
 P74.SI,P74,China Kangda Food Company Limited,Food Products,Food | Beverage and Tobacco
-P8A.SI,P8A,Cordlife Group Limited,Healthcare Providers and Services,Healthcare Equipment and Services
+P7VU.SI,P7VU,Hutchison Port Holdings Trust,Transportation Infrastructure,Transportation
+P8A.SI,P8A,Cordlife Group Limited,Health Care Providers and Services,Health Care Equipment and Services
 P8Z.SI,P8Z,Bumitama Agri Ltd.,Food Products,Food | Beverage and Tobacco
 P9D.SI,P9D,Civmec Limited,Construction and Engineering,Capital Goods
 PA3.SI,PA3,TA Corporation Ltd,Construction and Engineering,Capital Goods
 PH0.SI,PH0,Hatten Land Limited,Real Estate Management and Development,Real Estate
 Q01.SI,Q01,QAF Limited,Food Products,Food | Beverage and Tobacco
-Q0F.SI,Q0F,IHH Healthcare Berhad,Healthcare Providers and Services,Healthcare Equipment and Services
+Q0F.SI,Q0F,IHH Healthcare Berhad,Health Care Providers and Services,Health Care Equipment and Services
 Q0X.SI,Q0X,Ley Choon Group Holdings Limited,Construction and Engineering,Capital Goods
 Q1P.SI,Q1P,Ascendas Hospitality Trust,Equity Real Estate Investment Trusts (REITs),Real Estate
 Q5T.SI,Q5T,Far East Hospitality Trust,Equity Real Estate Investment Trusts (REITs),Real Estate
-QC7.SI,QC7,Q & M Dental Group (Singapore) Limited,Healthcare Providers and Services,Healthcare Equipment and Services
+QC7.SI,QC7,Q & M Dental Group (Singapore) Limited,Health Care Providers and Services,Health Care Equipment and Services
 QF6.SI,QF6,Swee Hong Limited,Construction and Engineering,Capital Goods
-QG1.SI,QG1,Metech International Limited,Commercial Services and Supplies,Commercial and Professional Services
 QS9.SI,QS9,Global Invacom Group Limited,Communications Equipment,Technology Hardware and Equipment
 R14.SI,R14,Ramba Energy Limited,Air Freight and Logistics,Transportation
-RC5.SI,RC5,Triyards Holdings Limited,Machinery,Capital Goods
 RE2.SI,RE2,Courts Asia Limited,Specialty Retail,Retailing
 RE4.SI,RE4,Geo Energy Resources Limited,Oil | Gas and Consumable Fuels,Energy
-RF1U.SI,RF1U,RHT Health Trust,Healthcare Providers and Services,Healthcare Equipment and Services
-RF7.SI,RF7,Gaylin Holdings Limited,Energy Equipment and Services,Energy
+RF1U.SI,RF1U,RHT Health Trust,Health Care Providers and Services,Health Care Equipment and Services
+RF7.SI,RF7,AMOS Group Limited,Energy Equipment and Services,Energy
 RQ1.SI,RQ1,Overseas Education Limited,Diversified Consumer Services,Consumer Services
 RS1.SI,RS1,China Environmental Resources Group Limited,Distributors,Retailing
 RW0U.SI,RW0U,Mapletree North Asia Commercial Trust,Equity Real Estate Investment Trusts (REITs),Real Estate
@@ -667,36 +656,36 @@ S63.SI,S63,Singapore Technologies Engineering Ltd,Aerospace and Defense,Capital 
 S68.SI,S68,Singapore Exchange Limited,Capital Markets,Diversified Financials
 S69.SI,S69,Serial System Ltd,Electronic Equipment | Instruments and Components,Technology Hardware and Equipment
 S71.SI,S71,Sunright Limited,Semiconductors and Semiconductor Equipment,Semiconductors and Semiconductor Equipment
-S7OU.SI,S7OU,Asian Pay Television Trust,Media,Media
+S7OU.SI,S7OU,Asian Pay Television Trust,Media,Media and Entertainment
 S7P.SI,S7P,Soilbuild Construction Group Ltd.,Construction and Engineering,Capital Goods
 S85.SI,S85,Straco Corporation Limited,Hotels | Restaurants and Leisure,Consumer Services
-S91.SI,S91,Alibaba Pictures Group Limited,Media,Media
+S91.SI,S91,Alibaba Pictures Group Limited,Entertainment,Media and Entertainment
 S9B.SI,S9B,TEE Land Limited,Real Estate Management and Development,Real Estate
+SJY.SI,SJY,MeGroup Ltd.,Specialty Retail,Retailing
 SK3.SI,SK3,KrisEnergy Ltd.,Oil | Gas and Consumable Fuels,Energy
 SK6U.SI,SK6U,SPH REIT,Equity Real Estate Investment Trusts (REITs),Real Estate
 SK7.SI,SK7,OUE Hospitality Trust,Equity Real Estate Investment Trusts (REITs),Real Estate
+SO7.SI,SO7,Yangzijiang Shipbuilding (Holdings) Ltd.,Machinery,Capital Goods
+STP.SI,STP,Silkroad Nickel Ltd.,Metals and Mining,Materials
 SV3U.SI,SV3U,Soilbuild Business Space REIT,Equity Real Estate Investment Trusts (REITs),Real Estate
-T03.SI,T03,Tat Hong Holdings Ltd,Trading Companies and Distributors,Capital Goods
-T09.SI,T09,TT International Limited,Specialty Retail,Retailing
 T12.SI,T12,Tat Seng Packaging Group Ltd,Containers and Packaging,Materials
 T13.SI,T13,RH PetroGas Limited,Oil | Gas and Consumable Fuels,Energy
 T14.SI,T14,Tianjin Zhong Xin Pharmaceutical Group Corporation Limited,Pharmaceuticals,Pharmaceuticals | Biotechnology and Life Sciences
 T18.SI,T18,TPV Technology Limited,Technology Hardware | Storage and Peripherals,Technology Hardware and Equipment
 T19.SI,T19,Transcorp Holdings Limited,Distributors,Retailing
 T24.SI,T24,Tuan Sing Holdings Limited,Real Estate Management and Development,Real Estate
-T39.SI,T39,Singapore Press Holdings Limited,Media,Media
+T39.SI,T39,Singapore Press Holdings Limited,Media,Media and Entertainment
 T41.SI,T41,Telechoice International Limited,Electronic Equipment | Instruments and Components,Technology Hardware and Equipment
-T43.SI,T43,Techcomp (Holdings) Limited,Healthcare Providers and Services,Healthcare Equipment and Services
+T43.SI,T43,Yunnan Energy International Co. Limited,Health Care Providers and Services,Health Care Equipment and Services
 T4B.SI,T4B,Sino Grandness Food Industry Group Limited,Food Products,Food | Beverage and Tobacco
 T4E.SI,T4E,Compact Metal Industries Ltd,Building Products,Capital Goods
 T55.SI,T55,TIH Limited,Capital Markets,Diversified Financials
 T6I.SI,T6I,ValueMax Group Limited,Consumer Finance,Diversified Financials
 T82U.SI,T82U,Suntec Real Estate Investment Trust,Equity Real Estate Investment Trusts (REITs),Real Estate
-T8B.SI,T8B,Viva Industrial Trust,Equity Real Estate Investment Trusts (REITs),Real Estate
 T8V.SI,T8V,Pacific Radiance Ltd.,Energy Equipment and Services,Energy
 TQ5.SI,TQ5,Frasers Property Limited,Real Estate Management and Development,Real Estate
 TS0U.SI,TS0U,OUE Commercial Real Estate Investment Trust,Equity Real Estate Investment Trusts (REITs),Real Estate
-U04.SI,U04,United Engineers Limited,Construction and Engineering,Capital Goods
+U04.SI,U04,United Engineers Limited,Real Estate Management and Development,Real Estate
 U06.SI,U06,United Industrial Corporation Limited,Real Estate Management and Development,Real Estate
 U09.SI,U09,Avarga Limited,Paper and Forest Products,Materials
 U10.SI,U10,UOB-Kay Hian Holdings Limited,Capital Markets,Diversified Financials
@@ -712,7 +701,11 @@ UD2.SI,UD2,Japfa Ltd.,Food Products,Food | Beverage and Tobacco
 UV1.SI,UV1,Regal International Group Ltd.,Real Estate Management and Development,Real Estate
 V01.SI,V01,VICOM Ltd,Commercial Services and Supplies,Commercial and Professional Services
 V03.SI,V03,Venture Corporation Limited,Electronic Equipment | Instruments and Components,Technology Hardware and Equipment
+V2Y.SI,V2Y,Synagie Corporation Ltd.,Software,Software and Services
+VFP.SI,VFP,JCG Investment Holdings Ltd.,Trading Companies and Distributors,Capital Goods
+VL6.SI,VL6,Koufu Group Limited,Hotels | Restaurants and Leisure,Consumer Services
 W05.SI,W05,Wing Tai Holdings Limited,Real Estate Management and Development,Real Estate
+WPC.SI,WPC,Vallianz Holdings Limited,Energy Equipment and Services,Energy
 Y03.SI,Y03,Yeo Hiap Seng Limited,Food Products,Food | Beverage and Tobacco
 Y06.SI,Y06,Green Build Technology Limited,Construction and Engineering,Capital Goods
 Y35.SI,Y35,AnAn International Limited,Oil | Gas and Consumable Fuels,Energy
