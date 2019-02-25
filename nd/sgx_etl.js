@@ -11,20 +11,24 @@
  */
 
 "use strict";
-require("./ProtoUtil");
 
-var fs = require("fs"),
-  vm = require("vm"),
-  requirejs = require("requirejs"),
-  myUtil = require("./MyUtil"),
-  cu = require("./CounterUtil");
+import "./ProtoUtil";
+import fs from "fs";
+import path from "path";
+import vm from "vm";
+import myUtil from "./MyUtil";
+import CounterUtil from "./CounterUtil";
+import inquirer from "inquirer";
 
 var counterUtil = new CounterUtil("counterSG");
 
+function pathResolve(...args) {
+  return path.resolve(__dirname, ...args);
+}
 function _loadJs(vm, filename) {
   if (fs.existsSync(filename)) {
     try {
-      var content = fs.readFileSync(filename);
+      let content = fs.readFileSync(filename);
       vm.runInThisContext(content);
       return true;
     } catch (err) {
@@ -89,7 +93,7 @@ function _get(options) {
 }
 
 function _getPriceHistory(code) {
-  var options = {
+  let options = {
     path: "/sgx/company/priceHistory",
     data: JSON.stringify({ id: code })
   };
@@ -98,7 +102,7 @@ function _getPriceHistory(code) {
 }
 
 function _search(criteria) {
-  var options = {
+  let options = {
     path: "/sgx/search",
     data: JSON.stringify({ criteria: criteria })
   };
@@ -107,7 +111,7 @@ function _search(criteria) {
 }
 
 function _getCompnayInfo(code) {
-  var options = {
+  let options = {
     path: "/sgx/company",
     // debug:true,
     data: JSON.stringify({ id: code })
@@ -117,7 +121,7 @@ function _getCompnayInfo(code) {
 }
 
 function _save(filePath, content) {
-  fs.writeFile(filePath, content, function(err) {
+  fs.writeFile(pathResolve(filePath), content, function(err) {
     if (err) {
       throw err;
     }
@@ -132,7 +136,15 @@ function sg_market_etl() {
   _search([])
     .then(function(data) {
       let today = new Date().format("yyyyMMdd");
-      _save(`../sg-mrk-hid/data_${today}.json`, data);
+      let dir = pathResolve("sg-mrk-hid");
+      let file = `${dir}/data_${today}.json`;
+      if (fs.existsSync(file)) {
+        file = `${dir}/data_${today}_${new Date()
+          .getUTCMilliseconds()
+          .toString()
+          .padStart(3, "0")}.json`;
+      }
+      _save(file, data);
     })
     .catch(err => {
       console.error(err);
@@ -146,7 +158,7 @@ function sg_symbol_etl() {
   _search([])
     .then(function(data) {
       data = JSON.parse(data);
-      var x = data.companies.map(function(ele) {
+      let x = data.companies.map(function(ele) {
         if (ele.companyName && ele.companyName.indexOf(",") >= 0)
           ele.companyName = ele.companyName.replace(",", "");
         if (ele.industry && ele.industry.indexOf(",") >= 0)
@@ -187,14 +199,15 @@ function sg_symbol_etl() {
  */
 function sg_opt_symbol_etl(minPrice) {
   counterUtil.get({}, (err, docs) => {
-    var x = [],
+    let x = [],
       code,
       jsFile,
       last;
+    let dir = pathResolve("../../chart/sg/");
     docs.forEach(doc => {
       code = doc.code;
-      jsFile = "../../daodao10.github.io/chart/sg/" + code + "_d.js";
-      if (loadJs(vm, jsFile)) {
+      jsFile = `${dir}/${code}_d.js`;
+      if (_loadJs(vm, jsFile)) {
         last = data[data.length - 1];
         if (last && last[1] >= minPrice) {
           x.push(
@@ -221,12 +234,12 @@ function sg_opt_symbol_etl(minPrice) {
  * @param  {} isIndex true - export index data, false - export stock data
  */
 function export_opt_data(symbols, isIndex) {
-  var _dateProcessor = function(dateStr) {
+  let _dateProcessor = function(dateStr) {
       //19/08/2013: ddMMyyyy
       return dateStr.substr(6, 4) + dateStr.substr(3, 2) + dateStr.substr(0, 2);
     },
     _export = function(data, jsFile) {
-      var x = data.map(ele => {
+      let x = data.map(ele => {
         return "['{0}',{1}]".format(ele[0], ele[1].toFixed(4));
       });
 
@@ -238,7 +251,7 @@ function export_opt_data(symbols, isIndex) {
     _securityHandler = function(code) {
       _getPriceHistory(code)
         .then(function(content) {
-          var json = JSON.parse(content),
+          let json = JSON.parse(content),
             x = json.price.map(ele => {
               return [
                 new Date(parseInt(ele.date)).format("yyyyMMdd"),
@@ -246,9 +259,9 @@ function export_opt_data(symbols, isIndex) {
               ];
             });
 
-          var jsFile = "../../daodao10.github.io/chart/sg/" + code + "_d.js";
-          if (loadJs(vm, jsFile)) {
-            var last = data[data.length - 1];
+          let jsFile = pathResolve("../../chart/sg/", code + "_d.js");
+          if (_loadJs(vm, jsFile)) {
+            let last = data[data.length - 1];
             x.forEach(function(ele) {
               if (ele[0] > last[0]) {
                 data.push(ele);
@@ -265,26 +278,29 @@ function export_opt_data(symbols, isIndex) {
         });
     },
     _indexHandler = function(code) {
-      fs.readFile("../chart/d/sg_" + code + "_d.csv", function(err, content) {
+      fs.readFile(pathResolve("../chart/d/", `sg_${code}_d.csv`), function(
+        err,
+        content
+      ) {
         if (err) {
           console.log(code, ":", err);
         } else {
           content = content.toString();
 
-          var x = content.split("\n");
+          let x = content.split("\n");
           // remove header
           x.shift();
           // remove last blank line
           x.pop();
 
           x = x.map(function(row) {
-            var record = row.stripLineBreaks().split(",");
+            let record = row.stripLineBreaks().split(",");
             return [_dateProcessor(record[0]), myUtil.toNumber(record[4])];
           });
 
-          var jsFile = "../../daodao10.github.io/chart/sg/" + code + "_d.js";
-          if (loadJs(vm, jsFile)) {
-            var last = data[data.length - 1];
+          let jsFile = pathResolve("../../chart/sg/", code + "_d.js");
+          if (_loadJs(vm, jsFile)) {
+            let last = data[data.length - 1];
             x.forEach(function(ele) {
               if (ele[0] > last[0]) {
                 data.push(ele);
@@ -307,13 +323,13 @@ function export_opt_data(symbols, isIndex) {
   } else {
     // export from sg_shareinvestor.txt
     (function(lines) {
-      var cells;
+      let cells;
       lines.forEach((line, index) => {
         if (index === 0) return;
 
         cells = line.split(",");
         if (cells.length > 1) {
-          var code = cells[1];
+          let code = cells[1];
 
           if (isIndex) {
             // process for index
@@ -329,7 +345,7 @@ function export_opt_data(symbols, isIndex) {
           }
         }
       });
-    })(myUtil.readlinesSync("../chart/s/sg_shareinvestor.txt"));
+    })(myUtil.readlinesSync(pathResolve("../chart/s/sg_shareinvestor.txt")));
   }
 }
 
@@ -346,12 +362,12 @@ function save_sg_company_info(symbols) {
     });
   } else {
     (function(lines) {
-      var cells;
+      let cells;
       lines.forEach((line, index) => {
         if (index === 0) return;
         cells = line.split(",");
         if (cells.length > 1) {
-          var code = cells[1];
+          let code = cells[1];
           //TODO: hard code 22 - stock index starts from
           if (index > 22) {
             _getCompnayInfo(code).then(function(content) {
@@ -360,7 +376,7 @@ function save_sg_company_info(symbols) {
           }
         }
       });
-    })(myUtil.readlinesSync("../chart/s/sg_shareinvestor.txt"));
+    })(myUtil.readlinesSync(pathResolve("../chart/s/sg_shareinvestor.txt")));
   }
 }
 
@@ -370,10 +386,10 @@ function save_sg_company_info(symbols) {
 function storeToDB() {
   // symbol,code,name,sector,industry
   (function(lines) {
-    var docs = [];
+    let docs = [];
     lines.forEach((line, index) => {
       if (index == 0) return;
-      var cells = line.split(",");
+      let cells = line.split(",");
       docs.push({
         _id: cells[0],
         code: cells[1],
@@ -383,26 +399,27 @@ function storeToDB() {
       });
     });
     counterUtil.update(docs, "insert qualitified docs");
-  })(myUtil.readlinesSync("../chart/s/sg_shareinvestor.txt"));
+  })(myUtil.readlinesSync(pathResolve("../chart/s/sg_shareinvestor.txt")));
 }
 /**
  * patch to store stock
  */
 function patch() {
-  // var query = { sector: { $ne: 'Index' } };
-  var query = { $and: [{ sector: { $ne: "Index" } }, { mv: null }] };
+  // let query = { sector: { $ne: 'Index' } };
+  let query = { $and: [{ sector: { $ne: "Index" } }, { mv: null }] };
   counterUtil.get(query, (err, docs) => {
     if (err) {
       console.error(err);
       return;
     }
 
-    var updated = false;
+    let updated = false;
+    let dir = pathResolve("./sg-company-hid/");
     docs.forEach(doc => {
-      var filename = "./sg-company-hid/" + doc.code + ".json";
+      let filename = `${dir}/${doc.code}.json`;
       if (fs.existsSync(filename)) {
-        var content = fs.readFileSync(filename, "utf8");
-        var json = JSON.parse(content);
+        let content = fs.readFileSync(filename, "utf8");
+        let json = JSON.parse(content);
         doc["mv"] =
           json.company && json.company.companyInfo
             ? json.company.companyInfo.sharesOutstanding
