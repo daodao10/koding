@@ -417,75 +417,84 @@ function patch() {
   });
 }
 
-
 const funcList = {
-    'sg_market_etl': sg_market_etl,
-    'sg_symbol_etl': sg_symbol_etl,
-    'sg_opt_symbol_etl': sg_opt_symbol_etl,
-    'save_sg_company_info': save_sg_company_info,
-    'export_opt_data': export_opt_data,
-    'store_to_DB': storeToDB,
-    'patch_store_to_DB': patch,
-}
-const funcNameList = [...Object.getOwnPropertyNames(funcList)]
+  sg_market_etl: sg_market_etl,
+  sg_symbol_etl: sg_symbol_etl,
+  sg_opt_symbol_etl: sg_opt_symbol_etl,
+  save_sg_company_info: save_sg_company_info,
+  export_opt_data: export_opt_data,
+  store_to_DB: storeToDB,
+  patch_store_to_DB: patch
+};
+const funcNameList = [...Object.getOwnPropertyNames(funcList)];
 
 function prompt() {
-    inquirer.prompt({
-        type: 'list',
-        name: 'func',
-        message: 'what is your CAI ?',
-        choices: funcNameList,
-    }).then(answers => {
-        console.log('DO ===>');
-        if (answers.func === 'sg_opt_symbol_etl') {
-            goin_sg_opt_symbol_etl(answers.func);
-        } else if (answers.func === 'export_opt_data') {
-            goin_export_opt_data(answers.func)
-        } else {
-            doFunc(answers.func)
-        }
+  inquirer
+    .prompt({
+      type: "list",
+      name: "func",
+      message: "what is your CAI ?",
+      choices: funcNameList
+    })
+    .then(answers => {
+      console.log("DO ===>");
+      if (answers.func === "sg_opt_symbol_etl") {
+        goin_sg_opt_symbol_etl(answers.func);
+      } else if (answers.func === "export_opt_data") {
+        goin_export_opt_data(answers.func);
+      } else {
+        doFunc(answers.func);
+      }
     });
 }
 
 function goin_sg_opt_symbol_etl(func) {
-    inquirer.prompt({
-        type: 'input',
-        name: 'minPrice',
-        message: 'Min Price ?',
-        validate: function (value) {
-            var valid = !isNaN(parseFloat(value));
-            return valid || 'Please enter a number';
-        },
-        filter: Number
-    }).then(answers => {
-        doFunc(func, answers.minPrice)
+  inquirer
+    .prompt({
+      type: "input",
+      name: "minPrice",
+      message: "Min Price ?",
+      validate: function(value) {
+        let valid = !isNaN(parseFloat(value));
+        return valid || "Please enter a number";
+      },
+      filter: Number
     })
+    .then(answers => {
+      doFunc(func, answers.minPrice);
+    });
 }
 function goin_export_opt_data(func) {
-    inquirer.prompt({
-        type: 'checkbox',
-        name: 'isIndex',
-        message: 'Is index ?',
-        choices: [
-            {
-                name: 'Yes'
-            }
-        ],
-    }).then(answers => {
-        doFunc(func, null, answers.isIndex.length > 0)
+  inquirer
+    .prompt({
+      type: "checkbox",
+      name: "isIndex",
+      message: "Is index ?",
+      choices: [
+        {
+          name: "Yes"
+        }
+      ]
     })
+    .then(answers => {
+      doFunc(func, null, answers.isIndex.length > 0);
+    });
 }
 const doFunc = (func, ...rest) => {
-    console.log(`\t${func} (${[...rest]})\n------------------------`)
-    if (funcNameList.includes(func)) {
-        funcList[func](...rest)
-    } else {
-        console.error(`wrong func name [${func}]`)
-    }
+  console.log(`\t${func} (${[...rest]})\n------------------------`);
+  if (funcNameList.includes(func)) {
+    funcList[func](...rest);
+  } else {
+    console.error(`wrong func name [${func}]`);
+  }
+};
+
+if (process.argv.length == 2) {
+  prompt();
+} else {
+  let [func, ...rest] = process.argv.slice(2);
+  doFunc(func, ...rest);
 }
-
-prompt()
-
 
 // -rw-r--r--  1 dao  staff  \s*\d+ Nov 13 \d{2}:\d{2} ([A-Z0-9]+)_d\.js
 // -rw-r--r--  1 dao  staff  \s*\d+ Nov \d+  \d{4} ([A-Z0-9]+)\.json
