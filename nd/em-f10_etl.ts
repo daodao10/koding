@@ -1,10 +1,16 @@
 /// <reference path="../../node.d.ts" />
+/// <reference path="../../lib.es6.d.ts" />
+
 // etl for f10.eastmoney.com
 // api has been changed
 // http://emweb.securities.eastmoney.com/f10_v2/CapitalStockStructure.aspx?type=web&code=sh600298
 // http://emweb.securities.eastmoney.com/PC_HSF10/CapitalStockStructure/CapitalStockStructureAjax?code=sh600298
 
-"use strict";
+declare interface Options {
+    path: string,
+    charset: string,
+    debug?: boolean
+};
 
 require('./ProtoUtil');
 var fs = require('fs'),
@@ -19,10 +25,10 @@ class EM3 {
 
     constructor(regexs: Array<RegExp>) {
         this._regExs = regexs;
-        this._myMongo = new MyMongo("{0}{1}".format(config.DbSettings.DbUri, 'test'));
+        this._myMongo = new MyMongo(`${config.DbSettings.DbUri}test`);
     }
 
-    private _request(options: Object): Promise {
+    private _request(options: Options): Promise<any> {
         options = myUtil.extend({
             // host: 'f10.eastmoney.com'
             host: 'emweb.securities.eastmoney.com'
@@ -44,7 +50,7 @@ class EM3 {
             });
         });
     }
-    private _save(filePath: String, content: string): void {
+    private _save(filePath: string, content: string): void {
         fs.writeFile(filePath, content, function (err) {
             if (err) {
                 throw err;
@@ -52,7 +58,7 @@ class EM3 {
             console.log('saved.');
         });
     }
-    private _parse(input: String, reg: RegExp): Array {
+    private _parse(input: string, reg: RegExp): Array<any> {
         var result = [],
             m;
         while ((m = reg.exec(input))) {
@@ -64,7 +70,7 @@ class EM3 {
         return result;
     }
 
-    private _logDbResult(msg: String, err: Error, result: Object) {
+    private _logDbResult(msg: string, err: Error, result: Object) {
         if (err) {
             console.error(err);
         } else {
@@ -73,38 +79,66 @@ class EM3 {
         }
     }
 
-    capital_etl(code: String) {
+    capital_etl(code: string) {
         var options = {
             // path: '/f10_v2/CapitalStockStructure.aspx?type=web&code=' + code,
-            path: '/PC_HSF10/CapitalStockStructure/CapitalStockStructureAjax?code=' + code,
+            path: `/PC_HSF10/CapitalStockStructure/CapitalStockStructureAjax?code=${code}`,
             charset: 'UTF-8',
             // debug: true
         };
-        this._request(options).then((content: String) => {
-            // console.log(content);
-            var result = { _id: code };
 
-            // this._regExs.forEach((reg, index) => {
-            //     var x = this._parse(content, reg);
-            //     if (x) {
-            //         if (index == 0) result.mv = myUtil.toNumber(x[0]);
-            //         else result.nv = myUtil.toNumber(x[1]);
-            //     }
-            // });
+        return new Promise((resolve, reject) => {
+            this._request(options)
+                .then((content: string) => {
+                    // console.log(content);
+                    var result = { _id: code, mv: null, nv: null };
 
-            var x = JSON.parse(content);
-            var shares = x.Result.UnlistedShareChangeList;
-            result.mv = myUtil.toNumber(shares[1].changeList[0]);
-            result.nv = myUtil.toNumber(shares[2].changeList[0]);
+                    // this._regExs.forEach((reg, index) => {
+                    //     var x = this._parse(content, reg);
+                    //     if (x) {
+                    //         if (index == 0) result.mv = myUtil.toNumber(x[0]);
+                    //         else result.nv = myUtil.toNumber(x[1]);
+                    //     }
+                    // });
 
-            // console.log(result);
-            this._myMongo.upsertBatch('counterCN', [result], function (err, result) {
-                _this._logDbResult('update mv/nv to ' + code, err, result);
-            });
-        }, (err) => {
-            console.log(err);
+                    var x = JSON.parse(content);
+                    var shares = x.Result.UnlistedShareChangeList;
+                    if (shares) {
+                        result.mv = myUtil.toNumber(shares[1].changeList[0]);
+                        result.nv = myUtil.toNumber(shares[2].changeList[0]);
+
+                        // console.log(result);
+                        this._myMongo.upsertBatch('counterCN', [result], function (err, result) {
+                            if (err) {
+                                // console.error(code, err);
+                                reject(`${code}: ${err}`);
+                            } else {
+                                resolve(code);
+                            }
+
+                            // _this._logDbResult('update mv/nv to ' + code, err, result);
+                        });
+                    } else {
+                        // console.debug(`UnlistedShareChangeList of ${code} is null`);
+                        reject(`${code}: UnlistedShareChangeList is null`);
+                    }
+                }, (err) => {
+                    // console.error(code, err);
+                    reject(`${code}: ${err}`);
+                });
         });
     }
+}
+
+async function xx(slice) {
+    return Promise.all(slice.map((item) => em3.capital_etl(item)))
+        .then((items) => {
+            console.log(items);
+            return items.length;
+        }, (err) => {
+            console.error('failed @', err);
+            return 0;
+        });
 }
 
 var em3 = new EM3([/<th class="tips-fieldnameL">股份总数<\/th><td class="tips-dataR">([0-9,.]+)<\/td>/ig,
@@ -121,28 +155,18 @@ var em3 = new EM3([/<th class="tips-fieldnameL">股份总数<\/th><td class="tip
 // });
 // 3) symbol file
 (function (lines) {
-    lines.forEach((item, index) => {
-        // if (index > 500) return;
 
-        // if (index < 500) return;
-        // if (index > 1000) return;
-
-        // if (index < 1000) return;
-        // if (index > 1500) return;
-
-        // if (index < 1500) return;
-        // if (index > 2000) return;
-
-        // if (index < 2000) return;
-        // if (index > 2500) return;
-
-        // if (index < 2500) return;
-        // if (index > 3000) return;
-
-        if (index < 3000) return;
-        if (item) {
-            item = (item.startsWith('6') ? 'SH' : 'SZ') + item;
-            em3.capital_etl(item);
-        }
+    let codes = lines.map((item) => {
+        return (item.startsWith('6') ? 'SH' : 'SZ') + item;
     });
-} (myUtil.readlinesSync('./-hid/cn_symbol.txt')));
+
+    // // to debug:
+    // codes = codes.slice(2600, 4000);
+
+    let chunkSize = 100;
+    let chunk = codes.chunk(chunkSize);
+    chunk.map(async (slice) => {
+        let x = await xx(slice);
+        console.log(`----------- ${x} done.`)
+    });
+}(myUtil.readlinesSync('./-hid/cn_symbol.txt')));

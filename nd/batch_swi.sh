@@ -148,5 +148,5 @@ python ../html2csv.py ./swi-hid/803613.xls
 node any-csv.js
 
 # generate opt swi data
-cd ../../daodao10.github.io/chart/auto
+cd ../../chart/auto
 node swi_etl.js

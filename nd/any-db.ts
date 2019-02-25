@@ -1,13 +1,13 @@
 /// <reference path="../../node.d.ts" />
-
-'use strict';
+/// <reference path="../../lib.es6.d.ts" />
 
 var fs = require('fs'),
 	myUtil = require('./MyUtil'),
 	anounymous = require('./ProtoUtil'),
 	MyMongo = require('./MyMongoUtil'),
-	config = require('../config.json'),
-	CsvSerieUtil = require('./CsvSerieUtil');
+	config = require('../config.json');
+
+import CsvSerieUtil from './CsvSerieUtil';
 
 class DbSerieUtil {
 	public myMongo;
@@ -26,7 +26,7 @@ class DbSerieUtil {
 		return false;
 	}
 
-	get(docName, query) {
+	get(docName, query): Promise<any> {
 		var _self = this;
 		return new Promise(function (resolve, reject) {
 			_self.myMongo.find(docName, {
@@ -42,14 +42,14 @@ class DbSerieUtil {
 		});
 	}
 
-	toSeries(docs: Array<Object>, cols: Array<Array<String>>) {
+	toSeries(docs: Array<Object>, cols: Array<Array<string>>) {
 		var rows = this.toCsv(docs, cols);
 		var content = this.csvUtil.toSeries(rows);
 		//TODO: save ?
 		console.log(content);
 	}
 
-	toCsv(docs: Array<Object>, cols: Array<Array<String>>): Array<Array<Object>> {
+	toCsv(docs: Array<Object>, cols: Array<Array<string>>): Array<Array<Object>> {
 		var _self = this;
 		if (docs && cols && Object.keys(docs[0]).length == cols.length) {
 			var rows = [];
@@ -114,7 +114,7 @@ class DbSerieUtil {
 	init_usdx_patch(): void {
 		var _self = this;
 		var vm = require('vm');
-		if (_self._loadJs(vm, '../../daodao10.github.io/chart/world/USX_d.js')) {
+		if (_self._loadJs(vm, '../../chart/world/USX_d.js')) {
 			var docs = []
 			data.forEach(function (element) {
 				docs.push({ _id: _self.csvUtil.toDate(element[0], true), c: element[1] });
@@ -132,14 +132,14 @@ class DbSerieUtil {
 
 }
 
-var util = new DbSerieUtil("{0}{1}".format(config.DbSettings.DbUri, 'test'));
+var util = new DbSerieUtil(`${config.DbSettings.DbUri}test`);
 // util.extractSeries('BDI', null, [['_id','date'],['c','value']]);
 // util.extractCsv('BDI', null, [['_id','date'],['c','value']], './BDI.csv');
-util.extractOpt('BDI', null, [['_id','date'],['c','value']], "../../daodao10.github.io/chart/world/BDI_m.js");
+util.extractOpt('BDI', null, [['_id', 'date'], ['c', 'value']], "../../chart/world/BDI_m.js");
 // util.extractCsv('MV', null, [['_id','date'],['tmc','tmc'],['cmc','cmc'],['gdp','gdp']], './MV.csv');
 
 // first time run
 // util.init_usdx_patch();
-util.extractOpt('USDX', null, [['_id', 'date'], ['c', 'value']], "../../daodao10.github.io/chart/world/USX_d.js");
+util.extractOpt('USDX', null, [['_id', 'date'], ['c', 'value']], "../../chart/world/USX_d.js");
 // util.extractSeries('USDX', {_id:{$gt:1494838400000}}, [['_id','date'],['c','value']])//, './USDX.csv');
 

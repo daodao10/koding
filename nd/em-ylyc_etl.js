@@ -120,7 +120,7 @@ function fill(code, cells, corp_actions, forced, reject) {
             //   [ '2016-04-20', 0.3399, 1.42, 1.79, NaN ] ]
             var x = corp || forced ? parseDetails(content) : parseLast6Mon(content),
                 rec,
-                updated = '201703', //TODO: hard code
+                updated = '201801', //TODO: hard code
                 i;
 
             if (x && x.length > 0) {
@@ -161,21 +161,21 @@ function fill(code, cells, corp_actions, forced, reject) {
                 } else {
                     if (forced) {
                         cells = [code.startsWith('SH') ? '1' : '2',
-                            code.substring(2),
+                        code.substring(2),
                             '',
                             0, 0,
-                            rec.total,
-                            rec.buy,
-                            rec.acc,
-                            rec.neu,
-                            rec.reduce,
-                            rec.sell,
-                            x[0],
-                            x[1],
+                        rec.total,
+                        rec.buy,
+                        rec.acc,
+                        rec.neu,
+                        rec.reduce,
+                        rec.sell,
+                        x[0],
+                        x[1],
                             0,
-                            x[2],
+                        x[2],
                             0,
-                            x[3],
+                        x[3],
                             0,
                             0,
                             0,
@@ -188,6 +188,9 @@ function fill(code, cells, corp_actions, forced, reject) {
 
             } else {
                 // console.log('>>>', code);
+                if (cells) {
+                    cells[20] = updated;
+                }
                 print(cells);
             }
         }
@@ -216,7 +219,7 @@ function main() {
             }
             else return null;
         });
-    } (myUtil.readlinesSync("./-hid/corp_action.txt")));
+    }(myUtil.readlinesSync("./-hid/corp_action.txt")));
     // corp_actions.forEach(function (r) {
     //     if (r)
     //         console.log('%s,%s,%d,%d,%d,%s', r[0], r[1], r[2], r[3], r[4], r[5]);
@@ -230,7 +233,7 @@ function main() {
             if (cells.length > 1) x.push(cells[0]);
         });
         return x;
-    } (myUtil.readlinesSync('../chart/s/cn.txt')));
+    }(myUtil.readlinesSync('../chart/s/cn.txt')));
 
     var
         lines = myUtil.readlinesSync('./-hid/em_ylyc.csv'),

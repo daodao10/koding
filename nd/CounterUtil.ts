@@ -1,14 +1,14 @@
 /// <reference path="../../node.d.ts" />
 
-"use strict";
+
 require('./ProtoUtil');
 
-var MyMongo = require('./MyMongoUtil'),
+const MyMongo = require('./MyMongoUtil'),
     config = require('../config.json');
 
-export class CounterUtil {
+export default class CounterUtil {
     private mock = false;
-    private myMongo = new MyMongo("{0}{1}".format(config.DbSettings.DbUri, 'test'));
+    private myMongo = new MyMongo(`${config.DbSettings.DbUri}test`);
     private counterDb: string;
 
     constructor(counterDb: string) {

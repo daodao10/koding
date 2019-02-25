@@ -27,7 +27,7 @@ MyUtil.prototype.extend = function (origin, add) {
             }
         }
         return origin;
-    } (origin, add));
+    }(origin, add));
 };
 
 function _getCallback(data, statusCode, options, callback) {
@@ -192,8 +192,15 @@ MyUtil.prototype.readlinesSync = function (filePath, options) {
 };
 
 MyUtil.prototype.sleep = function (milliSeconds) {
-    var startTime = new Date().getTime();
-    while (new Date().getTime() < startTime + milliSeconds);
+    // var startTime = new Date().getTime();
+    // while (new Date().getTime() < startTime + milliSeconds);
+
+    // new version: es6
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            resolve();
+        }, milliSeconds);
+    })
 };
 
 MyUtil.prototype.varReplace = function (input, dic) {
@@ -243,6 +250,11 @@ MyUtil.prototype.getLastDateOfMonthFromStr = function (dateStr, yearOptions, mon
         month = dateStr.substr(monthOptions.i, monthOptions.l);
 
     return new Date(Number(year), Number(month), 0);
+};
+
+MyUtil.prototype.random = function (min, max) {
+    // return parseInt(Math.random() * (max - min + 1) + min, 10);
+    return Math.floor(Math.random() * (max - min + 1) + min);
 };
 
 module.exports = new MyUtil();

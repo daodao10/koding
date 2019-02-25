@@ -210,7 +210,7 @@ function us_opt_symbol_etl() {
     counterUtil.get({}, (err, docs) => {
         var x = [], jsFile;
         docs.forEach((doc) => {
-            jsFile = '../../daodao10.github.io/chart/us/' + doc.code + '_d.js';
+            jsFile = '../../chart/us/' + doc.code + '_d.js';
             if (fs.existsSync(jsFile)) {
                 if (doc.pinyin)
                     x.push(JSON.stringify({ "c": doc.code, "n": doc.name.toUpperCase() + " (" + doc.pinyin + ")", "s": doc.sector, "i": doc.industry, "mv": doc.mv }));

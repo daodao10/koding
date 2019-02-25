@@ -249,7 +249,7 @@ function EM() {
                 host: 'datainterface.eastmoney.com',
                 path: quote.path,
                 urlParam: [code],
-                // csvFile: './cn-ggcg-hid/' + code + '.csv',
+                csvFile: './cn-hysr-hid/' + code + '.csv',
                 header: function () {
                     return '报告日期,评级类别,评级变动,机构名称,研报,研报机构影响力,信息代码,机构代码,行业,行业代码';
                 },
@@ -328,7 +328,7 @@ function EM() {
                 path: quote.path,
                 csvFile: './-hid/em_ylyc.csv',
                 header: function () {
-                    return unescape("序号,代码,名称,最新价,涨跌幅,研报数,买入,增持,中性,减持,卖出,2015收益,2016收益,2016PE,2017收益,2017PE,2018收益,2018PE,预留1");
+                    return unescape("序号,代码,名称,最新价,涨跌幅,研报数,买入,增持,中性,减持,卖出,2016收益,2017收益,2017PE,2018收益,2018PE,2019收益,2019PE,预留1");
                     //                0  ,1   ,2  ,3    ,4     ,5    ,6  ,7  ,8  ,9 ,10    ,11      ,12     ,13    ,14     ,15    ,16      ,17    
                 },
                 refine: function (line) {
@@ -355,6 +355,7 @@ function EM() {
         gen: function () {
             // 序号,代码,名称,最新价,涨跌幅,研报数,买入,增持,中性,减持,卖出,2014收益,2015收益,2015PE,2016收益,2016PE,2017收益,2017PE
             // 序号,代码,名称,最新价,涨跌幅,研报数,买入,增持,中性,减持,卖出,2015收益,2016收益,2016PE,2017收益,2017PE,2018收益,2018PE
+            // 序号,代码,名称,最新价,涨跌幅,研报数,买入,增持,中性,减持,卖出,2016收益,2017收益,2017PE,2018收益,2018PE,2019收益,2019PE
             // 0  ,1   ,2  ,3    ,4     ,5    ,6  ,7   ,8  ,9   ,10 ,11      ,12     ,13    ,14     ,15    ,16      ,17
             var docs = {}, // peg
                 rs = {}; // ylyc
@@ -391,13 +392,13 @@ function EM() {
                 }
             }
 
-            fs.writeFile('../../daodao10.github.io/chart/dao/peg0.js', wrapRequireJs(JSON.stringify(docs, null, 1)), function (err) {
+            fs.writeFile('../../chart/dao/peg0.js', wrapRequireJs(JSON.stringify(docs, null, 1)), function (err) {
                 if (err) {
                     throw err;
                 }
                 console.log('saved.');
             });
-            fs.writeFile('../../daodao10.github.io/chart/dao/e0.js', wrapRequireJs(JSON.stringify(rs, null, 1)), function (err) {
+            fs.writeFile('../../chart/dao/e0.js', wrapRequireJs(JSON.stringify(rs, null, 1)), function (err) {
                 if (err) {
                     throw err;
                 }
@@ -463,70 +464,88 @@ function EM() {
 
                     fx(newRows, index + 1, total, counter);
                 });
-            } (lines, 0, lines.length, 0));
+            }(lines, 0, lines.length, 0));//TODO: update index when it throws exception
 
         }
     };
 }
 
+function prompt() {
+    let usage = `
+ USAGE:
+ node em2.js <function name>
+ function:
+ 1. 盈利预测: getYLYC -> sh dl_ylyc.sh -> node corp_action.js > -hid/corp_action.txt -> node em-ylyc_etl.js > -hid/em_ylyc_bak.csv -> gen
+ 2. PEG: gen
+ 3. 业绩预告: getYJYG
+ 4. 业绩报表: batch-getYJBB -> batch-parseYJBB -> mv cn-fa-hid/*.json ../../chart/fa/cn/
+ 5. 行业报告: getHYSR <行业号>
+ 6. 个股分析: analyze-stock <symbol>    
+    `;
+    console.log(usage);
+}
 
 var util = new EM();
-
-// 业绩预告
-// util.getYJYG();
-
-// 获取业绩报表，分析业绩报表
-// util.getYJBB('002710');
-// util.getYJBBBatch('download');
-// util.getYJBBBatch('parse');
-// mv cn-fa-hid/*.json ../../daodao10.github.io/chart/fa/cn/
-
-// 盈利预测
-// 1)
-// util.getYLYC();
-// download ylyc files
-// 2.a) processed by file
-// (function (lines) {
-//     lines.forEach((line) => {
-//         var cells = line.split(',');
-//         if (cells.length > 1) {
-//             var code = cells[0];
-//             console.log("wget -O ./cn-ylyc-hid/{0}.txt --referer \"http://f10.eastmoney.com/f10_v2/CapitalStockStructure.aspx?code={0}\" \"http://f10.eastmoney.com/f10_v2/ProfitForecast.aspx?code={0}\"".format(code));
-//         }
-//     });
-// } (myUtil.readlinesSync('../chart/s/cn.txt')));
-// 2.b) processed by item
-// ['SH603306'].forEach(function (code) {
-//     console.log("wget -O ./cn-ylyc-hid/{0}.txt --referer \"http://f10.eastmoney.com/f10_v2/CapitalStockStructure.aspx?code={0}\" \"http://f10.eastmoney.com/f10_v2/ProfitForecast.aspx?code={0}\"".format(code));
-// });
-// 3) get corp_action file
-// node corp_action.js > -hid/corp_action.txt
-// 4) 
-// node em-ylyc_etl.js > -hid/em_ylyc_bak.csv
-// 5)
-// util.gen();
-
-// 行业报告
-// util.getHYSR('537');
-
-// var wl = ['300156', '300148', '002669', '600093', '600298', '300049', '002111', '300048', '300119', '600419', '300342', '000639', '600405', '002072', '300025', '600114', '300232', '300095', '603306', '603168', '300243', '300398', '300219', '002531'];
-// var length = wl.length, processed = 0;
-// wl.forEach((item) => {
-//     // // 业绩报表
-//     // util.getYJBB(item, (err) => {
-//     //     console.error(err);
-//     // }, (data) => {
-//     //     processed++;
-//     //     if (processed == length) {
-//     //         wl.forEach((item1) => {
-//     //             util.parseYJBB(item1);
-//     //         });
-//     //     }
-//     // });
-
-//     // 机构研报
-//     util.getGGSR(item);
-
-//     // // 高管持股
-//     util.getGGCG(item);
-// });
+if (process.argv.length > 2) {
+    switch (process.argv[2]) {
+        case 'getYJYG':// 业绩预告
+            util.getYJYG();
+            break;
+        case 'getYLYC':
+            // // 1) 盈利预测
+            util.getYLYC();
+            // // 2) download ylyc files
+            // 152 -rw-r--r--  1 dao  staff  \d{5} Dec  1 23:\d+ S[H|Z](\d{6}).txt
+            // // 2.a) processed by file
+            // (function (lines) {
+            //     lines.forEach((line) => {
+            //         var cells = line.split(',');
+            //         if (cells.length > 1) {
+            //             var code = cells[0];
+            //             console.log("wget -O ./cn-ylyc-hid/{0}.txt --referer \"http://f10.eastmoney.com/f10_v2/CapitalStockStructure.aspx?code={0}\" \"http://f10.eastmoney.com/f10_v2/ProfitForecast.aspx?code={0}\"".format(code));
+            //         }
+            //     });
+            // } (myUtil.readlinesSync('../chart/s/cn.txt')));
+            // 2.b) processed by item
+            // ['SH603306'].forEach(function (code) {
+            //     console.log("wget -O ./cn-ylyc-hid/{0}.txt --referer \"http://f10.eastmoney.com/f10_v2/CapitalStockStructure.aspx?code={0}\" \"http://f10.eastmoney.com/f10_v2/ProfitForecast.aspx?code={0}\"".format(code));
+            // });
+            // 3) get corp_action file
+            // node corp_action.js > -hid/corp_action.txt
+            // 4) 
+            // node em-ylyc_etl.js > -hid/em_ylyc_bak.csv
+            break;
+        case 'gen':
+            // 5) 计算 PEG
+            util.gen();
+            break;
+        case 'batch-getYJBB':// 获取业绩报表
+            util.getYJBBBatch('download');
+            break;
+        case 'batch-parseYJBB':// 分析业绩报表
+            util.getYJBBBatch('parse');
+            // mv cn-fa-hid/*.json ../../chart/fa/cn/
+            break;
+        case 'getHYSR':// 行业报告
+            let hy = process.argv[3]; // 537
+            util.getHYSR(hy);
+            break;
+        case 'analyze-stock':
+            let stock = process.argv[3];
+            if (stock) {
+                // 业绩报表
+                util.getYJBB(stock, (err) => {
+                    console.error(err);
+                }, (data) => {
+                    util.parseYJBB(stock);
+                });
+                // 机构研报
+                util.getGGSR(stock);
+                // 高管持股
+                util.getGGCG(stock);
+            }
+            break;
+    }
+} else {
+    prompt();
+}

@@ -43,16 +43,16 @@ export class Colors {
             func(color, args, Colors.Style.Reset);
         }
     }
-    red(): void{
-        this.inner(console.log, Colors.Style.FG.Red, arguments);
+    red(...args): void{
+        this.inner(console.log, Colors.Style.FG.Red, args);
     }
-    green(): void{
-        this.inner(console.log, Colors.Style.FG.Green, arguments);
+    green(...args): void{
+        this.inner(console.log, Colors.Style.FG.Green, args);
     }
-    yellow(): void{
-        this.inner(console.log, Colors.Style.FG.Yellow, arguments);
+    yellow(...args): void{
+        this.inner(console.log, Colors.Style.FG.Yellow, args);
     }
-    blue(): void{
-        this.inner(console.log, Colors.Style.FG.Blue, arguments);
+    blue(...args): void{
+        this.inner(console.log, Colors.Style.FG.Blue, args);
     }
 }

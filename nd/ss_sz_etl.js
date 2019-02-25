@@ -9,7 +9,7 @@ require('./ProtoUtil');
 var fs = require('fs'),
     myUtil = require('./MyUtil'),
     iconv = require('iconv-lite'),
-    CsvSerieUtil = require('./CsvSerieUtil'),
+    CsvSerieUtil = require('./CsvSerieUtil').default,
     MyMongo = require('./MyMongoUtil'),
     config = require('../config.json'),
     myMongo = new MyMongo("{0}{1}".format(config.DbSettings.DbUri, 'test')),
@@ -22,7 +22,7 @@ function _request(options) {
                 console.log(options.path);
             }
             if (statusCode !== 200) {
-                console.error('error occurred: ', statusCode);
+                console.error('\u001b[31m', 'error occurred: ', statusCode);
                 reject({
                     url: options.path,
                     error: statusCode
@@ -289,7 +289,7 @@ var SZSE = {
             case 'cy':
                 return board;
             default:
-                return 'sz';
+                throw new Error(`not supported board [${board}]`);
         }
     },
 
@@ -378,7 +378,7 @@ var GDP = {
                     logDbResult('update GDP_Q', err, result);
                 });
             }
-        });
+        }, (err) => { console.error(err); });
     },
 
     ttm: function (timestamp, gdps) {
@@ -397,6 +397,49 @@ var GDP = {
     }
 };
 
+// 1) etl sse & szse
+function step1(dts) {
+    dts.forEach(function (item) {
+        var dt = item;
+        dt = dt.substr(0, 4) + "-" + dt.substr(4, 2) + "-" + dt.substr(6, 2);
+
+        // SSE.etl(dt, console.log);
+        // SZSE.etl(dt, console.log, 'sz');
+        // SZSE.etl(dt, console.log, 'szm');
+        // SZSE.etl(dt, console.log, 'zx');
+        // SZSE.etl(dt, console.log, 'cy');
+
+        SSE.etl(dt, SSE.store);
+        SZSE.etl(dt, SZSE.store, 'sz');
+        SZSE.etl(dt, SZSE.store, 'szm');
+        SZSE.etl(dt, SZSE.store, 'zx');
+        SZSE.etl(dt, SZSE.store, 'cy');
+    });
+}
+function step2(startDate) {
+    // 2.1) sum market cap
+    Market.sumMV(startDate);
+    // 2.2) update SSE index
+    Market.updateSSEIndex(startDate);
+    // 2.3) etl GDP by quarter
+    GDP.etl();
+}
+// 3) export market value from db
+function step3() {
+    Market.export();
+}
+// 4) export market value json file
+function step4() {
+    var util = new CsvSerieUtil(false);
+    util.extract('./-hid/MV_cn.csv', '../../chart/swi/mv.json');
+}
+function prompt() {
+    console.log('USAGE: node ss_sz_etl.js step<n>');
+    console.log('step 1. etl sse & szse market info');
+    console.log('step 2. sum market cap of sse & szse, \n\tupdate sse index, \n\tetl GDP by quarter');
+    console.log('step 3. export market value from db');
+    console.log('step 4. generate final json file');
+}
 function etl() {
     // workflow:
 
@@ -409,48 +452,37 @@ function etl() {
 
     // batch process
     var dts = [
-        '20171101',
-        '20171102',
-        '20171103',
-        '20171106',
-        '20171107',
-        '20171108',
-        '20171109',
-        '20171110',
+        '20180222',
+        '20180223',
+        '20180226',
+        '20180227',
+        '20180228',
+        '20180301',
+        '20180302',
     ];
 
-    // // 1) etl sse & szse
-    // dts.forEach(function(item) {
-    //     var dt = item;
-    //     dt = dt.substr(0, 4) + "-" + dt.substr(4, 2) + "-" + dt.substr(6, 2);
+    if (process.argv.length > 2) {
+        let step = process.argv[2];
+        switch (step) {
+            case 'step1':
+                step1(dts);
+                break;
+            case 'step2':
+                step2(dts[0]);
+                break;
+            case 'step3':
+                step3();
+                break;
+            case 'step4':
+                step4();
+                break;
+            default:
+                prompt();
+        }
 
-    //     // SSE.etl(dt, console.log);
-    //     // SZSE.etl(dt, console.log, 'sz');
-    //     // SZSE.etl(dt, console.log, 'szm');
-    //     // SZSE.etl(dt, console.log, 'zx');
-    //     // SZSE.etl(dt, console.log, 'cy');
-
-    //     SSE.etl(dt, SSE.store);
-    //     SZSE.etl(dt, SZSE.store, 'sz');
-    //     SZSE.etl(dt, SZSE.store, 'szm');
-    //     SZSE.etl(dt, SZSE.store, 'zx');
-    //     SZSE.etl(dt, SZSE.store, 'cy');
-    // });
-
-    // // 2.1) sum market cap
-    // Market.sumMV (dts[0]);
-    // // 2.2) update SSE index
-    // Market.updateSSEIndex(dts[0]);
-
-    // // 2.3) etl GDP by quarter
-    // GDP.etl();
-
-    // // 3) export market value from db
-    // Market.export();
-
-    // // 4) export market value json file
-    // var util = new CsvSerieUtil(false);
-    // util.extract('./-hid/MV_cn.csv', '../../daodao10.github.io/chart/swi/mv.json');
+    } else {
+        prompt();
+    }
 }
 
 etl();

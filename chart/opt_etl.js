@@ -5,7 +5,7 @@ var fs = require("fs"),
     etlUtil = require('./EtlUtil');
 
 var settings = {
-    DestFolder: "../../daodao10.github.io/chart/",
+    DestFolder: "../../chart/",
     ItemFormat: "['{0}',{1}]",
     // ItemFormat: "[new Date({0},{1},{2}),{3},{4}]",
     HasHeader: true,

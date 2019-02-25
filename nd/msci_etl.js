@@ -13,7 +13,7 @@ function _get(indices) {
         secure: true,
         port:443,
         host: 'www.msci.com',
-        path: '/webapp/indexperf/charts?baseValue=false&currency=15&priceLevel=0&site=gimi&scope=C&endDate=31%20Dec,%202017&frequency=M&format=XML&startDate=31%20Dec,%201969&indices=' + indices
+        path: '/webapp/indexperf/charts?baseValue=false&currency=15&priceLevel=0&site=gimi&scope=C&endDate=31%20Dec,%202018&frequency=M&format=XML&startDate=31%20Dec,%201969&indices=' + indices
     };
 
     return new Promise(function (resolve, reject) {
@@ -70,7 +70,7 @@ _get('13,C,30|100016,C,30|106,C,36').then((xml) => {
                 return "['{0}',{1}]".format(d, v);
             });
 
-        _save('../../daodao10.github.io/chart/world/' + fileName, "var data=[" + rows.join(',\n') + "];\nvar source=\"www.msci.com\"");
+        _save('../../chart/world/' + fileName, "var data=[" + rows.join(',\n') + "];\nvar source=\"www.msci.com\"");
     });
 
 }, (err) => {
