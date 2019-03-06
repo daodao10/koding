@@ -1,5 +1,3 @@
-import * as util from "util";
-
 /**
 底边长 bottom length - L
 斜面高 slope height - S
@@ -9,7 +7,7 @@ import * as util from "util";
 2*L/h = math.PI
 L*S /2 = h^2
 S/(L/2) = 1.618
- */
+*/
 
 class Pyramid {
   bottom: number;
@@ -18,6 +16,7 @@ class Pyramid {
   hypotenuse: number;
   angle: number;
   angle2: number;
+  private precision: number = 3;
 
   /**
    *
@@ -46,6 +45,7 @@ class Pyramid {
 
   calcAngle(sinValue: number) {
     /**
+     * formula:
      * double v = sin(0.3)
      * double v1= asin(v)
      * double v2 = v1/2/PI*360
@@ -54,15 +54,14 @@ class Pyramid {
   }
 
   toString() {
-    return util.format(
-      "bottom: %d, heigth: %d, hypotenuse: %d, \nslope-height: %d, angle: %d, angle2: %d",
-      this.bottom.toFixed(2),
-      this.height.toFixed(2),
-      this.hypotenuse.toFixed(2),
-      this.slopHeight.toFixed(2),
-      this.angle,
-      this.angle2
-    );
+    return `
+    bottom: ${this.bottom.toFixed(this.precision)}
+    height: ${this.height.toFixed(this.precision)}
+    hypotenuse: ${this.hypotenuse.toFixed(this.precision)}
+    slope-height: ${this.slopHeight.toFixed(this.precision)}
+    angle: ${this.angle.toFixed(this.precision)}
+    angle2: ${this.angle2.toFixed(this.precision)}
+    `;
   }
 }
 
