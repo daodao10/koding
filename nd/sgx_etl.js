@@ -388,8 +388,9 @@ function storeToDB() {
   (function(lines) {
     let docs = [];
     lines.forEach((line, index) => {
-      if (index == 0) return;
+      if (index == 0) return;//ignore header line
       let cells = line.split(",");
+      if (cells.length < 2) return;//ignore empty line
       docs.push({
         _id: cells[0],
         code: cells[1],
