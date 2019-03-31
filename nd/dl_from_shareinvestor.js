@@ -1,7 +1,7 @@
 const fs = require("fs"),
   util = require("util"),
   puppeteer = require("puppeteer"),
-  CREDS = require("./creds");
+  CREDS = require("./creds-config");
 
 // const { TimeoutError } = require("puppeteer/Errors");
 process
@@ -35,7 +35,7 @@ async function delay(ms) {
 
 async function run(symbolList, startIndex) {
   const browser = await puppeteer.launch({
-    headless: false,
+    // headless: false,
     // executablePath:'/app/koding/node_modules/puppeteer/.local-chromium/linux-624492/chrome-linux/chrome',
     args: ["--no-sandbox", "--disable-setuid-sandbox"]
   });
@@ -123,6 +123,6 @@ async function getSymbols(filepath) {
 getSymbols("../chart/s/sg_shareinvestor.txt")
   .then(symbols => {
     console.log('all symbol:', symbols.length);
-    run(symbols, 22);
+    run(symbols, 710);
   })
   .catch(err => console.error(err));
