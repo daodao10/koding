@@ -5,7 +5,6 @@ import shutil
 
 import package
 package.append_dir('../..')
-
 from koding import web_tools
 
 def extract(srcDir, pattern):

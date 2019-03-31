@@ -23,7 +23,7 @@ def getFAContent(symbol):
         f.close()       
         if len(content) > 0:
             return content
-    except Exception, e:
+    except Exception:
         pass
     return None
 
@@ -141,9 +141,9 @@ symbol = "AAJ.SI"
 content = getFAContent(symbol)
 if content:
     data = parseFA(content)
-    print data
+    print(data)
     # populate(counter, data)
 else:
-    print '%s error' % counter
+    print('%s error' % symbol)
 
-print 'done'
+print('done')

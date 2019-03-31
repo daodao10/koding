@@ -43,7 +43,7 @@ class Pyramid {
     this.angle2 = this.calcAngle(this.slopHeight / this.hypotenuse);
   }
 
-  calcAngle(sinValue: number) {
+  private calcAngle(sinValue: number) {
     /**
      * formula:
      * double v = sin(0.3)
