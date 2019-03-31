@@ -13,7 +13,7 @@ function _get(indices) {
         secure: true,
         port:443,
         host: 'www.msci.com',
-        path: '/webapp/indexperf/charts?baseValue=false&currency=15&priceLevel=0&site=gimi&scope=C&endDate=31%20Dec,%202018&frequency=M&format=XML&startDate=31%20Dec,%201969&indices=' + indices
+        path: '/webapp/indexperf/charts?baseValue=false&currency=15&priceLevel=0&site=gimi&scope=C&endDate=31%20Dec,%202019&frequency=M&format=XML&startDate=31%20Dec,%201969&indices=' + indices
     };
 
     return new Promise(function (resolve, reject) {
