@@ -1,4 +1,4 @@
-symbol,code,name,sector,industry,ignore[tushare : cn : daily]
+symbol,code,name,sector,industry,ignore[wsstock2 : cn : daily]
 000001,000001
 000002,000002
 000006,000006
@@ -111,6 +111,7 @@ symbol,code,name,sector,industry,ignore[tushare : cn : daily]
 600030,600030
 600031,600031
 600035,600035
+600036,600036
 600039,600039
 600056,600056
 600060,600060

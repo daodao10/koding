@@ -15,6 +15,7 @@ node opt_etl.js s/google_d.txt
 
 cd ../nd
 # BDI & USDX etl
+node val500_etl.js
 node any-db.js
 # MSCI etl
 node msci_etl.js

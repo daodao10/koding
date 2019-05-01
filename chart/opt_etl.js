@@ -15,7 +15,7 @@ var settings = {
     "Y": { // Yahoo: newest to oldest
         IsCompactDate: false, //1990-01-01
         xCell: 0,
-        yCell: 6
+        yCell: 5
     },
     "G": { // Google: newest to oldest
         IsCompactDate: false, //1990-01-01
@@ -38,6 +38,11 @@ var settings = {
         yCell: 4
     },
     "WS": {// wsstock.com
+        IsCompactDate: true,
+        xCell: 1,
+        yCell: 6
+    },
+    "WS2": {// data from etl-2/wsstock.com
         IsCompactDate: true,
         xCell: 1,
         yCell: 6
@@ -105,6 +110,9 @@ function fx(newRows, index, total, counter) {
                 if (!fs.existsSync(srcFile)) {
                     srcFile = "../../wsWDZ/{0}/{1}/{2}.txt".format("etl-2", cells[0].startsWith('SH') ? "SH" : "SZ", cells[0]);
                 }
+            } else if (settings["source"] === "WS2") { // special case
+                srcFile = "../../wsWDZ/{0}/{1}/{1}{2}.txt".format("etl-2", cells[0].startsWith('6') ? "SH" : "SZ", cells[0]);
+                console.log(srcFile);
             } else { // normal
                 // if (settings.market === "hk" && cells[6] == 1) { // specially process for hk ignored
                 //     reject(new Error('ignore: ' + cells[1]));

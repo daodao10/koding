@@ -4,11 +4,12 @@
  * 2) extract GDP data from http://data.stats.gov.cn/
  */
 "use strict";
-require('./ProtoUtil');
 
-var fs = require('fs'),
+import './ProtoUtil'
+import inquirer from "inquirer"
+
+const fs = require('fs'),
     myUtil = require('./MyUtil'),
-    iconv = require('iconv-lite'),
     CsvSerieUtil = require('./CsvSerieUtil').default,
     MyMongo = require('./MyMongoUtil'),
     config = require('../config.json'),
@@ -60,7 +61,7 @@ function logDbResult(msg, err, result) {
     }
 }
 
-var Market = {
+const Market = {
     _update: function (rows, msg) {
         if (mock) {
             console.log(msg, rows.length);
@@ -73,22 +74,29 @@ var Market = {
     },
 
     sumMV: function (startDate, endDate) {
-        var self = this,
+        let self = this,
             dr = {
                 start: toTimestamp(startDate, true),
                 end: endDate ? toTimestamp(endDate, true) : new Date().getTime()
             };
 
-        myMongo.find('marketCN', {
-            q: { _id: { $gte: dr.start, $lte: dr.end } },
+        let query = {
+            q: { _id: { $gte: dr.start, $e: dr.end } },
             f: { "mv_ss": 1, "mv_sz": 1, "nv_ss": 1, "nv_sz": 1 }
-        }, function (err, docs) {
-            docs.forEach(function (doc) {
-                doc["mv"] = doc["mv_ss"] + doc["mv_sz"];
-                doc["nv"] = doc["nv_ss"] + doc["nv_sz"];
-            });
+        }
+        myMongo.find('marketCN', query, function (docs) {
+            if (docs !== null) {
+                docs.forEach(function (doc) {
+                    doc["mv"] = doc["mv_ss"] + doc["mv_sz"];
+                    doc["nv"] = doc["nv_ss"] + doc["nv_sz"];
+                });
 
-            self._update(docs, 'update MV & NV');
+                self._update(docs, 'update MV & NV');
+            } else {
+                console.log('docs is null')
+                console.log(query.q)
+                console.log(startDate, endDate)
+            }
         });
     },
 
@@ -118,15 +126,19 @@ var Market = {
             myMongo.find('marketCN', {
                 q: {},
                 f: { _id: 1 }
-            }, function (err, docs) {
-                data.forEach(function (d) {
-                    var item = docs.find(function (ele) {
-                        return ele._id === d[0];
+            }, function (docs) {
+                if (docs !== null) {
+                    data.forEach(function (d) {
+                        var item = docs.find(function (ele) {
+                            return ele._id === d[0];
+                        });
+                        if (item) item["c_ss"] = d[1];
                     });
-                    if (item) item["c_ss"] = d[1];
-                });
 
-                self._update(docs, 'update SSE index');
+                    self._update(docs, 'update SSE index');
+                } else {
+                    console.log('market data is empty')
+                }
             });
         });
     },
@@ -164,10 +176,10 @@ var Market = {
     },
 
     export: function () {
-        myMongo.find("marketCN", { q: { mv: { $gt: 0 } }, f: { mv: 1, nv: 1, c_ss: 1 }, s: { _id: 1 } }, function (err, docs) {
+        myMongo.find("marketCN", { q: { mv: { $gt: 0 } }, f: { mv: 1, nv: 1, c_ss: 1 }, s: { _id: 1 } }, function (docs) {
             // console.log(JSON.stringify(docs));
 
-            myMongo.find("GDP_Q", { q: {}, f: {}, s: { _id: 1 } }, function (err, gdps) {
+            myMongo.find("GDP_Q", { q: {}, f: {}, s: { _id: 1 } }, function (gdps) {
                 // console.log(JSON.stringify(gdps));
 
                 var x = docs.map(function (doc) {
@@ -182,7 +194,7 @@ var Market = {
     }
 };
 
-var SSE = {
+const SSE = {
     _extract: function (json) {
         if (json.result && Array.isArray(json.result)) {
             var d = json.result[2];
@@ -193,7 +205,7 @@ var SSE = {
     },
 
     etl: function (today, func) {
-        var self = this;
+        let self = this
         _request({
             host: 'query.sse.com.cn',
             // path:'/security/fund/queryAllIndexQuatNew.do?jsonCallBack=jsonpCallback62613&productId=000015&inMonth=201603&inYear=2016&searchDate=2016-03-02&prodType=4&_=1458750478815',
@@ -210,14 +222,18 @@ var SSE = {
             } else {
                 console.log('nothing to do');
             }
+        }).catch(err => {
+            console.log(today, func.name, '------')
+            console.error(err)
         });
     },
+
     store: function (line) {
         Market.update('ss', line);
     }
 };
 
-var SZSE = {
+const SZSE = {
     _parse: function (keyword, content) {
         var reg = new RegExp("<td.*?>" + keyword + "<\/td><td.*?>([0-9,.]+)<\/td>"),
             m;
@@ -313,12 +329,13 @@ var SZSE = {
             }
         });
     },
+
     store: function (line, board) {
         Market.update(board, line);
     }
 };
 
-var GDP = {
+const GDP = {
     _getKeys: function (timestamp) {
         var keys,
             dt = new Date(timestamp),
@@ -397,50 +414,44 @@ var GDP = {
     }
 };
 
-// 1) etl sse & szse
-function step1(dts) {
-    dts.forEach(function (item) {
-        var dt = item;
-        dt = dt.substr(0, 4) + "-" + dt.substr(4, 2) + "-" + dt.substr(6, 2);
-
-        // SSE.etl(dt, console.log);
-        // SZSE.etl(dt, console.log, 'sz');
-        // SZSE.etl(dt, console.log, 'szm');
-        // SZSE.etl(dt, console.log, 'zx');
-        // SZSE.etl(dt, console.log, 'cy');
-
-        SSE.etl(dt, SSE.store);
-        SZSE.etl(dt, SZSE.store, 'sz');
-        SZSE.etl(dt, SZSE.store, 'szm');
-        SZSE.etl(dt, SZSE.store, 'zx');
-        SZSE.etl(dt, SZSE.store, 'cy');
-    });
-}
-function step2(startDate) {
-    // 2.1) sum market cap
-    Market.sumMV(startDate);
-    // 2.2) update SSE index
-    Market.updateSSEIndex(startDate);
-    // 2.3) etl GDP by quarter
-    GDP.etl();
-}
-// 3) export market value from db
-function step3() {
-    Market.export();
-}
-// 4) export market value json file
-function step4() {
-    var util = new CsvSerieUtil(false);
-    util.extract('./-hid/MV_cn.csv', '../../chart/swi/mv.json');
-}
-function prompt() {
-    console.log('USAGE: node ss_sz_etl.js step<n>');
-    console.log('step 1. etl sse & szse market info');
-    console.log('step 2. sum market cap of sse & szse, \n\tupdate sse index, \n\tetl GDP by quarter');
-    console.log('step 3. export market value from db');
-    console.log('step 4. generate final json file');
-}
 function etl() {
+    // 1) etl sse & szse
+    function step1(dts) {
+        dts.forEach(function (item) {
+            var dt = item;
+            dt = dt.substr(0, 4) + "-" + dt.substr(4, 2) + "-" + dt.substr(6, 2);
+
+            // SSE.etl(dt, console.log);
+            // SZSE.etl(dt, console.log, 'sz');
+            // SZSE.etl(dt, console.log, 'szm');
+            // SZSE.etl(dt, console.log, 'zx');
+            // SZSE.etl(dt, console.log, 'cy');
+
+            SSE.etl(dt, SSE.store);
+            SZSE.etl(dt, SZSE.store, 'sz');
+            SZSE.etl(dt, SZSE.store, 'szm');
+            SZSE.etl(dt, SZSE.store, 'zx');
+            SZSE.etl(dt, SZSE.store, 'cy');
+        });
+    }
+    function step2(startDate) {
+        // 2.1) sum market cap
+        Market.sumMV(startDate);
+        // 2.2) update SSE index
+        Market.updateSSEIndex(startDate);
+        // 2.3) etl GDP by quarter
+        GDP.etl();
+    }
+    // 3) export market value from db
+    function step3() {
+        Market.export();
+    }
+    // 4) export market value json file
+    function step4() {
+        var util = new CsvSerieUtil(false);
+        util.extract('./-hid/MV_cn.csv', '../../chart/swi/mv.json');
+    }
+
     // workflow:
 
     // @first time: 1),2)
@@ -451,18 +462,97 @@ function etl() {
 
 
     // batch process
-    var dts = [
-        '20180222',
-        '20180223',
-        '20180226',
-        '20180227',
-        '20180228',
-        '20180301',
-        '20180302',
+    let dts = [
+        '20180326',
+        // '20180327',
+        // '20180328',
+        // '20180329',
+        // '20180330',
+        // '20180402',
+        // '20180403',
+        // '20180404',
+        // '20180409',
+        // '20180410',
+        // '20180411',
+        // '20180412',
+        // '20180413',
+        // '20180416',
+        // '20180417',
+        // '20180418',
+        // '20180419',
+        // '20180420',
+        // '20180423',
+        // '20180424',
+        // '20180425',
+        // '20180426',
+        // '20180427',
+        // '20180502',
+        // '20180503',
+        // '20180504',
+        // '20180507',
+        // '20180508',
+        // '20180509',
+        // '20180510',
+        // '20180511',
+        // '20180514',
+        // '20180515',
+        // '20180516',
+        // '20180517',
+        // '20180518',
+        // '20180521',
+        // '20180522',
+        // '20180523',
+        // '20180524',
+        // '20180525',
+        // '20180528',
+        // '20180529',
+        // '20180530',
+        // '20180531',
+        // '20180601',
+        // '20180604',
+        // '20180605',
+        // '20180606',
+        // '20180607',
+        // '20180608',
+        // '20180611',
+        // '20180612',
+        // '20180613',
+        // '20180614',
+        // '20180615',
+        // '20180619',
+        // '20180620',
+        // '20180621',
+        // '20180622',
+        // '20180625',
+        // '20180626',
+        // '20180627',
+        // '20180628',
+        // '20180629',
+        // '20180702',
+        // '20180703',
+        // '20180704',
+        // '20180705',
+        // '20180706',
     ];
 
-    if (process.argv.length > 2) {
-        let step = process.argv[2];
+    const funcList = {
+        'step1': { func: step1, desc: 'etl sse & szse market info' },
+        'step2': { func: step2, desc: 'sum market cap of sse & szse, \n\tupdate sse index, \n\tetl GDP by quarter' },
+        'step3': { func: step3, desc: 'export market value from db' },
+        'step4': { func: step4, desc: 'generate final json file' },
+        'exit': { func: null, desc: 'exit' },
+    }
+    const funcNameList = [...Object.getOwnPropertyNames(funcList).map(k => `${k} -  ${funcList[k].desc}`)]
+
+    inquirer.prompt({
+        type: 'list',
+        name: 'func',
+        message: 'please choose the step ?',
+        choices: funcNameList,
+    }).then(answers => {
+        console.log('DO ===>');
+        let step = answers.func.split(' - ')[0]
+        console.log(step)
         switch (step) {
             case 'step1':
                 step1(dts);
@@ -477,15 +567,13 @@ function etl() {
                 step4();
                 break;
             default:
-                prompt();
+                console.log('exit...')
         }
-
-    } else {
-        prompt();
-    }
+    });
 }
 
-etl();
+etl()
+
 // console.log(toTimestamp('20161223',true));
 // console.log(GDP.ttm(toTimestamp('201701021',true)));
 // Market.updateBatch('cy');

@@ -30,6 +30,8 @@ EtlUtil.prototype.encode_source = function (source) {
         return "SGX";
     } else if (source === "wstock") {
         return "WS";
+    } else if (source === "wstock2") {
+        return "WS2";
     } else if (source === "dao") {
         return "D";
     } else if (source === "google") {
@@ -51,7 +53,7 @@ EtlUtil.prototype.decode_source = function (source) {
         return "shareinvestor.com";
     } else if (source === "SGX") {
         return "www.sgx.com";
-    } else if (source === "WS") {
+    } else if (source === "WS" || source === "WS2" ) {
         return "wstock.net";
     } else if (source === "D") {
         return "dao";

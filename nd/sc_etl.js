@@ -1,24 +1,23 @@
 const re = /<td class="first chartoptionlinks">.*<\/td>\n<td><B>(.*)<\/B><\/td>\n<td><a.*>(.*)<\/a><\/td>\n<td>(.*)<\/td>\n<td>(.*)<\/td>\n<td>(.*)<\/td>\n<td>(.*)<\/td>\n<td>(.*)<\/td>\n<td>(.*)<\/td>\n<td>(.*)<\/td>/g;
 const EtlSettingsFile = './sc_etl.json';
 
-var fs = require('fs'),
-    //Promise = require('promise'),
-    myUtil = require('./MyUtil'),
-    anounymous = require('./ProtoUtil'),
-    MyMongo = require('./MyMongoUtil'),
-    config = require('../config.json'),
-    EtlSettings = require(EtlSettingsFile);
+import './ProtoUtil';
+import { writeFileSync } from 'fs';
+import { request } from './MyUtil';
+import MyMongo from './MyMongoUtil';
+import { DbSettings } from '../config.json';
+const EtlSettings = require(EtlSettingsFile);
 
-var today = process.argv.length === 3 ? process.argv[2] : null,
+const today = process.argv.length === 3 ? process.argv[2] : null,
     yesterday = EtlSettings.yesterday,
-    remaining = Object.keys(EtlSettings.scan).length,
-    myMongo = new MyMongo("{0}{1}".format(config.DbSettings.QuotesDbUri, 'quotes'));
+    myMongo = new MyMongo("{0}{1}".format(DbSettings.QuotesDbUri, 'quotes'));
 
+let remaining = Object.keys(EtlSettings.scan).length
 
 function SCData(scanName) {
 
     Promise.all(EtlSettings.scan[scanName].map(get))
-        .then(function(content) {
+        .then(function (content) {
 
             var tx = [];
 
@@ -33,7 +32,7 @@ function SCData(scanName) {
                 }
             }
 
-            content.forEach(function(element) {
+            content.forEach(function (element) {
                 var x = parse(re, element);
                 // console.log('orginal: ', x.length);
                 if (x && x.length > 0) {
@@ -51,14 +50,14 @@ function SCData(scanName) {
                 s: {
                     s: 1
                 }
-            }, function(err, docs) {
+            }, function (err, docs) {
                 if (err) {
                     console.error(err);
                     return;
                 }
 
                 if (docs && docs.length > 0) {
-                    tx = tx.map(function(element) {
+                    tx = tx.map(function (element) {
                         element[9] = !findByName.call(docs, element[0]);
                         return element;
                     });
@@ -87,24 +86,24 @@ function SCData(scanName) {
             remaining--;
             if (remaining === 0 && today && today != yesterday) {
                 EtlSettings.yesterday = today;
-                fs.writeFileSync(EtlSettingsFile, JSON.stringify(EtlSettings, null, 2), {
+                writeFileSync(EtlSettingsFile, JSON.stringify(EtlSettings, null, 2), {
                     'encoding': 'utf-8'
                 });
             }
 
-        }, function(error) {
+        }, function (error) {
             console.error('get url[%s] failed, error: %s', error.url, error.error);
-        }).catch(function(error) {
+        }).catch(function (error) {
             console.log(error);
         });
 
 
     function get(url) {
-        return new Promise(function(resolve, reject) {
-            myUtil.request({
+        return new Promise(function (resolve, reject) {
+            request({
                 host: 'stockcharts.com',
                 path: url
-            }, function(data, statusCode) {
+            }, function (data, statusCode) {
 
                 if (statusCode !== 200) {
                     console.error('error occurred: ', statusCode);
@@ -136,7 +135,7 @@ function SCData(scanName) {
     }
 
     function findByName(name) {
-        return this.some(function(element) {
+        return this.some(function (element) {
             return element.s === name;
             // return element[0] === name;
         });
@@ -168,7 +167,7 @@ function SCData(scanName) {
                 o: {
                     limit: 1
                 }
-            }, function(err, docs) {
+            }, function (err, docs) {
                 if (err) {
                     console.error(err);
                     return;
@@ -186,10 +185,10 @@ function SCData(scanName) {
 
     function save(name) {
         var arr = this;
-        doAfter(name, function(seq) {
-            myMongo.insert(name, arr.map(function(element, index) {
+        doAfter(name, function (seq) {
+            myMongo.insert(name, arr.map(function (element, index) {
                 return toJson(element, index + seq);
-            }), function(err, docs) {
+            }), function (err, docs) {
                 if (err) {
                     console.error("error occurred during insert [%s], %s", name, err);
                     return;
@@ -201,6 +200,6 @@ function SCData(scanName) {
 }
 
 
-Object.getOwnPropertyNames(EtlSettings.scan).forEach(function(key, idx, array) {
+Object.getOwnPropertyNames(EtlSettings.scan).forEach(function (key, idx, array) {
     SCData(key);
 });
