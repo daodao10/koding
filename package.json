@@ -8,7 +8,7 @@
     "libxmljs": "^0.19.5",
     "mongodb": "^2.2.36",
     "node-schedule": "^1.3.2",
-    "nodemailer": "^4.7.0",
+    "nodemailer": "^6.4.16",
     "puppeteer": "^1.17.0"
   },
   "devDependencies": {
